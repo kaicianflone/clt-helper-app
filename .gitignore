@@ -1,0 +1,9 @@
+.superpowers/
+node_modules/
+.next/
+.expo/
+dist/
+build/
+.env
+.env.local
+tiles/
