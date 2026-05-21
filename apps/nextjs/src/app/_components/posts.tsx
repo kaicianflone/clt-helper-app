@@ -1,6 +1,6 @@
 "use client";
 
-import { cn } from "@acme/ui";
+import { cn } from "@clt/ui";
 
 export function PostCardSkeleton(props: { pulse?: boolean }) {
   const { pulse = true } = props;
