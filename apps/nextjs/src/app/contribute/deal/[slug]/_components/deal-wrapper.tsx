@@ -9,6 +9,8 @@ interface DealWrapperProps {
   isNew: boolean;
   initialRestaurantName?: string;
   initialRestaurantAddress?: string;
+  initialRestaurantLat?: number;
+  initialRestaurantLng?: number;
   initialDealDescription?: string;
   initialDaysOfWeek?: Day[];
   initialAllDay?: boolean;
@@ -22,6 +24,8 @@ export function DealWrapper({
   isNew,
   initialRestaurantName,
   initialRestaurantAddress,
+  initialRestaurantLat,
+  initialRestaurantLng,
   initialDealDescription,
   initialDaysOfWeek,
   initialAllDay,
@@ -40,6 +44,8 @@ export function DealWrapper({
           isNew={isNew}
           initialRestaurantName={initialRestaurantName}
           initialRestaurantAddress={initialRestaurantAddress}
+          initialRestaurantLat={initialRestaurantLat}
+          initialRestaurantLng={initialRestaurantLng}
           initialDealDescription={initialDealDescription}
           initialDaysOfWeek={initialDaysOfWeek}
           initialAllDay={initialAllDay}

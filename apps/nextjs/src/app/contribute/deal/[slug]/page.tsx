@@ -31,6 +31,8 @@ export default async function ContributeDealPage({ params }: Props) {
     | {
         restaurantName: string;
         restaurantAddress: string;
+        restaurantLat: number;
+        restaurantLng: number;
         dealDescription: string;
         daysOfWeek: Day[];
         allDay: boolean;
@@ -47,6 +49,8 @@ export default async function ContributeDealPage({ params }: Props) {
       initialData = {
         restaurantName: deal.restaurantName,
         restaurantAddress: deal.restaurantAddress,
+        restaurantLat: deal.restaurantLatLng[0],
+        restaurantLng: deal.restaurantLatLng[1],
         dealDescription: deal.dealDescription,
         daysOfWeek: deal.daysOfWeek,
         allDay: typeof deal.timeWindow === "string",
@@ -89,6 +93,8 @@ export default async function ContributeDealPage({ params }: Props) {
           isNew={isNew}
           initialRestaurantName={initialData?.restaurantName}
           initialRestaurantAddress={initialData?.restaurantAddress}
+          initialRestaurantLat={initialData?.restaurantLat}
+          initialRestaurantLng={initialData?.restaurantLng}
           initialDealDescription={initialData?.dealDescription}
           initialDaysOfWeek={initialData?.daysOfWeek}
           initialAllDay={initialData?.allDay}

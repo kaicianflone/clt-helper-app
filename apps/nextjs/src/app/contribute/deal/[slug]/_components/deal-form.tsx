@@ -24,6 +24,8 @@ interface DealFormProps {
   isNew: boolean;
   initialRestaurantName?: string;
   initialRestaurantAddress?: string;
+  initialRestaurantLat?: number;
+  initialRestaurantLng?: number;
   initialDealDescription?: string;
   initialDaysOfWeek?: Day[];
   initialAllDay?: boolean;
@@ -45,6 +47,8 @@ export function DealForm({
   isNew,
   initialRestaurantName = "",
   initialRestaurantAddress = "",
+  initialRestaurantLat,
+  initialRestaurantLng,
   initialDealDescription = "",
   initialDaysOfWeek = [],
   initialAllDay = true,
@@ -65,6 +69,12 @@ export function DealForm({
   const [restaurantAddress, setRestaurantAddress] = useState(
     initialRestaurantAddress,
   );
+  const [restaurantLat, setRestaurantLat] = useState(
+    initialRestaurantLat !== undefined ? String(initialRestaurantLat) : "",
+  );
+  const [restaurantLng, setRestaurantLng] = useState(
+    initialRestaurantLng !== undefined ? String(initialRestaurantLng) : "",
+  );
   const [dealDescription, setDealDescription] = useState(initialDealDescription);
   const [daysOfWeek, setDaysOfWeek] = useState<Day[]>(initialDaysOfWeek);
   const [allDay, setAllDay] = useState(initialAllDay);
@@ -75,6 +85,7 @@ export function DealForm({
   const [note, setNote] = useState("");
   const [newSlug, setNewSlug] = useState("");
   const [prUrl, setPrUrl] = useState<string | null>(null);
+  const [latLngError, setLatLngError] = useState<string | null>(null);
 
   const mutation = useMutation(
     trpc.submit.contribute.mutationOptions({
@@ -111,18 +122,34 @@ export function DealForm({
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    setLatLngError(null);
+
+    const latNum = Number(restaurantLat);
+    const lngNum = Number(restaurantLng);
+    if (!restaurantLat || isNaN(latNum)) {
+      setLatLngError("Latitude must be a valid number (e.g. 35.22)");
+      return;
+    }
+    if (!restaurantLng || isNaN(lngNum)) {
+      setLatLngError("Longitude must be a valid number (e.g. -80.84)");
+      return;
+    }
 
     const finalSlug = isNew ? newSlug : slug;
+    const today = new Date().toISOString().slice(0, 10);
     const patch: Record<string, unknown> = {
       slug: finalSlug,
       restaurantName,
       restaurantAddress,
+      restaurantLatLng: [latNum, lngNum],
       dealDescription,
       daysOfWeek,
       timeWindow: allDay
         ? "all-day"
         : { start: timeStart, end: timeEnd },
-      lastVerified: new Date().toISOString().slice(0, 10),
+      // Set lastVerified only when creating a new deal; edits leave it to the
+      // maintainer to confirm on-the-ground accuracy before merging.
+      ...(isNew ? { lastVerified: today } : {}),
     };
     if (link.trim()) patch.link = link.trim();
 
@@ -133,6 +160,7 @@ export function DealForm({
       displayName,
       deviceId,
       eulaAcceptedAt,
+      intent: isNew ? "create" : "edit",
     });
   };
 
@@ -191,6 +219,47 @@ export function DealForm({
           className={inputCls}
         />
       </div>
+
+      <div className="flex gap-4">
+        <div className="flex-1">
+          <label htmlFor="restaurantLat" className={labelCls}>
+            Latitude
+          </label>
+          <input
+            id="restaurantLat"
+            type="number"
+            step="any"
+            required
+            value={restaurantLat}
+            onChange={(e) => setRestaurantLat(e.target.value)}
+            placeholder="e.g. 35.22"
+            className={inputCls}
+          />
+        </div>
+        <div className="flex-1">
+          <label htmlFor="restaurantLng" className={labelCls}>
+            Longitude
+          </label>
+          <input
+            id="restaurantLng"
+            type="number"
+            step="any"
+            required
+            value={restaurantLng}
+            onChange={(e) => setRestaurantLng(e.target.value)}
+            placeholder="e.g. -80.84"
+            className={inputCls}
+          />
+        </div>
+      </div>
+      {latLngError && (
+        <p
+          role="alert"
+          className="text-sm text-[color:var(--rose-stale)]"
+        >
+          {latLngError}
+        </p>
+      )}
 
       <div>
         <label htmlFor="dealDescription" className={labelCls}>

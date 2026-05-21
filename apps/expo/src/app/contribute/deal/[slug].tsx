@@ -72,6 +72,9 @@ export default function ContributeDealScreen() {
 
   const [restaurantName, setRestaurantName] = useState("");
   const [restaurantAddress, setRestaurantAddress] = useState("");
+  const [restaurantLat, setRestaurantLat] = useState("");
+  const [restaurantLng, setRestaurantLng] = useState("");
+  const [latLngError, setLatLngError] = useState<string | null>(null);
   const [dealDescription, setDealDescription] = useState("");
   const [selectedDays, setSelectedDays] = useState<DayKey[]>([]);
   const [isAllDay, setIsAllDay] = useState(false);
@@ -97,6 +100,7 @@ export default function ContributeDealScreen() {
     if (!displayName.trim()) return;
 
     setTimeError(null);
+    setLatLngError(null);
 
     // Validate time window if not all-day
     if (!isAllDay) {
@@ -110,10 +114,23 @@ export default function ContributeDealScreen() {
       }
     }
 
+    // Validate lat/lng
+    const latNum = Number(restaurantLat);
+    const lngNum = Number(restaurantLng);
+    if (!restaurantLat || isNaN(latNum)) {
+      setLatLngError("Latitude must be a valid number (e.g. 35.22)");
+      return;
+    }
+    if (!restaurantLng || isNaN(lngNum)) {
+      setLatLngError("Longitude must be a valid number (e.g. -80.84)");
+      return;
+    }
+
     const patch: Record<string, unknown> = { slug };
     if (restaurantName.trim()) patch.restaurantName = restaurantName.trim();
     if (restaurantAddress.trim())
       patch.restaurantAddress = restaurantAddress.trim();
+    patch.restaurantLatLng = [latNum, lngNum];
     if (dealDescription.trim()) patch.dealDescription = dealDescription.trim();
     if (selectedDays.length > 0) patch.daysOfWeek = selectedDays;
     if (link.trim()) patch.link = link.trim();
@@ -132,7 +149,11 @@ export default function ContributeDealScreen() {
       note: note.trim(),
       displayName: displayName.trim(),
       deviceId,
-      eulaAcceptedAt: eulaGate.acceptedAt ?? new Date().toISOString(),
+      // acceptedAt is guaranteed non-null here: the `if (!eulaGate.accepted) return`
+      // guard above ensures we only reach this point when the EULA has been accepted.
+      // eulaGate.accepted === (eulaGate.acceptedAt !== null) — see useEulaGate.ts.
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+      eulaAcceptedAt: eulaGate.acceptedAt!,
     });
 
     setPrUrl(result.prUrl);
@@ -217,6 +238,45 @@ export default function ContributeDealScreen() {
               accessibilityLabel="Restaurant address"
             />
           </View>
+
+          {/* Latitude / Longitude */}
+          <View style={{ flexDirection: "row", gap: space[2], marginBottom: space[4] }}>
+            <View style={{ flex: 1 }}>
+              <FieldLabel label="Latitude" required />
+              <TextInput
+                style={inputStyle}
+                value={restaurantLat}
+                onChangeText={setRestaurantLat}
+                placeholder="e.g. 35.22"
+                placeholderTextColor={colors.fg.inkMuted}
+                keyboardType="decimal-pad"
+                accessibilityLabel="Restaurant latitude"
+              />
+            </View>
+            <View style={{ flex: 1 }}>
+              <FieldLabel label="Longitude" required />
+              <TextInput
+                style={inputStyle}
+                value={restaurantLng}
+                onChangeText={setRestaurantLng}
+                placeholder="e.g. -80.84"
+                placeholderTextColor={colors.fg.inkMuted}
+                keyboardType="numbers-and-punctuation"
+                accessibilityLabel="Restaurant longitude"
+              />
+            </View>
+          </View>
+          {latLngError ? (
+            <Text
+              style={{
+                ...type.bodySm,
+                color: colors.rose,
+                marginBottom: space[3],
+              }}
+            >
+              {latLngError}
+            </Text>
+          ) : null}
 
           {/* Deal description */}
           <View style={{ marginBottom: space[4] }}>
