@@ -33,7 +33,7 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
     versionCode: 1,
     adaptiveIcon: {
       foregroundImage: "./assets/icon-light.png",
-      backgroundColor: "#1F104A",
+      backgroundColor: "#B23A1F",
     },
     edgeToEdgeEnabled: true,
     intentFilters: [
@@ -70,13 +70,14 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
     [
       "expo-splash-screen",
       {
-        backgroundColor: "#E4E4E7",
+        backgroundColor: "#F5EFE6",
         image: "./assets/icon-light.png",
         dark: {
-          backgroundColor: "#18181B",
+          backgroundColor: "#F5EFE6",
           image: "./assets/icon-dark.png",
         },
       },
     ],
+    "@maplibre/maplibre-react-native",
   ],
 });
