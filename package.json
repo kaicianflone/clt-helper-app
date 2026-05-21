@@ -22,7 +22,8 @@
     "typecheck": "turbo run typecheck",
     "ui-add": "turbo run ui-add",
     "android": "expo run:android",
-    "ios": "expo run:ios"
+    "ios": "expo run:ios",
+    "build:data": "tsx scripts/build-data-bundles.ts"
   },
   "devDependencies": {
     "@clt/prettier-config": "workspace:*",
@@ -30,6 +31,7 @@
     "@vitest/coverage-v8": "3.2.4",
     "dotenv-cli": "^10.0.0",
     "prettier": "catalog:",
+    "tsx": "^4.22.3",
     "turbo": "^2.5.8",
     "typescript": "catalog:",
     "vitest": "3.2.4"
