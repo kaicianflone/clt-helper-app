@@ -1,0 +1,43 @@
+name: Release data bundles
+on:
+  push:
+    branches: [main]
+    paths:
+      - "data/**"
+      - "scripts/build-data-bundles.ts"
+      - "packages/data-schema/**"
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with: { version: 9 }
+      - uses: actions/setup-node@v4
+        with: { node-version: 20, cache: pnpm }
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm build:data || echo "build:data not yet defined"
+      - name: Upload bundles to R2
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET }}
+        run: |
+          for cat in greenways deals parking; do
+            if [ -f "dist/data/v1/$cat.json" ]; then
+              npx --yes wrangler r2 object put "$R2_BUCKET/data/v1/$cat.json" --file="dist/data/v1/$cat.json" --content-type=application/json
+            fi
+          done
+          if [ -f dist/data/manifest.json ]; then
+            npx --yes wrangler r2 object put "$R2_BUCKET/data/manifest.json" --file=dist/data/manifest.json --content-type=application/json
+          fi
+      - name: Revalidate Next.js pages
+        env:
+          REVALIDATION_SECRET: ${{ secrets.REVALIDATION_SECRET }}
+        run: |
+          curl -fsS -X POST "https://clt-app.com/api/revalidate" \
+            -H "Authorization: Bearer $REVALIDATION_SECRET" \
+            -H "Content-Type: application/json" \
+            -d '{"paths":["/greenways","/deals","/parking","/map"]}' || echo "Revalidate endpoint not yet deployed"
