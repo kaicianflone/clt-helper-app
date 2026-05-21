@@ -19,6 +19,22 @@ All secrets are stored in GitHub repository secrets (`Settings > Secrets and var
 | `SENTRY_DSN` | Web + mobile (future) | Sentry error reporting DSN | Sentry project > Settings > Client Keys |
 | `EXPO_PUBLIC_API_URL` | Expo app | Public base URL for the tRPC API | Set to production API URL, e.g. `https://clt-app.com/api/trpc` |
 
+## Universal Links / App Association
+
+### Apple App Site Association — TEAMID placeholder
+
+`apps/nextjs/public/.well-known/apple-app-site-association` contains a placeholder `TEAMID` in the `appID` field:
+
+```json
+{ "appID": "TEAMID.com.cltapp.mobile" }
+```
+
+Replace `TEAMID` with your 10-character Apple Developer Team ID (found in the Apple Developer portal under Membership > Team ID) during Plan 4 manual App Store setup. The file is served at `/.well-known/apple-app-site-association` by Vercel with `Content-Type: application/json` (configured in `vercel.json`).
+
+### Android Asset Links — SHA-256 fingerprint placeholder
+
+`apps/nextjs/public/.well-known/assetlinks.json` contains a placeholder `TBD-DURING-PLAY-STORE-UPLOAD` for the `sha256_cert_fingerprints` field. Replace it with the actual SHA-256 fingerprint of your Android signing certificate after the first Play Store upload during Plan 4.
+
 ## Generation Examples
 
 ### REVALIDATION_SECRET
