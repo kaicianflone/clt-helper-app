@@ -3,8 +3,6 @@ import { fetchRequestHandler } from "@trpc/server/adapters/fetch";
 
 import { appRouter, createTRPCContext } from "@acme/api";
 
-import { auth } from "~/auth/server";
-
 const handler = (req: Request) =>
   fetchRequestHandler({
     endpoint: "/api/trpc",
@@ -12,7 +10,6 @@ const handler = (req: Request) =>
     req,
     createContext: () =>
       createTRPCContext({
-        auth: auth,
         headers: req.headers,
       }),
     onError({ error, path }) {

@@ -1,12 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-import { auth } from "~/auth/server";
-
+// Auth removed (repo-as-database design)
 export const Route = createFileRoute("/api/auth/$")({
   server: {
     handlers: {
-      GET: ({ request }) => auth.handler(request),
-      POST: ({ request }) => auth.handler(request),
+      GET: () => new Response("Not found", { status: 404 }),
+      POST: () => new Response("Not found", { status: 404 }),
     },
   },
 });

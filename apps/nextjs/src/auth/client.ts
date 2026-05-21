@@ -1,3 +1,1 @@
-import { createAuthClient } from "better-auth/react";
-
-export const authClient = createAuthClient();
+// Auth removed (repo-as-database design)

@@ -1,4 +1,7 @@
-import { auth } from "~/auth/server";
-
-export const GET = auth.handler;
-export const POST = auth.handler;
+// Auth removed (repo-as-database design)
+export async function GET() {
+  return new Response("Not found", { status: 404 });
+}
+export async function POST() {
+  return new Response("Not found", { status: 404 });
+}
