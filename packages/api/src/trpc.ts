@@ -9,6 +9,8 @@
 import { initTRPC } from "@trpc/server";
 import superjson from "superjson";
 import { z, ZodError } from "zod/v4";
+import type { OctokitLike, OpenPRResult, OpenPROptions } from "./server/github-bot";
+import type { ContentCheckResult } from "./server/content-filter";
 
 /**
  * 1. CONTEXT
@@ -27,6 +29,13 @@ export interface Context {
   headers?: Headers;
   baseUrl?: string;
   fetchImpl?: typeof fetch;
+  // Submit-flow injections (only used by submit router; routes can leave undefined)
+  checkRateLimit?: (deviceId: string) => Promise<{ ok: boolean; remaining: number }>;
+  fetchFileFromRepo?: (path: string) => Promise<Record<string, unknown>>;
+  renderDiff?: (before: Record<string, unknown>, after: Record<string, unknown>) => string;
+  isVerifyOnlyChange?: (before: Record<string, unknown>, after: Record<string, unknown>) => boolean;
+  openCommunityPR?: (opts: OpenPROptions) => Promise<OpenPRResult>;
+  containsObjectionableContent?: (input: { displayName: string; note: string; patch: Record<string, unknown> }) => ContentCheckResult;
 }
 
 export const createTRPCContext = (opts: { headers: Headers }): Context => {
