@@ -23,7 +23,8 @@
     "ui-add": "turbo run ui-add",
     "android": "expo run:android",
     "ios": "expo run:ios",
-    "build:data": "tsx scripts/build-data-bundles.ts"
+    "build:data": "tsx scripts/build-data-bundles.ts",
+    "validate:data": "tsx scripts/validate-data.ts"
   },
   "devDependencies": {
     "@clt/prettier-config": "workspace:*",
