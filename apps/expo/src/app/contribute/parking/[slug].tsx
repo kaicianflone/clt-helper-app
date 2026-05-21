@@ -209,7 +209,10 @@ export default function ContributeParkingScreen() {
       note: note.trim(),
       displayName: displayName.trim(),
       deviceId,
-      eulaAcceptedAt: eulaGate.acceptedAt ?? new Date().toISOString(),
+      // acceptedAt is guaranteed non-null here: the `if (!eulaGate.accepted) return`
+      // guard above ensures we only reach this point when the EULA has been accepted.
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+      eulaAcceptedAt: eulaGate.acceptedAt!,
     });
 
     setPrUrl(result.prUrl);
