@@ -1,6 +1,6 @@
 {
   "cli": {
-    "version": ">= 4.1.2",
+    "version": ">= 13.0.0",
     "appVersionSource": "remote"
   },
   "build": {
@@ -19,15 +19,34 @@
     "preview": {
       "extends": "base",
       "distribution": "internal",
+      "channel": "preview",
       "ios": {
         "simulator": true
+      },
+      "env": {
+        "EXPO_PUBLIC_R2_BASE_URL": "https://cdn.clt-app.com",
+        "EXPO_PUBLIC_SENTRY_DSN": ""
       }
     },
     "production": {
-      "extends": "base"
+      "extends": "base",
+      "channel": "production",
+      "autoIncrement": true,
+      "env": {
+        "EXPO_PUBLIC_R2_BASE_URL": "https://cdn.clt-app.com",
+        "EXPO_PUBLIC_SENTRY_DSN": ""
+      }
     }
   },
   "submit": {
-    "production": {}
+    "production": {
+      "ios": {
+        "ascAppId": "TBD-DURING-FIRST-SUBMIT",
+        "appleTeamId": "TBD-DURING-FIRST-SUBMIT"
+      },
+      "android": {
+        "serviceAccountKeyPath": "./google-service-account.json"
+      }
+    }
   }
 }
