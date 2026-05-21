@@ -23,7 +23,13 @@ import { z, ZodError } from "zod/v4";
  * @see https://trpc.io/docs/server/context
  */
 
-export const createTRPCContext = (opts: { headers: Headers }) => {
+export interface Context {
+  headers?: Headers;
+  baseUrl?: string;
+  fetchImpl?: typeof fetch;
+}
+
+export const createTRPCContext = (opts: { headers: Headers }): Context => {
   return {
     headers: opts.headers,
   };

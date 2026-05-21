@@ -1,7 +1,8 @@
 import { createTRPCRouter } from "./trpc";
+import { greenwayRouter } from "./router/greenway";
 
 export const appRouter = createTRPCRouter({
-  // Routers will be added here as the app grows
+  greenway: greenwayRouter,
 });
 
 // export type definition of API
