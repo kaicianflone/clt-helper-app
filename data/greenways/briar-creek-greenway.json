@@ -1,0 +1,26 @@
+{
+  "slug": "briar-creek-greenway",
+  "name": "Briar Creek Greenway",
+  "description": "A 5-mile greenway corridor in east Charlotte following Briar Creek, connecting residential neighborhoods to parks.",
+  "lengthMiles": 5.0,
+  "surface": "paved",
+  "trailheads": [
+    {
+      "name": "Briar Creek Road Access",
+      "lat": 35.2091,
+      "lng": -80.7929,
+      "parkingNotes": "Street parking available on Briar Creek Road"
+    }
+  ],
+  "geometry": {
+    "type": "LineString",
+    "coordinates": [
+      [-80.7929, 35.2091],
+      [-80.7850, 35.2120],
+      [-80.7780, 35.2150]
+    ]
+  },
+  "pointsOfInterest": [],
+  "photos": [],
+  "lastVerified": "2026-05-21"
+}

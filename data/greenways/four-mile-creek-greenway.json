@@ -1,0 +1,26 @@
+{
+  "slug": "four-mile-creek-greenway",
+  "name": "Four Mile Creek Greenway",
+  "description": "A 9-mile greenway in southeast Charlotte connecting Rea Road area to Piper Glen, featuring wooded sections along Four Mile Creek.",
+  "lengthMiles": 9.0,
+  "surface": "paved",
+  "trailheads": [
+    {
+      "name": "Rea Road Trailhead",
+      "lat": 35.0937,
+      "lng": -80.8072,
+      "parkingNotes": "Parking at Rea Road Athletic Complex"
+    }
+  ],
+  "geometry": {
+    "type": "LineString",
+    "coordinates": [
+      [-80.8072, 35.0937],
+      [-80.8050, 35.1000],
+      [-80.8030, 35.1060]
+    ]
+  },
+  "pointsOfInterest": [],
+  "photos": [],
+  "lastVerified": "2026-05-21"
+}

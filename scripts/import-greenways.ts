@@ -74,29 +74,49 @@ out geom;
 `.trim();
 
 const fetchOverpassGreenways = async (): Promise<OsmFeature[]> => {
-  const url = "https://overpass-api.de/api/interpreter";
-  const res = await fetch(url, {
-    method: "POST",
-    headers: { "Content-Type": "text/plain" },
-    body: OVERPASS_QUERY,
-  });
-  if (!res.ok) throw new Error(`Overpass: ${res.status}`);
-  const data = await res.json() as {
-    elements: Array<{ type: "way" | "relation"; id: number; tags?: Record<string,string>; geometry?: Array<{lat:number;lon:number}> }>;
-  };
-  return data.elements
-    .filter((e) => e.geometry && e.geometry.length >= 2 && e.tags?.name)
-    .map((e) => ({
-      type: "Feature" as const,
-      properties: {
-        "@id": `${e.type}/${e.id}`,
-        ...(e.tags ?? {}),
-      },
-      geometry: {
-        type: "LineString" as const,
-        coordinates: e.geometry!.map((p) => [p.lon, p.lat] as [number, number]),
-      },
-    }));
+  // Try multiple endpoints in case one is rate-limited or down
+  const endpoints = [
+    "https://overpass.kumi.systems/api/interpreter",
+    "https://overpass-api.de/api/interpreter",
+    "https://overpass.openstreetmap.ru/api/interpreter",
+  ];
+  let lastError: Error | null = null;
+  for (const url of endpoints) {
+    try {
+      console.log(`Trying Overpass endpoint: ${url}`);
+      const body = new URLSearchParams({ data: OVERPASS_QUERY });
+      const res = await fetch(url, {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: body.toString(),
+      });
+      if (!res.ok) {
+        lastError = new Error(`Overpass: ${res.status} from ${url}`);
+        console.warn(lastError.message);
+        continue;
+      }
+      const data = await res.json() as {
+        elements: Array<{ type: "way" | "relation"; id: number; tags?: Record<string,string>; geometry?: Array<{lat:number;lon:number}> }>;
+      };
+      return data.elements
+        .filter((e) => e.geometry && e.geometry.length >= 2 && e.tags?.name)
+        .map((e) => ({
+          type: "Feature" as const,
+          properties: {
+            "@id": `${e.type}/${e.id}`,
+            ...(e.tags ?? {}),
+          },
+          geometry: {
+            type: "LineString" as const,
+            coordinates: e.geometry!.map((p) => [p.lon, p.lat] as [number, number]),
+          },
+        }));
+    } catch (e) {
+      lastError = e instanceof Error ? e : new Error(String(e));
+      console.warn(`Endpoint ${url} failed: ${lastError.message}`);
+    }
+  }
+  throw lastError ?? new Error("All Overpass endpoints failed");
 };
 
 const run = async () => {

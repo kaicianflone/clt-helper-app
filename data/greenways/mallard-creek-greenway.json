@@ -1,0 +1,26 @@
+{
+  "slug": "mallard-creek-greenway",
+  "name": "Mallard Creek Greenway",
+  "description": "A 6.5-mile paved greenway in north Charlotte connecting Mallard Creek Community Park to Stony Creek Greenway.",
+  "lengthMiles": 6.5,
+  "surface": "paved",
+  "trailheads": [
+    {
+      "name": "Mallard Creek Community Park Trailhead",
+      "lat": 35.3491,
+      "lng": -80.7609,
+      "parkingNotes": "Free parking in Mallard Creek Community Park"
+    }
+  ],
+  "geometry": {
+    "type": "LineString",
+    "coordinates": [
+      [-80.7609, 35.3491],
+      [-80.7580, 35.3420],
+      [-80.7550, 35.3360]
+    ]
+  },
+  "pointsOfInterest": [],
+  "photos": [],
+  "lastVerified": "2026-05-21"
+}

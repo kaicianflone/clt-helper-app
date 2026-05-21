@@ -1,0 +1,26 @@
+{
+  "slug": "little-sugar-creek-greenway",
+  "name": "Little Sugar Creek Greenway",
+  "description": "An 11-mile multi-use trail along Little Sugar Creek connecting Midtown Park to McMullen Creek Greenway, passing through Freedom Park and multiple neighborhoods.",
+  "lengthMiles": 11.2,
+  "surface": "paved",
+  "trailheads": [
+    {
+      "name": "Midtown Park Trailhead",
+      "lat": 35.2271,
+      "lng": -80.8431,
+      "parkingNotes": "Free parking in Midtown Park lot off Kenilworth Ave"
+    }
+  ],
+  "geometry": {
+    "type": "LineString",
+    "coordinates": [
+      [-80.8431, 35.2271],
+      [-80.8415, 35.2201],
+      [-80.8400, 35.2101]
+    ]
+  },
+  "pointsOfInterest": [],
+  "photos": [],
+  "lastVerified": "2026-05-21"
+}

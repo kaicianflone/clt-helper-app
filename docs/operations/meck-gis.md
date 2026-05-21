@@ -23,7 +23,25 @@ URLs attempted:
 3. `https://opendata.arcgis.com/api/v3/datasets/CharlotteNC::greenway-trails/downloads/data?format=geojson&spatialRefId=4326` — HTTP 403
 4. `https://services.arcgis.com/62OhDRV1EbgAtFhX/arcgis/rest/services/Greenway_Trails/FeatureServer/0/query?where=1%3D1&outFields=*&f=geojson` — HTTP 400
 
-**Fallback:** Source URL needs manual verification. The domain `opendata.charlottenc.gov` may be temporarily down or the dataset path has changed. Falling back to OSM data for greenways if Meck GIS remains unavailable.
+**Fallback:** Source URL needs manual verification. The domain `opendata.charlottenc.gov` may be temporarily down or the dataset path has changed. Pivoted to OSM Overpass as greenway data source.
+
+## OSM Overpass Status (A3, 2026-05-21)
+
+OSM Overpass was attempted as the fallback source. All three mirrors failed from the build environment:
+
+| Endpoint | Status |
+|---|---|
+| `https://overpass.kumi.systems/api/interpreter` | 429 Too Many Requests |
+| `https://overpass-api.de/api/interpreter` | 406 Not Acceptable |
+| `https://overpass.openstreetmap.ru/api/interpreter` | Connection timeout |
+
+**Current state:** `data/greenways/` contains a manual seed of 5 known Charlotte greenways (approximate geometry). Re-seed when Overpass is accessible:
+
+```bash
+pnpm import-greenways
+```
+
+The importer (`scripts/import-greenways.ts`) queries Overpass for `highway=cycleway`, `highway=footway + bicycle=designated`, `route=hiking`, and `route=bicycle` ways/relations within Charlotte bbox (35.05,-81.05,35.45,-80.55).
 
 **Action required:** Before running `scripts/import-greenways.ts`, manually confirm the working URL at https://opendata.charlottenc.gov/ by searching "Greenway Trails" and update this document with the confirmed URL, property field names, geometry types, and feature count.
 

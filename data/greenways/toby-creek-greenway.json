@@ -1,0 +1,26 @@
+{
+  "slug": "toby-creek-greenway",
+  "name": "Toby Creek Greenway",
+  "description": "A 4-mile greenway in northeast Charlotte near UNC Charlotte, connecting Toby Creek Regional Park to campus and surrounding neighborhoods.",
+  "lengthMiles": 4.0,
+  "surface": "paved",
+  "trailheads": [
+    {
+      "name": "Toby Creek Regional Park Trailhead",
+      "lat": 35.3097,
+      "lng": -80.7371,
+      "parkingNotes": "Free parking at Toby Creek Regional Park"
+    }
+  ],
+  "geometry": {
+    "type": "LineString",
+    "coordinates": [
+      [-80.7371, 35.3097],
+      [-80.7360, 35.3040],
+      [-80.7350, 35.2980]
+    ]
+  },
+  "pointsOfInterest": [],
+  "photos": [],
+  "lastVerified": "2026-05-21"
+}
