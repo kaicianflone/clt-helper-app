@@ -62,6 +62,63 @@ export const transformOsmWay = (
   };
 };
 
+/**
+ * Detects whether a GeoJSON feature is from a Mecklenburg GIS (ArcGIS) export.
+ * Meck GIS exports use uppercase field names like TRAIL_NAME and OBJECTID.
+ */
+export const isMeckFeature = (feature: OsmFeature): boolean => {
+  const keys = Object.keys(feature.properties);
+  return (
+    keys.includes("TRAIL_NAME") ||
+    keys.includes("OBJECTID") ||
+    keys.includes("LENGTH_MI") ||
+    keys.includes("SURFACE")
+  );
+};
+
+/**
+ * Transforms a Mecklenburg GIS (ArcGIS export) feature into a Greenway.
+ * Field names are based on typical Mecklenburg GIS exports; falls back to OSM
+ * names when the expected Meck fields are absent.
+ */
+export const transformMeckFeature = (
+  feature: OsmFeature,
+  lastVerified: string,
+): Greenway => {
+  const props = feature.properties;
+  // Try Meck field names first, then OSM fallbacks
+  const name = String(
+    props["TRAIL_NAME"] ?? props["name"] ?? props["ref"] ?? "Unnamed Trail",
+  );
+  const firstPoint = firstCoord(feature.geometry);
+  const [lng, lat] = firstPoint;
+
+  // Length: prefer explicit field; derive from geometry if absent
+  let lengthMiles: number;
+  const rawLength = props["LENGTH_MI"];
+  if (rawLength !== undefined && !isNaN(Number(rawLength))) {
+    lengthMiles = Math.round(Number(rawLength) * 10) / 10;
+  } else {
+    lengthMiles = computeLengthMiles(feature.geometry);
+  }
+
+  // Surface: prefer Meck field
+  const surface = normalizeSurface(props["SURFACE"] ?? props["surface"] ?? "mixed");
+
+  return {
+    slug: slugify(name),
+    name,
+    description: "",
+    lengthMiles,
+    surface,
+    trailheads: [{ name: `${name} (start)`, lat, lng }],
+    geometry: feature.geometry,
+    pointsOfInterest: [],
+    photos: [],
+    lastVerified,
+  };
+};
+
 const OVERPASS_QUERY = `
 [out:json][timeout:60];
 (
@@ -140,10 +197,17 @@ const run = async () => {
     console.log(`Fetched ${features.length} features from OSM Overpass`);
   }
 
+  // Choose the transformer based on the source format
+  const useMeck = features.length > 0 && isMeckFeature(features[0]!);
+  const transform = useMeck ? transformMeckFeature : transformOsmWay;
+  if (useMeck) {
+    console.log("Detected Mecklenburg GIS format — using Meck field transformer");
+  }
+
   // Deduplicate by slug
   const bySlug = new Map<string, Greenway>();
   for (const feature of features) {
-    const greenway = transformOsmWay(feature, today);
+    const greenway = transform(feature, today);
     // Validate before writing
     try {
       GreenwaySchema.parse(greenway);

@@ -18,7 +18,8 @@ interface OctokitLike {
         owner: string;
         repo: string;
         path: string;
-      }) => Promise<{ data: { content: string; encoding: string } }>;
+        ref?: string;
+      }) => Promise<{ data: { sha: string; content?: string; encoding?: string } }>;
     };
   };
 }
@@ -105,6 +106,10 @@ export function buildSubmitContext(): SubmitContextExtensions {
           repo: env.GH_REPO_NAME ?? "",
           path: filePath,
         });
+        if (!data.content || !data.encoding) {
+          // Submodules or symlinks may not include content; treat as absent
+          return {};
+        }
         const decoded = Buffer.from(
           data.content,
           data.encoding as BufferEncoding,

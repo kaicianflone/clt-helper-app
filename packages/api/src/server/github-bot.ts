@@ -10,7 +10,7 @@ export interface OctokitLike {
       createRef: (args: { owner: string; repo: string; ref: string; sha: string }) => Promise<unknown>;
     };
     repos: {
-      getContent: (args: { owner: string; repo: string; path: string; ref?: string }) => Promise<{ data: { sha: string } }>;
+      getContent: (args: { owner: string; repo: string; path: string; ref?: string }) => Promise<{ data: { sha: string; content?: string; encoding?: string } }>;
       createOrUpdateFileContents: (args: { owner: string; repo: string; path: string; message: string; content: string; branch: string; sha?: string }) => Promise<unknown>;
     };
     pulls: {
