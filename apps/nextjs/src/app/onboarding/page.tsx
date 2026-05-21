@@ -51,8 +51,9 @@ export default function OnboardingPage() {
     }
   }, [router]);
 
-  // step is always in-bounds via the clamp in next()
-  const current = STEPS[step] ?? STEPS[0];
+  // step is always in-bounds via the clamp in next(); assert non-null for noUncheckedIndexedAccess
+  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+  const current = STEPS[step] ?? STEPS[0]!;
   const isLast = step === STEPS.length - 1;
 
   return (
