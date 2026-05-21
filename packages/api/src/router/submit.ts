@@ -12,7 +12,8 @@ const ContributeInput = z.object({
   note: z.string().max(500).default(""),
   displayName: z.string().min(1).max(80),
   deviceId: z.string().min(1).max(128),
-  eulaAcceptedAt: z.string().min(1),
+  eulaAcceptedAt: z.string().datetime(),
+  intent: z.enum(["create", "edit"]).default("edit"),
 });
 
 const getCtx = (ctx: Context) => ctx;
@@ -51,6 +52,20 @@ export const submitRouter = createTRPCRouter({
     const current = await c.fetchFileFromRepo(filePath);
     const exists = Object.keys(current).length > 0;
 
+    // Slug collision / not-found protection
+    if (input.intent === "create" && exists) {
+      throw new TRPCError({
+        code: "CONFLICT",
+        message: `A ${input.kind} with slug "${patch.slug}" already exists. Use intent "edit" to update it.`,
+      });
+    }
+    if (input.intent === "edit" && !exists) {
+      throw new TRPCError({
+        code: "NOT_FOUND",
+        message: `No ${input.kind} with slug "${patch.slug}" was found. Use intent "create" to add it.`,
+      });
+    }
+
     // Merge + validate full shape
     const merged = { ...current, ...patch };
     const validated = entity.schema.parse(merged) as Record<string, unknown>;
@@ -86,9 +101,17 @@ export const submitRouter = createTRPCRouter({
     if (!c.openCommunityPR) {
       throw new TRPCError({ code: "INTERNAL_SERVER_ERROR", message: "PR service not configured." });
     }
+    const ghOwner = process.env.GH_REPO_OWNER;
+    const ghRepo = process.env.GH_REPO_NAME;
+    if (!ghOwner || !ghRepo) {
+      throw new TRPCError({
+        code: "INTERNAL_SERVER_ERROR",
+        message: "Server misconfigured (missing GitHub repo coordinates)",
+      });
+    }
     return c.openCommunityPR({
-      owner: process.env.GH_REPO_OWNER ?? "your-github-username",
-      repo: process.env.GH_REPO_NAME ?? "clt-app",
+      owner: ghOwner,
+      repo: ghRepo,
       branchPrefix: entity.branchPrefix(patch.slug),
       filePath,
       newContents: JSON.stringify(validated, null, 2) + "\n",
