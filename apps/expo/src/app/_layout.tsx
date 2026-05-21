@@ -1,5 +1,12 @@
 import { useColorScheme } from "react-native";
-import { Stack } from "expo-router";
+import { Antonio_700Bold } from "@expo-google-fonts/antonio";
+import {
+  Inter_400Regular,
+  Inter_500Medium,
+  Inter_600SemiBold,
+} from "@expo-google-fonts/inter";
+import { useFonts } from "expo-font";
+import { Slot } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import { QueryClientProvider } from "@tanstack/react-query";
 
@@ -11,23 +18,19 @@ import "../styles.css";
 // It wraps your pages with the providers they need
 export default function RootLayout() {
   const colorScheme = useColorScheme();
+  const [fontsLoaded] = useFonts({
+    Antonio_700Bold,
+    Inter_400Regular,
+    Inter_500Medium,
+    Inter_600SemiBold,
+  });
+
+  if (!fontsLoaded) return null;
+
   return (
     <QueryClientProvider client={queryClient}>
-      {/*
-          The Stack component displays the current page.
-          It also allows you to configure your screens 
-        */}
-      <Stack
-        screenOptions={{
-          headerStyle: {
-            backgroundColor: "#c03484",
-          },
-          contentStyle: {
-            backgroundColor: colorScheme == "dark" ? "#09090B" : "#FFFFFF",
-          },
-        }}
-      />
-      <StatusBar />
+      <Slot />
+      <StatusBar style={colorScheme === "dark" ? "light" : "dark"} />
     </QueryClientProvider>
   );
 }
