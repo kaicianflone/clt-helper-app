@@ -4,27 +4,68 @@ import { fetchRequestHandler } from "@trpc/server/adapters/fetch";
 import { appRouter, createTRPCContext } from "@clt/api";
 
 import { buildSubmitContext } from "~/server/context";
+import { env } from "~/env";
 
 /**
- * Configure basic CORS headers
- * You should extend this to match your needs
+ * CORS origin allowlist.
+ *
+ * - Always includes the production web origins.
+ * - Picks up additional origins (comma-separated) from CORS_ALLOWED_ORIGINS at
+ *   runtime, enabling local-dev overrides without code changes.
+ * - Expo native clients do NOT go through the browser security model, so they
+ *   don't need CORS; only browser callers require it.
  */
-const setCorsHeaders = (res: Response) => {
-  res.headers.set("Access-Control-Allow-Origin", "*");
-  res.headers.set("Access-Control-Request-Method", "*");
-  res.headers.set("Access-Control-Allow-Methods", "OPTIONS, GET, POST");
-  res.headers.set("Access-Control-Allow-Headers", "*");
+const PRODUCTION_ORIGINS = new Set([
+  "https://clt-app.com",
+  "https://www.clt-app.com",
+]);
+
+const getAllowedOrigins = (): Set<string> => {
+  const extra = env.CORS_ALLOWED_ORIGINS;
+  if (!extra) return PRODUCTION_ORIGINS;
+  const extras = extra
+    .split(",")
+    .map((o) => o.trim())
+    .filter(Boolean);
+  return new Set([...PRODUCTION_ORIGINS, ...extras]);
 };
 
-export const OPTIONS = () => {
+/**
+ * Returns the value for Access-Control-Allow-Origin if the request origin is
+ * in the allowlist, otherwise returns null (which causes the header to be
+ * omitted, blocking the cross-origin request).
+ */
+const getAllowedOrigin = (req: NextRequest): string | null => {
+  const origin = req.headers.get("origin");
+  if (!origin) return null;
+  const allowed = getAllowedOrigins();
+  return allowed.has(origin) ? origin : null;
+};
+
+const setCorsHeaders = (res: Response, allowedOrigin: string | null) => {
+  if (allowedOrigin) {
+    res.headers.set("Access-Control-Allow-Origin", allowedOrigin);
+    res.headers.set("Vary", "Origin");
+  }
+  res.headers.set("Access-Control-Allow-Methods", "OPTIONS, GET, POST");
+  res.headers.set(
+    "Access-Control-Allow-Headers",
+    "Content-Type, x-trpc-source",
+  );
+};
+
+export const OPTIONS = (req: NextRequest) => {
+  const allowedOrigin = getAllowedOrigin(req);
   const response = new Response(null, {
     status: 204,
   });
-  setCorsHeaders(response);
+  setCorsHeaders(response, allowedOrigin);
   return response;
 };
 
 const handler = async (req: NextRequest) => {
+  const allowedOrigin = getAllowedOrigin(req);
+
   const response = await fetchRequestHandler({
     endpoint: "/api/trpc",
     router: appRouter,
@@ -38,7 +79,7 @@ const handler = async (req: NextRequest) => {
     },
   });
 
-  setCorsHeaders(response);
+  setCorsHeaders(response, allowedOrigin);
   return response;
 };
 

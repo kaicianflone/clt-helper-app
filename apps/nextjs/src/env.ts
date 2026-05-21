@@ -21,6 +21,7 @@ export const env = createEnv({
     GH_APP_ID: z.string().optional(),
     GH_APP_INSTALLATION_ID: z.string().optional(),
     GH_APP_PRIVATE_KEY: z.string().optional(),
+    CORS_ALLOWED_ORIGINS: z.string().optional(),
   },
 
   /**
