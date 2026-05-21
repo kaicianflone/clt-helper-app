@@ -13,7 +13,15 @@ export const env = createEnv({
    * Specify your server-side environment variables schema here.
    * This way you can ensure the app isn't built with invalid env vars.
    */
-  server: {},
+  server: {
+    REVALIDATION_SECRET: z.string().optional(),
+    R2_PUBLIC_BASE_URL: z.string().url().optional(),
+    GH_REPO_OWNER: z.string().optional(),
+    GH_REPO_NAME: z.string().optional(),
+    GH_APP_ID: z.string().optional(),
+    GH_APP_INSTALLATION_ID: z.string().optional(),
+    GH_APP_PRIVATE_KEY: z.string().optional(),
+  },
 
   /**
    * Specify your client-side environment variables schema here.

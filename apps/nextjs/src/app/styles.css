@@ -27,3 +27,29 @@
     letter-spacing: var(--tracking-normal);
   }
 }
+
+/* Queen City token utilities — map CSS vars to Tailwind arbitrary value shortcuts */
+@theme inline {
+  /* CLT color tokens */
+  --color-cream: var(--bg-cream);
+  --color-cream-soft: var(--bg-cream-soft);
+  --color-cream-deep: var(--bg-cream-deep);
+  --color-ink: var(--fg-ink);
+  --color-ink-soft: var(--fg-ink-soft);
+  --color-ink-muted: var(--fg-ink-muted);
+  --color-brick: var(--brick);
+  --color-brick-deep: var(--brick-deep);
+  --color-brick-soft: var(--brick-soft);
+  --color-gold: var(--gold);
+  --color-gold-soft: var(--gold-soft);
+  --color-green-ok: var(--green-ok);
+  --color-amber-warn: var(--amber-warn);
+  --color-rose-stale: var(--rose-stale);
+  --color-border-soft: var(--border-soft);
+  --color-border-strong: var(--border-strong);
+
+  /* CLT font tokens */
+  --font-display: var(--font-antonio), "Bebas Neue", sans-serif;
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}

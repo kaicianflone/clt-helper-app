@@ -61,7 +61,10 @@
     "GH_APP_INSTALLATION_ID",
     "GH_APP_PRIVATE_KEY",
     "GH_REPO_OWNER",
-    "GH_REPO_NAME"
+    "GH_REPO_NAME",
+    "REVALIDATION_SECRET",
+    "UPSTASH_REDIS_REST_URL",
+    "UPSTASH_REDIS_REST_TOKEN"
   ],
   "globalPassThroughEnv": [
     "NODE_ENV",
