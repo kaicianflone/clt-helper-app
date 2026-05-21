@@ -15,7 +15,6 @@
   "dependencies": {
     "@clt/api": "workspace:*",
     "@clt/ui": "workspace:*",
-    "@clt/validators": "workspace:*",
     "@t3-oss/env-nextjs": "^0.13.8",
     "@tanstack/react-form": "catalog:",
     "@tanstack/react-query": "catalog:",
