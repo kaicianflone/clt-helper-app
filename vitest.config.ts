@@ -9,7 +9,7 @@ export default defineConfig({
   test: {
     globals: true,
     environment: "node",
-    include: ["packages/**/*.test.ts", "apps/nextjs/**/*.test.ts", "scripts/**/*.test.ts"],
+    include: ["packages/**/*.test.ts", "apps/nextjs/**/*.test.ts", "scripts/**/*.test.ts", "apps/expo/**/*.test.ts"],
     coverage: { reporter: ["text", "html"] },
   },
 });
