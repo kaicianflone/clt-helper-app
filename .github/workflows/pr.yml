@@ -17,7 +17,7 @@ jobs:
           node-version: 20
           cache: pnpm
       - run: pnpm install --frozen-lockfile
-      - run: pnpm validate:data || echo "validate:data not yet defined"
+      - run: pnpm validate:data
       - run: pnpm typecheck
       - run: pnpm lint
       - run: pnpm test
