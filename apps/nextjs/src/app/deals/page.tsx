@@ -1,6 +1,7 @@
 import { createServerCaller } from "~/trpc/server";
-import type { Day } from "~/components/day-tabs";
-import { DayTabs, DAYS, dayFromDate } from "~/components/day-tabs";
+import type { Day } from "~/components/days";
+import { DAYS, dayFromDate } from "~/components/days";
+import { DayTabs } from "~/components/day-tabs";
 import { LastVerifiedBadge } from "~/components/LastVerifiedBadge";
 import { EmptyState } from "~/components/EmptyState";
 

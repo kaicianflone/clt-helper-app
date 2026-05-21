@@ -1,8 +1,10 @@
 "use client";
 import Link from "next/link";
+import { DAYS } from "./days";
+import type { Day } from "./days";
 
-export const DAYS = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"] as const;
-export type Day = (typeof DAYS)[number];
+export { DAYS, dayFromDate, type Day } from "./days";
+
 const LABEL: Record<Day, string> = {
   mon: "Mon",
   tue: "Tue",
@@ -34,8 +36,3 @@ export function DayTabs({ active }: { active: Day }) {
   );
 }
 
-export const dayFromDate = (): Day => {
-  const idx = (new Date().getDay() + 6) % 7;
-  // DAYS has exactly 7 elements; idx is always 0-6
-  return DAYS[idx] ?? "mon";
-};
