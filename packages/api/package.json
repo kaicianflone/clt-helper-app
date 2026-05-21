@@ -21,6 +21,8 @@
   "dependencies": {
     "@clt/data-schema": "workspace:*",
     "@trpc/server": "catalog:",
+    "@upstash/ratelimit": "2.0.8",
+    "@upstash/redis": "1.38.0",
     "superjson": "2.2.3",
     "zod": "catalog:"
   },
