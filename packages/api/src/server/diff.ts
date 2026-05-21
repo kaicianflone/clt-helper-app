@@ -4,8 +4,11 @@ const isPrimitive = (v: unknown): v is string | number | boolean | null =>
 const isObjectArray = (v: unknown): v is Record<string, unknown>[] =>
   Array.isArray(v) && v.length > 0 && typeof v[0] === "object" && v[0] !== null && !Array.isArray(v[0]);
 
-const keyOf = (o: Record<string, unknown>): string =>
-  String(o["slug"] ?? o["name"] ?? o["url"] ?? JSON.stringify(o).slice(0, 40));
+const keyOf = (o: Record<string, unknown>): string => {
+  const key = o.slug ?? o.name ?? o.url;
+  if (typeof key === "string" || typeof key === "number") return String(key);
+  return JSON.stringify(o).slice(0, 40);
+};
 
 export const renderDiff = (
   before: Record<string, unknown>,
@@ -53,7 +56,7 @@ export const renderDiff = (
 };
 
 export const escapeMd = (s: string): string =>
-  s ? s.replace(/[\\`*_{}\[\]<>()#+\-.!|]/g, "\\$&") : "";
+  s ? s.replace(/[\\`*_{}[\]<>()#+\-.!|]/g, "\\$&") : "";
 
 export const isVerifyOnlyChange = (
   before: Record<string, unknown>,
@@ -64,5 +67,5 @@ export const isVerifyOnlyChange = (
     if (k === "lastVerified") continue;
     if (JSON.stringify(before[k]) !== JSON.stringify(after[k])) return false;
   }
-  return before["lastVerified"] !== after["lastVerified"];
+  return before.lastVerified !== after.lastVerified;
 };

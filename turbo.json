@@ -56,7 +56,12 @@
     "AUTH_REDIRECT_PROXY_URL",
     "AUTH_SECRET",
     "PORT",
-    "R2_PUBLIC_BASE_URL"
+    "R2_PUBLIC_BASE_URL",
+    "GH_APP_ID",
+    "GH_APP_INSTALLATION_ID",
+    "GH_APP_PRIVATE_KEY",
+    "GH_REPO_OWNER",
+    "GH_REPO_NAME"
   ],
   "globalPassThroughEnv": [
     "NODE_ENV",

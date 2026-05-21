@@ -1,7 +1,9 @@
 import { z } from "zod";
 import { TRPCError } from "@trpc/server";
 import { publicProcedure, createTRPCRouter } from "../trpc";
-import { ENTITY_REGISTRY, type EntityKind } from "@clt/data-schema";
+import type { Context } from "../trpc";
+import { ENTITY_REGISTRY } from "@clt/data-schema";
+import type { EntityKind } from "@clt/data-schema";
 import { containsObjectionableContent as defaultContentFilter } from "../server/content-filter";
 
 const ContributeInput = z.object({
@@ -13,12 +15,17 @@ const ContributeInput = z.object({
   eulaAcceptedAt: z.string().min(1),
 });
 
+const getCtx = (ctx: Context) => ctx;
+
 export const submitRouter = createTRPCRouter({
   contribute: publicProcedure.input(ContributeInput).mutation(async ({ ctx, input }) => {
-    const c = ctx as any;
+    const c = getCtx(ctx);
     const entity = ENTITY_REGISTRY[input.kind as EntityKind];
 
     // Rate limit
+    if (!c.checkRateLimit) {
+      throw new TRPCError({ code: "INTERNAL_SERVER_ERROR", message: "Rate limit service not configured." });
+    }
     const limited = await c.checkRateLimit(input.deviceId);
     if (!limited.ok) {
       throw new TRPCError({ code: "TOO_MANY_REQUESTS", message: "Rate limit reached: too many submissions. Try again tomorrow." });
@@ -30,7 +37,7 @@ export const submitRouter = createTRPCRouter({
       displayName: input.displayName, note: input.note, patch: input.patch,
     });
     if (flag.violation) {
-      throw new TRPCError({ code: "BAD_REQUEST", message: `Submission contains disallowed content: ${flag.reason}` });
+      throw new TRPCError({ code: "BAD_REQUEST", message: `Submission contains disallowed content: ${flag.reason ?? "policy violation"}` });
     }
 
     // Patch validation
@@ -38,27 +45,27 @@ export const submitRouter = createTRPCRouter({
     const filePath = entity.dataPath(patch.slug);
 
     // Read canonical from repo
-    const current = await c.fetchFileFromRepo(filePath) ?? {};
-    const exists = current && Object.keys(current).length > 0;
+    if (!c.fetchFileFromRepo) {
+      throw new TRPCError({ code: "INTERNAL_SERVER_ERROR", message: "Repo fetch service not configured." });
+    }
+    const current = await c.fetchFileFromRepo(filePath);
+    const exists = Object.keys(current).length > 0;
 
     // Merge + validate full shape
     const merged = { ...current, ...patch };
-    const validated = entity.schema.parse(merged);
+    const validated = entity.schema.parse(merged) as Record<string, unknown>;
 
     // Verify-only detection
-    const verifyOnly = exists && c.isVerifyOnlyChange?.(
-      current,
-      validated as unknown as Record<string, unknown>,
-    );
+    const verifyOnly = exists && (c.isVerifyOnlyChange?.(current, validated) === true);
 
     // Human-readable diff for PR body
-    const diff = c.renderDiff(
-      current as Record<string, unknown>,
-      validated as unknown as Record<string, unknown>,
-    );
+    if (!c.renderDiff) {
+      throw new TRPCError({ code: "INTERNAL_SERVER_ERROR", message: "Diff service not configured." });
+    }
+    const diff = c.renderDiff(current, validated);
 
-    const safeName = String(input.displayName).replace(/[\\`*_{}\[\]<>()#+\-.!|]/g, "\\$&");
-    const safeNote = String(input.note).replace(/[\\`*_{}\[\]<>()#+\-.!|]/g, "\\$&");
+    const safeName = input.displayName.replace(/[\\`*_{}[\]<>()#+\-.!|]/g, "\\$&");
+    const safeNote = input.note.replace(/[\\`*_{}[\]<>()#+\-.!|]/g, "\\$&");
 
     const body = [
       "## Community submission",
@@ -76,12 +83,17 @@ export const submitRouter = createTRPCRouter({
         : "_Maintainer: verify changes against on-the-ground knowledge before merging._",
     ].filter(Boolean).join("\n");
 
+    if (!c.openCommunityPR) {
+      throw new TRPCError({ code: "INTERNAL_SERVER_ERROR", message: "PR service not configured." });
+    }
     return c.openCommunityPR({
       owner: process.env.GH_REPO_OWNER ?? "your-github-username",
       repo: process.env.GH_REPO_NAME ?? "clt-app",
       branchPrefix: entity.branchPrefix(patch.slug),
       filePath,
       newContents: JSON.stringify(validated, null, 2) + "\n",
+      // The validated object conforms to the entity schema; cast needed due to union narrowing
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-argument, @typescript-eslint/no-explicit-any
       prTitle: `[community] Update ${entity.displayLabel(validated as any)}`,
       prBody: body,
       autoMerge: verifyOnly,

@@ -9,7 +9,7 @@
 import { initTRPC } from "@trpc/server";
 import superjson from "superjson";
 import { z, ZodError } from "zod/v4";
-import type { OctokitLike, OpenPRResult, OpenPROptions } from "./server/github-bot";
+import type { OpenPRResult, OpenPROptions } from "./server/github-bot";
 import type { ContentCheckResult } from "./server/content-filter";
 
 /**
@@ -69,8 +69,9 @@ const t = initTRPC.context<typeof createTRPCContext>().create({
       };
     }
     // Octokit-shaped errors (have numeric .status)
-    if (cause && typeof (cause as { status?: unknown }).status === "number") {
-      const status = (cause as { status: number }).status;
+    const causeUnknown = cause as unknown;
+    if (causeUnknown && typeof (causeUnknown as { status?: unknown }).status === "number") {
+      const status = (causeUnknown as { status: number }).status;
       if (status === 403) {
         return { ...shape, message: "Submissions are temporarily unavailable. Try again in an hour.", data: { ...shape.data, zodError: null } };
       }

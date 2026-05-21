@@ -1,4 +1,5 @@
 import { describe, expect, it, vi } from "vitest";
+import type { Context } from "../trpc";
 import { appRouter } from "../root";
 
 const validGreenway = {
@@ -12,9 +13,9 @@ const validGreenway = {
   pointsOfInterest: [],
   photos: [],
   lastVerified: "2026-01-01",
-};
+} as const;
 
-const buildCtx = (overrides: Partial<any> = {}) => ({
+const buildCtx = (overrides: Partial<Context> = {}): Context => ({
   baseUrl: "https://cdn.example.com",
   checkRateLimit: vi.fn().mockResolvedValue({ ok: true, remaining: 2 }),
   fetchFileFromRepo: vi.fn().mockResolvedValue(validGreenway),
@@ -29,7 +30,7 @@ const buildCtx = (overrides: Partial<any> = {}) => ({
 describe("submit.contribute", () => {
   it("opens a PR for a valid greenway patch", async () => {
     const ctx = buildCtx();
-    const caller = appRouter.createCaller(ctx as any);
+    const caller = appRouter.createCaller(ctx);
     const result = await caller.submit.contribute({
       kind: "greenway",
       patch: { slug: "test-trail", name: "Renamed Trail" },
@@ -44,7 +45,7 @@ describe("submit.contribute", () => {
 
   it("rejects when rate limit exceeded", async () => {
     const ctx = buildCtx({ checkRateLimit: vi.fn().mockResolvedValue({ ok: false, remaining: 0 }) });
-    const caller = appRouter.createCaller(ctx as any);
+    const caller = appRouter.createCaller(ctx);
     await expect(caller.submit.contribute({
       kind: "greenway",
       patch: { slug: "test-trail", name: "X" },
@@ -56,7 +57,7 @@ describe("submit.contribute", () => {
 
   it("rejects when content is objectionable", async () => {
     const ctx = buildCtx();
-    const caller = appRouter.createCaller(ctx as any);
+    const caller = appRouter.createCaller(ctx);
     await expect(caller.submit.contribute({
       kind: "greenway",
       patch: { slug: "test-trail", name: "X" },
@@ -69,7 +70,7 @@ describe("submit.contribute", () => {
 
   it("passes autoMerge=true when isVerifyOnlyChange returns true", async () => {
     const ctx = buildCtx({ isVerifyOnlyChange: vi.fn().mockReturnValue(true) });
-    const caller = appRouter.createCaller(ctx as any);
+    const caller = appRouter.createCaller(ctx);
     await caller.submit.contribute({
       kind: "greenway",
       patch: { slug: "test-trail", lastVerified: "2026-05-20" },
@@ -84,12 +85,13 @@ describe("submit.contribute", () => {
 
   it("rejects when eulaAcceptedAt is missing", async () => {
     const ctx = buildCtx();
-    const caller = appRouter.createCaller(ctx as any);
-    await expect(caller.submit.contribute({
-      kind: "greenway",
+    const caller = appRouter.createCaller(ctx);
+    const badInput = {
+      kind: "greenway" as const,
       patch: { slug: "test-trail", name: "X" },
       note: "", displayName: "Kai", deviceId: "device-1",
-      eulaAcceptedAt: "" as any,
-    })).rejects.toThrow();
+      eulaAcceptedAt: "",
+    };
+    await expect(caller.submit.contribute(badInput)).rejects.toThrow();
   });
 });

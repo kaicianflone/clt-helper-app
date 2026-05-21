@@ -1,5 +1,6 @@
-import { describe, expect, it, vi, beforeEach } from "vitest";
-import { checkRateLimit, type RedisLike } from "./rate-limit";
+import { describe, expect, it, vi } from "vitest";
+import type { RedisLike } from "./rate-limit";
+import { checkRateLimit } from "./rate-limit";
 
 const makeRedis = (incrResult: number): RedisLike => ({
   incr: vi.fn().mockResolvedValue(incrResult),

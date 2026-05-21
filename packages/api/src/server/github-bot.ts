@@ -79,7 +79,7 @@ export const openCommunityPR = async (
     })) as { data: { sha: string } };
     existingSha = data.sha;
   } catch (e: unknown) {
-    if ((e as { status?: number })?.status !== 404) throw e;
+    if (e == null || (e as { status?: number }).status !== 404) throw e;
     existingSha = undefined;
   }
 

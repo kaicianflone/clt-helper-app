@@ -1,5 +1,6 @@
 import { describe, expect, it, vi } from "vitest";
-import { openCommunityPR, type OctokitLike } from "./github-bot";
+import type { OctokitLike } from "./github-bot";
+import { openCommunityPR } from "./github-bot";
 
 const fakeOctokit = (): OctokitLike => ({
   rest: {
@@ -18,7 +19,7 @@ const fakeOctokit = (): OctokitLike => ({
     issues: {
       addLabels: vi.fn().mockResolvedValue({}),
     },
-  } as any,
+  },
 });
 
 describe("openCommunityPR", () => {
@@ -53,7 +54,7 @@ describe("openCommunityPR", () => {
     expect(oc.rest.pulls.merge).toHaveBeenCalled();
     // Should have added both labels
     expect(oc.rest.issues.addLabels).toHaveBeenCalledWith(
-      expect.objectContaining({ labels: expect.arrayContaining(["community-submission", "auto-merged"]) })
+      expect.objectContaining({ labels: expect.arrayContaining(["community-submission", "auto-merged"]) as string[] })
     );
   });
 
@@ -72,7 +73,8 @@ describe("openCommunityPR", () => {
 
   it("propagates GitHub 403 rate-limit errors", async () => {
     const oc = fakeOctokit();
-    (oc.rest.git.getRef as any).mockRejectedValueOnce(Object.assign(new Error("rate limited"), { status: 403 }));
+    const getRef = oc.rest.git.getRef as ReturnType<typeof vi.fn>;
+    getRef.mockRejectedValueOnce(Object.assign(new Error("rate limited"), { status: 403 }));
     await expect(openCommunityPR(oc, {
       owner: "x", repo: "y", branchPrefix: "community/test",
       filePath: "data/greenways/test.json",
