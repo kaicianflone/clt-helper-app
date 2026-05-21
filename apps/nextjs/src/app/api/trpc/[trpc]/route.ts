@@ -3,6 +3,8 @@ import { fetchRequestHandler } from "@trpc/server/adapters/fetch";
 
 import { appRouter, createTRPCContext } from "@clt/api";
 
+import { buildSubmitContext } from "~/server/context";
+
 /**
  * Configure basic CORS headers
  * You should extend this to match your needs
@@ -27,10 +29,10 @@ const handler = async (req: NextRequest) => {
     endpoint: "/api/trpc",
     router: appRouter,
     req,
-    createContext: () =>
-      createTRPCContext({
-        headers: req.headers,
-      }),
+    createContext: () => ({
+      ...createTRPCContext({ headers: req.headers }),
+      ...buildSubmitContext(),
+    }),
     onError({ error, path }) {
       console.error(`>>> tRPC Error on '${path}'`, error);
     },

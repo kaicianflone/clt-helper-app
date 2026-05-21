@@ -7,6 +7,8 @@ import { createTRPCOptionsProxy } from "@trpc/tanstack-react-query";
 import type { AppRouter } from "@clt/api";
 import { appRouter, createTRPCContext } from "@clt/api";
 
+import { buildSubmitContext } from "~/server/context";
+
 import { createQueryClient } from "./query-client";
 
 /**
@@ -17,9 +19,10 @@ const createContext = cache(async () => {
   const heads = new Headers(await headers());
   heads.set("x-trpc-source", "rsc");
 
-  return createTRPCContext({
-    headers: heads,
-  });
+  return {
+    ...createTRPCContext({ headers: heads }),
+    ...buildSubmitContext(),
+  };
 });
 
 const getQueryClient = cache(createQueryClient);
@@ -28,6 +31,16 @@ export const trpc = createTRPCOptionsProxy<AppRouter>({
   router: appRouter,
   ctx: createContext,
   queryClient: getQueryClient,
+});
+
+/**
+ * Create a server-side caller for direct RSC procedure calls (no HTTP round-trip).
+ * Usage: const caller = await createServerCaller();
+ *        const data = await caller.greenway.list();
+ */
+export const createServerCaller = cache(async () => {
+  const ctx = await createContext();
+  return appRouter.createCaller(ctx);
 });
 
 export function HydrateClient(props: { children: React.ReactNode }) {

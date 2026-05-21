@@ -311,10 +311,10 @@ importers:
         specifier: workspace:*
         version: link:../data-schema
       '@octokit/auth-app':
-        specifier: ^8.2.0
+        specifier: 8.2.0
         version: 8.2.0
       '@octokit/rest':
-        specifier: ^22.0.1
+        specifier: 22.0.1
         version: 22.0.1
       '@trpc/server':
         specifier: 'catalog:'

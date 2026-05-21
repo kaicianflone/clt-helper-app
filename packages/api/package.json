@@ -6,6 +6,22 @@
     ".": {
       "types": "./dist/index.d.ts",
       "default": "./src/index.ts"
+    },
+    "./server/rate-limit": {
+      "types": "./dist/server/rate-limit.d.ts",
+      "default": "./src/server/rate-limit.ts"
+    },
+    "./server/github-bot": {
+      "types": "./dist/server/github-bot.d.ts",
+      "default": "./src/server/github-bot.ts"
+    },
+    "./server/diff": {
+      "types": "./dist/server/diff.d.ts",
+      "default": "./src/server/diff.ts"
+    },
+    "./server/content-filter": {
+      "types": "./dist/server/content-filter.d.ts",
+      "default": "./src/server/content-filter.ts"
     }
   },
   "license": "MIT",
