@@ -1,8 +1,9 @@
 import { describe, expect, it, vi } from "vitest";
 import { appRouter } from "../root";
+import type { Context } from "../trpc";
 
 describe("parking router", () => {
-  const baseCtx = { baseUrl: "https://cdn.example.com" };
+  const baseCtx: Context = { baseUrl: "https://cdn.example.com" };
 
   const parkingFixture = {
     slug: "uptown-deck",
@@ -55,18 +56,18 @@ describe("parking router", () => {
     const fetchImpl = vi
       .fn()
       .mockResolvedValue(makeBundle([parkingFixture, parkingFixture2]));
-    const caller = appRouter.createCaller({ ...baseCtx, fetchImpl } as any);
+    const caller = appRouter.createCaller({ ...baseCtx, fetchImpl });
     const result = await caller.parking.list();
     expect(result).toHaveLength(2);
-    expect(result[0]!.slug).toBe("uptown-deck");
-    expect(result[1]!.slug).toBe("south-end-surface");
+    expect(result[0]?.slug).toBe("uptown-deck");
+    expect(result[1]?.slug).toBe("south-end-surface");
   });
 
   it("get returns full entry by slug", async () => {
     const fetchImpl = vi
       .fn()
       .mockResolvedValue(makeBundle([parkingFixture, parkingFixture2]));
-    const caller = appRouter.createCaller({ ...baseCtx, fetchImpl } as any);
+    const caller = appRouter.createCaller({ ...baseCtx, fetchImpl });
     const result = await caller.parking.get({ slug: "south-end-surface" });
     expect(result.name).toBe("South End Surface Lot");
     expect(result.covered).toBe(false);
@@ -76,7 +77,7 @@ describe("parking router", () => {
     const fetchImpl = vi
       .fn()
       .mockResolvedValue(makeBundle([parkingFixture]));
-    const caller = appRouter.createCaller({ ...baseCtx, fetchImpl } as any);
+    const caller = appRouter.createCaller({ ...baseCtx, fetchImpl });
     await expect(
       caller.parking.get({ slug: "nonexistent" }),
     ).rejects.toThrow(/not found/i);

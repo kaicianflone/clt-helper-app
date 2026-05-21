@@ -1,8 +1,9 @@
 import { describe, expect, it, vi } from "vitest";
 import { appRouter } from "../root";
+import type { Context } from "../trpc";
 
 describe("greenway router", () => {
-  const baseCtx = {
+  const baseCtx: Context = {
     baseUrl: "https://cdn.example.com",
   };
 
@@ -29,7 +30,7 @@ describe("greenway router", () => {
         }),
       ),
     );
-    const caller = appRouter.createCaller({ ...baseCtx, fetchImpl } as any);
+    const caller = appRouter.createCaller({ ...baseCtx, fetchImpl });
     const result = await caller.greenway.list();
     expect(result).toEqual([
       { slug: "a", name: "A", lengthMiles: 1, surface: "paved" },
@@ -46,7 +47,7 @@ describe("greenway router", () => {
         }),
       ),
     );
-    const caller = appRouter.createCaller({ ...baseCtx, fetchImpl } as any);
+    const caller = appRouter.createCaller({ ...baseCtx, fetchImpl });
     const result = await caller.greenway.get({ slug: "a" });
     expect(result.name).toBe("A");
     expect(result.geometry.type).toBe("LineString");
@@ -62,7 +63,7 @@ describe("greenway router", () => {
         }),
       ),
     );
-    const caller = appRouter.createCaller({ ...baseCtx, fetchImpl } as any);
+    const caller = appRouter.createCaller({ ...baseCtx, fetchImpl });
     await expect(caller.greenway.get({ slug: "missing" })).rejects.toThrow(
       /not found/i,
     );
@@ -78,7 +79,7 @@ describe("greenway router", () => {
         }),
       ),
     );
-    const caller = appRouter.createCaller({ ...baseCtx, fetchImpl } as any);
+    const caller = appRouter.createCaller({ ...baseCtx, fetchImpl });
     const result = await caller.greenway.listWithGeometry();
     expect(result).toHaveLength(1);
     expect(result[0]).toEqual({

@@ -4,8 +4,6 @@ import { publicProcedure, createTRPCRouter } from "../trpc";
 import { fetchDeals } from "../data-client";
 import type { Context } from "../trpc";
 
-type Day = "mon" | "tue" | "wed" | "thu" | "fri" | "sat" | "sun";
-
 const getBaseUrl = (ctx: Context): string => {
   const url = ctx.baseUrl ?? process.env.R2_PUBLIC_BASE_URL;
   if (!url)
@@ -33,9 +31,8 @@ export const dealRouter = createTRPCRouter({
         fetchImpl: ctx.fetchImpl,
       });
       if (!input?.day) return bundle.entries;
-      return bundle.entries.filter((d) =>
-        d.daysOfWeek.includes(input.day as Day),
-      );
+      const day = input.day;
+      return bundle.entries.filter((d) => d.daysOfWeek.includes(day));
     }),
 
   get: publicProcedure

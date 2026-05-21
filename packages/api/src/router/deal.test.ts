@@ -1,8 +1,9 @@
 import { describe, expect, it, vi } from "vitest";
 import { appRouter } from "../root";
+import type { Context } from "../trpc";
 
 describe("deal router", () => {
-  const baseCtx = { baseUrl: "https://cdn.example.com" };
+  const baseCtx: Context = { baseUrl: "https://cdn.example.com" };
 
   const dealFixture = {
     slug: "taco-tuesday",
@@ -35,27 +36,27 @@ describe("deal router", () => {
     const fetchImpl = vi
       .fn()
       .mockResolvedValue(makeBundle([dealFixture, dealFixture2]));
-    const caller = appRouter.createCaller({ ...baseCtx, fetchImpl } as any);
+    const caller = appRouter.createCaller({ ...baseCtx, fetchImpl });
     const result = await caller.deal.list();
     expect(result).toHaveLength(2);
-    expect(result[0]!.slug).toBe("taco-tuesday");
+    expect(result[0]?.slug).toBe("taco-tuesday");
   });
 
   it("list filters by day of week", async () => {
     const fetchImpl = vi
       .fn()
       .mockResolvedValue(makeBundle([dealFixture, dealFixture2]));
-    const caller = appRouter.createCaller({ ...baseCtx, fetchImpl } as any);
+    const caller = appRouter.createCaller({ ...baseCtx, fetchImpl });
     const result = await caller.deal.list({ day: "tue" });
     expect(result).toHaveLength(1);
-    expect(result[0]!.slug).toBe("taco-tuesday");
+    expect(result[0]?.slug).toBe("taco-tuesday");
   });
 
   it("list returns empty array when no deals on that day", async () => {
     const fetchImpl = vi
       .fn()
       .mockResolvedValue(makeBundle([dealFixture, dealFixture2]));
-    const caller = appRouter.createCaller({ ...baseCtx, fetchImpl } as any);
+    const caller = appRouter.createCaller({ ...baseCtx, fetchImpl });
     const result = await caller.deal.list({ day: "sun" });
     expect(result).toEqual([]);
   });
@@ -64,7 +65,7 @@ describe("deal router", () => {
     const fetchImpl = vi
       .fn()
       .mockResolvedValue(makeBundle([dealFixture, dealFixture2]));
-    const caller = appRouter.createCaller({ ...baseCtx, fetchImpl } as any);
+    const caller = appRouter.createCaller({ ...baseCtx, fetchImpl });
     const result = await caller.deal.get({ slug: "friday-special" });
     expect(result.restaurantName).toBe("Burger Joint");
   });
@@ -73,7 +74,7 @@ describe("deal router", () => {
     const fetchImpl = vi
       .fn()
       .mockResolvedValue(makeBundle([dealFixture]));
-    const caller = appRouter.createCaller({ ...baseCtx, fetchImpl } as any);
+    const caller = appRouter.createCaller({ ...baseCtx, fetchImpl });
     await expect(caller.deal.get({ slug: "nonexistent" })).rejects.toThrow(
       /not found/i,
     );

@@ -55,7 +55,8 @@
     "AUTH_DISCORD_SECRET",
     "AUTH_REDIRECT_PROXY_URL",
     "AUTH_SECRET",
-    "PORT"
+    "PORT",
+    "R2_PUBLIC_BASE_URL"
   ],
   "globalPassThroughEnv": [
     "NODE_ENV",
