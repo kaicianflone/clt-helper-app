@@ -54,3 +54,8 @@ dist/
 
 # tanstack
 .tanstack
+
+# internal AI/planning artifacts (not for production GitHub)
+.gstack/
+.superpowers/
+docs/superpowers/
