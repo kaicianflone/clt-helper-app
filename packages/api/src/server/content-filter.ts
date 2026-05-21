@@ -13,11 +13,13 @@ export interface ContentCheckResult {
   reason?: string;
 }
 
-const collectStrings = (patch: Record<string, unknown>): string[] => {
-  const out: string[] = [];
-  for (const v of Object.values(patch)) {
-    if (typeof v === "string") out.push(v);
-  }
+const collectStrings = (val: unknown, out: string[] = []): string[] => {
+  if (typeof val === "string") out.push(val);
+  else if (Array.isArray(val)) val.forEach((v) => collectStrings(v, out));
+  else if (val && typeof val === "object")
+    Object.values(val as Record<string, unknown>).forEach((v) =>
+      collectStrings(v, out),
+    );
   return out;
 };
 

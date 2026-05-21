@@ -60,4 +60,35 @@ describe("containsObjectionableContent", () => {
     });
     expect(r.violation).toBe(false);
   });
+  // P2-4: recurse into nested objects and arrays
+  it("flags PII nested inside an array of objects (trailheads)", () => {
+    const r = containsObjectionableContent({
+      displayName: "Kai",
+      note: "",
+      patch: {
+        trailheads: [{ name: "555-123-4567 entrance" }],
+      },
+    });
+    expect(r.violation).toBe(true);
+  });
+  it("flags PII nested in a deeply nested object", () => {
+    const r = containsObjectionableContent({
+      displayName: "Kai",
+      note: "",
+      patch: {
+        info: { contact: { email: "owner@private.com" } },
+      },
+    });
+    expect(r.violation).toBe(true);
+  });
+  it("returns clean for nested object with clean strings", () => {
+    const r = containsObjectionableContent({
+      displayName: "Kai",
+      note: "",
+      patch: {
+        trailheads: [{ name: "Main Entrance", lat: 35.2, lng: -80.84 }],
+      },
+    });
+    expect(r.violation).toBe(false);
+  });
 });

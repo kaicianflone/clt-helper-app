@@ -8,7 +8,12 @@ export interface Bundle {
 }
 
 export const buildBundle = (dir: string, schemaVersion: number): Bundle => {
-  if (!fs.existsSync(dir)) return { schemaVersion, builtAt: new Date().toISOString(), entries: [] };
+  if (!fs.existsSync(dir)) {
+    throw new Error(
+      `buildBundle: input directory does not exist: "${dir}". ` +
+        `Run the data import first or verify the path configuration.`,
+    );
+  }
   const files = fs.readdirSync(dir).filter((f) => f.endsWith(".json") && f !== "_index.json");
   const entries = files.map((f) =>
     JSON.parse(fs.readFileSync(path.join(dir, f), "utf8"))
