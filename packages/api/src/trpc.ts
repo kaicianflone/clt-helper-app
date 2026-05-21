@@ -52,16 +52,40 @@ export const createTRPCContext = (opts: { headers: Headers }): Context => {
  */
 const t = initTRPC.context<typeof createTRPCContext>().create({
   transformer: superjson,
-  errorFormatter: ({ shape, error }) => ({
-    ...shape,
-    data: {
-      ...shape.data,
-      zodError:
-        error.cause instanceof ZodError
-          ? z.flattenError(error.cause as ZodError<Record<string, unknown>>)
-          : null,
-    },
-  }),
+  errorFormatter({ shape, error }) {
+    const cause = error.cause;
+    // ZodError: surface a user-friendly field message
+    if (cause instanceof ZodError) {
+      const first = cause.issues[0];
+      const path = first?.path.join(".") ?? "";
+      const msg = first?.message ?? "invalid";
+      return {
+        ...shape,
+        message: `Form data invalid: ${path ? `${path} — ` : ""}${msg}`,
+        data: {
+          ...shape.data,
+          zodError: z.flattenError(cause as ZodError<Record<string, unknown>>),
+        },
+      };
+    }
+    // Octokit-shaped errors (have numeric .status)
+    if (cause && typeof (cause as { status?: unknown }).status === "number") {
+      const status = (cause as { status: number }).status;
+      if (status === 403) {
+        return { ...shape, message: "Submissions are temporarily unavailable. Try again in an hour.", data: { ...shape.data, zodError: null } };
+      }
+      if (status === 422) {
+        return { ...shape, message: "Another submission for this entry is in progress. Please try again in a minute.", data: { ...shape.data, zodError: null } };
+      }
+    }
+    return {
+      ...shape,
+      data: {
+        ...shape.data,
+        zodError: null,
+      },
+    };
+  },
 });
 
 /**
