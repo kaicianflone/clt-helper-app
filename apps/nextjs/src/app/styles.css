@@ -1,6 +1,7 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "@clt/tailwind-config/theme";
+@import "maplibre-gl/dist/maplibre-gl.css";
 
 @source "../../../../packages/ui/src/*.{ts,tsx}";
 
