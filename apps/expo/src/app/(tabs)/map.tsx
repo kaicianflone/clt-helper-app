@@ -1,6 +1,3 @@
-import type { StyleSpecification } from "@maplibre/maplibre-react-native";
-import { useEffect, useState } from "react";
-import { ActivityIndicator, Text, View } from "react-native";
 import {
   Camera,
   GeoJSONSource,
@@ -8,109 +5,16 @@ import {
   Map as MapLibreMap,
 } from "@maplibre/maplibre-react-native";
 import { useQuery } from "@tanstack/react-query";
+import { Text, View } from "react-native";
 
 import { colors, space, type } from "~/styles/tokens";
 import { trpc } from "~/utils/api";
 
-const TILES_MANIFEST_URL = `${process.env.EXPO_PUBLIC_R2_BASE_URL ?? "https://cdn.clt-app.com"}/tiles/manifest.json`;
-
-const FALLBACK_STYLE: StyleSpecification = {
-  version: 8,
-  sources: {},
-  layers: [
-    {
-      id: "background",
-      type: "background",
-      paint: { "background-color": "#F5EFE6" },
-    },
-  ],
-};
-
-const buildVectorStyle = (tilesUrl: string): StyleSpecification => ({
-  version: 8,
-  sources: {
-    basemap: { type: "vector", url: `pmtiles://${tilesUrl}` },
-  },
-  layers: [
-    {
-      id: "background",
-      type: "background",
-      paint: { "background-color": "#F5EFE6" },
-    },
-    {
-      id: "park",
-      type: "fill",
-      source: "basemap",
-      "source-layer": "osm",
-      filter: ["==", ["get", "leisure"], "park"],
-      paint: { "fill-color": "#C3D4B5", "fill-opacity": 0.7 },
-    },
-    {
-      id: "roads",
-      type: "line",
-      source: "basemap",
-      "source-layer": "osm",
-      filter: ["has", "highway"],
-      paint: { "line-color": "#E2D6C2", "line-width": 1 },
-    },
-  ],
-});
+const MAPTILER_KEY = process.env.EXPO_PUBLIC_MAPTILER_KEY;
 
 export default function MapScreen() {
   const greenways = useQuery(trpc.greenway.listWithGeometry.queryOptions());
   const parking = useQuery(trpc.parking.list.queryOptions());
-
-  const [tilesUrl, setTilesUrl] = useState<string | null | undefined>(
-    undefined,
-  );
-
-  useEffect(() => {
-    const ctrl = new AbortController();
-    const timer = setTimeout(() => ctrl.abort(), 4000);
-    fetch(TILES_MANIFEST_URL, { signal: ctrl.signal })
-      .then((r) => (r.ok ? r.json() : Promise.reject(new Error(`${r.status}`))))
-      .then((data: { current?: string }) => {
-        if (data.current) {
-          const base =
-            process.env.EXPO_PUBLIC_R2_BASE_URL ?? "https://cdn.clt-app.com";
-          setTilesUrl(`${base}/${data.current}`);
-        } else {
-          setTilesUrl(null);
-        }
-      })
-      .catch(() => setTilesUrl(null))
-      .finally(() => clearTimeout(timer));
-    return () => {
-      clearTimeout(timer);
-      ctrl.abort();
-    };
-  }, []);
-
-  if (tilesUrl === undefined) {
-    return (
-      <View
-        style={{
-          flex: 1,
-          justifyContent: "center",
-          alignItems: "center",
-          backgroundColor: colors.bg.cream,
-        }}
-      >
-        <ActivityIndicator color={colors.brick.DEFAULT} />
-        <Text
-          style={{
-            ...type.bodySm,
-            color: colors.fg.inkMuted,
-            marginTop: space[2],
-          }}
-        >
-          Loading map...
-        </Text>
-      </View>
-    );
-  }
-
-  const mapStyle = tilesUrl ? buildVectorStyle(tilesUrl) : FALLBACK_STYLE;
 
   const greenwayFeatures = (greenways.data ?? []).map((g) => ({
     type: "Feature" as const,
@@ -128,9 +32,30 @@ export default function MapScreen() {
     },
   }));
 
+  if (!MAPTILER_KEY) {
+    return (
+      <View
+        style={{
+          flex: 1,
+          padding: space[4],
+          justifyContent: "center",
+          alignItems: "center",
+          backgroundColor: colors.bg.cream,
+        }}
+      >
+        <Text style={{ ...type.bodySm, color: "#7A5A0E", textAlign: "center" }}>
+          Map tiles unavailable: EXPO_PUBLIC_MAPTILER_KEY is not set. Add a free
+          MapTiler key (https://cloud.maptiler.com/account/keys/) to .env.
+        </Text>
+      </View>
+    );
+  }
+
+  const styleUrl = `https://api.maptiler.com/maps/streets-v2/style.json?key=${MAPTILER_KEY}`;
+
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg.cream }}>
-      <MapLibreMap style={{ flex: 1 }} mapStyle={mapStyle}>
+      <MapLibreMap style={{ flex: 1 }} mapStyle={styleUrl}>
         <Camera
           // Charlotte, NC city center
           center={[-80.8431, 35.2271]}
@@ -174,27 +99,6 @@ export default function MapScreen() {
           />
         </GeoJSONSource>
       </MapLibreMap>
-
-      {tilesUrl === null && (
-        <View
-          style={{
-            position: "absolute",
-            top: space[4],
-            left: space[4],
-            right: space[4],
-            padding: space[3],
-            backgroundColor: "#FDF6E3",
-            borderRadius: 8,
-            borderWidth: 1,
-            borderColor: colors.amber,
-          }}
-        >
-          <Text style={{ ...type.bodySm, color: "#7A5A0E" }}>
-            Map tiles unavailable. Showing trails and lots on a plain
-            background.
-          </Text>
-        </View>
-      )}
     </View>
   );
 }
