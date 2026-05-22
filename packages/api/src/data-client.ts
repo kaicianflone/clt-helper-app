@@ -1,3 +1,6 @@
+import fs from "node:fs";
+import path from "node:path";
+
 import type { Deal, Greenway, ParkingLot } from "@clt/data-schema";
 
 export interface Bundle<T> {
@@ -9,10 +12,21 @@ export interface Bundle<T> {
 export type EntityKind = "greenways" | "deals" | "parking";
 
 export interface DataClientOptions<T> {
-  baseUrl: string;
+  /**
+   * HTTP origin where the data bundle is hosted (e.g. an R2 CDN URL). When
+   * empty / nullish, the client reads `${CLT_DATA_DIR}/<kind>.json` from the
+   * local filesystem instead — used in dev and in any pre-R2 deployment.
+   */
+  baseUrl?: string | null;
   fetchImpl?: typeof fetch;
   offlineBundle?: Bundle<T>;
   timeoutMs?: number;
+  /**
+   * Override the directory the local-disk fallback reads from. Used in tests
+   * to point at a temp dir. Defaults to `CLT_DATA_DIR` env var, then to
+   * `<cwd>/dist/data/v1`.
+   */
+  localDir?: string;
 }
 
 const DEFAULT_TIMEOUT_MS = 5000;
@@ -31,10 +45,36 @@ const fetchWithTimeout = async (
   }
 };
 
+const resolveLocalDir = (opts: { localDir?: string }): string => {
+  if (opts.localDir) return opts.localDir;
+  if (process.env.CLT_DATA_DIR) return process.env.CLT_DATA_DIR;
+  return path.resolve(process.cwd(), "dist/data/v1");
+};
+
+const fetchBundleLocal = <T>(
+  kind: EntityKind,
+  opts: DataClientOptions<T>,
+): Bundle<T> => {
+  const dir = resolveLocalDir(opts);
+  const file = path.join(dir, `${kind}.json`);
+  if (!fs.existsSync(file)) {
+    if (opts.offlineBundle) return opts.offlineBundle;
+    throw new Error(
+      `data bundle not found at ${file}. Run \`pnpm build:data\` first.`,
+    );
+  }
+  return JSON.parse(fs.readFileSync(file, "utf8")) as Bundle<T>;
+};
+
 export async function fetchBundle<T>(
   kind: EntityKind,
   opts: DataClientOptions<T>,
 ): Promise<Bundle<T>> {
+  // Local-disk fallback when no baseUrl is configured (dev + non-R2 prod).
+  if (!opts.baseUrl) {
+    return fetchBundleLocal<T>(kind, opts);
+  }
+
   const f = opts.fetchImpl ?? fetch;
   const timeoutMs = opts.timeoutMs ?? DEFAULT_TIMEOUT_MS;
   const url = `${opts.baseUrl}/data/v1/${kind}.json`;

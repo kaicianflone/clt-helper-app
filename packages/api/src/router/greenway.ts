@@ -5,15 +5,12 @@ import type { Context } from "../trpc";
 import { fetchGreenways } from "../data-client";
 import { createTRPCRouter, publicProcedure } from "../trpc";
 
-const getBaseUrl = (ctx: Context): string => {
-  const url = ctx.baseUrl ?? process.env.R2_PUBLIC_BASE_URL;
-  if (!url)
-    throw new TRPCError({
-      code: "INTERNAL_SERVER_ERROR",
-      message: "R2_PUBLIC_BASE_URL is not configured",
-    });
-  return url;
-};
+// Resolve the data origin. Empty / undefined → data-client falls back to
+// reading bundles from local disk (`dist/data/v1/`). That makes the API
+// work in dev and in any deployment that ships data as a build artifact
+// instead of via a CDN.
+const getBaseUrl = (ctx: Context): string | undefined =>
+  ctx.baseUrl ?? process.env.DATA_BASE_URL ?? undefined;
 
 export const greenwayRouter = createTRPCRouter({
   list: publicProcedure.query(async ({ ctx }) => {

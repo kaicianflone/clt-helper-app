@@ -59,3 +59,6 @@ dist/
 .gstack/
 .superpowers/
 docs/superpowers/
+
+# Generated data bundles copied into Next.js public/ by scripts/build-data-bundles.ts
+apps/nextjs/public/data/v1/*.json

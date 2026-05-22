@@ -35,6 +35,19 @@ const run = () => {
   const manifestPath = path.resolve("dist/data/manifest.json");
   fs.mkdirSync(path.dirname(manifestPath), { recursive: true });
   fs.writeFileSync(manifestPath, JSON.stringify({ builtAt: new Date().toISOString(), bundles: manifest }, null, 2));
+
+  // Mirror into apps/nextjs/public/data/v1/ so the Vercel deployment serves
+  // them as static assets at /data/v1/<kind>.json — that's the same URL shape
+  // the data-client expects when DATA_BASE_URL is unset.
+  const nextPublicDir = path.resolve("apps/nextjs/public/data/v1");
+  fs.mkdirSync(nextPublicDir, { recursive: true });
+  for (const cat of categories) {
+    fs.copyFileSync(
+      path.join(outDir, `${cat}.json`),
+      path.join(nextPublicDir, `${cat}.json`),
+    );
+  }
+
   console.log("Built bundles:", manifest);
 };
 

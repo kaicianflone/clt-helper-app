@@ -5,15 +5,9 @@ import type { Context } from "../trpc";
 import { fetchParking } from "../data-client";
 import { createTRPCRouter, publicProcedure } from "../trpc";
 
-const getBaseUrl = (ctx: Context): string => {
-  const url = ctx.baseUrl ?? process.env.R2_PUBLIC_BASE_URL;
-  if (!url)
-    throw new TRPCError({
-      code: "INTERNAL_SERVER_ERROR",
-      message: "R2_PUBLIC_BASE_URL is not configured",
-    });
-  return url;
-};
+// Empty baseUrl → data-client reads from local disk. See greenway.ts.
+const getBaseUrl = (ctx: Context): string | undefined =>
+  ctx.baseUrl ?? process.env.DATA_BASE_URL ?? undefined;
 
 export const parkingRouter = createTRPCRouter({
   list: publicProcedure.query(async ({ ctx }) => {
