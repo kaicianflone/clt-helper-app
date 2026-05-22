@@ -1,6 +1,5 @@
 import fs from "node:fs";
 import path from "node:path";
-
 import type { Deal, Greenway, ParkingLot } from "@clt/data-schema";
 
 export interface Bundle<T> {

@@ -39,7 +39,10 @@ export const env = createEnv({
     NEXT_PUBLIC_MAPTILER_KEY: z
       .string()
       .min(20)
-      .regex(/^[A-Za-z0-9_-]+$/, "MapTiler keys must be URL-safe alphanumerics"),
+      .regex(
+        /^[A-Za-z0-9_-]+$/,
+        "MapTiler keys must be URL-safe alphanumerics",
+      ),
   },
   /**
    * Destructure all variables from `process.env` to make sure they aren't tree-shaken away.

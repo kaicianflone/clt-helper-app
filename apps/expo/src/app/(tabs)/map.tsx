@@ -1,3 +1,4 @@
+import { Text, View } from "react-native";
 import {
   Camera,
   GeoJSONSource,
@@ -5,7 +6,6 @@ import {
   Map as MapLibreMap,
 } from "@maplibre/maplibre-react-native";
 import { useQuery } from "@tanstack/react-query";
-import { Text, View } from "react-native";
 
 import { colors, space, type } from "~/styles/tokens";
 import { trpc } from "~/utils/api";
