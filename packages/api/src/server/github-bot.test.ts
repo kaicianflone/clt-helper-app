@@ -16,11 +16,9 @@ const fakeOctokit = (): OctokitLike => ({
       createOrUpdateFileContents: vi.fn().mockResolvedValue({}),
     },
     pulls: {
-      create: vi
-        .fn()
-        .mockResolvedValue({
-          data: { html_url: "https://github.com/x/y/pull/1", number: 1 },
-        }),
+      create: vi.fn().mockResolvedValue({
+        data: { html_url: "https://github.com/x/y/pull/1", number: 1 },
+      }),
       merge: vi.fn().mockResolvedValue({}),
     },
     issues: {
