@@ -1,0 +1,52 @@
+{
+  "cli": {
+    "version": ">= 13.0.0",
+    "appVersionSource": "remote"
+  },
+  "build": {
+    "base": {
+      "node": "22.12.0",
+      "pnpm": "9.15.4",
+      "ios": {
+        "resourceClass": "m-medium"
+      }
+    },
+    "development": {
+      "extends": "base",
+      "developmentClient": true,
+      "distribution": "internal"
+    },
+    "preview": {
+      "extends": "base",
+      "distribution": "internal",
+      "channel": "preview",
+      "ios": {
+        "simulator": true
+      },
+      "env": {
+        "EXPO_PUBLIC_R2_BASE_URL": "https://cdn.clt-app.com",
+        "EXPO_PUBLIC_SENTRY_DSN": ""
+      }
+    },
+    "production": {
+      "extends": "base",
+      "channel": "production",
+      "autoIncrement": true,
+      "env": {
+        "EXPO_PUBLIC_R2_BASE_URL": "https://cdn.clt-app.com",
+        "EXPO_PUBLIC_SENTRY_DSN": ""
+      }
+    }
+  },
+  "submit": {
+    "production": {
+      "ios": {
+        "ascAppId": "TBD-DURING-FIRST-SUBMIT",
+        "appleTeamId": "TBD-DURING-FIRST-SUBMIT"
+      },
+      "android": {
+        "serviceAccountKeyPath": "./google-service-account.json"
+      }
+    }
+  }
+}

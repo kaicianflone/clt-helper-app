@@ -1,0 +1,36 @@
+name: Release tiles
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 6 * * 1"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install tile tooling
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y osmium-tool
+          curl -fsSL https://github.com/felt/tippecanoe/releases/latest/download/tippecanoe-linux-x86_64 -o /usr/local/bin/tippecanoe
+          sudo chmod +x /usr/local/bin/tippecanoe
+          curl -fsSL https://github.com/protomaps/go-pmtiles/releases/latest/download/go-pmtiles_Linux_x86_64.tar.gz | sudo tar xz -C /usr/local/bin pmtiles
+      - run: ./scripts/build-tiles.sh
+      - name: Upload to R2 with cache-control
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET }}
+        run: |
+          TILES_SHA=$(sha256sum tiles/charlotte-latest.pmtiles | cut -c1-12)
+          npx --yes wrangler r2 object put "$R2_BUCKET/tiles/charlotte-${TILES_SHA}.pmtiles" \
+            --file=tiles/charlotte-latest.pmtiles \
+            --content-type=application/octet-stream \
+            --cache-control="public, max-age=31536000, immutable"
+          echo "{\"current\":\"tiles/charlotte-${TILES_SHA}.pmtiles\",\"builtAt\":\"$(date -u +%Y-%m-%dT%H:%M:%SZ)\"}" > /tmp/tiles-manifest.json
+          npx --yes wrangler r2 object put "$R2_BUCKET/tiles/manifest.json" \
+            --file=/tmp/tiles-manifest.json \
+            --content-type=application/json \
+            --cache-control="public, max-age=60"

@@ -1,0 +1,7 @@
+{
+  "name": "@clt/tsconfig",
+  "private": true,
+  "files": [
+    "*.json"
+  ]
+}

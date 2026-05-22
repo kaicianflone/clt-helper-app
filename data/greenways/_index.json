@@ -1,0 +1,256 @@
+{
+  "entries": [
+    {
+      "slug": "antiquity-greenway",
+      "name": "Antiquity Greenway"
+    },
+    {
+      "slug": "armory-dr-urban-trail",
+      "name": "Armory Dr Urban Trail"
+    },
+    {
+      "slug": "barton-creek-greenway",
+      "name": "Barton Creek Greenway"
+    },
+    {
+      "slug": "bradford-park-greenway",
+      "name": "Bradford Park Greenway"
+    },
+    {
+      "slug": "briar-creek-greenway",
+      "name": "Briar Creek Greenway"
+    },
+    {
+      "slug": "bryton-greenway",
+      "name": "Bryton Greenway"
+    },
+    {
+      "slug": "caldwell-station-creek-greenway",
+      "name": "Caldwell Station Creek Greenway"
+    },
+    {
+      "slug": "caldwell-station-tributary-greenway",
+      "name": "Caldwell Station Tributary Greenway"
+    },
+    {
+      "slug": "campbell-creek-greenway",
+      "name": "Campbell Creek Greenway"
+    },
+    {
+      "slug": "cane-creek-greenway",
+      "name": "Cane Creek Greenway"
+    },
+    {
+      "slug": "catawba-av-urban-trail",
+      "name": "Catawba Av Urban Trail"
+    },
+    {
+      "slug": "charlotte-city-urban-trail",
+      "name": "Charlotte City Urban Trail"
+    },
+    {
+      "slug": "charlotte-rail-trail",
+      "name": "Charlotte Rail Trail"
+    },
+    {
+      "slug": "clarks-creek-greenway",
+      "name": "Clarks Creek Greenway"
+    },
+    {
+      "slug": "cross-charlotte-trail",
+      "name": "Cross Charlotte Trail"
+    },
+    {
+      "slug": "dixon-branch-greenway",
+      "name": "Dixon Branch Greenway"
+    },
+    {
+      "slug": "flat-branch-greenway",
+      "name": "Flat Branch Greenway"
+    },
+    {
+      "slug": "four-mile-creek-greenway",
+      "name": "Four Mile Creek Greenway"
+    },
+    {
+      "slug": "four-mile-creek-tributary-greenway",
+      "name": "Four Mile Creek Tributary Greenway"
+    },
+    {
+      "slug": "four-mile-creek-urban-trail",
+      "name": "Four Mile Creek Urban Trail"
+    },
+    {
+      "slug": "hambright-rd-urban-trail",
+      "name": "Hambright Rd Urban Trail"
+    },
+    {
+      "slug": "heritage-trail",
+      "name": "Heritage Trail"
+    },
+    {
+      "slug": "hoover-creek-greenway",
+      "name": "Hoover Creek Greenway"
+    },
+    {
+      "slug": "huntersville-downtown-greenway",
+      "name": "Huntersville Downtown Greenway"
+    },
+    {
+      "slug": "irvins-creek-greenway",
+      "name": "Irvins Creek Greenway"
+    },
+    {
+      "slug": "irwin-creek-greenway",
+      "name": "Irwin Creek Greenway"
+    },
+    {
+      "slug": "jackie-gregg-knuckles-jr-trail",
+      "name": "Jackie Gregg Knuckles Jr Trail"
+    },
+    {
+      "slug": "jackson-street-greenway",
+      "name": "Jackson Street Greenway"
+    },
+    {
+      "slug": "little-hope-creek-greenway",
+      "name": "Little Hope Creek Greenway"
+    },
+    {
+      "slug": "little-sugar-creek-greenway",
+      "name": "Little Sugar Creek Greenway"
+    },
+    {
+      "slug": "long-creek-greenway",
+      "name": "Long Creek Greenway"
+    },
+    {
+      "slug": "mallard-creek-greenway",
+      "name": "Mallard Creek Greenway"
+    },
+    {
+      "slug": "mayes-sidepath",
+      "name": "Mayes Sidepath"
+    },
+    {
+      "slug": "mcalpine-creek-greenway",
+      "name": "McAlpine Creek Greenway"
+    },
+    {
+      "slug": "mcdowell-creek-dirtway",
+      "name": "McDowell Creek Dirtway"
+    },
+    {
+      "slug": "mcdowell-creek-greenway",
+      "name": "McDowell Creek Greenway"
+    },
+    {
+      "slug": "mcintyre-creek-greenway",
+      "name": "McIntyre Creek Greenway"
+    },
+    {
+      "slug": "mcintyre-creek-tributary-greenway",
+      "name": "McIntyre Creek Tributary Greenway"
+    },
+    {
+      "slug": "mcmullen-creek-greenway",
+      "name": "McMullen Creek Greenway"
+    },
+    {
+      "slug": "mill-ruins-trail",
+      "name": "Mill Ruins Trail"
+    },
+    {
+      "slug": "old-statesville-urban-trail",
+      "name": "Old Statesville Urban Trail"
+    },
+    {
+      "slug": "paw-creek-greenway",
+      "name": "Paw Creek Greenway"
+    },
+    {
+      "slug": "plum-creek-greenway",
+      "name": "Plum Creek Greenway"
+    },
+    {
+      "slug": "reedy-creek-greenway",
+      "name": "Reedy Creek Greenway"
+    },
+    {
+      "slug": "six-mile-creek-greenway",
+      "name": "Six Mile Creek Greenway"
+    },
+    {
+      "slug": "south-prong-rocky-river-greenway",
+      "name": "South Prong Rocky River Greenway"
+    },
+    {
+      "slug": "south-prong-rocky-river-tributary-greenway",
+      "name": "South Prong Rocky River Tributary Greenway"
+    },
+    {
+      "slug": "south-prong-rocky-river-urban-trail",
+      "name": "South Prong Rocky River Urban Trail"
+    },
+    {
+      "slug": "stewart-creek-greenway",
+      "name": "Stewart Creek Greenway"
+    },
+    {
+      "slug": "stewart-creek-tributary-2-greenway",
+      "name": "Stewart Creek Tributary 2 Greenway"
+    },
+    {
+      "slug": "taggart-creek-greenway",
+      "name": "Taggart Creek Greenway"
+    },
+    {
+      "slug": "the-plaza-urban-trail",
+      "name": "The Plaza Urban Trail"
+    },
+    {
+      "slug": "toby-creek-greenway",
+      "name": "Toby Creek Greenway"
+    },
+    {
+      "slug": "torrence-creek-greenway",
+      "name": "Torrence Creek Greenway"
+    },
+    {
+      "slug": "torrence-creek-tributary-greenway",
+      "name": "Torrence Creek Tributary Greenway"
+    },
+    {
+      "slug": "uncc-trail",
+      "name": "UNCC Trail"
+    },
+    {
+      "slug": "walker-branch-greenway",
+      "name": "Walker Branch Greenway"
+    },
+    {
+      "slug": "wesley-heights-greenway",
+      "name": "Wesley Heights Greenway"
+    },
+    {
+      "slug": "west-branch-rocky-river-dye-creek-connector",
+      "name": "West Branch Rocky River Dye Creek Connector"
+    },
+    {
+      "slug": "west-branch-rocky-river-greenway",
+      "name": "West Branch Rocky River Greenway"
+    },
+    {
+      "slug": "west-branch-rocky-river-tributary-greenway",
+      "name": "West Branch Rocky River Tributary Greenway"
+    },
+    {
+      "slug": "west-catawba-av-urban-trail",
+      "name": "West Catawba Av Urban Trail"
+    },
+    {
+      "slug": "westmoreland-rd-urban-trail",
+      "name": "Westmoreland Rd Urban Trail"
+    }
+  ]
+}

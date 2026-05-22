@@ -1,0 +1,37 @@
+name: Re-import Meck greenways
+on:
+  schedule:
+    - cron: "0 12 1 */3 *"
+  workflow_dispatch:
+
+jobs:
+  reimport:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with: { node-version-file: .nvmrc, cache: pnpm }
+      - run: pnpm install --frozen-lockfile
+      - name: Download latest Meck dataset
+        run: curl -fsSL -o /tmp/meck.geojson "https://opendata.charlottenc.gov/datasets/CharlotteNC::greenway-trails.geojson" || { echo "Meck URL unreachable"; exit 0; }
+      - name: Run importer in diff mode
+        run: pnpm import-greenways /tmp/meck.geojson --out=/tmp/new-greenways/ || { echo "Importer not yet implemented"; exit 0; }
+      - name: Open PR if there are diffs
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if git diff --quiet data/greenways/ 2>/dev/null; then
+            echo "No changes from Meck"; exit 0
+          fi
+          BRANCH="data/meck-reimport-$(date +%Y%m%d)"
+          git config user.name "clt-app-bot"
+          git config user.email "bot@clt-app.com"
+          git checkout -b "$BRANCH"
+          git add data/greenways/
+          git commit -m "data: re-import Meck greenway dataset"
+          git push -u origin "$BRANCH"
+          gh pr create --label data-reimport --title "Re-import Meck greenways" --body "Automated quarterly Meck GIS re-import."

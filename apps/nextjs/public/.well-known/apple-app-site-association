@@ -1,0 +1,11 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "TEAMID.com.cltapp.mobile",
+        "paths": ["/greenways/*", "/deals/*", "/parking/*", "/map"]
+      }
+    ]
+  }
+}
