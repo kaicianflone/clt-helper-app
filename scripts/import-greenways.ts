@@ -271,12 +271,18 @@ export const groupByTrailName = (
     // Drop duplicate vertex when segment N ends where segment N+1 starts.
     // Keep original order — we don't try to reorder segments topologically;
     // ArcGIS OBJECTID order is arbitrary and we expose MultiLineString
-    // exactly to make the disconnection explicit.
+    // exactly to make the disconnection explicit. Skip dedup when the
+    // earlier segment is only 2 coords (slicing would leave it with 1, which
+    // fails the per-line min-2 constraint in GreenwayGeometry).
     const deduped: [number, number][][] = [];
     for (let i = 0; i < bucket.segments.length; i++) {
       const cur = bucket.segments[i]!;
       const next = bucket.segments[i + 1];
-      if (next && cur.length >= 2 && coordsEqual(cur[cur.length - 1]!, next[0]!)) {
+      if (
+        next &&
+        cur.length > 2 &&
+        coordsEqual(cur[cur.length - 1]!, next[0]!)
+      ) {
         deduped.push(cur.slice(0, -1));
       } else {
         deduped.push(cur);

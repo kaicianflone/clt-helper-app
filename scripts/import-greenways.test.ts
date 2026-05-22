@@ -304,10 +304,14 @@ describe("groupByTrailName", () => {
     expect(out[0]!.name).toBe("Foo Greenway");
   });
 
-  it("drops segment-boundary duplicate vertex", () => {
+  it("drops segment-boundary duplicate vertex when source segment has >2 coords", () => {
+    // The earlier segment must have >2 coords so dedup leaves a valid LineString
+    // (min 2 coords). For 2-coord segments we skip dedup — schema would reject
+    // a 1-coord LineString.
     const features = [
       seg("Boundary Trail", [
         [-80.84, 35.22],
+        [-80.845, 35.225],
         [-80.85, 35.23],
       ]),
       seg("Boundary Trail", [
@@ -318,15 +322,32 @@ describe("groupByTrailName", () => {
     const out = groupByTrailName(features, "2026-05-21");
     expect(out).toHaveLength(1);
     if (out[0]!.geometry.type !== "MultiLineString") throw new Error("unreachable");
-    // First segment had 2 vertices, second had 2; after dedup first should be 1
-    // Actually: first becomes [start] only (1 coord), second stays [shared, end]
-    // But schema requires min 2 coords per LineString — so the dedup logic must
-    // be careful. Test the behavior we want: total unique coords is 3 not 4.
     const totalCoords = out[0]!.geometry.coordinates.reduce(
       (sum, line) => sum + line.length,
       0,
     );
-    expect(totalCoords).toBe(3);
+    // Originally 3+2=5; after dedup of seg1's last vertex: 2+2=4.
+    expect(totalCoords).toBe(4);
+  });
+
+  it("skips dedup when earlier segment would drop below 2 coords", () => {
+    const features = [
+      seg("Edge Trail", [
+        [-80.84, 35.22],
+        [-80.85, 35.23],
+      ]),
+      seg("Edge Trail", [
+        [-80.85, 35.23],
+        [-80.86, 35.24],
+      ]),
+    ];
+    const out = groupByTrailName(features, "2026-05-21");
+    expect(out).toHaveLength(1);
+    if (out[0]!.geometry.type !== "MultiLineString") throw new Error("unreachable");
+    expect(out[0]!.geometry.coordinates).toHaveLength(2);
+    // Each segment kept as-is (2 coords each), no dedup.
+    expect(out[0]!.geometry.coordinates[0]).toHaveLength(2);
+    expect(out[0]!.geometry.coordinates[1]).toHaveLength(2);
   });
 
   it("rejects segments with coords outside Mecklenburg bbox", () => {
