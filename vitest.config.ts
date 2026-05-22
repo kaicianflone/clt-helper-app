@@ -4,6 +4,8 @@ export default defineConfig({
   resolve: {
     alias: {
       "@clt/data-schema": path.resolve("packages/data-schema/src/index.ts"),
+      // Match the nextjs tsconfig path alias so route tests can `import { env } from "~/env"`.
+      "~/": `${path.resolve("apps/nextjs/src")}/`,
     },
   },
   test: {
