@@ -6,9 +6,6 @@ settings:
 
 catalogs:
   default:
-    '@better-auth/expo':
-      specifier: 1.4.0-beta.9
-      version: 1.4.0-beta.9
     '@eslint/js':
       specifier: ^9.38.0
       version: 9.38.0
@@ -104,9 +101,6 @@ importers:
 
   apps/expo:
     dependencies:
-      '@better-auth/expo':
-        specifier: 'catalog:'
-        version: 1.4.0-beta.9(better-auth@1.4.0-beta.9(better-sqlite3@12.2.0)(react-dom@19.1.4(react@19.1.4))(react@19.1.4))(expo-constants@18.0.10)(expo-crypto@15.0.7(expo@54.0.20))(expo-linking@8.0.8)(expo-secure-store@15.0.7(expo@54.0.20))(expo-web-browser@15.0.8(expo@54.0.20)(react-native@0.81.5(@babel/core@7.28.5)(@types/react@19.1.12)(bufferutil@4.0.8)(react@19.1.4)))
       '@expo-google-fonts/antonio':
         specifier: ^0.4.2
         version: 0.4.2
@@ -134,9 +128,6 @@ importers:
       '@trpc/tanstack-react-query':
         specifier: 'catalog:'
         version: 11.7.1(@tanstack/react-query@5.90.8(react@19.1.4))(@trpc/client@11.7.1(@trpc/server@11.7.1(typescript@5.9.3))(typescript@5.9.3))(@trpc/server@11.7.1(typescript@5.9.3))(react-dom@19.1.4(react@19.1.4))(react@19.1.4)(typescript@5.9.3)
-      better-auth:
-        specifier: 'catalog:'
-        version: 1.4.0-beta.9(better-sqlite3@12.2.0)(next@16.0.10(@babel/core@7.28.5)(@opentelemetry/api@1.9.0)(babel-plugin-react-compiler@1.0.0)(react-dom@19.1.4(react@19.1.4))(react@19.1.4))(react-dom@19.1.4(react@19.1.4))(react@19.1.4)
       expo:
         specifier: ~54.0.20
         version: 54.0.20(@babel/core@7.28.5)(@expo/metro-runtime@6.1.1)(bufferutil@4.0.8)(expo-router@6.0.13)(graphql@15.8.0)(react-native@0.81.5(@babel/core@7.28.5)(@types/react@19.1.12)(bufferutil@4.0.8)(react@19.1.4))(react@19.1.4)
@@ -161,9 +152,6 @@ importers:
       expo-router:
         specifier: ~6.0.13
         version: 6.0.13(13cc77104bb6d6b4256eeecfafa049c2)
-      expo-secure-store:
-        specifier: ~15.0.7
-        version: 15.0.7(expo@54.0.20)
       expo-splash-screen:
         specifier: ~31.0.10
         version: 31.0.10(expo@54.0.20)
@@ -1107,16 +1095,6 @@ packages:
       jose: ^6.1.0
       kysely: ^0.28.5
       nanostores: ^1.0.1
-
-  '@better-auth/expo@1.4.0-beta.9':
-    resolution: {integrity: sha512-XU82s3DxtNgSdwovs1kXfelG5Vd5YMOqMMhIlzsrSVb7y4PM8yVPrxH+sHPk0nnk9dMGdXZ3rw2dzDqnCm2FEA==}
-    peerDependencies:
-      better-auth: 1.4.0-beta.9
-      expo-constants: '>=17.0.0'
-      expo-crypto: '>=13.0.0'
-      expo-linking: '>=7.0.0'
-      expo-secure-store: '>=14.0.0'
-      expo-web-browser: '>=14.0.0'
 
   '@better-auth/telemetry@1.4.0-beta.9':
     resolution: {integrity: sha512-lvl3nq648uAt3ACpjtBBW1Nhec1lxciWYKy+9wgkQRKuE+l4NyxVdfCnDAxxUPAScQNJ+6zMXgt9ZRW5cJJ8bQ==}
@@ -4838,11 +4816,6 @@ packages:
       expo: '*'
       react-native: '*'
 
-  expo-crypto@15.0.7:
-    resolution: {integrity: sha512-FUo41TwwGT2e5rA45PsjezI868Ch3M6wbCZsmqTWdF/hr+HyPcrp1L//dsh/hsrsyrQdpY/U96Lu71/wXePJeg==}
-    peerDependencies:
-      expo: '*'
-
   expo-dev-client@6.0.16:
     resolution: {integrity: sha512-8GLud/dtNteqChL9pNGqLBSHd7of2scFmsgN5WwWgtt2dET7+EJM/K1zp0FYUzfmIF5NLsf5xUDg6AjDldOLqg==}
     peerDependencies:
@@ -4950,11 +4923,6 @@ packages:
         optional: true
       react-server-dom-webpack:
         optional: true
-
-  expo-secure-store@15.0.7:
-    resolution: {integrity: sha512-9q7+G1Zxr5P6J5NRIlm86KulvmYwc6UnQlYPjQLDu1drDnerz6AT6l884dPu29HgtDTn4rR0heYeeGFhMKM7/Q==}
-    peerDependencies:
-      expo: '*'
 
   expo-server@1.0.2:
     resolution: {integrity: sha512-QlQLjFuwgCiBc+Qq0IyBBHiZK1RS0NJSsKVB5iECMJrR04q7PhkaF7dON0fhvo00COy4fT9rJ5brrJDpFro/gA==}
@@ -8690,17 +8658,6 @@ snapshots:
       jose: 6.1.0
       kysely: 0.28.5
       nanostores: 1.0.1
-      zod: 4.1.12
-
-  '@better-auth/expo@1.4.0-beta.9(better-auth@1.4.0-beta.9(better-sqlite3@12.2.0)(react-dom@19.1.4(react@19.1.4))(react@19.1.4))(expo-constants@18.0.10)(expo-crypto@15.0.7(expo@54.0.20))(expo-linking@8.0.8)(expo-secure-store@15.0.7(expo@54.0.20))(expo-web-browser@15.0.8(expo@54.0.20)(react-native@0.81.5(@babel/core@7.28.5)(@types/react@19.1.12)(bufferutil@4.0.8)(react@19.1.4)))':
-    dependencies:
-      '@better-fetch/fetch': 1.1.18
-      better-auth: 1.4.0-beta.9(better-sqlite3@12.2.0)(next@16.0.10(@babel/core@7.28.5)(@opentelemetry/api@1.9.0)(babel-plugin-react-compiler@1.0.0)(react-dom@19.1.4(react@19.1.4))(react@19.1.4))(react-dom@19.1.4(react@19.1.4))(react@19.1.4)
-      expo-constants: 18.0.10(expo@54.0.20)(react-native@0.81.5(@babel/core@7.28.5)(@types/react@19.1.12)(bufferutil@4.0.8)(react@19.1.4))
-      expo-crypto: 15.0.7(expo@54.0.20)
-      expo-linking: 8.0.8(expo@54.0.20)(react-native@0.81.5(@babel/core@7.28.5)(@types/react@19.1.12)(bufferutil@4.0.8)(react@19.1.4))(react@19.1.4)
-      expo-secure-store: 15.0.7(expo@54.0.20)
-      expo-web-browser: 15.0.8(expo@54.0.20)(react-native@0.81.5(@babel/core@7.28.5)(@types/react@19.1.12)(bufferutil@4.0.8)(react@19.1.4))
       zod: 4.1.12
 
   '@better-auth/telemetry@1.4.0-beta.9(@better-auth/core@1.4.0-beta.9(@better-auth/utils@0.3.0)(@better-fetch/fetch@1.1.18)(better-call@1.0.19)(better-sqlite3@12.2.0)(jose@6.1.0)(kysely@0.28.5)(nanostores@1.0.1))':
@@ -13058,11 +13015,6 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  expo-crypto@15.0.7(expo@54.0.20):
-    dependencies:
-      base64-js: 1.5.1
-      expo: 54.0.20(@babel/core@7.28.5)(@expo/metro-runtime@6.1.1)(bufferutil@4.0.8)(expo-router@6.0.13)(graphql@15.8.0)(react-native@0.81.5(@babel/core@7.28.5)(@types/react@19.1.12)(bufferutil@4.0.8)(react@19.1.4))(react@19.1.4)
-
   expo-dev-client@6.0.16(expo@54.0.20):
     dependencies:
       expo: 54.0.20(@babel/core@7.28.5)(@expo/metro-runtime@6.1.1)(bufferutil@4.0.8)(expo-router@6.0.13)(graphql@15.8.0)(react-native@0.81.5(@babel/core@7.28.5)(@types/react@19.1.12)(bufferutil@4.0.8)(react@19.1.4))(react@19.1.4)
@@ -13194,10 +13146,6 @@ snapshots:
       - '@types/react'
       - '@types/react-dom'
       - supports-color
-
-  expo-secure-store@15.0.7(expo@54.0.20):
-    dependencies:
-      expo: 54.0.20(@babel/core@7.28.5)(@expo/metro-runtime@6.1.1)(bufferutil@4.0.8)(expo-router@6.0.13)(graphql@15.8.0)(react-native@0.81.5(@babel/core@7.28.5)(@types/react@19.1.12)(bufferutil@4.0.8)(react@19.1.4))(react@19.1.4)
 
   expo-server@1.0.2: {}
 
