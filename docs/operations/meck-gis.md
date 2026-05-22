@@ -1,73 +1,74 @@
 # Meck GIS: Greenway Dataset
 
-This document tracks source metadata for the Mecklenburg County greenways dataset.
+Source metadata for the Mecklenburg County greenways dataset consumed by the importer in `scripts/import-greenways.ts`.
 
-## Source
+## Sources (verified 2026-05-21)
 
 | Field | Value |
 |---|---|
-| Source URL | https://opendata.charlottenc.gov/datasets/CharlotteNC::greenway-trails.geojson |
-| Dataset name | Greenway Trails |
+| Primary (REST, paged) | `https://meckgis.mecklenburgcountync.gov/server/rest/services/GreenwayTrails/FeatureServer/0/query` |
+| Fallback (item-ID download) | `https://data.charlottenc.gov/api/download/v1/items/9a147a92a6694158bbc162aa879ca7a3/geojson?layers=0` |
 | Publisher | Mecklenburg County GIS / Charlotte Open Data |
-| License | TBD — confirm on opendata.charlottenc.gov |
-| Update frequency | TBD |
+| License | Charlotte Open Data Portal (verify per dataset, generally permissive for derivative work) |
+| Update frequency | Not contractually defined; refresh on-demand via the importer |
 
-## Pre-flight Verification Status (Task 6.5)
+The REST endpoint is the primary source because its URL is keyed on the service name (`GreenwayTrails`), which is stable. The Charlotte Open Data download URL uses an item ID (`9a147a92...`) which changes when the dataset is republished, so it serves as a fallback only.
 
-**Attempted:** 2026-05-21
-**Result:** UNREACHABLE
-
-URLs attempted:
-1. `https://opendata.charlottenc.gov/datasets/CharlotteNC::greenway-trails.geojson` — DNS resolution failure (`Could not resolve host`)
-2. `https://opendata.arcgis.com/datasets/CharlotteNC::greenway-trails.geojson` — HTTP 500
-3. `https://opendata.arcgis.com/api/v3/datasets/CharlotteNC::greenway-trails/downloads/data?format=geojson&spatialRefId=4326` — HTTP 403
-4. `https://services.arcgis.com/62OhDRV1EbgAtFhX/arcgis/rest/services/Greenway_Trails/FeatureServer/0/query?where=1%3D1&outFields=*&f=geojson` — HTTP 400
-
-**Fallback:** Source URL needs manual verification. The domain `opendata.charlottenc.gov` may be temporarily down or the dataset path has changed. Pivoted to OSM Overpass as greenway data source.
-
-## OSM Overpass Status (A3, 2026-05-21)
-
-OSM Overpass was attempted as the fallback source. All three mirrors failed from the build environment:
-
-| Endpoint | Status |
-|---|---|
-| `https://overpass.kumi.systems/api/interpreter` | 429 Too Many Requests |
-| `https://overpass-api.de/api/interpreter` | 406 Not Acceptable |
-| `https://overpass.openstreetmap.ru/api/interpreter` | Connection timeout |
-
-**Current state:** `data/greenways/` contains a manual seed of 5 known Charlotte greenways (approximate geometry). Re-seed when Overpass is accessible:
+## Importer usage
 
 ```bash
-pnpm import-greenways
+# REST endpoint (default)
+pnpm import-greenways --source=meck-rest
+
+# Open-data item-ID GeoJSON download
+pnpm import-greenways --source=meck-opendata
+
+# Legacy Overpass code path (non-Meck regions / hand-crafted fixtures)
+pnpm import-greenways --source=overpass
+
+# From a local GeoJSON file
+pnpm import-greenways path/to/file.geojson
 ```
 
-The importer (`scripts/import-greenways.ts`) queries Overpass for `highway=cycleway`, `highway=footway + bicycle=designated`, `route=hiking`, and `route=bicycle` ways/relations within Charlotte bbox (35.05,-81.05,35.45,-80.55).
+The script writes one JSON per greenway to `data/greenways/<slug>.json` plus an `_index.json` listing all entries. Re-running wipes the directory before writing.
 
-**Action required:** Before running `scripts/import-greenways.ts`, manually confirm the working URL at https://opendata.charlottenc.gov/ by searching "Greenway Trails" and update this document with the confirmed URL, property field names, geometry types, and feature count.
-
-## Schema
+## Schema (lowercase, verified live)
 
 | Field name | Type | Description |
 |---|---|---|
-| TBD | TBD | TBD — populate after successful download (see pre-flight status above) |
-
-Assumed field names (to be verified):
-- `TRAIL_NAME` — trail name string
-- `LENGTH_MI` — length in miles (float)
-- `SURFACE` — surface type string (e.g. paved/natural/mixed)
-
-If actual field names differ from above, update `transformMeckFeature` in `scripts/import-greenways.ts` accordingly.
+| `objectid` | integer | ArcGIS feature ID (per-segment, not per-trail) |
+| `trail_name` | string | Trail name; not normalized — importer trims + collapses whitespace |
+| `trail_surf` | string | Free-text surface label (e.g. "Asphalt") |
+| `surfgen` | string | Canonical surface class: `Paved` / `Natural` / `Unpaved` |
+| `miles` | float | Length of this segment in miles |
+| `length` | float | Length in feet (unused by importer) |
+| `trl_status` | string | `Active` / `Planned` / `Removed` — importer filters to `Active` |
+| `memo` | string | Free-text segment description |
+| `completion` | ISO 8601 | Date the segment opened |
+| `descripton` | string | `Trail` or `Entrance` (the field name is misspelled at source) |
+| `z_min`, `z_max`, `z_mean` | float | Elevation stats (unused) |
+| `slength` | float | Surface length (3D) |
+| `avg_slope` | float | Average slope, ratio (unused) |
+| `ada_comp` | string | ADA compliance flag |
 
 ## Geometry
 
 | Property | Value |
 |---|---|
-| Geometry types observed | TBD — expected LineString and possibly MultiLineString |
-| CRS | TBD — expected WGS84 / EPSG:4326 |
-| Feature count | TBD |
+| Geometry types observed | `LineString` (per segment) |
+| CRS | WGS84 / EPSG:4326 (REST endpoint returns `outSR=4326`) |
+| Feature count | ~2,783 segments → 63 unique active trails (~145.7 total miles) |
 
-## Notes
+## Importer behavior
 
-- Property field names, geometry types, and feature count will be populated after the first successful importer run (Task 6.5).
-- Any field name mismatches between this doc and the live dataset should be treated as a breaking change requiring a data-schema update.
-- The `GreenwayGeometry` Zod schema (in `packages/data-schema/src/greenway.ts`) already supports both `LineString` and `MultiLineString` per the eng review addendum Task 6 amendment.
+- Filters server-side (REST) or client-side (Open Data) to `trl_status === 'Active'`.
+- Groups segments by normalized `trail_name` (trim + collapse-whitespace) and emits one Greenway per name with `geometry.type = "MultiLineString"`. Each segment is preserved as its own coordinate array — **we do not concatenate**, which would (a) inflate `computeLengthMiles` and (b) cause MapLibre to draw visual joins between disconnected trail ends.
+- Drops duplicate vertices at segment boundaries (skipped when the earlier segment is 2 coords; slicing would leave a 1-coord LineString, which fails the schema's min(2) constraint).
+- Rejects per-segment coordinates outside the Mecklenburg bbox (`-81.5 < lng < -80 && 34.9 < lat < 35.6`) and segments with > 10,000 vertices.
+- Picks the geographically northernmost segment's start coord as the single trailhead (placeholder until a real POI dataset is integrated).
+- Length per trail = sum of per-segment `miles` (haversine fallback when `miles` is missing).
+
+## Known gotchas
+
+- Charlotte Open Data has been observed returning HTTP 200 with a JSON error body (no `features` array). The importer asserts `features.length > 10` and exits non-zero on failure.
+- The REST endpoint paginates at 2,000 records per response. The importer loops until it gets a short page.

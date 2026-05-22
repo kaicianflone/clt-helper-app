@@ -1,68 +1,51 @@
-# Tile Pipeline
+# Map Tiles
 
-## Overview
+Charlotte map basemap tiles are served by [MapTiler](https://www.maptiler.com/), via their hosted vector tile API. Both the Next.js web app and the Expo mobile app load tiles from the same `streets-v2` style.
 
-Charlotte map tiles are built from OpenStreetMap data via a three-stage pipeline:
+## Setup (one-time, per developer)
 
-1. Download NC OSM extract from Geofabrik
-2. Clip to Charlotte bounding box with `osmium`
-3. Build vector tiles with `tippecanoe`, convert to PMTiles format with `pmtiles`
+1. Sign up for a free MapTiler account at https://cloud.maptiler.com/account/keys/ (no credit card required, free tier is 100,000 tile loads/month).
+2. Create an API key. For production, restrict it to your domains via the MapTiler dashboard ("Allowed origins").
+3. Add the key to your environment files:
+   - `apps/nextjs/.env.example` and your local `apps/nextjs/.env`: set `NEXT_PUBLIC_MAPTILER_KEY=<your key>` (and optionally `MAPTILER_KEY=<your key>` server-side).
+   - `apps/expo/.env`: set `EXPO_PUBLIC_MAPTILER_KEY=<your key>`.
+4. Run `pnpm --filter @clt/nextjs dev` and visit `/map` — you should see a vector basemap with greenway lines drawn on top.
 
-The final `.pmtiles` file is uploaded to Cloudflare R2 with an immutable cache header and a short-lived manifest pointing at the current file.
+## How it works
 
-## Required Tools
-
-| Tool | Install | Purpose |
-|---|---|---|
-| `osmium` | `apt-get install osmium-tool` or `brew install osmium-tool` | Clip OSM extract to bbox |
-| `tippecanoe` | See [felt/tippecanoe releases](https://github.com/felt/tippecanoe/releases) | Build vector MBTiles |
-| `pmtiles` | See [go-pmtiles releases](https://github.com/protomaps/go-pmtiles/releases) | Convert MBTiles to PMTiles |
-| `wrangler` | `npx wrangler` (no install needed) | Upload to Cloudflare R2 |
-
-## Build Instructions
-
-### Local build
-
-```bash
-# Optional: override bbox or output directory
-export CLT_BBOX="-81.05,35.05,-80.55,35.45"
-export OUT_DIR="tiles"
-
-./scripts/build-tiles.sh
-```
-
-Output: `tiles/charlotte-latest.pmtiles`
-
-### CI build
-
-The `release-tiles` workflow (`.github/workflows/release-tiles.yml`) runs automatically every Monday at 06:00 UTC and can also be triggered manually via `workflow_dispatch`.
-
-## Bounding Box
-
-The default bbox `-81.05,35.05,-80.55,35.45` covers the Charlotte metro area (Mecklenburg County plus a small buffer). Format is `west,south,east,north` in WGS84 decimal degrees.
-
-To adjust the bbox for a wider or narrower area, set `CLT_BBOX` before running the script or update the default in `scripts/build-tiles.sh`.
-
-## Versioning
-
-Tiles are versioned by content hash. The upload step computes a 12-character SHA-256 prefix of the `.pmtiles` file and uploads to:
+The Next.js map component (`apps/nextjs/src/app/map/_components/map.tsx`) builds the style URL inline:
 
 ```
-R2_BUCKET/tiles/charlotte-<SHA>.pmtiles   # immutable, max-age=31536000
-R2_BUCKET/tiles/manifest.json             # short-lived, max-age=60
+https://api.maptiler.com/maps/streets-v2/style.json?key=${NEXT_PUBLIC_MAPTILER_KEY}
 ```
 
-The manifest contains:
+MapLibre GL fetches that JSON, then loads vector tile chunks (PBF format) from MapTiler's CDN. The greenway overlay is drawn as a GeoJSON layer on top, sourced from the tRPC `greenway.listWithGeometry` query.
+
+On tile fetch errors (e.g. MapTiler is down, key revoked), `map.on("error")` flips the page to a plain-background fallback so greenways are still visible.
+
+## Health check
+
+`GET /api/tiles/health` returns:
 
 ```json
 {
-  "current": "tiles/charlotte-<SHA>.pmtiles",
-  "builtAt": "2026-05-21T06:00:00Z"
+  "source": "maptiler",
+  "keyConfigured": true,
+  "error": null
 }
 ```
 
-The app reads `manifest.json` at startup to resolve the current tile URL. Old versions remain in R2 until manually pruned.
+`error: "no_key"` means `NEXT_PUBLIC_MAPTILER_KEY` is empty. Useful as an uptime probe — does not expose the key value.
 
-## Rollback
+## Deferred to v2 — self-hosted PMTiles via Cloudflare R2
 
-To roll back to a previous tile version, update `manifest.json` to point at the previous hash. See `docs/operations/rollback.md` for the full procedure.
+The repository still contains the original tile pipeline (`scripts/build-tiles.sh`, `.github/workflows/release-tiles.yml`) that builds a Charlotte-clipped PMTiles archive from OpenStreetMap and uploads it to Cloudflare R2. We are not running this pipeline in v1 — MapTiler's free tier is cheaper, faster to set up, and adequate for pre-launch traffic.
+
+If MapTiler bandwidth or cost ever becomes a problem (telemetry showing >50k tile loads/day, or the free tier ceiling getting hit), the steps to revive the R2 path are:
+
+1. Create the R2 bucket (`clt-app-prod`) and a public custom domain.
+2. Add `R2_ACCOUNT_ID`, `R2_ACCESS_KEY_ID`, `R2_SECRET_ACCESS_KEY`, `R2_BUCKET` to GitHub repository secrets.
+3. `gh workflow run release-tiles.yml` to build + upload the first PMTiles archive.
+4. Swap the map component back to fetching from `${R2_PUBLIC_BASE_URL}/tiles/manifest.json` (see git history for the pre-MapTiler implementation).
+
+Required tooling for local PMTiles builds: `osmium-tool`, `tippecanoe`, `pmtiles`.

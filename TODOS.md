@@ -2,9 +2,9 @@
 
 ## Pre-launch (manual steps)
 
+- [ ] Sign up for MapTiler (https://cloud.maptiler.com/account/keys/) and set `NEXT_PUBLIC_MAPTILER_KEY` / `EXPO_PUBLIC_MAPTILER_KEY` — see `docs/operations/tiles.md`
 - [ ] Create OpenAI API key + configure (for gstack/design work)
 - [ ] Create GitHub App "clt-app-bot" (see docs/operations/github-app-setup.md)
-- [ ] Create Cloudflare R2 bucket "clt-app-prod" + custom domain
 - [ ] Create Upstash Redis database
 - [ ] Generate REVALIDATION_SECRET: `openssl rand -hex 32`
 - [ ] Set up Vercel project + production env vars (see docs/operations/secrets.md)
@@ -37,10 +37,19 @@
 ## V2 operational
 
 - [ ] Upstash failure detection + admin alert
-- [ ] Bundle size optimization: split greenway geometry into separate file
-- [ ] Tile-egress monitoring on R2 bandwidth dashboard
+- [ ] Bundle size optimization: split greenway geometry into separate file (current bundle is ~1.6 MB)
 - [ ] Public art map (Charlotte open data)
 - [ ] Events feature (farmers markets, free concerts)
 - [ ] Detox iOS + Android e2e tests
 - [ ] Visual regression testing
 - [ ] Real-device a11y testing (VoiceOver, TalkBack)
+
+## Deferred to v2 — self-hosted infra
+
+These items were deliberately cut from v1 in the
+`docs/superpowers/plans/2026-05-21-fix-cloudflare-r2-tiles.md` plan:
+
+- [ ] Create Cloudflare R2 bucket "clt-app-prod" + custom domain — revive when MapTiler tile loads exceed the free tier (~50k/day). See `docs/operations/tiles.md` § "Deferred to v2".
+- [ ] Re-enable `.github/workflows/release-tiles.yml` (PMTiles build + R2 upload) once the R2 bucket exists.
+- [ ] Re-point the data-client at the R2 CDN (set `DATA_BASE_URL`) once R2 hosts the data bundles.
+- [ ] Tile-egress monitoring on R2 bandwidth dashboard (depends on R2 setup above).
