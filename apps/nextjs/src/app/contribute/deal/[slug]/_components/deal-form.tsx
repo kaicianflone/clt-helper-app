@@ -1,13 +1,14 @@
 "use client";
 
 import { useState, useSyncExternalStore } from "react";
-import { useTRPC } from "~/trpc/react";
 import { useMutation } from "@tanstack/react-query";
-import { getDeviceId } from "~/lib/device-id";
-import { recordContribution } from "~/lib/contribution-history";
-import { SubmitSuccessOverlay } from "~/components/SubmitSuccessOverlay";
+
 import type { Day } from "~/components/day-tabs";
 import { DAYS } from "~/components/day-tabs";
+import { SubmitSuccessOverlay } from "~/components/SubmitSuccessOverlay";
+import { recordContribution } from "~/lib/contribution-history";
+import { getDeviceId } from "~/lib/device-id";
+import { useTRPC } from "~/trpc/react";
 
 const DAY_LABEL: Record<Day, string> = {
   mon: "Mon",
@@ -75,7 +76,9 @@ export function DealForm({
   const [restaurantLng, setRestaurantLng] = useState(
     initialRestaurantLng !== undefined ? String(initialRestaurantLng) : "",
   );
-  const [dealDescription, setDealDescription] = useState(initialDealDescription);
+  const [dealDescription, setDealDescription] = useState(
+    initialDealDescription,
+  );
   const [daysOfWeek, setDaysOfWeek] = useState<Day[]>(initialDaysOfWeek);
   const [allDay, setAllDay] = useState(initialAllDay);
   const [timeStart, setTimeStart] = useState(initialTimeStart);
@@ -144,9 +147,7 @@ export function DealForm({
       restaurantLatLng: [latNum, lngNum],
       dealDescription,
       daysOfWeek,
-      timeWindow: allDay
-        ? "all-day"
-        : { start: timeStart, end: timeEnd },
+      timeWindow: allDay ? "all-day" : { start: timeStart, end: timeEnd },
       // Set lastVerified only when creating a new deal; edits leave it to the
       // maintainer to confirm on-the-ground accuracy before merging.
       ...(isNew ? { lastVerified: today } : {}),
@@ -175,7 +176,7 @@ export function DealForm({
         <div>
           <label htmlFor="newSlug" className={labelCls}>
             URL slug{" "}
-            <span className="font-normal normal-case text-[color:var(--fg-ink-muted)]">
+            <span className="font-normal text-[color:var(--fg-ink-muted)] normal-case">
               (e.g. barrys-taco-tuesday)
             </span>
           </label>
@@ -253,10 +254,7 @@ export function DealForm({
         </div>
       </div>
       {latLngError && (
-        <p
-          role="alert"
-          className="text-sm text-[color:var(--rose-stale)]"
-        >
+        <p role="alert" className="text-sm text-[color:var(--rose-stale)]">
           {latLngError}
         </p>
       )}
@@ -306,7 +304,10 @@ export function DealForm({
             onChange={(e) => setAllDay(e.target.checked)}
             className="h-4 w-4 accent-[color:var(--brick)]"
           />
-          <label htmlFor="allDay" className="text-sm text-[color:var(--fg-ink)]">
+          <label
+            htmlFor="allDay"
+            className="text-sm text-[color:var(--fg-ink)]"
+          >
             All day
           </label>
         </div>
@@ -344,7 +345,7 @@ export function DealForm({
       <div>
         <label htmlFor="link" className={labelCls}>
           Website URL{" "}
-          <span className="font-normal normal-case text-[color:var(--fg-ink-muted)]">
+          <span className="font-normal text-[color:var(--fg-ink-muted)] normal-case">
             (optional)
           </span>
         </label>
@@ -361,7 +362,7 @@ export function DealForm({
       <div>
         <label htmlFor="note" className={labelCls}>
           Note{" "}
-          <span className="font-normal normal-case text-[color:var(--fg-ink-muted)]">
+          <span className="font-normal text-[color:var(--fg-ink-muted)] normal-case">
             (optional)
           </span>
         </label>
@@ -378,7 +379,7 @@ export function DealForm({
       <div>
         <label htmlFor="displayName" className={labelCls}>
           Your name{" "}
-          <span className="font-normal normal-case text-[color:var(--fg-ink-muted)]">
+          <span className="font-normal text-[color:var(--fg-ink-muted)] normal-case">
             (shown on the pull request)
           </span>
         </label>

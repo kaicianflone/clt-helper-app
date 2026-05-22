@@ -24,5 +24,8 @@ export const checkRateLimit = async (
   const key = `clt:submit:${deviceId}:${utcDay}`;
   const count = await redis.incr(key);
   if (count === 1) await redis.expire(key, TTL_SECONDS);
-  return { ok: count <= DAILY_LIMIT, remaining: Math.max(0, DAILY_LIMIT - count) };
+  return {
+    ok: count <= DAILY_LIMIT,
+    remaining: Math.max(0, DAILY_LIMIT - count),
+  };
 };

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+
 import { createServerCaller } from "~/trpc/server";
 import { OnboardingRedirect } from "./_components/onboarding-redirect";
 
@@ -63,10 +64,12 @@ export default async function HomePage() {
   return (
     <main className="mx-auto max-w-3xl p-6">
       <OnboardingRedirect />
-      <h1 className="font-display text-5xl font-bold leading-none tracking-tight text-[color:var(--fg-ink)]">
+      <h1 className="font-display text-5xl leading-none font-bold tracking-tight text-[color:var(--fg-ink)]">
         Today in Charlotte
       </h1>
-      <p className="mt-1 text-sm text-[color:var(--fg-ink-muted)]">{dayShort}</p>
+      <p className="mt-1 text-sm text-[color:var(--fg-ink-muted)]">
+        {dayShort}
+      </p>
 
       <section className="mt-10">
         <h2 className="font-display text-2xl font-bold text-[color:var(--fg-ink)]">
@@ -88,7 +91,7 @@ export default async function HomePage() {
                     ? "/deals"
                     : "/parking"
               }
-              className="underline text-[color:var(--brick)] hover:text-[color:var(--brick-deep)]"
+              className="text-[color:var(--brick)] underline hover:text-[color:var(--brick-deep)]"
             >
               Browse all
             </Link>

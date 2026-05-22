@@ -49,7 +49,13 @@ export function ErrorState({
           accessibilityRole="button"
           accessibilityLabel="Retry"
         >
-          <Text style={{ ...type.bodyMd, color: colors.rose, fontFamily: "Inter_600SemiBold" }}>
+          <Text
+            style={{
+              ...type.bodyMd,
+              color: colors.rose,
+              fontFamily: "Inter_600SemiBold",
+            }}
+          >
             Try again
           </Text>
         </Pressable>

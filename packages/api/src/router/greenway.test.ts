@@ -1,6 +1,7 @@
 import { describe, expect, it, vi } from "vitest";
-import { appRouter } from "../root";
+
 import type { Context } from "../trpc";
+import { appRouter } from "../root";
 
 describe("greenway router", () => {
   const baseCtx: Context = {
@@ -14,7 +15,13 @@ describe("greenway router", () => {
     lengthMiles: 1,
     surface: "paved",
     trailheads: [{ name: "x", lat: 0, lng: 0 }],
-    geometry: { type: "LineString", coordinates: [[0, 0], [1, 1]] },
+    geometry: {
+      type: "LineString",
+      coordinates: [
+        [0, 0],
+        [1, 1],
+      ],
+    },
     pointsOfInterest: [],
     photos: [],
     lastVerified: "2026-05-20",

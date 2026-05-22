@@ -1,8 +1,9 @@
-import { z } from "zod";
 import { TRPCError } from "@trpc/server";
-import { publicProcedure, createTRPCRouter } from "../trpc";
-import { fetchParking } from "../data-client";
+import { z } from "zod";
+
 import type { Context } from "../trpc";
+import { fetchParking } from "../data-client";
+import { createTRPCRouter, publicProcedure } from "../trpc";
 
 const getBaseUrl = (ctx: Context): string => {
   const url = ctx.baseUrl ?? process.env.R2_PUBLIC_BASE_URL;

@@ -1,4 +1,5 @@
-import { describe, expect, it, vi, beforeAll, afterAll } from "vitest";
+import { afterAll, beforeAll, describe, expect, it, vi } from "vitest";
+
 import type { Context } from "../trpc";
 import { appRouter } from "../root";
 
@@ -20,7 +21,13 @@ const validGreenway = {
   lengthMiles: 1,
   surface: "paved",
   trailheads: [{ name: "Start", lat: 35.2, lng: -80.84 }],
-  geometry: { type: "LineString", coordinates: [[-80.84, 35.2], [-80.85, 35.21]] },
+  geometry: {
+    type: "LineString",
+    coordinates: [
+      [-80.84, 35.2],
+      [-80.85, 35.21],
+    ],
+  },
   pointsOfInterest: [],
   photos: [],
   lastVerified: "2026-01-01",
@@ -32,7 +39,9 @@ const buildCtx = (overrides: Partial<Context> = {}): Context => ({
   fetchFileFromRepo: vi.fn().mockResolvedValue(validGreenway),
   renderDiff: vi.fn().mockReturnValue("- name: Test Trail → Renamed Trail"),
   openCommunityPR: vi.fn().mockResolvedValue({
-    prUrl: "https://github.com/x/y/pull/1", prNumber: 1, branch: "community/test",
+    prUrl: "https://github.com/x/y/pull/1",
+    prNumber: 1,
+    branch: "community/test",
   }),
   isVerifyOnlyChange: vi.fn().mockReturnValue(false),
   ...overrides,
@@ -56,29 +65,38 @@ describe("submit.contribute", () => {
   });
 
   it("rejects when rate limit exceeded", async () => {
-    const ctx = buildCtx({ checkRateLimit: vi.fn().mockResolvedValue({ ok: false, remaining: 0 }) });
+    const ctx = buildCtx({
+      checkRateLimit: vi.fn().mockResolvedValue({ ok: false, remaining: 0 }),
+    });
     const caller = appRouter.createCaller(ctx);
-    await expect(caller.submit.contribute({
-      kind: "greenway",
-      patch: { slug: "test-trail", name: "X" },
-      note: "", displayName: "Kai", deviceId: "device-1",
-      eulaAcceptedAt: "2026-05-20T00:00:00Z",
-      intent: "edit",
-    })).rejects.toThrow(/rate.*limit|too.*many/i);
+    await expect(
+      caller.submit.contribute({
+        kind: "greenway",
+        patch: { slug: "test-trail", name: "X" },
+        note: "",
+        displayName: "Kai",
+        deviceId: "device-1",
+        eulaAcceptedAt: "2026-05-20T00:00:00Z",
+        intent: "edit",
+      }),
+    ).rejects.toThrow(/rate.*limit|too.*many/i);
     expect(ctx.openCommunityPR).not.toHaveBeenCalled();
   });
 
   it("rejects when content is objectionable", async () => {
     const ctx = buildCtx();
     const caller = appRouter.createCaller(ctx);
-    await expect(caller.submit.contribute({
-      kind: "greenway",
-      patch: { slug: "test-trail", name: "X" },
-      note: "fucking awesome",
-      displayName: "Kai", deviceId: "device-1",
-      eulaAcceptedAt: "2026-05-20T00:00:00Z",
-      intent: "edit",
-    })).rejects.toThrow(/disallowed/i);
+    await expect(
+      caller.submit.contribute({
+        kind: "greenway",
+        patch: { slug: "test-trail", name: "X" },
+        note: "fucking awesome",
+        displayName: "Kai",
+        deviceId: "device-1",
+        eulaAcceptedAt: "2026-05-20T00:00:00Z",
+        intent: "edit",
+      }),
+    ).rejects.toThrow(/disallowed/i);
     expect(ctx.openCommunityPR).not.toHaveBeenCalled();
   });
 
@@ -89,12 +107,13 @@ describe("submit.contribute", () => {
       kind: "greenway",
       patch: { slug: "test-trail", lastVerified: "2026-05-20" },
       note: "still good",
-      displayName: "Kai", deviceId: "device-1",
+      displayName: "Kai",
+      deviceId: "device-1",
       eulaAcceptedAt: "2026-05-20T00:00:00Z",
       intent: "edit",
     });
     expect(ctx.openCommunityPR).toHaveBeenCalledWith(
-      expect.objectContaining({ autoMerge: true })
+      expect.objectContaining({ autoMerge: true }),
     );
   });
 
@@ -104,7 +123,9 @@ describe("submit.contribute", () => {
     const badInput = {
       kind: "greenway" as const,
       patch: { slug: "test-trail", name: "X" },
-      note: "", displayName: "Kai", deviceId: "device-1",
+      note: "",
+      displayName: "Kai",
+      deviceId: "device-1",
       eulaAcceptedAt: "",
       intent: "edit" as const,
     };
@@ -115,13 +136,17 @@ describe("submit.contribute", () => {
   it("rejects when eulaAcceptedAt is not a valid ISO 8601 datetime", async () => {
     const ctx = buildCtx();
     const caller = appRouter.createCaller(ctx);
-    await expect(caller.submit.contribute({
-      kind: "greenway",
-      patch: { slug: "test-trail", name: "X" },
-      note: "", displayName: "Kai", deviceId: "device-1",
-      eulaAcceptedAt: "not-a-date",
-      intent: "edit",
-    })).rejects.toThrow();
+    await expect(
+      caller.submit.contribute({
+        kind: "greenway",
+        patch: { slug: "test-trail", name: "X" },
+        note: "",
+        displayName: "Kai",
+        deviceId: "device-1",
+        eulaAcceptedAt: "not-a-date",
+        intent: "edit",
+      }),
+    ).rejects.toThrow();
   });
 
   // P0-1: GH_REPO_OWNER / GH_REPO_NAME must be set
@@ -133,13 +158,17 @@ describe("submit.contribute", () => {
     try {
       const ctx = buildCtx();
       const caller = appRouter.createCaller(ctx);
-      await expect(caller.submit.contribute({
-        kind: "greenway",
-        patch: { slug: "test-trail", name: "X" },
-        note: "", displayName: "Kai", deviceId: "device-1",
-        eulaAcceptedAt: "2026-05-20T00:00:00Z",
-        intent: "edit",
-      })).rejects.toThrow(/misconfigured|missing.*GitHub/i);
+      await expect(
+        caller.submit.contribute({
+          kind: "greenway",
+          patch: { slug: "test-trail", name: "X" },
+          note: "",
+          displayName: "Kai",
+          deviceId: "device-1",
+          eulaAcceptedAt: "2026-05-20T00:00:00Z",
+          intent: "edit",
+        }),
+      ).rejects.toThrow(/misconfigured|missing.*GitHub/i);
     } finally {
       if (savedOwner !== undefined) process.env.GH_REPO_OWNER = savedOwner;
       if (savedRepo !== undefined) process.env.GH_REPO_NAME = savedRepo;
@@ -153,15 +182,17 @@ describe("submit.contribute", () => {
       fetchFileFromRepo: vi.fn().mockResolvedValue(validGreenway),
     });
     const caller = appRouter.createCaller(ctx);
-    await expect(caller.submit.contribute({
-      kind: "greenway",
-      patch: { slug: "test-trail", name: "New Trail" },
-      note: "",
-      displayName: "Kai",
-      deviceId: "device-1",
-      eulaAcceptedAt: "2026-05-20T00:00:00Z",
-      intent: "create",
-    })).rejects.toThrow(/already exists|CONFLICT/i);
+    await expect(
+      caller.submit.contribute({
+        kind: "greenway",
+        patch: { slug: "test-trail", name: "New Trail" },
+        note: "",
+        displayName: "Kai",
+        deviceId: "device-1",
+        eulaAcceptedAt: "2026-05-20T00:00:00Z",
+        intent: "create",
+      }),
+    ).rejects.toThrow(/already exists|CONFLICT/i);
     expect(ctx.openCommunityPR).not.toHaveBeenCalled();
   });
 
@@ -186,7 +217,9 @@ describe("submit.contribute", () => {
     } catch (e: unknown) {
       const err = e as { code?: string; message?: string };
       // TRPCError code or message should indicate NOT_FOUND
-      expect(err.code === "NOT_FOUND" || /not found/i.test(err.message ?? "")).toBe(true);
+      expect(
+        err.code === "NOT_FOUND" || /not found/i.test(err.message ?? ""),
+      ).toBe(true);
     }
     expect(ctx.openCommunityPR).not.toHaveBeenCalled();
   });
@@ -196,7 +229,9 @@ describe("submit.contribute", () => {
     const ctx = buildCtx({
       fetchFileFromRepo: vi.fn().mockResolvedValue({}),
       openCommunityPR: vi.fn().mockResolvedValue({
-        prUrl: "https://github.com/x/y/pull/2", prNumber: 2, branch: "community/new",
+        prUrl: "https://github.com/x/y/pull/2",
+        prNumber: 2,
+        branch: "community/new",
       }),
     });
     const caller = appRouter.createCaller(ctx);
@@ -207,7 +242,13 @@ describe("submit.contribute", () => {
       lengthMiles: 1.2,
       surface: "paved",
       trailheads: [{ name: "Start", lat: 35.2, lng: -80.84 }],
-      geometry: { type: "LineString", coordinates: [[-80.84, 35.2], [-80.85, 35.21]] },
+      geometry: {
+        type: "LineString",
+        coordinates: [
+          [-80.84, 35.2],
+          [-80.85, 35.21],
+        ],
+      },
       pointsOfInterest: [],
       photos: [],
       lastVerified: "2026-05-20",

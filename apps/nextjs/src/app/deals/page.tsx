@@ -1,9 +1,9 @@
-import { createServerCaller } from "~/trpc/server";
 import type { Day } from "~/components/days";
-import { DAYS, dayFromDate } from "~/components/days";
 import { DayTabs } from "~/components/day-tabs";
-import { LastVerifiedBadge } from "~/components/LastVerifiedBadge";
+import { dayFromDate, DAYS } from "~/components/days";
 import { EmptyState } from "~/components/EmptyState";
+import { LastVerifiedBadge } from "~/components/LastVerifiedBadge";
+import { createServerCaller } from "~/trpc/server";
 
 export const revalidate = 60;
 
@@ -83,7 +83,7 @@ export default async function DealsPage({
                 {d.link && (
                   <a
                     href={d.link}
-                    className="underline text-[color:var(--fg-ink)]"
+                    className="text-[color:var(--fg-ink)] underline"
                     target="_blank"
                     rel="noreferrer"
                   >
@@ -92,7 +92,7 @@ export default async function DealsPage({
                 )}
                 <a
                   href={`/contribute/deal/${d.slug}`}
-                  className="underline text-[color:var(--fg-ink-soft)]"
+                  className="text-[color:var(--fg-ink-soft)] underline"
                 >
                   Suggest edit
                 </a>

@@ -2,11 +2,11 @@ import { FlatList, Pressable, Text, View } from "react-native";
 import { Link } from "expo-router";
 import { useQuery } from "@tanstack/react-query";
 
-import { trpc } from "~/utils/api";
-import { ListSkeleton } from "~/components/list-skeleton";
 import { EmptyState } from "~/components/empty-state";
 import { ErrorState } from "~/components/error-state";
+import { ListSkeleton } from "~/components/list-skeleton";
 import { colors, space, type } from "~/styles/tokens";
+import { trpc } from "~/utils/api";
 
 export default function GreenwaysListScreen() {
   const { data, isPending, isError, refetch } = useQuery(
@@ -15,7 +15,9 @@ export default function GreenwaysListScreen() {
 
   if (isPending) {
     return (
-      <View style={{ flex: 1, backgroundColor: colors.bg.cream, padding: space[4] }}>
+      <View
+        style={{ flex: 1, backgroundColor: colors.bg.cream, padding: space[4] }}
+      >
         <ListSkeleton rows={6} />
       </View>
     );
@@ -23,7 +25,9 @@ export default function GreenwaysListScreen() {
 
   if (isError) {
     return (
-      <View style={{ flex: 1, backgroundColor: colors.bg.cream, padding: space[4] }}>
+      <View
+        style={{ flex: 1, backgroundColor: colors.bg.cream, padding: space[4] }}
+      >
         <ErrorState
           message="Could not load greenways."
           onRetry={() => void refetch()}
@@ -34,7 +38,9 @@ export default function GreenwaysListScreen() {
 
   if (data.length === 0) {
     return (
-      <View style={{ flex: 1, backgroundColor: colors.bg.cream, padding: space[4] }}>
+      <View
+        style={{ flex: 1, backgroundColor: colors.bg.cream, padding: space[4] }}
+      >
         <EmptyState message="No greenways yet. The data layer is still warming up. Check back in a moment." />
       </View>
     );
@@ -57,7 +63,9 @@ export default function GreenwaysListScreen() {
             accessibilityRole="button"
             accessibilityLabel={`View ${item.name} greenway`}
           >
-            <Text style={{ ...type.headingMd, color: colors.fg.ink }}>{item.name}</Text>
+            <Text style={{ ...type.headingMd, color: colors.fg.ink }}>
+              {item.name}
+            </Text>
             <Text
               style={{
                 ...type.bodySm,

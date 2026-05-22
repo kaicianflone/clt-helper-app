@@ -16,7 +16,7 @@ export default function PrivacyPage() {
         we do and don&apos;t collect.
       </p>
 
-      <h2 className="mt-8 font-display text-2xl font-bold text-[color:var(--fg-ink)]">
+      <h2 className="font-display mt-8 text-2xl font-bold text-[color:var(--fg-ink)]">
         What we don&apos;t collect
       </h2>
       <ul className="mt-3 space-y-2 text-base text-[color:var(--fg-ink-soft)]">
@@ -38,7 +38,7 @@ export default function PrivacyPage() {
         </li>
       </ul>
 
-      <h2 className="mt-8 font-display text-2xl font-bold text-[color:var(--fg-ink)]">
+      <h2 className="font-display mt-8 text-2xl font-bold text-[color:var(--fg-ink)]">
         What we do collect
       </h2>
       <ul className="mt-3 space-y-4 text-base text-[color:var(--fg-ink-soft)]">
@@ -68,7 +68,7 @@ export default function PrivacyPage() {
         </li>
       </ul>
 
-      <h2 className="mt-8 font-display text-2xl font-bold text-[color:var(--fg-ink)]">
+      <h2 className="font-display mt-8 text-2xl font-bold text-[color:var(--fg-ink)]">
         Open source
       </h2>
       <p className="mt-3 text-base leading-relaxed text-[color:var(--fg-ink-soft)]">

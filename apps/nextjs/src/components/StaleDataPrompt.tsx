@@ -6,7 +6,12 @@ interface StaleDataPromptProps {
   now?: number;
 }
 
-export function StaleDataPrompt({ date, slug, kind, now }: StaleDataPromptProps) {
+export function StaleDataPrompt({
+  date,
+  slug,
+  kind,
+  now,
+}: StaleDataPromptProps) {
   const ts = now ?? new Date(date).getTime();
   const days = Math.floor((ts - new Date(date).getTime()) / 86_400_000);
 
@@ -17,7 +22,8 @@ export function StaleDataPrompt({ date, slug, kind, now }: StaleDataPromptProps)
   return (
     <div className="rounded-lg border border-[color:var(--amber-warn)]/30 bg-[color:var(--amber-warn)]/10 p-4">
       <p className="text-sm text-[color:var(--fg-ink-soft)]">
-        This hasn&apos;t been verified in {months} month{months !== 1 ? "s" : ""}. Still accurate?
+        This hasn&apos;t been verified in {months} month
+        {months !== 1 ? "s" : ""}. Still accurate?
       </p>
       <div className="mt-2 flex gap-4">
         <a

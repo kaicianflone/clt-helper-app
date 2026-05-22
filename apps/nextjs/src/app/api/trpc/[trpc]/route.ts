@@ -3,8 +3,8 @@ import { fetchRequestHandler } from "@trpc/server/adapters/fetch";
 
 import { appRouter, createTRPCContext } from "@clt/api";
 
-import { buildSubmitContext } from "~/server/context";
 import { env } from "~/env";
+import { buildSubmitContext } from "~/server/context";
 
 /**
  * CORS origin allowlist.

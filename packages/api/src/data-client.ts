@@ -1,4 +1,4 @@
-import type { Greenway, Deal, ParkingLot } from "@clt/data-schema";
+import type { Deal, Greenway, ParkingLot } from "@clt/data-schema";
 
 export interface Bundle<T> {
   schemaVersion: number;

@@ -3,13 +3,13 @@ import { FlatList, Pressable, Text, View } from "react-native";
 import { Link } from "expo-router";
 import { useQuery } from "@tanstack/react-query";
 
-import { trpc } from "~/utils/api";
 import { DayPills } from "~/components/day-pills";
-import { LastVerifiedBadge } from "~/components/last-verified-badge";
-import { ListSkeleton } from "~/components/list-skeleton";
 import { EmptyState } from "~/components/empty-state";
 import { ErrorState } from "~/components/error-state";
+import { LastVerifiedBadge } from "~/components/last-verified-badge";
+import { ListSkeleton } from "~/components/list-skeleton";
 import { colors, space, type } from "~/styles/tokens";
+import { trpc } from "~/utils/api";
 
 type DayKey = "mon" | "tue" | "wed" | "thu" | "fri" | "sat" | "sun";
 
@@ -63,7 +63,9 @@ export default function DealsListScreen() {
 
   if (isPending) {
     return (
-      <View style={{ flex: 1, backgroundColor: colors.bg.cream, padding: space[4] }}>
+      <View
+        style={{ flex: 1, backgroundColor: colors.bg.cream, padding: space[4] }}
+      >
         {ListHeader}
         <ListSkeleton rows={5} />
       </View>
@@ -72,7 +74,9 @@ export default function DealsListScreen() {
 
   if (isError) {
     return (
-      <View style={{ flex: 1, backgroundColor: colors.bg.cream, padding: space[4] }}>
+      <View
+        style={{ flex: 1, backgroundColor: colors.bg.cream, padding: space[4] }}
+      >
         {ListHeader}
         <ErrorState
           message="Could not load deals."
@@ -84,7 +88,9 @@ export default function DealsListScreen() {
 
   if (data.length === 0) {
     return (
-      <View style={{ flex: 1, backgroundColor: colors.bg.cream, padding: space[4] }}>
+      <View
+        style={{ flex: 1, backgroundColor: colors.bg.cream, padding: space[4] }}
+      >
         {ListHeader}
         <EmptyState message={`No deals on ${selectedDay}.`} />
       </View>

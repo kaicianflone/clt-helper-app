@@ -9,8 +9,9 @@
 import { initTRPC } from "@trpc/server";
 import superjson from "superjson";
 import { z, ZodError } from "zod/v4";
-import type { OpenPRResult, OpenPROptions } from "./server/github-bot";
+
 import type { ContentCheckResult } from "./server/content-filter";
+import type { OpenPROptions, OpenPRResult } from "./server/github-bot";
 
 /**
  * 1. CONTEXT
@@ -30,12 +31,24 @@ export interface Context {
   baseUrl?: string;
   fetchImpl?: typeof fetch;
   // Submit-flow injections (only used by submit router; routes can leave undefined)
-  checkRateLimit?: (deviceId: string) => Promise<{ ok: boolean; remaining: number }>;
+  checkRateLimit?: (
+    deviceId: string,
+  ) => Promise<{ ok: boolean; remaining: number }>;
   fetchFileFromRepo?: (path: string) => Promise<Record<string, unknown>>;
-  renderDiff?: (before: Record<string, unknown>, after: Record<string, unknown>) => string;
-  isVerifyOnlyChange?: (before: Record<string, unknown>, after: Record<string, unknown>) => boolean;
+  renderDiff?: (
+    before: Record<string, unknown>,
+    after: Record<string, unknown>,
+  ) => string;
+  isVerifyOnlyChange?: (
+    before: Record<string, unknown>,
+    after: Record<string, unknown>,
+  ) => boolean;
   openCommunityPR?: (opts: OpenPROptions) => Promise<OpenPRResult>;
-  containsObjectionableContent?: (input: { displayName: string; note: string; patch: Record<string, unknown> }) => ContentCheckResult;
+  containsObjectionableContent?: (input: {
+    displayName: string;
+    note: string;
+    patch: Record<string, unknown>;
+  }) => ContentCheckResult;
 }
 
 export const createTRPCContext = (opts: { headers: Headers }): Context => {
@@ -70,13 +83,26 @@ const t = initTRPC.context<typeof createTRPCContext>().create({
     }
     // Octokit-shaped errors (have numeric .status)
     const causeUnknown = cause as unknown;
-    if (causeUnknown && typeof (causeUnknown as { status?: unknown }).status === "number") {
+    if (
+      causeUnknown &&
+      typeof (causeUnknown as { status?: unknown }).status === "number"
+    ) {
       const status = (causeUnknown as { status: number }).status;
       if (status === 403) {
-        return { ...shape, message: "Submissions are temporarily unavailable. Try again in an hour.", data: { ...shape.data, zodError: null } };
+        return {
+          ...shape,
+          message:
+            "Submissions are temporarily unavailable. Try again in an hour.",
+          data: { ...shape.data, zodError: null },
+        };
       }
       if (status === 422) {
-        return { ...shape, message: "Another submission for this entry is in progress. Please try again in a minute.", data: { ...shape.data, zodError: null } };
+        return {
+          ...shape,
+          message:
+            "Another submission for this entry is in progress. Please try again in a minute.",
+          data: { ...shape.data, zodError: null },
+        };
       }
     }
     return {

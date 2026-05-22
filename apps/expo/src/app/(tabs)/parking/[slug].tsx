@@ -1,18 +1,28 @@
 import { useState } from "react";
-import { Linking, Platform, Pressable, ScrollView, Text, View } from "react-native";
+import {
+  Linking,
+  Platform,
+  Pressable,
+  ScrollView,
+  Text,
+  View,
+} from "react-native";
 import { Link, useLocalSearchParams } from "expo-router";
 import { useQuery } from "@tanstack/react-query";
 
-import { trpc } from "~/utils/api";
-import { LastVerifiedBadge } from "~/components/last-verified-badge";
-import { StaleDataPrompt } from "~/components/stale-data-prompt";
-import { ShareButton } from "~/components/share-button";
 import { ErrorState } from "~/components/error-state";
+import { LastVerifiedBadge } from "~/components/last-verified-badge";
+import { ShareButton } from "~/components/share-button";
+import { StaleDataPrompt } from "~/components/stale-data-prompt";
 import { colors, radius, space, type } from "~/styles/tokens";
+import { trpc } from "~/utils/api";
 
 type DayHours = { open: string; close: string } | "closed" | "24h";
 
-type HoursMap = Record<"mon" | "tue" | "wed" | "thu" | "fri" | "sat" | "sun", DayHours>;
+type HoursMap = Record<
+  "mon" | "tue" | "wed" | "thu" | "fri" | "sat" | "sun",
+  DayHours
+>;
 
 const DAY_LABELS: { key: keyof HoursMap; label: string }[] = [
   { key: "mon", label: "Monday" },
@@ -52,9 +62,12 @@ export default function ParkingDetailScreen() {
   const { slug } = useLocalSearchParams<{ slug: string }>();
   const [now] = useState(() => Date.now());
 
-  const { data: lot, isPending, isError, refetch } = useQuery(
-    trpc.parking.get.queryOptions({ slug }),
-  );
+  const {
+    data: lot,
+    isPending,
+    isError,
+    refetch,
+  } = useQuery(trpc.parking.get.queryOptions({ slug }));
 
   if (isPending) {
     return (
@@ -66,14 +79,18 @@ export default function ParkingDetailScreen() {
           alignItems: "center",
         }}
       >
-        <Text style={{ ...type.bodySm, color: colors.fg.inkMuted }}>Loading…</Text>
+        <Text style={{ ...type.bodySm, color: colors.fg.inkMuted }}>
+          Loading…
+        </Text>
       </View>
     );
   }
 
   if (isError) {
     return (
-      <View style={{ flex: 1, backgroundColor: colors.bg.cream, padding: space[4] }}>
+      <View
+        style={{ flex: 1, backgroundColor: colors.bg.cream, padding: space[4] }}
+      >
         <ErrorState
           message="Could not load parking lot."
           onRetry={() => void refetch()}
@@ -81,7 +98,6 @@ export default function ParkingDetailScreen() {
       </View>
     );
   }
-
 
   const hours = lot.hours as HoursMap;
 
@@ -92,11 +108,11 @@ export default function ParkingDetailScreen() {
     >
       {/* Header */}
       <View style={{ padding: space[4], paddingTop: space[6] }}>
-        <Text style={{ ...type.displayLg, color: colors.fg.ink }}>{lot.name}</Text>
+        <Text style={{ ...type.displayLg, color: colors.fg.ink }}>
+          {lot.name}
+        </Text>
         <Pressable
-          onPress={() =>
-            openInMaps(lot.latLng[0], lot.latLng[1], lot.name)
-          }
+          onPress={() => openInMaps(lot.latLng[0], lot.latLng[1], lot.name)}
           hitSlop={8}
           accessibilityRole="button"
           accessibilityLabel={`Open ${lot.name} in Maps`}
@@ -184,7 +200,9 @@ export default function ParkingDetailScreen() {
               borderBottomColor: colors.border.soft,
             }}
           >
-            <Text style={{ ...type.bodyMd, color: colors.fg.ink }}>{label}</Text>
+            <Text style={{ ...type.bodyMd, color: colors.fg.ink }}>
+              {label}
+            </Text>
             <Text style={{ ...type.bodyMd, color: colors.fg.inkSoft }}>
               {formatHours(hours[key])}
             </Text>
@@ -217,7 +235,9 @@ export default function ParkingDetailScreen() {
             <Pressable
               style={({ pressed }) => ({
                 flex: 1,
-                backgroundColor: pressed ? colors.brick.deep : colors.brick.DEFAULT,
+                backgroundColor: pressed
+                  ? colors.brick.deep
+                  : colors.brick.DEFAULT,
                 borderRadius: radius.md,
                 paddingVertical: space[3],
                 minHeight: 44,

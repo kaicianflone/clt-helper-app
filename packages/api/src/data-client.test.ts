@@ -1,4 +1,5 @@
 import { describe, expect, it, vi } from "vitest";
+
 import { fetchBundle } from "./data-client";
 
 describe("fetchBundle", () => {

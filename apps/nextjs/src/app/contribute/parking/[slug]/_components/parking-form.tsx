@@ -1,11 +1,12 @@
 "use client";
 
 import { useState, useSyncExternalStore } from "react";
-import { useTRPC } from "~/trpc/react";
 import { useMutation } from "@tanstack/react-query";
-import { getDeviceId } from "~/lib/device-id";
-import { recordContribution } from "~/lib/contribution-history";
+
 import { SubmitSuccessOverlay } from "~/components/SubmitSuccessOverlay";
+import { recordContribution } from "~/lib/contribution-history";
+import { getDeviceId } from "~/lib/device-id";
+import { useTRPC } from "~/trpc/react";
 
 type DayKey = "mon" | "tue" | "wed" | "thu" | "fri" | "sat" | "sun";
 const DAYS: DayKey[] = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
@@ -19,10 +20,7 @@ const DAY_LABEL: Record<DayKey, string> = {
   sun: "Sun",
 };
 
-type HoursValue =
-  | { open: string; close: string }
-  | "closed"
-  | "24h";
+type HoursValue = { open: string; close: string } | "closed" | "24h";
 
 type PaymentMethod = "cash" | "card" | "app" | "meter";
 const PAYMENT_METHODS: PaymentMethod[] = ["cash", "card", "app", "meter"];
@@ -198,7 +196,7 @@ export function ParkingForm({
         <div>
           <label htmlFor="newSlug" className={labelCls}>
             URL slug{" "}
-            <span className="font-normal normal-case text-[color:var(--fg-ink-muted)]">
+            <span className="font-normal text-[color:var(--fg-ink-muted)] normal-case">
               (e.g. uptown-deck-1)
             </span>
           </label>
@@ -247,7 +245,7 @@ export function ParkingForm({
         <div className="flex-1">
           <label htmlFor="hourlyRate" className={labelCls}>
             Hourly rate ($){" "}
-            <span className="font-normal normal-case text-[color:var(--fg-ink-muted)]">
+            <span className="font-normal text-[color:var(--fg-ink-muted)] normal-case">
               (leave blank if unknown)
             </span>
           </label>
@@ -265,7 +263,7 @@ export function ParkingForm({
         <div className="flex-1">
           <label htmlFor="dailyMax" className={labelCls}>
             Daily max ($){" "}
-            <span className="font-normal normal-case text-[color:var(--fg-ink-muted)]">
+            <span className="font-normal text-[color:var(--fg-ink-muted)] normal-case">
               (optional)
             </span>
           </label>
@@ -365,7 +363,7 @@ export function ParkingForm({
       <div>
         <label htmlFor="operator" className={labelCls}>
           Operator{" "}
-          <span className="font-normal normal-case text-[color:var(--fg-ink-muted)]">
+          <span className="font-normal text-[color:var(--fg-ink-muted)] normal-case">
             (optional, e.g. LAZ Parking)
           </span>
         </label>
@@ -381,7 +379,7 @@ export function ParkingForm({
       <div>
         <label htmlFor="note" className={labelCls}>
           Note{" "}
-          <span className="font-normal normal-case text-[color:var(--fg-ink-muted)]">
+          <span className="font-normal text-[color:var(--fg-ink-muted)] normal-case">
             (optional)
           </span>
         </label>
@@ -398,7 +396,7 @@ export function ParkingForm({
       <div>
         <label htmlFor="displayName" className={labelCls}>
           Your name{" "}
-          <span className="font-normal normal-case text-[color:var(--fg-ink-muted)]">
+          <span className="font-normal text-[color:var(--fg-ink-muted)] normal-case">
             (shown on the pull request)
           </span>
         </label>

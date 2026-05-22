@@ -32,7 +32,11 @@ export function EmptyState({ message, ctaLabel, ctaHref }: EmptyStateProps) {
       {ctaLabel && ctaHref && (
         <Link
           href={ctaHref}
-          style={{ marginTop: space[4], minHeight: 44, justifyContent: "center" }}
+          style={{
+            marginTop: space[4],
+            minHeight: 44,
+            justifyContent: "center",
+          }}
         >
           <Text
             style={{

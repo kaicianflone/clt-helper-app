@@ -4,7 +4,7 @@
  * We mock the React Native / Expo modules so this file can run under
  * a plain Node vitest environment without a native runtime.
  */
-import { describe, it, expect, vi, beforeEach } from "vitest";
+import { beforeEach, describe, expect, it, vi } from "vitest";
 
 // --- Mock react-native Platform ---
 vi.mock("react-native", () => ({

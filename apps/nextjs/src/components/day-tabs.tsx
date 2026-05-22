@@ -1,7 +1,9 @@
 "use client";
+
 import Link from "next/link";
-import { DAYS } from "./days";
+
 import type { Day } from "./days";
+import { DAYS } from "./days";
 
 export { DAYS, dayFromDate, type Day } from "./days";
 
@@ -35,4 +37,3 @@ export function DayTabs({ active }: { active: Day }) {
     </nav>
   );
 }
-

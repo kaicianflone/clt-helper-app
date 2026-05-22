@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
+
+import type { Day } from "~/components/day-tabs";
 import { createServerCaller } from "~/trpc/server";
 import { DealWrapper } from "./_components/deal-wrapper";
-import type { Day } from "~/components/day-tabs";
 
 export const revalidate = 60;
 

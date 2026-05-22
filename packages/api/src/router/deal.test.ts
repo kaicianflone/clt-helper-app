@@ -1,6 +1,7 @@
 import { describe, expect, it, vi } from "vitest";
-import { appRouter } from "../root";
+
 import type { Context } from "../trpc";
+import { appRouter } from "../root";
 
 describe("deal router", () => {
   const baseCtx: Context = { baseUrl: "https://cdn.example.com" };
@@ -28,9 +29,7 @@ describe("deal router", () => {
   };
 
   const makeBundle = (entries: unknown[]) =>
-    new Response(
-      JSON.stringify({ schemaVersion: 1, builtAt: "", entries }),
-    );
+    new Response(JSON.stringify({ schemaVersion: 1, builtAt: "", entries }));
 
   it("list returns all entries when no day filter", async () => {
     const fetchImpl = vi
@@ -71,9 +70,7 @@ describe("deal router", () => {
   });
 
   it("get throws NOT_FOUND when slug missing", async () => {
-    const fetchImpl = vi
-      .fn()
-      .mockResolvedValue(makeBundle([dealFixture]));
+    const fetchImpl = vi.fn().mockResolvedValue(makeBundle([dealFixture]));
     const caller = appRouter.createCaller({ ...baseCtx, fetchImpl });
     await expect(caller.deal.get({ slug: "nonexistent" })).rejects.toThrow(
       /not found/i,

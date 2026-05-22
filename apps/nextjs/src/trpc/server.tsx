@@ -1,14 +1,13 @@
+import type { AppRouter } from "@clt/api";
 import type { TRPCQueryOptions } from "@trpc/tanstack-react-query";
 import { cache } from "react";
 import { headers } from "next/headers";
 import { dehydrate, HydrationBoundary } from "@tanstack/react-query";
 import { createTRPCOptionsProxy } from "@trpc/tanstack-react-query";
 
-import type { AppRouter } from "@clt/api";
 import { appRouter, createTRPCContext } from "@clt/api";
 
 import { buildSubmitContext } from "~/server/context";
-
 import { createQueryClient } from "./query-client";
 
 /**

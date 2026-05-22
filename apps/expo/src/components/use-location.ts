@@ -16,8 +16,7 @@ export function useLocation(): UseLocationResult {
 
   const request = async () => {
     setStatus("prompting");
-    const { status: perm } =
-      await Location.requestForegroundPermissionsAsync();
+    const { status: perm } = await Location.requestForegroundPermissionsAsync();
     if (perm !== PermissionStatus.GRANTED) {
       setStatus("denied");
       return;

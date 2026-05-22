@@ -13,13 +13,13 @@ import {
 import { useLocalSearchParams, useRouter } from "expo-router";
 import { useMutation } from "@tanstack/react-query";
 
-import { trpc } from "~/utils/api";
+import { recordContribution } from "~/components/contribution-history";
+import { getDeviceIdAsync } from "~/components/device-id";
 import { EulaModal } from "~/components/eula-modal";
 import { SubmitSuccessOverlay } from "~/components/submit-success-overlay";
 import { useEulaGate } from "~/components/use-eula-gate";
-import { getDeviceIdAsync } from "~/components/device-id";
-import { recordContribution } from "~/components/contribution-history";
 import { colors, radius, space, type } from "~/styles/tokens";
+import { trpc } from "~/utils/api";
 
 type PaymentMethod = "cash" | "card" | "app" | "meter";
 type DayKey = "mon" | "tue" | "wed" | "thu" | "fri" | "sat" | "sun";
@@ -56,7 +56,13 @@ const HOURS_MODES: { key: HoursMode; label: string }[] = [
 
 const HHMM_REGEX = /^([01]\d|2[0-3]):[0-5]\d$/;
 
-function FieldLabel({ label, required }: { label: string; required?: boolean }) {
+function FieldLabel({
+  label,
+  required,
+}: {
+  label: string;
+  required?: boolean;
+}) {
   return (
     <Text
       style={{
@@ -138,7 +144,10 @@ export default function ContributeParkingScreen() {
     }));
   };
 
-  const buildHoursPatch = (): { patch: Record<string, unknown> | null; error: string | null } => {
+  const buildHoursPatch = (): {
+    patch: Record<string, unknown> | null;
+    error: string | null;
+  } => {
     const patch: Record<string, unknown> = {};
     let hasAny = false;
 
@@ -155,7 +164,10 @@ export default function ContributeParkingScreen() {
           return { patch: null, error: `${key} open time must be HH:MM (24h)` };
         }
         if (dh.close && !HHMM_REGEX.test(dh.close)) {
-          return { patch: null, error: `${key} close time must be HH:MM (24h)` };
+          return {
+            patch: null,
+            error: `${key} close time must be HH:MM (24h)`,
+          };
         }
         if (dh.open && dh.close) {
           patch[key] = { open: dh.open, close: dh.close };
@@ -194,7 +206,8 @@ export default function ContributeParkingScreen() {
       patch.paymentMethods = selectedPayments;
     }
 
-    const { patch: hoursPatch, error: hoursValidationError } = buildHoursPatch();
+    const { patch: hoursPatch, error: hoursValidationError } =
+      buildHoursPatch();
     if (hoursValidationError) {
       setHoursError(hoursValidationError);
       return;
@@ -250,7 +263,10 @@ export default function ContributeParkingScreen() {
       >
         <ScrollView
           style={{ flex: 1, backgroundColor: colors.bg.cream }}
-          contentContainerStyle={{ padding: space[4], paddingBottom: space[12] }}
+          contentContainerStyle={{
+            padding: space[4],
+            paddingBottom: space[12],
+          }}
           keyboardShouldPersistTaps="handled"
         >
           <Text
@@ -312,7 +328,13 @@ export default function ContributeParkingScreen() {
           </View>
 
           {/* Rates */}
-          <View style={{ flexDirection: "row", gap: space[2], marginBottom: space[4] }}>
+          <View
+            style={{
+              flexDirection: "row",
+              gap: space[2],
+              marginBottom: space[4],
+            }}
+          >
             <View style={{ flex: 1 }}>
               <FieldLabel label="Hourly rate ($)" />
               <TextInput
@@ -385,7 +407,9 @@ export default function ContributeParkingScreen() {
                       paddingVertical: space[2],
                       borderRadius: radius.full,
                       borderWidth: 1,
-                      borderColor: isActive ? colors.fg.ink : colors.border.soft,
+                      borderColor: isActive
+                        ? colors.fg.ink
+                        : colors.border.soft,
                       backgroundColor: isActive
                         ? colors.fg.ink
                         : pressed
@@ -462,9 +486,7 @@ export default function ContributeParkingScreen() {
                       return (
                         <Pressable
                           key={modeKey}
-                          onPress={() =>
-                            updateDayHours(key, { mode: modeKey })
-                          }
+                          onPress={() => updateDayHours(key, { mode: modeKey })}
                           style={({ pressed }) => ({
                             flex: 1,
                             paddingVertical: space[2],
@@ -505,9 +527,7 @@ export default function ContributeParkingScreen() {
                         <TextInput
                           style={{ ...inputStyle, ...type.bodySm }}
                           value={dh.open}
-                          onChangeText={(v) =>
-                            updateDayHours(key, { open: v })
-                          }
+                          onChangeText={(v) => updateDayHours(key, { open: v })}
                           placeholder="08:00"
                           placeholderTextColor={colors.fg.inkMuted}
                           keyboardType="numbers-and-punctuation"

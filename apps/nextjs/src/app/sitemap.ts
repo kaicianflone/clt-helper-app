@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+
 import { createServerCaller } from "~/trpc/server";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {

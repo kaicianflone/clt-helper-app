@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { createServerCaller } from "~/trpc/server";
+
 import { EmptyState } from "~/components/EmptyState";
+import { createServerCaller } from "~/trpc/server";
 
 export const revalidate = 60;
 

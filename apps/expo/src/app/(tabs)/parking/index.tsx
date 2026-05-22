@@ -2,11 +2,11 @@ import { FlatList, Pressable, Text, View } from "react-native";
 import { Link } from "expo-router";
 import { useQuery } from "@tanstack/react-query";
 
-import { trpc } from "~/utils/api";
-import { ListSkeleton } from "~/components/list-skeleton";
 import { EmptyState } from "~/components/empty-state";
 import { ErrorState } from "~/components/error-state";
+import { ListSkeleton } from "~/components/list-skeleton";
 import { colors, space, type } from "~/styles/tokens";
+import { trpc } from "~/utils/api";
 
 function formatRate(hourlyRate: number | null): string {
   if (hourlyRate === null) return "Free";
@@ -20,7 +20,9 @@ export default function ParkingListScreen() {
 
   if (isPending) {
     return (
-      <View style={{ flex: 1, backgroundColor: colors.bg.cream, padding: space[4] }}>
+      <View
+        style={{ flex: 1, backgroundColor: colors.bg.cream, padding: space[4] }}
+      >
         <ListSkeleton rows={6} />
       </View>
     );
@@ -28,7 +30,9 @@ export default function ParkingListScreen() {
 
   if (isError) {
     return (
-      <View style={{ flex: 1, backgroundColor: colors.bg.cream, padding: space[4] }}>
+      <View
+        style={{ flex: 1, backgroundColor: colors.bg.cream, padding: space[4] }}
+      >
         <ErrorState
           message="Could not load parking."
           onRetry={() => void refetch()}
@@ -39,7 +43,9 @@ export default function ParkingListScreen() {
 
   if (data.length === 0) {
     return (
-      <View style={{ flex: 1, backgroundColor: colors.bg.cream, padding: space[4] }}>
+      <View
+        style={{ flex: 1, backgroundColor: colors.bg.cream, padding: space[4] }}
+      >
         <EmptyState message="No parking locations found." />
       </View>
     );
@@ -73,7 +79,9 @@ export default function ParkingListScreen() {
               }}
             >
               {formatRate(item.hourlyRate)}
-              {item.dailyMax !== null ? ` · $${item.dailyMax.toFixed(0)} max` : ""}
+              {item.dailyMax !== null
+                ? ` · $${item.dailyMax.toFixed(0)} max`
+                : ""}
               {item.covered ? " · Covered" : ""}
             </Text>
             <Text

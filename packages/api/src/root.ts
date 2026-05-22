@@ -1,8 +1,8 @@
-import { createTRPCRouter } from "./trpc";
-import { greenwayRouter } from "./router/greenway";
 import { dealRouter } from "./router/deal";
+import { greenwayRouter } from "./router/greenway";
 import { parkingRouter } from "./router/parking";
 import { submitRouter } from "./router/submit";
+import { createTRPCRouter } from "./trpc";
 
 export const appRouter = createTRPCRouter({
   greenway: greenwayRouter,

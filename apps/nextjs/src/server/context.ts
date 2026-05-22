@@ -19,14 +19,19 @@ interface OctokitLike {
         repo: string;
         path: string;
         ref?: string;
-      }) => Promise<{ data: { sha: string; content?: string; encoding?: string } }>;
+      }) => Promise<{
+        data: { sha: string; content?: string; encoding?: string };
+      }>;
     };
   };
 }
 
 interface RateLimitMod {
   buildRedis: () => unknown;
-  checkRateLimit: (deviceId: string, redis: unknown) => Promise<{ ok: boolean; remaining: number }>;
+  checkRateLimit: (
+    deviceId: string,
+    redis: unknown,
+  ) => Promise<{ ok: boolean; remaining: number }>;
 }
 
 interface GithubBotMod {
@@ -36,8 +41,14 @@ interface GithubBotMod {
 }
 
 interface DiffMod {
-  renderDiff: (b: Record<string, unknown>, a: Record<string, unknown>) => string;
-  isVerifyOnlyChange: (b: Record<string, unknown>, a: Record<string, unknown>) => boolean;
+  renderDiff: (
+    b: Record<string, unknown>,
+    a: Record<string, unknown>,
+  ) => string;
+  isVerifyOnlyChange: (
+    b: Record<string, unknown>,
+    a: Record<string, unknown>,
+  ) => boolean;
 }
 
 interface ContentFilterMod {
@@ -71,10 +82,18 @@ const getOctokit = (): OctokitLike => {
 
 export interface SubmitContextExtensions {
   baseUrl?: string;
-  checkRateLimit: (deviceId: string) => Promise<{ ok: boolean; remaining: number }>;
+  checkRateLimit: (
+    deviceId: string,
+  ) => Promise<{ ok: boolean; remaining: number }>;
   fetchFileFromRepo: (path: string) => Promise<Record<string, unknown>>;
-  renderDiff: (before: Record<string, unknown>, after: Record<string, unknown>) => string;
-  isVerifyOnlyChange: (before: Record<string, unknown>, after: Record<string, unknown>) => boolean;
+  renderDiff: (
+    before: Record<string, unknown>,
+    after: Record<string, unknown>,
+  ) => string;
+  isVerifyOnlyChange: (
+    before: Record<string, unknown>,
+    after: Record<string, unknown>,
+  ) => boolean;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   openCommunityPR: (opts: any) => Promise<any>;
   containsObjectionableContent: (input: {

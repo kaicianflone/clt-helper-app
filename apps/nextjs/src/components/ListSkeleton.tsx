@@ -4,7 +4,11 @@ interface ListSkeletonProps {
 
 export function ListSkeleton({ rows = 6 }: ListSkeletonProps) {
   return (
-    <ul aria-busy="true" aria-label="Loading…" className="divide-y divide-[color:var(--border-soft)]">
+    <ul
+      aria-busy="true"
+      aria-label="Loading…"
+      className="divide-y divide-[color:var(--border-soft)]"
+    >
       {Array.from({ length: rows }).map((_, i) => (
         <li key={i} className="py-4">
           <div className="flex items-start justify-between gap-4">

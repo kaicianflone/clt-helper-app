@@ -30,7 +30,7 @@ export function LastVerifiedBadge({ date, now }: LastVerifiedBadgeProps) {
 
   return (
     <span
-      className={`inline-block rounded-full px-2 py-0.5 text-xs font-medium uppercase tracking-wide ${tone}`}
+      className={`inline-block rounded-full px-2 py-0.5 text-xs font-medium tracking-wide uppercase ${tone}`}
     >
       {label}
     </span>

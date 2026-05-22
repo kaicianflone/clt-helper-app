@@ -33,7 +33,10 @@ export default function RootLayout(props: { children: React.ReactNode }) {
       >
         <TRPCReactProvider>{props.children}</TRPCReactProvider>
         <footer className="py-6 text-center text-xs text-[color:var(--fg-ink-muted)]">
-          <Link href="/privacy" className="underline hover:text-[color:var(--fg-ink)]">
+          <Link
+            href="/privacy"
+            className="underline hover:text-[color:var(--fg-ink)]"
+          >
             Privacy
           </Link>
         </footer>

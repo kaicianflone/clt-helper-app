@@ -13,13 +13,13 @@ import {
 import { useLocalSearchParams, useRouter } from "expo-router";
 import { useMutation } from "@tanstack/react-query";
 
-import { trpc } from "~/utils/api";
+import { recordContribution } from "~/components/contribution-history";
+import { getDeviceIdAsync } from "~/components/device-id";
 import { EulaModal } from "~/components/eula-modal";
 import { SubmitSuccessOverlay } from "~/components/submit-success-overlay";
 import { useEulaGate } from "~/components/use-eula-gate";
-import { getDeviceIdAsync } from "~/components/device-id";
-import { recordContribution } from "~/components/contribution-history";
 import { colors, radius, space, type } from "~/styles/tokens";
+import { trpc } from "~/utils/api";
 
 type DayKey = "mon" | "tue" | "wed" | "thu" | "fri" | "sat" | "sun";
 
@@ -35,7 +35,13 @@ const ALL_DAYS: { key: DayKey; label: string }[] = [
 
 const HHMM_REGEX = /^([01]\d|2[0-3]):[0-5]\d$/;
 
-function FieldLabel({ label, required }: { label: string; required?: boolean }) {
+function FieldLabel({
+  label,
+  required,
+}: {
+  label: string;
+  required?: boolean;
+}) {
   return (
     <Text
       style={{
@@ -191,7 +197,10 @@ export default function ContributeDealScreen() {
       >
         <ScrollView
           style={{ flex: 1, backgroundColor: colors.bg.cream }}
-          contentContainerStyle={{ padding: space[4], paddingBottom: space[12] }}
+          contentContainerStyle={{
+            padding: space[4],
+            paddingBottom: space[12],
+          }}
           keyboardShouldPersistTaps="handled"
         >
           <Text
@@ -240,7 +249,13 @@ export default function ContributeDealScreen() {
           </View>
 
           {/* Latitude / Longitude */}
-          <View style={{ flexDirection: "row", gap: space[2], marginBottom: space[4] }}>
+          <View
+            style={{
+              flexDirection: "row",
+              gap: space[2],
+              marginBottom: space[4],
+            }}
+          >
             <View style={{ flex: 1 }}>
               <FieldLabel label="Latitude" required />
               <TextInput
@@ -296,7 +311,9 @@ export default function ContributeDealScreen() {
           {/* Days of week */}
           <View style={{ marginBottom: space[4] }}>
             <FieldLabel label="Days of week" />
-            <View style={{ flexDirection: "row", flexWrap: "wrap", gap: space[2] }}>
+            <View
+              style={{ flexDirection: "row", flexWrap: "wrap", gap: space[2] }}
+            >
               {ALL_DAYS.map(({ key, label }) => {
                 const isActive = selectedDays.includes(key);
                 return (
@@ -308,7 +325,9 @@ export default function ContributeDealScreen() {
                       paddingVertical: space[2],
                       borderRadius: radius.full,
                       borderWidth: 1,
-                      borderColor: isActive ? colors.fg.ink : colors.border.soft,
+                      borderColor: isActive
+                        ? colors.fg.ink
+                        : colors.border.soft,
                       backgroundColor: isActive
                         ? colors.fg.ink
                         : pressed

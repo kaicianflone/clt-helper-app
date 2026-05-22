@@ -81,9 +81,7 @@ export function EulaModal({ onAccept }: EulaModalProps) {
             Your submission is fact-based and accurate to the best of your
             knowledge
           </li>
-          <li>
-            Submissions become public pull requests visible on GitHub
-          </li>
+          <li>Submissions become public pull requests visible on GitHub</li>
         </ul>
         <button
           onClick={onAccept}

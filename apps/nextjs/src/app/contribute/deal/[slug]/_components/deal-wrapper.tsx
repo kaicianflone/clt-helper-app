@@ -1,8 +1,8 @@
 "use client";
 
+import type { Day } from "~/components/day-tabs";
 import { EulaModal, useEulaGate } from "~/components/EulaModal";
 import { DealForm } from "./deal-form";
-import type { Day } from "~/components/day-tabs";
 
 interface DealWrapperProps {
   slug: string;

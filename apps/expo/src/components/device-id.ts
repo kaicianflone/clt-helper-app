@@ -1,6 +1,6 @@
+import { Platform } from "react-native";
 import * as Application from "expo-application";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { Platform } from "react-native";
 
 const FALLBACK_ID_KEY = "clt-device-id-fallback";
 
@@ -10,7 +10,10 @@ const FALLBACK_ID_KEY = "clt-device-id-fallback";
  * based implementation.
  */
 const generateUUID = (): string => {
-  if (typeof crypto !== "undefined" && typeof crypto.randomUUID === "function") {
+  if (
+    typeof crypto !== "undefined" &&
+    typeof crypto.randomUUID === "function"
+  ) {
     return crypto.randomUUID();
   }
   // Fallback: RFC 4122 v4 UUID from Math.random

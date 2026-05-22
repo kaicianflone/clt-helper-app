@@ -1,11 +1,5 @@
 import { useRef, useState } from "react";
-import {
-  Dimensions,
-  Pressable,
-  ScrollView,
-  Text,
-  View,
-} from "react-native";
+import { Dimensions, Pressable, ScrollView, Text, View } from "react-native";
 import { useRouter } from "expo-router";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
@@ -44,7 +38,10 @@ export default function OnboardingScreen() {
   const next = () => {
     if (page < SLIDES.length - 1) {
       const nextPage = page + 1;
-      scrollRef.current?.scrollTo({ x: nextPage * SCREEN_WIDTH, animated: true });
+      scrollRef.current?.scrollTo({
+        x: nextPage * SCREEN_WIDTH,
+        animated: true,
+      });
       setPage(nextPage);
     } else {
       void finish();
@@ -65,11 +62,18 @@ export default function OnboardingScreen() {
         <Pressable
           onPress={skip}
           hitSlop={8}
-          style={{ minWidth: 44, minHeight: 44, alignItems: "flex-end", justifyContent: "center" }}
+          style={{
+            minWidth: 44,
+            minHeight: 44,
+            alignItems: "flex-end",
+            justifyContent: "center",
+          }}
           accessibilityLabel="Skip onboarding"
           accessibilityRole="button"
         >
-          <Text style={{ ...type.bodyMd, color: colors.fg.inkMuted }}>Skip</Text>
+          <Text style={{ ...type.bodyMd, color: colors.fg.inkMuted }}>
+            Skip
+          </Text>
         </Pressable>
       </View>
 
@@ -147,9 +151,7 @@ export default function OnboardingScreen() {
         <Pressable
           onPress={next}
           style={({ pressed }) => ({
-            backgroundColor: pressed
-              ? colors.brick.deep
-              : colors.brick.DEFAULT,
+            backgroundColor: pressed ? colors.brick.deep : colors.brick.DEFAULT,
             paddingHorizontal: space[6],
             paddingVertical: space[3],
             borderRadius: 8,
@@ -164,7 +166,11 @@ export default function OnboardingScreen() {
           }
         >
           <Text
-            style={{ ...type.bodyMd, color: colors.bg.creamSoft, fontFamily: "Inter_600SemiBold" }}
+            style={{
+              ...type.bodyMd,
+              color: colors.bg.creamSoft,
+              fontFamily: "Inter_600SemiBold",
+            }}
           >
             {page === SLIDES.length - 1 ? "Get started" : "Next"}
           </Text>

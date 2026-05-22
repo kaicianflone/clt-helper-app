@@ -1,16 +1,16 @@
 import type { StyleSpecification } from "@maplibre/maplibre-react-native";
+import { useEffect, useState } from "react";
+import { ActivityIndicator, Text, View } from "react-native";
 import {
   Camera,
   GeoJSONSource,
   Layer,
   Map as MapLibreMap,
 } from "@maplibre/maplibre-react-native";
-import { useEffect, useState } from "react";
-import { ActivityIndicator, Text, View } from "react-native";
 import { useQuery } from "@tanstack/react-query";
 
-import { trpc } from "~/utils/api";
 import { colors, space, type } from "~/styles/tokens";
+import { trpc } from "~/utils/api";
 
 const TILES_MANIFEST_URL = `${process.env.EXPO_PUBLIC_R2_BASE_URL ?? "https://cdn.clt-app.com"}/tiles/manifest.json`;
 
@@ -68,9 +68,7 @@ export default function MapScreen() {
     const ctrl = new AbortController();
     const timer = setTimeout(() => ctrl.abort(), 4000);
     fetch(TILES_MANIFEST_URL, { signal: ctrl.signal })
-      .then((r) =>
-        r.ok ? r.json() : Promise.reject(new Error(`${r.status}`)),
-      )
+      .then((r) => (r.ok ? r.json() : Promise.reject(new Error(`${r.status}`))))
       .then((data: { current?: string }) => {
         if (data.current) {
           const base =

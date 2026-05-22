@@ -1,11 +1,12 @@
 "use client";
 
 import { useState, useSyncExternalStore } from "react";
-import { useTRPC } from "~/trpc/react";
 import { useMutation } from "@tanstack/react-query";
-import { getDeviceId } from "~/lib/device-id";
-import { recordContribution } from "~/lib/contribution-history";
+
 import { SubmitSuccessOverlay } from "~/components/SubmitSuccessOverlay";
+import { recordContribution } from "~/lib/contribution-history";
+import { getDeviceId } from "~/lib/device-id";
+import { useTRPC } from "~/trpc/react";
 
 interface GreenwayFormProps {
   slug: string;
@@ -46,15 +47,11 @@ export function GreenwayForm({
   );
 
   const [name, setName] = useState(initialName);
-  const [lengthMiles, setLengthMiles] = useState(
-    initialLengthMiles.toString(),
-  );
+  const [lengthMiles, setLengthMiles] = useState(initialLengthMiles.toString());
   const [description, setDescription] = useState(initialDescription);
   const [surface, setSurface] = useState<Surface>(initialSurface);
   const [displayName, setDisplayName] = useState("");
-  const [note, setNote] = useState(
-    verifyOnly ? "Verified, no changes." : "",
-  );
+  const [note, setNote] = useState(verifyOnly ? "Verified, no changes." : "");
   const [prUrl, setPrUrl] = useState<string | null>(null);
 
   const mutation = useMutation(
@@ -125,7 +122,7 @@ export function GreenwayForm({
           <div>
             <label
               htmlFor="name"
-              className="block text-xs font-medium uppercase tracking-wider text-[color:var(--fg-ink-muted)]"
+              className="block text-xs font-medium tracking-wider text-[color:var(--fg-ink-muted)] uppercase"
             >
               Trail name
             </label>
@@ -134,14 +131,14 @@ export function GreenwayForm({
               type="text"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              className="mt-1 w-full rounded-sm border border-[color:var(--border-soft)] bg-[color:var(--bg-cream-soft)] px-3.5 py-3 text-base text-[color:var(--fg-ink)] focus:border-[color:var(--brick)] focus:outline-none focus:ring-2 focus:ring-[color:var(--brick)]/20"
+              className="mt-1 w-full rounded-sm border border-[color:var(--border-soft)] bg-[color:var(--bg-cream-soft)] px-3.5 py-3 text-base text-[color:var(--fg-ink)] focus:border-[color:var(--brick)] focus:ring-2 focus:ring-[color:var(--brick)]/20 focus:outline-none"
             />
           </div>
 
           <div>
             <label
               htmlFor="lengthMiles"
-              className="block text-xs font-medium uppercase tracking-wider text-[color:var(--fg-ink-muted)]"
+              className="block text-xs font-medium tracking-wider text-[color:var(--fg-ink-muted)] uppercase"
             >
               Length (miles)
             </label>
@@ -152,14 +149,14 @@ export function GreenwayForm({
               step="0.1"
               value={lengthMiles}
               onChange={(e) => setLengthMiles(e.target.value)}
-              className="mt-1 w-full rounded-sm border border-[color:var(--border-soft)] bg-[color:var(--bg-cream-soft)] px-3.5 py-3 text-base text-[color:var(--fg-ink)] focus:border-[color:var(--brick)] focus:outline-none focus:ring-2 focus:ring-[color:var(--brick)]/20"
+              className="mt-1 w-full rounded-sm border border-[color:var(--border-soft)] bg-[color:var(--bg-cream-soft)] px-3.5 py-3 text-base text-[color:var(--fg-ink)] focus:border-[color:var(--brick)] focus:ring-2 focus:ring-[color:var(--brick)]/20 focus:outline-none"
             />
           </div>
 
           <div>
             <label
               htmlFor="description"
-              className="block text-xs font-medium uppercase tracking-wider text-[color:var(--fg-ink-muted)]"
+              className="block text-xs font-medium tracking-wider text-[color:var(--fg-ink-muted)] uppercase"
             >
               Description
             </label>
@@ -168,14 +165,14 @@ export function GreenwayForm({
               rows={4}
               value={description}
               onChange={(e) => setDescription(e.target.value)}
-              className="mt-1 w-full rounded-sm border border-[color:var(--border-soft)] bg-[color:var(--bg-cream-soft)] px-3.5 py-3 text-base text-[color:var(--fg-ink)] focus:border-[color:var(--brick)] focus:outline-none focus:ring-2 focus:ring-[color:var(--brick)]/20"
+              className="mt-1 w-full rounded-sm border border-[color:var(--border-soft)] bg-[color:var(--bg-cream-soft)] px-3.5 py-3 text-base text-[color:var(--fg-ink)] focus:border-[color:var(--brick)] focus:ring-2 focus:ring-[color:var(--brick)]/20 focus:outline-none"
             />
           </div>
 
           <div>
             <label
               htmlFor="surface"
-              className="block text-xs font-medium uppercase tracking-wider text-[color:var(--fg-ink-muted)]"
+              className="block text-xs font-medium tracking-wider text-[color:var(--fg-ink-muted)] uppercase"
             >
               Surface
             </label>
@@ -183,7 +180,7 @@ export function GreenwayForm({
               id="surface"
               value={surface}
               onChange={(e) => setSurface(e.target.value as Surface)}
-              className="mt-1 w-full rounded-sm border border-[color:var(--border-soft)] bg-[color:var(--bg-cream-soft)] px-3.5 py-3 text-base text-[color:var(--fg-ink)] focus:border-[color:var(--brick)] focus:outline-none focus:ring-2 focus:ring-[color:var(--brick)]/20"
+              className="mt-1 w-full rounded-sm border border-[color:var(--border-soft)] bg-[color:var(--bg-cream-soft)] px-3.5 py-3 text-base text-[color:var(--fg-ink)] focus:border-[color:var(--brick)] focus:ring-2 focus:ring-[color:var(--brick)]/20 focus:outline-none"
             >
               <option value="paved">Paved</option>
               <option value="natural">Natural</option>
@@ -196,10 +193,10 @@ export function GreenwayForm({
       <div>
         <label
           htmlFor="note"
-          className="block text-xs font-medium uppercase tracking-wider text-[color:var(--fg-ink-muted)]"
+          className="block text-xs font-medium tracking-wider text-[color:var(--fg-ink-muted)] uppercase"
         >
           Note{" "}
-          <span className="font-normal normal-case text-[color:var(--fg-ink-muted)]">
+          <span className="font-normal text-[color:var(--fg-ink-muted)] normal-case">
             (optional)
           </span>
         </label>
@@ -209,17 +206,17 @@ export function GreenwayForm({
           value={note}
           onChange={(e) => setNote(e.target.value)}
           placeholder="What changed, and how do you know?"
-          className="mt-1 w-full rounded-sm border border-[color:var(--border-soft)] bg-[color:var(--bg-cream-soft)] px-3.5 py-3 text-base text-[color:var(--fg-ink)] placeholder:text-[color:var(--fg-ink-muted)] focus:border-[color:var(--brick)] focus:outline-none focus:ring-2 focus:ring-[color:var(--brick)]/20"
+          className="mt-1 w-full rounded-sm border border-[color:var(--border-soft)] bg-[color:var(--bg-cream-soft)] px-3.5 py-3 text-base text-[color:var(--fg-ink)] placeholder:text-[color:var(--fg-ink-muted)] focus:border-[color:var(--brick)] focus:ring-2 focus:ring-[color:var(--brick)]/20 focus:outline-none"
         />
       </div>
 
       <div>
         <label
           htmlFor="displayName"
-          className="block text-xs font-medium uppercase tracking-wider text-[color:var(--fg-ink-muted)]"
+          className="block text-xs font-medium tracking-wider text-[color:var(--fg-ink-muted)] uppercase"
         >
           Your name{" "}
-          <span className="font-normal normal-case text-[color:var(--fg-ink-muted)]">
+          <span className="font-normal text-[color:var(--fg-ink-muted)] normal-case">
             (shown on the pull request)
           </span>
         </label>
@@ -231,7 +228,7 @@ export function GreenwayForm({
           maxLength={80}
           value={displayName}
           onChange={(e) => setDisplayName(e.target.value)}
-          className="mt-1 w-full rounded-sm border border-[color:var(--border-soft)] bg-[color:var(--bg-cream-soft)] px-3.5 py-3 text-base text-[color:var(--fg-ink)] focus:border-[color:var(--brick)] focus:outline-none focus:ring-2 focus:ring-[color:var(--brick)]/20"
+          className="mt-1 w-full rounded-sm border border-[color:var(--border-soft)] bg-[color:var(--bg-cream-soft)] px-3.5 py-3 text-base text-[color:var(--fg-ink)] focus:border-[color:var(--brick)] focus:ring-2 focus:ring-[color:var(--brick)]/20 focus:outline-none"
         />
       </div>
 

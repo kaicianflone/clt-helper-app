@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { createServerCaller } from "~/trpc/server";
+
 import { LastVerifiedBadge } from "~/components/LastVerifiedBadge";
-import { StaleDataPrompt } from "~/components/StaleDataPrompt";
 import { ShareButton } from "~/components/ShareButton";
+import { StaleDataPrompt } from "~/components/StaleDataPrompt";
+import { createServerCaller } from "~/trpc/server";
 
 export const revalidate = 60;
 
@@ -55,7 +56,7 @@ export default async function ParkingDetailPage({ params }: Props) {
     <main className="mx-auto max-w-3xl p-6">
       <div className="flex items-start justify-between gap-4">
         <div>
-          <h1 className="font-display text-5xl font-bold leading-none tracking-tight text-[color:var(--fg-ink)]">
+          <h1 className="font-display text-5xl leading-none font-bold tracking-tight text-[color:var(--fg-ink)]">
             {lot.name}
           </h1>
           <p className="mt-1 text-[color:var(--fg-ink-muted)]">{lot.address}</p>
@@ -90,9 +91,7 @@ export default async function ParkingDetailPage({ params }: Props) {
                   {DAY_LABEL[d]}
                 </span>
                 <span className="text-[color:var(--fg-ink)]">
-                  {typeof v === "string"
-                    ? v
-                    : `${v.open}–${v.close}`}
+                  {typeof v === "string" ? v : `${v.open}–${v.close}`}
                 </span>
               </li>
             );

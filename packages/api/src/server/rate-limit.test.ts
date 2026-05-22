@@ -1,4 +1,5 @@
 import { describe, expect, it, vi } from "vitest";
+
 import type { RedisLike } from "./rate-limit";
 import { checkRateLimit } from "./rate-limit";
 

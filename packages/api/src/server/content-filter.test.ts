@@ -1,4 +1,5 @@
 import { describe, expect, it } from "vitest";
+
 import { containsObjectionableContent } from "./content-filter";
 
 describe("containsObjectionableContent", () => {

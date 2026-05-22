@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 
 const ONBOARDING_KEY = "clt-onboarding-seen";
@@ -12,7 +12,7 @@ const STEPS = [
   },
   {
     heading: "Community-powered accuracy",
-    body: "Everything here was added or verified by Charlotte residents. See something wrong? Tap \"Suggest an edit\" on any page and it goes straight to a pull request.",
+    body: 'Everything here was added or verified by Charlotte residents. See something wrong? Tap "Suggest an edit" on any page and it goes straight to a pull request.',
   },
   {
     heading: "Your privacy stays yours",
@@ -70,10 +70,10 @@ export default function OnboardingPage() {
 
       {/* Content */}
       <div className="w-full max-w-md text-center">
-        <div className="font-display text-6xl font-bold leading-none text-[color:var(--brick)]">
+        <div className="font-display text-6xl leading-none font-bold text-[color:var(--brick)]">
           clt
         </div>
-        <h1 className="mt-8 font-display text-3xl font-bold tracking-tight text-[color:var(--fg-ink)]">
+        <h1 className="font-display mt-8 text-3xl font-bold tracking-tight text-[color:var(--fg-ink)]">
           {current.heading}
         </h1>
         <p className="mt-4 text-base leading-relaxed text-[color:var(--fg-ink-soft)]">

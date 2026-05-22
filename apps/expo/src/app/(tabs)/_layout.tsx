@@ -32,45 +32,35 @@ export default function TabLayout() {
         name="index"
         options={{
           title: "Home",
-          tabBarIcon: ({ focused }) => (
-            <TabIcon label="⌂" active={focused} />
-          ),
+          tabBarIcon: ({ focused }) => <TabIcon label="⌂" active={focused} />,
         }}
       />
       <Tabs.Screen
         name="greenways"
         options={{
           title: "Greenways",
-          tabBarIcon: ({ focused }) => (
-            <TabIcon label="🌿" active={focused} />
-          ),
+          tabBarIcon: ({ focused }) => <TabIcon label="🌿" active={focused} />,
         }}
       />
       <Tabs.Screen
         name="deals"
         options={{
           title: "Deals",
-          tabBarIcon: ({ focused }) => (
-            <TabIcon label="%" active={focused} />
-          ),
+          tabBarIcon: ({ focused }) => <TabIcon label="%" active={focused} />,
         }}
       />
       <Tabs.Screen
         name="parking"
         options={{
           title: "Parking",
-          tabBarIcon: ({ focused }) => (
-            <TabIcon label="P" active={focused} />
-          ),
+          tabBarIcon: ({ focused }) => <TabIcon label="P" active={focused} />,
         }}
       />
       <Tabs.Screen
         name="map"
         options={{
           title: "Map",
-          tabBarIcon: ({ focused }) => (
-            <TabIcon label="◎" active={focused} />
-          ),
+          tabBarIcon: ({ focused }) => <TabIcon label="◎" active={focused} />,
         }}
       />
     </Tabs>

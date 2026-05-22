@@ -1,8 +1,9 @@
 "use client";
+
+import type { RouterOutputs } from "@clt/api";
+import { useEffect, useRef, useState } from "react";
 import maplibregl from "maplibre-gl";
 import { Protocol } from "pmtiles";
-import { useEffect, useRef, useState } from "react";
-import type { RouterOutputs } from "@clt/api";
 
 type GreenwayWithGeometry =
   RouterOutputs["greenway"]["listWithGeometry"][number];
@@ -24,9 +25,7 @@ const FALLBACK_STYLE: maplibregl.StyleSpecification = {
   ],
 };
 
-const buildVectorStyle = (
-  tilesUrl: string,
-): maplibregl.StyleSpecification => ({
+const buildVectorStyle = (tilesUrl: string): maplibregl.StyleSpecification => ({
   version: 8,
   sources: {
     basemap: { type: "vector", url: `pmtiles://${tilesUrl}` },
@@ -179,7 +178,7 @@ export function GreenwayMap({ greenways, tilesUrl }: MapProps) {
     <div className="relative h-screen w-full">
       <div ref={ref} className="absolute inset-0" />
       {fallback && (
-        <div className="absolute left-1/2 top-4 -translate-x-1/2 rounded-md border border-amber-200 bg-amber-50 px-3 py-2 text-sm text-amber-900">
+        <div className="absolute top-4 left-1/2 -translate-x-1/2 rounded-md border border-amber-200 bg-amber-50 px-3 py-2 text-sm text-amber-900">
           Map tiles unavailable — showing greenways on a plain background.
         </div>
       )}

@@ -1,14 +1,21 @@
 import { useState } from "react";
-import { Linking, Platform, Pressable, ScrollView, Text, View } from "react-native";
+import {
+  Linking,
+  Platform,
+  Pressable,
+  ScrollView,
+  Text,
+  View,
+} from "react-native";
 import { Link, useLocalSearchParams } from "expo-router";
 import { useQuery } from "@tanstack/react-query";
 
-import { trpc } from "~/utils/api";
-import { LastVerifiedBadge } from "~/components/last-verified-badge";
-import { StaleDataPrompt } from "~/components/stale-data-prompt";
-import { ShareButton } from "~/components/share-button";
 import { ErrorState } from "~/components/error-state";
+import { LastVerifiedBadge } from "~/components/last-verified-badge";
+import { ShareButton } from "~/components/share-button";
+import { StaleDataPrompt } from "~/components/stale-data-prompt";
 import { colors, radius, space, type } from "~/styles/tokens";
+import { trpc } from "~/utils/api";
 
 const openInMaps = (lat: number, lng: number, label?: string) => {
   const url = Platform.select({
@@ -27,9 +34,12 @@ export default function GreenwayDetailScreen() {
   const { slug } = useLocalSearchParams<{ slug: string }>();
   const [now] = useState(() => Date.now());
 
-  const { data: greenway, isPending, isError, refetch } = useQuery(
-    trpc.greenway.get.queryOptions({ slug }),
-  );
+  const {
+    data: greenway,
+    isPending,
+    isError,
+    refetch,
+  } = useQuery(trpc.greenway.get.queryOptions({ slug }));
 
   if (isPending) {
     return (
@@ -41,14 +51,18 @@ export default function GreenwayDetailScreen() {
           alignItems: "center",
         }}
       >
-        <Text style={{ ...type.bodySm, color: colors.fg.inkMuted }}>Loading…</Text>
+        <Text style={{ ...type.bodySm, color: colors.fg.inkMuted }}>
+          Loading…
+        </Text>
       </View>
     );
   }
 
   if (isError) {
     return (
-      <View style={{ flex: 1, backgroundColor: colors.bg.cream, padding: space[4] }}>
+      <View
+        style={{ flex: 1, backgroundColor: colors.bg.cream, padding: space[4] }}
+      >
         <ErrorState
           message="Could not load greenway."
           onRetry={() => void refetch()}
@@ -56,7 +70,6 @@ export default function GreenwayDetailScreen() {
       </View>
     );
   }
-
 
   return (
     <ScrollView
@@ -104,7 +117,13 @@ export default function GreenwayDetailScreen() {
             >
               About
             </Text>
-            <Text style={{ ...type.bodyMd, color: colors.fg.inkSoft, lineHeight: 26 }}>
+            <Text
+              style={{
+                ...type.bodyMd,
+                color: colors.fg.inkSoft,
+                lineHeight: 26,
+              }}
+            >
               {greenway.description}
             </Text>
           </View>
@@ -131,7 +150,9 @@ export default function GreenwayDetailScreen() {
                   paddingVertical: space[3],
                   paddingHorizontal: space[3],
                   borderRadius: radius.md,
-                  backgroundColor: pressed ? colors.bg.creamDeep : colors.bg.creamSoft,
+                  backgroundColor: pressed
+                    ? colors.bg.creamDeep
+                    : colors.bg.creamSoft,
                   borderWidth: 1,
                   borderColor: colors.border.soft,
                   marginBottom: space[2],
@@ -232,7 +253,9 @@ export default function GreenwayDetailScreen() {
             <Pressable
               style={({ pressed }) => ({
                 flex: 1,
-                backgroundColor: pressed ? colors.brick.deep : colors.brick.DEFAULT,
+                backgroundColor: pressed
+                  ? colors.brick.deep
+                  : colors.brick.DEFAULT,
                 borderRadius: radius.md,
                 paddingVertical: space[3],
                 minHeight: 44,

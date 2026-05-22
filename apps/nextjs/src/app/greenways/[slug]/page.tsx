@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
+import { LastVerifiedBadge } from "~/components/LastVerifiedBadge";
+import { ShareButton } from "~/components/ShareButton";
+import { StaleDataPrompt } from "~/components/StaleDataPrompt";
 import { env } from "~/env";
 import { createServerCaller } from "~/trpc/server";
-import { LastVerifiedBadge } from "~/components/LastVerifiedBadge";
-import { StaleDataPrompt } from "~/components/StaleDataPrompt";
-import { ShareButton } from "~/components/ShareButton";
 
 export const revalidate = 60;
 
@@ -54,7 +54,7 @@ export default async function GreenwayDetailPage({ params }: Props) {
       {/* Hero — solid brick header with display-lg name overlay */}
       <div className="relative flex min-h-[40vh] items-end bg-[color:var(--brick)] px-4 pb-8 sm:px-8">
         <div>
-          <h1 className="font-display text-5xl font-bold leading-none tracking-tight text-white">
+          <h1 className="font-display text-5xl leading-none font-bold tracking-tight text-white">
             {greenway.name}
           </h1>
           <div className="mt-3 flex flex-wrap items-center gap-3">
@@ -138,7 +138,7 @@ export default async function GreenwayDetailPage({ params }: Props) {
                     <p className="font-medium text-[color:var(--fg-ink)]">
                       {poi.name}
                     </p>
-                    <p className="mt-0.5 text-sm capitalize text-[color:var(--fg-ink-muted)]">
+                    <p className="mt-0.5 text-sm text-[color:var(--fg-ink-muted)] capitalize">
                       {poi.kind}
                     </p>
                   </li>

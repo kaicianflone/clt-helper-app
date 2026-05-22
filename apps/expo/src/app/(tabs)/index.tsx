@@ -4,8 +4,8 @@ import { Link, useRouter } from "expo-router";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useQuery } from "@tanstack/react-query";
 
-import { trpc } from "~/utils/api";
 import { colors, space, type } from "~/styles/tokens";
+import { trpc } from "~/utils/api";
 
 const ONBOARDING_KEY = "clt-onboarding-seen";
 
@@ -41,7 +41,11 @@ export default function HomeScreen() {
         : (parking.data?.slice(0, 5) ?? []);
 
   const sectionLabel =
-    slot === "trails" ? "Greenways" : slot === "deals" ? "Deals today" : "Parking";
+    slot === "trails"
+      ? "Greenways"
+      : slot === "deals"
+        ? "Deals today"
+        : "Parking";
 
   return (
     <ScrollView
@@ -52,7 +56,11 @@ export default function HomeScreen() {
         Today in Charlotte
       </Text>
       <Text
-        style={{ ...type.bodySm, color: colors.fg.inkMuted, marginTop: space[1] }}
+        style={{
+          ...type.bodySm,
+          color: colors.fg.inkMuted,
+          marginTop: space[1],
+        }}
       >
         {dayLabel}
       </Text>
@@ -68,29 +76,31 @@ export default function HomeScreen() {
       </Text>
 
       <View style={{ marginTop: space[3] }}>
-        {items.map((item: { slug: string; name?: string; restaurantName?: string }) => (
-          <Link
-            key={item.slug}
-            href={
-              slot === "trails"
-                ? `/greenways/${item.slug}`
-                : slot === "deals"
-                  ? `/deals`
-                  : `/parking/${item.slug}`
-            }
-            style={{
-              paddingVertical: space[3],
-              borderBottomWidth: 1,
-              borderBottomColor: colors.border.soft,
-              minHeight: 44,
-              justifyContent: "center",
-            }}
-          >
-            <Text style={{ ...type.bodyLg, color: colors.fg.ink }}>
-              {item.name ?? item.restaurantName}
-            </Text>
-          </Link>
-        ))}
+        {items.map(
+          (item: { slug: string; name?: string; restaurantName?: string }) => (
+            <Link
+              key={item.slug}
+              href={
+                slot === "trails"
+                  ? `/greenways/${item.slug}`
+                  : slot === "deals"
+                    ? `/deals`
+                    : `/parking/${item.slug}`
+              }
+              style={{
+                paddingVertical: space[3],
+                borderBottomWidth: 1,
+                borderBottomColor: colors.border.soft,
+                minHeight: 44,
+                justifyContent: "center",
+              }}
+            >
+              <Text style={{ ...type.bodyLg, color: colors.fg.ink }}>
+                {item.name ?? item.restaurantName}
+              </Text>
+            </Link>
+          ),
+        )}
       </View>
     </ScrollView>
   );

@@ -69,7 +69,9 @@ export function EulaModal({ visible, onAccept }: EulaModalProps) {
                 >
                   •
                 </Text>
-                <Text style={{ ...type.bodySm, color: colors.fg.inkSoft, flex: 1 }}>
+                <Text
+                  style={{ ...type.bodySm, color: colors.fg.inkSoft, flex: 1 }}
+                >
                   {item}
                 </Text>
               </View>

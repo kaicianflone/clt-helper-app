@@ -12,15 +12,21 @@ import {
 import { useLocalSearchParams, useRouter } from "expo-router";
 import { useMutation } from "@tanstack/react-query";
 
-import { trpc } from "~/utils/api";
+import { recordContribution } from "~/components/contribution-history";
+import { getDeviceIdAsync } from "~/components/device-id";
 import { EulaModal } from "~/components/eula-modal";
 import { SubmitSuccessOverlay } from "~/components/submit-success-overlay";
 import { useEulaGate } from "~/components/use-eula-gate";
-import { getDeviceIdAsync } from "~/components/device-id";
-import { recordContribution } from "~/components/contribution-history";
 import { colors, radius, space, type } from "~/styles/tokens";
+import { trpc } from "~/utils/api";
 
-function FieldLabel({ label, required }: { label: string; required?: boolean }) {
+function FieldLabel({
+  label,
+  required,
+}: {
+  label: string;
+  required?: boolean;
+}) {
   return (
     <Text
       style={{
@@ -126,7 +132,10 @@ export default function ContributeGreenwayScreen() {
       >
         <ScrollView
           style={{ flex: 1, backgroundColor: colors.bg.cream }}
-          contentContainerStyle={{ padding: space[4], paddingBottom: space[12] }}
+          contentContainerStyle={{
+            padding: space[4],
+            paddingBottom: space[12],
+          }}
           keyboardShouldPersistTaps="handled"
         >
           <Text

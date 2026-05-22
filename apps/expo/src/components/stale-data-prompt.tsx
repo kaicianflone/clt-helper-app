@@ -10,7 +10,12 @@ interface StaleDataPromptProps {
   now: number;
 }
 
-export function StaleDataPrompt({ date, slug, kind, now }: StaleDataPromptProps) {
+export function StaleDataPrompt({
+  date,
+  slug,
+  kind,
+  now,
+}: StaleDataPromptProps) {
   const days = Math.floor((now - new Date(date).getTime()) / 86_400_000);
 
   if (days < 60) return null;
@@ -32,7 +37,9 @@ export function StaleDataPrompt({ date, slug, kind, now }: StaleDataPromptProps)
         This hasn&apos;t been verified in {months} month
         {months !== 1 ? "s" : ""}. Still accurate?
       </Text>
-      <View style={{ flexDirection: "row", gap: space[4], marginTop: space[2] }}>
+      <View
+        style={{ flexDirection: "row", gap: space[4], marginTop: space[2] }}
+      >
         <Link
           href={`/contribute/${kind}/${slug}?verify=yes`}
           style={{ minHeight: 44, justifyContent: "center" }}

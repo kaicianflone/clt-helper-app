@@ -9,7 +9,9 @@ interface ShareButtonProps {
 
 const copyToClipboard = async (text: string): Promise<void> => {
   // Use the Clipboard API, gracefully degrade if unavailable
-  const cb = (navigator as { clipboard?: { writeText: (t: string) => Promise<void> } }).clipboard;
+  const cb = (
+    navigator as { clipboard?: { writeText: (t: string) => Promise<void> } }
+  ).clipboard;
   if (cb) {
     await cb.writeText(text);
   }
