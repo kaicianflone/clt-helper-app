@@ -3,14 +3,13 @@
 import type { RouterOutputs } from "@clt/api";
 import { useEffect, useRef, useState } from "react";
 import maplibregl from "maplibre-gl";
-import { Protocol } from "pmtiles";
 
 type GreenwayWithGeometry =
   RouterOutputs["greenway"]["listWithGeometry"][number];
 
 interface MapProps {
   greenways: GreenwayWithGeometry[];
-  tilesUrl: string | null; // null when manifest fetch fails — triggers fallback
+  mapTilerKey: string;
 }
 
 const FALLBACK_STYLE: maplibregl.StyleSpecification = {
@@ -25,81 +24,17 @@ const FALLBACK_STYLE: maplibregl.StyleSpecification = {
   ],
 };
 
-const buildVectorStyle = (tilesUrl: string): maplibregl.StyleSpecification => ({
-  version: 8,
-  sources: {
-    basemap: { type: "vector", url: `pmtiles://${tilesUrl}` },
-  },
-  layers: [
-    {
-      id: "background",
-      type: "background",
-      paint: { "background-color": "#F5EFE6" },
-    },
-    {
-      id: "park",
-      type: "fill",
-      source: "basemap",
-      "source-layer": "osm",
-      filter: ["==", ["get", "leisure"], "park"],
-      paint: { "fill-color": "#C3D4B5", "fill-opacity": 0.7 },
-    },
-    {
-      id: "water",
-      type: "fill",
-      source: "basemap",
-      "source-layer": "osm",
-      filter: ["has", "water"],
-      paint: { "fill-color": "#C8D8DC" },
-    },
-    {
-      id: "roads",
-      type: "line",
-      source: "basemap",
-      "source-layer": "osm",
-      filter: ["has", "highway"],
-      paint: { "line-color": "#E2D6C2", "line-width": 1.2 },
-    },
-  ],
-});
-
-// Register the pmtiles protocol and return whether registration succeeded.
-// Called once per map mount — kept outside the component to be a pure side-effect
-// so we never call setState inside the effect body (satisfies react-hooks/set-state-in-effect).
-function tryRegisterPmtilesProtocol(): boolean {
-  try {
-    const protocol = new Protocol();
-    maplibregl.addProtocol("pmtiles", protocol.tile);
-    return true;
-  } catch (err) {
-    console.error("pmtiles protocol failed, falling back", err);
-    return false;
-  }
-}
-
-export function GreenwayMap({ greenways, tilesUrl }: MapProps) {
+export function GreenwayMap({ greenways, mapTilerKey }: MapProps) {
   const ref = useRef<HTMLDivElement>(null);
-  const [fallback, setFallback] = useState(tilesUrl === null);
+  const [fallback, setFallback] = useState(false);
 
   useEffect(() => {
     if (!ref.current) return;
 
-    // Determine whether to use vector tiles for this render cycle.
-    // We intentionally read `fallback` from closure — if a previous map
-    // error already degraded us to fallback mode, we stay there.
-    const useVector = tilesUrl !== null && !fallback;
-    let protocolRegistered = false;
-
-    if (useVector) {
-      protocolRegistered = tryRegisterPmtilesProtocol();
-      // If protocol registration failed, stay on fallback style but don't
-      // call setState here — we just use the fallback style synchronously.
-    }
-
-    const style =
-      useVector && protocolRegistered && tilesUrl
-        ? buildVectorStyle(tilesUrl)
-        : FALLBACK_STYLE;
+    const styleUrl = `https://api.maptiler.com/maps/streets-v2/style.json?key=${mapTilerKey}`;
+    const style: string | maplibregl.StyleSpecification = fallback
+      ? FALLBACK_STYLE
+      : styleUrl;
 
     const map = new maplibregl.Map({
       container: ref.current,
@@ -110,17 +45,19 @@ export function GreenwayMap({ greenways, tilesUrl }: MapProps) {
 
     type MapErrorEvent = maplibregl.MapLibreEvent & {
       error?: { message?: string };
-      sourceId?: string;
     };
     map.on("error", (e: MapErrorEvent) => {
-      const isPmtilesError =
-        typeof e.error?.message === "string" &&
-        e.error.message.includes("pmtiles");
-      const isBasemapError = e.sourceId === "basemap";
-      if (isPmtilesError || isBasemapError) {
-        console.warn("Map source error — degrading to fallback", e);
-        setFallback(true);
-      }
+      // Degrade to fallback styling if MapTiler is unreachable. The greenway
+      // overlay is still useful on a plain background.
+      const message = e.error?.message ?? "unknown";
+      console.warn(
+        JSON.stringify({
+          event: "tiles.error",
+          source: "maptiler",
+          error: message.slice(0, 200),
+        }),
+      );
+      setFallback(true);
     });
 
     map.on("load", () => {
@@ -164,15 +101,8 @@ export function GreenwayMap({ greenways, tilesUrl }: MapProps) {
 
     return () => {
       map.remove();
-      if (protocolRegistered) {
-        try {
-          maplibregl.removeProtocol("pmtiles");
-        } catch {
-          /* ignore */
-        }
-      }
     };
-  }, [greenways, tilesUrl, fallback]);
+  }, [greenways, mapTilerKey, fallback]);
 
   return (
     <div className="relative h-screen w-full">

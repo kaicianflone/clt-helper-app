@@ -11,7 +11,7 @@ type GreenwayWithGeometry =
 
 interface MapLoaderProps {
   greenways: GreenwayWithGeometry[];
-  tilesUrl: string | null;
+  mapTilerKey: string;
 }
 
 // MapLibre-gl requires browser APIs (WebGL, window) and bundles its own CSS.
@@ -20,6 +20,6 @@ const GreenwayMap = dynamic(() => import("./map").then((m) => m.GreenwayMap), {
   ssr: false,
 });
 
-export function MapLoader({ greenways, tilesUrl }: MapLoaderProps) {
-  return <GreenwayMap greenways={greenways} tilesUrl={tilesUrl} />;
+export function MapLoader({ greenways, mapTilerKey }: MapLoaderProps) {
+  return <GreenwayMap greenways={greenways} mapTilerKey={mapTilerKey} />;
 }

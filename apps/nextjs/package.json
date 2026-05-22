@@ -24,7 +24,6 @@
     "better-auth": "catalog:",
     "maplibre-gl": "4.7.1",
     "next": "^16.0.9",
-    "pmtiles": "4.4.1",
     "react": "catalog:react19",
     "react-dom": "catalog:react19",
     "superjson": "2.2.3",

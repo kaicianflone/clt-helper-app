@@ -109,7 +109,8 @@ export interface SubmitContextExtensions {
  */
 export function buildSubmitContext(): SubmitContextExtensions {
   return {
-    baseUrl: env.R2_PUBLIC_BASE_URL,
+    // baseUrl unset → data-client falls back to local-disk reads (T05).
+    baseUrl: env.DATA_BASE_URL,
 
     checkRateLimit: (deviceId: string) => {
       // eslint-disable-next-line @typescript-eslint/no-require-imports

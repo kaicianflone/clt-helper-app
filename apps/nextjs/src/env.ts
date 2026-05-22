@@ -15,7 +15,8 @@ export const env = createEnv({
    */
   server: {
     REVALIDATION_SECRET: z.string().optional(),
-    R2_PUBLIC_BASE_URL: z.string().url().optional(),
+    MAPTILER_KEY: z.string().optional(),
+    DATA_BASE_URL: z.string().url().optional(),
     GH_REPO_OWNER: z.string().optional(),
     GH_REPO_NAME: z.string().optional(),
     GH_APP_ID: z.string().optional(),
@@ -29,15 +30,14 @@ export const env = createEnv({
    * For them to be exposed to the client, prefix them with `NEXT_PUBLIC_`.
    */
   client: {
-    // NEXT_PUBLIC_CLIENTVAR: z.string(),
+    NEXT_PUBLIC_MAPTILER_KEY: z.string().min(1),
   },
   /**
    * Destructure all variables from `process.env` to make sure they aren't tree-shaken away.
    */
   experimental__runtimeEnv: {
     NODE_ENV: process.env.NODE_ENV,
-
-    // NEXT_PUBLIC_CLIENTVAR: process.env.NEXT_PUBLIC_CLIENTVAR,
+    NEXT_PUBLIC_MAPTILER_KEY: process.env.NEXT_PUBLIC_MAPTILER_KEY,
   },
   skipValidation:
     !!process.env.CI || process.env.npm_lifecycle_event === "lint",
