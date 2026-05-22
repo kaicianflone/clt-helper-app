@@ -45,22 +45,41 @@ const fetchWithTimeout = async (
   }
 };
 
-const resolveLocalDir = (opts: { localDir?: string }): string => {
-  if (opts.localDir) return opts.localDir;
-  if (process.env.CLT_DATA_DIR) return process.env.CLT_DATA_DIR;
-  return path.resolve(process.cwd(), "dist/data/v1");
+/**
+ * Candidate filesystem roots for the local-disk bundle, in priority order.
+ * Returns the first one that contains <kind>.json. Different cwd contexts
+ * resolve different roots:
+ *   - Monorepo root (CLI / tsx / vitest):  <cwd>/dist/data/v1/<kind>.json
+ *   - Next.js server (cwd = apps/nextjs/): <cwd>/public/data/v1/<kind>.json
+ *     (build:data mirrors bundles into apps/nextjs/public/data/v1/)
+ *   - Explicit override: opts.localDir or env CLT_DATA_DIR
+ */
+const resolveLocalFile = (
+  kind: EntityKind,
+  opts: { localDir?: string },
+): string | null => {
+  const candidates: string[] = [];
+  if (opts.localDir) candidates.push(opts.localDir);
+  if (process.env.CLT_DATA_DIR) candidates.push(process.env.CLT_DATA_DIR);
+  candidates.push(path.resolve(process.cwd(), "dist/data/v1"));
+  candidates.push(path.resolve(process.cwd(), "public/data/v1"));
+
+  for (const dir of candidates) {
+    const file = path.join(dir, `${kind}.json`);
+    if (fs.existsSync(file)) return file;
+  }
+  return null;
 };
 
 const fetchBundleLocal = <T>(
   kind: EntityKind,
   opts: DataClientOptions<T>,
 ): Bundle<T> => {
-  const dir = resolveLocalDir(opts);
-  const file = path.join(dir, `${kind}.json`);
-  if (!fs.existsSync(file)) {
+  const file = resolveLocalFile(kind, opts);
+  if (!file) {
     if (opts.offlineBundle) return opts.offlineBundle;
     throw new Error(
-      `data bundle not found at ${file}. Run \`pnpm build:data\` first.`,
+      `data bundle ${kind}.json not found. Tried CLT_DATA_DIR, dist/data/v1, and public/data/v1 relative to cwd=${process.cwd()}. Run \`pnpm build:data\` first.`,
     );
   }
   return JSON.parse(fs.readFileSync(file, "utf8")) as Bundle<T>;

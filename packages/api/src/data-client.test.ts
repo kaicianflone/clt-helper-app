@@ -139,7 +139,7 @@ describe("fetchBundle — local-disk fallback (empty baseUrl)", () => {
   it("throws a helpful error when localDir lacks the file and no offlineBundle is given", async () => {
     await expect(
       fetchBundle("greenways", { localDir: tmpDir }),
-    ).rejects.toThrow(/data bundle not found/);
+    ).rejects.toThrow(/greenways\.json not found/);
   });
 
   it("respects CLT_DATA_DIR when localDir is unset", async () => {
