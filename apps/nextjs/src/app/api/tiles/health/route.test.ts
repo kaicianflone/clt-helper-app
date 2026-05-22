@@ -1,7 +1,10 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
-// Set a default before route.ts is imported, since env.ts validates the
-// NEXT_PUBLIC_MAPTILER_KEY at module-load time. Each test stubs as needed.
+// Set a default before route.ts is imported. env.ts validates
+// NEXT_PUBLIC_MAPTILER_KEY at module-load time; tests override via vi.stubEnv
+// later. Lint forbids process.env in app code — this is a test fixture, hence
+// the eslint-disable.
+// eslint-disable-next-line no-restricted-properties
 process.env.NEXT_PUBLIC_MAPTILER_KEY = "test-key-123";
 
 describe("/api/tiles/health", () => {
