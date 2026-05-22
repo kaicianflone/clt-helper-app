@@ -214,13 +214,25 @@ export const groupByTrailName = (
     surfaces: unknown[];
   };
   const buckets = new Map<string, Bucket>();
+  let droppedShort = 0;
+  let droppedOversize = 0;
+  let droppedBbox = 0;
 
   for (const feature of features) {
     if (feature.geometry.type !== "LineString") continue;
     const coords = feature.geometry.coordinates;
-    if (coords.length < 2) continue;
-    if (coords.length > MAX_VERTICES_PER_SEGMENT) continue;
-    if (!segmentInBbox(coords)) continue;
+    if (coords.length < 2) {
+      droppedShort++;
+      continue;
+    }
+    if (coords.length > MAX_VERTICES_PER_SEGMENT) {
+      droppedOversize++;
+      continue;
+    }
+    if (!segmentInBbox(coords)) {
+      droppedBbox++;
+      continue;
+    }
 
     const rawName = String(
       feature.properties["trail_name"] ??
@@ -264,6 +276,12 @@ export const groupByTrailName = (
     if (surf !== undefined) bucket.surfaces.push(surf);
   }
 
+  if (droppedShort || droppedOversize || droppedBbox) {
+    console.warn(
+      `groupByTrailName dropped segments: short=${droppedShort} oversize=${droppedOversize} out_of_bbox=${droppedBbox}`,
+    );
+  }
+
   const greenways: Greenway[] = [];
   for (const bucket of buckets.values()) {
     if (bucket.segments.length === 0) continue;
@@ -289,17 +307,20 @@ export const groupByTrailName = (
       }
     }
 
-    // Pick the geographically northernmost segment for the trailhead.
-    let northernIdx = 0;
+    // Pick the geographically northernmost endpoint across all segments as
+    // the trailhead. Real trailhead data should come from a POI dataset
+    // (TODO); this is a deterministic placeholder so the schema constraint
+    // (trailheads.min(1)) is satisfied.
+    let trailheadCoord: [number, number] = deduped[0]![0]!;
     let bestLat = -Infinity;
-    for (let i = 0; i < deduped.length; i++) {
-      const minLat = Math.min(...deduped[i]!.map(([, lat]) => lat));
-      if (minLat > bestLat) {
-        bestLat = minLat;
-        northernIdx = i;
+    for (const seg of deduped) {
+      for (const coord of seg) {
+        if (coord[1] > bestLat) {
+          bestLat = coord[1];
+          trailheadCoord = coord;
+        }
       }
     }
-    const trailheadCoord = deduped[northernIdx]![0]!;
 
     const displayName = pickDisplayName(bucket.nameVariants);
     const surface = normalizeSurface(bucket.surfaces[0]);
@@ -424,6 +445,7 @@ export const fetchMeckRest = async (
   fetchImpl: FetchImpl = fetch,
 ): Promise<OsmFeature[]> => {
   const all: OsmFeature[] = [];
+  const seenObjectIds = new Set<unknown>();
   let offset = 0;
   const chunk = 2000;
   // Safety cap so a misbehaving endpoint can't drive us infinite.
@@ -435,6 +457,9 @@ export const fetchMeckRest = async (
       outSR: "4326",
       resultOffset: String(offset),
       resultRecordCount: String(chunk),
+      // ArcGIS REST without orderBy can return duplicate/missing rows across
+      // pages. Sort by objectid for stable pagination.
+      orderByFields: "objectid",
     });
     const url = `${MECK_REST_BASE}?${params.toString()}`;
     const res = await fetchImpl(url);
@@ -449,13 +474,29 @@ export const fetchMeckRest = async (
         `Meck REST: expected features array on page ${page}, got ${typeof data.features}`,
       );
     }
-    all.push(...data.features);
+    // Dedup by objectid in case the endpoint ignores resultOffset or repeats
+    // pages — otherwise milesSum inflates silently and trail lengths are wrong.
+    let newOnPage = 0;
+    for (const feat of data.features) {
+      const oid = feat.properties.objectid ?? feat.properties.OBJECTID;
+      if (oid !== undefined && seenObjectIds.has(oid)) continue;
+      if (oid !== undefined) seenObjectIds.add(oid);
+      all.push(feat);
+      newOnPage++;
+    }
+    if (data.features.length === chunk && newOnPage === 0) {
+      // Endpoint returned a full page but every record was a duplicate —
+      // either pagination is broken or we're hitting the safety cap loop.
+      throw new Error(
+        `Meck REST: page ${page} returned ${chunk} duplicate features (objectid collision). Pagination contract may have changed.`,
+      );
+    }
     if (data.features.length < chunk) break;
     offset += chunk;
   }
   if (all.length < MIN_EXPECTED_FEATURES) {
     throw new Error(
-      `Meck REST: only ${all.length} features returned (< ${MIN_EXPECTED_FEATURES}). Endpoint may be returning an error body.`,
+      `Meck REST: only ${all.length} unique features returned (< ${MIN_EXPECTED_FEATURES}). Endpoint may be returning an error body.`,
     );
   }
   return all;
@@ -570,6 +611,19 @@ const run = async () => {
   // Wipe previous greenway files so removed trails actually go away.
   for (const f of fs.readdirSync(outDir)) {
     if (f.endsWith(".json")) fs.unlinkSync(path.join(outDir, f));
+  }
+
+  // Detect slug collisions before writing — otherwise two distinct trail_names
+  // that slugify to the same value would silently overwrite each other.
+  const slugsSeen = new Map<string, string>();
+  for (const greenway of greenways) {
+    const prior = slugsSeen.get(greenway.slug);
+    if (prior && prior !== greenway.name) {
+      throw new Error(
+        `Slug collision: "${prior}" and "${greenway.name}" both slugify to "${greenway.slug}". Add a disambiguator in the importer or rename one trail.`,
+      );
+    }
+    slugsSeen.set(greenway.slug, greenway.name);
   }
 
   const entries: { slug: string; name: string }[] = [];

@@ -31,7 +31,10 @@ export function GreenwayMap({ greenways, mapTilerKey }: MapProps) {
   useEffect(() => {
     if (!ref.current) return;
 
-    const styleUrl = `https://api.maptiler.com/maps/streets-v2/style.json?key=${mapTilerKey}`;
+    // env.ts validated mapTilerKey shape, but defense in depth: URL-encode
+    // before interpolation so a future schema regression cannot smuggle
+    // characters into the URL or the request logs MapTiler ships back.
+    const styleUrl = `https://api.maptiler.com/maps/streets-v2/style.json?key=${encodeURIComponent(mapTilerKey)}`;
     const style: string | maplibregl.StyleSpecification = fallback
       ? FALLBACK_STYLE
       : styleUrl;
@@ -45,10 +48,16 @@ export function GreenwayMap({ greenways, mapTilerKey }: MapProps) {
 
     type MapErrorEvent = maplibregl.MapLibreEvent & {
       error?: { message?: string };
+      sourceId?: string;
     };
     map.on("error", (e: MapErrorEvent) => {
-      // Degrade to fallback styling if MapTiler is unreachable. The greenway
-      // overlay is still useful on a plain background.
+      // Already in fallback — don't thrash the effect with repeat setFallback
+      // calls that would re-run the entire setup and risk an error storm.
+      if (fallback) return;
+      // Only degrade for tile-source / style errors. Greenway-overlay
+      // GeoJSON errors should not nuke the basemap.
+      const isStyleError = e.sourceId !== "greenways";
+      if (!isStyleError) return;
       const message = e.error?.message ?? "unknown";
       console.warn(
         JSON.stringify({

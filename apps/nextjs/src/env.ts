@@ -17,6 +17,9 @@ export const env = createEnv({
     REVALIDATION_SECRET: z.string().optional(),
     MAPTILER_KEY: z.string().optional(),
     DATA_BASE_URL: z.string().url().optional(),
+    // Back-compat alias for DATA_BASE_URL; deployments carrying the legacy
+    // name should keep working until they migrate.
+    R2_PUBLIC_BASE_URL: z.string().url().optional(),
     GH_REPO_OWNER: z.string().optional(),
     GH_REPO_NAME: z.string().optional(),
     GH_APP_ID: z.string().optional(),
@@ -30,7 +33,13 @@ export const env = createEnv({
    * For them to be exposed to the client, prefix them with `NEXT_PUBLIC_`.
    */
   client: {
-    NEXT_PUBLIC_MAPTILER_KEY: z.string().min(1),
+    // MapTiler keys are URL-safe alphanumerics. Reject keys with spaces,
+    // newlines, or characters that would break the query string and leak the
+    // raw value into network logs / Sentry / referer headers.
+    NEXT_PUBLIC_MAPTILER_KEY: z
+      .string()
+      .min(20)
+      .regex(/^[A-Za-z0-9_-]+$/, "MapTiler keys must be URL-safe alphanumerics"),
   },
   /**
    * Destructure all variables from `process.env` to make sure they aren't tree-shaken away.

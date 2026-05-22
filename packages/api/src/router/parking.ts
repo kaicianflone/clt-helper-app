@@ -7,7 +7,10 @@ import { createTRPCRouter, publicProcedure } from "../trpc";
 
 // Empty baseUrl → data-client reads from local disk. See greenway.ts.
 const getBaseUrl = (ctx: Context): string | undefined =>
-  ctx.baseUrl ?? process.env.DATA_BASE_URL ?? undefined;
+  ctx.baseUrl ??
+  process.env.DATA_BASE_URL ??
+  process.env.R2_PUBLIC_BASE_URL ??
+  undefined;
 
 export const parkingRouter = createTRPCRouter({
   list: publicProcedure.query(async ({ ctx }) => {

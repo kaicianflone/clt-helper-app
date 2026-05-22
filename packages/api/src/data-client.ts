@@ -49,20 +49,40 @@ const fetchWithTimeout = async (
  * Candidate filesystem roots for the local-disk bundle, in priority order.
  * Returns the first one that contains <kind>.json. Different cwd contexts
  * resolve different roots:
- *   - Monorepo root (CLI / tsx / vitest):  <cwd>/dist/data/v1/<kind>.json
- *   - Next.js server (cwd = apps/nextjs/): <cwd>/public/data/v1/<kind>.json
- *     (build:data mirrors bundles into apps/nextjs/public/data/v1/)
+ *   - Monorepo root (CLI / tsx / vitest):     <cwd>/dist/data/v1/<kind>.json
+ *   - Next.js dev (cwd = apps/nextjs/):       <cwd>/public/data/v1/<kind>.json
+ *   - Vercel standalone (cwd varies):         resolves via __dirname-relative
+ *                                             paths to apps/nextjs/public/data/v1/
  *   - Explicit override: opts.localDir or env CLT_DATA_DIR
  */
 const resolveLocalFile = (
   kind: EntityKind,
   opts: { localDir?: string },
 ): string | null => {
+  // Explicit localDir wins — used by tests to scope the search. If the file
+  // isn't there, return null so the offlineBundle / throw path takes over.
+  if (opts.localDir) {
+    const file = path.join(opts.localDir, `${kind}.json`);
+    return fs.existsSync(file) ? file : null;
+  }
+
   const candidates: string[] = [];
-  if (opts.localDir) candidates.push(opts.localDir);
   if (process.env.CLT_DATA_DIR) candidates.push(process.env.CLT_DATA_DIR);
   candidates.push(path.resolve(process.cwd(), "dist/data/v1"));
   candidates.push(path.resolve(process.cwd(), "public/data/v1"));
+  // Vercel standalone output bundles packages/api but runs from .next/standalone/.
+  // Walk up from this module to find apps/nextjs/public/data/v1 in the repo layout
+  // or in the standalone tracer's relocated copy. __dirname is undefined in
+  // pure ESM but vitest + tsx + Next.js all run CommonJS here.
+  try {
+    candidates.push(
+      path.resolve(__dirname, "../../apps/nextjs/public/data/v1"),
+      path.resolve(__dirname, "../../../apps/nextjs/public/data/v1"),
+      path.resolve(__dirname, "../../../../apps/nextjs/public/data/v1"),
+    );
+  } catch {
+    // __dirname not available — skip silently.
+  }
 
   for (const dir of candidates) {
     const file = path.join(dir, `${kind}.json`);
@@ -70,6 +90,16 @@ const resolveLocalFile = (
   }
   return null;
 };
+
+// In-memory cache keyed by absolute file path + mtime. Reading 1.6 MB of
+// greenway JSON on every tRPC request would block the Node event loop under
+// concurrency. The cache invalidates automatically when build:data writes a
+// new bundle (mtime changes), so dev reload + prod ISR both stay correct.
+interface CacheEntry {
+  mtimeMs: number;
+  bundle: unknown;
+}
+const bundleCache = new Map<string, CacheEntry>();
 
 const fetchBundleLocal = <T>(
   kind: EntityKind,
@@ -82,7 +112,14 @@ const fetchBundleLocal = <T>(
       `data bundle ${kind}.json not found. Tried CLT_DATA_DIR, dist/data/v1, and public/data/v1 relative to cwd=${process.cwd()}. Run \`pnpm build:data\` first.`,
     );
   }
-  return JSON.parse(fs.readFileSync(file, "utf8")) as Bundle<T>;
+  const stat = fs.statSync(file);
+  const cached = bundleCache.get(file);
+  if (cached && cached.mtimeMs === stat.mtimeMs) {
+    return cached.bundle as Bundle<T>;
+  }
+  const bundle = JSON.parse(fs.readFileSync(file, "utf8")) as Bundle<T>;
+  bundleCache.set(file, { mtimeMs: stat.mtimeMs, bundle });
+  return bundle;
 };
 
 export async function fetchBundle<T>(
