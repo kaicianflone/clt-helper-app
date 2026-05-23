@@ -6,6 +6,7 @@ import { ShareButton } from "~/components/ShareButton";
 import { StaleDataPrompt } from "~/components/StaleDataPrompt";
 import { env } from "~/env";
 import { createServerCaller } from "~/trpc/server";
+import { GreenwayMapSnippetLoader } from "./_components/greenway-map-snippet-loader";
 
 export const revalidate = 60;
 
@@ -74,6 +75,14 @@ export default async function GreenwayDetailPage({ params }: Props) {
             {greenway.description}
           </p>
         )}
+
+        {/* Map snippet */}
+        <div className="mt-8">
+          <GreenwayMapSnippetLoader
+            geometry={greenway.geometry as GeoJSON.MultiLineString}
+            mapTilerKey={env.NEXT_PUBLIC_MAPTILER_KEY}
+          />
+        </div>
 
         {/* Trailheads */}
         <section className="mt-12">

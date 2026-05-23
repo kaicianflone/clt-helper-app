@@ -28,6 +28,8 @@ export const greenwayRouter = createTRPCRouter({
       name: g.name,
       lengthMiles: g.lengthMiles,
       surface: g.surface,
+      lat: g.trailheads[0]?.lat ?? null,
+      lng: g.trailheads[0]?.lng ?? null,
     }));
   }),
 
@@ -56,6 +58,10 @@ export const greenwayRouter = createTRPCRouter({
       slug: g.slug,
       name: g.name,
       geometry: g.geometry,
+      lengthMiles: g.lengthMiles,
+      surface: g.surface,
+      trailheadCount: g.trailheads.length,
+      lastVerified: g.lastVerified,
     }));
   }),
 });

@@ -51,11 +51,11 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
       },
     ],
   },
-  // extra: {
-  //   eas: {
-  //     projectId: "your-eas-project-id",
-  //   },
-  // },
+  extra: {
+    eas: {
+      projectId: "d2421d0b-d42b-4347-980a-16bf0ed80f51",
+    },
+  },
   experiments: {
     tsconfigPaths: true,
     typedRoutes: true,

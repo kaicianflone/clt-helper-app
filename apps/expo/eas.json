@@ -24,8 +24,7 @@
         "simulator": true
       },
       "env": {
-        "EXPO_PUBLIC_R2_BASE_URL": "https://cdn.clt-app.com",
-        "EXPO_PUBLIC_SENTRY_DSN": ""
+        "EXPO_PUBLIC_R2_BASE_URL": "https://cdn.clt-app.com"
       }
     },
     "production": {
@@ -33,8 +32,7 @@
       "channel": "production",
       "autoIncrement": true,
       "env": {
-        "EXPO_PUBLIC_R2_BASE_URL": "https://cdn.clt-app.com",
-        "EXPO_PUBLIC_SENTRY_DSN": ""
+        "EXPO_PUBLIC_R2_BASE_URL": "https://cdn.clt-app.com"
       }
     }
   },

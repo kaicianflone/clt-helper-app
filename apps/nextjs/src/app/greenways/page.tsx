@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 
 import { EmptyState } from "~/components/EmptyState";
 import { createServerCaller } from "~/trpc/server";
+import { GreenwayList } from "./_components/greenway-list";
 
 export const revalidate = 60;
 
@@ -36,25 +36,7 @@ export default async function GreenwaysPage() {
           body="Greenways will appear here once data is imported."
         />
       ) : (
-        <ul className="divide-y divide-[color:var(--border-soft)]">
-          {greenways.map((g) => (
-            <li key={g.slug}>
-              <Link
-                href={`/greenways/${g.slug}`}
-                className="flex items-start justify-between gap-4 py-4 hover:bg-[color:var(--bg-cream-soft)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[color:var(--brick)]"
-              >
-                <div className="min-w-0 flex-1">
-                  <p className="truncate text-lg leading-snug font-semibold text-[color:var(--fg-ink)]">
-                    {g.name}
-                  </p>
-                  <p className="mt-0.5 text-sm text-[color:var(--fg-ink-muted)]">
-                    {g.lengthMiles} mi &middot; {g.surface}
-                  </p>
-                </div>
-              </Link>
-            </li>
-          ))}
-        </ul>
+        <GreenwayList greenways={greenways} />
       )}
     </main>
   );
