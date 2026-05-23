@@ -426,30 +426,31 @@ describe("fetchMeckRest", () => {
   });
 
   it("paginates when a full page is returned", async () => {
-    const fullPage = Array.from({ length: 2000 }, (_, i) => ({
-      type: "Feature" as const,
-      properties: { objectid: i + 1, trail_name: `Trail ${i}`, trl_status: "Active" },
-      geometry: {
-        type: "LineString" as const,
-        coordinates: [
-          [-80.84, 35.22],
-          [-80.85, 35.23],
-        ] as [number, number][],
-      },
-    }));
+    const makePage = (startId: number, count: number) =>
+      Array.from({ length: count }, (_, i) => ({
+        type: "Feature" as const,
+        properties: { objectid: startId + i, trail_name: `Trail ${startId + i}`, trl_status: "Active" },
+        geometry: {
+          type: "LineString" as const,
+          coordinates: [
+            [-80.84, 35.22],
+            [-80.85, 35.23],
+          ] as [number, number][],
+        },
+      }));
     let call = 0;
     const fakeFetch = vi.fn(async () => {
       call++;
       if (call === 1) {
         return new Response(
-          JSON.stringify({ type: "FeatureCollection", features: fullPage }),
+          JSON.stringify({ type: "FeatureCollection", features: makePage(1, 2000) }),
           { status: 200 },
         );
       }
       return new Response(
         JSON.stringify({
           type: "FeatureCollection",
-          features: fullPage.slice(0, 500),
+          features: makePage(2001, 500),
         }),
         { status: 200 },
       );

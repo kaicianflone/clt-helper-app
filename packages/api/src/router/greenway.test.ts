@@ -40,7 +40,14 @@ describe("greenway router", () => {
     const caller = appRouter.createCaller({ ...baseCtx, fetchImpl });
     const result = await caller.greenway.list();
     expect(result).toEqual([
-      { slug: "a", name: "A", lengthMiles: 1, surface: "paved" },
+      {
+        slug: "a",
+        name: "A",
+        lengthMiles: 1,
+        surface: "paved",
+        lat: 0,
+        lng: 0,
+      },
     ]);
   });
 
@@ -93,6 +100,10 @@ describe("greenway router", () => {
       slug: "a",
       name: "A",
       geometry: greenwayFixture.geometry,
+      lengthMiles: 1,
+      surface: "paved",
+      trailheadCount: 1,
+      lastVerified: "2026-05-20",
     });
   });
 });

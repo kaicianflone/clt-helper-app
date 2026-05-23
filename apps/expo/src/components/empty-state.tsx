@@ -1,5 +1,5 @@
 import { Text, View } from "react-native";
-import { Link } from "expo-router";
+import { Link, type Href } from "expo-router";
 
 import { colors, space, type } from "~/styles/tokens";
 
@@ -31,7 +31,7 @@ export function EmptyState({ message, ctaLabel, ctaHref }: EmptyStateProps) {
       </Text>
       {ctaLabel && ctaHref && (
         <Link
-          href={ctaHref}
+          href={ctaHref as Href}
           style={{
             marginTop: space[4],
             minHeight: 44,

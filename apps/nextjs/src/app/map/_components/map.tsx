@@ -4,6 +4,8 @@ import type { RouterOutputs } from "@clt/api";
 import { useEffect, useRef, useState } from "react";
 import maplibregl from "maplibre-gl";
 
+import { buildPopupHtml } from "./popup";
+
 type GreenwayWithGeometry =
   RouterOutputs["greenway"]["listWithGeometry"][number];
 
@@ -76,7 +78,14 @@ export function GreenwayMap({ greenways, mapTilerKey }: MapProps) {
           type: "FeatureCollection",
           features: greenways.map((g) => ({
             type: "Feature",
-            properties: { slug: g.slug, name: g.name },
+            properties: {
+              slug: g.slug,
+              name: g.name,
+              lengthMiles: g.lengthMiles,
+              surface: g.surface,
+              trailheadCount: g.trailheadCount,
+              lastVerified: g.lastVerified,
+            },
             geometry: g.geometry as GeoJSON.Geometry,
           })),
         },
@@ -92,13 +101,29 @@ export function GreenwayMap({ greenways, mapTilerKey }: MapProps) {
         },
       });
 
+      let popup: maplibregl.Popup | null = null;
       map.on("click", "greenway-lines", (e) => {
         const props = e.features?.[0]?.properties as
-          | { slug?: string }
+          | {
+              slug?: string;
+              name?: string;
+              lengthMiles?: number;
+              surface?: string;
+              trailheadCount?: number;
+              lastVerified?: string;
+            }
           | undefined;
-        if (props?.slug) {
-          window.location.href = `/greenways/${props.slug}`;
-        }
+        if (!props?.slug) return;
+
+        popup?.remove();
+        popup = new maplibregl.Popup({
+          closeButton: true,
+          closeOnClick: true,
+          maxWidth: "260px",
+        })
+          .setLngLat(e.lngLat)
+          .setHTML(buildPopupHtml({ ...props, slug: props.slug }))
+          .addTo(map);
       });
       map.on("mouseenter", "greenway-lines", () => {
         map.getCanvas().style.cursor = "pointer";
@@ -115,7 +140,7 @@ export function GreenwayMap({ greenways, mapTilerKey }: MapProps) {
 
   return (
     <div className="relative h-screen w-full">
-      <div ref={ref} className="absolute inset-0" />
+      <div ref={ref} className="h-full w-full" />
       {fallback && (
         <div className="absolute top-4 left-1/2 -translate-x-1/2 rounded-md border border-amber-200 bg-amber-50 px-3 py-2 text-sm text-amber-900">
           Map tiles unavailable — showing greenways on a plain background.

@@ -19,11 +19,12 @@ The clt-app data layer lives in JSON files in this repo. Anyone can submit corre
 
 ## Developing locally
 
-1. Install pnpm 9+ and Node 20+.
+1. Install pnpm 10+ and Node 22+ (see `.nvmrc`).
 2. `pnpm install`
-3. `pnpm typecheck && pnpm lint && pnpm test` should pass on a fresh clone.
-4. For web: `pnpm --filter @clt/nextjs dev`
-5. For mobile (needs dev client): `pnpm --filter @clt/expo expo prebuild --clean && pnpm --filter @clt/expo dev`
+3. `cp apps/nextjs/.env.example apps/nextjs/.env.local` (fill in dev values; most can be left blank for local work).
+4. `pnpm typecheck && pnpm lint && pnpm test` should pass on a fresh clone.
+5. For web: `pnpm --filter @clt/nextjs dev`
+6. For mobile (needs dev client): `pnpm --filter @clt/expo expo prebuild --clean && pnpm --filter @clt/expo dev`
 
 ## Code style
 
