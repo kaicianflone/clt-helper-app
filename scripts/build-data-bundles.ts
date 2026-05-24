@@ -1,6 +1,5 @@
 import fs from "node:fs";
 import path from "node:path";
-import { geocodeDeals } from "./geocode-deals.js";
 
 export interface Bundle {
   schemaVersion: number;
@@ -22,11 +21,8 @@ export const buildBundle = (dir: string, schemaVersion: number): Bundle => {
   return { schemaVersion, builtAt: new Date().toISOString(), entries };
 };
 
-const run = async () => {
+const run = () => {
   const root = path.resolve(path.dirname(new URL(import.meta.url).pathname), "..");
-
-  await geocodeDeals(path.join(root, "data/deals"));
-
   const outDir = path.join(root, "dist/data/v1");
   fs.mkdirSync(outDir, { recursive: true });
   const categories = ["greenways", "deals", "parking"];

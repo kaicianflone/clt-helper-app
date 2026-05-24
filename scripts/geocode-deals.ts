@@ -3,6 +3,7 @@ import path from "node:path";
 
 const CENSUS_API =
   "https://geocoding.geo.census.gov/geocoder/locations/onelineaddress";
+const FETCH_TIMEOUT_MS = 10_000;
 
 interface CensusMatch {
   coordinates: { x: number; y: number };
@@ -21,7 +22,9 @@ async function geocodeAddress(
   url.searchParams.set("format", "json");
 
   try {
-    const res = await fetch(url);
+    const res = await fetch(url, {
+      signal: AbortSignal.timeout(FETCH_TIMEOUT_MS),
+    });
     if (!res.ok) return null;
 
     const data = (await res.json()) as CensusResponse;
