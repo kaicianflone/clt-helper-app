@@ -1,0 +1,44 @@
+{
+  "slug": "200-brevard-st",
+  "name": "200 Brevard St Street Parking",
+  "address": "200 block of Brevard St, Charlotte, NC",
+  "latLng": [
+    35.223704,
+    -80.841394
+  ],
+  "hourlyRate": 1.5,
+  "dailyMax": null,
+  "hours": {
+    "mon": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "tue": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "wed": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "thu": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "fri": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "sat": "closed",
+    "sun": "closed"
+  },
+  "paymentMethods": [
+    "meter",
+    "app"
+  ],
+  "covered": false,
+  "totalSpaces": 1,
+  "zoneNumbers": [],
+  "operator": "ParkMobile",
+  "lastVerified": "2026-05-24"
+}

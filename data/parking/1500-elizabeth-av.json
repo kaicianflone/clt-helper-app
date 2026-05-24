@@ -1,0 +1,44 @@
+{
+  "slug": "1500-elizabeth-av",
+  "name": "1500 Elizabeth Av Street Parking",
+  "address": "1500 block of Elizabeth Av, Charlotte, NC",
+  "latLng": [
+    35.214162,
+    -80.827141
+  ],
+  "hourlyRate": 1.5,
+  "dailyMax": null,
+  "hours": {
+    "mon": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "tue": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "wed": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "thu": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "fri": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "sat": "closed",
+    "sun": "closed"
+  },
+  "paymentMethods": [
+    "meter",
+    "app"
+  ],
+  "covered": false,
+  "totalSpaces": 33,
+  "zoneNumbers": [],
+  "operator": "ParkMobile",
+  "lastVerified": "2026-05-24"
+}

@@ -1,0 +1,56 @@
+{
+  "slug": "700-e-6th-st",
+  "name": "700 E 6th St Street Parking",
+  "address": "700 block of E 6th St, Charlotte, NC",
+  "latLng": [
+    35.223173,
+    -80.834223
+  ],
+  "hourlyRate": 1.5,
+  "dailyMax": null,
+  "hours": {
+    "mon": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "tue": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "wed": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "thu": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "fri": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "sat": "closed",
+    "sun": "closed"
+  },
+  "paymentMethods": [
+    "meter",
+    "app"
+  ],
+  "covered": false,
+  "totalSpaces": 11,
+  "zoneNumbers": [
+    "417",
+    "418",
+    "419",
+    "420",
+    "421",
+    "422",
+    "423",
+    "424",
+    "425",
+    "426",
+    "427"
+  ],
+  "operator": "ParkMobile",
+  "lastVerified": "2026-05-24"
+}

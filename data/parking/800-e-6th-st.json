@@ -1,0 +1,56 @@
+{
+  "slug": "800-e-6th-st",
+  "name": "800 E 6th St Street Parking",
+  "address": "800 block of E 6th St, Charlotte, NC",
+  "latLng": [
+    35.222406,
+    -80.833284
+  ],
+  "hourlyRate": 1.5,
+  "dailyMax": null,
+  "hours": {
+    "mon": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "tue": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "wed": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "thu": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "fri": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "sat": "closed",
+    "sun": "closed"
+  },
+  "paymentMethods": [
+    "meter",
+    "app"
+  ],
+  "covered": false,
+  "totalSpaces": 11,
+  "zoneNumbers": [
+    "429",
+    "430",
+    "431",
+    "432",
+    "433",
+    "434",
+    "435",
+    "436",
+    "437",
+    "438",
+    "439"
+  ],
+  "operator": "ParkMobile",
+  "lastVerified": "2026-05-24"
+}

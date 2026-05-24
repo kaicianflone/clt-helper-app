@@ -4,7 +4,7 @@ import type { RouterOutputs } from "@clt/api";
 import { useEffect, useRef, useState } from "react";
 import maplibregl from "maplibre-gl";
 
-import type { DealLocation } from "../page";
+import type { DealLocation, ParkingPin } from "../page";
 import { buildPopupHtml } from "./popup";
 
 type GreenwayWithGeometry =
@@ -13,6 +13,7 @@ type GreenwayWithGeometry =
 interface MapProps {
   greenways: GreenwayWithGeometry[];
   dealLocations: DealLocation[];
+  parkingPins: ParkingPin[];
   mapTilerKey: string;
 }
 
@@ -81,9 +82,26 @@ function buildDealPopupHtml(props: {
   `;
 }
 
+function buildParkingPopupHtml(props: {
+  slug: string;
+  name: string;
+  hourlyRate: number | null;
+}): string {
+  const rate =
+    props.hourlyRate != null ? `$${props.hourlyRate}/hr` : "Rate not posted";
+  return `
+    <div class="font-sans">
+      <p class="font-semibold text-base leading-tight" style="color:#2a2a2a">${escapeHtml(props.name)}</p>
+      <p class="text-sm mt-1" style="color:#5a5a5a">${rate} · Street parking</p>
+      <a href="/parking/${escapeHtml(props.slug)}" class="inline-block mt-3 text-sm font-medium underline" style="color:#B23A1F">View details →</a>
+    </div>
+  `;
+}
+
 export function GreenwayMap({
   greenways,
   dealLocations,
+  parkingPins,
   mapTilerKey,
 }: MapProps) {
   const ref = useRef<HTMLDivElement>(null);
@@ -200,7 +218,64 @@ export function GreenwayMap({
         img.src = `data:image/svg+xml;charset=utf-8,${tagSvg}`;
       }
 
+      if (parkingPins.length > 0) {
+        map.addSource("parking-locations", {
+          type: "geojson",
+          data: {
+            type: "FeatureCollection",
+            features: parkingPins.map((p) => ({
+              type: "Feature" as const,
+              properties: {
+                slug: p.slug,
+                name: p.name,
+                hourlyRate: p.hourlyRate,
+              },
+              geometry: {
+                type: "Point" as const,
+                coordinates: [p.latLng[1], p.latLng[0]],
+              },
+            })),
+          },
+        });
+        const pSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="%232563EB" stroke="%23ffffff" stroke-width="2"/><text x="12" y="16.5" text-anchor="middle" font-family="Arial,sans-serif" font-size="14" font-weight="bold" fill="white">P</text></svg>`;
+        const pImg = new Image(24, 24);
+        pImg.onload = () => {
+          if (!map.hasImage("parking-icon")) map.addImage("parking-icon", pImg);
+          map.addLayer({
+            id: "parking-points",
+            type: "symbol",
+            source: "parking-locations",
+            layout: {
+              "icon-image": "parking-icon",
+              "icon-size": 1,
+              "icon-allow-overlap": true,
+            },
+          });
+        };
+        pImg.src = `data:image/svg+xml;charset=utf-8,${pSvg}`;
+      }
+
       let popup: maplibregl.Popup | null = null;
+
+      map.on("click", "parking-points", (e) => {
+        const props = e.features?.[0]?.properties;
+        if (!props) return;
+        popup?.remove();
+        popup = new maplibregl.Popup({
+          closeButton: true,
+          closeOnClick: true,
+          maxWidth: "240px",
+        })
+          .setLngLat(e.lngLat)
+          .setHTML(
+            buildParkingPopupHtml({
+              slug: props.slug as string,
+              name: props.name as string,
+              hourlyRate: props.hourlyRate as number | null,
+            }),
+          )
+          .addTo(map);
+      });
 
       map.on("click", "deal-points", (e) => {
         const props = e.features?.[0]?.properties;
@@ -258,12 +333,18 @@ export function GreenwayMap({
       map.on("mouseleave", "deal-points", () => {
         map.getCanvas().style.cursor = "";
       });
+      map.on("mouseenter", "parking-points", () => {
+        map.getCanvas().style.cursor = "pointer";
+      });
+      map.on("mouseleave", "parking-points", () => {
+        map.getCanvas().style.cursor = "";
+      });
     });
 
     return () => {
       map.remove();
     };
-  }, [greenways, dealLocations, mapTilerKey, fallback]);
+  }, [greenways, dealLocations, parkingPins, mapTilerKey, fallback]);
 
   return (
     <div

@@ -1,0 +1,44 @@
+{
+  "slug": "300-w-5th-st",
+  "name": "300 W 5th St Street Parking",
+  "address": "300 block of W 5th St, Charlotte, NC",
+  "latLng": [
+    35.230112,
+    -80.844427
+  ],
+  "hourlyRate": 1.5,
+  "dailyMax": null,
+  "hours": {
+    "mon": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "tue": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "wed": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "thu": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "fri": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "sat": "closed",
+    "sun": "closed"
+  },
+  "paymentMethods": [
+    "meter",
+    "app"
+  ],
+  "covered": false,
+  "totalSpaces": 11,
+  "zoneNumbers": [],
+  "operator": "ParkMobile",
+  "lastVerified": "2026-05-24"
+}

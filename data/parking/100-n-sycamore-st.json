@@ -1,0 +1,70 @@
+{
+  "slug": "100-n-sycamore-st",
+  "name": "100 N Sycamore St Street Parking",
+  "address": "100 block of N Sycamore St, Charlotte, NC",
+  "latLng": [
+    35.23592,
+    -80.853267
+  ],
+  "hourlyRate": 1.5,
+  "dailyMax": null,
+  "hours": {
+    "mon": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "tue": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "wed": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "thu": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "fri": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "sat": "closed",
+    "sun": "closed"
+  },
+  "paymentMethods": [
+    "meter",
+    "app"
+  ],
+  "covered": false,
+  "totalSpaces": 25,
+  "zoneNumbers": [
+    "2586",
+    "2587",
+    "2588",
+    "2589",
+    "2590",
+    "2591",
+    "2592",
+    "2593",
+    "2594",
+    "2595",
+    "2596",
+    "2597",
+    "2598",
+    "2599",
+    "2600",
+    "2601",
+    "2602",
+    "2603",
+    "2604",
+    "2605",
+    "2606",
+    "2607",
+    "2608",
+    "2609",
+    "2610"
+  ],
+  "operator": "ParkMobile",
+  "lastVerified": "2026-05-24"
+}

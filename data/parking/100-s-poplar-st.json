@@ -1,0 +1,61 @@
+{
+  "slug": "100-s-poplar-st",
+  "name": "100 S Poplar St Street Parking",
+  "address": "100 block of S Poplar St, Charlotte, NC",
+  "latLng": [
+    35.228529,
+    -80.845773
+  ],
+  "hourlyRate": 1.5,
+  "dailyMax": null,
+  "hours": {
+    "mon": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "tue": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "wed": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "thu": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "fri": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "sat": "closed",
+    "sun": "closed"
+  },
+  "paymentMethods": [
+    "meter",
+    "app"
+  ],
+  "covered": false,
+  "totalSpaces": 19,
+  "zoneNumbers": [
+    "2256",
+    "2257",
+    "2258",
+    "2259",
+    "2260",
+    "2261",
+    "2262",
+    "2263",
+    "2264",
+    "2265",
+    "2266",
+    "2267",
+    "2268",
+    "2269",
+    "2270",
+    "2271"
+  ],
+  "operator": "ParkMobile",
+  "lastVerified": "2026-05-24"
+}

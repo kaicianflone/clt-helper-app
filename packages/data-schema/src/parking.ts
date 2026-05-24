@@ -26,6 +26,8 @@ export const ParkingLotSchema = z.object({
   }),
   paymentMethods: z.array(z.enum(["cash", "card", "app", "meter"])).min(1),
   covered: z.boolean(),
+  totalSpaces: z.number().int().nonnegative().optional(),
+  zoneNumbers: z.array(z.string()).optional(),
   operator: z.string().optional(),
   lastVerified: ISODate,
 });

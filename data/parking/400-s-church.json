@@ -1,0 +1,47 @@
+{
+  "slug": "400-s-church",
+  "name": "400 S Church Street Parking",
+  "address": "400 block of S Church, Charlotte, NC",
+  "latLng": [
+    35.225145,
+    -80.848361
+  ],
+  "hourlyRate": 1.5,
+  "dailyMax": null,
+  "hours": {
+    "mon": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "tue": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "wed": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "thu": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "fri": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "sat": "closed",
+    "sun": "closed"
+  },
+  "paymentMethods": [
+    "meter",
+    "app"
+  ],
+  "covered": false,
+  "totalSpaces": 2,
+  "zoneNumbers": [
+    "2168",
+    "2169"
+  ],
+  "operator": "ParkMobile",
+  "lastVerified": "2026-05-24"
+}

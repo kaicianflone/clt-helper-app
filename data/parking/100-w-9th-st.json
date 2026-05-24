@@ -1,0 +1,53 @@
+{
+  "slug": "100-w-9th-st",
+  "name": "100 W 9th St Street Parking",
+  "address": "100 block of W 9th St, Charlotte, NC",
+  "latLng": [
+    35.2317,
+    -80.838367
+  ],
+  "hourlyRate": 1.5,
+  "dailyMax": null,
+  "hours": {
+    "mon": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "tue": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "wed": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "thu": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "fri": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "sat": "closed",
+    "sun": "closed"
+  },
+  "paymentMethods": [
+    "meter",
+    "app"
+  ],
+  "covered": false,
+  "totalSpaces": 8,
+  "zoneNumbers": [
+    "2657",
+    "2658",
+    "2659",
+    "2660",
+    "2661",
+    "2662",
+    "2663",
+    "2664"
+  ],
+  "operator": "ParkMobile",
+  "lastVerified": "2026-05-24"
+}

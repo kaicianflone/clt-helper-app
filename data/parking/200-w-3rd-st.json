@@ -1,0 +1,52 @@
+{
+  "slug": "200-w-3rd-st",
+  "name": "200 W 3rd St Street Parking",
+  "address": "200 block of W 3rd St, Charlotte, NC",
+  "latLng": [
+    35.226982,
+    -80.846836
+  ],
+  "hourlyRate": 1.5,
+  "dailyMax": null,
+  "hours": {
+    "mon": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "tue": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "wed": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "thu": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "fri": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "sat": "closed",
+    "sun": "closed"
+  },
+  "paymentMethods": [
+    "meter",
+    "app"
+  ],
+  "covered": false,
+  "totalSpaces": 14,
+  "zoneNumbers": [
+    "2250",
+    "2251",
+    "2252",
+    "2253",
+    "2254",
+    "2255",
+    "2667"
+  ],
+  "operator": "ParkMobile",
+  "lastVerified": "2026-05-24"
+}

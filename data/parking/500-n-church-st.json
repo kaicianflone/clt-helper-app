@@ -1,0 +1,47 @@
+{
+  "slug": "500-n-church-st",
+  "name": "500 N Church St Street Parking",
+  "address": "500 block of N Church St, Charlotte, NC",
+  "latLng": [
+    35.231521,
+    -80.839197
+  ],
+  "hourlyRate": 1.5,
+  "dailyMax": null,
+  "hours": {
+    "mon": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "tue": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "wed": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "thu": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "fri": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "sat": "closed",
+    "sun": "closed"
+  },
+  "paymentMethods": [
+    "meter",
+    "app"
+  ],
+  "covered": false,
+  "totalSpaces": 2,
+  "zoneNumbers": [
+    "2123",
+    "2124"
+  ],
+  "operator": "ParkMobile",
+  "lastVerified": "2026-05-24"
+}

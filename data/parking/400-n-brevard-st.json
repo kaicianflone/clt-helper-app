@@ -1,0 +1,48 @@
+{
+  "slug": "400-n-brevard-st",
+  "name": "400 N Brevard St Street Parking",
+  "address": "400 block of N Brevard St, Charlotte, NC",
+  "latLng": [
+    35.227267,
+    -80.835588
+  ],
+  "hourlyRate": 1.5,
+  "dailyMax": null,
+  "hours": {
+    "mon": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "tue": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "wed": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "thu": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "fri": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "sat": "closed",
+    "sun": "closed"
+  },
+  "paymentMethods": [
+    "meter",
+    "app"
+  ],
+  "covered": false,
+  "totalSpaces": 43,
+  "zoneNumbers": [
+    "216",
+    "306",
+    "318"
+  ],
+  "operator": "ParkMobile",
+  "lastVerified": "2026-05-24"
+}

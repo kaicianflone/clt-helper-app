@@ -1,0 +1,56 @@
+{
+  "slug": "500-n-tryon-st",
+  "name": "500 N Tryon St Street Parking",
+  "address": "500 block of N Tryon St, Charlotte, NC",
+  "latLng": [
+    35.230678,
+    -80.838141
+  ],
+  "hourlyRate": 1.5,
+  "dailyMax": null,
+  "hours": {
+    "mon": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "tue": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "wed": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "thu": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "fri": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "sat": "closed",
+    "sun": "closed"
+  },
+  "paymentMethods": [
+    "meter",
+    "app"
+  ],
+  "covered": false,
+  "totalSpaces": 11,
+  "zoneNumbers": [
+    "022",
+    "024",
+    "026",
+    "027",
+    "2024",
+    "2025",
+    "2026",
+    "2027",
+    "2028",
+    "2029",
+    "2030"
+  ],
+  "operator": "ParkMobile",
+  "lastVerified": "2026-05-24"
+}

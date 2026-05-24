@@ -1,0 +1,58 @@
+{
+  "slug": "500-e-5th-st",
+  "name": "500 E 5th St Street Parking",
+  "address": "500 block of E 5th St, Charlotte, NC",
+  "latLng": [
+    35.224191,
+    -80.837378
+  ],
+  "hourlyRate": 1.5,
+  "dailyMax": null,
+  "hours": {
+    "mon": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "tue": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "wed": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "thu": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "fri": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "sat": "closed",
+    "sun": "closed"
+  },
+  "paymentMethods": [
+    "meter",
+    "app"
+  ],
+  "covered": false,
+  "totalSpaces": 13,
+  "zoneNumbers": [
+    "338",
+    "339",
+    "340",
+    "341",
+    "342",
+    "343",
+    "344",
+    "345",
+    "346",
+    "347",
+    "348",
+    "349",
+    "350"
+  ],
+  "operator": "ParkMobile",
+  "lastVerified": "2026-05-24"
+}

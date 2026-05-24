@@ -1,0 +1,48 @@
+{
+  "slug": "100-s-mint-st",
+  "name": "100 S Mint St Street Parking",
+  "address": "100 block of S Mint St, Charlotte, NC",
+  "latLng": [
+    35.228956,
+    -80.846197
+  ],
+  "hourlyRate": 1.5,
+  "dailyMax": null,
+  "hours": {
+    "mon": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "tue": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "wed": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "thu": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "fri": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "sat": "closed",
+    "sun": "closed"
+  },
+  "paymentMethods": [
+    "meter",
+    "app"
+  ],
+  "covered": false,
+  "totalSpaces": 9,
+  "zoneNumbers": [
+    "2327",
+    "2328",
+    "2331"
+  ],
+  "operator": "ParkMobile",
+  "lastVerified": "2026-05-24"
+}

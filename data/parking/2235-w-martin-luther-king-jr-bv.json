@@ -1,0 +1,46 @@
+{
+  "slug": "2235-w-martin-luther-king-jr-bv",
+  "name": "2235 W Martin Luther King Jr Bv Street Parking",
+  "address": "2235 block of W Martin Luther King Jr Bv, Charlotte, NC",
+  "latLng": [
+    35.226573,
+    -80.848339
+  ],
+  "hourlyRate": 1.5,
+  "dailyMax": null,
+  "hours": {
+    "mon": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "tue": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "wed": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "thu": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "fri": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "sat": "closed",
+    "sun": "closed"
+  },
+  "paymentMethods": [
+    "meter",
+    "app"
+  ],
+  "covered": false,
+  "totalSpaces": 1,
+  "zoneNumbers": [
+    "2235"
+  ],
+  "operator": "ParkMobile",
+  "lastVerified": "2026-05-24"
+}

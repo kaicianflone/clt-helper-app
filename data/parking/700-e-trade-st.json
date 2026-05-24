@@ -1,0 +1,48 @@
+{
+  "slug": "700-e-trade-st",
+  "name": "700 E Trade St Street Parking",
+  "address": "700 block of E Trade St, Charlotte, NC",
+  "latLng": [
+    35.2218,
+    -80.836562
+  ],
+  "hourlyRate": 1.5,
+  "dailyMax": null,
+  "hours": {
+    "mon": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "tue": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "wed": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "thu": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "fri": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "sat": "closed",
+    "sun": "closed"
+  },
+  "paymentMethods": [
+    "meter",
+    "app"
+  ],
+  "covered": false,
+  "totalSpaces": 3,
+  "zoneNumbers": [
+    "457",
+    "458",
+    "459"
+  ],
+  "operator": "ParkMobile",
+  "lastVerified": "2026-05-24"
+}

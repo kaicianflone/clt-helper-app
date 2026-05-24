@@ -1,0 +1,57 @@
+{
+  "slug": "500-e-4th-st",
+  "name": "500 E 4th St Street Parking",
+  "address": "500 block of E 4th St, Charlotte, NC",
+  "latLng": [
+    35.222432,
+    -80.839693
+  ],
+  "hourlyRate": 1.5,
+  "dailyMax": null,
+  "hours": {
+    "mon": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "tue": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "wed": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "thu": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "fri": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "sat": "closed",
+    "sun": "closed"
+  },
+  "paymentMethods": [
+    "meter",
+    "app"
+  ],
+  "covered": false,
+  "totalSpaces": 12,
+  "zoneNumbers": [
+    "351",
+    "352",
+    "353",
+    "354",
+    "355",
+    "356",
+    "357",
+    "358",
+    "359",
+    "360",
+    "361",
+    "362"
+  ],
+  "operator": "ParkMobile",
+  "lastVerified": "2026-05-24"
+}
