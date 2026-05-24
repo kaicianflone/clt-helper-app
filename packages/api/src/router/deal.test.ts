@@ -76,4 +76,46 @@ describe("deal router", () => {
       /not found/i,
     );
   });
+
+  it("listByLocation returns all deals matching a location slug", async () => {
+    const deal3 = {
+      ...dealFixture,
+      slug: "taco-wednesday",
+      daysOfWeek: ["wed"],
+      dealDescription: "$3 tacos",
+    };
+    const fetchImpl = vi
+      .fn()
+      .mockResolvedValue(makeBundle([dealFixture, deal3, dealFixture2]));
+    const caller = appRouter.createCaller({ ...baseCtx, fetchImpl });
+    const result = await caller.deal.listByLocation({
+      locationSlug: "taco-place",
+    });
+    expect(result).toHaveLength(2);
+    expect(result.map((d) => d.slug)).toEqual(["taco-tuesday", "taco-wednesday"]);
+  });
+
+  it("listByLocation throws NOT_FOUND for unknown location", async () => {
+    const fetchImpl = vi.fn().mockResolvedValue(makeBundle([dealFixture]));
+    const caller = appRouter.createCaller({ ...baseCtx, fetchImpl });
+    await expect(
+      caller.deal.listByLocation({ locationSlug: "nonexistent" }),
+    ).rejects.toThrow(/No deals found/i);
+  });
+
+  it("listByLocation handles names with special characters", async () => {
+    const specialDeal = {
+      ...dealFixture,
+      slug: "macs-deal",
+      restaurantName: "Mac's Speed Shop — South End",
+    };
+    const fetchImpl = vi
+      .fn()
+      .mockResolvedValue(makeBundle([specialDeal]));
+    const caller = appRouter.createCaller({ ...baseCtx, fetchImpl });
+    const result = await caller.deal.listByLocation({
+      locationSlug: "mac-s-speed-shop-south-end",
+    });
+    expect(result).toHaveLength(1);
+  });
 });

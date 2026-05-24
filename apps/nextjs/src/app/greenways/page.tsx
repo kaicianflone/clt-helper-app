@@ -32,7 +32,7 @@ export default async function GreenwaysPage() {
 
       <div className="my-6 flex items-center gap-3">
         <div className="h-px flex-1 bg-[color:var(--border-soft)]" />
-        <CrownIcon size={12} />
+        <CrownIcon size={18} />
         <div className="h-px flex-1 bg-[color:var(--border-soft)]" />
       </div>
 

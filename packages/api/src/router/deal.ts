@@ -48,4 +48,24 @@ export const dealRouter = createTRPCRouter({
         });
       return found;
     }),
+
+  listByLocation: publicProcedure
+    .input(z.object({ locationSlug: z.string() }))
+    .query(async ({ ctx, input }) => {
+      const bundle = await fetchDeals({
+        baseUrl: getBaseUrl(ctx),
+        fetchImpl: ctx.fetchImpl,
+      });
+      const toLocationSlug = (name: string) =>
+        name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+      const deals = bundle.entries.filter(
+        (d) => toLocationSlug(d.restaurantName) === input.locationSlug,
+      );
+      if (deals.length === 0)
+        throw new TRPCError({
+          code: "NOT_FOUND",
+          message: `No deals found for location: ${input.locationSlug}`,
+        });
+      return deals;
+    }),
 });

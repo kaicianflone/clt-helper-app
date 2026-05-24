@@ -13,9 +13,44 @@ export const metadata: Metadata = {
   title: "Map",
 };
 
+export interface DealLocation {
+  restaurantName: string;
+  locationSlug: string;
+  latLng: [number, number];
+  dealCount: number;
+  lastVerified: string;
+}
+
 export default async function MapPage() {
   const caller = await createServerCaller();
-  const greenways = await caller.greenway.listWithGeometry();
+  const [greenways, deals] = await Promise.all([
+    caller.greenway.listWithGeometry(),
+    caller.deal.list(),
+  ]);
+
+  const toLocationSlug = (name: string) =>
+    name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+
+  const locMap = new Map<string, DealLocation>();
+  for (const d of deals) {
+    const key = d.restaurantLatLng.join(",");
+    const existing = locMap.get(key);
+    if (existing) {
+      existing.dealCount++;
+      if (d.lastVerified > existing.lastVerified)
+        existing.lastVerified = d.lastVerified;
+    } else {
+      locMap.set(key, {
+        restaurantName: d.restaurantName,
+        locationSlug: toLocationSlug(d.restaurantName),
+        latLng: d.restaurantLatLng as [number, number],
+        dealCount: 1,
+        lastVerified: d.lastVerified,
+      });
+    }
+  }
+  const dealLocations = Array.from(locMap.values());
+
   return (
     <main>
       <Link
@@ -26,6 +61,7 @@ export default async function MapPage() {
       </Link>
       <MapLoader
         greenways={greenways}
+        dealLocations={dealLocations}
         mapTilerKey={env.NEXT_PUBLIC_MAPTILER_KEY}
       />
     </main>

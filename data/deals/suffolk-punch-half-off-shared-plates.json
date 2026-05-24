@@ -1,0 +1,10 @@
+{
+  "slug": "suffolk-punch-half-off-shared-plates",
+  "restaurantName": "Suffolk Punch South End",
+  "restaurantAddress": "2920 Griffith St, Charlotte, NC 28203",
+  "restaurantLatLng": [35.213, -80.8565],
+  "daysOfWeek": ["fri"],
+  "timeWindow": { "start": "16:00", "end": "19:00" },
+  "dealDescription": "Half off shared plates",
+  "lastVerified": "2026-05-24"
+}

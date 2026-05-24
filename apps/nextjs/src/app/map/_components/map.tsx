@@ -4,6 +4,7 @@ import type { RouterOutputs } from "@clt/api";
 import { useEffect, useRef, useState } from "react";
 import maplibregl from "maplibre-gl";
 
+import type { DealLocation } from "../page";
 import { buildPopupHtml } from "./popup";
 
 type GreenwayWithGeometry =
@@ -11,6 +12,7 @@ type GreenwayWithGeometry =
 
 interface MapProps {
   greenways: GreenwayWithGeometry[];
+  dealLocations: DealLocation[];
   mapTilerKey: string;
 }
 
@@ -26,7 +28,47 @@ const FALLBACK_STYLE: maplibregl.StyleSpecification = {
   ],
 };
 
-export function GreenwayMap({ greenways, mapTilerKey }: MapProps) {
+function escapeHtml(s: string): string {
+  return s.replace(/[&<>"']/g, (c) =>
+    c === "&"
+      ? "&amp;"
+      : c === "<"
+        ? "&lt;"
+        : c === ">"
+          ? "&gt;"
+          : c === '"'
+            ? "&quot;"
+            : "&#39;",
+  );
+}
+
+function timeAgo(dateStr: string): string {
+  const days = Math.floor(
+    (Date.now() - new Date(dateStr).getTime()) / 86_400_000,
+  );
+  if (days === 0) return "today";
+  if (days === 1) return "1 day ago";
+  if (days < 7) return `${days} days ago`;
+  const weeks = Math.floor(days / 7);
+  if (weeks === 1) return "1 week ago";
+  if (weeks < 5) return `${weeks} weeks ago`;
+  const months = Math.floor(days / 30);
+  if (months === 1) return "1 month ago";
+  return `${months} months ago`;
+}
+
+function buildDealPopupHtml(props: { restaurantName: string; locationSlug: string; dealCount: number; lastVerified: string }): string {
+  return `
+    <div class="font-sans">
+      <p class="font-semibold text-base leading-tight" style="color:#2a2a2a">${escapeHtml(props.restaurantName)}</p>
+      <p class="text-sm mt-1" style="color:#5a5a5a">${props.dealCount} deal${props.dealCount !== 1 ? "s" : ""}</p>
+      <p class="text-xs mt-1" style="color:#7a7a7a">Updated ${timeAgo(props.lastVerified)}</p>
+      <a href="/deals/location/${escapeHtml(props.locationSlug)}" class="inline-block mt-3 text-sm font-medium underline" style="color:#B23A1F">View all deals →</a>
+    </div>
+  `;
+}
+
+export function GreenwayMap({ greenways, dealLocations, mapTilerKey }: MapProps) {
   const ref = useRef<HTMLDivElement>(null);
   const [fallback, setFallback] = useState(false);
 
@@ -101,7 +143,67 @@ export function GreenwayMap({ greenways, mapTilerKey }: MapProps) {
         },
       });
 
+      if (dealLocations.length > 0) {
+        map.addSource("deal-locations", {
+          type: "geojson",
+          data: {
+            type: "FeatureCollection",
+            features: dealLocations.map((loc) => ({
+              type: "Feature" as const,
+              properties: {
+                restaurantName: loc.restaurantName,
+                locationSlug: loc.locationSlug,
+                dealCount: loc.dealCount,
+                lastVerified: loc.lastVerified,
+              },
+              geometry: {
+                type: "Point" as const,
+                coordinates: [loc.latLng[1], loc.latLng[0]],
+              },
+            })),
+          },
+        });
+        const tagSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="%23D97706" stroke="%23ffffff" stroke-width="1.5"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 6.91-1.01z"/></svg>`;
+        const img = new Image(28, 28);
+        img.onload = () => {
+          if (!map.hasImage("deal-icon")) map.addImage("deal-icon", img);
+          map.addLayer({
+            id: "deal-points",
+            type: "symbol",
+            source: "deal-locations",
+            layout: {
+              "icon-image": "deal-icon",
+              "icon-size": 1,
+              "icon-allow-overlap": true,
+            },
+          });
+        };
+        img.src = `data:image/svg+xml;charset=utf-8,${tagSvg}`;
+      }
+
       let popup: maplibregl.Popup | null = null;
+
+      map.on("click", "deal-points", (e) => {
+        const props = e.features?.[0]?.properties;
+        if (!props) return;
+        popup?.remove();
+        popup = new maplibregl.Popup({
+          closeButton: true,
+          closeOnClick: true,
+          maxWidth: "240px",
+        })
+          .setLngLat(e.lngLat)
+          .setHTML(
+            buildDealPopupHtml({
+              restaurantName: props.restaurantName as string,
+              locationSlug: props.locationSlug as string,
+              dealCount: props.dealCount as number,
+              lastVerified: props.lastVerified as string,
+            }),
+          )
+          .addTo(map);
+      });
+
       map.on("click", "greenway-lines", (e) => {
         const props = e.features?.[0]?.properties as
           | {
@@ -131,12 +233,18 @@ export function GreenwayMap({ greenways, mapTilerKey }: MapProps) {
       map.on("mouseleave", "greenway-lines", () => {
         map.getCanvas().style.cursor = "";
       });
+      map.on("mouseenter", "deal-points", () => {
+        map.getCanvas().style.cursor = "pointer";
+      });
+      map.on("mouseleave", "deal-points", () => {
+        map.getCanvas().style.cursor = "";
+      });
     });
 
     return () => {
       map.remove();
     };
-  }, [greenways, mapTilerKey, fallback]);
+  }, [greenways, dealLocations, mapTilerKey, fallback]);
 
   return (
     <div
