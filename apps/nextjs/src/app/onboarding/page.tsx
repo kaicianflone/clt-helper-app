@@ -89,7 +89,11 @@ export default function OnboardingPage() {
       {/* Progress + CTA */}
       <div className="flex w-full max-w-md flex-col items-center gap-6">
         {/* Dots */}
-        <div className="flex gap-2" role="group" aria-label="Onboarding progress">
+        <div
+          className="flex gap-2"
+          role="group"
+          aria-label="Onboarding progress"
+        >
           {STEPS.map((_, i) => (
             <button
               key={i}

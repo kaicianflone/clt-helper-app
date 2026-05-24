@@ -69,7 +69,10 @@ export function EulaModal({ onAccept }: EulaModalProps) {
         <p className="mt-3 text-sm text-[color:var(--fg-ink-soft)]">
           By submitting an edit, you agree:
         </p>
-        <ul id="eula-terms" className="mt-2 list-disc space-y-1 pl-5 text-base text-[color:var(--fg-ink-soft)] sm:text-sm">
+        <ul
+          id="eula-terms"
+          className="mt-2 list-disc space-y-1 pl-5 text-base text-[color:var(--fg-ink-soft)] sm:text-sm"
+        >
           <li>
             You won&apos;t submit profanity, hate speech, or content that
             targets individuals

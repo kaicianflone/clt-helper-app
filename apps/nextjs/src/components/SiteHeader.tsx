@@ -22,7 +22,7 @@ export function SiteHeader() {
     >
       <Link
         href="/"
-        className="flex items-center gap-1.5 font-display text-2xl font-bold uppercase tracking-wider text-[color:var(--brick)] hover:opacity-80"
+        className="font-display flex items-center gap-1.5 text-2xl font-bold tracking-wider text-[color:var(--brick)] uppercase hover:opacity-80"
         aria-label="clt — home"
       >
         <CrownIcon size={14} />
@@ -33,8 +33,7 @@ export function SiteHeader() {
         aria-label="Main navigation"
       >
         {navLinks.map(({ label, href }) => {
-          const isActive =
-            pathname === href || pathname.startsWith(href + "/");
+          const isActive = pathname === href || pathname.startsWith(href + "/");
           return (
             <Link
               key={href}

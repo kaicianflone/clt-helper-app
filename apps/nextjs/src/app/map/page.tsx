@@ -20,7 +20,7 @@ export default async function MapPage() {
     <main>
       <Link
         href="/"
-        className="fixed top-4 left-4 z-50 rounded-full bg-[color:var(--bg-cream)] px-3 py-1.5 font-display text-sm font-bold text-[color:var(--brick)] shadow-md hover:bg-[color:var(--bg-cream-deep)]"
+        className="font-display fixed top-4 left-4 z-50 rounded-full bg-[color:var(--bg-cream)] px-3 py-1.5 text-sm font-bold text-[color:var(--brick)] shadow-md hover:bg-[color:var(--bg-cream-deep)]"
       >
         clt
       </Link>

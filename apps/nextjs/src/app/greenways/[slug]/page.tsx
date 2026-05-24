@@ -94,10 +94,10 @@ export default async function GreenwayDetailPage({ params }: Props) {
               {greenway.lengthMiles} mi &middot; {greenway.surface}
             </p>
             <LastVerifiedBadge
-                date={greenway.lastVerified}
-                now={nowMs}
-                variant="hero"
-              />
+              date={greenway.lastVerified}
+              now={nowMs}
+              variant="hero"
+            />
           </div>
         </div>
       </div>
