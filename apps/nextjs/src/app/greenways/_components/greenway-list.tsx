@@ -21,19 +21,14 @@ type LocationState =
   | { status: "unsupported" };
 
 export function GreenwayList({ greenways }: { greenways: Greenway[] }) {
-  const [location, setLocation] = useState<LocationState>(() => {
-    // SSR guard: navigator is undefined during server render. Types claim it's
-    // always defined; reality says otherwise during Next.js RSC.
-    // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
-    if (typeof window === "undefined" || !navigator.geolocation) {
-      return { status: "unsupported" };
-    }
-    return { status: "loading" };
+  const [location, setLocation] = useState<LocationState>({
+    status: "unsupported",
   });
 
   useEffect(() => {
     // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
     if (!navigator.geolocation) return;
+    setLocation({ status: "loading" });
 
     let cancelled = false;
     let cleanupPermissions: (() => void) | null = null;
