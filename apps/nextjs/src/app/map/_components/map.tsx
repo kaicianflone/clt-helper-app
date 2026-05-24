@@ -129,7 +129,7 @@ export function GreenwayMap({
         zoom: 11,
       });
     } catch {
-      setFallback(true);
+      queueMicrotask(() => setFallback(true));
       return;
     }
 

@@ -44,7 +44,7 @@ export function DealMapSnippet({ latLng, mapTilerKey }: Props) {
         attributionControl: { compact: true },
       });
     } catch {
-      setFallback(true);
+      queueMicrotask(() => setFallback(true));
       return;
     }
 

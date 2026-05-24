@@ -30,7 +30,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   try {
     const caller = await createServerCaller();
     const deals = await caller.deal.listByLocation({ locationSlug });
-    name = deals[0]!.restaurantName;
+    name = deals[0]?.restaurantName ?? locationSlug;
   } catch {
     // notFound() in page body
   }

@@ -44,7 +44,7 @@ export function GreenwayMapSnippet({ geometry, mapTilerKey }: Props) {
         attributionControl: { compact: true },
       });
     } catch {
-      setFallback(true);
+      queueMicrotask(() => setFallback(true));
       return;
     }
 

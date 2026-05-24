@@ -28,7 +28,7 @@ export function GreenwayList({ greenways }: { greenways: Greenway[] }) {
   useEffect(() => {
     // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
     if (!navigator.geolocation) return;
-    setLocation({ status: "loading" });
+    queueMicrotask(() => setLocation({ status: "loading" }));
 
     let cancelled = false;
     let cleanupPermissions: (() => void) | null = null;
