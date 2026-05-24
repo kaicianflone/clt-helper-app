@@ -22,24 +22,22 @@ export const buildBundle = (dir: string, schemaVersion: number): Bundle => {
 };
 
 const run = () => {
-  const outDir = path.resolve("dist/data/v1");
+  const root = path.resolve(path.dirname(new URL(import.meta.url).pathname), "..");
+  const outDir = path.join(root, "dist/data/v1");
   fs.mkdirSync(outDir, { recursive: true });
   const categories = ["greenways", "deals", "parking"];
   const manifest: Record<string, { url: string; count: number }> = {};
   for (const cat of categories) {
-    const src = path.resolve(`data/${cat}`);
+    const src = path.join(root, `data/${cat}`);
     const bundle = buildBundle(src, 1);
     fs.writeFileSync(path.join(outDir, `${cat}.json`), JSON.stringify(bundle));
     manifest[cat] = { url: `/data/v1/${cat}.json`, count: bundle.entries.length };
   }
-  const manifestPath = path.resolve("dist/data/manifest.json");
+  const manifestPath = path.join(root, "dist/data/manifest.json");
   fs.mkdirSync(path.dirname(manifestPath), { recursive: true });
   fs.writeFileSync(manifestPath, JSON.stringify({ builtAt: new Date().toISOString(), bundles: manifest }, null, 2));
 
-  // Mirror into apps/nextjs/public/data/v1/ so the Vercel deployment serves
-  // them as static assets at /data/v1/<kind>.json — that's the same URL shape
-  // the data-client expects when DATA_BASE_URL is unset.
-  const nextPublicDir = path.resolve("apps/nextjs/public/data/v1");
+  const nextPublicDir = path.join(root, "apps/nextjs/public/data/v1");
   fs.mkdirSync(nextPublicDir, { recursive: true });
   for (const cat of categories) {
     fs.copyFileSync(
