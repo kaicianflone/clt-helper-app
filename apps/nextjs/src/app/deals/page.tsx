@@ -1,4 +1,5 @@
 import type { Day } from "~/components/days";
+import { CrownIcon } from "~/components/CrownIcon";
 import { DayTabs } from "~/components/day-tabs";
 import { dayFromDate, DAYS } from "~/components/days";
 import { EmptyState } from "~/components/EmptyState";
@@ -47,6 +48,12 @@ export default async function DealsPage({
       </p>
       <div className="mt-4">
         <DayTabs active={day} />
+      </div>
+
+      <div className="my-6 flex items-center gap-3">
+        <div className="h-px flex-1 bg-[color:var(--border-soft)]" />
+        <CrownIcon size={12} />
+        <div className="h-px flex-1 bg-[color:var(--border-soft)]" />
       </div>
 
       {deals.length === 0 ? (

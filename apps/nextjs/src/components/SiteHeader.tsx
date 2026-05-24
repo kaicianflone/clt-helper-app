@@ -3,6 +3,8 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
+import { CrownIcon } from "~/components/CrownIcon";
+
 const navLinks = [
   { label: "Greenways", href: "/greenways" },
   { label: "Deals", href: "/deals" },
@@ -20,9 +22,10 @@ export function SiteHeader() {
     >
       <Link
         href="/"
-        className="font-display text-2xl font-bold uppercase tracking-wider text-[color:var(--brick)] hover:opacity-80"
+        className="flex items-center gap-1.5 font-display text-2xl font-bold uppercase tracking-wider text-[color:var(--brick)] hover:opacity-80"
         aria-label="clt — home"
       >
+        <CrownIcon size={14} />
         clt
       </Link>
       <nav

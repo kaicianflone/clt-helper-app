@@ -3,6 +3,8 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 
+import { CrownIcon } from "~/components/CrownIcon";
+
 const ONBOARDING_KEY = "clt-onboarding-seen";
 
 const STEPS = [
@@ -70,8 +72,11 @@ export default function OnboardingPage() {
 
       {/* Content */}
       <div className="w-full max-w-md text-center" aria-live="polite">
-        <div className="font-display text-6xl leading-none font-bold text-[color:var(--brick)]">
-          clt
+        <div className="flex flex-col items-center">
+          <CrownIcon size={24} />
+          <div className="font-display mt-1 text-6xl leading-none font-bold text-[color:var(--brick)]">
+            clt
+          </div>
         </div>
         <h1 className="font-display mt-8 text-3xl font-bold tracking-tight text-[color:var(--fg-ink)]">
           {current.heading}

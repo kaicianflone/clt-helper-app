@@ -54,7 +54,16 @@ export default async function GreenwayDetailPage({ params }: Props) {
   return (
     <main>
       {/* Hero — solid brick header with display-lg name overlay */}
-      <div className="relative flex min-h-[28vh] items-end bg-[color:var(--brick)] px-4 pb-8 sm:min-h-[40vh] sm:px-8">
+      <div className="relative flex min-h-[28vh] items-end overflow-hidden bg-[color:var(--brick)] px-4 pb-8 sm:min-h-[40vh] sm:px-8">
+        {/* Noise texture overlay */}
+        <div
+          className="pointer-events-none absolute inset-0 opacity-[0.05]"
+          style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='256' height='256' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E")`,
+            backgroundSize: "128px 128px",
+          }}
+          aria-hidden="true"
+        />
         {/* Back button */}
         <Link
           href="/greenways"
@@ -79,6 +88,7 @@ export default async function GreenwayDetailPage({ params }: Props) {
           <h1 className="font-display text-5xl leading-none font-bold tracking-tight text-white">
             {greenway.name}
           </h1>
+          <div className="mt-3 h-0.5 w-12 bg-[color:var(--gold)]" />
           <div className="mt-3 flex flex-wrap items-center gap-3">
             <p className="text-sm text-white/80">
               {greenway.lengthMiles} mi &middot; {greenway.surface}
