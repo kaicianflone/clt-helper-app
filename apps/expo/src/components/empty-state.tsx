@@ -1,6 +1,6 @@
+import type { Href } from "expo-router";
 import { Text, View } from "react-native";
 import { Link } from "expo-router";
-import type { Href } from "expo-router";
 
 import { colors, space, type } from "~/styles/tokens";
 

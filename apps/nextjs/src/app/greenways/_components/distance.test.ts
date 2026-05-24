@@ -1,10 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import {
-  haversineMiles,
-  sortAlphabetical,
-  sortByDistance,
-} from "./distance";
+import { haversineMiles, sortAlphabetical, sortByDistance } from "./distance";
 
 describe("haversineMiles", () => {
   it("returns 0 for identical points", () => {
