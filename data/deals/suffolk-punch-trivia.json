@@ -1,10 +1,10 @@
 {
   "slug": "suffolk-punch-trivia",
   "restaurantName": "Suffolk Punch South End",
-  "restaurantAddress": "2920 Griffith St, Charlotte, NC 28203",
+  "restaurantAddress": "2911 Griffith St, Charlotte, NC 28203",
   "restaurantLatLng": [
-    35.2009,
-    -80.8693
+    35.2005,
+    -80.8691
   ],
   "daysOfWeek": [
     "mon"
