@@ -16,7 +16,13 @@ describe("activity router", () => {
     lengthMiles: 3.2,
     surface: "paved",
     trailheads: [{ name: "x", lat: 0, lng: 0 }],
-    geometry: { type: "LineString", coordinates: [[0, 0], [1, 1]] },
+    geometry: {
+      type: "LineString",
+      coordinates: [
+        [0, 0],
+        [1, 1],
+      ],
+    },
     pointsOfInterest: [],
     photos: [],
     lastVerified: "2026-05-10",
@@ -66,7 +72,8 @@ describe("activity router", () => {
   };
 
   it("returns items sorted by lastVerified descending", async () => {
-    const fetchImpl = vi.fn()
+    const fetchImpl = vi
+      .fn()
       .mockResolvedValueOnce(makeBundle([greenway]))
       .mockResolvedValueOnce(makeBundle([deal1, deal2]))
       .mockResolvedValueOnce(makeBundle([parking]));
@@ -88,7 +95,8 @@ describe("activity router", () => {
       lastVerified: `2026-05-${String(i + 1).padStart(2, "0")}`,
     }));
 
-    const fetchImpl = vi.fn()
+    const fetchImpl = vi
+      .fn()
       .mockResolvedValueOnce(makeBundle(manyGreenways))
       .mockResolvedValueOnce(makeBundle([]))
       .mockResolvedValueOnce(makeBundle([]));
@@ -101,7 +109,8 @@ describe("activity router", () => {
   });
 
   it("mixes entity kinds correctly", async () => {
-    const fetchImpl = vi.fn()
+    const fetchImpl = vi
+      .fn()
       .mockResolvedValueOnce(makeBundle([greenway]))
       .mockResolvedValueOnce(makeBundle([deal1]))
       .mockResolvedValueOnce(makeBundle([parking]));
@@ -116,7 +125,8 @@ describe("activity router", () => {
   });
 
   it("deal labels include restaurant name and description", async () => {
-    const fetchImpl = vi.fn()
+    const fetchImpl = vi
+      .fn()
       .mockResolvedValueOnce(makeBundle([]))
       .mockResolvedValueOnce(makeBundle([deal1]))
       .mockResolvedValueOnce(makeBundle([]));
@@ -129,7 +139,8 @@ describe("activity router", () => {
   });
 
   it("returns empty array when no data", async () => {
-    const fetchImpl = vi.fn()
+    const fetchImpl = vi
+      .fn()
       .mockResolvedValueOnce(makeBundle([]))
       .mockResolvedValueOnce(makeBundle([]))
       .mockResolvedValueOnce(makeBundle([]));

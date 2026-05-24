@@ -18,6 +18,16 @@ const GreenwayMap = dynamic(() => import("./map").then((m) => m.GreenwayMap), {
   ssr: false,
 });
 
-export function MapLoader({ greenways, dealLocations, mapTilerKey }: MapLoaderProps) {
-  return <GreenwayMap greenways={greenways} dealLocations={dealLocations} mapTilerKey={mapTilerKey} />;
+export function MapLoader({
+  greenways,
+  dealLocations,
+  mapTilerKey,
+}: MapLoaderProps) {
+  return (
+    <GreenwayMap
+      greenways={greenways}
+      dealLocations={dealLocations}
+      mapTilerKey={mapTilerKey}
+    />
+  );
 }

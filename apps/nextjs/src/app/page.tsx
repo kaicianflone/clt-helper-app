@@ -47,6 +47,7 @@ export default async function HomePage() {
 
   const caller = await createServerCaller();
   const recent = await caller.activity.recent();
+  // eslint-disable-next-line react-hooks/purity -- server component; Date.now() is stable during RSC render
   const now = Date.now();
 
   return (

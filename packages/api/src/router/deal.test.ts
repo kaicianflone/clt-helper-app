@@ -73,7 +73,7 @@ describe("deal router", () => {
     const fetchImpl = vi.fn().mockResolvedValue(makeBundle([dealFixture]));
     const caller = appRouter.createCaller({ ...baseCtx, fetchImpl });
     await expect(caller.deal.get({ slug: "nonexistent" })).rejects.toThrow(
-      /not found/i,
+      /not found/i
     );
   });
 
@@ -92,14 +92,17 @@ describe("deal router", () => {
       locationSlug: "taco-place",
     });
     expect(result).toHaveLength(2);
-    expect(result.map((d) => d.slug)).toEqual(["taco-tuesday", "taco-wednesday"]);
+    expect(result.map((d) => d.slug)).toEqual([
+      "taco-tuesday",
+      "taco-wednesday",
+    ]);
   });
 
   it("listByLocation throws NOT_FOUND for unknown location", async () => {
     const fetchImpl = vi.fn().mockResolvedValue(makeBundle([dealFixture]));
     const caller = appRouter.createCaller({ ...baseCtx, fetchImpl });
     await expect(
-      caller.deal.listByLocation({ locationSlug: "nonexistent" }),
+      caller.deal.listByLocation({ locationSlug: "nonexistent" })
     ).rejects.toThrow(/No deals found/i);
   });
 
@@ -109,9 +112,7 @@ describe("deal router", () => {
       slug: "macs-deal",
       restaurantName: "Mac's Speed Shop — South End",
     };
-    const fetchImpl = vi
-      .fn()
-      .mockResolvedValue(makeBundle([specialDeal]));
+    const fetchImpl = vi.fn().mockResolvedValue(makeBundle([specialDeal]));
     const caller = appRouter.createCaller({ ...baseCtx, fetchImpl });
     const result = await caller.deal.listByLocation({
       locationSlug: "mac-s-speed-shop-south-end",

@@ -53,13 +53,22 @@ export default async function DealLocationPage({ params }: Props) {
   }
 
   const DAY_ORDER: Record<string, number> = {
-    mon: 0, tue: 1, wed: 2, thu: 3, fri: 4, sat: 5, sun: 6,
+    mon: 0,
+    tue: 1,
+    wed: 2,
+    thu: 3,
+    fri: 4,
+    sat: 5,
+    sun: 6,
   };
   deals.sort(
-    (a, b) => (DAY_ORDER[a.daysOfWeek[0]!] ?? 7) - (DAY_ORDER[b.daysOfWeek[0]!] ?? 7),
+    (a, b) =>
+      (DAY_ORDER[a.daysOfWeek[0] ?? ""] ?? 7) -
+      (DAY_ORDER[b.daysOfWeek[0] ?? ""] ?? 7)
   );
 
-  const first = deals[0]!;
+  const first = deals[0];
+  if (!first) notFound();
   const [lat, lng] = first.restaurantLatLng;
   // eslint-disable-next-line react-hooks/purity
   const nowMs = Date.now();
@@ -111,7 +120,7 @@ export default async function DealLocationPage({ params }: Props) {
       <div className="mx-auto max-w-2xl px-4 py-8 sm:px-8">
         {/* Map */}
         <DealLocationMapLoader
-          latLng={first.restaurantLatLng as [number, number]}
+          latLng={first.restaurantLatLng}
           mapTilerKey={env.NEXT_PUBLIC_MAPTILER_KEY}
         />
 
@@ -128,10 +137,7 @@ export default async function DealLocationPage({ params }: Props) {
 
             return (
               <li key={d.slug} className="py-5">
-                <Link
-                  href={`/deals/${d.slug}`}
-                  className="group block"
-                >
+                <Link href={`/deals/${d.slug}`} className="group block">
                   <div className="flex items-start justify-between gap-4">
                     <div className="min-w-0">
                       <p className="font-medium text-[color:var(--fg-ink)] group-hover:text-[color:var(--brick)]">

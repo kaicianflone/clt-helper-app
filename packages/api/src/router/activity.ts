@@ -18,12 +18,12 @@ export const activityRouter = createTRPCRouter({
       fetchParking(opts),
     ]);
 
-    type FeedItem = {
+    interface FeedItem {
       kind: "greenway" | "deal" | "parking";
       slug: string;
       label: string;
       lastVerified: string;
-    };
+    }
 
     const items: FeedItem[] = [
       ...greenways.entries.map((g) => ({
@@ -48,8 +48,7 @@ export const activityRouter = createTRPCRouter({
 
     items.sort(
       (a, b) =>
-        new Date(b.lastVerified).getTime() -
-        new Date(a.lastVerified).getTime(),
+        new Date(b.lastVerified).getTime() - new Date(a.lastVerified).getTime()
     );
 
     return items.slice(0, 5);

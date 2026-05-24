@@ -21,7 +21,7 @@ export const dealRouter = createTRPCRouter({
             .enum(["mon", "tue", "wed", "thu", "fri", "sat", "sun"])
             .optional(),
         })
-        .optional(),
+        .optional()
     )
     .query(async ({ ctx, input }) => {
       const bundle = await fetchDeals({
@@ -57,9 +57,12 @@ export const dealRouter = createTRPCRouter({
         fetchImpl: ctx.fetchImpl,
       });
       const toLocationSlug = (name: string) =>
-        name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+        name
+          .toLowerCase()
+          .replace(/[^a-z0-9]+/g, "-")
+          .replace(/(^-|-$)/g, "");
       const deals = bundle.entries.filter(
-        (d) => toLocationSlug(d.restaurantName) === input.locationSlug,
+        (d) => toLocationSlug(d.restaurantName) === input.locationSlug
       );
       if (deals.length === 0)
         throw new TRPCError({

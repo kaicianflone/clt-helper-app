@@ -29,7 +29,10 @@ export default async function MapPage() {
   ]);
 
   const toLocationSlug = (name: string) =>
-    name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+    name
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/(^-|-$)/g, "");
 
   const locMap = new Map<string, DealLocation>();
   for (const d of deals) {
@@ -43,7 +46,7 @@ export default async function MapPage() {
       locMap.set(key, {
         restaurantName: d.restaurantName,
         locationSlug: toLocationSlug(d.restaurantName),
-        latLng: d.restaurantLatLng as [number, number],
+        latLng: d.restaurantLatLng,
         dealCount: 1,
         lastVerified: d.lastVerified,
       });

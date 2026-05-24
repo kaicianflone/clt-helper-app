@@ -162,7 +162,7 @@ export default async function DealDetailPage({ params }: Props) {
         {/* Map snippet */}
         <div className="mt-8">
           <DealMapSnippetLoader
-            latLng={deal.restaurantLatLng as [number, number]}
+            latLng={deal.restaurantLatLng}
             mapTilerKey={env.NEXT_PUBLIC_MAPTILER_KEY}
           />
         </div>
