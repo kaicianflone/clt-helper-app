@@ -2,7 +2,7 @@
 // Matches maplibre's LngLatBoundsLike tuple-of-tuples form so callers can pass
 // the result directly into `new maplibregl.Map({ bounds })`.
 export function computeBounds(
-  geometry: GeoJSON.MultiLineString
+  geometry: GeoJSON.MultiLineString,
 ): [[number, number], [number, number]] {
   let minLng = Infinity;
   let minLat = Infinity;

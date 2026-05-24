@@ -41,7 +41,7 @@ export const env = createEnv({
       .min(20)
       .regex(
         /^[A-Za-z0-9_-]+$/,
-        "MapTiler keys must be URL-safe alphanumerics"
+        "MapTiler keys must be URL-safe alphanumerics",
       ),
   },
   /**

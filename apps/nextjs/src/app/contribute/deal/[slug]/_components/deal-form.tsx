@@ -63,21 +63,21 @@ export function DealForm({
   const deviceId = useSyncExternalStore(
     subscribeDeviceId,
     getDeviceIdSnapshot,
-    getDeviceIdServerSnapshot
+    getDeviceIdServerSnapshot,
   );
 
   const [restaurantName, setRestaurantName] = useState(initialRestaurantName);
   const [restaurantAddress, setRestaurantAddress] = useState(
-    initialRestaurantAddress
+    initialRestaurantAddress,
   );
   const [restaurantLat, setRestaurantLat] = useState(
-    initialRestaurantLat !== undefined ? String(initialRestaurantLat) : ""
+    initialRestaurantLat !== undefined ? String(initialRestaurantLat) : "",
   );
   const [restaurantLng, setRestaurantLng] = useState(
-    initialRestaurantLng !== undefined ? String(initialRestaurantLng) : ""
+    initialRestaurantLng !== undefined ? String(initialRestaurantLng) : "",
   );
   const [dealDescription, setDealDescription] = useState(
-    initialDealDescription
+    initialDealDescription,
   );
   const [daysOfWeek, setDaysOfWeek] = useState<Day[]>(initialDaysOfWeek);
   const [allDay, setAllDay] = useState(initialAllDay);
@@ -103,7 +103,7 @@ export function DealForm({
           note,
         });
       },
-    })
+    }),
   );
 
   if (prUrl) {
@@ -119,7 +119,7 @@ export function DealForm({
 
   const toggleDay = (d: Day) => {
     setDaysOfWeek((prev) =>
-      prev.includes(d) ? prev.filter((x) => x !== d) : [...prev, d]
+      prev.includes(d) ? prev.filter((x) => x !== d) : [...prev, d],
     );
   };
 

@@ -11,7 +11,7 @@ export function haversineMiles(
   lat1: number,
   lng1: number,
   lat2: number,
-  lng2: number
+  lng2: number,
 ): number {
   const toRad = (deg: number) => (deg * Math.PI) / 180;
   const dLat = toRad(lat2 - lat1);
@@ -26,7 +26,7 @@ export function haversineMiles(
 // distance ascending. Used by the greenways list when geolocation is granted.
 export function sortByDistance<T extends GreenwayLike>(
   items: T[],
-  origin: { lat: number; lng: number }
+  origin: { lat: number; lng: number },
 ): (T & { distanceMi: number | null })[] {
   return items
     .map((g) => ({
@@ -46,7 +46,7 @@ export function sortByDistance<T extends GreenwayLike>(
 }
 
 export function sortAlphabetical<T extends GreenwayLike>(
-  items: T[]
+  items: T[],
 ): (T & { distanceMi: null })[] {
   return [...items]
     .sort((a, b) => a.name.localeCompare(b.name))

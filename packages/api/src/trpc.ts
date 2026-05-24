@@ -32,16 +32,16 @@ export interface Context {
   fetchImpl?: typeof fetch;
   // Submit-flow injections (only used by submit router; routes can leave undefined)
   checkRateLimit?: (
-    deviceId: string
+    deviceId: string,
   ) => Promise<{ ok: boolean; remaining: number }>;
   fetchFileFromRepo?: (path: string) => Promise<Record<string, unknown>>;
   renderDiff?: (
     before: Record<string, unknown>,
-    after: Record<string, unknown>
+    after: Record<string, unknown>,
   ) => string;
   isVerifyOnlyChange?: (
     before: Record<string, unknown>,
-    after: Record<string, unknown>
+    after: Record<string, unknown>,
   ) => boolean;
   openCommunityPR?: (opts: OpenPROptions) => Promise<OpenPRResult>;
   containsObjectionableContent?: (input: {

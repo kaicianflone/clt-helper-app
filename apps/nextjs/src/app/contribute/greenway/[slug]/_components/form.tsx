@@ -43,7 +43,7 @@ export function GreenwayForm({
   const deviceId = useSyncExternalStore(
     subscribeDeviceId,
     getDeviceIdSnapshot,
-    getDeviceIdServerSnapshot
+    getDeviceIdServerSnapshot,
   );
 
   const [name, setName] = useState(initialName);
@@ -66,7 +66,7 @@ export function GreenwayForm({
           note,
         });
       },
-    })
+    }),
   );
 
   if (prUrl) {

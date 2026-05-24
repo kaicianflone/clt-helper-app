@@ -37,7 +37,7 @@ export default function RootLayout(props: { children: React.ReactNode }) {
       <body
         className={cn(
           "min-h-screen font-sans antialiased",
-          "bg-[color:var(--bg-cream)] text-[color:var(--fg-ink)]"
+          "bg-[color:var(--bg-cream)] text-[color:var(--fg-ink)]",
         )}
       >
         <SkipToContent />

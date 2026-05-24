@@ -42,7 +42,7 @@ describe("openCommunityPR", () => {
     expect(result.prUrl).toBe("https://github.com/x/y/pull/1");
     expect(oc.rest.pulls.create).toHaveBeenCalled();
     expect(oc.rest.issues.addLabels).toHaveBeenCalledWith(
-      expect.objectContaining({ labels: ["community-submission"] })
+      expect.objectContaining({ labels: ["community-submission"] }),
     );
   });
 
@@ -66,7 +66,7 @@ describe("openCommunityPR", () => {
           "community-submission",
           "auto-merged",
         ]) as string[],
-      })
+      }),
     );
   });
 
@@ -88,7 +88,7 @@ describe("openCommunityPR", () => {
     const oc = fakeOctokit();
     const getRef = oc.rest.git.getRef as ReturnType<typeof vi.fn>;
     getRef.mockRejectedValueOnce(
-      Object.assign(new Error("rate limited"), { status: 403 })
+      Object.assign(new Error("rate limited"), { status: 403 }),
     );
     await expect(
       openCommunityPR(oc, {
@@ -99,7 +99,7 @@ describe("openCommunityPR", () => {
         newContents: "{}",
         prTitle: "test",
         prBody: "body",
-      })
+      }),
     ).rejects.toMatchObject({ status: 403 });
   });
 });

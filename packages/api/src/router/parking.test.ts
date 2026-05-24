@@ -76,7 +76,7 @@ describe("parking router", () => {
     const fetchImpl = vi.fn().mockResolvedValue(makeBundle([parkingFixture]));
     const caller = appRouter.createCaller({ ...baseCtx, fetchImpl });
     await expect(caller.parking.get({ slug: "nonexistent" })).rejects.toThrow(
-      /not found/i
+      /not found/i,
     );
   });
 });

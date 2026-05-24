@@ -5,7 +5,7 @@ import { buildPopupHtml, escapeHtml } from "./popup";
 describe("escapeHtml", () => {
   it("escapes the five XSS-relevant characters", () => {
     expect(escapeHtml("<script>alert('x')</script>")).toBe(
-      "&lt;script&gt;alert(&#39;x&#39;)&lt;/script&gt;"
+      "&lt;script&gt;alert(&#39;x&#39;)&lt;/script&gt;",
     );
   });
 

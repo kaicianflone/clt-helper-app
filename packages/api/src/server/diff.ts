@@ -16,7 +16,7 @@ const keyOf = (o: Record<string, unknown>): string => {
 
 export const renderDiff = (
   before: Record<string, unknown>,
-  after: Record<string, unknown>
+  after: Record<string, unknown>,
 ): string => {
   const lines: string[] = [];
   const keys = new Set([...Object.keys(before), ...Object.keys(after)]);
@@ -39,7 +39,7 @@ export const renderDiff = (
       const modified = [...aMap.keys()].filter(
         (kk) =>
           bMap.has(kk) &&
-          JSON.stringify(bMap.get(kk)) !== JSON.stringify(aMap.get(kk))
+          JSON.stringify(bMap.get(kk)) !== JSON.stringify(aMap.get(kk)),
       );
       const parts: string[] = [];
       if (added.length) parts.push(`added [${added.join(", ")}]`);
@@ -67,7 +67,7 @@ export const escapeMd = (s: string): string =>
 
 export const isVerifyOnlyChange = (
   before: Record<string, unknown>,
-  after: Record<string, unknown>
+  after: Record<string, unknown>,
 ): boolean => {
   const keys = new Set([...Object.keys(before), ...Object.keys(after)]);
   for (const k of keys) {

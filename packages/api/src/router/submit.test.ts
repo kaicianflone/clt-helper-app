@@ -78,7 +78,7 @@ describe("submit.contribute", () => {
         deviceId: "device-1",
         eulaAcceptedAt: "2026-05-20T00:00:00Z",
         intent: "edit",
-      })
+      }),
     ).rejects.toThrow(/rate.*limit|too.*many/i);
     expect(ctx.openCommunityPR).not.toHaveBeenCalled();
   });
@@ -95,7 +95,7 @@ describe("submit.contribute", () => {
         deviceId: "device-1",
         eulaAcceptedAt: "2026-05-20T00:00:00Z",
         intent: "edit",
-      })
+      }),
     ).rejects.toThrow(/disallowed/i);
     expect(ctx.openCommunityPR).not.toHaveBeenCalled();
   });
@@ -113,7 +113,7 @@ describe("submit.contribute", () => {
       intent: "edit",
     });
     expect(ctx.openCommunityPR).toHaveBeenCalledWith(
-      expect.objectContaining({ autoMerge: true })
+      expect.objectContaining({ autoMerge: true }),
     );
   });
 
@@ -145,7 +145,7 @@ describe("submit.contribute", () => {
         deviceId: "device-1",
         eulaAcceptedAt: "not-a-date",
         intent: "edit",
-      })
+      }),
     ).rejects.toThrow();
   });
 
@@ -167,7 +167,7 @@ describe("submit.contribute", () => {
           deviceId: "device-1",
           eulaAcceptedAt: "2026-05-20T00:00:00Z",
           intent: "edit",
-        })
+        }),
       ).rejects.toThrow(/misconfigured|missing.*GitHub/i);
     } finally {
       if (savedOwner !== undefined) process.env.GH_REPO_OWNER = savedOwner;
@@ -191,7 +191,7 @@ describe("submit.contribute", () => {
         deviceId: "device-1",
         eulaAcceptedAt: "2026-05-20T00:00:00Z",
         intent: "create",
-      })
+      }),
     ).rejects.toThrow(/already exists|CONFLICT/i);
     expect(ctx.openCommunityPR).not.toHaveBeenCalled();
   });
@@ -218,7 +218,7 @@ describe("submit.contribute", () => {
       const err = e as { code?: string; message?: string };
       // TRPCError code or message should indicate NOT_FOUND
       expect(
-        err.code === "NOT_FOUND" || /not found/i.test(err.message ?? "")
+        err.code === "NOT_FOUND" || /not found/i.test(err.message ?? ""),
       ).toBe(true);
     }
     expect(ctx.openCommunityPR).not.toHaveBeenCalled();

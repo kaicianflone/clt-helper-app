@@ -25,7 +25,7 @@ const collectStrings = (val: unknown, out: string[] = []): string[] => {
   else if (Array.isArray(val)) val.forEach((v) => collectStrings(v, out));
   else if (val && typeof val === "object")
     Object.values(val as Record<string, unknown>).forEach((v) =>
-      collectStrings(v, out)
+      collectStrings(v, out),
     );
   return out;
 };

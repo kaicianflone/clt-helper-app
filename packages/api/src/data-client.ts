@@ -33,7 +33,7 @@ const DEFAULT_TIMEOUT_MS = 5000;
 const fetchWithTimeout = async (
   url: string,
   fetchImpl: typeof fetch,
-  timeoutMs: number
+  timeoutMs: number,
 ): Promise<Response> => {
   const ctrl = new AbortController();
   const timer = setTimeout(() => ctrl.abort(), timeoutMs);
@@ -56,7 +56,7 @@ const fetchWithTimeout = async (
  */
 const resolveLocalFile = (
   kind: EntityKind,
-  opts: { localDir?: string }
+  opts: { localDir?: string },
 ): string | null => {
   // Explicit localDir wins — used by tests to scope the search. If the file
   // isn't there, return null so the offlineBundle / throw path takes over.
@@ -77,7 +77,7 @@ const resolveLocalFile = (
     candidates.push(
       path.resolve(__dirname, "../../apps/nextjs/public/data/v1"),
       path.resolve(__dirname, "../../../apps/nextjs/public/data/v1"),
-      path.resolve(__dirname, "../../../../apps/nextjs/public/data/v1")
+      path.resolve(__dirname, "../../../../apps/nextjs/public/data/v1"),
     );
   } catch {
     // __dirname not available — skip silently.
@@ -102,13 +102,13 @@ const bundleCache = new Map<string, CacheEntry>();
 
 const fetchBundleLocal = <T>(
   kind: EntityKind,
-  opts: DataClientOptions<T>
+  opts: DataClientOptions<T>,
 ): Bundle<T> => {
   const file = resolveLocalFile(kind, opts);
   if (!file) {
     if (opts.offlineBundle) return opts.offlineBundle;
     throw new Error(
-      `data bundle ${kind}.json not found. Tried CLT_DATA_DIR, dist/data/v1, and public/data/v1 relative to cwd=${process.cwd()}. Run \`pnpm build:data\` first.`
+      `data bundle ${kind}.json not found. Tried CLT_DATA_DIR, dist/data/v1, and public/data/v1 relative to cwd=${process.cwd()}. Run \`pnpm build:data\` first.`,
     );
   }
   const stat = fs.statSync(file);
@@ -123,7 +123,7 @@ const fetchBundleLocal = <T>(
 
 export async function fetchBundle<T>(
   kind: EntityKind,
-  opts: DataClientOptions<T>
+  opts: DataClientOptions<T>,
 ): Promise<Bundle<T>> {
   // Local-disk fallback when no baseUrl is configured (dev + non-R2 prod).
   if (!opts.baseUrl) {

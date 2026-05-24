@@ -74,7 +74,7 @@ export function ParkingForm({
   const deviceId = useSyncExternalStore(
     subscribeDeviceId,
     getDeviceIdSnapshot,
-    getDeviceIdServerSnapshot
+    getDeviceIdServerSnapshot,
   );
 
   const [name, setName] = useState(initialName);
@@ -82,10 +82,10 @@ export function ParkingForm({
   const [hourlyRate, setHourlyRate] = useState(initialHourlyRate);
   const [dailyMax, setDailyMax] = useState(initialDailyMax);
   const [hours, setHours] = useState<Record<DayKey, HoursValue>>(
-    initialHours ?? defaultHours()
+    initialHours ?? defaultHours(),
   );
   const [paymentMethods, setPaymentMethods] = useState<PaymentMethod[]>(
-    initialPaymentMethods
+    initialPaymentMethods,
   );
   const [covered, setCovered] = useState(initialCovered);
   const [operator, setOperator] = useState(initialOperator);
@@ -107,7 +107,7 @@ export function ParkingForm({
           note,
         });
       },
-    })
+    }),
   );
 
   if (prUrl) {
@@ -123,7 +123,7 @@ export function ParkingForm({
 
   const togglePayment = (m: PaymentMethod) => {
     setPaymentMethods((prev) =>
-      prev.includes(m) ? prev.filter((x) => x !== m) : [...prev, m]
+      prev.includes(m) ? prev.filter((x) => x !== m) : [...prev, m],
     );
   };
 
@@ -134,8 +134,8 @@ export function ParkingForm({
         mode === "closed"
           ? "closed"
           : mode === "24h"
-          ? "24h"
-          : { open: "07:00", close: "22:00" },
+            ? "24h"
+            : { open: "07:00", close: "22:00" },
     }));
   };
 

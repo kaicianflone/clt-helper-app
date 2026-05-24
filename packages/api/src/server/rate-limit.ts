@@ -17,7 +17,7 @@ const TTL_SECONDS = 90_000; // 25 hours, slack for UTC rollover
 
 export const checkRateLimit = async (
   deviceId: string,
-  redis: RedisLike
+  redis: RedisLike,
 ): Promise<RateLimitResult> => {
   if (!deviceId) return { ok: false, remaining: 0 };
   const utcDay = new Date().toISOString().slice(0, 10);

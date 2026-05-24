@@ -133,7 +133,7 @@ export default async function GreenwayDetailPage({ params }: Props) {
                   lng: number;
                   parkingNotes?: string;
                 },
-                i: number
+                i: number,
               ) => (
                 <li
                   key={i}
@@ -156,7 +156,7 @@ export default async function GreenwayDetailPage({ params }: Props) {
                     Get directions
                   </a>
                 </li>
-              )
+              ),
             )}
           </ul>
         </section>
@@ -176,7 +176,7 @@ export default async function GreenwayDetailPage({ params }: Props) {
                     lat: number;
                     lng: number;
                   },
-                  i: number
+                  i: number,
                 ) => (
                   <li key={i} className="py-3">
                     <p className="font-medium text-[color:var(--fg-ink)]">
@@ -186,7 +186,7 @@ export default async function GreenwayDetailPage({ params }: Props) {
                       {poi.kind}
                     </p>
                   </li>
-                )
+                ),
               )}
             </ul>
           </section>
@@ -205,9 +205,7 @@ export default async function GreenwayDetailPage({ params }: Props) {
         {/* CTAs */}
         <div className="mt-8 flex flex-col gap-3 border-t border-[color:var(--border-soft)] pt-6 sm:flex-row sm:items-center">
           <a
-            href={`https://maps.google.com/?q=${
-              greenway.trailheads[0]?.lat ?? 0
-            },${greenway.trailheads[0]?.lng ?? 0}`}
+            href={`https://maps.google.com/?q=${greenway.trailheads[0]?.lat ?? 0},${greenway.trailheads[0]?.lng ?? 0}`}
             target="_blank"
             rel="noopener noreferrer"
             className="flex min-h-[44px] w-full items-center justify-center rounded-md bg-[color:var(--brick)] px-6 py-2.5 text-sm font-medium text-white hover:bg-[color:var(--brick-deep)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[color:var(--brick)] sm:w-auto"

@@ -9,7 +9,7 @@ interface Props {
 
 const GreenwayMapSnippet = dynamic(
   () => import("./greenway-map-snippet").then((m) => m.GreenwayMapSnippet),
-  { ssr: false }
+  { ssr: false },
 );
 
 export function GreenwayMapSnippetLoader(props: Props) {
