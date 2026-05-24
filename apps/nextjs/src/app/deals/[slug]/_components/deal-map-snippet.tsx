@@ -34,13 +34,19 @@ export function DealMapSnippet({ latLng, mapTilerKey }: Props) {
       ? FALLBACK_STYLE
       : styleUrl;
 
-    const map = new maplibregl.Map({
-      container: ref.current,
-      style,
-      center: [latLng[1], latLng[0]],
-      zoom: 15,
-      attributionControl: { compact: true },
-    });
+    let map: maplibregl.Map;
+    try {
+      map = new maplibregl.Map({
+        container: ref.current,
+        style,
+        center: [latLng[1], latLng[0]],
+        zoom: 15,
+        attributionControl: { compact: true },
+      });
+    } catch {
+      setFallback(true);
+      return;
+    }
 
     type MapErrorEvent = maplibregl.MapLibreEvent & {
       error?: { message?: string };
