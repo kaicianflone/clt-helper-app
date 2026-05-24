@@ -227,6 +227,9 @@ export function GreenwayMap({
       if (parkingPins.length > 0) {
         map.addSource("parking-locations", {
           type: "geojson",
+          cluster: true,
+          clusterMaxZoom: 15,
+          clusterRadius: 60,
           data: {
             type: "FeatureCollection",
             features: parkingPins.map((p) => ({
@@ -243,6 +246,51 @@ export function GreenwayMap({
             })),
           },
         });
+
+        map.addLayer({
+          id: "parking-clusters",
+          type: "circle",
+          source: "parking-locations",
+          filter: ["has", "point_count"],
+          paint: {
+            "circle-color": [
+              "step",
+              ["get", "point_count"],
+              "#3B82F6",
+              10,
+              "#2563EB",
+              30,
+              "#1D4ED8",
+            ],
+            "circle-radius": [
+              "step",
+              ["get", "point_count"],
+              18,
+              10,
+              24,
+              30,
+              30,
+            ],
+            "circle-stroke-width": 2,
+            "circle-stroke-color": "#ffffff",
+          },
+        });
+
+        map.addLayer({
+          id: "parking-cluster-count",
+          type: "symbol",
+          source: "parking-locations",
+          filter: ["has", "point_count"],
+          layout: {
+            "text-field": ["get", "point_count_abbreviated"],
+            "text-size": 13,
+            "text-font": ["Open Sans Bold"],
+          },
+          paint: {
+            "text-color": "#ffffff",
+          },
+        });
+
         const pSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="%232563EB" stroke="%23ffffff" stroke-width="2"/><text x="12" y="16.5" text-anchor="middle" font-family="Arial,sans-serif" font-size="14" font-weight="bold" fill="white">P</text></svg>`;
         const pImg = new Image(24, 24);
         pImg.onload = () => {
@@ -251,6 +299,7 @@ export function GreenwayMap({
             id: "parking-points",
             type: "symbol",
             source: "parking-locations",
+            filter: ["!", ["has", "point_count"]],
             layout: {
               "icon-image": "parking-icon",
               "icon-size": 1,
@@ -262,6 +311,25 @@ export function GreenwayMap({
       }
 
       let popup: maplibregl.Popup | null = null;
+
+      map.on("click", "parking-clusters", (e) => {
+        const feature = e.features?.[0];
+        if (!feature) return;
+        const clusterId = feature.properties.cluster_id as number;
+        const raw = map.getSource("parking-locations");
+        if (!raw) return;
+        const source = raw as maplibregl.GeoJSONSource;
+        void source.getClusterExpansionZoom(clusterId).then((zoom) => {
+          map.easeTo({
+            center: (feature.geometry as GeoJSON.Point).coordinates as [
+              number,
+              number,
+            ],
+            zoom: zoom + 0.5,
+            duration: 500,
+          });
+        });
+      });
 
       map.on("click", "parking-points", (e) => {
         const props = e.features?.[0]?.properties;
@@ -337,6 +405,12 @@ export function GreenwayMap({
         map.getCanvas().style.cursor = "pointer";
       });
       map.on("mouseleave", "deal-points", () => {
+        map.getCanvas().style.cursor = "";
+      });
+      map.on("mouseenter", "parking-clusters", () => {
+        map.getCanvas().style.cursor = "pointer";
+      });
+      map.on("mouseleave", "parking-clusters", () => {
         map.getCanvas().style.cursor = "";
       });
       map.on("mouseenter", "parking-points", () => {
