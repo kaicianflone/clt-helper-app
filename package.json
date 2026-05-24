@@ -24,6 +24,7 @@
     "android": "expo run:android",
     "ios": "expo run:ios",
     "build:data": "tsx scripts/build-data-bundles.ts",
+    "geocode:deals": "tsx scripts/geocode-deals.ts",
     "validate:data": "tsx scripts/validate-data.ts",
     "import-greenways": "tsx scripts/import-greenways.ts"
   },
