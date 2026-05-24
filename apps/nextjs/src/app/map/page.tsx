@@ -65,7 +65,7 @@ export default async function MapPage() {
   const parkingPins: ParkingPin[] = parkingLots.map((p) => ({
     slug: p.slug,
     name: p.name,
-    latLng: p.latLng as [number, number],
+    latLng: p.latLng,
     hourlyRate: p.hourlyRate,
   }));
 
