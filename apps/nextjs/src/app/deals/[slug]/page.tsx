@@ -178,7 +178,7 @@ export default async function DealDetailPage({ params }: Props) {
         </div>
 
         {/* CTAs */}
-        <div className="mt-8 flex flex-col gap-3 border-t border-[color:var(--border-soft)] pt-6 sm:flex-row sm:items-center sm:flex-wrap">
+        <div className="mt-8 flex flex-col gap-3 border-t border-[color:var(--border-soft)] pt-6 sm:flex-row sm:flex-wrap sm:items-center">
           <a
             href={`https://maps.google.com/?q=${lat},${lng}`}
             target="_blank"

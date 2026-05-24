@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from "vitest";
 
-import { DAYS, dayFromDate } from "./days";
+import { dayFromDate, DAYS } from "./days";
 
 describe("DAYS", () => {
   it("contains all 7 days in mon-sun order", () => {

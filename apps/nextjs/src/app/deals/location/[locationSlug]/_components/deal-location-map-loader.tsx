@@ -10,9 +10,9 @@ interface Props {
 const DealMapSnippet = dynamic(
   () =>
     import("~/app/deals/[slug]/_components/deal-map-snippet").then(
-      (m) => m.DealMapSnippet
+      (m) => m.DealMapSnippet,
     ),
-  { ssr: false }
+  { ssr: false },
 );
 
 export function DealLocationMapLoader(props: Props) {

@@ -64,7 +64,7 @@ export default async function DealLocationPage({ params }: Props) {
   deals.sort(
     (a, b) =>
       (DAY_ORDER[a.daysOfWeek[0] ?? ""] ?? 7) -
-      (DAY_ORDER[b.daysOfWeek[0] ?? ""] ?? 7)
+      (DAY_ORDER[b.daysOfWeek[0] ?? ""] ?? 7),
   );
 
   const first = deals[0];
@@ -156,7 +156,7 @@ export default async function DealLocationPage({ params }: Props) {
         </ul>
 
         {/* CTAs */}
-        <div className="mt-8 flex flex-col gap-3 border-t border-[color:var(--border-soft)] pt-6 sm:flex-row sm:items-center sm:flex-wrap">
+        <div className="mt-8 flex flex-col gap-3 border-t border-[color:var(--border-soft)] pt-6 sm:flex-row sm:flex-wrap sm:items-center">
           <a
             href={`https://maps.google.com/?q=${lat},${lng}`}
             target="_blank"

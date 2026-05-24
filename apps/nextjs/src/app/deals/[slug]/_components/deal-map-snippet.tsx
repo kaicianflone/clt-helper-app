@@ -28,7 +28,7 @@ export function DealMapSnippet({ latLng, mapTilerKey }: Props) {
     if (!ref.current) return;
 
     const styleUrl = `https://api.maptiler.com/maps/streets-v2/style.json?key=${encodeURIComponent(
-      mapTilerKey
+      mapTilerKey,
     )}`;
     const style: string | maplibregl.StyleSpecification = fallback
       ? FALLBACK_STYLE

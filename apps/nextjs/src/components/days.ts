@@ -1,5 +1,5 @@
 export const DAYS = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"] as const;
-export type Day = typeof DAYS[number];
+export type Day = (typeof DAYS)[number];
 export const dayFromDate = (): Day => {
   const weekday = new Intl.DateTimeFormat("en-US", {
     weekday: "short",

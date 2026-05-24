@@ -33,18 +33,18 @@ function escapeHtml(s: string): string {
     c === "&"
       ? "&amp;"
       : c === "<"
-      ? "&lt;"
-      : c === ">"
-      ? "&gt;"
-      : c === '"'
-      ? "&quot;"
-      : "&#39;"
+        ? "&lt;"
+        : c === ">"
+          ? "&gt;"
+          : c === '"'
+            ? "&quot;"
+            : "&#39;",
   );
 }
 
 function timeAgo(dateStr: string): string {
   const days = Math.floor(
-    (Date.now() - new Date(dateStr).getTime()) / 86_400_000
+    (Date.now() - new Date(dateStr).getTime()) / 86_400_000,
   );
   if (days === 0) return "today";
   if (days === 1) return "1 day ago";
@@ -66,16 +66,16 @@ function buildDealPopupHtml(props: {
   return `
     <div class="font-sans">
       <p class="font-semibold text-base leading-tight" style="color:#2a2a2a">${escapeHtml(
-        props.restaurantName
+        props.restaurantName,
       )}</p>
       <p class="text-sm mt-1" style="color:#5a5a5a">${props.dealCount} deal${
-    props.dealCount !== 1 ? "s" : ""
-  }</p>
+        props.dealCount !== 1 ? "s" : ""
+      }</p>
       <p class="text-xs mt-1" style="color:#7a7a7a">Updated ${timeAgo(
-        props.lastVerified
+        props.lastVerified,
       )}</p>
       <a href="/deals/location/${escapeHtml(
-        props.locationSlug
+        props.locationSlug,
       )}" class="inline-block mt-3 text-sm font-medium underline" style="color:#B23A1F">View all deals →</a>
     </div>
   `;
@@ -96,7 +96,7 @@ export function GreenwayMap({
     // before interpolation so a future schema regression cannot smuggle
     // characters into the URL or the request logs MapTiler ships back.
     const styleUrl = `https://api.maptiler.com/maps/streets-v2/style.json?key=${encodeURIComponent(
-      mapTilerKey
+      mapTilerKey,
     )}`;
     const style: string | maplibregl.StyleSpecification = fallback
       ? FALLBACK_STYLE
@@ -127,7 +127,7 @@ export function GreenwayMap({
           event: "tiles.error",
           source: "maptiler",
           error: message.slice(0, 200),
-        })
+        }),
       );
       setFallback(true);
     });
@@ -218,7 +218,7 @@ export function GreenwayMap({
               locationSlug: props.locationSlug as string,
               dealCount: props.dealCount as number,
               lastVerified: props.lastVerified as string,
-            })
+            }),
           )
           .addTo(map);
       });

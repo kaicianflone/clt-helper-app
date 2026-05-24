@@ -73,7 +73,7 @@ describe("deal router", () => {
     const fetchImpl = vi.fn().mockResolvedValue(makeBundle([dealFixture]));
     const caller = appRouter.createCaller({ ...baseCtx, fetchImpl });
     await expect(caller.deal.get({ slug: "nonexistent" })).rejects.toThrow(
-      /not found/i
+      /not found/i,
     );
   });
 
@@ -102,7 +102,7 @@ describe("deal router", () => {
     const fetchImpl = vi.fn().mockResolvedValue(makeBundle([dealFixture]));
     const caller = appRouter.createCaller({ ...baseCtx, fetchImpl });
     await expect(
-      caller.deal.listByLocation({ locationSlug: "nonexistent" })
+      caller.deal.listByLocation({ locationSlug: "nonexistent" }),
     ).rejects.toThrow(/No deals found/i);
   });
 
