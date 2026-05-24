@@ -27,7 +27,7 @@ export function useEulaGate(): EulaGate {
   const acceptedAt = useSyncExternalStore(
     subscribe,
     getSnapshot,
-    getServerSnapshot,
+    getServerSnapshot
   );
 
   const accept = () => {

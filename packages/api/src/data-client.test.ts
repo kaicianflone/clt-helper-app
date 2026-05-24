@@ -13,8 +13,8 @@ describe("fetchBundle", () => {
           schemaVersion: 1,
           builtAt: "",
           entries: [{ slug: "a" }],
-        }),
-      ),
+        })
+      )
     );
     const bundle = await fetchBundle("greenways", {
       baseUrl: "https://cdn.example.com",
@@ -22,7 +22,7 @@ describe("fetchBundle", () => {
     });
     expect(fetchMock).toHaveBeenCalledWith(
       "https://cdn.example.com/data/v1/greenways.json",
-      expect.any(Object),
+      expect.any(Object)
     );
     expect(bundle.entries).toHaveLength(1);
   });
@@ -33,8 +33,8 @@ describe("fetchBundle", () => {
       .mockRejectedValueOnce(new Error("network"))
       .mockResolvedValueOnce(
         new Response(
-          JSON.stringify({ schemaVersion: 1, builtAt: "", entries: [] }),
-        ),
+          JSON.stringify({ schemaVersion: 1, builtAt: "", entries: [] })
+        )
       );
     const bundle = await fetchBundle("deals", {
       baseUrl: "https://cdn.example.com",
@@ -50,7 +50,7 @@ describe("fetchBundle", () => {
       fetchBundle("parking", {
         baseUrl: "https://cdn.example.com",
         fetchImpl: fetchMock,
-      }),
+      })
     ).rejects.toThrow();
     expect(fetchMock).toHaveBeenCalledTimes(2);
   });
@@ -78,7 +78,7 @@ describe("fetchBundle", () => {
       fetchBundle("greenways", {
         baseUrl: "https://cdn.example.com",
         fetchImpl: fetchMock,
-      }),
+      })
     ).rejects.toThrow(/404/);
   });
 });
@@ -100,7 +100,7 @@ describe("fetchBundle — local-disk fallback (empty baseUrl)", () => {
         schemaVersion: 1,
         builtAt: "2026-05-21T00:00:00Z",
         entries: [{ slug: "from-disk" }],
-      }),
+      })
     );
     const bundle = await fetchBundle("greenways", { localDir: tmpDir });
     expect(bundle.entries).toEqual([{ slug: "from-disk" }]);
@@ -113,7 +113,7 @@ describe("fetchBundle — local-disk fallback (empty baseUrl)", () => {
         schemaVersion: 1,
         builtAt: "",
         entries: [{ slug: "empty-base" }],
-      }),
+      })
     );
     const bundle = await fetchBundle("deals", {
       baseUrl: "",
@@ -137,7 +137,7 @@ describe("fetchBundle — local-disk fallback (empty baseUrl)", () => {
 
   it("throws a helpful error when localDir lacks the file and no offlineBundle is given", async () => {
     await expect(
-      fetchBundle("greenways", { localDir: tmpDir }),
+      fetchBundle("greenways", { localDir: tmpDir })
     ).rejects.toThrow(/greenways\.json not found/);
   });
 
@@ -148,7 +148,7 @@ describe("fetchBundle — local-disk fallback (empty baseUrl)", () => {
         schemaVersion: 1,
         builtAt: "",
         entries: [{ slug: "via-env" }],
-      }),
+      })
     );
     vi.stubEnv("CLT_DATA_DIR", tmpDir);
     try {

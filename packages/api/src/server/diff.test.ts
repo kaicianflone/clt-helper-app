@@ -5,7 +5,7 @@ import { escapeMd, isVerifyOnlyChange, renderDiff } from "./diff";
 describe("renderDiff", () => {
   it("renders changed primitives as before → after", () => {
     expect(renderDiff({ lengthMiles: 16.4 }, { lengthMiles: 19.3 })).toContain(
-      "`lengthMiles`: 16.4 → 19.3",
+      "`lengthMiles`: 16.4 → 19.3"
     );
   });
   it("returns (no changes) when nothing changed", () => {
@@ -20,7 +20,7 @@ describe("renderDiff", () => {
       ],
     };
     expect(renderDiff(before, after)).toMatch(
-      /pointsOfInterest.*added \[Water\]/,
+      /pointsOfInterest.*added \[Water\]/
     );
   });
   it("identifies removed object-array entries", () => {
@@ -41,12 +41,12 @@ describe("renderDiff", () => {
       photos: [{ url: "https://x", caption: "new", attribution: "u" }],
     };
     expect(renderDiff(before, after)).toMatch(
-      /photos.*modified \[https:\/\/x\]/,
+      /photos.*modified \[https:\/\/x\]/
     );
   });
   it("falls back to length-only diff for arrays of primitives", () => {
     expect(renderDiff({ tags: ["a"] }, { tags: ["a", "b"] })).toMatch(
-      /added 1 entr/,
+      /added 1 entr/
     );
   });
 });
@@ -66,32 +66,32 @@ describe("isVerifyOnlyChange", () => {
     expect(
       isVerifyOnlyChange(
         { name: "X", lastVerified: "2026-01-01" },
-        { name: "X", lastVerified: "2026-05-20" },
-      ),
+        { name: "X", lastVerified: "2026-05-20" }
+      )
     ).toBe(true);
   });
   it("returns false when name also changes", () => {
     expect(
       isVerifyOnlyChange(
         { name: "X", lastVerified: "2026-01-01" },
-        { name: "Y", lastVerified: "2026-05-20" },
-      ),
+        { name: "Y", lastVerified: "2026-05-20" }
+      )
     ).toBe(false);
   });
   it("returns false when lastVerified doesn't change", () => {
     expect(
       isVerifyOnlyChange(
         { name: "X", lastVerified: "2026-05-20" },
-        { name: "X", lastVerified: "2026-05-20" },
-      ),
+        { name: "X", lastVerified: "2026-05-20" }
+      )
     ).toBe(false);
   });
   it("returns false when adding a new field", () => {
     expect(
       isVerifyOnlyChange(
         { lastVerified: "2026-01-01" },
-        { lastVerified: "2026-05-20", description: "added" },
-      ),
+        { lastVerified: "2026-05-20", description: "added" }
+      )
     ).toBe(false);
   });
 });

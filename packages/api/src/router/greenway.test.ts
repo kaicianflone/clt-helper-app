@@ -34,8 +34,8 @@ describe("greenway router", () => {
           schemaVersion: 1,
           builtAt: "",
           entries: [greenwayFixture],
-        }),
-      ),
+        })
+      )
     );
     const caller = appRouter.createCaller({ ...baseCtx, fetchImpl });
     const result = await caller.greenway.list();
@@ -58,8 +58,8 @@ describe("greenway router", () => {
           schemaVersion: 1,
           builtAt: "",
           entries: [greenwayFixture],
-        }),
-      ),
+        })
+      )
     );
     const caller = appRouter.createCaller({ ...baseCtx, fetchImpl });
     const result = await caller.greenway.get({ slug: "a" });
@@ -74,12 +74,12 @@ describe("greenway router", () => {
           schemaVersion: 1,
           builtAt: "",
           entries: [greenwayFixture],
-        }),
-      ),
+        })
+      )
     );
     const caller = appRouter.createCaller({ ...baseCtx, fetchImpl });
     await expect(caller.greenway.get({ slug: "missing" })).rejects.toThrow(
-      /not found/i,
+      /not found/i
     );
   });
 
@@ -90,8 +90,8 @@ describe("greenway router", () => {
           schemaVersion: 1,
           builtAt: "",
           entries: [greenwayFixture],
-        }),
-      ),
+        })
+      )
     );
     const caller = appRouter.createCaller({ ...baseCtx, fetchImpl });
     const result = await caller.greenway.listWithGeometry();

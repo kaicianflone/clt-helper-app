@@ -31,7 +31,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const lot = await caller.parking.get({ slug });
     return {
       title: lot.name,
-      description: `${lot.address} · ${lot.hourlyRate != null ? `$${lot.hourlyRate}/hr` : "rate not posted"}`,
+      description: `${lot.address} · ${
+        lot.hourlyRate != null ? `$${lot.hourlyRate}/hr` : "rate not posted"
+      }`,
     };
   } catch {
     return { title: "Parking lot" };

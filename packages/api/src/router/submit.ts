@@ -54,7 +54,9 @@ export const submitRouter = createTRPCRouter({
       if (flag.violation) {
         throw new TRPCError({
           code: "BAD_REQUEST",
-          message: `Submission contains disallowed content: ${flag.reason ?? "policy violation"}`,
+          message: `Submission contains disallowed content: ${
+            flag.reason ?? "policy violation"
+          }`,
         });
       }
 
@@ -105,7 +107,7 @@ export const submitRouter = createTRPCRouter({
 
       const safeName = input.displayName.replace(
         /[\\`*_{}[\]<>()#+\-.!|]/g,
-        "\\$&",
+        "\\$&"
       );
       const safeNote = input.note.replace(/[\\`*_{}[\]<>()#+\-.!|]/g, "\\$&");
 

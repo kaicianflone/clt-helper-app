@@ -52,7 +52,7 @@ export function GreenwayList({ greenways }: { greenways: Greenway[] }) {
           enableHighAccuracy: false,
           timeout: 30000,
           maximumAge: 5 * 60 * 1000,
-        },
+        }
       );
     };
 
@@ -92,17 +92,17 @@ export function GreenwayList({ greenways }: { greenways: Greenway[] }) {
       location.status === "granted"
         ? sortByDistance(greenways, location.coords)
         : sortAlphabetical(greenways),
-    [greenways, location],
+    [greenways, location]
   );
 
   const statusLabel =
     location.status === "loading"
       ? "Finding nearest…"
       : location.status === "granted"
-        ? "Sorted by distance"
-        : location.status === "denied"
-          ? "Sorted A–Z · location denied"
-          : "Sorted A–Z";
+      ? "Sorted by distance"
+      : location.status === "denied"
+      ? "Sorted A–Z · location denied"
+      : "Sorted A–Z";
 
   return (
     <>

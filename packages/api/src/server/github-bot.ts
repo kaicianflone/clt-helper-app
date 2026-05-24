@@ -70,7 +70,7 @@ export const buildOctokit = (): Octokit => {
   const privateKeyB64 = process.env.GH_APP_PRIVATE_KEY;
   if (!appId || !installationId || !privateKeyB64) {
     throw new Error(
-      "GitHub App env vars missing (GH_APP_ID, GH_APP_INSTALLATION_ID, GH_APP_PRIVATE_KEY)",
+      "GitHub App env vars missing (GH_APP_ID, GH_APP_INSTALLATION_ID, GH_APP_PRIVATE_KEY)"
     );
   }
   const privateKey = Buffer.from(privateKeyB64, "base64").toString("utf8");
@@ -103,7 +103,7 @@ export interface OpenPRResult {
 
 export const openCommunityPR = async (
   octokit: OctokitLike,
-  opts: OpenPROptions,
+  opts: OpenPROptions
 ): Promise<OpenPRResult> => {
   const baseBranch = opts.baseBranch ?? "main";
   const branch = `${opts.branchPrefix}-${shortHash()}`;

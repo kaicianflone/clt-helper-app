@@ -30,7 +30,7 @@ interface RateLimitMod {
   buildRedis: () => unknown;
   checkRateLimit: (
     deviceId: string,
-    redis: unknown,
+    redis: unknown
   ) => Promise<{ ok: boolean; remaining: number }>;
 }
 
@@ -43,11 +43,11 @@ interface GithubBotMod {
 interface DiffMod {
   renderDiff: (
     b: Record<string, unknown>,
-    a: Record<string, unknown>,
+    a: Record<string, unknown>
   ) => string;
   isVerifyOnlyChange: (
     b: Record<string, unknown>,
-    a: Record<string, unknown>,
+    a: Record<string, unknown>
   ) => boolean;
 }
 
@@ -83,16 +83,16 @@ const getOctokit = (): OctokitLike => {
 export interface SubmitContextExtensions {
   baseUrl?: string;
   checkRateLimit: (
-    deviceId: string,
+    deviceId: string
   ) => Promise<{ ok: boolean; remaining: number }>;
   fetchFileFromRepo: (path: string) => Promise<Record<string, unknown>>;
   renderDiff: (
     before: Record<string, unknown>,
-    after: Record<string, unknown>,
+    after: Record<string, unknown>
   ) => string;
   isVerifyOnlyChange: (
     before: Record<string, unknown>,
-    after: Record<string, unknown>,
+    after: Record<string, unknown>
   ) => boolean;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   openCommunityPR: (opts: any) => Promise<any>;
@@ -132,7 +132,7 @@ export function buildSubmitContext(): SubmitContextExtensions {
         }
         const decoded = Buffer.from(
           data.content,
-          data.encoding as BufferEncoding,
+          data.encoding as BufferEncoding
         ).toString("utf8");
         return JSON.parse(decoded) as Record<string, unknown>;
       } catch (e: unknown) {
@@ -144,7 +144,7 @@ export function buildSubmitContext(): SubmitContextExtensions {
 
     renderDiff: (
       before: Record<string, unknown>,
-      after: Record<string, unknown>,
+      after: Record<string, unknown>
     ) => {
       // eslint-disable-next-line @typescript-eslint/no-require-imports
       const mod = require("@clt/api/server/diff") as DiffMod;
@@ -153,7 +153,7 @@ export function buildSubmitContext(): SubmitContextExtensions {
 
     isVerifyOnlyChange: (
       before: Record<string, unknown>,
-      after: Record<string, unknown>,
+      after: Record<string, unknown>
     ) => {
       // eslint-disable-next-line @typescript-eslint/no-require-imports
       const mod = require("@clt/api/server/diff") as DiffMod;

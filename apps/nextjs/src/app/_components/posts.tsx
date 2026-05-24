@@ -10,7 +10,7 @@ export function PostCardSkeleton(props: { pulse?: boolean }) {
         <h2
           className={cn(
             "bg-primary w-1/4 rounded-sm text-2xl font-bold",
-            pulse && "animate-pulse",
+            pulse && "animate-pulse"
           )}
         >
           &nbsp;
@@ -18,7 +18,7 @@ export function PostCardSkeleton(props: { pulse?: boolean }) {
         <p
           className={cn(
             "mt-2 w-1/3 rounded-sm bg-current text-sm",
-            pulse && "animate-pulse",
+            pulse && "animate-pulse"
           )}
         >
           &nbsp;

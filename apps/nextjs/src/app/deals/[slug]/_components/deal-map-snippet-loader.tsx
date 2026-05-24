@@ -9,7 +9,7 @@ interface Props {
 
 const DealMapSnippet = dynamic(
   () => import("./deal-map-snippet").then((m) => m.DealMapSnippet),
-  { ssr: false },
+  { ssr: false }
 );
 
 export function DealMapSnippetLoader(props: Props) {

@@ -15,12 +15,12 @@ export function escapeHtml(s: string): string {
     c === "&"
       ? "&amp;"
       : c === "<"
-        ? "&lt;"
-        : c === ">"
-          ? "&gt;"
-          : c === '"'
-            ? "&quot;"
-            : "&#39;",
+      ? "&lt;"
+      : c === ">"
+      ? "&gt;"
+      : c === '"'
+      ? "&quot;"
+      : "&#39;"
   );
 }
 
@@ -32,15 +32,29 @@ export function buildPopupHtml(props: PopupProps): string {
 
   const trailheadLine =
     props.trailheadCount != null
-      ? `${props.trailheadCount} trailhead${props.trailheadCount === 1 ? "" : "s"}`
+      ? `${props.trailheadCount} trailhead${
+          props.trailheadCount === 1 ? "" : "s"
+        }`
       : "";
 
   return `
     <div class="font-sans">
-      <p class="font-semibold text-base leading-tight" style="color:#2a2a2a">${escapeHtml(props.name ?? "Greenway")}</p>
-      ${meta1 ? `<p class="text-sm mt-1" style="color:#5a5a5a">${meta1}</p>` : ""}
-      ${trailheadLine ? `<p class="text-xs mt-1" style="color:#7a7a7a">${trailheadLine}</p>` : ""}
-      <a href="/greenways/${escapeHtml(props.slug)}" class="inline-block mt-3 text-sm font-medium underline" style="color:#B23A1F">View details →</a>
+      <p class="font-semibold text-base leading-tight" style="color:#2a2a2a">${escapeHtml(
+        props.name ?? "Greenway"
+      )}</p>
+      ${
+        meta1
+          ? `<p class="text-sm mt-1" style="color:#5a5a5a">${meta1}</p>`
+          : ""
+      }
+      ${
+        trailheadLine
+          ? `<p class="text-xs mt-1" style="color:#7a7a7a">${trailheadLine}</p>`
+          : ""
+      }
+      <a href="/greenways/${escapeHtml(
+        props.slug
+      )}" class="inline-block mt-3 text-sm font-medium underline" style="color:#B23A1F">View details →</a>
     </div>
   `;
 }

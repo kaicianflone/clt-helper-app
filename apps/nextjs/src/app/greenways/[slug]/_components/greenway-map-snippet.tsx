@@ -29,7 +29,9 @@ export function GreenwayMapSnippet({ geometry, mapTilerKey }: Props) {
   useEffect(() => {
     if (!ref.current) return;
 
-    const styleUrl = `https://api.maptiler.com/maps/streets-v2/style.json?key=${encodeURIComponent(mapTilerKey)}`;
+    const styleUrl = `https://api.maptiler.com/maps/streets-v2/style.json?key=${encodeURIComponent(
+      mapTilerKey
+    )}`;
     const style: string | maplibregl.StyleSpecification = fallback
       ? FALLBACK_STYLE
       : styleUrl;
