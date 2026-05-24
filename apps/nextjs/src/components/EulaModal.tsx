@@ -56,7 +56,8 @@ export function EulaModal({ onAccept }: EulaModalProps) {
       role="dialog"
       aria-modal="true"
       aria-labelledby="eula-title"
-      className="fixed inset-0 z-50 flex items-center justify-center bg-[color:var(--fg-ink)]/40 p-4"
+      aria-describedby="eula-terms"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-[color:var(--bg-cream)]/80 p-4 backdrop-blur-sm"
     >
       <div className="max-w-md rounded-lg bg-[color:var(--bg-cream)] p-6 shadow-lg">
         <h2
@@ -68,7 +69,7 @@ export function EulaModal({ onAccept }: EulaModalProps) {
         <p className="mt-3 text-sm text-[color:var(--fg-ink-soft)]">
           By submitting an edit, you agree:
         </p>
-        <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-[color:var(--fg-ink-soft)]">
+        <ul id="eula-terms" className="mt-2 list-disc space-y-1 pl-5 text-base text-[color:var(--fg-ink-soft)] sm:text-sm">
           <li>
             You won&apos;t submit profanity, hate speech, or content that
             targets individuals
