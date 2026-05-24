@@ -139,13 +139,24 @@ export function GreenwayMap({ greenways, mapTilerKey }: MapProps) {
   }, [greenways, mapTilerKey, fallback]);
 
   return (
-    <div className="relative h-screen w-full">
+    <div
+      className="relative h-screen w-full"
+      role="application"
+      aria-label="Charlotte greenways map"
+    >
       <div ref={ref} className="h-full w-full" />
       {fallback && (
         <div className="absolute top-4 left-1/2 -translate-x-1/2 rounded-md border border-amber-200 bg-amber-50 px-3 py-2 text-sm text-amber-900">
           Map tiles unavailable — showing greenways on a plain background.
         </div>
       )}
+      <ul className="sr-only">
+        {greenways.map((g) => (
+          <li key={g.slug}>
+            <a href={`/greenways/${g.slug}`}>{g.name}</a>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
