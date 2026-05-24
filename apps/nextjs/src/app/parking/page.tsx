@@ -7,7 +7,7 @@ import { createServerCaller } from "~/trpc/server";
 export const revalidate = 60;
 
 export const metadata: Metadata = {
-  title: "Parking · Charlotte",
+  title: "Parking",
   description: "Community-maintained parking directory for Charlotte, NC.",
 };
 

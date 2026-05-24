@@ -17,7 +17,7 @@ export async function generateMetadata({
     DAYS.includes(params.day as Day) ? params.day : dayFromDate()
   ) as Day;
   return {
-    title: `Deals · ${day.toUpperCase()}`,
+    title: `Deals`,
     description: `Charlotte restaurant deals for ${day}.`,
   };
 }

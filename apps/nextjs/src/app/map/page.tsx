@@ -10,7 +10,7 @@ import { MapLoader } from "./_components/map-loader";
 export const revalidate = 60;
 
 export const metadata: Metadata = {
-  title: "Map · Charlotte greenways and parking",
+  title: "Map",
 };
 
 export default async function MapPage() {

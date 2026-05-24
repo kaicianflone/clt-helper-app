@@ -14,8 +14,8 @@ import "~/app/styles.css";
 
 export const metadata: Metadata = {
   title: {
-    template: "%s | Charlotte Greenways",
-    default: "Charlotte Greenways",
+    default: "Today in Charlotte | clt",
+    template: "%s | clt",
   },
   description:
     "Charlotte's greenways, local deals, and parking — community-maintained.",
