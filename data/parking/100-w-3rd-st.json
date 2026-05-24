@@ -1,0 +1,44 @@
+{
+  "slug": "100-w-3rd-st",
+  "name": "100 W 3rd St Street Parking",
+  "address": "100 block of W 3rd St, Charlotte, NC",
+  "latLng": [
+    35.226004,
+    -80.845648
+  ],
+  "hourlyRate": 1.5,
+  "dailyMax": null,
+  "hours": {
+    "mon": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "tue": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "wed": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "thu": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "fri": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "sat": "closed",
+    "sun": "closed"
+  },
+  "paymentMethods": [
+    "meter",
+    "app"
+  ],
+  "covered": false,
+  "totalSpaces": 4,
+  "zoneNumbers": [],
+  "operator": "ParkMobile",
+  "lastVerified": "2026-05-24"
+}

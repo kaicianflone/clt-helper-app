@@ -114,6 +114,20 @@ describe("ParkingLotSchema", () => {
     });
     expect(result.success).toBe(false);
   });
+
+  it("accepts optional totalSpaces and zoneNumbers", () => {
+    const result = ParkingLotSchema.safeParse({
+      ...validLot,
+      totalSpaces: 30,
+      zoneNumbers: ["2238", "2251"],
+    });
+    expect(result.success).toBe(true);
+  });
+
+  it("accepts lot without totalSpaces and zoneNumbers", () => {
+    const result = ParkingLotSchema.safeParse(validLot);
+    expect(result.success).toBe(true);
+  });
 });
 
 describe("ParkingLotPatchSchema", () => {

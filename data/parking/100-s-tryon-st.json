@@ -1,0 +1,56 @@
+{
+  "slug": "100-s-tryon-st",
+  "name": "100 S Tryon St Street Parking",
+  "address": "100 block of S Tryon St, Charlotte, NC",
+  "latLng": [
+    35.226678,
+    -80.843872
+  ],
+  "hourlyRate": 1.5,
+  "dailyMax": null,
+  "hours": {
+    "mon": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "tue": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "wed": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "thu": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "fri": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "sat": "closed",
+    "sun": "closed"
+  },
+  "paymentMethods": [
+    "meter",
+    "app"
+  ],
+  "covered": false,
+  "totalSpaces": 11,
+  "zoneNumbers": [
+    "051",
+    "052",
+    "053",
+    "2065",
+    "2066",
+    "2067",
+    "2068",
+    "2069",
+    "2070",
+    "2071",
+    "2072"
+  ],
+  "operator": "ParkMobile",
+  "lastVerified": "2026-05-24"
+}

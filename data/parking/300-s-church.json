@@ -1,0 +1,50 @@
+{
+  "slug": "300-s-church",
+  "name": "300 S Church Street Parking",
+  "address": "300 block of S Church, Charlotte, NC",
+  "latLng": [
+    35.226337,
+    -80.846833
+  ],
+  "hourlyRate": 1.5,
+  "dailyMax": null,
+  "hours": {
+    "mon": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "tue": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "wed": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "thu": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "fri": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "sat": "closed",
+    "sun": "closed"
+  },
+  "paymentMethods": [
+    "meter",
+    "app"
+  ],
+  "covered": false,
+  "totalSpaces": 5,
+  "zoneNumbers": [
+    "2162",
+    "2163",
+    "2164",
+    "2166",
+    "2167"
+  ],
+  "operator": "ParkMobile",
+  "lastVerified": "2026-05-24"
+}

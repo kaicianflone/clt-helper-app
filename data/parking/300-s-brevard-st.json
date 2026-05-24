@@ -1,0 +1,53 @@
+{
+  "slug": "300-s-brevard-st",
+  "name": "300 S Brevard St Street Parking",
+  "address": "300 block of S Brevard St, Charlotte, NC",
+  "latLng": [
+    35.222588,
+    -80.842707
+  ],
+  "hourlyRate": 1.5,
+  "dailyMax": null,
+  "hours": {
+    "mon": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "tue": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "wed": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "thu": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "fri": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "sat": "closed",
+    "sun": "closed"
+  },
+  "paymentMethods": [
+    "meter",
+    "app"
+  ],
+  "covered": false,
+  "totalSpaces": 8,
+  "zoneNumbers": [
+    "245",
+    "246",
+    "247",
+    "248",
+    "249",
+    "250",
+    "251",
+    "252"
+  ],
+  "operator": "ParkMobile",
+  "lastVerified": "2026-05-24"
+}

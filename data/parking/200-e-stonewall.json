@@ -1,0 +1,50 @@
+{
+  "slug": "200-e-stonewall",
+  "name": "200 E Stonewall Street Parking",
+  "address": "200 block of E Stonewall, Charlotte, NC",
+  "latLng": [
+    35.222294,
+    -80.847042
+  ],
+  "hourlyRate": 1.5,
+  "dailyMax": null,
+  "hours": {
+    "mon": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "tue": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "wed": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "thu": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "fri": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "sat": "closed",
+    "sun": "closed"
+  },
+  "paymentMethods": [
+    "meter",
+    "app"
+  ],
+  "covered": false,
+  "totalSpaces": 5,
+  "zoneNumbers": [
+    "189",
+    "190",
+    "191",
+    "192",
+    "193"
+  ],
+  "operator": "ParkMobile",
+  "lastVerified": "2026-05-24"
+}

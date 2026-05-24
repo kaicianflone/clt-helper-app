@@ -8,6 +8,13 @@ const getBaseUrl = (ctx: Context): string | undefined =>
   process.env.R2_PUBLIC_BASE_URL ??
   undefined;
 
+export interface FeedItem {
+  kind: "greenway" | "deal" | "parking";
+  slug: string;
+  label: string;
+  lastVerified: string;
+}
+
 export const activityRouter = createTRPCRouter({
   recent: publicProcedure.query(async ({ ctx }) => {
     const opts = { baseUrl: getBaseUrl(ctx), fetchImpl: ctx.fetchImpl };
@@ -17,13 +24,6 @@ export const activityRouter = createTRPCRouter({
       fetchDeals(opts),
       fetchParking(opts),
     ]);
-
-    interface FeedItem {
-      kind: "greenway" | "deal" | "parking";
-      slug: string;
-      label: string;
-      lastVerified: string;
-    }
 
     const items: FeedItem[] = [
       ...greenways.entries.map((g) => ({

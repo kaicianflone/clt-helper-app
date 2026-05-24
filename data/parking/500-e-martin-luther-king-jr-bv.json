@@ -1,0 +1,48 @@
+{
+  "slug": "500-e-martin-luther-king-jr-bv",
+  "name": "500 E Martin Luther King Jr Bv Street Parking",
+  "address": "500 block of E Martin Luther King Jr Bv, Charlotte, NC",
+  "latLng": [
+    35.220544,
+    -80.842477
+  ],
+  "hourlyRate": 1.5,
+  "dailyMax": null,
+  "hours": {
+    "mon": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "tue": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "wed": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "thu": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "fri": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "sat": "closed",
+    "sun": "closed"
+  },
+  "paymentMethods": [
+    "meter",
+    "app"
+  ],
+  "covered": false,
+  "totalSpaces": 3,
+  "zoneNumbers": [
+    "363",
+    "364",
+    "365"
+  ],
+  "operator": "ParkMobile",
+  "lastVerified": "2026-05-24"
+}

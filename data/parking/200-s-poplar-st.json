@@ -1,0 +1,55 @@
+{
+  "slug": "200-s-poplar-st",
+  "name": "200 S Poplar St Street Parking",
+  "address": "200 block of S Poplar St, Charlotte, NC",
+  "latLng": [
+    35.227748,
+    -80.846864
+  ],
+  "hourlyRate": 1.5,
+  "dailyMax": null,
+  "hours": {
+    "mon": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "tue": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "wed": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "thu": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "fri": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "sat": "closed",
+    "sun": "closed"
+  },
+  "paymentMethods": [
+    "meter",
+    "app"
+  ],
+  "covered": false,
+  "totalSpaces": 21,
+  "zoneNumbers": [
+    "2273",
+    "2274",
+    "2275",
+    "2276",
+    "2277",
+    "2278",
+    "2279",
+    "2280",
+    "2281",
+    "2282"
+  ],
+  "operator": "ParkMobile",
+  "lastVerified": "2026-05-24"
+}

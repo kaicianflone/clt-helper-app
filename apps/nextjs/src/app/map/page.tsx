@@ -21,11 +21,19 @@ export interface DealLocation {
   lastVerified: string;
 }
 
+export interface ParkingPin {
+  slug: string;
+  name: string;
+  latLng: [number, number];
+  hourlyRate: number | null;
+}
+
 export default async function MapPage() {
   const caller = await createServerCaller();
-  const [greenways, deals] = await Promise.all([
+  const [greenways, deals, parkingLots] = await Promise.all([
     caller.greenway.listWithGeometry(),
     caller.deal.list(),
+    caller.parking.list(),
   ]);
 
   const toLocationSlug = (name: string) =>
@@ -54,6 +62,13 @@ export default async function MapPage() {
   }
   const dealLocations = Array.from(locMap.values());
 
+  const parkingPins: ParkingPin[] = parkingLots.map((p) => ({
+    slug: p.slug,
+    name: p.name,
+    latLng: p.latLng as [number, number],
+    hourlyRate: p.hourlyRate,
+  }));
+
   return (
     <main>
       <Link
@@ -65,6 +80,7 @@ export default async function MapPage() {
       <MapLoader
         greenways={greenways}
         dealLocations={dealLocations}
+        parkingPins={parkingPins}
         mapTilerKey={env.NEXT_PUBLIC_MAPTILER_KEY}
       />
     </main>

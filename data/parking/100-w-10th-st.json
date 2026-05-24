@@ -1,0 +1,61 @@
+{
+  "slug": "100-w-10th-st",
+  "name": "100 W 10th St Street Parking",
+  "address": "100 block of W 10th St, Charlotte, NC",
+  "latLng": [
+    35.232276,
+    -80.836962
+  ],
+  "hourlyRate": 1.5,
+  "dailyMax": null,
+  "hours": {
+    "mon": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "tue": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "wed": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "thu": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "fri": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "sat": "closed",
+    "sun": "closed"
+  },
+  "paymentMethods": [
+    "meter",
+    "app"
+  ],
+  "covered": false,
+  "totalSpaces": 16,
+  "zoneNumbers": [
+    "208",
+    "2103",
+    "2104",
+    "2106",
+    "2107",
+    "2108",
+    "2109",
+    "2110",
+    "2112",
+    "2113",
+    "2114",
+    "2115",
+    "2116",
+    "2117",
+    "2118",
+    "2119"
+  ],
+  "operator": "ParkMobile",
+  "lastVerified": "2026-05-24"
+}

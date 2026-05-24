@@ -1,0 +1,91 @@
+{
+  "slug": "600-e-martin-luther-king-jr-bv",
+  "name": "600 E Martin Luther King Jr Bv Street Parking",
+  "address": "600 block of E Martin Luther King Jr Bv, Charlotte, NC",
+  "latLng": [
+    35.219055,
+    -80.840764
+  ],
+  "hourlyRate": 1.5,
+  "dailyMax": null,
+  "hours": {
+    "mon": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "tue": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "wed": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "thu": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "fri": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "sat": "closed",
+    "sun": "closed"
+  },
+  "paymentMethods": [
+    "meter",
+    "app"
+  ],
+  "covered": false,
+  "totalSpaces": 46,
+  "zoneNumbers": [
+    "506",
+    "507",
+    "508",
+    "509",
+    "510",
+    "511",
+    "512",
+    "513",
+    "514",
+    "515",
+    "516",
+    "517",
+    "518",
+    "519",
+    "520",
+    "521",
+    "522",
+    "523",
+    "524",
+    "525",
+    "526",
+    "527",
+    "528",
+    "529",
+    "530",
+    "531",
+    "532",
+    "533",
+    "534",
+    "535",
+    "536",
+    "537",
+    "538",
+    "539",
+    "540",
+    "541",
+    "542",
+    "543",
+    "544",
+    "545",
+    "546",
+    "547",
+    "548",
+    "549",
+    "550",
+    "551"
+  ],
+  "operator": "ParkMobile",
+  "lastVerified": "2026-05-24"
+}

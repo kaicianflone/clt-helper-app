@@ -1,0 +1,44 @@
+{
+  "slug": "400-w-5th-st",
+  "name": "400 W 5th St Street Parking",
+  "address": "400 block of W 5th St, Charlotte, NC",
+  "latLng": [
+    35.230907,
+    -80.845339
+  ],
+  "hourlyRate": 1.5,
+  "dailyMax": null,
+  "hours": {
+    "mon": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "tue": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "wed": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "thu": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "fri": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "sat": "closed",
+    "sun": "closed"
+  },
+  "paymentMethods": [
+    "meter",
+    "app"
+  ],
+  "covered": false,
+  "totalSpaces": 9,
+  "zoneNumbers": [],
+  "operator": "ParkMobile",
+  "lastVerified": "2026-05-24"
+}

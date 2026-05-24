@@ -1,0 +1,75 @@
+{
+  "slug": "200-w-martin-luther-king-jr-bv",
+  "name": "200 W Martin Luther King Jr Bv Street Parking",
+  "address": "200 block of W Martin Luther King Jr Bv, Charlotte, NC",
+  "latLng": [
+    35.226453,
+    -80.848136
+  ],
+  "hourlyRate": 1.5,
+  "dailyMax": null,
+  "hours": {
+    "mon": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "tue": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "wed": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "thu": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "fri": {
+      "open": "08:00",
+      "close": "18:00"
+    },
+    "sat": "closed",
+    "sun": "closed"
+  },
+  "paymentMethods": [
+    "meter",
+    "app"
+  ],
+  "covered": false,
+  "totalSpaces": 30,
+  "zoneNumbers": [
+    "2212",
+    "2213",
+    "2214",
+    "2215",
+    "2216",
+    "2217",
+    "2218",
+    "2219",
+    "2220",
+    "2221",
+    "2222",
+    "2223",
+    "2224",
+    "2225",
+    "2226",
+    "2227",
+    "2228",
+    "2229",
+    "2230",
+    "2231",
+    "2232",
+    "2233",
+    "2234",
+    "2236",
+    "2237",
+    "2238",
+    "2239",
+    "2240",
+    "2241",
+    "2242"
+  ],
+  "operator": "ParkMobile",
+  "lastVerified": "2026-05-24"
+}
