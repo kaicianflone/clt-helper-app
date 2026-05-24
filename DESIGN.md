@@ -66,7 +66,7 @@ Display tokens (`display-*`) use Antonio. Everything else uses Inter.
 /* Foreground */
 --fg-ink:          #1B1614;   /* primary text */
 --fg-ink-soft:     #4A413B;   /* secondary text */
---fg-ink-muted:    #837A72;   /* meta / placeholder */
+--fg-ink-muted:    #6B6259;   /* meta / placeholder */
 
 /* Accents */
 --brick:           #B23A1F;   /* primary CTA + brand */
@@ -97,7 +97,7 @@ Display tokens (`display-*`) use Antonio. Everything else uses Inter.
 **Contrast verification:**
 - `--fg-ink` on `--bg-cream` = 14.2:1 ✓ (AAA for body)
 - `--fg-ink-soft` on `--bg-cream` = 7.8:1 ✓ (AAA for body)
-- `--fg-ink-muted` on `--bg-cream` = 4.6:1 ✓ (AA for body, fail AAA)
+- `--fg-ink-muted` on `--bg-cream` = 5.3:1 ✓ (AA for body, fail AAA)
 - White text on `--brick` = 5.4:1 ✓ (AA for body)
 - White text on `--gold` = 3.3:1 ✗ (use `--fg-ink` instead for gold backgrounds)
 

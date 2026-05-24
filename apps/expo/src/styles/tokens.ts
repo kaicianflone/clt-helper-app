@@ -1,6 +1,6 @@
 export const colors = {
   bg: { cream: "#F5EFE6", creamSoft: "#FAF6EF", creamDeep: "#ECE4D5" },
-  fg: { ink: "#1B1614", inkSoft: "#4A413B", inkMuted: "#837A72" },
+  fg: { ink: "#1B1614", inkSoft: "#4A413B", inkMuted: "#6B6259" },
   brick: { DEFAULT: "#B23A1F", deep: "#8A2C16", soft: "#E8D2C9" },
   gold: { DEFAULT: "#B8902D", soft: "#F2E5C2" },
   green: "#2F6E3A",
