@@ -27,7 +27,7 @@ export function DayTabs({ active }: { active: Day }) {
           aria-current={d === active ? "page" : undefined}
           className={`rounded-full px-3 py-1 text-sm transition ${
             d === active
-              ? "bg-[color:var(--fg-ink)] text-[color:var(--bg-cream)]"
+              ? "bg-[color:var(--gold)] text-white"
               : "bg-[color:var(--bg-cream-deep)] text-[color:var(--fg-ink-soft)] hover:bg-[color:var(--bg-cream-soft)]"
           }`}
         >
