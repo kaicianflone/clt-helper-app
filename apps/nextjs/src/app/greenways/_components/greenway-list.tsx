@@ -1,7 +1,7 @@
 "use client";
 
-import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
+import Link from "next/link";
 
 import { sortAlphabetical, sortByDistance } from "./distance";
 
@@ -53,7 +53,11 @@ export function GreenwayList({ greenways }: { greenways: Greenway[] }) {
             setLocation({ status: "denied" });
           }
         },
-        { enableHighAccuracy: false, timeout: 30000, maximumAge: 5 * 60 * 1000 },
+        {
+          enableHighAccuracy: false,
+          timeout: 30000,
+          maximumAge: 5 * 60 * 1000,
+        },
       );
     };
 

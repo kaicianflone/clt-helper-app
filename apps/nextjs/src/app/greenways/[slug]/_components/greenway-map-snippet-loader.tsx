@@ -8,8 +8,7 @@ interface Props {
 }
 
 const GreenwayMapSnippet = dynamic(
-  () =>
-    import("./greenway-map-snippet").then((m) => m.GreenwayMapSnippet),
+  () => import("./greenway-map-snippet").then((m) => m.GreenwayMapSnippet),
   { ssr: false },
 );
 
