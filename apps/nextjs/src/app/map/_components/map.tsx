@@ -120,12 +120,18 @@ export function GreenwayMap({
       ? FALLBACK_STYLE
       : styleUrl;
 
-    const map = new maplibregl.Map({
-      container: ref.current,
-      style,
-      center: [-80.8431, 35.2271],
-      zoom: 11,
-    });
+    let map: maplibregl.Map;
+    try {
+      map = new maplibregl.Map({
+        container: ref.current,
+        style,
+        center: [-80.8431, 35.2271],
+        zoom: 11,
+      });
+    } catch {
+      setFallback(true);
+      return;
+    }
 
     type MapErrorEvent = maplibregl.MapLibreEvent & {
       error?: { message?: string };

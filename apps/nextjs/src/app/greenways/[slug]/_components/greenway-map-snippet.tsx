@@ -34,13 +34,19 @@ export function GreenwayMapSnippet({ geometry, mapTilerKey }: Props) {
       ? FALLBACK_STYLE
       : styleUrl;
 
-    const map = new maplibregl.Map({
-      container: ref.current,
-      style,
-      bounds: computeBounds(geometry),
-      fitBoundsOptions: { padding: 24 },
-      attributionControl: { compact: true },
-    });
+    let map: maplibregl.Map;
+    try {
+      map = new maplibregl.Map({
+        container: ref.current,
+        style,
+        bounds: computeBounds(geometry),
+        fitBoundsOptions: { padding: 24 },
+        attributionControl: { compact: true },
+      });
+    } catch {
+      setFallback(true);
+      return;
+    }
 
     type MapErrorEvent = maplibregl.MapLibreEvent & {
       error?: { message?: string };
