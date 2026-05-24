@@ -52,7 +52,7 @@ export default async function DealsPage({
 
       <div className="my-6 flex items-center gap-3">
         <div className="h-px flex-1 bg-[color:var(--border-soft)]" />
-        <CrownIcon size={12} />
+        <CrownIcon size={18} />
         <div className="h-px flex-1 bg-[color:var(--border-soft)]" />
       </div>
 
@@ -68,42 +68,26 @@ export default async function DealsPage({
         <ul className="mt-6 divide-y divide-[color:var(--border-soft)]">
           {deals.map((d) => (
             <li key={d.slug} className="py-4">
-              <div className="flex items-start justify-between gap-4">
-                <div className="min-w-0">
-                  <div className="font-medium text-[color:var(--fg-ink)]">
-                    {d.restaurantName}
+              <a href={`/deals/${d.slug}`} className="group block">
+                <div className="flex items-start justify-between gap-4">
+                  <div className="min-w-0">
+                    <div className="font-medium text-[color:var(--fg-ink)] group-hover:text-[color:var(--brick)]">
+                      {d.restaurantName}
+                    </div>
+                    <div className="mt-1 text-sm text-[color:var(--fg-ink)]">
+                      {d.dealDescription}
+                    </div>
+                    <div className="mt-1 text-sm text-[color:var(--fg-ink-muted)]">
+                      {typeof d.timeWindow === "string"
+                        ? "All day"
+                        : `${d.timeWindow.start}–${d.timeWindow.end}`}
+                      {" · "}
+                      {d.restaurantAddress}
+                    </div>
                   </div>
-                  <div className="mt-1 text-sm text-[color:var(--fg-ink)]">
-                    {d.dealDescription}
-                  </div>
-                  <div className="mt-1 text-sm text-[color:var(--fg-ink-muted)]">
-                    {typeof d.timeWindow === "string"
-                      ? "All day"
-                      : `${d.timeWindow.start}–${d.timeWindow.end}`}
-                    {" · "}
-                    {d.restaurantAddress}
-                  </div>
+                  <LastVerifiedBadge date={d.lastVerified} now={now} />
                 </div>
-                <LastVerifiedBadge date={d.lastVerified} now={now} />
-              </div>
-              <div className="mt-2 flex gap-3 text-sm">
-                {d.link && (
-                  <a
-                    href={d.link}
-                    className="text-[color:var(--fg-ink)] underline"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    Website
-                  </a>
-                )}
-                <a
-                  href={`/contribute/deal/${d.slug}`}
-                  className="text-[color:var(--fg-ink-soft)] underline"
-                >
-                  Suggest edit
-                </a>
-              </div>
+              </a>
             </li>
           ))}
         </ul>

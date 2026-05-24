@@ -12,17 +12,33 @@ export const metadata: Metadata = {
     "Charlotte's greenways, local deals, and parking — community-maintained.",
 };
 
-type ContextSlot = "trails" | "deals" | "parking";
-
-const slotForHour = (h: number): ContextSlot => {
-  if (h < 11) return "trails";
-  if (h < 16) return "deals";
-  return "parking";
+const KIND_LABEL: Record<string, string> = {
+  greenway: "Greenway",
+  deal: "Deal",
+  parking: "Parking",
 };
+
+const kindHref = (kind: string, slug: string): string => {
+  if (kind === "greenway") return `/greenways/${slug}`;
+  if (kind === "deal") return `/deals/${slug}`;
+  return `/parking/${slug}`;
+};
+
+function timeAgo(dateStr: string, now: number): string {
+  const days = Math.floor((now - new Date(dateStr).getTime()) / 86_400_000);
+  if (days === 0) return "today";
+  if (days === 1) return "1 day ago";
+  if (days < 7) return `${days} days ago`;
+  const weeks = Math.floor(days / 7);
+  if (weeks === 1) return "1 week ago";
+  if (weeks < 5) return `${weeks} weeks ago`;
+  const months = Math.floor(days / 30);
+  if (months === 1) return "1 month ago";
+  return `${months} months ago`;
+}
 
 export default async function HomePage() {
   const date = new Date();
-  const slot = slotForHour(date.getUTCHours()); // close enough for v1; real timezone later
   const dayShort = date.toLocaleDateString("en-US", {
     weekday: "long",
     month: "short",
@@ -30,36 +46,9 @@ export default async function HomePage() {
   });
 
   const caller = await createServerCaller();
-
-  // Run fetches in parallel
-  const [greenways, deals, parking] = await Promise.all([
-    caller.greenway.list().catch(() => []),
-    caller.deal.list().catch(() => []),
-    caller.parking.list().catch(() => []),
-  ]);
-
-  interface AnyItem {
-    slug: string;
-    name?: string;
-    restaurantName?: string;
-  }
-
-  const featuredItems: AnyItem[] = (
-    slot === "trails"
-      ? greenways.slice(0, 5)
-      : slot === "deals"
-        ? deals.slice(0, 5)
-        : parking.slice(0, 5)
-  ) as AnyItem[];
-
-  const featuredHref = (item: AnyItem): string => {
-    if (slot === "trails") return `/greenways/${item.slug}`;
-    if (slot === "deals") return `/deals`;
-    return `/parking/${item.slug}`;
-  };
-
-  const featuredLabel = (item: AnyItem): string =>
-    item.name ?? item.restaurantName ?? item.slug;
+  const recent = await caller.activity.recent();
+  // eslint-disable-next-line react-hooks/purity -- server component; Date.now() is stable during RSC render
+  const now = Date.now();
 
   return (
     <main className="mx-auto max-w-3xl p-6">
@@ -73,38 +62,32 @@ export default async function HomePage() {
 
       <section className="mt-10">
         <h2 className="font-display text-2xl font-bold text-[color:var(--fg-ink)]">
-          {slot === "trails"
-            ? "Greenways"
-            : slot === "deals"
-              ? "Deals today"
-              : "Parking"}
+          Recently updated
         </h2>
 
-        {featuredItems.length === 0 ? (
+        {recent.length === 0 ? (
           <p className="mt-3 text-sm text-[color:var(--fg-ink-muted)]">
-            Nothing listed yet.{" "}
-            <Link
-              href={
-                slot === "trails"
-                  ? "/greenways"
-                  : slot === "deals"
-                    ? "/deals"
-                    : "/parking"
-              }
-              className="text-[color:var(--brick)] underline hover:text-[color:var(--brick-deep)]"
-            >
-              Browse all
-            </Link>
+            Nothing listed yet.
           </p>
         ) : (
           <ul className="mt-3 divide-y divide-[color:var(--border-soft)]">
-            {featuredItems.map((item) => (
-              <li key={item.slug} className="py-3">
+            {recent.map((item) => (
+              <li key={`${item.kind}-${item.slug}`} className="py-3">
                 <Link
-                  href={featuredHref(item)}
-                  className="text-[color:var(--fg-ink)] hover:text-[color:var(--brick)]"
+                  href={kindHref(item.kind, item.slug)}
+                  className="group flex items-start justify-between gap-3"
                 >
-                  {featuredLabel(item)}
+                  <div className="min-w-0">
+                    <span className="text-[color:var(--fg-ink)] group-hover:text-[color:var(--brick)]">
+                      {item.label}
+                    </span>
+                    <span className="ml-2 inline-block rounded-full bg-[color:var(--bg-cream-soft)] px-2 py-0.5 text-xs font-medium text-[color:var(--fg-ink-muted)]">
+                      {KIND_LABEL[item.kind] ?? item.kind}
+                    </span>
+                  </div>
+                  <span className="shrink-0 text-xs text-[color:var(--fg-ink-soft)]">
+                    {timeAgo(item.lastVerified, now)}
+                  </span>
                 </Link>
               </li>
             ))}
