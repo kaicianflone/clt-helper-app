@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import Link from "next/link";
 
 import { cn } from "@clt/ui";
@@ -19,6 +19,12 @@ export const metadata: Metadata = {
   },
   description:
     "Charlotte's greenways, local deals, and parking — community-maintained.",
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
 };
 
 export default function RootLayout(props: { children: React.ReactNode }) {

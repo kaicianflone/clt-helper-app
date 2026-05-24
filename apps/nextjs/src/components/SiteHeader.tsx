@@ -15,7 +15,7 @@ export function SiteHeader() {
 
   return (
     <header
-      className="hidden h-12 w-full items-center border-b border-[color:var(--border-soft)] bg-[color:var(--bg-cream)] px-6 md:flex"
+      className="hidden h-12 w-full items-center border-b border-[color:var(--border-soft)] bg-[color:var(--bg-cream)] px-6 pt-[env(safe-area-inset-top)] md:flex"
       role="banner"
     >
       <Link
