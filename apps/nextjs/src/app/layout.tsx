@@ -3,6 +3,9 @@ import Link from "next/link";
 
 import { cn } from "@clt/ui";
 
+import { BottomTabBar } from "~/components/BottomTabBar";
+import { SiteHeader } from "~/components/SiteHeader";
+import { SkipToContent } from "~/components/SkipToContent";
 import { fontDisplay, fontSans } from "~/styles/fonts";
 import { TRPCReactProvider } from "~/trpc/react";
 
@@ -31,7 +34,13 @@ export default function RootLayout(props: { children: React.ReactNode }) {
           "bg-[color:var(--bg-cream)] text-[color:var(--fg-ink)]",
         )}
       >
-        <TRPCReactProvider>{props.children}</TRPCReactProvider>
+        <SkipToContent />
+        <SiteHeader />
+        <TRPCReactProvider>
+          <main id="main-content" className="pb-16 md:pb-0">
+            {props.children}
+          </main>
+        </TRPCReactProvider>
         <footer className="py-6 text-center text-xs text-[color:var(--fg-ink-muted)]">
           <Link
             href="/privacy"
@@ -40,6 +49,7 @@ export default function RootLayout(props: { children: React.ReactNode }) {
             Privacy
           </Link>
         </footer>
+        <BottomTabBar />
       </body>
     </html>
   );
