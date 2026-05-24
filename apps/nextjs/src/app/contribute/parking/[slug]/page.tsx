@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 
 import { createServerCaller } from "~/trpc/server";
 import { ParkingWrapper } from "./_components/parking-wrapper";
@@ -74,15 +75,26 @@ export default async function ContributeParkingPage({ params }: Props) {
           : "Your edit will become a pull request. Be specific."}
       </p>
       {!isNew && (
-        <p className="mt-1 text-sm text-[color:var(--fg-ink-muted)]">
-          Editing:{" "}
-          <a
-            href={`/parking/${slug}`}
-            className="text-[color:var(--brick)] underline underline-offset-2 hover:text-[color:var(--brick-deep)]"
+        <Link
+          href={`/parking/${slug}`}
+          className="mt-2 inline-flex items-center gap-1 text-sm text-[color:var(--fg-ink-soft)] hover:text-[color:var(--brick)]"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            aria-hidden="true"
           >
-            {initialData?.name ?? slug}
-          </a>
-        </p>
+            <polyline points="15 18 9 12 15 6" />
+          </svg>
+          Back to {initialData?.name ?? slug}
+        </Link>
       )}
 
       <div className="mt-8">

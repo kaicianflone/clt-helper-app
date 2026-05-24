@@ -1,8 +1,11 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import Link from "next/link";
 
 import { cn } from "@clt/ui";
 
+import { BottomTabBar } from "~/components/BottomTabBar";
+import { SiteHeader } from "~/components/SiteHeader";
+import { SkipToContent } from "~/components/SkipToContent";
 import { fontDisplay, fontSans } from "~/styles/fonts";
 import { TRPCReactProvider } from "~/trpc/react";
 
@@ -11,11 +14,17 @@ import "~/app/styles.css";
 
 export const metadata: Metadata = {
   title: {
-    template: "%s | Charlotte Greenways",
-    default: "Charlotte Greenways",
+    default: "Today in Charlotte | clt",
+    template: "%s | clt",
   },
   description:
     "Charlotte's greenways, local deals, and parking — community-maintained.",
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
 };
 
 export default function RootLayout(props: { children: React.ReactNode }) {
@@ -31,7 +40,13 @@ export default function RootLayout(props: { children: React.ReactNode }) {
           "bg-[color:var(--bg-cream)] text-[color:var(--fg-ink)]",
         )}
       >
-        <TRPCReactProvider>{props.children}</TRPCReactProvider>
+        <SkipToContent />
+        <SiteHeader />
+        <TRPCReactProvider>
+          <main id="main-content" className="pb-16 md:pb-0">
+            {props.children}
+          </main>
+        </TRPCReactProvider>
         <footer className="py-6 text-center text-xs text-[color:var(--fg-ink-muted)]">
           <Link
             href="/privacy"
@@ -40,6 +55,7 @@ export default function RootLayout(props: { children: React.ReactNode }) {
             Privacy
           </Link>
         </footer>
+        <BottomTabBar />
       </body>
     </html>
   );

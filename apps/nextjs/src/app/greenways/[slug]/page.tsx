@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { LastVerifiedBadge } from "~/components/LastVerifiedBadge";
@@ -53,16 +54,50 @@ export default async function GreenwayDetailPage({ params }: Props) {
   return (
     <main>
       {/* Hero — solid brick header with display-lg name overlay */}
-      <div className="relative flex min-h-[40vh] items-end bg-[color:var(--brick)] px-4 pb-8 sm:px-8">
+      <div className="relative flex min-h-[28vh] items-end overflow-hidden bg-[color:var(--brick)] px-4 pb-8 sm:min-h-[40vh] sm:px-8">
+        {/* Noise texture overlay */}
+        <div
+          className="pointer-events-none absolute inset-0 opacity-[0.05]"
+          style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='256' height='256' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E")`,
+            backgroundSize: "128px 128px",
+          }}
+          aria-hidden="true"
+        />
+        {/* Back button */}
+        <Link
+          href="/greenways"
+          className="absolute top-4 left-4 z-10 flex h-11 w-11 items-center justify-center rounded-full bg-black/20 text-white hover:bg-black/30"
+          aria-label="Back to greenways"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className="h-5 w-5"
+            aria-hidden="true"
+          >
+            <path d="M15 18l-6-6 6-6" />
+          </svg>
+        </Link>
         <div>
           <h1 className="font-display text-5xl leading-none font-bold tracking-tight text-white">
             {greenway.name}
           </h1>
+          <div className="mt-3 h-0.5 w-12 bg-[color:var(--gold)]" />
           <div className="mt-3 flex flex-wrap items-center gap-3">
             <p className="text-sm text-white/80">
               {greenway.lengthMiles} mi &middot; {greenway.surface}
             </p>
-            <LastVerifiedBadge date={greenway.lastVerified} now={nowMs} />
+            <LastVerifiedBadge
+              date={greenway.lastVerified}
+              now={nowMs}
+              variant="hero"
+            />
           </div>
         </div>
       </div>
@@ -168,19 +203,19 @@ export default async function GreenwayDetailPage({ params }: Props) {
         </div>
 
         {/* CTAs */}
-        <div className="mt-8 flex flex-wrap items-center gap-3 border-t border-[color:var(--border-soft)] pt-6">
+        <div className="mt-8 flex flex-col gap-3 border-t border-[color:var(--border-soft)] pt-6 sm:flex-row sm:items-center">
           <a
             href={`https://maps.google.com/?q=${greenway.trailheads[0]?.lat ?? 0},${greenway.trailheads[0]?.lng ?? 0}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-md bg-[color:var(--brick)] px-6 py-2.5 text-sm font-medium text-white hover:bg-[color:var(--brick-deep)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[color:var(--brick)]"
+            className="flex min-h-[44px] w-full items-center justify-center rounded-md bg-[color:var(--brick)] px-6 py-2.5 text-sm font-medium text-white hover:bg-[color:var(--brick-deep)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[color:var(--brick)] sm:w-auto"
           >
             Get directions to nearest trailhead
           </a>
           <ShareButton url={pageUrl} title={greenway.name} />
           <a
             href={`/contribute/greenway/${slug}`}
-            className="rounded-md px-4 py-2.5 text-sm font-medium text-[color:var(--fg-ink-soft)] hover:bg-[color:var(--bg-cream-deep)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[color:var(--brick)]"
+            className="flex min-h-[44px] items-center justify-center rounded-md border border-[color:var(--border-soft)] px-4 py-2.5 text-center text-sm font-medium text-[color:var(--fg-ink-soft)] hover:bg-[color:var(--bg-cream-deep)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[color:var(--brick)]"
           >
             Suggest an edit
           </a>

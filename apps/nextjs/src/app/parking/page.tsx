@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
+import { CrownIcon } from "~/components/CrownIcon";
 import { EmptyState } from "~/components/EmptyState";
 import { createServerCaller } from "~/trpc/server";
 
 export const revalidate = 60;
 
 export const metadata: Metadata = {
-  title: "Parking · Charlotte",
+  title: "Parking",
   description: "Community-maintained parking directory for Charlotte, NC.",
 };
 
@@ -23,6 +24,12 @@ export default async function ParkingPage() {
       <p className="mt-1 text-sm text-[color:var(--fg-ink-muted)]">
         {lots.length} lot{lots.length !== 1 ? "s" : ""}.
       </p>
+
+      <div className="my-6 flex items-center gap-3">
+        <div className="h-px flex-1 bg-[color:var(--border-soft)]" />
+        <CrownIcon size={12} />
+        <div className="h-px flex-1 bg-[color:var(--border-soft)]" />
+      </div>
 
       {lots.length === 0 ? (
         <div className="mt-8">

@@ -20,13 +20,16 @@ This document is the source of truth for visual decisions. When in doubt, follow
 ## Typography
 
 ### Stacks
+
 ```css
---font-display: 'Compressa Pro', 'Druk Wide', 'Antonio', 'Bebas Neue', sans-serif;
---font-body:    'Inter', 'Söhne', 'Geist', system-ui, sans-serif;
---font-mono:    'JetBrains Mono', 'IBM Plex Mono', ui-monospace, monospace;
+--font-display:
+  "Compressa Pro", "Druk Wide", "Antonio", "Bebas Neue", sans-serif;
+--font-body: "Inter", "Söhne", "Geist", system-ui, sans-serif;
+--font-mono: "JetBrains Mono", "IBM Plex Mono", ui-monospace, monospace;
 ```
 
 **Recommended for v1:**
+
 - Display: **Antonio** (free, Google Fonts) — condensed grotesque, strong character, ships everywhere.
   Premium upgrade path: Compressa Pro or Druk Wide.
 - Body: **Inter** (free, Google Fonts) — proven, ubiquitous, has a tight tabular variant for numbers.
@@ -34,22 +37,24 @@ This document is the source of truth for visual decisions. When in doubt, follow
 - Mono: **JetBrains Mono** (free) — used only for hex codes, slugs, and any data UI element.
 
 **Implementation:**
+
 - Web: Self-host Inter + Antonio via `next/font` (no external CDN — works offline, no CLS).
 - Mobile: Use `expo-font` to bundle Antonio and Inter. Apply via `useFonts()` in `_layout.tsx`.
 
 ### Type ramp
-| Token | Size (web) | Size (mobile) | Line height | Weight | Tracking | Use |
-|---|---|---|---|---|---|---|
-| `display-xl` | 64px | 44px | 1.0 | 700 | -0.02em | Hero / homepage |
-| `display-lg` | 48px | 32px | 1.05 | 700 | -0.02em | Detail page name |
-| `display-md` | 36px | 26px | 1.1 | 700 | -0.01em | Section heading |
-| `heading-lg` | 22px | 20px | 1.2 | 600 | -0.005em | Subsection |
-| `heading-md` | 18px | 17px | 1.3 | 600 | 0 | Card title |
-| `body-lg` | 18px | 17px | 1.55 | 400 | 0 | Detail body copy |
-| `body-md` | 16px | 16px | 1.55 | 400 | 0 | Default body |
-| `body-sm` | 14px | 14px | 1.5 | 400 | 0 | Meta / supporting |
-| `body-xs` | 12px | 12px | 1.4 | 500 | 0.02em uppercase | Labels / badges |
-| `mono-md` | 14px | 14px | 1.5 | 400 | 0 | Data (rates, distances) |
+
+| Token        | Size (web) | Size (mobile) | Line height | Weight | Tracking         | Use                     |
+| ------------ | ---------- | ------------- | ----------- | ------ | ---------------- | ----------------------- |
+| `display-xl` | 64px       | 44px          | 1.0         | 700    | -0.02em          | Hero / homepage         |
+| `display-lg` | 48px       | 32px          | 1.05        | 700    | -0.02em          | Detail page name        |
+| `display-md` | 36px       | 26px          | 1.1         | 700    | -0.01em          | Section heading         |
+| `heading-lg` | 22px       | 20px          | 1.2         | 600    | -0.005em         | Subsection              |
+| `heading-md` | 18px       | 17px          | 1.3         | 600    | 0                | Card title              |
+| `body-lg`    | 18px       | 17px          | 1.55        | 400    | 0                | Detail body copy        |
+| `body-md`    | 16px       | 16px          | 1.55        | 400    | 0                | Default body            |
+| `body-sm`    | 14px       | 14px          | 1.5         | 400    | 0                | Meta / supporting       |
+| `body-xs`    | 12px       | 12px          | 1.4         | 500    | 0.02em uppercase | Labels / badges         |
+| `mono-md`    | 14px       | 14px          | 1.5         | 400    | 0                | Data (rates, distances) |
 
 Display tokens (`display-*`) use Antonio. Everything else uses Inter.
 
@@ -59,45 +64,46 @@ Display tokens (`display-*`) use Antonio. Everything else uses Inter.
 
 ```css
 /* Surfaces */
---bg-cream:        #F5EFE6;   /* default page background */
---bg-cream-soft:   #FAF6EF;   /* card / elevated surface */
---bg-cream-deep:   #ECE4D5;   /* hover / pressed states */
+--bg-cream: #f5efe6; /* default page background */
+--bg-cream-soft: #faf6ef; /* card / elevated surface */
+--bg-cream-deep: #ece4d5; /* hover / pressed states */
 
 /* Foreground */
---fg-ink:          #1B1614;   /* primary text */
---fg-ink-soft:     #4A413B;   /* secondary text */
---fg-ink-muted:    #837A72;   /* meta / placeholder */
+--fg-ink: #1b1614; /* primary text */
+--fg-ink-soft: #4a413b; /* secondary text */
+--fg-ink-muted: #6b6259; /* meta / placeholder */
 
 /* Accents */
---brick:           #B23A1F;   /* primary CTA + brand */
---brick-deep:      #8A2C16;   /* hover / pressed brick */
---brick-soft:      #E8D2C9;   /* tinted background for brick context */
+--brick: #b23a1f; /* primary CTA + brand */
+--brick-deep: #8a2c16; /* hover / pressed brick */
+--brick-soft: #e8d2c9; /* tinted background for brick context */
 
---gold:            #B8902D;   /* secondary accent (badges, highlights) */
---gold-soft:       #F2E5C2;   /* tinted background for gold context */
+--gold: #b8902d; /* secondary accent (badges, highlights) */
+--gold-soft: #f2e5c2; /* tinted background for gold context */
 
 /* Functional */
---green-ok:        #2F6E3A;   /* lastVerified fresh */
---amber-warn:      #B07810;   /* lastVerified moderate */
---rose-stale:      #A8332E;   /* lastVerified stale */
+--green-ok: #2f6e3a; /* lastVerified fresh */
+--amber-warn: #b07810; /* lastVerified moderate */
+--rose-stale: #a8332e; /* lastVerified stale */
 
 /* Borders */
---border-soft:     #D9CFC0;   /* default border */
---border-strong:   #1B1614;   /* high-emphasis border */
+--border-soft: #d9cfc0; /* default border */
+--border-strong: #1b1614; /* high-emphasis border */
 
 /* Map */
---map-water:       #C8D8DC;
---map-park:        #C3D4B5;
---map-road:        #E2D6C2;
---map-trail:       #2F6E3A;   /* greenway line color */
---map-parking:     #B23A1F;   /* parking marker */
---map-deal:        #B8902D;   /* deal-offering restaurant marker */
+--map-water: #c8d8dc;
+--map-park: #c3d4b5;
+--map-road: #e2d6c2;
+--map-trail: #2f6e3a; /* greenway line color */
+--map-parking: #b23a1f; /* parking marker */
+--map-deal: #b8902d; /* deal-offering restaurant marker */
 ```
 
 **Contrast verification:**
+
 - `--fg-ink` on `--bg-cream` = 14.2:1 ✓ (AAA for body)
 - `--fg-ink-soft` on `--bg-cream` = 7.8:1 ✓ (AAA for body)
-- `--fg-ink-muted` on `--bg-cream` = 4.6:1 ✓ (AA for body, fail AAA)
+- `--fg-ink-muted` on `--bg-cream` = 5.3:1 ✓ (AA for body, fail AAA)
 - White text on `--brick` = 5.4:1 ✓ (AA for body)
 - White text on `--gold` = 3.3:1 ✗ (use `--fg-ink` instead for gold backgrounds)
 
@@ -154,25 +160,28 @@ Use shadows only for: dropdown menus, bottom sheets, modals. Cards in a list DO 
 ## Motion
 
 ```css
---ease-default: cubic-bezier(0.32, 0.72, 0, 1);   /* iOS-style ease-out */
+--ease-default: cubic-bezier(0.32, 0.72, 0, 1); /* iOS-style ease-out */
 --duration-fast: 120ms;
 --duration-default: 200ms;
 --duration-slow: 400ms;
 ```
 
 Rules:
+
 - Default for state changes (hover, focus, tap-feedback): 120-200ms.
 - Page transitions: 200-300ms.
 - Bottom sheet / modal open: 300-400ms ease-out.
 - `prefers-reduced-motion: reduce` MUST disable all transitions (not shorten — disable).
 
 Approved motion (from CEO addendum + design review):
+
 - Skeleton loading shimmer (subtle, slow — 1.5s loop)
 - Bottom sheet slide-up on map tap
 - Day-tab indicator slide (180ms)
 - Submit success: scale-up + fade checkmark (400ms total)
 
 Forbidden:
+
 - Hover-only interactions on touch targets (no `hover:bg-...` without focus equivalents)
 - Parallax scrolling
 - Confetti or particle effects (even for the contribution success — use a single scale-up checkmark instead)
@@ -246,7 +255,7 @@ INPUT:
   padding: 12px 14px
   font: body-md
   label: visible above input (NOT placeholder-as-label)
-  
+
 DAY TAB / FILTER PILL:
   shape: radius-full
   inactive: bg --bg-cream-deep, text --fg-ink-soft
@@ -276,6 +285,7 @@ GENERIC:                bg --bg-cream-deep, text --fg-ink-soft, radius-full, bod
 ## Per-screen information architecture
 
 ### Greenway list
+
 ```
 HEADER: "Greenways" (display-md) + "{N} trails" (body-sm muted)
 SUB:    "Near me ⇆ A-Z" toggle (right-aligned)
@@ -288,6 +298,7 @@ LIST: borderless rows separated by --border-soft dividers
 ```
 
 ### Greenway detail
+
 ```
 ABOVE FOLD (40-50vh):
   HERO: full-width photo (if exists) OR full-width vector preview of trail line on cream
@@ -297,12 +308,12 @@ ABOVE FOLD (40-50vh):
 
 BODY:
   body-lg description (~2 paragraphs max)
-  
+
 SECTIONS (each --space-12 apart, heading-lg labels):
   Trailheads → tappable cards, each opens native maps
   Points of Interest → collapsed list, expand on tap
   Photos → horizontal scroll on mobile, 3-up grid on desktop
-  
+
 STALE PROMPT (if lastVerified > 60d): full-width card with amber tint
 
 CTAs (sticky bottom mobile, sidebar desktop):
@@ -312,6 +323,7 @@ CTAs (sticky bottom mobile, sidebar desktop):
 ```
 
 ### Deals
+
 ```
 HEADER: "Deals · {DAY}" (display-md)
 SUB: "{N} deals today" (body-sm muted)
@@ -328,19 +340,21 @@ LIST: borderless rows
 ```
 
 ### Parking detail
+
 ```
 HEADER: display-lg lot name + body-sm address
 
 RATES PANEL: large mono-md text for rate, body-sm context
   "$4/hr" (display-md, mono)
   "$18/day max · Covered · Card / App" (body-sm)
-  
+
 HOURS GRID: 7-row mini table, Mon-Sun, formatted as "06:00–22:00" or "Closed" / "24h"
 
 CTAs: same pattern as greenway detail (directions / share / suggest-edit)
 ```
 
 ### Map screen
+
 ```
 DESKTOP (1024+):
   | LEFT SIDEBAR (320px) | MAP (fluid) | RIGHT DETAIL (380px, conditional) |
@@ -358,6 +372,7 @@ MOBILE (< 768):
 ```
 
 ### Suggest-edit form
+
 ```
 HEADER: display-md "Suggest an edit"
 SUB: body-md "Your edit will become a pull request. Be specific."
@@ -395,6 +410,7 @@ Every screen must specify visual treatment for these states. Default treatments:
 ```
 
 Layout rules:
+
 - **<768px:** single column. Sticky bottom CTAs. Sheet-style modals.
 - **768-1024px:** two-column on detail pages (content left, contextual right rail). Map: map + bottom-anchored detail.
 - **1024-1280px:** three-column on map. Two-column on detail with sticky-side metadata.

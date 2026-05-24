@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 
+import { CrownIcon } from "~/components/CrownIcon";
 import { EmptyState } from "~/components/EmptyState";
 import { createServerCaller } from "~/trpc/server";
 import { GreenwayList } from "./_components/greenway-list";
@@ -27,6 +28,12 @@ export default async function GreenwaysPage() {
             {greenways.length} trail{greenways.length !== 1 ? "s" : ""}
           </p>
         </div>
+      </div>
+
+      <div className="my-6 flex items-center gap-3">
+        <div className="h-px flex-1 bg-[color:var(--border-soft)]" />
+        <CrownIcon size={12} />
+        <div className="h-px flex-1 bg-[color:var(--border-soft)]" />
       </div>
 
       {/* Trail list */}

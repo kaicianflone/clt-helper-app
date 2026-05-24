@@ -3,6 +3,8 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 
+import { CrownIcon } from "~/components/CrownIcon";
+
 const ONBOARDING_KEY = "clt-onboarding-seen";
 
 const STEPS = [
@@ -69,9 +71,12 @@ export default function OnboardingPage() {
       </div>
 
       {/* Content */}
-      <div className="w-full max-w-md text-center">
-        <div className="font-display text-6xl leading-none font-bold text-[color:var(--brick)]">
-          clt
+      <div className="w-full max-w-md text-center" aria-live="polite">
+        <div className="flex flex-col items-center">
+          <CrownIcon size={24} />
+          <div className="font-display mt-1 text-6xl leading-none font-bold text-[color:var(--brick)]">
+            clt
+          </div>
         </div>
         <h1 className="font-display mt-8 text-3xl font-bold tracking-tight text-[color:var(--fg-ink)]">
           {current.heading}
@@ -84,13 +89,16 @@ export default function OnboardingPage() {
       {/* Progress + CTA */}
       <div className="flex w-full max-w-md flex-col items-center gap-6">
         {/* Dots */}
-        <div className="flex gap-2" role="tablist" aria-label="Progress">
+        <div
+          className="flex gap-2"
+          role="group"
+          aria-label="Onboarding progress"
+        >
           {STEPS.map((_, i) => (
             <button
               key={i}
-              role="tab"
-              aria-selected={i === step}
-              aria-label={`Step ${i + 1}`}
+              aria-label={`Go to step ${i + 1}`}
+              aria-current={step === i ? "step" : undefined}
               onClick={() => setStep(i)}
               className={`h-2 rounded-full transition-all ${
                 i === step

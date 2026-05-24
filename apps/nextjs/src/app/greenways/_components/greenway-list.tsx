@@ -119,18 +119,38 @@ export function GreenwayList({ greenways }: { greenways: Greenway[] }) {
           <li key={g.slug}>
             <Link
               href={`/greenways/${g.slug}`}
-              className="flex items-start justify-between gap-4 py-4 hover:bg-[color:var(--bg-cream-soft)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[color:var(--brick)]"
+              className="flex items-center justify-between gap-4 py-4 hover:bg-[color:var(--bg-cream-soft)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[color:var(--brick)]"
             >
               <div className="min-w-0 flex-1">
                 <p className="truncate text-lg leading-snug font-semibold text-[color:var(--fg-ink)]">
                   {g.name}
                 </p>
-                <p className="mt-0.5 text-sm text-[color:var(--fg-ink-muted)]">
-                  {g.lengthMiles} mi &middot; {g.surface}
-                  {g.distanceMi != null &&
-                    ` · ${g.distanceMi.toFixed(1)} mi away`}
+                <p className="mt-0.5 flex flex-wrap items-center gap-2 text-sm text-[color:var(--fg-ink-muted)]">
+                  <span>
+                    {g.lengthMiles} mi
+                    {g.distanceMi != null &&
+                      ` · ${g.distanceMi.toFixed(1)} mi away`}
+                  </span>
+                  <span className="inline-flex items-center rounded-full bg-[color:var(--gold-soft)] px-2 py-0.5 text-xs font-medium text-[color:var(--gold)]">
+                    {g.surface}
+                  </span>
                 </p>
               </div>
+              <svg
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="shrink-0 text-[color:var(--fg-ink-muted)]"
+              >
+                <path d="M9 18l6-6-6-6" />
+              </svg>
             </Link>
           </li>
         ))}
