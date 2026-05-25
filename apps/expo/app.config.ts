@@ -35,13 +35,11 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
     privacyManifests: {
       NSPrivacyAccessedAPITypes: [
         {
-          NSPrivacyAccessedAPIType:
-            "NSPrivacyAccessedAPICategoryDiskSpace",
+          NSPrivacyAccessedAPIType: "NSPrivacyAccessedAPICategoryDiskSpace",
           NSPrivacyAccessedAPITypeReasons: ["E174.1"],
         },
         {
-          NSPrivacyAccessedAPIType:
-            "NSPrivacyAccessedAPICategoryUserDefaults",
+          NSPrivacyAccessedAPIType: "NSPrivacyAccessedAPICategoryUserDefaults",
           NSPrivacyAccessedAPITypeReasons: ["CA92.1"],
         },
       ],
