@@ -6,6 +6,7 @@ import { useMutation } from "@tanstack/react-query";
 import type { Day } from "~/components/day-tabs";
 import { DAYS } from "~/components/day-tabs";
 import { SubmitSuccessOverlay } from "~/components/SubmitSuccessOverlay";
+import { env } from "~/env";
 import { recordContribution } from "~/lib/contribution-history";
 import { getDeviceId } from "~/lib/device-id";
 import { useTRPC } from "~/trpc/react";
@@ -89,6 +90,33 @@ export function DealForm({
   const [newSlug, setNewSlug] = useState("");
   const [prUrl, setPrUrl] = useState<string | null>(null);
   const [latLngError, setLatLngError] = useState<string | null>(null);
+  const [geocodeStatus, setGeocodeStatus] = useState<
+    "idle" | "loading" | "found" | "error"
+  >(initialRestaurantLat !== undefined ? "found" : "idle");
+  const [showManualCoords, setShowManualCoords] = useState(false);
+
+  const geocodeAddress = async (address: string) => {
+    if (address.length < 5) return;
+    setGeocodeStatus("loading");
+    try {
+      const q = encodeURIComponent(address);
+      const res = await fetch(
+        `https://api.maptiler.com/geocoding/${q}.json?key=${env.NEXT_PUBLIC_MAPTILER_KEY}&bbox=-81.1,34.9,-80.5,35.5`,
+      );
+      const data = await res.json();
+      const coords = data?.features?.[0]?.geometry?.coordinates;
+      if (coords && coords.length >= 2) {
+        setRestaurantLng(String(coords[0]));
+        setRestaurantLat(String(coords[1]));
+        setGeocodeStatus("found");
+        setLatLngError(null);
+      } else {
+        setGeocodeStatus("error");
+      }
+    } catch {
+      setGeocodeStatus("error");
+    }
+  };
 
   const mutation = useMutation(
     trpc.submit.contribute.mutationOptions({
@@ -216,43 +244,70 @@ export function DealForm({
           type="text"
           required
           value={restaurantAddress}
-          onChange={(e) => setRestaurantAddress(e.target.value)}
+          onChange={(e) => {
+            setRestaurantAddress(e.target.value);
+            if (geocodeStatus === "found") setGeocodeStatus("idle");
+          }}
+          onBlur={() => geocodeAddress(restaurantAddress)}
           className={inputCls}
         />
+        {geocodeStatus === "loading" && (
+          <p className="mt-1 text-xs text-[color:var(--fg-ink-muted)]">
+            Looking up coordinates…
+          </p>
+        )}
+        {geocodeStatus === "found" && (
+          <p className="mt-1 text-xs text-[color:var(--green-ok)]">
+            Coordinates found: {restaurantLat}, {restaurantLng}
+          </p>
+        )}
       </div>
 
-      <div className="flex gap-4">
-        <div className="flex-1">
-          <label htmlFor="restaurantLat" className={labelCls}>
-            Latitude
-          </label>
-          <input
-            id="restaurantLat"
-            type="number"
-            step="any"
-            required
-            value={restaurantLat}
-            onChange={(e) => setRestaurantLat(e.target.value)}
-            placeholder="e.g. 35.22"
-            className={inputCls}
-          />
+      {(geocodeStatus === "error" || showManualCoords) && (
+        <div className="flex flex-col gap-4 sm:flex-row">
+          <div className="flex-1">
+            <label htmlFor="restaurantLat" className={labelCls}>
+              Latitude
+            </label>
+            <input
+              id="restaurantLat"
+              type="text"
+              inputMode="decimal"
+              required
+              value={restaurantLat}
+              onChange={(e) => setRestaurantLat(e.target.value)}
+              placeholder="e.g. 35.22"
+              className={inputCls}
+            />
+          </div>
+          <div className="flex-1">
+            <label htmlFor="restaurantLng" className={labelCls}>
+              Longitude
+            </label>
+            <input
+              id="restaurantLng"
+              type="text"
+              inputMode="decimal"
+              required
+              value={restaurantLng}
+              onChange={(e) => setRestaurantLng(e.target.value)}
+              placeholder="e.g. -80.84"
+              className={inputCls}
+            />
+          </div>
         </div>
-        <div className="flex-1">
-          <label htmlFor="restaurantLng" className={labelCls}>
-            Longitude
-          </label>
-          <input
-            id="restaurantLng"
-            type="number"
-            step="any"
-            required
-            value={restaurantLng}
-            onChange={(e) => setRestaurantLng(e.target.value)}
-            placeholder="e.g. -80.84"
-            className={inputCls}
-          />
-        </div>
-      </div>
+      )}
+      {geocodeStatus !== "error" &&
+        !showManualCoords &&
+        geocodeStatus !== "found" && (
+          <button
+            type="button"
+            onClick={() => setShowManualCoords(true)}
+            className="text-sm text-[color:var(--fg-ink-muted)] underline underline-offset-2 hover:text-[color:var(--fg-ink)]"
+          >
+            Enter coordinates manually
+          </button>
+        )}
       {latLngError && (
         <p role="alert" className="text-sm text-[color:var(--rose-stale)]">
           {latLngError}
