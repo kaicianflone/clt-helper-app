@@ -3,6 +3,8 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
+import { CrownIcon } from "~/components/CrownIcon";
+
 const tabs = [
   {
     label: "Greenways",
@@ -81,6 +83,13 @@ export function BottomTabBar() {
       className="fixed right-0 bottom-0 left-0 z-40 flex min-h-16 w-full items-stretch border-t border-[color:var(--border-soft)] bg-[color:var(--bg-cream)] pb-[env(safe-area-inset-bottom)] md:hidden"
       aria-label="Mobile navigation"
     >
+      <Link
+        href="/"
+        aria-label="Home"
+        className="flex w-12 items-center justify-center text-[color:var(--fg-ink-muted)]"
+      >
+        <CrownIcon size={18} color="currentColor" />
+      </Link>
       {tabs.map(({ label, href, icon }) => {
         const isActive = pathname === href || pathname.startsWith(href + "/");
         return (

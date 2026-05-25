@@ -21,4 +21,17 @@ describe("BottomTabBar", () => {
   it("hides on desktop with md:hidden", () => {
     expect(src).toContain("md:hidden");
   });
+
+  it("crown home link exists with href='/'", () => {
+    expect(src).toContain('href="/"');
+  });
+
+  it("crown link has aria-label='Home'", () => {
+    expect(src).toContain('aria-label="Home"');
+  });
+
+  it("CrownIcon is imported and used", () => {
+    expect(src).toContain('from "~/components/CrownIcon"');
+    expect(src).toContain("<CrownIcon");
+  });
 });
