@@ -41,6 +41,8 @@
     "production": {
       "ios": {
         "appleId": "kaicianflone@gmail.com",
+        "ascAppId": "6773114292",
+        "appleTeamId": "A8BUJRV7L4",
         "language": "en-US"
       },
       "android": {
