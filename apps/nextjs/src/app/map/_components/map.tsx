@@ -322,6 +322,16 @@ export function GreenwayMap({
 
       let popup: maplibregl.Popup | null = null;
 
+      const focusPopup = (p: maplibregl.Popup) => {
+        const el = p.getElement();
+        const closeBtn = el.querySelector<HTMLElement>(
+          ".maplibregl-popup-close-button",
+        );
+        if (closeBtn) closeBtn.setAttribute("aria-label", "Close popup");
+        const firstLink = el.querySelector<HTMLElement>("a, button");
+        if (firstLink) firstLink.focus();
+      };
+
       map.on("click", "parking-clusters", (e) => {
         const feature = e.features?.[0];
         if (!feature) return;
@@ -359,6 +369,7 @@ export function GreenwayMap({
             }),
           )
           .addTo(map);
+        focusPopup(popup);
       });
 
       map.on("click", "deal-points", (e) => {
@@ -380,6 +391,7 @@ export function GreenwayMap({
             }),
           )
           .addTo(map);
+        focusPopup(popup);
       });
 
       map.on("click", "greenway-hit-area", (e) => {
@@ -404,6 +416,7 @@ export function GreenwayMap({
           .setLngLat(e.lngLat)
           .setHTML(buildPopupHtml({ ...props, slug: props.slug }))
           .addTo(map);
+        focusPopup(popup);
       });
       map.on("mouseenter", "greenway-hit-area", () => {
         map.getCanvas().style.cursor = "pointer";
