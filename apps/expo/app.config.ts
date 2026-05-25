@@ -11,6 +11,10 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
   userInterfaceStyle: "automatic",
   updates: {
     fallbackToCacheTimeout: 0,
+    url: "https://u.expo.dev/d2421d0b-d42b-4347-980a-16bf0ed80f51",
+  },
+  runtimeVersion: {
+    policy: "appVersion",
   },
   newArchEnabled: true,
   assetBundlePatterns: ["**/*"],
