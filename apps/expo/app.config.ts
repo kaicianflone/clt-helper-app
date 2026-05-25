@@ -5,7 +5,7 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
   name: "clt-app",
   slug: "clt-app",
   scheme: "cltapp",
-  version: "0.1.0",
+  version: "1.0.0",
   orientation: "portrait",
   icon: "./assets/icon-light.png",
   userInterfaceStyle: "automatic",
@@ -16,6 +16,7 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
   assetBundlePatterns: ["**/*"],
   ios: {
     bundleIdentifier: "com.cltapp.mobile",
+    buildNumber: "1",
     supportsTablet: true,
     icon: {
       light: "./assets/icon-light.png",
@@ -27,6 +28,20 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
         "Used to sort greenways, deals, and parking by distance from you. Your location never leaves your device.",
     },
     associatedDomains: ["applinks:clt-app.com"],
+    privacyManifests: {
+      NSPrivacyAccessedAPITypes: [
+        {
+          NSPrivacyAccessedAPIType:
+            "NSPrivacyAccessedAPICategoryDiskSpace",
+          NSPrivacyAccessedAPITypeReasons: ["E174.1"],
+        },
+        {
+          NSPrivacyAccessedAPIType:
+            "NSPrivacyAccessedAPICategoryUserDefaults",
+          NSPrivacyAccessedAPITypeReasons: ["CA92.1"],
+        },
+      ],
+    },
   },
   android: {
     package: "com.cltapp.mobile",
