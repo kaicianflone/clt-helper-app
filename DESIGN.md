@@ -23,23 +23,22 @@ This document is the source of truth for visual decisions. When in doubt, follow
 
 ```css
 --font-display:
-  "Compressa Pro", "Druk Wide", "Antonio", "Bebas Neue", sans-serif;
---font-body: "Inter", "Söhne", "Geist", system-ui, sans-serif;
+  "Barlow Condensed", "Bebas Neue", sans-serif;
+--font-body: "Source Serif 4", Georgia, serif;
 --font-mono: "JetBrains Mono", "IBM Plex Mono", ui-monospace, monospace;
 ```
 
-**Recommended for v1:**
+**Chosen for v1:**
 
-- Display: **Antonio** (free, Google Fonts) — condensed grotesque, strong character, ships everywhere.
+- Display: **Barlow Condensed** (free, Google Fonts) — low-contrast grotesque inspired by public infrastructure signage. Matches the warehouse-district character of NoDa / South End / Camp North End. Slightly rounded terminals give warmth without softness.
   Premium upgrade path: Compressa Pro or Druk Wide.
-- Body: **Inter** (free, Google Fonts) — proven, ubiquitous, has a tight tabular variant for numbers.
-  Premium upgrade path: Söhne.
+- Body: **Source Serif 4** (free, Google Fonts) — Adobe's open-source serif, optimized for screen reading. Serif body text reads as "editorial field guide," not "SaaS product." Warm, readable, pairs with condensed grotesque display faces. Falls back to Georgia.
 - Mono: **JetBrains Mono** (free) — used only for hex codes, slugs, and any data UI element.
 
 **Implementation:**
 
-- Web: Self-host Inter + Antonio via `next/font` (no external CDN — works offline, no CLS).
-- Mobile: Use `expo-font` to bundle Antonio and Inter. Apply via `useFonts()` in `_layout.tsx`.
+- Web: Self-host Barlow Condensed + Source Serif 4 via `next/font` (no external CDN — works offline, no CLS).
+- Mobile: Use `expo-font` to bundle Barlow Condensed and Source Serif 4. Apply via `useFonts()` in `_layout.tsx`.
 
 ### Type ramp
 
@@ -56,7 +55,7 @@ This document is the source of truth for visual decisions. When in doubt, follow
 | `body-xs`    | 12px       | 12px          | 1.4         | 500    | 0.02em uppercase | Labels / badges         |
 | `mono-md`    | 14px       | 14px          | 1.5         | 400    | 0                | Data (rates, distances) |
 
-Display tokens (`display-*`) use Antonio. Everything else uses Inter.
+Display tokens (`display-*`) use Barlow Condensed. Everything else uses Source Serif 4.
 
 ---
 

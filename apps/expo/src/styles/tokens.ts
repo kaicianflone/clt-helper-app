@@ -23,10 +23,10 @@ export const space = {
 export const radius = { sm: 4, md: 8, lg: 12, full: 9999 } as const;
 
 export const fonts = {
-  display: "Antonio_700Bold",
-  body: "Inter_400Regular",
-  bodyMed: "Inter_500Medium",
-  bodyBold: "Inter_600SemiBold",
+  display: "BarlowCondensed_700Bold",
+  body: "SourceSerif4_400Regular",
+  bodyMed: "SourceSerif4_500Medium",
+  bodyBold: "SourceSerif4_600SemiBold",
 } as const;
 
 export const type = {

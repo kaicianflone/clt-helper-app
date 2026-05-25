@@ -33,7 +33,7 @@ function FieldLabel({
         ...type.bodySm,
         color: colors.fg.inkSoft,
         marginBottom: space[1],
-        fontFamily: "Inter_600SemiBold",
+        fontFamily: "SourceSerif4_600SemiBold",
       }}
     >
       {label}
@@ -275,7 +275,7 @@ export default function ContributeGreenwayScreen() {
                 style={{
                   ...type.bodyMd,
                   color: colors.bg.creamSoft,
-                  fontFamily: "Inter_600SemiBold",
+                  fontFamily: "SourceSerif4_600SemiBold",
                 }}
               >
                 Submit suggestion

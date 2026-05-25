@@ -43,7 +43,7 @@ export function EmptyState({ message, ctaLabel, ctaHref }: EmptyStateProps) {
             style={{
               ...type.bodyMd,
               color: colors.brick.DEFAULT,
-              fontFamily: "Inter_600SemiBold",
+              fontFamily: "SourceSerif4_600SemiBold",
               textDecorationLine: "underline",
             }}
           >

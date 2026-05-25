@@ -53,7 +53,7 @@ export function ErrorState({
             style={{
               ...type.bodyMd,
               color: colors.rose,
-              fontFamily: "Inter_600SemiBold",
+              fontFamily: "SourceSerif4_600SemiBold",
             }}
           >
             Try again

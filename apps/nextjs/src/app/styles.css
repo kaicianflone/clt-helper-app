@@ -50,7 +50,7 @@
   --color-border-strong: var(--border-strong);
 
   /* CLT font tokens */
-  --font-display: var(--font-antonio), "Bebas Neue", sans-serif;
-  --font-sans: var(--font-inter), system-ui, sans-serif;
+  --font-display: var(--font-barlow-condensed), "Bebas Neue", sans-serif;
+  --font-sans: var(--font-source-serif), Georgia, serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
 }

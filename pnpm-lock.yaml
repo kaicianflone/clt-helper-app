@@ -98,12 +98,12 @@ importers:
 
   apps/expo:
     dependencies:
-      '@expo-google-fonts/antonio':
-        specifier: ^0.4.2
-        version: 0.4.2
-      '@expo-google-fonts/inter':
-        specifier: ^0.4.2
-        version: 0.4.2
+      '@expo-google-fonts/barlow-condensed':
+        specifier: ^0.4.1
+        version: 0.4.1
+      '@expo-google-fonts/source-serif-4':
+        specifier: ^0.4.1
+        version: 0.4.1
       '@legendapp/list':
         specifier: ^2.0.14
         version: 2.0.14(react-native@0.81.5(@babel/core@7.29.0)(@types/react@19.1.12)(bufferutil@4.0.8)(react@19.1.4))(react@19.1.4)
@@ -1670,11 +1670,11 @@ packages:
     resolution: {integrity: sha512-sB5uyeq+dwCWyPi31B2gQlVlo+j5brPlWx4yZBrEaRo/nhdDE8Xke1gsGgtiBdaBTxuTkceLVuVt/pclrasb0A==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
-  '@expo-google-fonts/antonio@0.4.2':
-    resolution: {integrity: sha512-SjxNUii4e0HtnlFipg5DJAm2uyVdfnl/FwVD2p0TFVbENc5cpKkt/62SqpVgEZnIsdvRaP0s6tt95tEb2937pw==}
+  '@expo-google-fonts/barlow-condensed@0.4.1':
+    resolution: {integrity: sha512-9yuXU1MpI4Dw/8rR4pj2EXcT4/31H5+DrrT47auF8IzD9r7SZPRoNVq8clRq7zxOTh7v1gJk3pBhydDVf2x/dA==}
 
-  '@expo-google-fonts/inter@0.4.2':
-    resolution: {integrity: sha512-syfiImMaDmq7cFi0of+waE2M4uSCyd16zgyWxdPOY7fN2VBmSLKEzkfbZgeOjJq61kSqPBNNtXjggiQiSD6gMQ==}
+  '@expo-google-fonts/source-serif-4@0.4.1':
+    resolution: {integrity: sha512-Ej4UXDjW1kwYPHG8YLq6fK1bqnJGb3K35J3S5atSL0ScKFAFLKvndxoTWeCls7mybtlS9x99hzwDeXCBkiI3rA==}
 
   '@expo/cli@54.0.13':
     resolution: {integrity: sha512-wUJVTByZzDN0q8UjXDlu6WD2BWoTJCKVVBGUBNmvViDX4FhnESwefmtXPoO54QUUKs6vY89WZryHllGArGfLLw==}
@@ -8834,9 +8834,9 @@ snapshots:
       '@eslint/core': 0.16.0
       levn: 0.4.1
 
-  '@expo-google-fonts/antonio@0.4.2': {}
+  '@expo-google-fonts/barlow-condensed@0.4.1': {}
 
-  '@expo-google-fonts/inter@0.4.2': {}
+  '@expo-google-fonts/source-serif-4@0.4.1': {}
 
   '@expo/cli@54.0.13(bufferutil@4.0.8)(expo-router@6.0.13)(expo@54.0.20)(graphql@15.8.0)(react-native@0.81.5(@babel/core@7.29.0)(@types/react@19.1.12)(bufferutil@4.0.8)(react@19.1.4))':
     dependencies:
