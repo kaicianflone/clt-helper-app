@@ -91,9 +91,13 @@ function buildParkingPopupHtml(props: {
     props.hourlyRate != null ? `$${props.hourlyRate}/hr` : "Rate not posted";
   return `
     <div class="font-sans">
-      <p class="font-semibold text-base leading-tight" style="color:#2a2a2a">${escapeHtml(props.name)}</p>
+      <p class="font-semibold text-base leading-tight" style="color:#2a2a2a">${escapeHtml(
+        props.name,
+      )}</p>
       <p class="text-sm mt-1" style="color:#5a5a5a">${rate} · Street parking</p>
-      <a href="/parking/${escapeHtml(props.slug)}" class="inline-block mt-3 text-sm font-medium underline" style="color:#B23A1F">View details →</a>
+      <a href="/parking/${escapeHtml(
+        props.slug,
+      )}" class="inline-block mt-3 text-sm font-medium underline" style="color:#B23A1F">View details →</a>
     </div>
   `;
 }

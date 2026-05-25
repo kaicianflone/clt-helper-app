@@ -123,12 +123,13 @@ export function GreenwayList({ greenways }: { greenways: Greenway[] }) {
           placeholder="Filter trails…"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          className="w-full rounded-md border border-[color:var(--border-soft)] bg-[color:var(--bg-cream-soft)] px-3.5 py-2.5 text-base text-[color:var(--fg-ink)] placeholder:text-[color:var(--fg-ink-muted)] focus:border-[color:var(--brick)] focus:outline-none focus:ring-2 focus:ring-[color:var(--brick)]/20"
+          className="w-full rounded-md border border-[color:var(--border-soft)] bg-[color:var(--bg-cream-soft)] px-3.5 py-2.5 text-base text-[color:var(--fg-ink)] placeholder:text-[color:var(--fg-ink-muted)] focus:border-[color:var(--brick)] focus:ring-2 focus:ring-[color:var(--brick)]/20 focus:outline-none"
         />
       </div>
       <p className="mb-3 text-xs text-[color:var(--fg-ink-muted)]">
         {statusLabel}
-        {query.trim() && ` · ${filtered.length} result${filtered.length !== 1 ? "s" : ""}`}
+        {query.trim() &&
+          ` · ${filtered.length} result${filtered.length !== 1 ? "s" : ""}`}
       </p>
       <ul className="divide-y divide-[color:var(--border-soft)]">
         {filtered.map((g) => (
