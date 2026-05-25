@@ -95,7 +95,7 @@ export default async function HomePage() {
         )}
       </section>
 
-      <nav className="mt-12 grid grid-cols-2 gap-3 sm:grid-cols-4">
+      <nav className="mt-12 grid grid-cols-3 gap-3">
         <Link
           href="/greenways"
           className="rounded-md border border-[color:var(--border-soft)] p-4 text-center text-sm font-medium text-[color:var(--fg-ink)] hover:bg-[color:var(--bg-cream-soft)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[color:var(--brick)]"
@@ -107,12 +107,6 @@ export default async function HomePage() {
           className="rounded-md border border-[color:var(--border-soft)] p-4 text-center text-sm font-medium text-[color:var(--fg-ink)] hover:bg-[color:var(--bg-cream-soft)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[color:var(--brick)]"
         >
           Deals
-        </Link>
-        <Link
-          href="/parking"
-          className="rounded-md border border-[color:var(--border-soft)] p-4 text-center text-sm font-medium text-[color:var(--fg-ink)] hover:bg-[color:var(--bg-cream-soft)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[color:var(--brick)]"
-        >
-          Parking
         </Link>
         <Link
           href="/map"

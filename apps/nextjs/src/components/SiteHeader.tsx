@@ -8,7 +8,6 @@ import { CrownIcon } from "~/components/CrownIcon";
 const navLinks = [
   { label: "Greenways", href: "/greenways" },
   { label: "Deals", href: "/deals" },
-  { label: "Parking", href: "/parking" },
   { label: "Map", href: "/map" },
 ];
 

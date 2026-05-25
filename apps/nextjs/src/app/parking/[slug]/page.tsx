@@ -77,9 +77,9 @@ export default async function ParkingDetailPage({ params }: Props) {
           aria-hidden="true"
         />
         <Link
-          href="/parking"
+          href="/map"
           className="absolute top-4 left-4 z-10 flex h-11 w-11 items-center justify-center rounded-full bg-black/20 text-white hover:bg-black/30"
-          aria-label="Back to parking"
+          aria-label="Back to map"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
