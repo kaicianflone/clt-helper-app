@@ -103,8 +103,10 @@ export function DealForm({
       const res = await fetch(
         `https://api.maptiler.com/geocoding/${q}.json?key=${env.NEXT_PUBLIC_MAPTILER_KEY}&bbox=-81.1,34.9,-80.5,35.5`,
       );
-      const data = await res.json();
-      const coords = data?.features?.[0]?.geometry?.coordinates;
+      const data = (await res.json()) as {
+        features?: { geometry?: { coordinates?: number[] } }[];
+      };
+      const coords = data.features?.[0]?.geometry?.coordinates;
       if (coords && coords.length >= 2) {
         setRestaurantLng(String(coords[0]));
         setRestaurantLat(String(coords[1]));
