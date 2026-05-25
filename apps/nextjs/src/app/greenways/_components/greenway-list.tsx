@@ -21,6 +21,7 @@ type LocationState =
   | { status: "unsupported" };
 
 export function GreenwayList({ greenways }: { greenways: Greenway[] }) {
+  const [query, setQuery] = useState("");
   const [location, setLocation] = useState<LocationState>({
     status: "unsupported",
   });
@@ -95,6 +96,12 @@ export function GreenwayList({ greenways }: { greenways: Greenway[] }) {
     [greenways, location],
   );
 
+  const filtered = useMemo(() => {
+    if (!query.trim()) return items;
+    const q = query.toLowerCase();
+    return items.filter((g) => g.name.toLowerCase().includes(q));
+  }, [items, query]);
+
   const statusLabel =
     location.status === "loading"
       ? "Finding nearest…"
@@ -106,11 +113,26 @@ export function GreenwayList({ greenways }: { greenways: Greenway[] }) {
 
   return (
     <>
+      <div className="mb-4">
+        <label htmlFor="greenway-search" className="sr-only">
+          Filter greenways
+        </label>
+        <input
+          id="greenway-search"
+          type="search"
+          placeholder="Filter trails…"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          className="w-full rounded-md border border-[color:var(--border-soft)] bg-[color:var(--bg-cream-soft)] px-3.5 py-2.5 text-base text-[color:var(--fg-ink)] placeholder:text-[color:var(--fg-ink-muted)] focus:border-[color:var(--brick)] focus:ring-2 focus:ring-[color:var(--brick)]/20 focus:outline-none"
+        />
+      </div>
       <p className="mb-3 text-xs text-[color:var(--fg-ink-muted)]">
         {statusLabel}
+        {query.trim() &&
+          ` · ${filtered.length} result${filtered.length !== 1 ? "s" : ""}`}
       </p>
       <ul className="divide-y divide-[color:var(--border-soft)]">
-        {items.map((g) => (
+        {filtered.map((g) => (
           <li key={g.slug}>
             <Link
               href={`/greenways/${g.slug}`}

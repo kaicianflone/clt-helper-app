@@ -91,9 +91,13 @@ function buildParkingPopupHtml(props: {
     props.hourlyRate != null ? `$${props.hourlyRate}/hr` : "Rate not posted";
   return `
     <div class="font-sans">
-      <p class="font-semibold text-base leading-tight" style="color:#2a2a2a">${escapeHtml(props.name)}</p>
+      <p class="font-semibold text-base leading-tight" style="color:#2a2a2a">${escapeHtml(
+        props.name,
+      )}</p>
       <p class="text-sm mt-1" style="color:#5a5a5a">${rate} · Street parking</p>
-      <a href="/parking/${escapeHtml(props.slug)}" class="inline-block mt-3 text-sm font-medium underline" style="color:#B23A1F">View details →</a>
+      <a href="/parking/${escapeHtml(
+        props.slug,
+      )}" class="inline-block mt-3 text-sm font-medium underline" style="color:#B23A1F">View details →</a>
     </div>
   `;
 }
@@ -322,6 +326,16 @@ export function GreenwayMap({
 
       let popup: maplibregl.Popup | null = null;
 
+      const focusPopup = (p: maplibregl.Popup) => {
+        const el = p.getElement();
+        const closeBtn = el.querySelector<HTMLElement>(
+          ".maplibregl-popup-close-button",
+        );
+        if (closeBtn) closeBtn.setAttribute("aria-label", "Close popup");
+        const firstLink = el.querySelector<HTMLElement>("a, button");
+        if (firstLink) firstLink.focus();
+      };
+
       map.on("click", "parking-clusters", (e) => {
         const feature = e.features?.[0];
         if (!feature) return;
@@ -359,6 +373,7 @@ export function GreenwayMap({
             }),
           )
           .addTo(map);
+        focusPopup(popup);
       });
 
       map.on("click", "deal-points", (e) => {
@@ -380,6 +395,7 @@ export function GreenwayMap({
             }),
           )
           .addTo(map);
+        focusPopup(popup);
       });
 
       map.on("click", "greenway-hit-area", (e) => {
@@ -404,6 +420,7 @@ export function GreenwayMap({
           .setLngLat(e.lngLat)
           .setHTML(buildPopupHtml({ ...props, slug: props.slug }))
           .addTo(map);
+        focusPopup(popup);
       });
       map.on("mouseenter", "greenway-hit-area", () => {
         map.getCanvas().style.cursor = "pointer";
@@ -438,7 +455,7 @@ export function GreenwayMap({
 
   return (
     <div
-      className="relative h-screen w-full"
+      className="relative h-[calc(100dvh-4rem)] w-full md:h-screen"
       role="application"
       aria-label="Charlotte greenways map"
     >

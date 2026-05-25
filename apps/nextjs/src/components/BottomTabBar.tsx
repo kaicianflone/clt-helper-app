@@ -78,7 +78,7 @@ export function BottomTabBar() {
 
   return (
     <nav
-      className="fixed right-0 bottom-0 left-0 z-40 flex h-16 w-full items-stretch border-t border-[color:var(--border-soft)] bg-[color:var(--bg-cream)] pb-[env(safe-area-inset-bottom)] md:hidden"
+      className="fixed right-0 bottom-0 left-0 z-40 flex min-h-16 w-full items-stretch border-t border-[color:var(--border-soft)] bg-[color:var(--bg-cream)] pb-[env(safe-area-inset-bottom)] md:hidden"
       aria-label="Mobile navigation"
     >
       {tabs.map(({ label, href, icon }) => {
