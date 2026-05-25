@@ -39,8 +39,8 @@
   "submit": {
     "production": {
       "ios": {
-        "ascAppId": "TBD-DURING-FIRST-SUBMIT",
-        "appleTeamId": "TBD-DURING-FIRST-SUBMIT"
+        "appleId": "kaicianflone@gmail.com",
+        "language": "en-US"
       },
       "android": {
         "serviceAccountKeyPath": "./google-service-account.json"

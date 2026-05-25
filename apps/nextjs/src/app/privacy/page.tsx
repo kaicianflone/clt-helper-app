@@ -74,7 +74,7 @@ export default function PrivacyPage() {
       <p className="mt-3 text-base leading-relaxed text-[color:var(--fg-ink-soft)]">
         The full source code, including this privacy policy, lives on{" "}
         <a
-          href="https://github.com/CHANGE-ME/clt-app"
+          href="https://github.com/kaicianflone/charlotte-greenways-and-stuff-app"
           className="text-[color:var(--brick)] underline underline-offset-2 hover:text-[color:var(--brick-deep)]"
           target="_blank"
           rel="noopener noreferrer"

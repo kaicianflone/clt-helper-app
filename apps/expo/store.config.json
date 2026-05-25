@@ -1,0 +1,18 @@
+{
+  "configVersion": 0,
+  "apple": {
+    "info": {
+      "en-US": {
+        "title": "CLT - Charlotte Guide",
+        "subtitle": "Greenways, Deals & Parking",
+        "description": "Discover Charlotte like a local. CLT is a free, open-source guide to the Queen City covering three essentials:\n\nGREENWAYS\nBrowse all 63 Mecklenburg County greenway trails with distances, surface types, and real-time status. Sort by proximity to find the closest trail to you.\n\nDAILY DEALS\nFind today's happy hour specials and restaurant deals across Charlotte. Filter by day of the week to plan your outings.\n\nPARKING\nLocate street parking zones with hours, rates, and availability. Never circle the block again.\n\nBUILT BY THE COMMUNITY\nEvery piece of data is community-verified. See something outdated? Submit a correction in seconds — your contribution becomes a public pull request on GitHub.\n\nNO ACCOUNTS, NO TRACKING\nCLT collects zero personal information. No logins, no analytics, no ads. Your location stays on your device and is only used to sort results by distance.\n\nOPEN SOURCE\nThe entire app is open source. Read the code, suggest features, or fork it for your own city.",
+        "keywords": "charlotte,greenways,trails,deals,parking,happy hour,CLT,north carolina,queen city,mecklenburg",
+        "promotionalText": "Charlotte's greenways, daily deals, and parking -- community-maintained and always free.",
+        "whatsNew": "First release! Browse 63 greenway trails, discover daily restaurant deals, and find street parking across Charlotte."
+      }
+    },
+    "categories": ["NAVIGATION", "FOOD_AND_DRINK"],
+    "copyright": "2026 CLT App Contributors",
+    "privacyPolicyUrl": "https://clt-app.com/privacy"
+  }
+}
