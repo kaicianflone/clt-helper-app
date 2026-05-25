@@ -2,10 +2,7 @@ import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { describe, expect, it } from "vitest";
 
-const tokensCSS = readFileSync(
-  resolve(__dirname, "tokens.css"),
-  "utf-8",
-);
+const tokensCSS = readFileSync(resolve(__dirname, "tokens.css"), "utf-8");
 const stylesCSS = readFileSync(
   resolve(__dirname, "../app/styles.css"),
   "utf-8",
