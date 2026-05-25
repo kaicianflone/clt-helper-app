@@ -137,7 +137,7 @@ export function SubmitSuccessOverlay({
               style={{
                 ...type.bodyMd,
                 color: colors.bg.creamSoft,
-                fontFamily: "Inter_600SemiBold",
+                fontFamily: "SourceSerif4_600SemiBold",
               }}
             >
               Done

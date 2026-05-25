@@ -48,7 +48,7 @@ export function StaleDataPrompt({
             style={{
               ...type.bodySm,
               color: colors.brick.DEFAULT,
-              fontFamily: "Inter_600SemiBold",
+              fontFamily: "SourceSerif4_600SemiBold",
               textDecorationLine: "underline",
             }}
           >

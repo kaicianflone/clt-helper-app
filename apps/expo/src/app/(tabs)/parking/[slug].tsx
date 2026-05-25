@@ -146,7 +146,7 @@ export default function ParkingDetailScreen() {
           style={{
             ...type.displayMd,
             color: colors.fg.ink,
-            fontFamily: "Antonio_700Bold",
+            fontFamily: "BarlowCondensed_700Bold",
           }}
         >
           {formatRate(lot.hourlyRate)}
@@ -251,7 +251,7 @@ export default function ParkingDetailScreen() {
                 style={{
                   ...type.bodyMd,
                   color: colors.bg.creamSoft,
-                  fontFamily: "Inter_600SemiBold",
+                  fontFamily: "SourceSerif4_600SemiBold",
                 }}
               >
                 Suggest edit

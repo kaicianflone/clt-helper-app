@@ -169,7 +169,7 @@ export default function OnboardingScreen() {
             style={{
               ...type.bodyMd,
               color: colors.bg.creamSoft,
-              fontFamily: "Inter_600SemiBold",
+              fontFamily: "SourceSerif4_600SemiBold",
             }}
           >
             {page === SLIDES.length - 1 ? "Get started" : "Next"}

@@ -1,14 +1,15 @@
-import { Antonio, Inter } from "next/font/google";
+import { Barlow_Condensed, Source_Serif_4 } from "next/font/google";
 
-export const fontDisplay = Antonio({
+export const fontDisplay = Barlow_Condensed({
   subsets: ["latin"],
-  weight: ["400", "700"],
-  variable: "--font-antonio",
+  weight: ["600", "700"],
+  variable: "--font-barlow-condensed",
   display: "swap",
 });
 
-export const fontSans = Inter({
+export const fontSans = Source_Serif_4({
   subsets: ["latin"],
-  variable: "--font-inter",
+  weight: ["400", "600"],
+  variable: "--font-source-serif",
   display: "swap",
 });
