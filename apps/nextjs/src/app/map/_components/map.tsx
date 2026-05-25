@@ -176,6 +176,16 @@ export function GreenwayMap({
         },
       });
       map.addLayer({
+        id: "greenway-hit-area",
+        type: "line",
+        source: "greenways",
+        paint: {
+          "line-color": "transparent",
+          "line-width": 44,
+          "line-opacity": 0,
+        },
+      });
+      map.addLayer({
         id: "greenway-lines",
         type: "line",
         source: "greenways",
@@ -372,7 +382,7 @@ export function GreenwayMap({
           .addTo(map);
       });
 
-      map.on("click", "greenway-lines", (e) => {
+      map.on("click", "greenway-hit-area", (e) => {
         const props = e.features?.[0]?.properties as
           | {
               slug?: string;
@@ -395,10 +405,10 @@ export function GreenwayMap({
           .setHTML(buildPopupHtml({ ...props, slug: props.slug }))
           .addTo(map);
       });
-      map.on("mouseenter", "greenway-lines", () => {
+      map.on("mouseenter", "greenway-hit-area", () => {
         map.getCanvas().style.cursor = "pointer";
       });
-      map.on("mouseleave", "greenway-lines", () => {
+      map.on("mouseleave", "greenway-hit-area", () => {
         map.getCanvas().style.cursor = "";
       });
       map.on("mouseenter", "deal-points", () => {
