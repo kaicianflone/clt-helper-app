@@ -56,11 +56,11 @@ describe("GIS_KIND_MAP", () => {
   });
 
   it("returns the correct config for a known kind", () => {
-    expect(GIS_KIND_MAP["park"]?.color).toBe("#3a7a4f");
-    expect(GIS_KIND_MAP["recycling"]?.color).toBe("#2e7d80");
+    expect(GIS_KIND_MAP.park?.color).toBe("#3a7a4f");
+    expect(GIS_KIND_MAP.recycling?.color).toBe("#2e7d80");
     expect(GIS_KIND_MAP["ev-charging"]?.color).toBe("#2f5fa0");
     expect(GIS_KIND_MAP["transit-parking"]?.color).toBe("#5b4b9c");
-    expect(GIS_KIND_MAP["amenity"]?.color).toBe("#9c6b3f");
+    expect(GIS_KIND_MAP.amenity?.color).toBe("#9c6b3f");
   });
 
   it("returns undefined for an unknown kind", () => {

@@ -67,4 +67,4 @@ export const GIS_KIND_MAP: Readonly<Record<string, GisKindConfig>> =
   Object.fromEntries(GIS_KINDS.map((k) => [k.kind, k]));
 
 /** The ordered list of kind strings */
-export const GIS_KIND_KEYS = GIS_KINDS.map((k) => k.kind) as string[];
+export const GIS_KIND_KEYS = GIS_KINDS.map((k) => k.kind);

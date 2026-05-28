@@ -85,11 +85,11 @@ describe("kind→color mapping", () => {
   );
 
   it("park marker color matches --map-park-marker token", () => {
-    expect(colorByKind["park"]).toBe("#3A7A4F");
+    expect(colorByKind.park).toBe("#3A7A4F");
   });
 
   it("recycling marker color matches --map-recycling token", () => {
-    expect(colorByKind["recycling"]).toBe("#2E7D80");
+    expect(colorByKind.recycling).toBe("#2E7D80");
   });
 
   it("ev-charging marker color matches --map-ev-charging token", () => {
@@ -101,7 +101,7 @@ describe("kind→color mapping", () => {
   });
 
   it("amenity marker color matches --map-amenity token", () => {
-    expect(colorByKind["amenity"]).toBe("#9C6B3F");
+    expect(colorByKind.amenity).toBe("#9C6B3F");
   });
 });
 
@@ -131,13 +131,13 @@ describe("toggleKindVisibility", () => {
   it("toggles a visible kind to hidden", () => {
     const vis = buildDefaultVisibility(MAP_KIND_CONFIGS);
     const next = toggleKindVisibility(vis, "park");
-    expect(next["park"]).toBe(false);
+    expect(next.park).toBe(false);
   });
 
   it("toggles a hidden kind back to visible", () => {
     const vis = { ...buildDefaultVisibility(MAP_KIND_CONFIGS), park: false };
     const next = toggleKindVisibility(vis, "park");
-    expect(next["park"]).toBe(true);
+    expect(next.park).toBe(true);
   });
 
   it("does not mutate the input state", () => {
