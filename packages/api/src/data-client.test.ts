@@ -188,17 +188,15 @@ describe("fetchBundle — new kinds (parks, recycling, transit-parking, ev-charg
   ] as const)(
     "fetchBundle %s reads from CDN when baseUrl is set",
     async (kind, fetchFn) => {
-      const fetchMock = vi
-        .fn()
-        .mockResolvedValue(
-          new Response(
-            JSON.stringify({
-              schemaVersion: 1,
-              builtAt: "",
-              entries: [{ slug: kind }],
-            }),
-          ),
-        );
+      const fetchMock = vi.fn().mockResolvedValue(
+        new Response(
+          JSON.stringify({
+            schemaVersion: 1,
+            builtAt: "",
+            entries: [{ slug: kind }],
+          }),
+        ),
+      );
       const bundle = await fetchFn({
         baseUrl: "https://cdn.example.com",
         fetchImpl: fetchMock,
