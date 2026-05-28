@@ -26,8 +26,8 @@ export type EntityKind =
   | "recycling"
   | "transit-parking"
   | "ev-charging"
-  | "landfill"
-  | "amenity";
+  | "landfills"
+  | "amenities";
 
 export interface DataClientOptions<T> {
   /**
@@ -188,6 +188,6 @@ export const fetchTransitParking = (opts: DataClientOptions<TransitParking>) =>
 export const fetchEvCharging = (opts: DataClientOptions<EvCharging>) =>
   fetchBundle<EvCharging>("ev-charging", opts);
 export const fetchLandfill = (opts: DataClientOptions<Landfill>) =>
-  fetchBundle<Landfill>("landfill", opts);
+  fetchBundle<Landfill>("landfills", opts);
 export const fetchAmenity = (opts: DataClientOptions<Amenity>) =>
-  fetchBundle<Amenity>("amenity", opts);
+  fetchBundle<Amenity>("amenities", opts);

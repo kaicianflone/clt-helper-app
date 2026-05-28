@@ -183,8 +183,8 @@ describe("fetchBundle — new kinds (parks, recycling, transit-parking, ev-charg
     ["recycling", fetchRecycling],
     ["transit-parking", fetchTransitParking],
     ["ev-charging", fetchEvCharging],
-    ["landfill", fetchLandfill],
-    ["amenity", fetchAmenity],
+    ["landfills", fetchLandfill],
+    ["amenities", fetchAmenity],
   ] as const)(
     "fetchBundle %s reads from CDN when baseUrl is set",
     async (kind, fetchFn) => {
