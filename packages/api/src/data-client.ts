@@ -1,6 +1,16 @@
 import fs from "node:fs";
 import path from "node:path";
-import type { Deal, Greenway, ParkingLot } from "@clt/data-schema";
+import type {
+  Deal,
+  Greenway,
+  ParkingLot,
+  Park,
+  Recycling,
+  TransitParking,
+  EvCharging,
+  Landfill,
+  Amenity,
+} from "@clt/data-schema";
 
 export interface Bundle<T> {
   schemaVersion: number;
@@ -168,16 +178,16 @@ export const fetchDeals = (opts: DataClientOptions<Deal>) =>
 export const fetchParking = (opts: DataClientOptions<ParkingLot>) =>
   fetchBundle<ParkingLot>("parking", opts);
 
-// Convenience typed wrappers — new kinds (typed as unknown until T01 schemas land)
-export const fetchParks = (opts: DataClientOptions<unknown>) =>
-  fetchBundle<unknown>("parks", opts);
-export const fetchRecycling = (opts: DataClientOptions<unknown>) =>
-  fetchBundle<unknown>("recycling", opts);
-export const fetchTransitParking = (opts: DataClientOptions<unknown>) =>
-  fetchBundle<unknown>("transit-parking", opts);
-export const fetchEvCharging = (opts: DataClientOptions<unknown>) =>
-  fetchBundle<unknown>("ev-charging", opts);
-export const fetchLandfill = (opts: DataClientOptions<unknown>) =>
-  fetchBundle<unknown>("landfill", opts);
-export const fetchAmenity = (opts: DataClientOptions<unknown>) =>
-  fetchBundle<unknown>("amenity", opts);
+// Convenience typed wrappers — new GIS kinds
+export const fetchParks = (opts: DataClientOptions<Park>) =>
+  fetchBundle<Park>("parks", opts);
+export const fetchRecycling = (opts: DataClientOptions<Recycling>) =>
+  fetchBundle<Recycling>("recycling", opts);
+export const fetchTransitParking = (opts: DataClientOptions<TransitParking>) =>
+  fetchBundle<TransitParking>("transit-parking", opts);
+export const fetchEvCharging = (opts: DataClientOptions<EvCharging>) =>
+  fetchBundle<EvCharging>("ev-charging", opts);
+export const fetchLandfill = (opts: DataClientOptions<Landfill>) =>
+  fetchBundle<Landfill>("landfill", opts);
+export const fetchAmenity = (opts: DataClientOptions<Amenity>) =>
+  fetchBundle<Amenity>("amenity", opts);

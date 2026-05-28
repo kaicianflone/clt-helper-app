@@ -224,8 +224,23 @@ describe("fetchBundle — new kinds (parks, recycling, transit-parking, ev-charg
   });
 
   it("falls back to offlineBundle for transit-parking when localDir lacks the file", async () => {
-    const offline = { schemaVersion: 1, builtAt: "", entries: [{ slug: "offline-tp" }] };
+    const offline = {
+      schemaVersion: 1,
+      builtAt: "",
+      entries: [
+        {
+          slug: "offline-tp",
+          name: "Offline P&R",
+          description: "",
+          center: { lat: 35.2, lng: -80.8 },
+          address: "100 Test St",
+          freeParking: true,
+          photos: [],
+          lastVerified: "2026-05-28",
+        },
+      ],
+    };
     const bundle = await fetchTransitParking({ localDir: tmpDir, offlineBundle: offline });
-    expect(bundle.entries).toEqual([{ slug: "offline-tp" }]);
+    expect(bundle.entries[0]?.slug).toBe("offline-tp");
   });
 });
