@@ -28,6 +28,13 @@ export interface ParkingPin {
   hourlyRate: number | null;
 }
 
+/** A generic point-of-interest pin for new GIS entity kinds. */
+export interface GisPin {
+  name: string;
+  /** [lat, lng] — converted to [lng, lat] by the map component */
+  latLng: [number, number];
+}
+
 export default async function MapPage() {
   const caller = await createServerCaller();
   const [greenways, deals, parkingLots] = await Promise.all([
@@ -69,6 +76,19 @@ export default async function MapPage() {
     hourlyRate: p.hourlyRate,
   }));
 
+  // New GIS kind data. Data fetchers for these kinds will be added as the
+  // importers and packages/api routers are completed (parallel tasks T01–T05).
+  // Until then, each kind defaults to an empty array so the map layers still
+  // register (with correct color + legend entries) and degrade gracefully.
+  const gisPins: Record<string, GisPin[]> = {
+    park: [],
+    recycling: [],
+    "ev-charging": [],
+    "transit-parking": [],
+    landfill: [],
+    amenity: [],
+  };
+
   return (
     <main>
       <Link
@@ -81,6 +101,7 @@ export default async function MapPage() {
         greenways={greenways}
         dealLocations={dealLocations}
         parkingPins={parkingPins}
+        gisPins={gisPins}
         mapTilerKey={env.NEXT_PUBLIC_MAPTILER_KEY}
       />
     </main>

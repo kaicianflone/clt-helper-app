@@ -35,6 +35,11 @@
   --map-trail: #2f6e3a;
   --map-parking: #b23a1f;
   --map-deal: #b8902d;
+  --map-park-marker: #3a7a4f;
+  --map-recycling: #2e7d80;
+  --map-ev-charging: #2f5fa0;
+  --map-transit-parking: #5b4b9c;
+  --map-amenity: #9c6b3f;
 
   /* Spacing (8px grid) */
   --space-1: 4px;
