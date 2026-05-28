@@ -11,6 +11,9 @@
  *  - outSR=4326 + geometry object (not raw x/y attributes) for meck-arcgis
  */
 
+import fs from "node:fs";
+import path from "node:path";
+
 import {
   ParkSchema,
   RecyclingSchema,
@@ -325,21 +328,14 @@ export async function fetchMeckLandfills(
 // charlotte-od adapter (CATS Park-and-Ride lots)
 // ---------------------------------------------------------------------------
 
-/**
- * TODO: Replace this placeholder with the verified Charlotte Open Data ArcGIS
- * endpoint for CATS Park-and-Ride lots. The dataset lives on Charlotte's ArcGIS
- * portal; once the exact service URL is confirmed, replace this constant.
- *
- * Candidate endpoint (verify before use):
- * https://maps.charlottenc.gov/arcgis/rest/services/Transportation/CATSParkAndRide/FeatureServer/0/query
- */
+// Verified CATS / City-of-Charlotte ArcGIS FeatureServer (61 lots, point geometry, OBJECTID present)
 export const CHARLOTTE_OD_TRANSIT_PARKING_URL =
-  // TODO: confirm exact ArcGIS FeatureServer URL for CATS Park-and-Ride dataset
-  "https://maps.charlottenc.gov/arcgis/rest/services/Transportation/CATSParkAndRide/FeatureServer/0/query";
+  "https://services.arcgis.com/9Nl857LBlQVyzq54/arcgis/rest/services/CATS_Park_and_Ride_Lots/FeatureServer/0/query";
 
 /**
- * Fetches CATS Park-and-Ride lots from Charlotte Open Data.
- * Expected fields: name/lot_name, address, total_spaces/totalspaces, free_parking
+ * Fetches CATS Park-and-Ride lots from the verified City of Charlotte / CATS ArcGIS service.
+ * Real field names: Name, Street/City/State (address), Spaces (totalSpaces),
+ * Status ("No Cost" → freeParking), Type (transit mode → transitLines).
  */
 export async function fetchTransitParking(
   fetchImpl: FetchImpl = fetch,
@@ -357,16 +353,20 @@ export async function fetchTransitParking(
     const p = feat.properties;
     const [lng, lat] = feat.geometry.coordinates;
 
-    // Field names may vary — try multiple common conventions
-    const name = String(
-      p["lot_name"] ?? p["name"] ?? p["LOT_NAME"] ?? p["NAME"] ?? "Unnamed Lot",
-    );
-    const address = String(
-      p["address"] ?? p["ADDRESS"] ?? p["location"] ?? "",
-    );
+    // Real field: Name (with fallback for older/alternate services)
+    const name = String(p["Name"] ?? p["name"] ?? p["lot_name"] ?? "Unnamed Lot");
 
-    const rawSpaces =
-      p["total_spaces"] ?? p["totalspaces"] ?? p["TOTAL_SPACES"] ?? p["spaces"];
+    // Real fields: Street, City, State — join into address string
+    const streetParts = [p["Street"], p["City"], p["State"]]
+      .map((v) => (typeof v === "string" ? v.trim() : ""))
+      .filter(Boolean);
+    const address =
+      streetParts.length > 0
+        ? streetParts.join(", ")
+        : String(p["address"] ?? p["location"] ?? "");
+
+    // Real field: Spaces (number)
+    const rawSpaces = p["Spaces"] ?? p["total_spaces"] ?? p["spaces"];
     const totalSpaces =
       rawSpaces !== null &&
       rawSpaces !== undefined &&
@@ -375,17 +375,18 @@ export async function fetchTransitParking(
         ? Math.round(Number(rawSpaces))
         : undefined;
 
-    const freeParkingRaw =
-      p["free_parking"] ?? p["free"] ?? p["FREE_PARKING"];
-    const freeParking = isTruthy(freeParkingRaw);
+    // Real field: Status — "No Cost" means free parking
+    const statusRaw = p["Status"] ?? p["free_parking"] ?? p["free"];
+    const freeParking =
+      typeof statusRaw === "string"
+        ? statusRaw === "No Cost" || isTruthy(statusRaw)
+        : isTruthy(statusRaw);
 
-    const transitLinesRaw = p["transit_lines"] ?? p["routes"] ?? p["ROUTES"];
+    // Real field: Type (transit mode, e.g. "Bus", "Rail") → single-element transitLines array
+    const typeRaw = p["Type"] ?? p["transit_lines"] ?? p["routes"];
     const transitLines =
-      typeof transitLinesRaw === "string" && transitLinesRaw.trim()
-        ? transitLinesRaw
-            .split(/[,;]+/)
-            .map((s: string) => s.trim())
-            .filter(Boolean)
+      typeof typeRaw === "string" && typeRaw.trim()
+        ? [typeRaw.trim()]
         : undefined;
 
     return TransitParkingSchema.parse({
@@ -531,6 +532,45 @@ export async function fetchEvCharging(
 }
 
 // ---------------------------------------------------------------------------
+// Persistence helper (mirrors import-greenways.ts lines ~554-650)
+// ---------------------------------------------------------------------------
+
+/**
+ * Writes per-slug JSON files + _index.json into `dir`, mirroring the
+ * import-greenways.ts persistence pattern:
+ *  1. mkdirSync (recursive)
+ *  2. Delete all existing *.json files in the directory
+ *  3. Write <slug>.json per record
+ *  4. Write _index.json as { entries: [{slug, name}] } sorted by slug
+ */
+export function writeEntities(
+  dir: string,
+  records: Array<{ slug: string; name: string }>,
+): void {
+  fs.mkdirSync(dir, { recursive: true });
+
+  // Wipe existing .json files so removed entities actually go away
+  for (const f of fs.readdirSync(dir)) {
+    if (f.endsWith(".json")) fs.unlinkSync(path.join(dir, f));
+  }
+
+  const entries: { slug: string; name: string }[] = [];
+  for (const record of records) {
+    fs.writeFileSync(
+      path.join(dir, `${record.slug}.json`),
+      JSON.stringify(record, null, 2) + "\n",
+    );
+    entries.push({ slug: record.slug, name: record.name });
+  }
+
+  entries.sort((a, b) => (a.slug < b.slug ? -1 : 1));
+  fs.writeFileSync(
+    path.join(dir, "_index.json"),
+    JSON.stringify({ entries }, null, 2) + "\n",
+  );
+}
+
+// ---------------------------------------------------------------------------
 // CLI entry point
 // ---------------------------------------------------------------------------
 
@@ -547,41 +587,69 @@ const VALID_ADAPTERS: AdapterName[] = [
 const run = async () => {
   const args = process.argv.slice(2);
   const adapterArg = args.find((a) => a.startsWith("--adapter="))?.replace("--adapter=", "");
+  const dryRun = args.includes("--dry-run");
 
   if (!adapterArg || !VALID_ADAPTERS.includes(adapterArg as AdapterName)) {
     throw new Error(
-      `Usage: tsx scripts/import-gis.ts --adapter=<name>\n` +
+      `Usage: tsx scripts/import-gis.ts --adapter=<name> [--dry-run]\n` +
         `Valid adapters: ${VALID_ADAPTERS.join(", ")}`,
     );
   }
 
   const adapter = adapterArg as AdapterName;
-  console.log(`Running import-gis adapter: ${adapter}`);
+  console.log(`Running import-gis adapter: ${adapter}${dryRun ? " (dry-run)" : ""}`);
+
+  const repoRoot = path.resolve(
+    path.dirname(new URL(import.meta.url).pathname),
+    "..",
+  );
 
   switch (adapter) {
     case "meck-parks": {
       const { parks, amenities } = await fetchMeckParks();
       console.log(`Fetched ${parks.length} parks, ${amenities.length} amenity points`);
+      if (!dryRun) {
+        writeEntities(path.join(repoRoot, "data/parks"), parks);
+        console.log(`Wrote ${parks.length} parks to data/parks`);
+        writeEntities(path.join(repoRoot, "data/amenities"), amenities);
+        console.log(`Wrote ${amenities.length} amenities to data/amenities`);
+      }
       break;
     }
     case "meck-recycling": {
       const recycling = await fetchMeckRecycling();
       console.log(`Fetched ${recycling.length} recycling/solid-waste facilities`);
+      if (!dryRun) {
+        writeEntities(path.join(repoRoot, "data/recycling"), recycling);
+        console.log(`Wrote ${recycling.length} recycling facilities to data/recycling`);
+      }
       break;
     }
     case "meck-landfills": {
       const landfills = await fetchMeckLandfills();
       console.log(`Fetched ${landfills.length} landfills`);
+      if (!dryRun) {
+        writeEntities(path.join(repoRoot, "data/landfills"), landfills);
+        console.log(`Wrote ${landfills.length} landfills to data/landfills`);
+      }
       break;
     }
     case "charlotte-od": {
       const lots = await fetchTransitParking();
       console.log(`Fetched ${lots.length} CATS Park-and-Ride lots`);
+      if (!dryRun) {
+        writeEntities(path.join(repoRoot, "data/transit-parking"), lots);
+        console.log(`Wrote ${lots.length} transit-parking lots to data/transit-parking`);
+      }
       break;
     }
     case "nrel": {
       const stations = await fetchEvCharging();
       console.log(`Fetched ${stations.length} EV charging stations`);
+      if (!dryRun) {
+        writeEntities(path.join(repoRoot, "data/ev-charging"), stations);
+        console.log(`Wrote ${stations.length} EV charging stations to data/ev-charging`);
+      }
       break;
     }
   }

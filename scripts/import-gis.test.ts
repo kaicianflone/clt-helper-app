@@ -4,6 +4,9 @@
  * All tests mock network — no live fetches are made.
  */
 
+import fs from "node:fs";
+import os from "node:os";
+import path from "node:path";
 import { describe, it, expect, vi, beforeEach } from "vitest";
 import {
   paginateArcGis,
@@ -13,6 +16,7 @@ import {
   fetchTransitParking,
   fetchEvCharging,
   buildNrelUrl,
+  writeEntities,
   CHARLOTTE_OD_TRANSIT_PARKING_URL,
   type ArcGisFeature,
   type ArcGisFeatureCollection,
@@ -354,13 +358,16 @@ describe("fetchMeckLandfills", () => {
 // ---------------------------------------------------------------------------
 
 describe("fetchTransitParking", () => {
-  it("parses a CATS Park-and-Ride feature into a valid TransitParkingSchema record", async () => {
+  it("parses a CATS Park-and-Ride feature using real field names (Name/Street/City/State/Spaces/Status/Type)", async () => {
+    // Real field names from the verified CATS ArcGIS FeatureServer
     const feat = makePoint(-80.88, 35.3, {
-      lot_name: "Rosa Parks Transit Center",
-      address: "600 E Trade St, Charlotte, NC",
-      total_spaces: "500",
-      free_parking: "Yes",
-      routes: "9,15,21",
+      Name: "Rosa Parks Transit Center",
+      Street: "600 E Trade St",
+      City: "Charlotte",
+      State: "NC",
+      Spaces: 500,
+      Status: "No Cost",
+      Type: "Bus",
     }, 1);
 
     const mockFetchImpl = mockFetch([makeArcGisResponse([feat])]);
@@ -369,22 +376,70 @@ describe("fetchTransitParking", () => {
     expect(result).toHaveLength(1);
     expect(() => TransitParkingSchema.parse(result[0])).not.toThrow();
     expect(result[0]!.name).toBe("Rosa Parks Transit Center");
+    expect(result[0]!.address).toBe("600 E Trade St, Charlotte, NC");
     expect(result[0]!.freeParking).toBe(true);
     expect(result[0]!.totalSpaces).toBe(500);
+    expect(result[0]!.transitLines).toEqual(["Bus"]);
     expect(result[0]!.center.lat).toBe(35.3);
     expect(result[0]!.center.lng).toBe(-80.88);
   });
 
-  it("has a TODO constant for the endpoint URL", () => {
-    // Verify the constant is defined (may be a placeholder)
-    expect(typeof CHARLOTTE_OD_TRANSIT_PARKING_URL).toBe("string");
-    expect(CHARLOTTE_OD_TRANSIT_PARKING_URL.length).toBeGreaterThan(0);
+  it("maps Status='No Cost' to freeParking=true and other Status values to freeParking=false", async () => {
+    const freeFeature = makePoint(-80.88, 35.3, {
+      Name: "Free Lot",
+      Street: "1 Free St",
+      City: "Charlotte",
+      State: "NC",
+      Spaces: 100,
+      Status: "No Cost",
+      Type: "Rail",
+    }, 1);
+    const paidFeature = makePoint(-80.89, 35.31, {
+      Name: "Paid Lot",
+      Street: "2 Paid St",
+      City: "Charlotte",
+      State: "NC",
+      Spaces: 200,
+      Status: "Fee",
+      Type: "Bus",
+    }, 2);
+
+    const mockFetchImpl = mockFetch([makeArcGisResponse([freeFeature, paidFeature])]);
+    const result = await fetchTransitParking(mockFetchImpl, 1);
+
+    expect(result[0]!.freeParking).toBe(true);
+    expect(result[1]!.freeParking).toBe(false);
+  });
+
+  it("puts Type field as single-element transitLines array", async () => {
+    const feat = makePoint(-80.88, 35.3, {
+      Name: "Rail Station Lot",
+      Street: "100 Rail Ave",
+      City: "Charlotte",
+      State: "NC",
+      Spaces: 300,
+      Status: "No Cost",
+      Type: "Rail",
+    }, 1);
+
+    const mockFetchImpl = mockFetch([makeArcGisResponse([feat])]);
+    const result = await fetchTransitParking(mockFetchImpl, 1);
+
+    expect(result[0]!.transitLines).toEqual(["Rail"]);
+  });
+
+  it("points at the verified CATS services.arcgis.com endpoint", () => {
+    expect(CHARLOTTE_OD_TRANSIT_PARKING_URL).toBe(
+      "https://services.arcgis.com/9Nl857LBlQVyzq54/arcgis/rest/services/CATS_Park_and_Ride_Lots/FeatureServer/0/query",
+    );
   });
 
   it("handles missing optional fields gracefully", async () => {
     const feat = makePoint(-80.88, 35.3, {
-      name: "Simple Lot",
-      address: "100 Main St",
+      Name: "Simple Lot",
+      Street: "100 Main St",
+      City: "Charlotte",
+      State: "NC",
     }, 1);
 
     const mockFetchImpl = mockFetch([makeArcGisResponse([feat])]);
@@ -394,6 +449,7 @@ describe("fetchTransitParking", () => {
     expect(() => TransitParkingSchema.parse(result[0])).not.toThrow();
     expect(result[0]!.freeParking).toBe(false);
     expect(result[0]!.totalSpaces).toBeUndefined();
+    expect(result[0]!.transitLines).toBeUndefined();
   });
 });
 
@@ -614,6 +670,111 @@ describe("fetchEvCharging", () => {
     const result = await fetchEvCharging(fetchImpl);
     expect(result).toHaveLength(1);
     expect(result[0]!.name).toBe("Dupe Station");
+  });
+});
+
+// ---------------------------------------------------------------------------
+// writeEntities — persistence helper
+// ---------------------------------------------------------------------------
+
+describe("writeEntities", () => {
+  it("writes per-slug JSON files and _index.json to the target directory", () => {
+    const tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), "import-gis-test-"));
+    try {
+      const records = [
+        { slug: "lot-a", name: "Lot A", center: { lat: 35.2, lng: -80.8 } },
+        { slug: "lot-b", name: "Lot B", center: { lat: 35.3, lng: -80.9 } },
+      ];
+
+      writeEntities(tmpDir, records);
+
+      // Per-slug files exist
+      const files = fs.readdirSync(tmpDir).sort();
+      expect(files).toContain("lot-a.json");
+      expect(files).toContain("lot-b.json");
+      expect(files).toContain("_index.json");
+
+      // Per-slug file content matches the record
+      const aContent = JSON.parse(fs.readFileSync(path.join(tmpDir, "lot-a.json"), "utf8")) as typeof records[0];
+      expect(aContent.slug).toBe("lot-a");
+      expect(aContent.name).toBe("Lot A");
+
+      // _index.json has entries array with slug+name
+      const index = JSON.parse(fs.readFileSync(path.join(tmpDir, "_index.json"), "utf8")) as { entries: { slug: string; name: string }[] };
+      expect(index.entries).toHaveLength(2);
+      expect(index.entries.map((e) => e.slug).sort()).toEqual(["lot-a", "lot-b"]);
+      expect(index.entries.map((e) => e.name)).toContain("Lot A");
+      expect(index.entries.map((e) => e.name)).toContain("Lot B");
+    } finally {
+      fs.rmSync(tmpDir, { recursive: true, force: true });
+    }
+  });
+
+  it("_index.json entries are sorted by slug", () => {
+    const tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), "import-gis-test-"));
+    try {
+      const records = [
+        { slug: "zzz-last", name: "ZZZ Last" },
+        { slug: "aaa-first", name: "AAA First" },
+        { slug: "mmm-middle", name: "MMM Middle" },
+      ];
+
+      writeEntities(tmpDir, records);
+
+      const index = JSON.parse(fs.readFileSync(path.join(tmpDir, "_index.json"), "utf8")) as { entries: { slug: string; name: string }[] };
+      expect(index.entries.map((e) => e.slug)).toEqual([
+        "aaa-first",
+        "mmm-middle",
+        "zzz-last",
+      ]);
+    } finally {
+      fs.rmSync(tmpDir, { recursive: true, force: true });
+    }
+  });
+
+  it("clears existing .json files before writing new ones", () => {
+    const tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), "import-gis-test-"));
+    try {
+      // Write a stale file that should be deleted
+      fs.writeFileSync(path.join(tmpDir, "stale-lot.json"), '{"stale":true}\n');
+
+      const records = [{ slug: "new-lot", name: "New Lot" }];
+      writeEntities(tmpDir, records);
+
+      const files = fs.readdirSync(tmpDir).sort();
+      expect(files).not.toContain("stale-lot.json");
+      expect(files).toContain("new-lot.json");
+      expect(files).toContain("_index.json");
+    } finally {
+      fs.rmSync(tmpDir, { recursive: true, force: true });
+    }
+  });
+
+  it("creates the directory if it does not exist", () => {
+    const tmpBase = fs.mkdtempSync(path.join(os.tmpdir(), "import-gis-test-"));
+    const newDir = path.join(tmpBase, "nested", "dir");
+    try {
+      expect(fs.existsSync(newDir)).toBe(false);
+      writeEntities(newDir, [{ slug: "test", name: "Test" }]);
+      expect(fs.existsSync(newDir)).toBe(true);
+      expect(fs.existsSync(path.join(newDir, "test.json"))).toBe(true);
+    } finally {
+      fs.rmSync(tmpBase, { recursive: true, force: true });
+    }
+  });
+
+  it("writes files with trailing newline (matching import-greenways convention)", () => {
+    const tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), "import-gis-test-"));
+    try {
+      writeEntities(tmpDir, [{ slug: "my-lot", name: "My Lot" }]);
+      const raw = fs.readFileSync(path.join(tmpDir, "my-lot.json"), "utf8");
+      expect(raw.endsWith("\n")).toBe(true);
+
+      const indexRaw = fs.readFileSync(path.join(tmpDir, "_index.json"), "utf8");
+      expect(indexRaw.endsWith("\n")).toBe(true);
+    } finally {
+      fs.rmSync(tmpDir, { recursive: true, force: true });
+    }
   });
 });
 
