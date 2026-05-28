@@ -1,10 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import {
-  GIS_KIND_KEYS,
-  GIS_KIND_MAP,
-  GIS_KINDS,
-} from "./map-kinds";
+import { GIS_KIND_KEYS, GIS_KIND_MAP, GIS_KINDS } from "./map-kinds";
 
 const EXPECTED_KINDS = [
   "park",

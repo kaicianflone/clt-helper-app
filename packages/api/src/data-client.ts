@@ -1,15 +1,15 @@
 import fs from "node:fs";
 import path from "node:path";
 import type {
+  Amenity,
   Deal,
+  EvCharging,
   Greenway,
-  ParkingLot,
+  Landfill,
   Park,
+  ParkingLot,
   Recycling,
   TransitParking,
-  EvCharging,
-  Landfill,
-  Amenity,
 } from "@clt/data-schema";
 
 export interface Bundle<T> {

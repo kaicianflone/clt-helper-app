@@ -4,13 +4,13 @@ import path from "node:path";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 import {
+  fetchAmenity,
   fetchBundle,
+  fetchEvCharging,
+  fetchLandfill,
   fetchParks,
   fetchRecycling,
   fetchTransitParking,
-  fetchEvCharging,
-  fetchLandfill,
-  fetchAmenity,
 } from "./data-client";
 
 describe("fetchBundle", () => {
@@ -188,11 +188,17 @@ describe("fetchBundle — new kinds (parks, recycling, transit-parking, ev-charg
   ] as const)(
     "fetchBundle %s reads from CDN when baseUrl is set",
     async (kind, fetchFn) => {
-      const fetchMock = vi.fn().mockResolvedValue(
-        new Response(
-          JSON.stringify({ schemaVersion: 1, builtAt: "", entries: [{ slug: kind }] }),
-        ),
-      );
+      const fetchMock = vi
+        .fn()
+        .mockResolvedValue(
+          new Response(
+            JSON.stringify({
+              schemaVersion: 1,
+              builtAt: "",
+              entries: [{ slug: kind }],
+            }),
+          ),
+        );
       const bundle = await fetchFn({
         baseUrl: "https://cdn.example.com",
         fetchImpl: fetchMock,
@@ -208,7 +214,11 @@ describe("fetchBundle — new kinds (parks, recycling, transit-parking, ev-charg
   it("fetchParks reads from localDir when baseUrl is absent", async () => {
     fs.writeFileSync(
       path.join(tmpDir, "parks.json"),
-      JSON.stringify({ schemaVersion: 1, builtAt: "", entries: [{ slug: "romare-bearden" }] }),
+      JSON.stringify({
+        schemaVersion: 1,
+        builtAt: "",
+        entries: [{ slug: "romare-bearden" }],
+      }),
     );
     const bundle = await fetchParks({ localDir: tmpDir });
     expect(bundle.entries).toEqual([{ slug: "romare-bearden" }]);
@@ -217,7 +227,11 @@ describe("fetchBundle — new kinds (parks, recycling, transit-parking, ev-charg
   it("fetchEvCharging reads from localDir when baseUrl is absent", async () => {
     fs.writeFileSync(
       path.join(tmpDir, "ev-charging.json"),
-      JSON.stringify({ schemaVersion: 1, builtAt: "", entries: [{ slug: "station-1" }] }),
+      JSON.stringify({
+        schemaVersion: 1,
+        builtAt: "",
+        entries: [{ slug: "station-1" }],
+      }),
     );
     const bundle = await fetchEvCharging({ localDir: tmpDir });
     expect(bundle.entries).toEqual([{ slug: "station-1" }]);
@@ -240,7 +254,10 @@ describe("fetchBundle — new kinds (parks, recycling, transit-parking, ev-charg
         },
       ],
     };
-    const bundle = await fetchTransitParking({ localDir: tmpDir, offlineBundle: offline });
+    const bundle = await fetchTransitParking({
+      localDir: tmpDir,
+      offlineBundle: offline,
+    });
     expect(bundle.entries[0]?.slug).toBe("offline-tp");
   });
 });

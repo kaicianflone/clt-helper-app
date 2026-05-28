@@ -6,8 +6,8 @@ import maplibregl from "maplibre-gl";
 
 import type { DealLocation, GisPin, ParkingPin } from "../page";
 import type { LayerVisibility } from "./map-legend";
-import { MapLegend } from "./map-legend";
 import { GIS_KINDS } from "./map-kinds";
+import { MapLegend } from "./map-legend";
 import { buildPopupHtml } from "./popup";
 
 type GreenwayWithGeometry =

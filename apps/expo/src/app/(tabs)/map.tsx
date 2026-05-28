@@ -10,8 +10,8 @@ import { useQuery } from "@tanstack/react-query";
 
 import { MapLegend } from "~/components/map-legend";
 import {
-  MAP_KIND_CONFIGS,
   buildDefaultVisibility,
+  MAP_KIND_CONFIGS,
   toggleKindVisibility,
 } from "~/map/kinds";
 import { colors, space, type } from "~/styles/tokens";

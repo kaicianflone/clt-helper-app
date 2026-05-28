@@ -15,14 +15,20 @@ interface LegendRowProps {
 }
 
 /** Inner content of a legend row (without the <li> wrapper) */
-function LegendRowInner({ label, color, visible, onToggle, shape }: LegendRowProps) {
+function LegendRowInner({
+  label,
+  color,
+  visible,
+  onToggle,
+  shape,
+}: LegendRowProps) {
   return (
     <button
       type="button"
       onClick={onToggle}
       aria-pressed={visible}
       aria-label={`${visible ? "Hide" : "Show"} ${label}`}
-      className="flex w-full items-center gap-2 rounded px-1 py-0.5 text-left text-sm hover:bg-black/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--brick)] active:bg-black/10"
+      className="flex w-full items-center gap-2 rounded px-1 py-0.5 text-left text-sm hover:bg-black/5 focus-visible:ring-2 focus-visible:ring-[color:var(--brick)] focus-visible:outline-none active:bg-black/10"
       style={{ opacity: visible ? 1 : 0.45 }}
     >
       {shape === "line" ? (
@@ -64,7 +70,7 @@ export function MapLegend({ visibility, onToggle }: MapLegendProps) {
 
   return (
     <div
-      className="absolute bottom-16 right-2 z-10 rounded-lg shadow-md md:bottom-8 md:right-4"
+      className="absolute right-2 bottom-16 z-10 rounded-lg shadow-md md:right-4 md:bottom-8"
       style={{
         backgroundColor: "var(--bg-cream-soft)",
         border: "1px solid var(--border-soft)",
@@ -77,7 +83,7 @@ export function MapLegend({ visibility, onToggle }: MapLegendProps) {
         onClick={() => setCollapsed((c) => !c)}
         aria-expanded={!collapsed}
         aria-controls="map-legend-body"
-        className="flex w-full items-center justify-between rounded-t-lg px-3 py-2 text-left text-xs font-semibold uppercase tracking-wide hover:bg-black/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--brick)]"
+        className="flex w-full items-center justify-between rounded-t-lg px-3 py-2 text-left text-xs font-semibold tracking-wide uppercase hover:bg-black/5 focus-visible:ring-2 focus-visible:ring-[color:var(--brick)] focus-visible:outline-none"
         style={{ color: "var(--fg-ink-muted)" }}
       >
         <span>Map layers</span>
@@ -87,7 +93,7 @@ export function MapLegend({ visibility, onToggle }: MapLegendProps) {
       </button>
 
       {!collapsed && (
-        <div id="map-legend-body" className="px-3 pb-3 pt-1">
+        <div id="map-legend-body" className="px-3 pt-1 pb-3">
           <ul className="flex flex-col gap-1.5">
             {/* Existing kinds */}
             <li>

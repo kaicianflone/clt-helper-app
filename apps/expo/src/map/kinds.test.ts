@@ -1,9 +1,9 @@
 import { describe, expect, it } from "vitest";
 
 import {
-  MAP_KIND_CONFIGS,
   buildDefaultVisibility,
   getKindConfig,
+  MAP_KIND_CONFIGS,
   toggleKindVisibility,
 } from "./kinds";
 
@@ -67,7 +67,15 @@ describe("MAP_KIND_CONFIGS", () => {
   });
 
   it("point-based kinds use circle layer type", () => {
-    const pointKinds = ["parking", "park", "recycling", "ev-charging", "transit-parking", "landfill", "amenity"];
+    const pointKinds = [
+      "parking",
+      "park",
+      "recycling",
+      "ev-charging",
+      "transit-parking",
+      "landfill",
+      "amenity",
+    ];
     pointKinds.forEach((kind) => {
       const config = MAP_KIND_CONFIGS.find((c) => c.kind === kind);
       expect(config?.layerType).toBe("circle");
