@@ -80,13 +80,9 @@ export default function MapScreen() {
 
   const styleUrl = `https://api.maptiler.com/maps/streets-v2/style.json?key=${MAPTILER_KEY}`;
 
-  // Helper: MapLibre "filter" to show/hide a layer
-  const showLayer = (kind: string) =>
-    // MapLibre expression: when visible return a match that always passes,
-    // when hidden use a literal false expression.
-    visibility[kind] !== false
-      ? (["!=", ["id"], ""] as unknown as object)
-      : (["==", ["id"], ""] as unknown as object);
+  /** Returns the MapLibre layout visibility value for a given kind */
+  const layerVisibility = (kind: string): "visible" | "none" =>
+    visibility[kind] !== false ? "visible" : "none";
 
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg.cream }}>
@@ -108,7 +104,7 @@ export default function MapScreen() {
           <Layer
             id="greenway-lines"
             type="line"
-            filter={showLayer("greenway")}
+            layout={{ visibility: layerVisibility("greenway") }}
             paint={{
               "line-color": colors.map.trail,
               "line-width": 3,
@@ -128,7 +124,7 @@ export default function MapScreen() {
           <Layer
             id="parking-points"
             type="circle"
-            filter={showLayer("parking")}
+            layout={{ visibility: layerVisibility("parking") }}
             paint={{
               "circle-color": colors.map.parking,
               "circle-radius": 5,
@@ -143,7 +139,7 @@ export default function MapScreen() {
           <Layer
             id="park-points"
             type="circle"
-            filter={showLayer("park")}
+            layout={{ visibility: layerVisibility("park") }}
             paint={{
               "circle-color": colors.map.park,
               "circle-radius": 6,
@@ -158,7 +154,7 @@ export default function MapScreen() {
           <Layer
             id="recycling-points"
             type="circle"
-            filter={showLayer("recycling")}
+            layout={{ visibility: layerVisibility("recycling") }}
             paint={{
               "circle-color": colors.map.recycling,
               "circle-radius": 5,
@@ -173,7 +169,7 @@ export default function MapScreen() {
           <Layer
             id="ev-charging-points"
             type="circle"
-            filter={showLayer("ev-charging")}
+            layout={{ visibility: layerVisibility("ev-charging") }}
             paint={{
               "circle-color": colors.map.evCharging,
               "circle-radius": 5,
@@ -188,7 +184,7 @@ export default function MapScreen() {
           <Layer
             id="transit-parking-points"
             type="circle"
-            filter={showLayer("transit-parking")}
+            layout={{ visibility: layerVisibility("transit-parking") }}
             paint={{
               "circle-color": colors.map.transitParking,
               "circle-radius": 5,
@@ -203,7 +199,7 @@ export default function MapScreen() {
           <Layer
             id="landfill-points"
             type="circle"
-            filter={showLayer("landfill")}
+            layout={{ visibility: layerVisibility("landfill") }}
             paint={{
               "circle-color": colors.map.landfill,
               "circle-radius": 5,
@@ -218,7 +214,7 @@ export default function MapScreen() {
           <Layer
             id="amenity-points"
             type="circle"
-            filter={showLayer("amenity")}
+            layout={{ visibility: layerVisibility("amenity") }}
             paint={{
               "circle-color": colors.map.amenity,
               "circle-radius": 5,

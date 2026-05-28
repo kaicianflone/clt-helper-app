@@ -63,7 +63,7 @@ export function MapLegend({ configs, visibility, onToggle }: MapLegendProps) {
               key={config.kind}
               onPress={() => onToggle(config.kind)}
               accessibilityRole="switch"
-              accessibilityChecked={isVisible}
+              accessibilityState={{ checked: isVisible }}
               accessibilityLabel={`${config.label} layer`}
               style={({ pressed }) => ({
                 flexDirection: "row",
