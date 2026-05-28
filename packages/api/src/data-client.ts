@@ -8,7 +8,16 @@ export interface Bundle<T> {
   entries: T[];
 }
 
-export type EntityKind = "greenways" | "deals" | "parking";
+export type EntityKind =
+  | "greenways"
+  | "deals"
+  | "parking"
+  | "parks"
+  | "recycling"
+  | "transit-parking"
+  | "ev-charging"
+  | "landfill"
+  | "amenity";
 
 export interface DataClientOptions<T> {
   /**
@@ -151,10 +160,24 @@ export async function fetchBundle<T>(
   throw lastErr;
 }
 
-// Convenience typed wrappers
+// Convenience typed wrappers — existing kinds
 export const fetchGreenways = (opts: DataClientOptions<Greenway>) =>
   fetchBundle<Greenway>("greenways", opts);
 export const fetchDeals = (opts: DataClientOptions<Deal>) =>
   fetchBundle<Deal>("deals", opts);
 export const fetchParking = (opts: DataClientOptions<ParkingLot>) =>
   fetchBundle<ParkingLot>("parking", opts);
+
+// Convenience typed wrappers — new kinds (typed as unknown until T01 schemas land)
+export const fetchParks = (opts: DataClientOptions<unknown>) =>
+  fetchBundle<unknown>("parks", opts);
+export const fetchRecycling = (opts: DataClientOptions<unknown>) =>
+  fetchBundle<unknown>("recycling", opts);
+export const fetchTransitParking = (opts: DataClientOptions<unknown>) =>
+  fetchBundle<unknown>("transit-parking", opts);
+export const fetchEvCharging = (opts: DataClientOptions<unknown>) =>
+  fetchBundle<unknown>("ev-charging", opts);
+export const fetchLandfill = (opts: DataClientOptions<unknown>) =>
+  fetchBundle<unknown>("landfill", opts);
+export const fetchAmenity = (opts: DataClientOptions<unknown>) =>
+  fetchBundle<unknown>("amenity", opts);
