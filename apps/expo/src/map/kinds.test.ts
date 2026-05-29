@@ -118,11 +118,13 @@ describe("kind→color mapping", () => {
 // ---------------------------------------------------------------------------
 
 describe("buildDefaultVisibility", () => {
-  it("returns true for every kind by default", () => {
+  it("enables only greenways/deals by default; all other kinds hidden", () => {
     const vis = buildDefaultVisibility(MAP_KIND_CONFIGS);
     MAP_KIND_CONFIGS.forEach((c) => {
-      expect(vis[c.kind]).toBe(true);
+      expect(vis[c.kind]).toBe(c.kind === "greenway" || c.kind === "deal");
     });
+    // greenway is in MAP_KIND_CONFIGS and must default on
+    expect(vis.greenway).toBe(true);
   });
 
   it("contains exactly one key per config entry", () => {
@@ -138,8 +140,9 @@ describe("buildDefaultVisibility", () => {
 describe("toggleKindVisibility", () => {
   it("toggles a visible kind to hidden", () => {
     const vis = buildDefaultVisibility(MAP_KIND_CONFIGS);
-    const next = toggleKindVisibility(vis, "park");
-    expect(next.park).toBe(false);
+    // greenway is visible by default
+    const next = toggleKindVisibility(vis, "greenway");
+    expect(next.greenway).toBe(false);
   });
 
   it("toggles a hidden kind back to visible", () => {

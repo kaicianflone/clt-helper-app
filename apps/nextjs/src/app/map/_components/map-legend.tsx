@@ -66,7 +66,8 @@ interface MapLegendProps {
 
 /** Collapsible map legend / key panel positioned over the map. */
 export function MapLegend({ visibility, onToggle }: MapLegendProps) {
-  const [collapsed, setCollapsed] = useState(false);
+  // Closed by default — the panel opens on tap to keep the initial map clean.
+  const [collapsed, setCollapsed] = useState(true);
 
   return (
     <div

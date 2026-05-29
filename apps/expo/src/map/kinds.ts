@@ -98,13 +98,18 @@ export const MAP_KIND_CONFIGS: readonly MapKindConfig[] = [
   },
 ] as const;
 
-/** Default visibility state: all kinds visible */
 export type LayerVisibility = Record<string, boolean>;
 
+/** Kinds enabled on first load. Everything else starts hidden (opt-in via legend). */
+const DEFAULT_VISIBLE_KINDS = new Set(["greenway", "deal"]);
+
+/** Default visibility: only greenways/deals on; all other layers start hidden. */
 export function buildDefaultVisibility(
   configs: readonly MapKindConfig[],
 ): LayerVisibility {
-  return Object.fromEntries(configs.map((c) => [c.kind, true]));
+  return Object.fromEntries(
+    configs.map((c) => [c.kind, DEFAULT_VISIBLE_KINDS.has(c.kind)]),
+  );
 }
 
 /** Toggle a single kind in a visibility state (immutable — returns new object) */

@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Pressable, ScrollView, Text, View } from "react-native";
 
 import type { LayerVisibility, MapKindConfig } from "~/map/kinds";
@@ -19,6 +20,9 @@ interface MapLegendProps {
  * in muted ink to communicate the off state without removing the entry.
  */
 export function MapLegend({ configs, visibility, onToggle }: MapLegendProps) {
+  // Closed by default — tap the header to expand, keeping the initial map clean.
+  const [collapsed, setCollapsed] = useState(true);
+
   return (
     <View
       style={{
@@ -41,61 +45,78 @@ export function MapLegend({ configs, visibility, onToggle }: MapLegendProps) {
         elevation: 3,
       }}
     >
-      <Text
+      <Pressable
+        onPress={() => setCollapsed((c) => !c)}
+        accessibilityRole="button"
+        accessibilityState={{ expanded: !collapsed }}
+        accessibilityLabel="Toggle map layers"
         style={{
-          ...type.bodyXs,
-          color: colors.fg.inkMuted,
-          textTransform: "uppercase",
-          letterSpacing: 0.5,
-          marginBottom: space[2],
+          flexDirection: "row",
+          alignItems: "center",
+          justifyContent: "space-between",
+          marginBottom: collapsed ? 0 : space[2],
         }}
       >
-        Layers
-      </Text>
-      <ScrollView
-        showsVerticalScrollIndicator={false}
-        contentContainerStyle={{ gap: space[2] }}
-      >
-        {configs.map((config) => {
-          const isVisible = visibility[config.kind] !== false;
-          return (
-            <Pressable
-              key={config.kind}
-              onPress={() => onToggle(config.kind)}
-              accessibilityRole="switch"
-              accessibilityState={{ checked: isVisible }}
-              accessibilityLabel={`${config.label} layer`}
-              style={({ pressed }) => ({
-                flexDirection: "row",
-                alignItems: "center",
-                gap: space[2],
-                opacity: pressed ? 0.7 : 1,
-              })}
-            >
-              {/* Color swatch — circle for point layers, pill for line layers */}
-              <View
-                style={{
-                  width: config.layerType === "line" ? 16 : 10,
-                  height: 10,
-                  borderRadius:
-                    config.layerType === "line" ? radius.sm : radius.full,
-                  backgroundColor: config.color,
-                  opacity: isVisible ? 1 : 0.35,
-                }}
-              />
-              <Text
-                style={{
-                  ...type.bodySm,
-                  color: isVisible ? colors.fg.inkSoft : colors.fg.inkMuted,
-                  flexShrink: 1,
-                }}
+        <Text
+          style={{
+            ...type.bodyXs,
+            color: colors.fg.inkMuted,
+            textTransform: "uppercase",
+            letterSpacing: 0.5,
+          }}
+        >
+          Map layers
+        </Text>
+        <Text style={{ ...type.bodyXs, color: colors.fg.inkMuted }}>
+          {collapsed ? "▸" : "▾"}
+        </Text>
+      </Pressable>
+      {!collapsed && (
+        <ScrollView
+          showsVerticalScrollIndicator={false}
+          contentContainerStyle={{ gap: space[2] }}
+        >
+          {configs.map((config) => {
+            const isVisible = visibility[config.kind] !== false;
+            return (
+              <Pressable
+                key={config.kind}
+                onPress={() => onToggle(config.kind)}
+                accessibilityRole="switch"
+                accessibilityState={{ checked: isVisible }}
+                accessibilityLabel={`${config.label} layer`}
+                style={({ pressed }) => ({
+                  flexDirection: "row",
+                  alignItems: "center",
+                  gap: space[2],
+                  opacity: pressed ? 0.7 : 1,
+                })}
               >
-                {config.label}
-              </Text>
-            </Pressable>
-          );
-        })}
-      </ScrollView>
+                {/* Color swatch — circle for point layers, pill for line layers */}
+                <View
+                  style={{
+                    width: config.layerType === "line" ? 16 : 10,
+                    height: 10,
+                    borderRadius:
+                      config.layerType === "line" ? radius.sm : radius.full,
+                    backgroundColor: config.color,
+                    opacity: isVisible ? 1 : 0.35,
+                  }}
+                />
+                <Text
+                  style={{
+                    ...type.bodySm,
+                    color: isVisible ? colors.fg.inkSoft : colors.fg.inkMuted,
+                    flexShrink: 1,
+                  }}
+                >
+                  {config.label}
+                </Text>
+              </Pressable>
+            );
+          })}
+        </ScrollView>
+      )}
     </View>
   );
 }

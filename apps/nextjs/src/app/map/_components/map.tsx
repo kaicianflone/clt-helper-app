@@ -117,9 +117,11 @@ function buildGisPopupHtml(props: { name: string; kindLabel: string }): string {
 }
 
 function buildInitialVisibility(): LayerVisibility {
-  const vis: LayerVisibility = { greenways: true, deals: true, parking: true };
+  // Default: only greenways + deals on. Parking and the GIS kinds start hidden
+  // so the map opens uncluttered; users opt in via the legend toggles.
+  const vis: LayerVisibility = { greenways: true, deals: true, parking: false };
   for (const k of GIS_KINDS) {
-    vis[k.kind] = true;
+    vis[k.kind] = false;
   }
   return vis;
 }
