@@ -1,0 +1,21 @@
+{
+  "slug": "wilmore-centennial-park-at-southend",
+  "name": "Wilmore Centennial Park at Southend",
+  "description": "",
+  "center": {
+    "lat": 35.21445019217608,
+    "lng": -80.8603742766978
+  },
+  "numParking": 0,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

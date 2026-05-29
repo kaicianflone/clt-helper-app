@@ -1,0 +1,21 @@
+{
+  "slug": "olde-providence-park",
+  "name": "Olde Providence Park",
+  "description": "",
+  "center": {
+    "lat": 35.11012025031874,
+    "lng": -80.79750508274044
+  },
+  "numParking": 129,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": true
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

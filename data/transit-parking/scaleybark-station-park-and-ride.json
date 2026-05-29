@@ -1,0 +1,17 @@
+{
+  "slug": "scaleybark-station-park-and-ride",
+  "name": "Scaleybark Station Park and RIde",
+  "description": "",
+  "center": {
+    "lat": 35.1908868719842,
+    "lng": -80.8749822501065
+  },
+  "address": "3750 South Bv, Charlotte, NC",
+  "totalSpaces": 315,
+  "freeParking": false,
+  "transitLines": [
+    "Rail"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

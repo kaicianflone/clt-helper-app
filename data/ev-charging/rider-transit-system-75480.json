@@ -1,0 +1,16 @@
+{
+  "slug": "rider-transit-system-75480",
+  "name": "Rider Transit System",
+  "description": "",
+  "center": {
+    "lat": 35.37637406573176,
+    "lng": -80.56380056138413
+  },
+  "address": "635 Alfred Brown Jr Court SW, Concord, NC, 28025",
+  "numLevel2Ports": 1,
+  "networks": [
+    "Non-Networked"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

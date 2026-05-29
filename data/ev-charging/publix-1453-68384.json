@@ -1,0 +1,16 @@
+{
+  "slug": "publix-1453-68384",
+  "name": "Publix #1453",
+  "description": "",
+  "center": {
+    "lat": 35.208237,
+    "lng": -80.86254
+  },
+  "address": "2222 South Blvd, Charlotte, NC, 28203",
+  "numLevel2Ports": 1,
+  "networks": [
+    "Non-Networked"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

@@ -1,3 +1,248 @@
 {
-  "entries": []
+  "entries": [
+    {
+      "slug": "abbey-plaza-shopping-center",
+      "name": "Abbey Plaza Shopping Center"
+    },
+    {
+      "slug": "albermarle-rd",
+      "name": "Albermarle Rd"
+    },
+    {
+      "slug": "arboretum-shopping-center",
+      "name": "Arboretum Shopping Center"
+    },
+    {
+      "slug": "archdale-station-park-and-ride",
+      "name": "Archdale Station Park and Ride"
+    },
+    {
+      "slug": "arrowood-station-park-and-ride",
+      "name": "Arrowood Station Park and Ride"
+    },
+    {
+      "slug": "ballantyne",
+      "name": "Ballantyne"
+    },
+    {
+      "slug": "calvary-church",
+      "name": "Calvary Church"
+    },
+    {
+      "slug": "cambridge-commons",
+      "name": "Cambridge Commons"
+    },
+    {
+      "slug": "carmel-road-park",
+      "name": "Carmel Road Park"
+    },
+    {
+      "slug": "carolina-place-mall",
+      "name": "Carolina Place Mall"
+    },
+    {
+      "slug": "carowinds-park-and-ride",
+      "name": "Carowinds Park and Ride"
+    },
+    {
+      "slug": "catawba-avenue",
+      "name": "Catawba Avenue"
+    },
+    {
+      "slug": "central-church-of-god",
+      "name": "Central Church of God"
+    },
+    {
+      "slug": "central-steele-creek-presbyterian-church",
+      "name": "Central Steele Creek Presbyterian Church"
+    },
+    {
+      "slug": "cokesbury-united-methodist",
+      "name": "Cokesbury United Methodist"
+    },
+    {
+      "slug": "conference-dr-us-74",
+      "name": "Conference Dr & US-74"
+    },
+    {
+      "slug": "cooks-memorial-presbyterian-church",
+      "name": "Cooks Memorial Presbyterian Church"
+    },
+    {
+      "slug": "cornelius-park-ride",
+      "name": "Cornelius Park & Ride"
+    },
+    {
+      "slug": "cornelius-town-hall",
+      "name": "Cornelius Town Hall"
+    },
+    {
+      "slug": "cornerstone-baptist-church",
+      "name": "Cornerstone Baptist Church"
+    },
+    {
+      "slug": "coulwood-shopping-center",
+      "name": "Coulwood Shopping Center"
+    },
+    {
+      "slug": "davidson-gateway-dr-park-ride",
+      "name": "Davidson Gateway Dr Park & Ride"
+    },
+    {
+      "slug": "downtown-rock-hill",
+      "name": "Downtown Rock Hill"
+    },
+    {
+      "slug": "east-west-station",
+      "name": "East/West Station"
+    },
+    {
+      "slug": "gastonia-transit-center",
+      "name": "Gastonia Transit Center"
+    },
+    {
+      "slug": "good-shepard-presbyterian-church",
+      "name": "Good Shepard Presbyterian Church"
+    },
+    {
+      "slug": "hambright-i-77",
+      "name": "Hambright & I-77"
+    },
+    {
+      "slug": "huntersville-gateway",
+      "name": "Huntersville Gateway"
+    },
+    {
+      "slug": "huntersville-northcross",
+      "name": "Huntersville Northcross"
+    },
+    {
+      "slug": "i-485-station-park-and-ride",
+      "name": "I-485 Station Park and Ride"
+    },
+    {
+      "slug": "jw-clay-station-park-and-ride",
+      "name": "JW Clay Station Park and RIde"
+    },
+    {
+      "slug": "k-mart-monroe",
+      "name": "K-Mart Monroe"
+    },
+    {
+      "slug": "mallard-creek",
+      "name": "Mallard Creek"
+    },
+    {
+      "slug": "manchester-theater",
+      "name": "Manchester Theater"
+    },
+    {
+      "slug": "mason-wallace-park",
+      "name": "Mason-Wallace Park"
+    },
+    {
+      "slug": "matthews-independence-pointe-parkway",
+      "name": "Matthews Independence Pointe Parkway"
+    },
+    {
+      "slug": "matthews-presbyterian",
+      "name": "Matthews Presbyterian"
+    },
+    {
+      "slug": "northlake-mall",
+      "name": "Northlake Mall"
+    },
+    {
+      "slug": "old-concord-rd-station-park-and-ride",
+      "name": "Old Concord Rd Station Park and Ride"
+    },
+    {
+      "slug": "providence-baptist-church",
+      "name": "Providence Baptist Church"
+    },
+    {
+      "slug": "providence-methodist-church",
+      "name": "Providence Methodist Church"
+    },
+    {
+      "slug": "providence-presbyterian-church",
+      "name": "Providence Presbyterian Church"
+    },
+    {
+      "slug": "ridge-road-park-and-ride",
+      "name": "Ridge Road Park and Ride"
+    },
+    {
+      "slug": "river-district",
+      "name": "River District"
+    },
+    {
+      "slug": "riverbend-park-and-ride",
+      "name": "Riverbend Park and Ride"
+    },
+    {
+      "slug": "scaleybark-station-park-and-ride",
+      "name": "Scaleybark Station Park and RIde"
+    },
+    {
+      "slug": "sharon-baptist-church",
+      "name": "Sharon Baptist Church"
+    },
+    {
+      "slug": "sharon-road-west-station-park-and-ride",
+      "name": "Sharon Road West Station Park and Ride"
+    },
+    {
+      "slug": "st-john-neumann-catholic-church",
+      "name": "St. John Neumann Catholic Church"
+    },
+    {
+      "slug": "st-matthew-catholic-church",
+      "name": "St. Matthew Catholic Church"
+    },
+    {
+      "slug": "steele-creek",
+      "name": "Steele Creek"
+    },
+    {
+      "slug": "strawberry-hill",
+      "name": "Strawberry Hill"
+    },
+    {
+      "slug": "sugar-creek-station-park-and-ride",
+      "name": "Sugar Creek Station Park and Ride"
+    },
+    {
+      "slug": "trinity-presbyterian-church",
+      "name": "Trinity Presbyterian Church"
+    },
+    {
+      "slug": "tyvola-station-park-and-ride",
+      "name": "Tyvola Station Park and Ride"
+    },
+    {
+      "slug": "union-towne-center",
+      "name": "Union Towne Center"
+    },
+    {
+      "slug": "university-city-blvd-station-park-and-ride",
+      "name": "University City Blvd Station Park and Ride"
+    },
+    {
+      "slug": "walker-branch-park-and-ride",
+      "name": "Walker Branch Park and Ride"
+    },
+    {
+      "slug": "waverly-park-and-ride",
+      "name": "Waverly Park and Ride"
+    },
+    {
+      "slug": "whitehall-commons",
+      "name": "Whitehall Commons"
+    },
+    {
+      "slug": "woodlawn-station-park-and-ride",
+      "name": "Woodlawn Station Park and Ride"
+    }
+  ]
 }

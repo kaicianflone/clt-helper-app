@@ -1,0 +1,16 @@
+{
+  "slug": "the-prospect-325368",
+  "name": "The Prospect",
+  "description": "",
+  "center": {
+    "lat": 35.22240783284033,
+    "lng": -80.8554616
+  },
+  "address": "1115 South Mint Street, Charlotte, NC, 28203",
+  "numLevel2Ports": 6,
+  "networks": [
+    "Blink Network"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

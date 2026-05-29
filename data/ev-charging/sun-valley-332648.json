@@ -1,0 +1,16 @@
+{
+  "slug": "sun-valley-332648",
+  "name": "Sun Valley",
+  "description": "",
+  "center": {
+    "lat": 35.051072,
+    "lng": -80.646002
+  },
+  "address": "6461 Old Monroe Rd, Indian Trail, NC, 28079",
+  "numDcFastPorts": 4,
+  "networks": [
+    "EV Connect"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

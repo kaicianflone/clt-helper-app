@@ -1,0 +1,16 @@
+{
+  "slug": "alpitronic-test-evse-not-for-public-458924",
+  "name": "Alpitronic Test EVSE - NOT FOR PUBLIC",
+  "description": "",
+  "center": {
+    "lat": 35.157832,
+    "lng": -80.888696
+  },
+  "address": "5815  West Park Drive, Charlotte, NC, 28217",
+  "numDcFastPorts": 4,
+  "networks": [
+    "MERCEDES_BENZ"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

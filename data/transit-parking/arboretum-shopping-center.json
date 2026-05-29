@@ -1,0 +1,17 @@
+{
+  "slug": "arboretum-shopping-center",
+  "name": "Arboretum Shopping Center",
+  "description": "",
+  "center": {
+    "lat": 35.099193855915,
+    "lng": -80.7806292159964
+  },
+  "address": "Providence Road & NC 51, Charlotte, NC",
+  "totalSpaces": 50,
+  "freeParking": true,
+  "transitLines": [
+    "Bus"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

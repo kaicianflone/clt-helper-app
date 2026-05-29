@@ -1,0 +1,16 @@
+{
+  "slug": "savona-mill-439028",
+  "name": "Savona Mill",
+  "description": "",
+  "center": {
+    "lat": 35.24184,
+    "lng": -80.86712
+  },
+  "address": "500 S Turner Ave, Charlotte, NC, 28208",
+  "numLevel2Ports": 6,
+  "networks": [
+    "ENVIROSPARK"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

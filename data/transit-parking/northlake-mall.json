@@ -1,0 +1,17 @@
+{
+  "slug": "northlake-mall",
+  "name": "Northlake Mall",
+  "description": "",
+  "center": {
+    "lat": 35.3528349071767,
+    "lng": -80.8551922519122
+  },
+  "address": "6801 Northlake Mall Drive, Charlotte, NC",
+  "totalSpaces": 200,
+  "freeParking": false,
+  "transitLines": [
+    "Bus"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

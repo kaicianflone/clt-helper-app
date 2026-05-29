@@ -1,0 +1,21 @@
+{
+  "slug": "quest-at-latta-nature-preserve",
+  "name": "Quest at Latta Nature Preserve",
+  "description": "",
+  "center": {
+    "lat": 35.35797711194327,
+    "lng": -80.90691957755706
+  },
+  "numParking": 86,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

@@ -1,0 +1,21 @@
+{
+  "slug": "enderly-park",
+  "name": "Enderly Park",
+  "description": "",
+  "center": {
+    "lat": 35.24047836741607,
+    "lng": -80.88409990175947
+  },
+  "numParking": 0,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": true,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": true,
+    "basketball": true
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

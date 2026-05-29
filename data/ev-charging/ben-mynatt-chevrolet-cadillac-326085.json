@@ -1,0 +1,16 @@
+{
+  "slug": "ben-mynatt-chevrolet-cadillac-326085",
+  "name": "Ben Mynatt Chevrolet Cadillac",
+  "description": "",
+  "center": {
+    "lat": 35.394833,
+    "lng": -80.612024
+  },
+  "address": "281 Concord Pkwy South, Concord, NC, 28027",
+  "numDcFastPorts": 1,
+  "networks": [
+    "EV Connect"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

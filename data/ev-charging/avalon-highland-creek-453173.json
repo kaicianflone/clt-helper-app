@@ -1,0 +1,16 @@
+{
+  "slug": "avalon-highland-creek-453173",
+  "name": "Avalon Highland Creek",
+  "description": "",
+  "center": {
+    "lat": 35.3733428657527,
+    "lng": -80.782682932243
+  },
+  "address": "4930 Goose Creek Dr, Charlotte, NC, 28269",
+  "numLevel2Ports": 2,
+  "networks": [
+    "LOOP"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

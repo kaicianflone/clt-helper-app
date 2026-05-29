@@ -1,0 +1,16 @@
+{
+  "slug": "cadillac-south-charlotte-405847",
+  "name": "Cadillac South Charlotte",
+  "description": "",
+  "center": {
+    "lat": 35.095431,
+    "lng": -80.882154
+  },
+  "address": "10725 Pineville Rd, Pineville, NC, 28134",
+  "numDcFastPorts": 2,
+  "networks": [
+    "CHAEVI"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

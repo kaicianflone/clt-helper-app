@@ -1,0 +1,21 @@
+{
+  "slug": "charlie-hipp-road-park",
+  "name": "Charlie Hipp Road Park",
+  "description": "",
+  "center": {
+    "lat": 35.26644697210174,
+    "lng": -80.99899463641331
+  },
+  "numParking": 0,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

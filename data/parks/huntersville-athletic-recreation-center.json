@@ -1,0 +1,21 @@
+{
+  "slug": "huntersville-athletic-recreation-center",
+  "name": "Huntersville Athletic Recreation Center",
+  "description": "",
+  "center": {
+    "lat": 35.39174989994784,
+    "lng": -80.84380247216747
+  },
+  "numParking": 198,
+  "parkUrl": "https://www.huntersville.org/3073/Parks-Recreation-Department",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": true
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

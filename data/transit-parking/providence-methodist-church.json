@@ -1,0 +1,17 @@
+{
+  "slug": "providence-methodist-church",
+  "name": "Providence Methodist Church",
+  "description": "",
+  "center": {
+    "lat": 35.1718924648304,
+    "lng": -80.8098226837039
+  },
+  "address": "2810 Providence Road, Charlotte, NC",
+  "totalSpaces": 20,
+  "freeParking": true,
+  "transitLines": [
+    "Bus"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

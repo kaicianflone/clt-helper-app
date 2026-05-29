@@ -1,0 +1,21 @@
+{
+  "slug": "harrisburg-road-sportsplex",
+  "name": "Harrisburg Road Sportsplex",
+  "description": "",
+  "center": {
+    "lat": 35.22428435614649,
+    "lng": -80.68431601188192
+  },
+  "numParking": 120,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

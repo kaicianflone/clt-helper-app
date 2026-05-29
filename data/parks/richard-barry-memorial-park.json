@@ -1,0 +1,21 @@
+{
+  "slug": "richard-barry-memorial-park",
+  "name": "Richard Barry Memorial Park",
+  "description": "",
+  "center": {
+    "lat": 35.40132592203532,
+    "lng": -80.9245059605843
+  },
+  "numParking": 310,
+  "parkUrl": "https://www.huntersville.org/3073/Parks-Recreation-Department",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

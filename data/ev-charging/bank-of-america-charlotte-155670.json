@@ -1,0 +1,16 @@
+{
+  "slug": "bank-of-america-charlotte-155670",
+  "name": "Bank of America - Charlotte",
+  "description": "",
+  "center": {
+    "lat": 35.226655,
+    "lng": -80.840749
+  },
+  "address": "150 N College St, Charlotte, NC, 28202",
+  "numLevel2Ports": 2,
+  "networks": [
+    "Non-Networked"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

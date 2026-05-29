@@ -1,0 +1,16 @@
+{
+  "slug": "scott-clark-nissan-47120",
+  "name": "Scott Clark Nissan",
+  "description": "",
+  "center": {
+    "lat": 35.111292,
+    "lng": -80.881867
+  },
+  "address": "9215 S Blvd, Charlotte, NC, 28273",
+  "numLevel2Ports": 1,
+  "networks": [
+    "Non-Networked"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

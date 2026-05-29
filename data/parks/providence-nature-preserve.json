@@ -1,0 +1,21 @@
+{
+  "slug": "providence-nature-preserve",
+  "name": "Providence Nature Preserve",
+  "description": "",
+  "center": {
+    "lat": 35.09420621244014,
+    "lng": -80.75645789229038
+  },
+  "numParking": 0,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

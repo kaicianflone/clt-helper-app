@@ -1,0 +1,17 @@
+{
+  "slug": "huntersville-northcross",
+  "name": "Huntersville Northcross",
+  "description": "",
+  "center": {
+    "lat": 35.4483359277613,
+    "lng": -80.8715732624411
+  },
+  "address": "17126 Northcross Drive, Huntersville, NC",
+  "totalSpaces": 326,
+  "freeParking": false,
+  "transitLines": [
+    "Bus"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

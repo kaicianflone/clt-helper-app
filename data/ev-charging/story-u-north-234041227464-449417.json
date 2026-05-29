@@ -1,0 +1,16 @@
+{
+  "slug": "story-u-north-234041227464-449417",
+  "name": "STORY U NORTH 234041227464",
+  "description": "",
+  "center": {
+    "lat": 35.348393,
+    "lng": -80.699311
+  },
+  "address": "700 Avett Lane, Charlotte, NC, 28262",
+  "numLevel2Ports": 2,
+  "networks": [
+    "ChargePoint Network"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

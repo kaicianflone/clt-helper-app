@@ -1,0 +1,16 @@
+{
+  "slug": "solis-millennium-310056",
+  "name": "Solis Millennium",
+  "description": "",
+  "center": {
+    "lat": 35.18660548453093,
+    "lng": -80.91355846267713
+  },
+  "address": "5306 Acadia Heights Drive, Charlotte, NC, 28217",
+  "numLevel2Ports": 6,
+  "networks": [
+    "Blink Network"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

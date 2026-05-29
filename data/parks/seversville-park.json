@@ -1,0 +1,21 @@
+{
+  "slug": "seversville-park",
+  "name": "Seversville Park",
+  "description": "",
+  "center": {
+    "lat": 35.239085619392775,
+    "lng": -80.86653127977723
+  },
+  "numParking": 0,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

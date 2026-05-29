@@ -1,0 +1,16 @@
+{
+  "slug": "koulomb-nations-ford-road-225648",
+  "name": "Koulomb - Nations Ford Road",
+  "description": "",
+  "center": {
+    "lat": 35.1667,
+    "lng": -80.89286
+  },
+  "address": "6001 Nations Ford Rd, Charlotte, NC, 28217",
+  "numDcFastPorts": 12,
+  "networks": [
+    "EV Connect"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

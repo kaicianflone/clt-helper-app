@@ -1,0 +1,21 @@
+{
+  "slug": "ramblewood-soccer-complex",
+  "name": "Ramblewood Soccer Complex",
+  "description": "",
+  "center": {
+    "lat": 35.122684151049995,
+    "lng": -80.90238861936577
+  },
+  "numParking": 470,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": true
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

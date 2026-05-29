@@ -1,0 +1,16 @@
+{
+  "slug": "the-parkwood-at-optimist-park-261185",
+  "name": "The Parkwood at Optimist Park",
+  "description": "",
+  "center": {
+    "lat": 35.2372043,
+    "lng": -80.8224122
+  },
+  "address": "1700 N Brevard St, Charlotte, NC, 28206",
+  "numLevel2Ports": 3,
+  "networks": [
+    "Blink Network"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

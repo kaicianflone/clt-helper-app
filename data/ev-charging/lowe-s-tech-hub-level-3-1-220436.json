@@ -1,0 +1,16 @@
+{
+  "slug": "lowe-s-tech-hub-level-3-1-220436",
+  "name": "LOWE'S TECH HUB LEVEL 3 #1",
+  "description": "",
+  "center": {
+    "lat": 35.211972,
+    "lng": -80.859893
+  },
+  "address": "100 W Worthington Ave, Charlotte, NC, 28203",
+  "numLevel2Ports": 2,
+  "networks": [
+    "ChargePoint Network"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

@@ -1,0 +1,16 @@
+{
+  "slug": "city-of-kannapolis-train-station-335620",
+  "name": "City of Kannapolis-Train Station",
+  "description": "",
+  "center": {
+    "lat": 35.497501,
+    "lng": -80.623991
+  },
+  "address": "113 S Main St, Kannapolis, NC, 28081",
+  "numLevel2Ports": 4,
+  "networks": [
+    "CHARGEUP"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

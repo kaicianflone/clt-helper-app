@@ -1,0 +1,21 @@
+{
+  "slug": "tom-hunter-park",
+  "name": "Tom Hunter Park",
+  "description": "",
+  "center": {
+    "lat": 35.27820843932715,
+    "lng": -80.78165377208501
+  },
+  "numParking": 0,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": true
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

@@ -1,0 +1,21 @@
+{
+  "slug": "eagles-landing-park",
+  "name": "Eagles Landing Park",
+  "description": "",
+  "center": {
+    "lat": 35.27073514208404,
+    "lng": -80.92612110813985
+  },
+  "numParking": 0,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

@@ -1,0 +1,16 @@
+{
+  "slug": "indian-trail-sheriff-office-319970",
+  "name": "Indian Trail Sheriff Office",
+  "description": "",
+  "center": {
+    "lat": 35.07948999023557,
+    "lng": -80.66941472883596
+  },
+  "address": "130 Blythe Drive, Indian Trail, NC, 28079",
+  "numLevel2Ports": 2,
+  "networks": [
+    "Blink Network"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

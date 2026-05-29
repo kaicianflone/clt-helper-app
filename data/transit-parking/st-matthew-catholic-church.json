@@ -1,0 +1,17 @@
+{
+  "slug": "st-matthew-catholic-church",
+  "name": "St. Matthew Catholic Church",
+  "description": "",
+  "center": {
+    "lat": 35.0566238658043,
+    "lng": -80.8128269248433
+  },
+  "address": "8015 Ballantyne Commons Parkway, Charlotte, NC",
+  "totalSpaces": 75,
+  "freeParking": false,
+  "transitLines": [
+    "Bus"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

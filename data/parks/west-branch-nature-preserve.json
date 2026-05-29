@@ -1,0 +1,21 @@
+{
+  "slug": "west-branch-nature-preserve",
+  "name": "West Branch Nature Preserve",
+  "description": "",
+  "center": {
+    "lat": 35.45296297326032,
+    "lng": -80.77297539508983
+  },
+  "numParking": 0,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

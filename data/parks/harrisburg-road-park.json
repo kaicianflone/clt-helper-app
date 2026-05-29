@@ -1,0 +1,21 @@
+{
+  "slug": "harrisburg-road-park",
+  "name": "Harrisburg Road Park",
+  "description": "",
+  "center": {
+    "lat": 35.21982164521621,
+    "lng": -80.68631403971729
+  },
+  "numParking": 12,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": true
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

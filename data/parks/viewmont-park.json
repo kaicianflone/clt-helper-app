@@ -1,0 +1,21 @@
+{
+  "slug": "viewmont-park",
+  "name": "Viewmont Park",
+  "description": "",
+  "center": {
+    "lat": 35.26021205234004,
+    "lng": -80.75042213055943
+  },
+  "numParking": 0,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

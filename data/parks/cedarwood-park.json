@@ -1,0 +1,21 @@
+{
+  "slug": "cedarwood-park",
+  "name": "Cedarwood Park",
+  "description": "",
+  "center": {
+    "lat": 35.19116032714103,
+    "lng": -80.75004809509214
+  },
+  "numParking": 0,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

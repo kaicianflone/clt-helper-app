@@ -1,0 +1,21 @@
+{
+  "slug": "westmoreland-athletic-complex",
+  "name": "Westmoreland Athletic Complex",
+  "description": "",
+  "center": {
+    "lat": 35.461219999109765,
+    "lng": -80.88556200030278
+  },
+  "numParking": 200,
+  "parkUrl": "https://cornelius.org/park/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

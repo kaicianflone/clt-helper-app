@@ -1,0 +1,17 @@
+{
+  "slug": "albermarle-rd",
+  "name": "Albermarle Rd",
+  "description": "",
+  "center": {
+    "lat": 35.2039058809601,
+    "lng": -80.7242572051517
+  },
+  "address": "6810 Lawyers Rd, Charlotte, NC",
+  "totalSpaces": 231,
+  "freeParking": false,
+  "transitLines": [
+    "Bus"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

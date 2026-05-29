@@ -1,0 +1,16 @@
+{
+  "slug": "university-of-north-carolina-charlotte-east-deck-3-121306",
+  "name": "University of North Carolina Charlotte - East Deck 3",
+  "description": "",
+  "center": {
+    "lat": 35.30656,
+    "lng": -80.72646
+  },
+  "address": "9328 Van Landingham Rd, Charlotte, NC, 28223",
+  "numLevel2Ports": 4,
+  "networks": [
+    "Non-Networked"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

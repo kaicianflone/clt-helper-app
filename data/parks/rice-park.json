@@ -1,0 +1,21 @@
+{
+  "slug": "rice-park",
+  "name": "Rice Park",
+  "description": "",
+  "center": {
+    "lat": 35.139885879622284,
+    "lng": -80.70606618306589
+  },
+  "numParking": 20,
+  "parkUrl": "https://www.matthewsnc.gov/pview.aspx?id=20727&catid=0",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

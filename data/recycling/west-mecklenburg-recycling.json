@@ -1,0 +1,16 @@
+{
+  "slug": "west-mecklenburg-recycling",
+  "name": "West Mecklenburg Recycling",
+  "description": "",
+  "center": {
+    "lat": 35.192516422313794,
+    "lng": -80.94902264479481
+  },
+  "address": "8440 Byrum Dr",
+  "acceptedMaterials": [
+    "Recycling",
+    "Staffed"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

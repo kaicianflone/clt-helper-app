@@ -1,0 +1,16 @@
+{
+  "slug": "kia-of-concord-dual-port-kia-1-213050",
+  "name": "KIA OF CONCORD DUAL PORT KIA 1",
+  "description": "",
+  "center": {
+    "lat": 35.361897,
+    "lng": -80.701819
+  },
+  "address": "7550 Hendrick Auto Plaza NW, Concord, NC, 28027",
+  "numLevel2Ports": 1,
+  "networks": [
+    "ChargePoint Network"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

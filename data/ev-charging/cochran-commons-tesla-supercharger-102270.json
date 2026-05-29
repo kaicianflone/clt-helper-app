@@ -1,0 +1,16 @@
+{
+  "slug": "cochran-commons-tesla-supercharger-102270",
+  "name": "Cochran Commons - Tesla Supercharger",
+  "description": "",
+  "center": {
+    "lat": 35.34075,
+    "lng": -80.76579
+  },
+  "address": "2720 W Mallard Creek Church Rd, Charlotte, NC, 28262",
+  "numDcFastPorts": 8,
+  "networks": [
+    "Tesla"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

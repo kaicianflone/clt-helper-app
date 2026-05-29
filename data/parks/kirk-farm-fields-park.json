@@ -1,0 +1,21 @@
+{
+  "slug": "kirk-farm-fields-park",
+  "name": "Kirk Farm Fields Park",
+  "description": "",
+  "center": {
+    "lat": 35.320608170700325,
+    "lng": -80.73232421410647
+  },
+  "numParking": 70,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

@@ -1,0 +1,21 @@
+{
+  "slug": "park-road-park",
+  "name": "Park Road Park",
+  "description": "",
+  "center": {
+    "lat": 35.146502584878384,
+    "lng": -80.85008343821389
+  },
+  "numParking": 501,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": true
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

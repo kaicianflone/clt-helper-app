@@ -1,0 +1,17 @@
+{
+  "slug": "st-john-neumann-catholic-church",
+  "name": "St. John Neumann Catholic Church",
+  "description": "",
+  "center": {
+    "lat": 35.1801899801516,
+    "lng": -80.724530705783
+  },
+  "address": "8451 Idlewild Road, Charlotte, NC",
+  "totalSpaces": 20,
+  "freeParking": true,
+  "transitLines": [
+    "Bus"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

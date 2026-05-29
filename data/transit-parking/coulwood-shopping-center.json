@@ -1,0 +1,17 @@
+{
+  "slug": "coulwood-shopping-center",
+  "name": "Coulwood Shopping Center",
+  "description": "",
+  "center": {
+    "lat": 35.3042958932484,
+    "lng": -80.9361966607831
+  },
+  "address": "8410 Bellhaven Road, Charlotte, NC",
+  "totalSpaces": 20,
+  "freeParking": false,
+  "transitLines": [
+    "Bus"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

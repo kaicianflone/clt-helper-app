@@ -1,0 +1,16 @@
+{
+  "slug": "residence-inn-courtyard-by-marriott-charlotte-nort-tesla-destination-114677",
+  "name": "Residence Inn & Courtyard by Marriott Charlotte Nort - Tesla Destination",
+  "description": "",
+  "center": {
+    "lat": 35.346241,
+    "lng": -80.842233
+  },
+  "address": "9110 Harris Corners Pkwy, Charlotte, NC, 28208",
+  "numLevel2Ports": 2,
+  "networks": [
+    "Tesla Destination"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

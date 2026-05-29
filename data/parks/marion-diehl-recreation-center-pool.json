@@ -1,0 +1,21 @@
+{
+  "slug": "marion-diehl-recreation-center-pool",
+  "name": "Marion Diehl Recreation Center & Pool",
+  "description": "",
+  "center": {
+    "lat": 35.16014984528516,
+    "lng": -80.85750778963406
+  },
+  "numParking": 94,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

@@ -1,0 +1,16 @@
+{
+  "slug": "hyatt-house-charlotte-rea-farms-200623",
+  "name": "Hyatt House Charlotte / Rea Farms",
+  "description": "",
+  "center": {
+    "lat": 35.050781,
+    "lng": -80.774517
+  },
+  "address": "9930 Sandy Rock Pl, Charlotte, NC, 28277",
+  "numLevel2Ports": 3,
+  "networks": [
+    "Non-Networked"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

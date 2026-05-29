@@ -1,0 +1,16 @@
+{
+  "slug": "bond-on-mit-station-5-450858",
+  "name": "BOND ON MIT STATION 5",
+  "description": "",
+  "center": {
+    "lat": 35.223321,
+    "lng": -80.854087
+  },
+  "address": "1007 South Mint Street, Charlotte, NC, 28203",
+  "numLevel2Ports": 2,
+  "networks": [
+    "ChargePoint Network"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

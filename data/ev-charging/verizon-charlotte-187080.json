@@ -1,0 +1,16 @@
+{
+  "slug": "verizon-charlotte-187080",
+  "name": "Verizon - Charlotte",
+  "description": "",
+  "center": {
+    "lat": 35.318383,
+    "lng": -80.759513
+  },
+  "address": "8921 Research Dr, Charlotte, NC, 28262",
+  "numLevel2Ports": 4,
+  "networks": [
+    "Non-Networked"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

@@ -1,0 +1,21 @@
+{
+  "slug": "us-national-whitewater-center",
+  "name": "US National Whitewater Center",
+  "description": "",
+  "center": {
+    "lat": 35.27146884812326,
+    "lng": -81.00206837108733
+  },
+  "numParking": 500,
+  "parkUrl": "https://center.whitewater.org/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

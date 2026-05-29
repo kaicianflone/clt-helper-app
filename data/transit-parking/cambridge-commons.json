@@ -1,0 +1,17 @@
+{
+  "slug": "cambridge-commons",
+  "name": "Cambridge Commons",
+  "description": "",
+  "center": {
+    "lat": 35.2528638944034,
+    "lng": -80.6579971888783
+  },
+  "address": "8030 Cambridge Commons Cr, Charlotte, NC",
+  "totalSpaces": 29,
+  "freeParking": false,
+  "transitLines": [
+    "Bus"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

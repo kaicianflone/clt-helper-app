@@ -1,0 +1,21 @@
+{
+  "slug": "steele-creek-park",
+  "name": "Steele Creek Park",
+  "description": "",
+  "center": {
+    "lat": 35.1563226223662,
+    "lng": -80.95679223244893
+  },
+  "numParking": 58,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

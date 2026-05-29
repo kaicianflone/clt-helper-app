@@ -1,0 +1,16 @@
+{
+  "slug": "secure-parking-bac-parking-deck-104202",
+  "name": "Secure Parking - BAC Parking Deck",
+  "description": "",
+  "center": {
+    "lat": 35.226655,
+    "lng": -80.840749
+  },
+  "address": "150 N College St, Charlotte, NC, 28202",
+  "numLevel2Ports": 2,
+  "networks": [
+    "Non-Networked"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

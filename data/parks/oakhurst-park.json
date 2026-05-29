@@ -1,0 +1,21 @@
+{
+  "slug": "oakhurst-park",
+  "name": "Oakhurst Park",
+  "description": "",
+  "center": {
+    "lat": 35.191243084410054,
+    "lng": -80.789614473997
+  },
+  "numParking": 35,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": true
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

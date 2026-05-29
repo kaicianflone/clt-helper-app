@@ -1,0 +1,16 @@
+{
+  "slug": "ashley-court-apartments-399638",
+  "name": "Ashley Court Apartments",
+  "description": "",
+  "center": {
+    "lat": 35.3235,
+    "lng": -80.74414
+  },
+  "address": "9740 Ashley Lake Ct, Charlotte, NC, 28262",
+  "numLevel2Ports": 6,
+  "networks": [
+    "LOOP"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

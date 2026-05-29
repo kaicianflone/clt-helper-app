@@ -1,0 +1,21 @@
+{
+  "slug": "bluff-hill-park",
+  "name": "Bluff Hill Park",
+  "description": "",
+  "center": {
+    "lat": 35.27769591636128,
+    "lng": -80.69012750209448
+  },
+  "numParking": 0,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

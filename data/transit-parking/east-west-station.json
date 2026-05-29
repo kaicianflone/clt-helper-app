@@ -1,0 +1,17 @@
+{
+  "slug": "east-west-station",
+  "name": "East/West Station",
+  "description": "",
+  "center": {
+    "lat": 35.2103314637704,
+    "lng": -80.8558141086481
+  },
+  "address": "To Be Determined, Charlotte, NC",
+  "totalSpaces": 0,
+  "freeParking": false,
+  "transitLines": [
+    "Rail"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

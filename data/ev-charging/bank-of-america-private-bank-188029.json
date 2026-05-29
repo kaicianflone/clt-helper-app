@@ -1,0 +1,16 @@
+{
+  "slug": "bank-of-america-private-bank-188029",
+  "name": "Bank of America - Private Bank",
+  "description": "",
+  "center": {
+    "lat": 35.234688,
+    "lng": -80.851067
+  },
+  "address": "900 W Trade St, Charlotte, NC, 28202",
+  "numLevel2Ports": 8,
+  "networks": [
+    "Non-Networked"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

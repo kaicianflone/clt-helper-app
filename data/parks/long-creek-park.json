@@ -1,0 +1,21 @@
+{
+  "slug": "long-creek-park",
+  "name": "Long Creek Park",
+  "description": "",
+  "center": {
+    "lat": 35.297919377748556,
+    "lng": -80.97850912312735
+  },
+  "numParking": 0,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

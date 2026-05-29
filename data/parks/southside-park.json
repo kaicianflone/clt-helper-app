@@ -1,0 +1,21 @@
+{
+  "slug": "southside-park",
+  "name": "Southside Park",
+  "description": "",
+  "center": {
+    "lat": 35.20809725147537,
+    "lng": -80.8747808738182
+  },
+  "numParking": 100,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": true
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

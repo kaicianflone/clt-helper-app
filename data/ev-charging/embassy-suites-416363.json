@@ -1,0 +1,16 @@
+{
+  "slug": "embassy-suites-416363",
+  "name": "Embassy Suites",
+  "description": "",
+  "center": {
+    "lat": 35.1367467,
+    "lng": -80.9303879
+  },
+  "address": "1917 Ayrsley Town Blvd, Charlotte, NC, 28273",
+  "numLevel2Ports": 4,
+  "networks": [
+    "EVGATEWAY"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

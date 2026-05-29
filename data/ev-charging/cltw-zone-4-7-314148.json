@@ -1,0 +1,16 @@
+{
+  "slug": "cltw-zone-4-7-314148",
+  "name": "CLTW ZONE(4)-7",
+  "description": "",
+  "center": {
+    "lat": 35.202971,
+    "lng": -80.910318
+  },
+  "address": "4100 W Tyvola Rd, Charlotte, NC, 28208",
+  "numLevel2Ports": 2,
+  "networks": [
+    "ChargePoint Network"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

@@ -1,0 +1,16 @@
+{
+  "slug": "university-of-north-carolina-charlotte-cri-deck-1-121304",
+  "name": "University of North Carolina Charlotte - CRI Deck 1",
+  "description": "",
+  "center": {
+    "lat": 35.31027,
+    "lng": -80.74364
+  },
+  "address": "9100 Robert D. Snyder Rd, Charlotte, NC, 28223",
+  "numLevel2Ports": 4,
+  "networks": [
+    "Non-Networked"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

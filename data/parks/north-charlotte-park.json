@@ -1,0 +1,21 @@
+{
+  "slug": "north-charlotte-park",
+  "name": "North Charlotte Park",
+  "description": "",
+  "center": {
+    "lat": 35.24603676137291,
+    "lng": -80.797885925661
+  },
+  "numParking": 12,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": true
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

@@ -1,0 +1,21 @@
+{
+  "slug": "abersham-park",
+  "name": "Abersham Park",
+  "description": "",
+  "center": {
+    "lat": 35.505863712846406,
+    "lng": -80.80422244889277
+  },
+  "numParking": 42,
+  "parkUrl": "https://www.townofdavidson.org/130/Parks-Recreation",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

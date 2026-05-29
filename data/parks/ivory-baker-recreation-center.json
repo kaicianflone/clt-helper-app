@@ -1,0 +1,21 @@
+{
+  "slug": "ivory-baker-recreation-center",
+  "name": "Ivory-Baker Recreation Center",
+  "description": "",
+  "center": {
+    "lat": 35.24978820535212,
+    "lng": -80.84002617562848
+  },
+  "numParking": 85,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

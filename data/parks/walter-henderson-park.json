@@ -1,0 +1,21 @@
+{
+  "slug": "walter-henderson-park",
+  "name": "Walter Henderson Park",
+  "description": "",
+  "center": {
+    "lat": 35.48962230201624,
+    "lng": -80.89693317772117
+  },
+  "numParking": 0,
+  "parkUrl": "https://cornelius.org/park/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

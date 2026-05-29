@@ -1,0 +1,21 @@
+{
+  "slug": "collins-park",
+  "name": "Collins Park",
+  "description": "",
+  "center": {
+    "lat": 35.18097786020538,
+    "lng": -80.8712604326562
+  },
+  "numParking": 0,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": true,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

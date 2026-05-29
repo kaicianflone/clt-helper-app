@@ -1,0 +1,21 @@
+{
+  "slug": "mcalpine-creek-park",
+  "name": "McAlpine Creek Park",
+  "description": "",
+  "center": {
+    "lat": 35.150788693608646,
+    "lng": -80.74560244459414
+  },
+  "numParking": 285,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": true,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

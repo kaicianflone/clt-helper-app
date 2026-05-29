@@ -1,0 +1,21 @@
+{
+  "slug": "rozzelles-ferry-nature-preserve",
+  "name": "Rozzelles Ferry Nature Preserve",
+  "description": "",
+  "center": {
+    "lat": 35.34785685771532,
+    "lng": -80.96912708042491
+  },
+  "numParking": 0,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

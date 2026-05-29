@@ -1,0 +1,21 @@
+{
+  "slug": "independence-pointe-park",
+  "name": "Independence Pointe Park",
+  "description": "",
+  "center": {
+    "lat": 35.132287697079406,
+    "lng": -80.7137981414715
+  },
+  "numParking": 0,
+  "parkUrl": "https://www.matthewsnc.gov/pview.aspx?id=20727&catid=0",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

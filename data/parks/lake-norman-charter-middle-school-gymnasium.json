@@ -1,0 +1,21 @@
+{
+  "slug": "lake-norman-charter-middle-school-gymnasium",
+  "name": "Lake Norman Charter Middle School Gymnasium",
+  "description": "",
+  "center": {
+    "lat": 35.390987779952,
+    "lng": -80.83549038992648
+  },
+  "numParking": 125,
+  "parkUrl": "https://www.huntersville.org/3073/Parks-Recreation-Department",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": true
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

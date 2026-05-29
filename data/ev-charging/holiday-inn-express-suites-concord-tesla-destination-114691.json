@@ -1,0 +1,16 @@
+{
+  "slug": "holiday-inn-express-suites-concord-tesla-destination-114691",
+  "name": "Holiday Inn Express & Suites Concord - Tesla Destination",
+  "description": "",
+  "center": {
+    "lat": 35.464015,
+    "lng": -80.589379
+  },
+  "address": "2491 Wonder Dr NE, Kannapolis, NC, 28083",
+  "numLevel2Ports": 5,
+  "networks": [
+    "Tesla Destination"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

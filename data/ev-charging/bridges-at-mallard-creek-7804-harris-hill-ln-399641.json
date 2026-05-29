@@ -1,0 +1,16 @@
+{
+  "slug": "bridges-at-mallard-creek-7804-harris-hill-ln-399641",
+  "name": "Bridges at Mallard Creek - 7804 Harris Hill Ln",
+  "description": "",
+  "center": {
+    "lat": 35.318516,
+    "lng": -80.7837813
+  },
+  "address": "7804 Harris Hill Ln, Charlotte, NC, 28269",
+  "numLevel2Ports": 2,
+  "networks": [
+    "LOOP"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

@@ -1,0 +1,16 @@
+{
+  "slug": "solis-birkdale-400555",
+  "name": "Solis Birkdale",
+  "description": "",
+  "center": {
+    "lat": 35.4412637703568,
+    "lng": -80.88129194232869
+  },
+  "address": "9035 Lindholm Drive, Huntersville, NC, 28078",
+  "numLevel2Ports": 10,
+  "networks": [
+    "Blink Network"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

@@ -1,0 +1,16 @@
+{
+  "slug": "foxhole-yard-waste-facility",
+  "name": "Foxhole Yard Waste Facility",
+  "description": "",
+  "center": {
+    "lat": 35.01648221102771,
+    "lng": -80.84942423552678
+  },
+  "address": "19131 Lancaster Highway",
+  "acceptedMaterials": [
+    "Yard Waste & Recycling",
+    "Staffed"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

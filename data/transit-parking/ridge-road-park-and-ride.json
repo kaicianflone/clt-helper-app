@@ -1,0 +1,17 @@
+{
+  "slug": "ridge-road-park-and-ride",
+  "name": "Ridge Road Park and Ride",
+  "description": "",
+  "center": {
+    "lat": 35.3728227331011,
+    "lng": -80.7865464005206
+  },
+  "address": "Ridge Road, Charlotte, NC",
+  "totalSpaces": 78,
+  "freeParking": false,
+  "transitLines": [
+    "Bus"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

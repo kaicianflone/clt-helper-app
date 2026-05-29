@@ -1,0 +1,16 @@
+{
+  "slug": "sycamore-commons-tesla-supercharger-257672",
+  "name": "Sycamore Commons - Tesla Supercharger",
+  "description": "",
+  "center": {
+    "lat": 35.12848,
+    "lng": -80.700299
+  },
+  "address": "2309 Matthews Township Pkwy, Matthews, NC, 28105",
+  "numDcFastPorts": 12,
+  "networks": [
+    "Tesla"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

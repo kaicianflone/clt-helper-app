@@ -1,0 +1,16 @@
+{
+  "slug": "colliers-five-coliseum-centre-251390",
+  "name": "Colliers - Five Coliseum Centre",
+  "description": "",
+  "center": {
+    "lat": 35.189475,
+    "lng": -80.9155216
+  },
+  "address": "2810 Coliseum Centre Dr, Charlotte, NC, 28217",
+  "numLevel2Ports": 2,
+  "networks": [
+    "AMPUP"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

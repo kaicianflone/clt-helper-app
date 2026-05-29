@@ -1,0 +1,21 @@
+{
+  "slug": "dorothy-d-waddy-pavilion",
+  "name": "Dorothy D. Waddy Pavilion",
+  "description": "",
+  "center": {
+    "lat": 35.20550351677314,
+    "lng": -80.88367709848548
+  },
+  "numParking": 80,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

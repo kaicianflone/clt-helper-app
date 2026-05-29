@@ -1,0 +1,16 @@
+{
+  "slug": "northcrest-shopping-center-tesla-supercharger-191693",
+  "name": "Northcrest Shopping Center - Tesla Supercharger",
+  "description": "",
+  "center": {
+    "lat": 35.347264,
+    "lng": -80.859183
+  },
+  "address": "9841 Northlake Centre Parkway, Charlotte, NC, 28216",
+  "numDcFastPorts": 12,
+  "networks": [
+    "Tesla"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

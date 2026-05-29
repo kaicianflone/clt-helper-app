@@ -1,0 +1,21 @@
+{
+  "slug": "tyvola-senior-center",
+  "name": "Tyvola Senior Center",
+  "description": "",
+  "center": {
+    "lat": 35.15999647099484,
+    "lng": -80.85956897555695
+  },
+  "numParking": 100,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

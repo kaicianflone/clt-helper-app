@@ -1,0 +1,21 @@
+{
+  "slug": "lakewood-park",
+  "name": "Lakewood Park",
+  "description": "",
+  "center": {
+    "lat": 35.25299608994788,
+    "lng": -80.87851245073752
+  },
+  "numParking": 0,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": true
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

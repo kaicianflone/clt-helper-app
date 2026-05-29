@@ -1,0 +1,21 @@
+{
+  "slug": "naomi-drenan-recreation-center",
+  "name": "Naomi Drenan Recreation Center",
+  "description": "",
+  "center": {
+    "lat": 35.18998147221497,
+    "lng": -80.7963153864046
+  },
+  "numParking": 78,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

@@ -1,0 +1,16 @@
+{
+  "slug": "bank-of-america-financial-center-123510",
+  "name": "Bank of America - Financial Center",
+  "description": "",
+  "center": {
+    "lat": 35.230261,
+    "lng": -80.839631
+  },
+  "address": "201 N Tryon St, Charlotte, NC, 28202",
+  "numLevel2Ports": 1,
+  "networks": [
+    "Non-Networked"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

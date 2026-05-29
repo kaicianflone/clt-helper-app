@@ -1,0 +1,21 @@
+{
+  "slug": "bailey-road-recreation-center",
+  "name": "Bailey Road Recreation Center",
+  "description": "",
+  "center": {
+    "lat": 35.46742108547303,
+    "lng": -80.83637345106388
+  },
+  "numParking": 153,
+  "parkUrl": "https://cornelius.org/park/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": true
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

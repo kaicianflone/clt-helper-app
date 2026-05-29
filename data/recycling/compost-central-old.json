@@ -1,0 +1,16 @@
+{
+  "slug": "compost-central-old",
+  "name": "Compost Central (Old)",
+  "description": "",
+  "center": {
+    "lat": 35.193913951375926,
+    "lng": -80.95410452128743
+  },
+  "address": "5631 West Blvd",
+  "acceptedMaterials": [
+    "Yard Waste",
+    "Staffed"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

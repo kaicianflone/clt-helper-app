@@ -1,0 +1,16 @@
+{
+  "slug": "charlotte-nc-249-ev-arc-175419",
+  "name": "CHARLOTTE, NC 249 EV ARC",
+  "description": "",
+  "center": {
+    "lat": 35.248044,
+    "lng": -80.833352
+  },
+  "address": "1776 Statesville Ave, Charlotte, NC, 28206",
+  "numLevel2Ports": 2,
+  "networks": [
+    "ChargePoint Network"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

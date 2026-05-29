@@ -1,0 +1,21 @@
+{
+  "slug": "martin-luther-king-jr-middle-school-site",
+  "name": "Martin Luther King Jr. Middle School Site",
+  "description": "",
+  "center": {
+    "lat": 35.26317098337542,
+    "lng": -80.77917850104423
+  },
+  "numParking": 130,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

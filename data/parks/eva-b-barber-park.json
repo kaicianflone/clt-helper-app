@@ -1,0 +1,21 @@
+{
+  "slug": "eva-b-barber-park",
+  "name": "Eva B. Barber Park",
+  "description": "",
+  "center": {
+    "lat": 35.25970363822384,
+    "lng": -80.88457183904295
+  },
+  "numParking": 0,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": true
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

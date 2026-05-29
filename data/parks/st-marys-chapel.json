@@ -1,0 +1,21 @@
+{
+  "slug": "st-marys-chapel",
+  "name": "St. Marys Chapel",
+  "description": "",
+  "center": {
+    "lat": 35.215893736191035,
+    "lng": -80.83352356783163
+  },
+  "numParking": 25,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

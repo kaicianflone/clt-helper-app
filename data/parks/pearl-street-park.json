@@ -1,0 +1,21 @@
+{
+  "slug": "pearl-street-park",
+  "name": "Pearl Street Park",
+  "description": "",
+  "center": {
+    "lat": 35.21211132714736,
+    "lng": -80.83726843575823
+  },
+  "numParking": 21,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": true,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": true
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

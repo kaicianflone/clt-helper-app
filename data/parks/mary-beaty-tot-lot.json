@@ -1,0 +1,21 @@
+{
+  "slug": "mary-beaty-tot-lot",
+  "name": "Mary Beaty Tot Lot",
+  "description": "",
+  "center": {
+    "lat": 35.49840902011945,
+    "lng": -80.84941222701762
+  },
+  "numParking": 0,
+  "parkUrl": "https://www.townofdavidson.org/130/Parks-Recreation",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

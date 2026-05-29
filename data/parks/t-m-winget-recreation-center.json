@@ -1,0 +1,21 @@
+{
+  "slug": "t-m-winget-recreation-center",
+  "name": "T.M. Winget Recreation Center",
+  "description": "",
+  "center": {
+    "lat": 35.130378763730214,
+    "lng": -81.00045808151125
+  },
+  "numParking": 201,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

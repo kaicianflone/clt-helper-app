@@ -1,0 +1,21 @@
+{
+  "slug": "york-road-palisades-park",
+  "name": "York Road Palisades Park",
+  "description": "",
+  "center": {
+    "lat": 35.09391771600981,
+    "lng": -81.02422611821761
+  },
+  "numParking": 134,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

@@ -1,0 +1,21 @@
+{
+  "slug": "mint-hill-park-on-wilgrove",
+  "name": "Mint Hill Park on Wilgrove",
+  "description": "",
+  "center": {
+    "lat": 35.189737859906586,
+    "lng": -80.65597260891496
+  },
+  "numParking": 115,
+  "parkUrl": "https://www.minthill.com/residents/parks___recreation/index.php",
+  "amenities": {
+    "tennis": true,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

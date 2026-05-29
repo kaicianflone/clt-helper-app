@@ -1,0 +1,16 @@
+{
+  "slug": "charlotte-nc-cmgc-prkg-l1-1-266677",
+  "name": "CHARLOTTE, NC CMGC PRKG L1-1",
+  "description": "",
+  "center": {
+    "lat": 35.222073,
+    "lng": -80.839875
+  },
+  "address": "232 S Davidson St, Charlotte, NC, 28202",
+  "numLevel2Ports": 2,
+  "networks": [
+    "ChargePoint Network"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

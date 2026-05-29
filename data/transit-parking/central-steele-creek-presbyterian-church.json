@@ -1,0 +1,17 @@
+{
+  "slug": "central-steele-creek-presbyterian-church",
+  "name": "Central Steele Creek Presbyterian Church",
+  "description": "",
+  "center": {
+    "lat": 35.1306037494547,
+    "lng": -80.9408188797638
+  },
+  "address": "9401 South Tryon Street, Charlotte, NC",
+  "totalSpaces": 10,
+  "freeParking": true,
+  "transitLines": [
+    "Bus"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

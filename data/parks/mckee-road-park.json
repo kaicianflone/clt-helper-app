@@ -1,0 +1,21 @@
+{
+  "slug": "mckee-road-park",
+  "name": "McKee Road Park",
+  "description": "",
+  "center": {
+    "lat": 35.06833799253778,
+    "lng": -80.75692153136568
+  },
+  "numParking": 120,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

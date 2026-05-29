@@ -1,0 +1,17 @@
+{
+  "slug": "cornerstone-baptist-church",
+  "name": "Cornerstone Baptist Church",
+  "description": "",
+  "center": {
+    "lat": 35.2120848147278,
+    "lng": -80.6926456965467
+  },
+  "address": "8947 Albemarle Road, Charlotte, NC",
+  "totalSpaces": 20,
+  "freeParking": true,
+  "transitLines": [
+    "Bus"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

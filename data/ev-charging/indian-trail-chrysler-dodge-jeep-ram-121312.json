@@ -1,0 +1,16 @@
+{
+  "slug": "indian-trail-chrysler-dodge-jeep-ram-121312",
+  "name": "Indian Trail Chrysler Dodge Jeep Ram",
+  "description": "",
+  "center": {
+    "lat": 35.058525,
+    "lng": -80.632095
+  },
+  "address": "5501 W Highway 74, Monroe, NC, 28110",
+  "numLevel2Ports": 2,
+  "networks": [
+    "Non-Networked"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

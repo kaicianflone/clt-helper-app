@@ -1,0 +1,21 @@
+{
+  "slug": "parham-gateway-park",
+  "name": "Parham Gateway Park",
+  "description": "",
+  "center": {
+    "lat": 35.49818945415268,
+    "lng": -80.86344293693617
+  },
+  "numParking": 0,
+  "parkUrl": "https://www.townofdavidson.org/130/Parks-Recreation",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

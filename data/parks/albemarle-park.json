@@ -1,0 +1,21 @@
+{
+  "slug": "albemarle-park",
+  "name": "Albemarle Park",
+  "description": "",
+  "center": {
+    "lat": 35.19627160474594,
+    "lng": -80.72665264604888
+  },
+  "numParking": 27,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

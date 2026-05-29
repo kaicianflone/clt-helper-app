@@ -1,0 +1,21 @@
+{
+  "slug": "monroe-road-park",
+  "name": "Monroe Road Park",
+  "description": "",
+  "center": {
+    "lat": 35.18711432993918,
+    "lng": -80.76663823950416
+  },
+  "numParking": 45,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

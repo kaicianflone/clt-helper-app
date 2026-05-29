@@ -1,0 +1,16 @@
+{
+  "slug": "athertongarage-2nd-lvl-stn-1-158573",
+  "name": "ATHERTONGARAGE 2ND LVL STN 1",
+  "description": "",
+  "center": {
+    "lat": 35.207704,
+    "lng": -80.861407
+  },
+  "address": "2100 South Blvd, Charlotte, NC, 28203",
+  "numLevel2Ports": 2,
+  "networks": [
+    "ChargePoint Network"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

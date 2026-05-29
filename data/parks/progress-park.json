@@ -1,0 +1,21 @@
+{
+  "slug": "progress-park",
+  "name": "Progress Park",
+  "description": "",
+  "center": {
+    "lat": 35.23314442752163,
+    "lng": -80.81236316944096
+  },
+  "numParking": 0,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

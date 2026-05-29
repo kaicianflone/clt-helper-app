@@ -1,0 +1,16 @@
+{
+  "slug": "vrf-robinson-farm-70594",
+  "name": "VRF ROBINSON FARM",
+  "description": "",
+  "center": {
+    "lat": 35.053318,
+    "lng": -80.81217
+  },
+  "address": "8430 Rea Rd, Charlotte, NC, 28277",
+  "numLevel2Ports": 2,
+  "networks": [
+    "ChargePoint Network"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

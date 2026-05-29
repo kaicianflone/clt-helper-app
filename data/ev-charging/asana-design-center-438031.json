@@ -1,0 +1,16 @@
+{
+  "slug": "asana-design-center-438031",
+  "name": "Asana Design Center",
+  "description": "",
+  "center": {
+    "lat": 35.21107,
+    "lng": -80.86101
+  },
+  "address": "1930 Camden Rd, Charlotte, NC, 28203",
+  "numLevel2Ports": 2,
+  "networks": [
+    "ENVIROSPARK"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

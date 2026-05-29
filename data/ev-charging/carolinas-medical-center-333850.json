@@ -1,0 +1,16 @@
+{
+  "slug": "carolinas-medical-center-333850",
+  "name": "Carolinas Medical Center",
+  "description": "",
+  "center": {
+    "lat": 35.2033472,
+    "lng": -80.838313
+  },
+  "address": "1000 Blythe Blvd, Charlotte, NC, 28203",
+  "numLevel2Ports": 9,
+  "networks": [
+    "EVGATEWAY"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

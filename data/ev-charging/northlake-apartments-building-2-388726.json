@@ -1,0 +1,16 @@
+{
+  "slug": "northlake-apartments-building-2-388726",
+  "name": "Northlake Apartments - Building 2",
+  "description": "",
+  "center": {
+    "lat": 35.36012964164011,
+    "lng": -80.85048543250497
+  },
+  "address": "11111 Linz Lane, Huntersville, NC, 28078",
+  "numLevel2Ports": 1,
+  "networks": [
+    "Blink Network"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

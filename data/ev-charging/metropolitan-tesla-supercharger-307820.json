@@ -1,0 +1,16 @@
+{
+  "slug": "metropolitan-tesla-supercharger-307820",
+  "name": "Metropolitan - Tesla Supercharger",
+  "description": "",
+  "center": {
+    "lat": 35.21265589,
+    "lng": -80.83464481
+  },
+  "address": "1111 Metropolitan Ave, Charlotte, NC, 28204",
+  "numDcFastPorts": 16,
+  "networks": [
+    "Tesla"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

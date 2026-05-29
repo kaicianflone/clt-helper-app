@@ -1,0 +1,16 @@
+{
+  "slug": "eproperty-first-floor-gw2-95013",
+  "name": "EPROPERTY FIRST FLOOR GW2",
+  "description": "",
+  "center": {
+    "lat": 35.137204,
+    "lng": -80.929129
+  },
+  "address": "2401-2621 Silver Cres Dr, Charlotte, NC, 28273",
+  "numLevel2Ports": 2,
+  "networks": [
+    "ChargePoint Network"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

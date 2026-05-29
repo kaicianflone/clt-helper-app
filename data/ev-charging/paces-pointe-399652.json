@@ -1,0 +1,16 @@
+{
+  "slug": "paces-pointe-399652",
+  "name": "Paces Pointe",
+  "description": "",
+  "center": {
+    "lat": 35.12365,
+    "lng": -80.71278
+  },
+  "address": "10501 Paces Ave, Matthews, NC, 28105",
+  "numLevel2Ports": 6,
+  "networks": [
+    "LOOP"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

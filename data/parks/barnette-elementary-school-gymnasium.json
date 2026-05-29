@@ -1,0 +1,21 @@
+{
+  "slug": "barnette-elementary-school-gymnasium",
+  "name": "Barnette Elementary School Gymnasium",
+  "description": "",
+  "center": {
+    "lat": 35.40018264172679,
+    "lng": -80.92467394265417
+  },
+  "numParking": 20,
+  "parkUrl": "https://www.huntersville.org/3073/Parks-Recreation-Department",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": true
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

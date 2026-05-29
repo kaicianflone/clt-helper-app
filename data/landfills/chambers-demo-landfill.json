@@ -1,0 +1,13 @@
+{
+  "slug": "chambers-demo-landfill",
+  "name": "CHAMBERS DEMO LANDFILL",
+  "description": "",
+  "center": {
+    "lat": 35.222689725567896,
+    "lng": -80.59436116479539
+  },
+  "address": "10506 COBLE RD",
+  "status": "closed",
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

@@ -1,0 +1,21 @@
+{
+  "slug": "buckeye-cove-nature-preserve",
+  "name": "Buckeye Cove Nature Preserve",
+  "description": "",
+  "center": {
+    "lat": 35.41161195522607,
+    "lng": -80.94664852764586
+  },
+  "numParking": 8,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

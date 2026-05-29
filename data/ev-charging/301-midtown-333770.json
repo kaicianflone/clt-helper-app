@@ -1,0 +1,16 @@
+{
+  "slug": "301-midtown-333770",
+  "name": "301 Midtown",
+  "description": "",
+  "center": {
+    "lat": 35.21804,
+    "lng": -80.83756
+  },
+  "address": "301 S McDowell St, Charlotte, NC, 28204",
+  "numLevel2Ports": 4,
+  "networks": [
+    "Non-Networked"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

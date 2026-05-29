@@ -1,0 +1,16 @@
+{
+  "slug": "matthews-station-310043",
+  "name": "Matthews Station",
+  "description": "",
+  "center": {
+    "lat": 35.1383217,
+    "lng": -80.7131866
+  },
+  "address": "4010 Waiting Street, Matthews, NC, 28105",
+  "numLevel2Ports": 4,
+  "networks": [
+    "Blink Network"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

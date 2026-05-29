@@ -1,0 +1,16 @@
+{
+  "slug": "ayrsley-377515",
+  "name": "Ayrsley",
+  "description": "",
+  "center": {
+    "lat": 35.139936,
+    "lng": -80.93274
+  },
+  "address": "8419 S. Tryon St., Charlotte, NC, 28273",
+  "numDcFastPorts": 12,
+  "networks": [
+    "EV Connect"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

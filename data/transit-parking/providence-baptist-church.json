@@ -1,0 +1,17 @@
+{
+  "slug": "providence-baptist-church",
+  "name": "Providence Baptist Church",
+  "description": "",
+  "center": {
+    "lat": 35.1684758750245,
+    "lng": -80.7949790576072
+  },
+  "address": "4921 Randolph Road, Charlotte, NC",
+  "totalSpaces": 20,
+  "freeParking": true,
+  "transitLines": [
+    "Bus"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

@@ -1,0 +1,21 @@
+{
+  "slug": "unity-park",
+  "name": "Unity Park",
+  "description": "",
+  "center": {
+    "lat": 35.25479941884324,
+    "lng": -80.75265219481561
+  },
+  "numParking": 0,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": true,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

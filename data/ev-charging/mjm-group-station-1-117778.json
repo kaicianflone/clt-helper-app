@@ -1,0 +1,16 @@
+{
+  "slug": "mjm-group-station-1-117778",
+  "name": "MJM GROUP STATION 1",
+  "description": "",
+  "center": {
+    "lat": 35.164749,
+    "lng": -80.972577
+  },
+  "address": "5110 Trojan Dr, Charlotte, NC, 28278",
+  "numLevel2Ports": 2,
+  "networks": [
+    "ChargePoint Network"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

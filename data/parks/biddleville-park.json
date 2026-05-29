@@ -1,0 +1,21 @@
+{
+  "slug": "biddleville-park",
+  "name": "Biddleville Park",
+  "description": "",
+  "center": {
+    "lat": 35.243426287903254,
+    "lng": -80.85027542360297
+  },
+  "numParking": 0,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": true
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

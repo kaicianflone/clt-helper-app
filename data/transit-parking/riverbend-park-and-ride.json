@@ -1,0 +1,17 @@
+{
+  "slug": "riverbend-park-and-ride",
+  "name": "Riverbend Park and Ride",
+  "description": "",
+  "center": {
+    "lat": 35.3286044417678,
+    "lng": -80.9414589933878
+  },
+  "address": "4009 Corning Pl, Charlotte, NC",
+  "totalSpaces": 30,
+  "freeParking": true,
+  "transitLines": [
+    "Bus"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

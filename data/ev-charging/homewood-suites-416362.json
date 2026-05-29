@@ -1,0 +1,16 @@
+{
+  "slug": "homewood-suites-416362",
+  "name": "Homewood Suites",
+  "description": "",
+  "center": {
+    "lat": 35.1373097,
+    "lng": -80.9311811
+  },
+  "address": "1921 Ayrsley Town Blvd, Charlotte, NC, 28273",
+  "numLevel2Ports": 2,
+  "networks": [
+    "EVGATEWAY"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

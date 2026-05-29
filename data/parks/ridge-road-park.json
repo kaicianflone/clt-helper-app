@@ -1,0 +1,21 @@
+{
+  "slug": "ridge-road-park",
+  "name": "Ridge Road Park",
+  "description": "",
+  "center": {
+    "lat": 35.37472240651794,
+    "lng": -80.77286060405433
+  },
+  "numParking": 0,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

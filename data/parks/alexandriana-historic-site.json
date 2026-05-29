@@ -1,0 +1,21 @@
+{
+  "slug": "alexandriana-historic-site",
+  "name": "Alexandriana Historic Site",
+  "description": "",
+  "center": {
+    "lat": 35.35796378267914,
+    "lng": -80.82270633409108
+  },
+  "numParking": 5,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

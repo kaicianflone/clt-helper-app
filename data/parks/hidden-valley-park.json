@@ -1,0 +1,21 @@
+{
+  "slug": "hidden-valley-park",
+  "name": "Hidden Valley Park",
+  "description": "",
+  "center": {
+    "lat": 35.26345305804601,
+    "lng": -80.77648532860526
+  },
+  "numParking": 0,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

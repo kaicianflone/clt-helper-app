@@ -1,0 +1,16 @@
+{
+  "slug": "charlotte-nc-fs-43-ev-1-193055",
+  "name": "CHARLOTTE, NC FS 43-EV 1",
+  "description": "",
+  "center": {
+    "lat": 35.195985,
+    "lng": -80.878473
+  },
+  "address": "421 Clanton Rd, Charlotte, NC, 28217",
+  "numLevel2Ports": 2,
+  "networks": [
+    "ChargePoint Network"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

@@ -1,0 +1,16 @@
+{
+  "slug": "cracker-barrel-tesla-supercharger-449190",
+  "name": "Cracker Barrel - Tesla Supercharger",
+  "description": "",
+  "center": {
+    "lat": 35.365643,
+    "lng": -80.71257
+  },
+  "address": "7809 Lyles Ln NW, Concord, NC, 28027",
+  "numDcFastPorts": 16,
+  "networks": [
+    "Tesla"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

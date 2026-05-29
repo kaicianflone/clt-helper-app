@@ -1,0 +1,17 @@
+{
+  "slug": "cokesbury-united-methodist",
+  "name": "Cokesbury United Methodist",
+  "description": "",
+  "center": {
+    "lat": 35.1851985017608,
+    "lng": -80.7488793662521
+  },
+  "address": "6701 Idlewild Road, Charlotte, NC",
+  "totalSpaces": 40,
+  "freeParking": true,
+  "transitLines": [
+    "Bus"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

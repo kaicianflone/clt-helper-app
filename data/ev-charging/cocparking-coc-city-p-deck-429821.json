@@ -1,0 +1,16 @@
+{
+  "slug": "cocparking-coc-city-p-deck-429821",
+  "name": "COCPARKING COC CITY P DECK",
+  "description": "",
+  "center": {
+    "lat": 35.410065,
+    "lng": -80.582146
+  },
+  "address": "28 Cabarrus Ave W, Concord, NC, 28025",
+  "numLevel2Ports": 2,
+  "networks": [
+    "ChargePoint Network"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

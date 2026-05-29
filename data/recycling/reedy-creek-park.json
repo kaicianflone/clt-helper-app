@@ -1,0 +1,16 @@
+{
+  "slug": "reedy-creek-park",
+  "name": "Reedy Creek Park",
+  "description": "",
+  "center": {
+    "lat": 35.27409663045341,
+    "lng": -80.71516426662667
+  },
+  "address": "2900 Rocky River Rd.",
+  "acceptedMaterials": [
+    "Recycling",
+    "Self Service"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

@@ -1,0 +1,16 @@
+{
+  "slug": "verizon-charlotte-123325",
+  "name": "Verizon - Charlotte",
+  "description": "",
+  "center": {
+    "lat": 35.146862,
+    "lng": -80.728887
+  },
+  "address": "2401 Sardis Rd N, Charlotte, NC, 28227",
+  "numLevel2Ports": 4,
+  "networks": [
+    "Non-Networked"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

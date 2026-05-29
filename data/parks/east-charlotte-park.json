@@ -1,0 +1,21 @@
+{
+  "slug": "east-charlotte-park",
+  "name": "East Charlotte Park",
+  "description": "",
+  "center": {
+    "lat": 35.211252732643054,
+    "lng": -80.72592313701543
+  },
+  "numParking": 0,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

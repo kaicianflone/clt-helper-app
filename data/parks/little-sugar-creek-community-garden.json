@@ -1,0 +1,21 @@
+{
+  "slug": "little-sugar-creek-community-garden",
+  "name": "Little Sugar Creek Community Garden",
+  "description": "",
+  "center": {
+    "lat": 35.232534909727946,
+    "lng": -80.82264294349802
+  },
+  "numParking": 0,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

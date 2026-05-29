@@ -1,0 +1,21 @@
+{
+  "slug": "mason-wallace-park",
+  "name": "Mason Wallace Park",
+  "description": "",
+  "center": {
+    "lat": 35.167744628145506,
+    "lng": -80.7555285434414
+  },
+  "numParking": 173,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": true,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": true
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

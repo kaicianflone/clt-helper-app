@@ -1,0 +1,16 @@
+{
+  "slug": "cne-deck-ev-razaedes-way-5-235736",
+  "name": "CNE DECK EV RAZAEDES WAY 5",
+  "description": "",
+  "center": {
+    "lat": 35.244828,
+    "lng": -80.831783
+  },
+  "address": "Graham St & Keswick Ave, Charlotte, NC, 28206",
+  "numLevel2Ports": 2,
+  "networks": [
+    "ChargePoint Network"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

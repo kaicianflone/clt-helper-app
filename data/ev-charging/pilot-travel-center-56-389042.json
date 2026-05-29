@@ -1,0 +1,16 @@
+{
+  "slug": "pilot-travel-center-56-389042",
+  "name": "Pilot Travel Center 56",
+  "description": "",
+  "center": {
+    "lat": 35.4979475,
+    "lng": -80.5609884
+  },
+  "address": "2825 Lane Street, Kannapolis, NC, 28083",
+  "numDcFastPorts": 5,
+  "networks": [
+    "eVgo Network"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

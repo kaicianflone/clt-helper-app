@@ -1,0 +1,16 @@
+{
+  "slug": "polk-state-historic-site-350441",
+  "name": "Polk State Historic Site",
+  "description": "",
+  "center": {
+    "lat": 35.07786,
+    "lng": -80.88183
+  },
+  "address": "12031 Lancaster Hwy, Pineville, NC, 28134",
+  "numLevel2Ports": 2,
+  "networks": [
+    "VIALYNK"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

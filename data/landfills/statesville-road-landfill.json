@@ -1,0 +1,13 @@
+{
+  "slug": "statesville-road-landfill",
+  "name": "STATESVILLE ROAD LANDFILL",
+  "description": "",
+  "center": {
+    "lat": 35.26721238928634,
+    "lng": -80.83128362635401
+  },
+  "address": "3200 NORTHERLY RD",
+  "status": "closed",
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

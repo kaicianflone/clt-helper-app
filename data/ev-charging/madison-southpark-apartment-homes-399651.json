@@ -1,0 +1,16 @@
+{
+  "slug": "madison-southpark-apartment-homes-399651",
+  "name": "Madison Southpark Apartment Homes",
+  "description": "",
+  "center": {
+    "lat": 35.14593,
+    "lng": -80.81777
+  },
+  "address": "4605 Colony Rd, Charlotte, NC, 28226",
+  "numLevel2Ports": 6,
+  "networks": [
+    "LOOP"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

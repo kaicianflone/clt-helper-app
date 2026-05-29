@@ -1,0 +1,17 @@
+{
+  "slug": "whitehall-commons",
+  "name": "Whitehall Commons",
+  "description": "",
+  "center": {
+    "lat": 35.1447142404181,
+    "lng": -80.9322277541231
+  },
+  "address": "8031 South Tryon Street, Charlotte, NC",
+  "totalSpaces": 30,
+  "freeParking": true,
+  "transitLines": [
+    "Bus"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

@@ -1,0 +1,21 @@
+{
+  "slug": "jv-washam-recreation-center",
+  "name": "JV Washam Recreation Center",
+  "description": "",
+  "center": {
+    "lat": 35.46569356548298,
+    "lng": -80.86823232924469
+  },
+  "numParking": 97,
+  "parkUrl": "https://cornelius.org/park/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": true,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": true
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

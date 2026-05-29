@@ -1,0 +1,21 @@
+{
+  "slug": "meck-co-park-operations",
+  "name": "Meck Co Park Operations",
+  "description": "",
+  "center": {
+    "lat": 35.217198310900265,
+    "lng": -80.82545618112401
+  },
+  "numParking": 38,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

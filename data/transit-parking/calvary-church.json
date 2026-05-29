@@ -1,0 +1,17 @@
+{
+  "slug": "calvary-church",
+  "name": "Calvary Church",
+  "description": "",
+  "center": {
+    "lat": 35.0825408357453,
+    "lng": -80.8142632569127
+  },
+  "address": "5801 Pineville-Matthews Road, Charlotte, NC",
+  "totalSpaces": 25,
+  "freeParking": true,
+  "transitLines": [
+    "Bus"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

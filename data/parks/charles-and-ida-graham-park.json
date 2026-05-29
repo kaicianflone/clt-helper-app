@@ -1,0 +1,21 @@
+{
+  "slug": "charles-and-ida-graham-park",
+  "name": "Charles and Ida Graham Park",
+  "description": "",
+  "center": {
+    "lat": 35.42792193912034,
+    "lng": -80.9016122516706
+  },
+  "numParking": 0,
+  "parkUrl": "https://www.huntersville.org/3073/Parks-Recreation-Department",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

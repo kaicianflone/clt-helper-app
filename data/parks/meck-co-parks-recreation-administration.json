@@ -1,0 +1,21 @@
+{
+  "slug": "meck-co-parks-recreation-administration",
+  "name": "Meck Co Parks & Recreation Administration",
+  "description": "",
+  "center": {
+    "lat": 35.28189845983992,
+    "lng": -80.90221769825257
+  },
+  "numParking": 160,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

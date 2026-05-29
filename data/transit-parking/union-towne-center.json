@@ -1,0 +1,17 @@
+{
+  "slug": "union-towne-center",
+  "name": "Union Towne Center",
+  "description": "",
+  "center": {
+    "lat": 35.0674208537828,
+    "lng": -80.6393181730634
+  },
+  "address": "221 West Highway 74, Wingate, NC",
+  "totalSpaces": 50,
+  "freeParking": false,
+  "transitLines": [
+    "Bus"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

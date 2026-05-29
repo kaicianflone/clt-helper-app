@@ -1,0 +1,16 @@
+{
+  "slug": "charlotte-nc-cmgc-deck-ada-326047",
+  "name": "CHARLOTTE, NC CMGC DECK ADA",
+  "description": "",
+  "center": {
+    "lat": 35.222081,
+    "lng": -80.839662
+  },
+  "address": "232 South Davidson Street, Charlotte, NC, 28202",
+  "numLevel2Ports": 2,
+  "networks": [
+    "ChargePoint Network"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

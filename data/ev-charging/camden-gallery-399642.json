@@ -1,0 +1,16 @@
+{
+  "slug": "camden-gallery-399642",
+  "name": "Camden Gallery",
+  "description": "",
+  "center": {
+    "lat": 35.213157,
+    "lng": -80.858892
+  },
+  "address": "1750 Camden Rd, Charlotte, NC, 28203",
+  "numLevel2Ports": 6,
+  "networks": [
+    "LOOP"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

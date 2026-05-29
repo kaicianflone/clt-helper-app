@@ -1,0 +1,16 @@
+{
+  "slug": "bradham-apts-station-1-165174",
+  "name": "BRADHAM APTS STATION 1",
+  "description": "",
+  "center": {
+    "lat": 35.199345,
+    "lng": -80.867961
+  },
+  "address": "145 New Bern St, Charlotte, NC, 28209",
+  "numLevel2Ports": 2,
+  "networks": [
+    "ChargePoint Network"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

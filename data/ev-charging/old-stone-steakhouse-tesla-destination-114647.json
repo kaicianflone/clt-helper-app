@@ -1,0 +1,16 @@
+{
+  "slug": "old-stone-steakhouse-tesla-destination-114647",
+  "name": "Old Stone Steakhouse - Tesla Destination",
+  "description": "",
+  "center": {
+    "lat": 35.241715,
+    "lng": -81.037882
+  },
+  "address": "23 S Main St, Belmont, NC, 28012",
+  "numLevel2Ports": 2,
+  "networks": [
+    "Tesla Destination"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

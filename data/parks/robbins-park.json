@@ -1,0 +1,21 @@
+{
+  "slug": "robbins-park",
+  "name": "Robbins Park",
+  "description": "",
+  "center": {
+    "lat": 35.4561870770067,
+    "lng": -80.88831464710907
+  },
+  "numParking": 200,
+  "parkUrl": "https://cornelius.org/park/",
+  "amenities": {
+    "tennis": true,
+    "pickleball": true,
+    "discGolf": true,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

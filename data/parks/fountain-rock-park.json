@@ -1,0 +1,21 @@
+{
+  "slug": "fountain-rock-park",
+  "name": "Fountain Rock Park",
+  "description": "",
+  "center": {
+    "lat": 35.109219491054496,
+    "lng": -80.72109786119576
+  },
+  "numParking": 0,
+  "parkUrl": "https://www.matthewsnc.gov/pview.aspx?id=20727&catid=0",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

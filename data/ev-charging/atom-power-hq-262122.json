@@ -1,0 +1,16 @@
+{
+  "slug": "atom-power-hq-262122",
+  "name": "Atom Power HQ",
+  "description": "",
+  "center": {
+    "lat": 35.3925647,
+    "lng": -80.865213
+  },
+  "address": "13245 Reese Blvd W, Huntersville, NC, 28078",
+  "numLevel2Ports": 4,
+  "networks": [
+    "AMPUP"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

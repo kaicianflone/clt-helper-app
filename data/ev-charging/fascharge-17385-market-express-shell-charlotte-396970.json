@@ -1,0 +1,16 @@
+{
+  "slug": "fascharge-17385-market-express-shell-charlotte-396970",
+  "name": "FasCharge 17385 Market Express Shell Charlotte",
+  "description": "",
+  "center": {
+    "lat": 35.28117965578,
+    "lng": -80.897025322
+  },
+  "address": "5600 Brookshire Blvd, Charlotte, NC, 28216",
+  "numDcFastPorts": 2,
+  "networks": [
+    "RED_E"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

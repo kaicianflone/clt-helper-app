@@ -1,0 +1,16 @@
+{
+  "slug": "bridges-at-mallard-creek-2231-keaton-ave-399639",
+  "name": "Bridges at Mallard Creek - 2231 Keaton Ave",
+  "description": "",
+  "center": {
+    "lat": 35.319925,
+    "lng": -80.781863
+  },
+  "address": "2231 Keaton Ave, Charlotte, NC, 28269",
+  "numLevel2Ports": 2,
+  "networks": [
+    "LOOP"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

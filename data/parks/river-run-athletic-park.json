@@ -1,0 +1,21 @@
+{
+  "slug": "river-run-athletic-park",
+  "name": "River Run Athletic Park",
+  "description": "",
+  "center": {
+    "lat": 35.47784287136005,
+    "lng": -80.81859820794878
+  },
+  "numParking": 27,
+  "parkUrl": "https://www.townofdavidson.org/130/Parks-Recreation",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

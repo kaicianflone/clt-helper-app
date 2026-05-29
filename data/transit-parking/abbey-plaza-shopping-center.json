@@ -1,0 +1,17 @@
+{
+  "slug": "abbey-plaza-shopping-center",
+  "name": "Abbey Plaza Shopping Center",
+  "description": "",
+  "center": {
+    "lat": 35.2526298797684,
+    "lng": -81.0291832981049
+  },
+  "address": "601 Park Street, Belmont, NC",
+  "totalSpaces": 40,
+  "freeParking": true,
+  "transitLines": [
+    "Bus"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

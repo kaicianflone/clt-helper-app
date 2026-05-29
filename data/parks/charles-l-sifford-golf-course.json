@@ -1,0 +1,21 @@
+{
+  "slug": "charles-l-sifford-golf-course",
+  "name": "Charles L. Sifford Golf Course",
+  "description": "",
+  "center": {
+    "lat": 35.21243624473525,
+    "lng": -80.87990867083197
+  },
+  "numParking": 35,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

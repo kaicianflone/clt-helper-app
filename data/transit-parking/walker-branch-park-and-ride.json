@@ -1,0 +1,17 @@
+{
+  "slug": "walker-branch-park-and-ride",
+  "name": "Walker Branch Park and Ride",
+  "description": "",
+  "center": {
+    "lat": 35.0991267352692,
+    "lng": -80.9867629148157
+  },
+  "address": "12910 Walker Branch Rd, Charlotte, NC",
+  "totalSpaces": 25,
+  "freeParking": true,
+  "transitLines": [
+    "Bus"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

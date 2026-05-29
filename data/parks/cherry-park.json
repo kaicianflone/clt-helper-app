@@ -1,0 +1,21 @@
+{
+  "slug": "cherry-park",
+  "name": "Cherry Park",
+  "description": "",
+  "center": {
+    "lat": 35.21023274907703,
+    "lng": -80.83280372963293
+  },
+  "numParking": 0,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": true
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

@@ -1,0 +1,21 @@
+{
+  "slug": "torrence-creek-elementary-multipurpose-room",
+  "name": "Torrence Creek Elementary Multipurpose Room",
+  "description": "",
+  "center": {
+    "lat": 35.411783006195414,
+    "lng": -80.87325344295895
+  },
+  "numParking": 180,
+  "parkUrl": "https://www.huntersville.org/3073/Parks-Recreation-Department",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": true
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

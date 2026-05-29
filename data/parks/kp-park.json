@@ -1,0 +1,21 @@
+{
+  "slug": "kp-park",
+  "name": "KP Park",
+  "description": "",
+  "center": {
+    "lat": 35.11709226930937,
+    "lng": -80.71801475562977
+  },
+  "numParking": 0,
+  "parkUrl": "https://www.matthewsnc.gov/pview.aspx?id=20727&catid=0",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

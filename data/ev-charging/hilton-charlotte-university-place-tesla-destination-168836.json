@@ -1,0 +1,16 @@
+{
+  "slug": "hilton-charlotte-university-place-tesla-destination-168836",
+  "name": "Hilton Charlotte University Place - Tesla Destination",
+  "description": "",
+  "center": {
+    "lat": 35.3083,
+    "lng": -80.750663
+  },
+  "address": "8629 JM Keynes Dr, Charlotte, NC, 28262",
+  "numLevel2Ports": 6,
+  "networks": [
+    "Tesla Destination"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

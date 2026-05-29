@@ -1,0 +1,16 @@
+{
+  "slug": "peppertree-forth-public-377514",
+  "name": "Peppertree - Forth - Public",
+  "description": "",
+  "center": {
+    "lat": 35.2147219,
+    "lng": -80.7725016
+  },
+  "address": "4335 Central Ave, Charlotte, NC, 28205",
+  "numLevel2Ports": 2,
+  "networks": [
+    "OpConnect"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

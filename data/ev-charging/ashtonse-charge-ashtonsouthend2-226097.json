@@ -1,0 +1,16 @@
+{
+  "slug": "ashtonse-charge-ashtonsouthend2-226097",
+  "name": "ASHTONSE CHARGE ASHTONSOUTHEND2",
+  "description": "",
+  "center": {
+    "lat": 35.20997,
+    "lng": -80.861278
+  },
+  "address": "125 W Tremont Ave, Charlotte, NC, 28203",
+  "numLevel2Ports": 2,
+  "networks": [
+    "ChargePoint Network"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

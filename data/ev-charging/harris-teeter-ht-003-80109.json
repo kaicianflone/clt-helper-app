@@ -1,0 +1,16 @@
+{
+  "slug": "harris-teeter-ht-003-80109",
+  "name": "HARRIS TEETER HT 003",
+  "description": "",
+  "center": {
+    "lat": 35.160957,
+    "lng": -80.973479
+  },
+  "address": "4821 Berwick Town Center Dr, Charlotte, NC, 28278",
+  "numLevel2Ports": 2,
+  "networks": [
+    "ChargePoint Network"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

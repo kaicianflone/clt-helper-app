@@ -1,0 +1,16 @@
+{
+  "slug": "food-lion-tuckaseegee-229217",
+  "name": "Food Lion - Tuckaseegee",
+  "description": "",
+  "center": {
+    "lat": 35.246706,
+    "lng": -80.903336
+  },
+  "address": "4709 Tuckaseegee Rd, Charlotte, NC, 28208",
+  "numDcFastPorts": 4,
+  "networks": [
+    "eVgo Network"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

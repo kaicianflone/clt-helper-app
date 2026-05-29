@@ -1,0 +1,17 @@
+{
+  "slug": "cornelius-town-hall",
+  "name": "Cornelius Town Hall",
+  "description": "",
+  "center": {
+    "lat": 35.4818843012511,
+    "lng": -80.8589249664927
+  },
+  "address": "21445 Catawba Avenue, Cornelius, NC",
+  "totalSpaces": 20,
+  "freeParking": true,
+  "transitLines": [
+    "Bus"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

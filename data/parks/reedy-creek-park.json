@@ -1,0 +1,21 @@
+{
+  "slug": "reedy-creek-park",
+  "name": "Reedy Creek Park",
+  "description": "",
+  "center": {
+    "lat": 35.27652440947797,
+    "lng": -80.71700515639628
+  },
+  "numParking": 125,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": true,
+    "skatepark": false,
+    "dogPark": true,
+    "basketball": true
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

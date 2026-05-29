@@ -1,0 +1,16 @@
+{
+  "slug": "bri-1888-mangum-222826",
+  "name": "BRI 1888 MANGUM",
+  "description": "",
+  "center": {
+    "lat": 35.057799,
+    "lng": -80.843583
+  },
+  "address": "13146 Ballantyne Corporate Place, Charlotte, NC, 28277",
+  "numLevel2Ports": 12,
+  "networks": [
+    "EV Connect"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

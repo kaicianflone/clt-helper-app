@@ -1,0 +1,16 @@
+{
+  "slug": "publix-1518-121309",
+  "name": "Publix #1518",
+  "description": "",
+  "center": {
+    "lat": 35.177786,
+    "lng": -80.799739
+  },
+  "address": "4425 Randolph Rd, Charlotte, NC, 28211",
+  "numLevel2Ports": 4,
+  "networks": [
+    "Non-Networked"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

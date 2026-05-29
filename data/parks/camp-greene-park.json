@@ -1,0 +1,21 @@
+{
+  "slug": "camp-greene-park",
+  "name": "Camp Greene Park",
+  "description": "",
+  "center": {
+    "lat": 35.23737645046923,
+    "lng": -80.8905131093867
+  },
+  "numParking": 200,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": true
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

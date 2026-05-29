@@ -1,0 +1,16 @@
+{
+  "slug": "crowne-plaza-charlotte-executive-park-tesla-destination-114675",
+  "name": "Crowne Plaza Charlotte Executive Park - Tesla Destination",
+  "description": "",
+  "center": {
+    "lat": 35.159454,
+    "lng": -80.889803
+  },
+  "address": "5700 Westpark Dr, Charlotte, NC, 28217",
+  "numLevel2Ports": 6,
+  "networks": [
+    "Tesla Destination"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

@@ -1,0 +1,16 @@
+{
+  "slug": "wncc-conf-ctr-left-charger-256970",
+  "name": "WNCC CONF CTR LEFT CHARGER",
+  "description": "",
+  "center": {
+    "lat": 35.399351,
+    "lng": -80.867177
+  },
+  "address": "13930 Professional Center Dr, Huntersville, NC, 28078",
+  "numLevel2Ports": 2,
+  "networks": [
+    "ChargePoint Network"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

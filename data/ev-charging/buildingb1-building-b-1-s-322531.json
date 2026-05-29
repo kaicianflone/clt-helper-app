@@ -1,0 +1,16 @@
+{
+  "slug": "buildingb1-building-b-1-s-322531",
+  "name": "BUILDINGB1 BUILDING B-1-S",
+  "description": "",
+  "center": {
+    "lat": 35.510894,
+    "lng": -80.85007
+  },
+  "address": "Sustainability Way, Davidson, NC, 28036",
+  "numLevel2Ports": 2,
+  "networks": [
+    "ChargePoint Network"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

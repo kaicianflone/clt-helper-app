@@ -1,0 +1,21 @@
+{
+  "slug": "two-spring-park",
+  "name": "Two Spring Park",
+  "description": "",
+  "center": {
+    "lat": 35.29101131249532,
+    "lng": -80.7794566727573
+  },
+  "numParking": 0,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

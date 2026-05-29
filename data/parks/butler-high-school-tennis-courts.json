@@ -1,0 +1,21 @@
+{
+  "slug": "butler-high-school-tennis-courts",
+  "name": "Butler High School Tennis Courts",
+  "description": "",
+  "center": {
+    "lat": 35.12040396854796,
+    "lng": -80.69331741857191
+  },
+  "numParking": 300,
+  "parkUrl": "https://www.matthewsnc.gov/pview.aspx?id=20727&catid=0",
+  "amenities": {
+    "tennis": true,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

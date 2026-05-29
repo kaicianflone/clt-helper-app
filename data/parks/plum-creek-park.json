@@ -1,0 +1,21 @@
+{
+  "slug": "plum-creek-park",
+  "name": "Plum Creek Park",
+  "description": "",
+  "center": {
+    "lat": 35.47382034573934,
+    "lng": -80.82403307459582
+  },
+  "numParking": 25,
+  "parkUrl": "https://www.townofdavidson.org/130/Parks-Recreation",
+  "amenities": {
+    "tennis": true,
+    "pickleball": true,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": true
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

@@ -1,0 +1,16 @@
+{
+  "slug": "cltw-zone-2-2-261190",
+  "name": "CLTW ZONE(2)-2",
+  "description": "",
+  "center": {
+    "lat": 35.259274,
+    "lng": -80.766769
+  },
+  "address": "5730 General Commerce Dr, Charlotte, NC, 28213",
+  "numLevel2Ports": 2,
+  "networks": [
+    "ChargePoint Network"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

@@ -1,0 +1,21 @@
+{
+  "slug": "double-oaks-family-aquatic-center",
+  "name": "Double Oaks Family Aquatic Center",
+  "description": "",
+  "center": {
+    "lat": 35.24981323514627,
+    "lng": -80.83566854650392
+  },
+  "numParking": 60,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

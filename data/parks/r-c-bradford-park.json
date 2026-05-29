@@ -1,0 +1,21 @@
+{
+  "slug": "r-c-bradford-park",
+  "name": "R.C. Bradford Park",
+  "description": "",
+  "center": {
+    "lat": 35.44821674726546,
+    "lng": -80.7901297750764
+  },
+  "numParking": 227,
+  "parkUrl": "https://www.huntersville.org/3073/Parks-Recreation-Department",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": true,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

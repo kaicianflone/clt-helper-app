@@ -1,0 +1,21 @@
+{
+  "slug": "legion-park",
+  "name": "Legion Park",
+  "description": "",
+  "center": {
+    "lat": 35.48727722249002,
+    "lng": -80.86013823703328
+  },
+  "numParking": 3,
+  "parkUrl": "https://cornelius.org/park/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

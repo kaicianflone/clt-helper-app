@@ -1,0 +1,16 @@
+{
+  "slug": "publix-1442-68383",
+  "name": "Publix #1442",
+  "description": "",
+  "center": {
+    "lat": 35.0435,
+    "lng": -80.84951
+  },
+  "address": "11222 Providence Rd W, Charlotte, NC, 28277",
+  "numLevel2Ports": 1,
+  "networks": [
+    "Non-Networked"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

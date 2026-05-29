@@ -1,0 +1,16 @@
+{
+  "slug": "gardner-skelton-pllc-415824",
+  "name": "Gardner Skelton PLLC",
+  "description": "",
+  "center": {
+    "lat": 35.2497896,
+    "lng": -80.7939452
+  },
+  "address": "3746 N Davidson St, Charlotte, NC, 28205",
+  "numLevel2Ports": 1,
+  "networks": [
+    "AMPUP"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

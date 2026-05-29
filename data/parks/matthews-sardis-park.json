@@ -1,0 +1,21 @@
+{
+  "slug": "matthews-sardis-park",
+  "name": "Matthews-Sardis Park",
+  "description": "",
+  "center": {
+    "lat": 35.11796224524528,
+    "lng": -80.7430192447901
+  },
+  "numParking": 10,
+  "parkUrl": "https://www.matthewsnc.gov/pview.aspx?id=20727&catid=0",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

@@ -1,0 +1,16 @@
+{
+  "slug": "300-south-tryon-b2-3-172907",
+  "name": "300 SOUTH TRYON B2 3",
+  "description": "",
+  "center": {
+    "lat": 35.225675,
+    "lng": -80.845784
+  },
+  "address": "300 S Tryon St, Charlotte, NC, 28202",
+  "numLevel2Ports": 2,
+  "networks": [
+    "ChargePoint Network"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

@@ -1,0 +1,21 @@
+{
+  "slug": "torrence-chapel-park",
+  "name": "Torrence Chapel Park",
+  "description": "",
+  "center": {
+    "lat": 35.49244695010849,
+    "lng": -80.87894468243118
+  },
+  "numParking": 69,
+  "parkUrl": "https://cornelius.org/park/",
+  "amenities": {
+    "tennis": true,
+    "pickleball": true,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": true
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

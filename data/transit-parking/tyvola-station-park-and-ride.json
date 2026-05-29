@@ -1,0 +1,17 @@
+{
+  "slug": "tyvola-station-park-and-ride",
+  "name": "Tyvola Station Park and Ride",
+  "description": "",
+  "center": {
+    "lat": 35.1630238668825,
+    "lng": -80.8775222481934
+  },
+  "address": "5703 Old Pineville Rd, Charlotte, NC",
+  "totalSpaces": 465,
+  "freeParking": false,
+  "transitLines": [
+    "Rail"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

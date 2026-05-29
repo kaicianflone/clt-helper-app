@@ -1,0 +1,21 @@
+{
+  "slug": "eastover-park",
+  "name": "Eastover Park",
+  "description": "",
+  "center": {
+    "lat": 35.19967021206289,
+    "lng": -80.81300740476192
+  },
+  "numParking": 175,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

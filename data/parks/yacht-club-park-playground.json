@@ -1,0 +1,21 @@
+{
+  "slug": "yacht-club-park-playground",
+  "name": "Yacht Club Park Playground",
+  "description": "",
+  "center": {
+    "lat": 35.46883932571103,
+    "lng": -80.93216658591807
+  },
+  "numParking": 0,
+  "parkUrl": "https://cornelius.org/park/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

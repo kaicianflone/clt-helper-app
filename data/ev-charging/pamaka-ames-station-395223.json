@@ -1,0 +1,16 @@
+{
+  "slug": "pamaka-ames-station-395223",
+  "name": "PAMAKA AMES STATION",
+  "description": "",
+  "center": {
+    "lat": 35.120011,
+    "lng": -80.723449
+  },
+  "address": "215 North Ames Street, Matthews, NC, 28105",
+  "numLevel2Ports": 2,
+  "networks": [
+    "ChargePoint Network"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

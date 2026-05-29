@@ -1,0 +1,21 @@
+{
+  "slug": "cowans-ford-wildlife-refuge",
+  "name": "Cowans Ford Wildlife Refuge",
+  "description": "",
+  "center": {
+    "lat": 35.37196536294508,
+    "lng": -80.97391709514262
+  },
+  "numParking": 15,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

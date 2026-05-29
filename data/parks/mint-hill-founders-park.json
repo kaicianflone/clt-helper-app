@@ -1,0 +1,21 @@
+{
+  "slug": "mint-hill-founders-park",
+  "name": "Mint Hill Founders Park",
+  "description": "",
+  "center": {
+    "lat": 35.18530502535913,
+    "lng": -80.60236128975544
+  },
+  "numParking": 32,
+  "parkUrl": "https://www.minthill.com/residents/parks___recreation/index.php",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": true,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

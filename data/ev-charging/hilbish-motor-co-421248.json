@@ -1,0 +1,16 @@
+{
+  "slug": "hilbish-motor-co-421248",
+  "name": "Hilbish Motor Co",
+  "description": "",
+  "center": {
+    "lat": 35.4587237,
+    "lng": -80.6097601
+  },
+  "address": "2600 S Cannon Blvd, Kannapolis, NC, 28083",
+  "numDcFastPorts": 2,
+  "networks": [
+    "FORD_CHARGE"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

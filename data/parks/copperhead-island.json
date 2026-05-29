@@ -1,0 +1,21 @@
+{
+  "slug": "copperhead-island",
+  "name": "Copperhead Island",
+  "description": "",
+  "center": {
+    "lat": 35.10969924322124,
+    "lng": -81.02499481305061
+  },
+  "numParking": 119,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

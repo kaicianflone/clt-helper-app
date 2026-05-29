@@ -1,0 +1,17 @@
+{
+  "slug": "river-district",
+  "name": "River District",
+  "description": "",
+  "center": {
+    "lat": 35.2297839872837,
+    "lng": -80.9982500360469
+  },
+  "address": "To Be Determined, Charlotte, NC",
+  "totalSpaces": 0,
+  "freeParking": false,
+  "transitLines": [
+    "Bus"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

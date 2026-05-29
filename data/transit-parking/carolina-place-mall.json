@@ -1,0 +1,17 @@
+{
+  "slug": "carolina-place-mall",
+  "name": "Carolina Place Mall",
+  "description": "",
+  "center": {
+    "lat": 35.0798434391401,
+    "lng": -80.8774614560805
+  },
+  "address": "11001 Carolina Place Parkway, Pineville, NC",
+  "totalSpaces": 50,
+  "freeParking": false,
+  "transitLines": [
+    "Bus"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

@@ -1,0 +1,16 @@
+{
+  "slug": "bank-of-america-private-bank-188030",
+  "name": "Bank of America - Private Bank",
+  "description": "",
+  "center": {
+    "lat": 35.062011,
+    "lng": -80.849483
+  },
+  "address": "13510 Ballantyne Corp Pl, Charlotte, NC, 28277",
+  "numLevel2Ports": 3,
+  "networks": [
+    "ChargePoint Network"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

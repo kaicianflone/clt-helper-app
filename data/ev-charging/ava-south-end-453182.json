@@ -1,0 +1,16 @@
+{
+  "slug": "ava-south-end-453182",
+  "name": "AVA South End",
+  "description": "",
+  "center": {
+    "lat": 35.21,
+    "lng": -80.86
+  },
+  "address": "335 Doggett St, Charlotte, NC, 28203",
+  "numLevel2Ports": 2,
+  "networks": [
+    "LOOP"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

@@ -1,0 +1,21 @@
+{
+  "slug": "double-oaks-park",
+  "name": "Double Oaks Park",
+  "description": "",
+  "center": {
+    "lat": 35.256753979938956,
+    "lng": -80.8382732551826
+  },
+  "numParking": 15,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

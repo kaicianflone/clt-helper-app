@@ -1,0 +1,21 @@
+{
+  "slug": "baucom-park",
+  "name": "Baucom Park",
+  "description": "",
+  "center": {
+    "lat": 35.111181653005616,
+    "lng": -80.71775123484983
+  },
+  "numParking": 3,
+  "parkUrl": "https://www.matthewsnc.gov/pview.aspx?id=20727&catid=0",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

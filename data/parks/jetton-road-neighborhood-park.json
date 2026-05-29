@@ -1,0 +1,21 @@
+{
+  "slug": "jetton-road-neighborhood-park",
+  "name": "Jetton Road Neighborhood Park",
+  "description": "",
+  "center": {
+    "lat": 35.47416720758652,
+    "lng": -80.93822904087493
+  },
+  "numParking": 20,
+  "parkUrl": "https://cornelius.org/park/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

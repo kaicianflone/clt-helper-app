@@ -1,0 +1,16 @@
+{
+  "slug": "pure-power-contractors-190265",
+  "name": "Pure Power Contractors",
+  "description": "",
+  "center": {
+    "lat": 35.057777,
+    "lng": -80.620233
+  },
+  "address": "2812 Gray Fox Rd, Monroe, NC, 28110",
+  "numDcFastPorts": 1,
+  "networks": [
+    "EV Connect"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

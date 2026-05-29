@@ -1,0 +1,21 @@
+{
+  "slug": "piedmont-pine-nature-preserve",
+  "name": "Piedmont Pine Nature Preserve",
+  "description": "",
+  "center": {
+    "lat": 35.222390254156664,
+    "lng": -80.59535155049724
+  },
+  "numParking": 0,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

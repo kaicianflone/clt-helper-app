@@ -1,0 +1,21 @@
+{
+  "slug": "rays-splash-planet",
+  "name": "Rays Splash Planet",
+  "description": "",
+  "center": {
+    "lat": 35.23791945133244,
+    "lng": -80.85151241841315
+  },
+  "numParking": 51,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

@@ -1,0 +1,21 @@
+{
+  "slug": "rama-road-park",
+  "name": "Rama Road Park",
+  "description": "",
+  "center": {
+    "lat": 35.1688640784744,
+    "lng": -80.77151045384701
+  },
+  "numParking": 54,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": true
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

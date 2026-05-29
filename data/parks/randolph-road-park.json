@@ -1,0 +1,21 @@
+{
+  "slug": "randolph-road-park",
+  "name": "Randolph Road Park",
+  "description": "",
+  "center": {
+    "lat": 35.19063696688511,
+    "lng": -80.80934012921247
+  },
+  "numParking": 106,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

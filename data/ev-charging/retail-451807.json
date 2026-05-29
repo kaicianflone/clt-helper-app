@@ -1,0 +1,16 @@
+{
+  "slug": "retail-451807",
+  "name": "Retail",
+  "description": "",
+  "center": {
+    "lat": 35.164465,
+    "lng": -80.966884
+  },
+  "address": "13415 Rigsby Road, Charlotte, NC, 28273",
+  "numLevel2Ports": 2,
+  "networks": [
+    "Blink Network"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

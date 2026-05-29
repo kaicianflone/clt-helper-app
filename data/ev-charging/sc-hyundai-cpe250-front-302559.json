@@ -1,0 +1,16 @@
+{
+  "slug": "sc-hyundai-cpe250-front-302559",
+  "name": "SC HYUNDAI CPE250 FRONT",
+  "description": "",
+  "center": {
+    "lat": 35.098861,
+    "lng": -80.882628
+  },
+  "address": "10518 Cadillac St, Pineville, NC, 28134",
+  "numDcFastPorts": 1,
+  "networks": [
+    "ChargePoint Network"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

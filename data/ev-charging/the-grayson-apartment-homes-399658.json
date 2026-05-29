@@ -1,0 +1,16 @@
+{
+  "slug": "the-grayson-apartment-homes-399658",
+  "name": "The Grayson Apartment Homes",
+  "description": "",
+  "center": {
+    "lat": 35.30261,
+    "lng": -80.79865
+  },
+  "address": "6001 Bennettsville Ln, Charlotte, NC, 28262",
+  "numLevel2Ports": 6,
+  "networks": [
+    "LOOP"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

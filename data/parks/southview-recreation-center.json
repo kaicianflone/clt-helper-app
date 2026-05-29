@@ -1,0 +1,21 @@
+{
+  "slug": "southview-recreation-center",
+  "name": "Southview Recreation Center",
+  "description": "",
+  "center": {
+    "lat": 35.211479420873516,
+    "lng": -80.91707363948467
+  },
+  "numParking": 85,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

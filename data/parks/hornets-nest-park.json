@@ -1,0 +1,21 @@
+{
+  "slug": "hornets-nest-park",
+  "name": "Hornets Nest Park",
+  "description": "",
+  "center": {
+    "lat": 35.3201228779422,
+    "lng": -80.86520865246919
+  },
+  "numParking": 368,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": true,
+    "pickleball": false,
+    "discGolf": true,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": true
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

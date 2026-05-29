@@ -1,0 +1,21 @@
+{
+  "slug": "first-ward-park",
+  "name": "First Ward Park",
+  "description": "",
+  "center": {
+    "lat": 35.22770924792003,
+    "lng": -80.83584893626056
+  },
+  "numParking": 0,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

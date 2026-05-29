@@ -1,0 +1,21 @@
+{
+  "slug": "reedy-creek-nature-center",
+  "name": "Reedy Creek Nature Center",
+  "description": "",
+  "center": {
+    "lat": 35.2617550658195,
+    "lng": -80.71937446752791
+  },
+  "numParking": 65,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

@@ -1,0 +1,16 @@
+{
+  "slug": "huntersville-huntersvile-bp-347504",
+  "name": "HUNTERSVILLE HUNTERSVILE BP",
+  "description": "",
+  "center": {
+    "lat": 35.409791,
+    "lng": -80.854195
+  },
+  "address": "14138 Statesville Road, Huntersville, NC, 28078",
+  "numDcFastPorts": 2,
+  "networks": [
+    "ChargePoint Network"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

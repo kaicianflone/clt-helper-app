@@ -1,0 +1,16 @@
+{
+  "slug": "camp-north-end-tesla-destination-359479",
+  "name": "Camp North End - Tesla Destination",
+  "description": "",
+  "center": {
+    "lat": 35.245139,
+    "lng": -80.832176
+  },
+  "address": "1801 N Graham St, Charlotte, NC, 28206",
+  "numLevel2Ports": 1,
+  "networks": [
+    "Tesla Destination"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

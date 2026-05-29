@@ -1,0 +1,16 @@
+{
+  "slug": "town-of-huntersville-415793",
+  "name": "Town of Huntersville",
+  "description": "",
+  "center": {
+    "lat": 35.4110727,
+    "lng": -80.8427221
+  },
+  "address": "101 Huntersville-Concord Rd, Huntersville, NC, 28078",
+  "numLevel2Ports": 3,
+  "networks": [
+    "AMPUP"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

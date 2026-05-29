@@ -1,0 +1,21 @@
+{
+  "slug": "old-moores-chapel-park",
+  "name": "Old Moores Chapel Park",
+  "description": "",
+  "center": {
+    "lat": 35.276317056339416,
+    "lng": -80.95960079462114
+  },
+  "numParking": 0,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

@@ -1,0 +1,21 @@
+{
+  "slug": "methodist-home-park",
+  "name": "Methodist Home Park",
+  "description": "",
+  "center": {
+    "lat": 35.233819457550084,
+    "lng": -80.77435263687434
+  },
+  "numParking": 84,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": true
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

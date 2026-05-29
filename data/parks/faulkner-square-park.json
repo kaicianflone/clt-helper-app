@@ -1,0 +1,21 @@
+{
+  "slug": "faulkner-square-park",
+  "name": "Faulkner Square Park",
+  "description": "",
+  "center": {
+    "lat": 35.495808357292326,
+    "lng": -80.83266796490622
+  },
+  "numParking": 0,
+  "parkUrl": "https://www.townofdavidson.org/130/Parks-Recreation",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

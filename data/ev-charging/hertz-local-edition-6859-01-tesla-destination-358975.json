@@ -1,0 +1,16 @@
+{
+  "slug": "hertz-local-edition-6859-01-tesla-destination-358975",
+  "name": "Hertz Local Edition #6859-01 - Tesla Destination",
+  "description": "",
+  "center": {
+    "lat": 35.468827,
+    "lng": -80.873318
+  },
+  "address": "18709 Statesville Rd, Cornelius, NC, 28031",
+  "numLevel2Ports": 3,
+  "networks": [
+    "Tesla Destination"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

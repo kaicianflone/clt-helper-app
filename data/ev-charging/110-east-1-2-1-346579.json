@@ -1,0 +1,16 @@
+{
+  "slug": "110-east-1-2-1-346579",
+  "name": "110 EAST-1 2.1",
+  "description": "",
+  "center": {
+    "lat": 35.211826,
+    "lng": -80.858771
+  },
+  "address": "110 East Blvd, Charlotte, NC, 28203",
+  "numLevel2Ports": 2,
+  "networks": [
+    "ChargePoint Network"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

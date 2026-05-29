@@ -1,0 +1,16 @@
+{
+  "slug": "promenade-on-providence-tesla-supercharger-233039",
+  "name": "Promenade on Providence - Tesla Supercharger",
+  "description": "",
+  "center": {
+    "lat": 35.062319,
+    "lng": -80.770893
+  },
+  "address": "10828 Providence Rd, Charlotte, NC, 28277",
+  "numDcFastPorts": 11,
+  "networks": [
+    "Tesla"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

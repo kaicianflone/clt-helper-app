@@ -1,0 +1,21 @@
+{
+  "slug": "independence-park",
+  "name": "Independence Park",
+  "description": "",
+  "center": {
+    "lat": 35.21277946234098,
+    "lng": -80.82162763186207
+  },
+  "numParking": 10,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

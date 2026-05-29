@@ -1,0 +1,21 @@
+{
+  "slug": "greenville-park",
+  "name": "Greenville Park",
+  "description": "",
+  "center": {
+    "lat": 35.24521707746413,
+    "lng": -80.84313534835049
+  },
+  "numParking": 125,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": true
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

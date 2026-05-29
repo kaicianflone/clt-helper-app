@@ -1,0 +1,16 @@
+{
+  "slug": "springhill-suites-charlotte-southwest-tesla-destination-169124",
+  "name": "SpringHill Suites Charlotte Southwest - Tesla Destination",
+  "description": "",
+  "center": {
+    "lat": 35.151587,
+    "lng": -80.95232
+  },
+  "address": "3950 Arco Corporate Dr, Charlotte, NC, 28273",
+  "numLevel2Ports": 2,
+  "networks": [
+    "Tesla Destination"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

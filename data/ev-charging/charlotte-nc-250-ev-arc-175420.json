@@ -1,0 +1,16 @@
+{
+  "slug": "charlotte-nc-250-ev-arc-175420",
+  "name": "CHARLOTTE, NC 250 EV ARC",
+  "description": "",
+  "center": {
+    "lat": 35.226344,
+    "lng": -80.823656
+  },
+  "address": "932 Seigle Ave, Charlotte, NC, 28205",
+  "numLevel2Ports": 2,
+  "networks": [
+    "ChargePoint Network"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

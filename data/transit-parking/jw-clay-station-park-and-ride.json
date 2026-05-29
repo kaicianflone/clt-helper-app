@@ -1,0 +1,17 @@
+{
+  "slug": "jw-clay-station-park-and-ride",
+  "name": "JW Clay Station Park and RIde",
+  "description": "",
+  "center": {
+    "lat": 35.3107429021599,
+    "lng": -80.7451882179465
+  },
+  "address": "9101 N Tryon St, Charlotte, NC",
+  "totalSpaces": 803,
+  "freeParking": false,
+  "transitLines": [
+    "Rail"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

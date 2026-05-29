@@ -1,0 +1,21 @@
+{
+  "slug": "colonial-park",
+  "name": "Colonial Park",
+  "description": "",
+  "center": {
+    "lat": 35.20647190507596,
+    "lng": -80.82402541401923
+  },
+  "numParking": 0,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": true,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": true
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

@@ -1,0 +1,16 @@
+{
+  "slug": "chestnut-arbor-260875",
+  "name": "Chestnut Arbor",
+  "description": "",
+  "center": {
+    "lat": 35.064791,
+    "lng": -80.726596
+  },
+  "address": "2925 Weddington Matthews Rd, Matthews, NC, 28105",
+  "numDcFastPorts": 4,
+  "networks": [
+    "EV Connect"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

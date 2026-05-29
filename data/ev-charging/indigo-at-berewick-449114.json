@@ -1,0 +1,16 @@
+{
+  "slug": "indigo-at-berewick-449114",
+  "name": "Indigo at Berewick",
+  "description": "",
+  "center": {
+    "lat": 35.1610647,
+    "lng": -80.9679973
+  },
+  "address": "3010 Furr Ct, Charlotte, NC, 28273",
+  "numLevel2Ports": 2,
+  "networks": [
+    "US_SUPERCHARGE"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

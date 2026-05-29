@@ -1,0 +1,16 @@
+{
+  "slug": "blakeney-416939",
+  "name": "Blakeney",
+  "description": "",
+  "center": {
+    "lat": 35.033967,
+    "lng": -80.808444
+  },
+  "address": "9720 Rea Rd, Charlotte, NC, 28277",
+  "numDcFastPorts": 4,
+  "networks": [
+    "eVgo Network"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

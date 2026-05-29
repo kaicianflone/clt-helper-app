@@ -1,0 +1,21 @@
+{
+  "slug": "berewick-recreation-center",
+  "name": "Berewick Recreation Center",
+  "description": "",
+  "center": {
+    "lat": 35.17390845208907,
+    "lng": -80.9783256815003
+  },
+  "numParking": 125,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

@@ -1,0 +1,21 @@
+{
+  "slug": "five-points-park",
+  "name": "Five Points Park",
+  "description": "",
+  "center": {
+    "lat": 35.24836408705048,
+    "lng": -80.85984227655594
+  },
+  "numParking": 5,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": true,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": true
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

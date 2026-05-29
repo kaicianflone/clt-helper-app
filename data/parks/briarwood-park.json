@@ -1,0 +1,21 @@
+{
+  "slug": "briarwood-park",
+  "name": "Briarwood Park",
+  "description": "",
+  "center": {
+    "lat": 35.25476766907396,
+    "lng": -80.76627764794448
+  },
+  "numParking": 112,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

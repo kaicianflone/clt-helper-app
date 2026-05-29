@@ -1,0 +1,16 @@
+{
+  "slug": "exchange-at-indian-trail-apartments-371630",
+  "name": "Exchange at Indian Trail Apartments",
+  "description": "",
+  "center": {
+    "lat": 35.0758365,
+    "lng": -80.66994977
+  },
+  "address": "199 Exchange Circle, Indian Trail, NC, 28079",
+  "numLevel2Ports": 4,
+  "networks": [
+    "Blink Network"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

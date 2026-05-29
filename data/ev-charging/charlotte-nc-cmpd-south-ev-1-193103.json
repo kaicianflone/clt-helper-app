@@ -1,0 +1,16 @@
+{
+  "slug": "charlotte-nc-cmpd-south-ev-1-193103",
+  "name": "CHARLOTTE, NC CMPD SOUTH EV-1",
+  "description": "",
+  "center": {
+    "lat": 35.041507,
+    "lng": -80.849002
+  },
+  "address": "11217 Providence Rd W, Charlotte, NC, 28277",
+  "numLevel2Ports": 2,
+  "networks": [
+    "ChargePoint Network"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

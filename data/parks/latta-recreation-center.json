@@ -1,0 +1,21 @@
+{
+  "slug": "latta-recreation-center",
+  "name": "Latta Recreation Center",
+  "description": "",
+  "center": {
+    "lat": 35.21020892956608,
+    "lng": -80.85167910701435
+  },
+  "numParking": 11,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

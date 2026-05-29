@@ -1,0 +1,16 @@
+{
+  "slug": "schindler-elevator-415825",
+  "name": "Schindler Elevator",
+  "description": "",
+  "center": {
+    "lat": 35.173703,
+    "lng": -80.926151
+  },
+  "address": "21 Callen Oak Wy, Charlotte, NC, 28217",
+  "numLevel2Ports": 1,
+  "networks": [
+    "AMPUP"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

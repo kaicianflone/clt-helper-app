@@ -1,0 +1,16 @@
+{
+  "slug": "uptown-recycling",
+  "name": "Uptown Recycling",
+  "description": "",
+  "center": {
+    "lat": 35.23178178082921,
+    "lng": -80.83515307547556
+  },
+  "address": "11th St.",
+  "acceptedMaterials": [
+    "Recycling",
+    "Self Service"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

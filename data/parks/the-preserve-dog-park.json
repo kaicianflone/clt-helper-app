@@ -1,0 +1,21 @@
+{
+  "slug": "the-preserve-dog-park",
+  "name": "The Preserve Dog Park",
+  "description": "",
+  "center": {
+    "lat": 35.49688234661809,
+    "lng": -80.83010960894858
+  },
+  "numParking": 10,
+  "parkUrl": "https://www.townofdavidson.org/130/Parks-Recreation",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": true,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

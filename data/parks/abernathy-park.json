@@ -1,0 +1,21 @@
+{
+  "slug": "abernathy-park",
+  "name": "Abernathy Park",
+  "description": "",
+  "center": {
+    "lat": 35.419479606429746,
+    "lng": -80.83820408344442
+  },
+  "numParking": 15,
+  "parkUrl": "https://www.huntersville.org/3073/Parks-Recreation-Department",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": true
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

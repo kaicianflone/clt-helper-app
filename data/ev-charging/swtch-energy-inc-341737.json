@@ -1,0 +1,16 @@
+{
+  "slug": "swtch-energy-inc-341737",
+  "name": "SWTCH Energy Inc.",
+  "description": "",
+  "center": {
+    "lat": 35.21242142,
+    "lng": -80.86449432
+  },
+  "address": "1927 S Tryon St, Charlotte, NC, 28203",
+  "numLevel2Ports": 4,
+  "networks": [
+    "SWTCH"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

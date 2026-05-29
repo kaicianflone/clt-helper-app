@@ -1,0 +1,16 @@
+{
+  "slug": "marsh-brinkley-439499",
+  "name": "Marsh Brinkley",
+  "description": "",
+  "center": {
+    "lat": 35.199337,
+    "lng": -80.8630032
+  },
+  "address": "3010 Edgeview Ln, Charlotte, NC, 28209",
+  "numLevel2Ports": 6,
+  "networks": [
+    "RED_E"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

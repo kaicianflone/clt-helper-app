@@ -1,0 +1,21 @@
+{
+  "slug": "squirrel-lake-park",
+  "name": "Squirrel Lake Park",
+  "description": "",
+  "center": {
+    "lat": 35.09811471652386,
+    "lng": -80.72463616277462
+  },
+  "numParking": 33,
+  "parkUrl": "https://www.matthewsnc.gov/pview.aspx?id=20727&catid=0",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": true,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}
