@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.2.0.1] - 2026-05-29
+
+### Fixed
+- Map screen no longer overflows the viewport or shows a page scrollbar on desktop or mobile. The `/map` route now renders full-screen with no site header, footer, or bottom tab bar, so the map fills the whole window. The site header and footer (including the Privacy link) are unchanged on every other page.
+
 ## [0.2.0.0] - 2026-05-28
 
 ### Added

@@ -1,11 +1,8 @@
 import type { Metadata, Viewport } from "next";
-import Link from "next/link";
 
 import { cn } from "@clt/ui";
 
-import { BottomTabBar } from "~/components/BottomTabBar";
-import { SiteHeader } from "~/components/SiteHeader";
-import { SkipToContent } from "~/components/SkipToContent";
+import { SiteChrome } from "~/components/SiteChrome";
 import { fontDisplay, fontSans } from "~/styles/fonts";
 import { TRPCReactProvider } from "~/trpc/react";
 
@@ -40,22 +37,9 @@ export default function RootLayout(props: { children: React.ReactNode }) {
           "bg-[color:var(--bg-cream)] text-[color:var(--fg-ink)]",
         )}
       >
-        <SkipToContent />
-        <SiteHeader />
         <TRPCReactProvider>
-          <main id="main-content" className="pb-16 md:pb-0">
-            {props.children}
-          </main>
+          <SiteChrome>{props.children}</SiteChrome>
         </TRPCReactProvider>
-        <footer className="py-6 text-center text-xs text-[color:var(--fg-ink-muted)]">
-          <Link
-            href="/privacy"
-            className="underline hover:text-[color:var(--fg-ink)]"
-          >
-            Privacy
-          </Link>
-        </footer>
-        <BottomTabBar />
       </body>
     </html>
   );
