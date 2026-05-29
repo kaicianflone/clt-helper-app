@@ -1,0 +1,17 @@
+{
+  "slug": "carowinds-park-and-ride",
+  "name": "Carowinds Park and Ride",
+  "description": "",
+  "center": {
+    "lat": 35.0968568501568,
+    "lng": -80.9348112615573
+  },
+  "address": "3660 Cabelas Drive, Fort Mill, SC",
+  "totalSpaces": 10,
+  "freeParking": false,
+  "transitLines": [
+    "Bus"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

@@ -1,0 +1,21 @@
+{
+  "slug": "ramsey-creek-park",
+  "name": "Ramsey Creek Park",
+  "description": "",
+  "center": {
+    "lat": 35.46633155271369,
+    "lng": -80.89515108818217
+  },
+  "numParking": 239,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": true,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

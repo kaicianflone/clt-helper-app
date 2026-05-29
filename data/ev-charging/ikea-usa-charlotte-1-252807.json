@@ -1,0 +1,16 @@
+{
+  "slug": "ikea-usa-charlotte-1-252807",
+  "name": "IKEA USA CHARLOTTE 1",
+  "description": "",
+  "center": {
+    "lat": 35.292832,
+    "lng": -80.764239
+  },
+  "address": "8300 Ikea Blvd, Charlotte, NC, 28262",
+  "numLevel2Ports": 2,
+  "networks": [
+    "ChargePoint Network"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

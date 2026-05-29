@@ -1,0 +1,21 @@
+{
+  "slug": "jeff-adams-tennis-center",
+  "name": "Jeff Adams Tennis Center",
+  "description": "",
+  "center": {
+    "lat": 35.17199266745938,
+    "lng": -80.90649269921089
+  },
+  "numParking": 159,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": true,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

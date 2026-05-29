@@ -1,0 +1,16 @@
+{
+  "slug": "east-charlotte-nissan-47118",
+  "name": "East Charlotte Nissan",
+  "description": "",
+  "center": {
+    "lat": 35.167797,
+    "lng": -80.742371
+  },
+  "address": "6901 E Independence Blvd, Charlotte, NC, 28227",
+  "numLevel2Ports": 1,
+  "networks": [
+    "Non-Networked"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

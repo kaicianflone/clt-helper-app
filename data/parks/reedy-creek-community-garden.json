@@ -1,0 +1,21 @@
+{
+  "slug": "reedy-creek-community-garden",
+  "name": "Reedy Creek Community Garden",
+  "description": "",
+  "center": {
+    "lat": 35.27451252832377,
+    "lng": -80.72039138571874
+  },
+  "numParking": 0,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

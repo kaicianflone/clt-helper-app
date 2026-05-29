@@ -1,0 +1,21 @@
+{
+  "slug": "friendship-sportsplex",
+  "name": "Friendship Sportsplex",
+  "description": "",
+  "center": {
+    "lat": 35.28337010384665,
+    "lng": -80.85279648979757
+  },
+  "numParking": 81,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

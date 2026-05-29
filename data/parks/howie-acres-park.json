@@ -1,0 +1,21 @@
+{
+  "slug": "howie-acres-park",
+  "name": "Howie Acres Park",
+  "description": "",
+  "center": {
+    "lat": 35.24957473985063,
+    "lng": -80.7844023999475
+  },
+  "numParking": 6,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": true
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

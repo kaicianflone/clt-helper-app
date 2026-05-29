@@ -1,0 +1,17 @@
+{
+  "slug": "university-city-blvd-station-park-and-ride",
+  "name": "University City Blvd Station Park and Ride",
+  "description": "",
+  "center": {
+    "lat": 35.2867858971106,
+    "lng": -80.760867220727
+  },
+  "address": "7201 N Tryon St, Charlotte, NC",
+  "totalSpaces": 1514,
+  "freeParking": false,
+  "transitLines": [
+    "Rail"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

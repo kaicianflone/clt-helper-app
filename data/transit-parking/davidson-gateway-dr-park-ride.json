@@ -1,0 +1,17 @@
+{
+  "slug": "davidson-gateway-dr-park-ride",
+  "name": "Davidson Gateway Dr Park & Ride",
+  "description": "",
+  "center": {
+    "lat": 35.5015214635782,
+    "lng": -80.8645255877475
+  },
+  "address": "630 Davidson Gateway Dr, Davidson, NC, 28036, Davidson, NC",
+  "totalSpaces": 0,
+  "freeParking": false,
+  "transitLines": [
+    "Bus"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

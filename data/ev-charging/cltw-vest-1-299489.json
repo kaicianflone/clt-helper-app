@@ -1,0 +1,16 @@
+{
+  "slug": "cltw-vest-1-299489",
+  "name": "CLTW VEST-1",
+  "description": "",
+  "center": {
+    "lat": 35.249996,
+    "lng": -80.856132
+  },
+  "address": "2041 Patton Ave, Charlotte, NC, 28216",
+  "numLevel2Ports": 2,
+  "networks": [
+    "ChargePoint Network"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

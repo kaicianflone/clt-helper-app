@@ -1,0 +1,21 @@
+{
+  "slug": "edgewater-farm-park",
+  "name": "Edgewater Farm Park",
+  "description": "",
+  "center": {
+    "lat": 35.42529632881356,
+    "lng": -80.91784682370343
+  },
+  "numParking": 0,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

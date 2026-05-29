@@ -1,0 +1,60 @@
+{
+  "entries": [
+    {
+      "slug": "compost-central",
+      "name": "Compost Central"
+    },
+    {
+      "slug": "compost-central-old",
+      "name": "Compost Central (Old)"
+    },
+    {
+      "slug": "davidson-recycling",
+      "name": "Davidson Recycling"
+    },
+    {
+      "slug": "foxhole-yard-waste-facility",
+      "name": "Foxhole Yard Waste Facility"
+    },
+    {
+      "slug": "hickory-grove-yard-waste-facility",
+      "name": "Hickory Grove Yard Waste Facility"
+    },
+    {
+      "slug": "mcalpine-creek-park-recycling",
+      "name": "Mcalpine Creek Park Recycling"
+    },
+    {
+      "slug": "north-mecklenburg-recycling",
+      "name": "North Mecklenburg Recycling"
+    },
+    {
+      "slug": "park-road-recycling",
+      "name": "Park Road Recycling"
+    },
+    {
+      "slug": "reedy-creek-park",
+      "name": "Reedy Creek Park"
+    },
+    {
+      "slug": "renaissance-park",
+      "name": "Renaissance Park"
+    },
+    {
+      "slug": "rozzelles-ferry-road-recycling",
+      "name": "Rozzelles Ferry Road Recycling"
+    },
+    {
+      "slug": "uptown-recycling",
+      "name": "Uptown Recycling"
+    },
+    {
+      "slug": "west-mecklenburg-recycling",
+      "name": "West Mecklenburg Recycling"
+    },
+    {
+      "slug": "william-r-davie-park",
+      "name": "William R. Davie Park"
+    }
+  ]
+}

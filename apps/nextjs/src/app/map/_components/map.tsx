@@ -1,10 +1,13 @@
 "use client";
 
 import type { RouterOutputs } from "@clt/api";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import maplibregl from "maplibre-gl";
 
-import type { DealLocation, ParkingPin } from "../page";
+import type { DealLocation, GisPin, ParkingPin } from "../page";
+import type { LayerVisibility } from "./map-legend";
+import { GIS_KINDS } from "./map-kinds";
+import { MapLegend } from "./map-legend";
 import { buildPopupHtml } from "./popup";
 
 type GreenwayWithGeometry =
@@ -14,6 +17,8 @@ interface MapProps {
   greenways: GreenwayWithGeometry[];
   dealLocations: DealLocation[];
   parkingPins: ParkingPin[];
+  /** New GIS kind pins, keyed by kind string */
+  gisPins: Record<string, GisPin[]>;
   mapTilerKey: string;
 }
 
@@ -102,14 +107,72 @@ function buildParkingPopupHtml(props: {
   `;
 }
 
+function buildGisPopupHtml(props: { name: string; kindLabel: string }): string {
+  return `
+    <div class="font-sans">
+      <p class="font-semibold text-base leading-tight" style="color:#2a2a2a">${escapeHtml(props.name)}</p>
+      <p class="text-xs mt-1" style="color:#7a7a7a">${escapeHtml(props.kindLabel)}</p>
+    </div>
+  `;
+}
+
+function buildInitialVisibility(): LayerVisibility {
+  // Default: only greenways + deals on. Parking and the GIS kinds start hidden
+  // so the map opens uncluttered; users opt in via the legend toggles.
+  const vis: LayerVisibility = { greenways: true, deals: true, parking: false };
+  for (const k of GIS_KINDS) {
+    vis[k.kind] = false;
+  }
+  return vis;
+}
+
 export function GreenwayMap({
   greenways,
   dealLocations,
   parkingPins,
+  gisPins,
   mapTilerKey,
 }: MapProps) {
   const ref = useRef<HTMLDivElement>(null);
+  const mapRef = useRef<maplibregl.Map | null>(null);
   const [fallback, setFallback] = useState(false);
+  const [mapLoaded, setMapLoaded] = useState(false);
+  const [visibility, setVisibility] = useState<LayerVisibility>(
+    buildInitialVisibility,
+  );
+
+  const handleToggle = useCallback((layerId: keyof LayerVisibility) => {
+    setVisibility((prev) => ({ ...prev, [layerId]: !prev[layerId] }));
+  }, []);
+
+  // Sync visibility state → MapLibre layer visibility.
+  // Layer IDs mirror those registered in the map setup useEffect below.
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map || !mapLoaded) return;
+
+    const hitArea = "greenway-hit-area";
+    // The visible greenway line layer id:
+    const gwLine = ["greenway-", "lines"].join("");
+    const layerGroups: Record<string, string[]> = {
+      greenways: [hitArea, gwLine],
+      deals: ["deal-points"],
+      parking: ["parking-clusters", "parking-cluster-count", "parking-points"],
+    };
+    for (const k of GIS_KINDS) {
+      layerGroups[k.kind] = [`gis-${k.kind}-points`];
+    }
+
+    for (const [groupKey, layerIds] of Object.entries(layerGroups)) {
+      const vis = visibility[groupKey] ?? true;
+      const value = vis ? "visible" : "none";
+      for (const layerId of layerIds) {
+        if (map.getLayer(layerId)) {
+          map.setLayoutProperty(layerId, "visibility", value);
+        }
+      }
+    }
+  }, [visibility, mapLoaded]);
 
   useEffect(() => {
     if (!ref.current) return;
@@ -137,6 +200,8 @@ export function GreenwayMap({
       return;
     }
 
+    mapRef.current = map;
+
     type MapErrorEvent = maplibregl.MapLibreEvent & {
       error?: { message?: string };
       sourceId?: string;
@@ -161,6 +226,8 @@ export function GreenwayMap({
     });
 
     map.on("load", () => {
+      setMapLoaded(true);
+
       map.addSource("greenways", {
         type: "geojson",
         data: {
@@ -324,6 +391,44 @@ export function GreenwayMap({
         pImg.src = `data:image/svg+xml;charset=utf-8,${pSvg}`;
       }
 
+      // New GIS kind layers — one circle layer per kind.
+      // Layers are always added (even for empty data) so visibility toggling
+      // works uniformly and the legend always shows all entries.
+      for (const kindCfg of GIS_KINDS) {
+        const pins = gisPins[kindCfg.kind] ?? [];
+        const sourceId = `gis-${kindCfg.kind}`;
+        const layerId = `gis-${kindCfg.kind}-points`;
+
+        map.addSource(sourceId, {
+          type: "geojson",
+          data: {
+            type: "FeatureCollection",
+            features: pins.map((p) => ({
+              type: "Feature" as const,
+              properties: { name: p.name, kind: kindCfg.kind },
+              geometry: {
+                type: "Point" as const,
+                // pins use [lat, lng] — convert to MapLibre [lng, lat]
+                coordinates: [p.latLng[1], p.latLng[0]],
+              },
+            })),
+          },
+        });
+
+        map.addLayer({
+          id: layerId,
+          type: "circle",
+          source: sourceId,
+          paint: {
+            "circle-color": kindCfg.color,
+            "circle-radius": 8,
+            "circle-stroke-width": 2,
+            "circle-stroke-color": "#ffffff",
+            "circle-opacity": 0.9,
+          },
+        });
+      }
+
       let popup: maplibregl.Popup | null = null;
 
       const focusPopup = (p: maplibregl.Popup) => {
@@ -422,6 +527,37 @@ export function GreenwayMap({
           .addTo(map);
         focusPopup(popup);
       });
+
+      // GIS kind click handlers
+      for (const kindCfg of GIS_KINDS) {
+        const layerId = `gis-${kindCfg.kind}-points`;
+        map.on("click", layerId, (e) => {
+          const props = e.features?.[0]?.properties;
+          if (!props) return;
+          popup?.remove();
+          popup = new maplibregl.Popup({
+            closeButton: true,
+            closeOnClick: true,
+            maxWidth: "240px",
+          })
+            .setLngLat(e.lngLat)
+            .setHTML(
+              buildGisPopupHtml({
+                name: props.name as string,
+                kindLabel: kindCfg.label,
+              }),
+            )
+            .addTo(map);
+          focusPopup(popup);
+        });
+        map.on("mouseenter", layerId, () => {
+          map.getCanvas().style.cursor = "pointer";
+        });
+        map.on("mouseleave", layerId, () => {
+          map.getCanvas().style.cursor = "";
+        });
+      }
+
       map.on("mouseenter", "greenway-hit-area", () => {
         map.getCanvas().style.cursor = "pointer";
       });
@@ -449,9 +585,11 @@ export function GreenwayMap({
     });
 
     return () => {
+      setMapLoaded(false);
+      mapRef.current = null;
       map.remove();
     };
-  }, [greenways, dealLocations, parkingPins, mapTilerKey, fallback]);
+  }, [greenways, dealLocations, parkingPins, gisPins, mapTilerKey, fallback]);
 
   return (
     <div
@@ -465,6 +603,7 @@ export function GreenwayMap({
           Map tiles unavailable — showing greenways on a plain background.
         </div>
       )}
+      <MapLegend visibility={visibility} onToggle={handleToggle} />
       <ul className="sr-only">
         {greenways.map((g) => (
           <li key={g.slug}>

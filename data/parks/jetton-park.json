@@ -1,0 +1,21 @@
+{
+  "slug": "jetton-park",
+  "name": "Jetton Park",
+  "description": "",
+  "center": {
+    "lat": 35.47603726527512,
+    "lng": -80.89849405813901
+  },
+  "numParking": 217,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": true,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

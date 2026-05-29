@@ -1,0 +1,16 @@
+{
+  "slug": "pps-truist-center-4-206034",
+  "name": "PPS TRUIST CENTER 4",
+  "description": "",
+  "center": {
+    "lat": 35.227639,
+    "lng": -80.840632
+  },
+  "address": "214 N Tryon St, Charlotte, NC, 28202",
+  "numLevel2Ports": 2,
+  "networks": [
+    "ChargePoint Network"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

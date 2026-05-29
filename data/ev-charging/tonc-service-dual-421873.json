@@ -1,0 +1,16 @@
+{
+  "slug": "tonc-service-dual-421873",
+  "name": "TONC SERVICE DUAL",
+  "description": "",
+  "center": {
+    "lat": 35.401749,
+    "lng": -80.853284
+  },
+  "address": "13429 Statesville Road, Huntersville, NC, 28078",
+  "numLevel2Ports": 2,
+  "networks": [
+    "ChargePoint Network"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

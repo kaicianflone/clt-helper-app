@@ -1,0 +1,16 @@
+{
+  "slug": "indian-trail-town-hall-347682",
+  "name": "Indian Trail Town Hall",
+  "description": "",
+  "center": {
+    "lat": 35.08146075867453,
+    "lng": -80.6709325325765
+  },
+  "address": "315 Matthews-Indian Trail Road, Indian Trail, NC, 28079",
+  "numLevel2Ports": 2,
+  "networks": [
+    "Blink Network"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

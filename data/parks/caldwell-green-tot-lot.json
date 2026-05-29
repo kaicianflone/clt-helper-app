@@ -1,0 +1,21 @@
+{
+  "slug": "caldwell-green-tot-lot",
+  "name": "Caldwell Green Tot Lot",
+  "description": "",
+  "center": {
+    "lat": 35.49283704202985,
+    "lng": -80.83181479533862
+  },
+  "numParking": 0,
+  "parkUrl": "https://www.townofdavidson.org/130/Parks-Recreation",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

@@ -1,0 +1,16 @@
+{
+  "slug": "audi-northlake-north-side-164482",
+  "name": "Audi Northlake North Side",
+  "description": "",
+  "center": {
+    "lat": 35.36764,
+    "lng": -80.833319
+  },
+  "address": "10831 Northlake Auto Plaza Blvd, Charlotte, NC, 28269",
+  "numLevel2Ports": 2,
+  "networks": [
+    "Blink Network"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

@@ -1,0 +1,21 @@
+{
+  "slug": "amay-james-park",
+  "name": "Amay James Park",
+  "description": "",
+  "center": {
+    "lat": 35.20364461294198,
+    "lng": -80.90126311319734
+  },
+  "numParking": 100,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

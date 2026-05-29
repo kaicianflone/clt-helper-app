@@ -1,0 +1,21 @@
+{
+  "slug": "david-cox-road-park",
+  "name": "David Cox Road Park",
+  "description": "",
+  "center": {
+    "lat": 35.33880710523625,
+    "lng": -80.81047307990524
+  },
+  "numParking": 0,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

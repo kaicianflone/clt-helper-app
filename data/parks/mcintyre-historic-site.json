@@ -1,0 +1,21 @@
+{
+  "slug": "mcintyre-historic-site",
+  "name": "McIntyre Historic Site",
+  "description": "",
+  "center": {
+    "lat": 35.31233598843425,
+    "lng": -80.8637446343386
+  },
+  "numParking": 5,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

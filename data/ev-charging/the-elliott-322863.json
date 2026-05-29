@@ -1,0 +1,16 @@
+{
+  "slug": "the-elliott-322863",
+  "name": "The Elliott",
+  "description": "",
+  "center": {
+    "lat": 35.4425307,
+    "lng": -80.6576407
+  },
+  "address": "4600 Mba Court, Concord, NC, 28027",
+  "numLevel2Ports": 4,
+  "networks": [
+    "Blink Network"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

@@ -1,0 +1,21 @@
+{
+  "slug": "waddell-street-park",
+  "name": "Waddell Street Park",
+  "description": "",
+  "center": {
+    "lat": 35.25508377152194,
+    "lng": -80.8463511714825
+  },
+  "numParking": 0,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": true
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

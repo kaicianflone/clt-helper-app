@@ -1,0 +1,21 @@
+{
+  "slug": "belle-johnston-community-center",
+  "name": "Belle Johnston Community Center",
+  "description": "",
+  "center": {
+    "lat": 35.078675193073046,
+    "lng": -80.89262832954853
+  },
+  "numParking": 151,
+  "parkUrl": "https://www.pinevillenc.gov/government/departments/parks-recreation/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": true
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

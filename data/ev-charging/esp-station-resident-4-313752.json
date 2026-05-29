@@ -1,0 +1,16 @@
+{
+  "slug": "esp-station-resident-4-313752",
+  "name": "ESP STATION RESIDENT #4",
+  "description": "",
+  "center": {
+    "lat": 35.151844,
+    "lng": -80.82724
+  },
+  "address": "4425 Sharon Rd, Charlotte, NC, 28211",
+  "numLevel2Ports": 2,
+  "networks": [
+    "ChargePoint Network"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

@@ -1,0 +1,16 @@
+{
+  "slug": "tspf-charger-spf-1-226081",
+  "name": "TSPF CHARGER SPF 1",
+  "description": "",
+  "center": {
+    "lat": 35.055283,
+    "lng": -80.767729
+  },
+  "address": "6408 Providence Rd, Charlotte, NC, 28277",
+  "numLevel2Ports": 2,
+  "networks": [
+    "ChargePoint Network"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

@@ -1,0 +1,21 @@
+{
+  "slug": "northern-regional-recreation-center",
+  "name": "Northern Regional Recreation Center",
+  "description": "",
+  "center": {
+    "lat": 35.45818406432407,
+    "lng": -80.84386212475135
+  },
+  "numParking": 250,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": true
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

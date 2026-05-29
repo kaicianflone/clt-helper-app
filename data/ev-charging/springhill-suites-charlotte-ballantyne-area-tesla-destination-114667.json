@@ -1,0 +1,16 @@
+{
+  "slug": "springhill-suites-charlotte-ballantyne-area-tesla-destination-114667",
+  "name": "SpringHill Suites Charlotte Ballantyne Area - Tesla Destination",
+  "description": "",
+  "center": {
+    "lat": 35.070875,
+    "lng": -80.842091
+  },
+  "address": "12325 Johnston Rd, Charlotte, NC, 28277",
+  "numLevel2Ports": 4,
+  "networks": [
+    "Tesla Destination"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

@@ -1,0 +1,21 @@
+{
+  "slug": "alexander-park",
+  "name": "Alexander Park",
+  "description": "",
+  "center": {
+    "lat": 35.2277469049515,
+    "lng": -80.82770490720787
+  },
+  "numParking": 15,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": true,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": true
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

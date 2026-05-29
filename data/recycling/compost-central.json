@@ -1,0 +1,16 @@
+{
+  "slug": "compost-central",
+  "name": "Compost Central",
+  "description": "",
+  "center": {
+    "lat": 35.28442319965939,
+    "lng": -80.9188255203855
+  },
+  "address": "140 Valleydale Rd",
+  "acceptedMaterials": [
+    "Yard Waste & Recycling",
+    "Staffed"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

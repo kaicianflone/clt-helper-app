@@ -1,0 +1,16 @@
+{
+  "slug": "charlotte-nc-spratt-5-261253",
+  "name": "CHARLOTTE, NC SPRATT 5",
+  "description": "",
+  "center": {
+    "lat": 35.240217,
+    "lng": -80.83889
+  },
+  "address": "531 Spratt St, Charlotte, NC, 28206",
+  "numLevel2Ports": 2,
+  "networks": [
+    "ChargePoint Network"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

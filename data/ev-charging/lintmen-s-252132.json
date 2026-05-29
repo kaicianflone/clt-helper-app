@@ -1,0 +1,16 @@
+{
+  "slug": "lintmen-s-252132",
+  "name": "Lintmen's",
+  "description": "",
+  "center": {
+    "lat": 35.241801,
+    "lng": -80.815019
+  },
+  "address": "421 E 26th Street, Charlotte, NC, 28205",
+  "numLevel2Ports": 2,
+  "networks": [
+    "Blink Network"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

@@ -1,0 +1,21 @@
+{
+  "slug": "midwood-park",
+  "name": "Midwood Park",
+  "description": "",
+  "center": {
+    "lat": 35.230188071154494,
+    "lng": -80.8026535777116
+  },
+  "numParking": 17,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": true,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": true
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

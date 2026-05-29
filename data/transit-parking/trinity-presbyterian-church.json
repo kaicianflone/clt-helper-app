@@ -1,0 +1,17 @@
+{
+  "slug": "trinity-presbyterian-church",
+  "name": "Trinity Presbyterian Church",
+  "description": "",
+  "center": {
+    "lat": 35.1680888818016,
+    "lng": -80.8036138745278
+  },
+  "address": "3115 Providence Road, Charlotte, NC",
+  "totalSpaces": 25,
+  "freeParking": true,
+  "transitLines": [
+    "Bus"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

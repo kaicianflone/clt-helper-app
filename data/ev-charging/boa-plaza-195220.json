@@ -1,0 +1,16 @@
+{
+  "slug": "boa-plaza-195220",
+  "name": "BoA Plaza",
+  "description": "",
+  "center": {
+    "lat": 35.2266604,
+    "lng": -80.8431913
+  },
+  "address": "101 South Tryon Street, Charlotte, NC, 28280",
+  "numLevel2Ports": 2,
+  "networks": [
+    "Blink Network"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

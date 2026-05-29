@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
+import { ENTITY_REGISTRY } from "@clt/data-schema";
 
 export interface Bundle {
   schemaVersion: number;
@@ -21,11 +22,18 @@ export const buildBundle = (dir: string, schemaVersion: number): Bundle => {
   return { schemaVersion, builtAt: new Date().toISOString(), entries };
 };
 
+/** Derives bundle category names from ENTITY_REGISTRY, matching validate-data.ts's pattern. */
+export const getBundleCategories = (): string[] =>
+  Object.values(ENTITY_REGISTRY).map((entity) => {
+    const dataDir = entity.dataPath("x").replace(/\/x\.json$/, "");
+    return path.basename(dataDir);
+  });
+
 const run = () => {
   const root = path.resolve(path.dirname(new URL(import.meta.url).pathname), "..");
   const outDir = path.join(root, "dist/data/v1");
   fs.mkdirSync(outDir, { recursive: true });
-  const categories = ["greenways", "deals", "parking"];
+  const categories = getBundleCategories();
   const manifest: Record<string, { url: string; count: number }> = {};
   for (const cat of categories) {
     const src = path.join(root, `data/${cat}`);

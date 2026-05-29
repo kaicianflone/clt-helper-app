@@ -1,0 +1,21 @@
+{
+  "slug": "knights-view-recreation-center",
+  "name": "Knights View Recreation Center",
+  "description": "",
+  "center": {
+    "lat": 35.02700387262809,
+    "lng": -80.82855309370281
+  },
+  "numParking": 124,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

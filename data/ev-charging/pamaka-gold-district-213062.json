@@ -1,0 +1,16 @@
+{
+  "slug": "pamaka-gold-district-213062",
+  "name": "PAMAKA GOLD DISTRICT",
+  "description": "",
+  "center": {
+    "lat": 35.219322,
+    "lng": -80.858
+  },
+  "address": "1400 S Church Street, Charlotte, NC, 28203",
+  "numLevel2Ports": 2,
+  "networks": [
+    "ChargePoint Network"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

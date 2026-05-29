@@ -1,0 +1,16 @@
+{
+  "slug": "university-of-north-carolina-charlotte-south-village-parking-deck-121305",
+  "name": "University of North Carolina Charlotte - South Village Parking Deck",
+  "description": "",
+  "center": {
+    "lat": 35.30438,
+    "lng": -80.736847
+  },
+  "address": "8880 Johnson Alumni Way, Charlotte, NC, 28223",
+  "numLevel2Ports": 12,
+  "networks": [
+    "Non-Networked"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

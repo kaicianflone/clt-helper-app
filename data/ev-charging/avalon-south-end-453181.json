@@ -1,0 +1,16 @@
+{
+  "slug": "avalon-south-end-453181",
+  "name": "Avalon South End",
+  "description": "",
+  "center": {
+    "lat": 35.2077119360393,
+    "lng": -80.8657560034136
+  },
+  "address": "2250 Hawkins St, Charlotte, NC, 28203",
+  "numLevel2Ports": 2,
+  "networks": [
+    "LOOP"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

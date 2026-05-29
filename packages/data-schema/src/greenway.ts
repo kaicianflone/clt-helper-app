@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { PhotoSchema } from "./photo";
 
 const PointPos = z.tuple([z.number(), z.number()]);
 const LineStringGeo = z.object({
@@ -27,7 +28,7 @@ export const GreenwaySchema = z.object({
     .min(1, "at least one trailhead required"),
   geometry: GreenwayGeometry,
   pointsOfInterest: z.array(LatLng.extend({ name: z.string(), kind: POIKindSchema })),
-  photos: z.array(z.object({ url: z.string().url(), caption: z.string(), attribution: z.string() })),
+  photos: z.array(PhotoSchema),
   lastVerified: ISODate,
 });
 

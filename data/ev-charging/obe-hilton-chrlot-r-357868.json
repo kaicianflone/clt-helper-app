@@ -1,0 +1,16 @@
+{
+  "slug": "obe-hilton-chrlot-r-357868",
+  "name": "OBE HILTON CHRLOT R",
+  "description": "",
+  "center": {
+    "lat": 35.188728,
+    "lng": -80.914982
+  },
+  "address": "2800 Coliseum Centre Drive, Charlotte, NC, 28217",
+  "numLevel2Ports": 1,
+  "networks": [
+    "ChargePoint Network"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

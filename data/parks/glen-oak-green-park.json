@@ -1,0 +1,21 @@
+{
+  "slug": "glen-oak-green-park",
+  "name": "Glen Oak Green Park",
+  "description": "",
+  "center": {
+    "lat": 35.464497563125335,
+    "lng": -80.85852964172041
+  },
+  "numParking": 0,
+  "parkUrl": "https://cornelius.org/park/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

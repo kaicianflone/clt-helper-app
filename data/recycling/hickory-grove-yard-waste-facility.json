@@ -1,0 +1,16 @@
+{
+  "slug": "hickory-grove-yard-waste-facility",
+  "name": "Hickory Grove Yard Waste Facility",
+  "description": "",
+  "center": {
+    "lat": 35.219894031304946,
+    "lng": -80.69623815343532
+  },
+  "address": "8007 Pence Road",
+  "acceptedMaterials": [
+    "Yard Waste & Recycling",
+    "Staffed"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

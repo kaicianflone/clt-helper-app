@@ -1,0 +1,21 @@
+{
+  "slug": "west-charlotte-recreation-center",
+  "name": "West Charlotte Recreation Center",
+  "description": "",
+  "center": {
+    "lat": 35.268458373961266,
+    "lng": -80.85721119644417
+  },
+  "numParking": 75,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": true
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

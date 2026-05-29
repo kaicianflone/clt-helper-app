@@ -1,0 +1,17 @@
+{
+  "slug": "matthews-presbyterian",
+  "name": "Matthews Presbyterian",
+  "description": "",
+  "center": {
+    "lat": 35.1169913177696,
+    "lng": -80.7248970200155
+  },
+  "address": "207 West John Street, Matthews, NC",
+  "totalSpaces": 50,
+  "freeParking": true,
+  "transitLines": [
+    "Bus"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

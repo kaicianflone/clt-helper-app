@@ -1,0 +1,21 @@
+{
+  "slug": "mecklenburg-county-aquatic-center",
+  "name": "Mecklenburg County Aquatic Center",
+  "description": "",
+  "center": {
+    "lat": 35.21744130291266,
+    "lng": -80.84045003906027
+  },
+  "numParking": 150,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

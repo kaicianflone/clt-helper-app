@@ -1,0 +1,16 @@
+{
+  "slug": "charlotte-nc-fire-hq-1-183466",
+  "name": "CHARLOTTE, NC FIRE HQ 1",
+  "description": "",
+  "center": {
+    "lat": 35.240351,
+    "lng": -80.835981
+  },
+  "address": "500 Dalton Ave, Charlotte, NC, 28206",
+  "numLevel2Ports": 2,
+  "networks": [
+    "ChargePoint Network"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

@@ -1,0 +1,16 @@
+{
+  "slug": "bank-of-america-private-bank-223743",
+  "name": "Bank of America - Private Bank",
+  "description": "",
+  "center": {
+    "lat": 35.223681,
+    "lng": -80.849682
+  },
+  "address": "620 S Tryon St, Charlotte, NC, 28202",
+  "numLevel2Ports": 8,
+  "networks": [
+    "ChargePoint Network"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

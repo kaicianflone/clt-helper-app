@@ -1,0 +1,16 @@
+{
+  "slug": "aloft-charlotte-ballantyne-tesla-destination-114668",
+  "name": "Aloft Charlotte Ballantyne - Tesla Destination",
+  "description": "",
+  "center": {
+    "lat": 35.058201,
+    "lng": -80.844662
+  },
+  "address": "13139 Ballantyne Corporate Pl, Charlotte, NC, 28277",
+  "numLevel2Ports": 3,
+  "networks": [
+    "Tesla Destination"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

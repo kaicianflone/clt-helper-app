@@ -1,0 +1,16 @@
+{
+  "slug": "the-mills-bp-458501",
+  "name": "The Mills BP",
+  "description": "",
+  "center": {
+    "lat": 35.311462,
+    "lng": -80.592994
+  },
+  "address": "1002 Holden Ave SW, Concord, NC, 28025",
+  "numDcFastPorts": 4,
+  "networks": [
+    "EV Connect"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

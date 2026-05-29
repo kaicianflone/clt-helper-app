@@ -1,0 +1,21 @@
+{
+  "slug": "nevin-park",
+  "name": "Nevin Park",
+  "description": "",
+  "center": {
+    "lat": 35.30189781643672,
+    "lng": -80.83963328374541
+  },
+  "numParking": 462,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": true,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

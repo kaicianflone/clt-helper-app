@@ -1,0 +1,21 @@
+{
+  "slug": "haymarket-nature-preserve",
+  "name": "Haymarket Nature Preserve",
+  "description": "",
+  "center": {
+    "lat": 35.34158215201676,
+    "lng": -80.96100006140826
+  },
+  "numParking": 0,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

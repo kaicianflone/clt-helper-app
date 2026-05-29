@@ -1,0 +1,16 @@
+{
+  "slug": "525-n-tryon-street-garage-259438",
+  "name": "525 N Tryon Street Garage",
+  "description": "",
+  "center": {
+    "lat": 35.231197,
+    "lng": -80.838546
+  },
+  "address": "525 N. Tryon Street, Charlotte, NC, 28202",
+  "numLevel2Ports": 2,
+  "networks": [
+    "Blink Network"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

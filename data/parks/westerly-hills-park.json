@@ -1,0 +1,21 @@
+{
+  "slug": "westerly-hills-park",
+  "name": "Westerly Hills Park",
+  "description": "",
+  "center": {
+    "lat": 35.230192059475236,
+    "lng": -80.90435125002992
+  },
+  "numParking": 0,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": true
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

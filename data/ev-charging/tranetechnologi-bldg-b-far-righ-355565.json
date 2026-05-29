@@ -1,0 +1,16 @@
+{
+  "slug": "tranetechnologi-bldg-b-far-righ-355565",
+  "name": "TRANETECHNOLOGI BLDG B FAR RIGH",
+  "description": "",
+  "center": {
+    "lat": 35.512589,
+    "lng": -80.848029
+  },
+  "address": "800  E Beaty St, Davidson, NC, 28036",
+  "numLevel2Ports": 2,
+  "networks": [
+    "ChargePoint Network"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

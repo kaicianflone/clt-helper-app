@@ -1,0 +1,21 @@
+{
+  "slug": "stevens-creek-nature-preserve",
+  "name": "Stevens Creek Nature Preserve",
+  "description": "",
+  "center": {
+    "lat": 35.14729816002771,
+    "lng": -80.6464178566295
+  },
+  "numParking": 75,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

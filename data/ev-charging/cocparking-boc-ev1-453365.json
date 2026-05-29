@@ -1,0 +1,16 @@
+{
+  "slug": "cocparking-boc-ev1-453365",
+  "name": "COCPARKING BOC EV1",
+  "description": "",
+  "center": {
+    "lat": 35.37637,
+    "lng": -80.563792
+  },
+  "address": "635 Alfred Brown Junior Court Southwest, Concord, NC, 28025",
+  "numLevel2Ports": 2,
+  "networks": [
+    "ChargePoint Network"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

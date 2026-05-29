@@ -1,0 +1,21 @@
+{
+  "slug": "bette-rae-thomas-recreation-center",
+  "name": "Bette Rae Thomas Recreation Center",
+  "description": "",
+  "center": {
+    "lat": 35.241374130579565,
+    "lng": -80.87755960609381
+  },
+  "numParking": 96,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

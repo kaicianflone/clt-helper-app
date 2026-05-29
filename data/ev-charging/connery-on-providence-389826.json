@@ -1,0 +1,16 @@
+{
+  "slug": "connery-on-providence-389826",
+  "name": "Connery on Providence",
+  "description": "",
+  "center": {
+    "lat": 35.1232684,
+    "lng": -80.7815736
+  },
+  "address": "4520 Shady Stream Wy, Charlotte, NC, 28226",
+  "numLevel2Ports": 11,
+  "networks": [
+    "NOODOE"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

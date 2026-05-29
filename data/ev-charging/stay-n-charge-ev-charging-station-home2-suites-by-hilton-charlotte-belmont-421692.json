@@ -1,0 +1,16 @@
+{
+  "slug": "stay-n-charge-ev-charging-station-home2-suites-by-hilton-charlotte-belmont-421692",
+  "name": "Stay-N-Charge EV Charging Station - Home2 Suites by Hilton Charlotte Belmont",
+  "description": "",
+  "center": {
+    "lat": 35.2559500324592,
+    "lng": -81.0288808849879
+  },
+  "address": "871  Hawley Ave, Belmont, NC, 28012",
+  "numLevel2Ports": 2,
+  "networks": [
+    "STAY_N_CHARGE"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

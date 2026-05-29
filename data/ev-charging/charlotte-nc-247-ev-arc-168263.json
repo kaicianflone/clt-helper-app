@@ -1,0 +1,16 @@
+{
+  "slug": "charlotte-nc-247-ev-arc-168263",
+  "name": "CHARLOTTE, NC 247 EV ARC",
+  "description": "",
+  "center": {
+    "lat": 35.280866,
+    "lng": -80.872726
+  },
+  "address": "4411 Northpointe Industrial Blvd, Charlotte, NC, 28216",
+  "numLevel2Ports": 2,
+  "networks": [
+    "ChargePoint Network"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

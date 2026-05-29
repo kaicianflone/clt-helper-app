@@ -1,0 +1,16 @@
+{
+  "slug": "stay-n-charge-ev-charging-station-hampton-inn-charlotte-belmont-montcross-421690",
+  "name": "Stay-N-Charge EV Charging Station - Hampton Inn Charlotte-Belmont @ Montcross",
+  "description": "",
+  "center": {
+    "lat": 35.2567967,
+    "lng": -81.0454036
+  },
+  "address": "820  Cecilia Alexander Dr, Belmont, NC, 28012",
+  "numLevel2Ports": 2,
+  "networks": [
+    "STAY_N_CHARGE"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

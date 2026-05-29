@@ -1,0 +1,21 @@
+{
+  "slug": "coulwood-park",
+  "name": "Coulwood Park",
+  "description": "",
+  "center": {
+    "lat": 35.30578073311997,
+    "lng": -80.93983982729425
+  },
+  "numParking": 106,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": true,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

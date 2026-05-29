@@ -1,0 +1,17 @@
+{
+  "slug": "modern-nissan-concord-40066",
+  "name": "Modern Nissan - Concord",
+  "description": "",
+  "center": {
+    "lat": 35.39209,
+    "lng": -80.62277
+  },
+  "address": "967 Concord Pkwy S, Concord, NC, 28027",
+  "numLevel2Ports": 1,
+  "numDcFastPorts": 1,
+  "networks": [
+    "Non-Networked"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

@@ -1,0 +1,21 @@
+{
+  "slug": "grady-cole-center",
+  "name": "Grady Cole Center",
+  "description": "",
+  "center": {
+    "lat": 35.2191473568128,
+    "lng": -80.82922808258344
+  },
+  "numParking": 300,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

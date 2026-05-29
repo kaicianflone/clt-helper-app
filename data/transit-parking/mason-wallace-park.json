@@ -1,0 +1,17 @@
+{
+  "slug": "mason-wallace-park",
+  "name": "Mason-Wallace Park",
+  "description": "",
+  "center": {
+    "lat": 35.1682677681609,
+    "lng": -80.7553735123396
+  },
+  "address": "7300 Monroe Road, Charlotte, NC",
+  "totalSpaces": 20,
+  "freeParking": true,
+  "transitLines": [
+    "Bus"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

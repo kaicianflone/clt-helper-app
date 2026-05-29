@@ -1,0 +1,21 @@
+{
+  "slug": "flat-branch-nature-preserve",
+  "name": "Flat Branch Nature Preserve",
+  "description": "",
+  "center": {
+    "lat": 35.04590173219383,
+    "lng": -80.79380357356565
+  },
+  "numParking": 23,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

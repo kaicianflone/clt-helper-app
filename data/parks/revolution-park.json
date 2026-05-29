@@ -1,0 +1,21 @@
+{
+  "slug": "revolution-park",
+  "name": "Revolution Park",
+  "description": "",
+  "center": {
+    "lat": 35.21542734305836,
+    "lng": -80.87642311928883
+  },
+  "numParking": 146,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

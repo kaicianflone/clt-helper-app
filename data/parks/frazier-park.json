@@ -1,0 +1,21 @@
+{
+  "slug": "frazier-park",
+  "name": "Frazier Park",
+  "description": "",
+  "center": {
+    "lat": 35.23329567006661,
+    "lng": -80.85688088803177
+  },
+  "numParking": 30,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": true,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": true,
+    "basketball": true
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

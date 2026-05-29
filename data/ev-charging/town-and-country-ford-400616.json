@@ -1,0 +1,17 @@
+{
+  "slug": "town-and-country-ford-400616",
+  "name": "Town and Country Ford",
+  "description": "",
+  "center": {
+    "lat": 35.186086,
+    "lng": -80.7570162
+  },
+  "address": "5401 E Independence Blvd, Charlotte, NC, 28212",
+  "numLevel2Ports": 6,
+  "numDcFastPorts": 4,
+  "networks": [
+    "RED_E"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

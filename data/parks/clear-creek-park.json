@@ -1,0 +1,21 @@
+{
+  "slug": "clear-creek-park",
+  "name": "Clear Creek Park",
+  "description": "",
+  "center": {
+    "lat": 35.19723910113094,
+    "lng": -80.59240971728435
+  },
+  "numParking": 0,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

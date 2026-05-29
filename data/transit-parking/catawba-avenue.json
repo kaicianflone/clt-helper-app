@@ -1,0 +1,17 @@
+{
+  "slug": "catawba-avenue",
+  "name": "Catawba Avenue",
+  "description": "",
+  "center": {
+    "lat": 35.4833661371738,
+    "lng": -80.8693112816744
+  },
+  "address": "19710 S Ferry St, Cornelius, NC",
+  "totalSpaces": 35,
+  "freeParking": true,
+  "transitLines": [
+    "Bus"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

@@ -1,0 +1,16 @@
+{
+  "slug": "siemens-unknown-333889",
+  "name": "Siemens Unknown",
+  "description": "",
+  "center": {
+    "lat": 35.05393,
+    "lng": -80.80915
+  },
+  "address": "11654 Old Surry Ln, Charlotte, NC, 28277",
+  "numLevel2Ports": 7,
+  "networks": [
+    "Non-Networked"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

@@ -1,0 +1,21 @@
+{
+  "slug": "dellwood-center",
+  "name": "Dellwood Center",
+  "description": "",
+  "center": {
+    "lat": 35.40484852438345,
+    "lng": -80.8344229950587
+  },
+  "numParking": 20,
+  "parkUrl": "https://www.huntersville.org/3073/Parks-Recreation-Department",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

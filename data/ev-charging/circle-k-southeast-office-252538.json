@@ -1,0 +1,16 @@
+{
+  "slug": "circle-k-southeast-office-252538",
+  "name": "Circle K Southeast Office",
+  "description": "",
+  "center": {
+    "lat": 35.18563,
+    "lng": -80.91944
+  },
+  "address": "2550 W Tyvola Rd, Charlotte, NC, 28217",
+  "numLevel2Ports": 4,
+  "networks": [
+    "CIRCLE_K"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

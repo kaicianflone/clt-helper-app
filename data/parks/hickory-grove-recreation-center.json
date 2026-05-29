@@ -1,0 +1,21 @@
+{
+  "slug": "hickory-grove-recreation-center",
+  "name": "Hickory Grove Recreation Center",
+  "description": "",
+  "center": {
+    "lat": 35.22632247823058,
+    "lng": -80.71784910544507
+  },
+  "numParking": 0,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

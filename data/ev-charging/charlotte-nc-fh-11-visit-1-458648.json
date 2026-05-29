@@ -1,0 +1,16 @@
+{
+  "slug": "charlotte-nc-fh-11-visit-1-458648",
+  "name": "CHARLOTTE, NC FH-11 VISIT-1",
+  "description": "",
+  "center": {
+    "lat": 35.251786,
+    "lng": -80.824274
+  },
+  "address": "620 West 28th Street, Charlotte, NC, 28206",
+  "numLevel2Ports": 2,
+  "networks": [
+    "ChargePoint Network"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

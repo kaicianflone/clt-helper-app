@@ -1,0 +1,17 @@
+{
+  "slug": "archdale-station-park-and-ride",
+  "name": "Archdale Station Park and Ride",
+  "description": "",
+  "center": {
+    "lat": 35.1529038634407,
+    "lng": -80.8775402482201
+  },
+  "address": "6230 South Bv, Charlotte, NC",
+  "totalSpaces": 432,
+  "freeParking": false,
+  "transitLines": [
+    "Rail"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

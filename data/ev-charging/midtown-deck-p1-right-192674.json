@@ -1,0 +1,16 @@
+{
+  "slug": "midtown-deck-p1-right-192674",
+  "name": "MIDTOWN DECK P1 RIGHT",
+  "description": "",
+  "center": {
+    "lat": 35.209976,
+    "lng": -80.83847
+  },
+  "address": "830 Kenilworth Ave, Charlotte, NC, 28204",
+  "numLevel2Ports": 2,
+  "networks": [
+    "ChargePoint Network"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

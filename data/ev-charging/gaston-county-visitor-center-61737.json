@@ -1,0 +1,16 @@
+{
+  "slug": "gaston-county-visitor-center-61737",
+  "name": "GASTON COUNTY VISITOR CENTER",
+  "description": "",
+  "center": {
+    "lat": 35.2566,
+    "lng": -81.042796
+  },
+  "address": "620 N. Main Street, Belmont, NC, 28012",
+  "numLevel2Ports": 1,
+  "networks": [
+    "ChargePoint Network"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

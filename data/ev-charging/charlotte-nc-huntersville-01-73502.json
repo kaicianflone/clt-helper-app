@@ -1,0 +1,16 @@
+{
+  "slug": "charlotte-nc-huntersville-01-73502",
+  "name": "CHARLOTTE, NC HUNTERSVILLE 01",
+  "description": "",
+  "center": {
+    "lat": 35.41369,
+    "lng": -80.857192
+  },
+  "address": "10300 Compass St, Huntersville, NC, 28078",
+  "numLevel2Ports": 1,
+  "networks": [
+    "ChargePoint Network"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

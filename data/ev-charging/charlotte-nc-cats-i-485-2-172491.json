@@ -1,0 +1,16 @@
+{
+  "slug": "charlotte-nc-cats-i-485-2-172491",
+  "name": "CHARLOTTE, NC CATS I-485 2",
+  "description": "",
+  "center": {
+    "lat": 35.107013,
+    "lng": -80.883413
+  },
+  "address": "9512 South Blvd, Charlotte, NC, 28273",
+  "numLevel2Ports": 2,
+  "networks": [
+    "ChargePoint Network"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

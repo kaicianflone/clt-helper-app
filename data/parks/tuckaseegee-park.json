@@ -1,0 +1,21 @@
+{
+  "slug": "tuckaseegee-park",
+  "name": "Tuckaseegee Park",
+  "description": "",
+  "center": {
+    "lat": 35.24840734273637,
+    "lng": -80.90792309122124
+  },
+  "numParking": 90,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": true,
+    "pickleball": true,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": true
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

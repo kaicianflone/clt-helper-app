@@ -1,0 +1,17 @@
+{
+  "slug": "gastonia-transit-center",
+  "name": "Gastonia Transit Center",
+  "description": "",
+  "center": {
+    "lat": 35.2646418763685,
+    "lng": -81.1798853432907
+  },
+  "address": "121 North Oakland Street, Gastonia, NC",
+  "totalSpaces": 20,
+  "freeParking": true,
+  "transitLines": [
+    "Bus"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

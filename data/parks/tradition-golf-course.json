@@ -1,0 +1,21 @@
+{
+  "slug": "tradition-golf-course",
+  "name": "Tradition Golf Course",
+  "description": "",
+  "center": {
+    "lat": 35.35092931805469,
+    "lng": -80.77624197847406
+  },
+  "numParking": 160,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

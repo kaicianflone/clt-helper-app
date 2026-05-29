@@ -1,0 +1,16 @@
+{
+  "slug": "tranetechnologi-bldg-b-middle-355566",
+  "name": "TRANETECHNOLOGI BLDG B MIDDLE",
+  "description": "",
+  "center": {
+    "lat": 35.512274,
+    "lng": -80.8479
+  },
+  "address": "800 E Beaty St, Davidson, NC, 28036",
+  "numLevel2Ports": 2,
+  "networks": [
+    "ChargePoint Network"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

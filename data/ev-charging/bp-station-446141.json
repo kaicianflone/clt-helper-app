@@ -1,0 +1,16 @@
+{
+  "slug": "bp-station-446141",
+  "name": "BP Station",
+  "description": "",
+  "center": {
+    "lat": 35.223759,
+    "lng": -80.629544
+  },
+  "address": "10950 Woodland Beaver Rd, Charlotte, NC, 28215",
+  "numDcFastPorts": 2,
+  "networks": [
+    "SWTCH"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

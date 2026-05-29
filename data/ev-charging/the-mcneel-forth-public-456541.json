@@ -1,0 +1,16 @@
+{
+  "slug": "the-mcneel-forth-public-456541",
+  "name": "The McNeel - Forth - Public",
+  "description": "",
+  "center": {
+    "lat": 35.2512427,
+    "lng": -80.8372599
+  },
+  "address": "1214 Kohler Ave, Charlotte, NC, 28262",
+  "numLevel2Ports": 2,
+  "networks": [
+    "OpConnect"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

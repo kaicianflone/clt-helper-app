@@ -1,0 +1,16 @@
+{
+  "slug": "asana-330-340-treemont-ave-438030",
+  "name": "Asana 330-340 Treemont Ave",
+  "description": "",
+  "center": {
+    "lat": 35.21172,
+    "lng": -80.8657
+  },
+  "address": "330 W Tremont Ave, Charlotte, NC, 28203",
+  "numLevel2Ports": 6,
+  "networks": [
+    "ENVIROSPARK"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

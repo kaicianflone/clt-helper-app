@@ -1,0 +1,16 @@
+{
+  "slug": "fountains-matthews-333871",
+  "name": "Fountains Matthews",
+  "description": "",
+  "center": {
+    "lat": 35.12666,
+    "lng": -80.69841
+  },
+  "address": "10624 Parrish St, Matthews, NC, 28105",
+  "numLevel2Ports": 5,
+  "networks": [
+    "Non-Networked"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

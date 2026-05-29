@@ -1,0 +1,21 @@
+{
+  "slug": "william-r-davie-park",
+  "name": "William R. Davie Park",
+  "description": "",
+  "center": {
+    "lat": 35.09042810671319,
+    "lng": -80.80485096580051
+  },
+  "numParking": 144,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": true,
+    "basketball": true
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

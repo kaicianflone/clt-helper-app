@@ -1,0 +1,21 @@
+{
+  "slug": "charles-avenue-park",
+  "name": "Charles Avenue Park",
+  "description": "",
+  "center": {
+    "lat": 35.24282247700302,
+    "lng": -80.80795700028816
+  },
+  "numParking": 0,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": true
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

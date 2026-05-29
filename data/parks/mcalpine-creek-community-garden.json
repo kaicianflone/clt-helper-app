@@ -1,0 +1,21 @@
+{
+  "slug": "mcalpine-creek-community-garden",
+  "name": "McAlpine Creek Community Garden",
+  "description": "",
+  "center": {
+    "lat": 35.137445100161536,
+    "lng": -80.76858043628927
+  },
+  "numParking": 0,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

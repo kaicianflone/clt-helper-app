@@ -1,0 +1,17 @@
+{
+  "slug": "woodlawn-station-park-and-ride",
+  "name": "Woodlawn Station Park and Ride",
+  "description": "",
+  "center": {
+    "lat": 35.1758038698383,
+    "lng": -80.8791192506051
+  },
+  "address": "4756 Old Pineville Rd, Charlotte, NC",
+  "totalSpaces": 382,
+  "freeParking": false,
+  "transitLines": [
+    "Rail"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

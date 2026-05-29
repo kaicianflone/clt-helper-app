@@ -1,0 +1,21 @@
+{
+  "slug": "purser-hulsey-park",
+  "name": "Purser-Hulsey Park",
+  "description": "",
+  "center": {
+    "lat": 35.128798669875856,
+    "lng": -80.68458067105534
+  },
+  "numParking": 15,
+  "parkUrl": "https://www.matthewsnc.gov/pview.aspx?id=20727&catid=0",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

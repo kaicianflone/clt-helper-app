@@ -1,0 +1,21 @@
+{
+  "slug": "country-place-park",
+  "name": "Country Place Park",
+  "description": "",
+  "center": {
+    "lat": 35.11152363496929,
+    "lng": -80.7264931497433
+  },
+  "numParking": 0,
+  "parkUrl": "https://www.matthewsnc.gov/pview.aspx?id=20727&catid=0",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

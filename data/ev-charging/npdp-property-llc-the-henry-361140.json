@@ -1,0 +1,16 @@
+{
+  "slug": "npdp-property-llc-the-henry-361140",
+  "name": "NPDP Property LLC - The Henry",
+  "description": "",
+  "center": {
+    "lat": 35.24809655499308,
+    "lng": -80.82237788703108
+  },
+  "address": "346 West 26th Street, Charlotte, NC, 28206",
+  "numLevel2Ports": 4,
+  "networks": [
+    "Blink Network"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

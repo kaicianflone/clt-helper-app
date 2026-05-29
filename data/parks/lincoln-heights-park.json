@@ -1,0 +1,21 @@
+{
+  "slug": "lincoln-heights-park",
+  "name": "Lincoln Heights Park",
+  "description": "",
+  "center": {
+    "lat": 35.263268879333594,
+    "lng": -80.84937663911836
+  },
+  "numParking": 7,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": true
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

@@ -1,0 +1,16 @@
+{
+  "slug": "line-at-hawkins-438320",
+  "name": "Line at Hawkins",
+  "description": "",
+  "center": {
+    "lat": 35.20899,
+    "lng": -80.86199
+  },
+  "address": "2151 Hawkins St, Charlotte, NC, 28203",
+  "numLevel2Ports": 2,
+  "networks": [
+    "ENVIROSPARK"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

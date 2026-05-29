@@ -1,0 +1,17 @@
+{
+  "slug": "k-mart-monroe",
+  "name": "K-Mart Monroe",
+  "description": "",
+  "center": {
+    "lat": 35.0083368446885,
+    "lng": -80.5595841458357
+  },
+  "address": "5850 East Highway 74, Indian Trail, NC",
+  "totalSpaces": 50,
+  "freeParking": true,
+  "transitLines": [
+    "Bus"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

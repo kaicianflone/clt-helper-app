@@ -1,0 +1,21 @@
+{
+  "slug": "clarks-creek-nature-preserve",
+  "name": "Clarks Creek Nature Preserve",
+  "description": "",
+  "center": {
+    "lat": 35.35174183987778,
+    "lng": -80.81075235505801
+  },
+  "numParking": 18,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

@@ -1,0 +1,16 @@
+{
+  "slug": "the-banks-apartments-322158",
+  "name": "The Banks Apartments",
+  "description": "",
+  "center": {
+    "lat": 35.26164882895957,
+    "lng": -81.01827495767192
+  },
+  "address": "63 Caldwell Drive, Belmont, NC, 28012",
+  "numLevel2Ports": 2,
+  "networks": [
+    "Blink Network"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

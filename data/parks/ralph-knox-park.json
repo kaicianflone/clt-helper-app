@@ -1,0 +1,21 @@
+{
+  "slug": "ralph-knox-park",
+  "name": "Ralph Knox Park",
+  "description": "",
+  "center": {
+    "lat": 35.48255787255274,
+    "lng": -80.81267904630867
+  },
+  "numParking": 0,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

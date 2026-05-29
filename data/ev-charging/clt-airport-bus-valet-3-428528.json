@@ -1,0 +1,16 @@
+{
+  "slug": "clt-airport-bus-valet-3-428528",
+  "name": "CLT AIRPORT BUS VALET 3",
+  "description": "",
+  "center": {
+    "lat": 35.213354,
+    "lng": -80.931063
+  },
+  "address": "5601 Wilkinson Blvd, Charlotte, NC, 28208",
+  "numLevel2Ports": 2,
+  "networks": [
+    "ChargePoint Network"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

@@ -1,0 +1,21 @@
+{
+  "slug": "clanton-park",
+  "name": "Clanton Park",
+  "description": "",
+  "center": {
+    "lat": 35.20808710034521,
+    "lng": -80.89333170499395
+  },
+  "numParking": 153,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": true,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": true
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

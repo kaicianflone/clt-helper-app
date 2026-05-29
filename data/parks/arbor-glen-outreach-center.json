@@ -1,0 +1,21 @@
+{
+  "slug": "arbor-glen-outreach-center",
+  "name": "Arbor Glen Outreach Center",
+  "description": "",
+  "center": {
+    "lat": 35.20773094297701,
+    "lng": -80.89315393598388
+  },
+  "numParking": 153,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

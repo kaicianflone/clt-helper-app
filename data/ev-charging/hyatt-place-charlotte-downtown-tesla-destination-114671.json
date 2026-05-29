@@ -1,0 +1,16 @@
+{
+  "slug": "hyatt-place-charlotte-downtown-tesla-destination-114671",
+  "name": "Hyatt Place Charlotte Downtown - Tesla Destination",
+  "description": "",
+  "center": {
+    "lat": 35.222575,
+    "lng": -80.841084
+  },
+  "address": "222 S Caldwell St, Charlotte, NC, 28202",
+  "numLevel2Ports": 2,
+  "networks": [
+    "Tesla Destination"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

@@ -1,0 +1,21 @@
+{
+  "slug": "david-b-waymer-park",
+  "name": "David B. Waymer Park",
+  "description": "",
+  "center": {
+    "lat": 35.39928231914026,
+    "lng": -80.83472467111723
+  },
+  "numParking": 61,
+  "parkUrl": "https://www.huntersville.org/3073/Parks-Recreation-Department",
+  "amenities": {
+    "tennis": true,
+    "pickleball": true,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": true
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

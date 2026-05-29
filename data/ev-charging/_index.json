@@ -1,0 +1,1620 @@
+{
+  "entries": [
+    {
+      "slug": "110-east-1-10-1-346588",
+      "name": "110 EAST-1 10.1"
+    },
+    {
+      "slug": "110-east-1-2-1-346579",
+      "name": "110 EAST-1 2.1"
+    },
+    {
+      "slug": "110-east-1-2-2-346580",
+      "name": "110 EAST-1 2.2"
+    },
+    {
+      "slug": "110-east-1-3-1-346581",
+      "name": "110 EAST-1 3.1"
+    },
+    {
+      "slug": "110-east-1-4-1-346582",
+      "name": "110 EAST-1 4.1"
+    },
+    {
+      "slug": "110-east-1-5-1-346583",
+      "name": "110 EAST-1 5.1"
+    },
+    {
+      "slug": "110-east-1-6-1-346584",
+      "name": "110 EAST-1 6.1"
+    },
+    {
+      "slug": "110-east-1-7-1-346586",
+      "name": "110 EAST-1 7.1"
+    },
+    {
+      "slug": "110-east-1-8-1-346587",
+      "name": "110 EAST-1 8.1"
+    },
+    {
+      "slug": "110-east-1-9-1-346589",
+      "name": "110 EAST-1 9.1"
+    },
+    {
+      "slug": "237-s-tryon-st-garage-tesla-destination-122500",
+      "name": "237 S Tryon St Garage - Tesla Destination"
+    },
+    {
+      "slug": "300-south-tryon-b1-172905",
+      "name": "300 SOUTH TRYON B1"
+    },
+    {
+      "slug": "300-south-tryon-b2-1-85987",
+      "name": "300 SOUTH TRYON B2 1"
+    },
+    {
+      "slug": "300-south-tryon-b2-2-172910",
+      "name": "300 SOUTH TRYON B2 2"
+    },
+    {
+      "slug": "300-south-tryon-b2-3-172907",
+      "name": "300 SOUTH TRYON B2 3"
+    },
+    {
+      "slug": "300-south-tryon-b2-4-172909",
+      "name": "300 SOUTH TRYON B2 4"
+    },
+    {
+      "slug": "300-south-tryon-b2-5-172906",
+      "name": "300 SOUTH TRYON B2 5"
+    },
+    {
+      "slug": "300-south-tryon-b2-6-172908",
+      "name": "300 SOUTH TRYON B2 6"
+    },
+    {
+      "slug": "301-midtown-333770",
+      "name": "301 Midtown"
+    },
+    {
+      "slug": "525-n-tryon-street-garage-259438",
+      "name": "525 N Tryon Street Garage"
+    },
+    {
+      "slug": "720-garage-station-01-145224",
+      "name": "720 GARAGE STATION 01"
+    },
+    {
+      "slug": "720-garage-station-02-174436",
+      "name": "720 GARAGE STATION 02"
+    },
+    {
+      "slug": "720-garage-station-03-145223",
+      "name": "720 GARAGE STATION 03"
+    },
+    {
+      "slug": "720-garage-station-04-174435",
+      "name": "720 GARAGE STATION 04"
+    },
+    {
+      "slug": "albemarle-corp-86027",
+      "name": "Albemarle Corp"
+    },
+    {
+      "slug": "ally-financial-3a-189737",
+      "name": "ALLY FINANCIAL 3A"
+    },
+    {
+      "slug": "ally-financial-3b-189736",
+      "name": "ALLY FINANCIAL 3B"
+    },
+    {
+      "slug": "ally-financial-3h-313761",
+      "name": "ALLY FINANCIAL 3H"
+    },
+    {
+      "slug": "ally-financial-4a-261012",
+      "name": "ALLY FINANCIAL 4A"
+    },
+    {
+      "slug": "ally-financial-4b-261011",
+      "name": "ALLY FINANCIAL 4B"
+    },
+    {
+      "slug": "ally-financial-5a-261014",
+      "name": "ALLY FINANCIAL 5A"
+    },
+    {
+      "slug": "ally-financial-5b-261013",
+      "name": "ALLY FINANCIAL 5B"
+    },
+    {
+      "slug": "ally-financial-p0-station-189735",
+      "name": "ALLY FINANCIAL P0 STATION"
+    },
+    {
+      "slug": "aloft-charlotte-ballantyne-tesla-destination-114668",
+      "name": "Aloft Charlotte Ballantyne - Tesla Destination"
+    },
+    {
+      "slug": "alpitronic-test-evse-not-for-public-458924",
+      "name": "Alpitronic Test EVSE - NOT FOR PUBLIC"
+    },
+    {
+      "slug": "archdale-marketplace-306941",
+      "name": "Archdale Marketplace"
+    },
+    {
+      "slug": "asana-330-340-treemont-ave-438030",
+      "name": "Asana 330-340 Treemont Ave"
+    },
+    {
+      "slug": "asana-design-center-438031",
+      "name": "Asana Design Center"
+    },
+    {
+      "slug": "ashley-court-apartments-399638",
+      "name": "Ashley Court Apartments"
+    },
+    {
+      "slug": "ashtonse-charge-ashtonsouthend1-226098",
+      "name": "ASHTONSE CHARGE ASHTONSOUTHEND1"
+    },
+    {
+      "slug": "ashtonse-charge-ashtonsouthend2-226097",
+      "name": "ASHTONSE CHARGE ASHTONSOUTHEND2"
+    },
+    {
+      "slug": "athertongarage-2nd-lvl-stn-1-158573",
+      "name": "ATHERTONGARAGE 2ND LVL STN 1"
+    },
+    {
+      "slug": "atom-power-hq-262122",
+      "name": "Atom Power HQ"
+    },
+    {
+      "slug": "audi-northlake-north-side-164482",
+      "name": "Audi Northlake North Side"
+    },
+    {
+      "slug": "audi-northlake-south-side-164484",
+      "name": "Audi Northlake South Side"
+    },
+    {
+      "slug": "ava-south-end-453182",
+      "name": "AVA South End"
+    },
+    {
+      "slug": "avalon-at-palisades-429861",
+      "name": "Avalon at Palisades"
+    },
+    {
+      "slug": "avalon-highland-creek-453173",
+      "name": "Avalon Highland Creek"
+    },
+    {
+      "slug": "avalon-south-end-453181",
+      "name": "Avalon South End"
+    },
+    {
+      "slug": "ayrsley-377515",
+      "name": "Ayrsley"
+    },
+    {
+      "slug": "bank-of-america-charlotte-155670",
+      "name": "Bank of America - Charlotte"
+    },
+    {
+      "slug": "bank-of-america-financial-center-123510",
+      "name": "Bank of America - Financial Center"
+    },
+    {
+      "slug": "bank-of-america-private-bank-188029",
+      "name": "Bank of America - Private Bank"
+    },
+    {
+      "slug": "bank-of-america-private-bank-188030",
+      "name": "Bank of America - Private Bank"
+    },
+    {
+      "slug": "bank-of-america-private-bank-223741",
+      "name": "Bank of America - Private Bank"
+    },
+    {
+      "slug": "bank-of-america-private-bank-223743",
+      "name": "Bank of America - Private Bank"
+    },
+    {
+      "slug": "ben-mynatt-chevrolet-cadillac-326085",
+      "name": "Ben Mynatt Chevrolet Cadillac"
+    },
+    {
+      "slug": "blakeney-416939",
+      "name": "Blakeney"
+    },
+    {
+      "slug": "boa-center-city-nc2-181-charlotte-nc-279361",
+      "name": "BOA Center City NC2-181 (Charlotte, NC)"
+    },
+    {
+      "slug": "boa-plaza-195220",
+      "name": "BoA Plaza"
+    },
+    {
+      "slug": "bond-on-mit-station-1-447166",
+      "name": "BOND ON MIT STATION 1"
+    },
+    {
+      "slug": "bond-on-mit-station-2-447167",
+      "name": "BOND ON MIT STATION 2"
+    },
+    {
+      "slug": "bond-on-mit-station-4-447168",
+      "name": "BOND ON MIT STATION 4"
+    },
+    {
+      "slug": "bond-on-mit-station-5-450858",
+      "name": "BOND ON MIT STATION 5"
+    },
+    {
+      "slug": "bond-on-mit-strike-3-447165",
+      "name": "BOND ON MIT STRIKE 3"
+    },
+    {
+      "slug": "bp-station-446141",
+      "name": "BP Station"
+    },
+    {
+      "slug": "bradham-apts-station-1-165174",
+      "name": "BRADHAM APTS STATION 1"
+    },
+    {
+      "slug": "bri-1888-mangum-222826",
+      "name": "BRI 1888 MANGUM"
+    },
+    {
+      "slug": "bridges-at-mallard-creek-2231-keaton-ave-399639",
+      "name": "Bridges at Mallard Creek - 2231 Keaton Ave"
+    },
+    {
+      "slug": "bridges-at-mallard-creek-2325-keaton-ave-399640",
+      "name": "Bridges At Mallard Creek - 2325 Keaton Ave"
+    },
+    {
+      "slug": "bridges-at-mallard-creek-7804-harris-hill-ln-399641",
+      "name": "Bridges at Mallard Creek - 7804 Harris Hill Ln"
+    },
+    {
+      "slug": "buildingb1-bldg-e-s-1-323141",
+      "name": "BUILDINGB1 BLDG E S-1"
+    },
+    {
+      "slug": "buildingb1-building-b-1-s-322531",
+      "name": "BUILDINGB1 BUILDING B-1-S"
+    },
+    {
+      "slug": "buildingb1-ev-station-06-117152",
+      "name": "BUILDINGB1 EV STATION 06"
+    },
+    {
+      "slug": "cabarrus-co-afton-alc-388110",
+      "name": "CABARRUS CO AFTON ALC"
+    },
+    {
+      "slug": "cabarrus-co-cab-park-deck-120970",
+      "name": "CABARRUS CO CAB PARK DECK"
+    },
+    {
+      "slug": "cadillac-south-charlotte-405847",
+      "name": "Cadillac South Charlotte"
+    },
+    {
+      "slug": "camden-gallery-399642",
+      "name": "Camden Gallery"
+    },
+    {
+      "slug": "camden-southline-399643",
+      "name": "Camden Southline"
+    },
+    {
+      "slug": "camp-north-end-tesla-destination-359479",
+      "name": "Camp North End - Tesla Destination"
+    },
+    {
+      "slug": "capital-ford-118968",
+      "name": "Capital Ford"
+    },
+    {
+      "slug": "carillon-ev-station-1-221253",
+      "name": "CARILLON EV STATION 1"
+    },
+    {
+      "slug": "carillon-ev-station-2-221004",
+      "name": "CARILLON EV STATION 2"
+    },
+    {
+      "slug": "carillon-ev-station-3-221005",
+      "name": "CARILLON EV STATION 3"
+    },
+    {
+      "slug": "carmel-commons-416894",
+      "name": "Carmel Commons"
+    },
+    {
+      "slug": "carolinas-medical-center-333850",
+      "name": "Carolinas Medical Center"
+    },
+    {
+      "slug": "catalyst-garage-332348",
+      "name": "Catalyst Garage"
+    },
+    {
+      "slug": "catalyst-garage-tesla-destination-250951",
+      "name": "Catalyst Garage - Tesla Destination"
+    },
+    {
+      "slug": "century-afton-ridge-399647",
+      "name": "Century Afton Ridge"
+    },
+    {
+      "slug": "charlotte-nc-247-ev-arc-168263",
+      "name": "CHARLOTTE, NC 247 EV ARC"
+    },
+    {
+      "slug": "charlotte-nc-248-ev-arc-175421",
+      "name": "CHARLOTTE, NC 248 EV ARC"
+    },
+    {
+      "slug": "charlotte-nc-249-ev-arc-175419",
+      "name": "CHARLOTTE, NC 249 EV ARC"
+    },
+    {
+      "slug": "charlotte-nc-250-ev-arc-175420",
+      "name": "CHARLOTTE, NC 250 EV ARC"
+    },
+    {
+      "slug": "charlotte-nc-391193",
+      "name": "Charlotte, NC"
+    },
+    {
+      "slug": "charlotte-nc-cats-i-485-1-172490",
+      "name": "CHARLOTTE, NC CATS I-485 1"
+    },
+    {
+      "slug": "charlotte-nc-cats-i-485-2-172491",
+      "name": "CHARLOTTE, NC CATS I-485 2"
+    },
+    {
+      "slug": "charlotte-nc-cats-i-485-3-204393",
+      "name": "CHARLOTTE, NC CATS I-485 3"
+    },
+    {
+      "slug": "charlotte-nc-cats-i-485-4-78305",
+      "name": "CHARLOTTE, NC CATS I-485 4"
+    },
+    {
+      "slug": "charlotte-nc-cmgc-deck-ada-326047",
+      "name": "CHARLOTTE, NC CMGC DECK ADA"
+    },
+    {
+      "slug": "charlotte-nc-cmgc-prkg-l1-1-266677",
+      "name": "CHARLOTTE, NC CMGC PRKG L1-1"
+    },
+    {
+      "slug": "charlotte-nc-cmgc-prkg-l1-2-199471",
+      "name": "CHARLOTTE, NC CMGC PRKG L1-2"
+    },
+    {
+      "slug": "charlotte-nc-cmgc-station-2-266644",
+      "name": "CHARLOTTE, NC CMGC STATION 2"
+    },
+    {
+      "slug": "charlotte-nc-cmgc-station-4-45854",
+      "name": "CHARLOTTE, NC CMGC STATION 4"
+    },
+    {
+      "slug": "charlotte-nc-cmpd-hg-visit-1-261336",
+      "name": "CHARLOTTE, NC CMPD HG VISIT-1"
+    },
+    {
+      "slug": "charlotte-nc-cmpd-south-ev-1-193103",
+      "name": "CHARLOTTE, NC CMPD SOUTH EV-1"
+    },
+    {
+      "slug": "charlotte-nc-cmpd-uc-ev-1-204300",
+      "name": "CHARLOTTE, NC CMPD UC EV-1"
+    },
+    {
+      "slug": "charlotte-nc-discovery-1-150271",
+      "name": "CHARLOTTE, NC DISCOVERY 1"
+    },
+    {
+      "slug": "charlotte-nc-fh-11-fleet-1-458647",
+      "name": "CHARLOTTE, NC FH-11 FLEET-1"
+    },
+    {
+      "slug": "charlotte-nc-fh-11-visit-1-458648",
+      "name": "CHARLOTTE, NC FH-11 VISIT-1"
+    },
+    {
+      "slug": "charlotte-nc-fh-45-visit-1-421222",
+      "name": "CHARLOTTE, NC FH-45 VISIT-1"
+    },
+    {
+      "slug": "charlotte-nc-fire-hq-1-183466",
+      "name": "CHARLOTTE, NC FIRE HQ 1"
+    },
+    {
+      "slug": "charlotte-nc-fire-hq-2-183467",
+      "name": "CHARLOTTE, NC FIRE HQ 2"
+    },
+    {
+      "slug": "charlotte-nc-fleet-gc-1-331218",
+      "name": "CHARLOTTE, NC FLEET GC #1"
+    },
+    {
+      "slug": "charlotte-nc-fs-43-ev-1-193055",
+      "name": "CHARLOTTE, NC FS 43-EV 1"
+    },
+    {
+      "slug": "charlotte-nc-fta-ev2-261258",
+      "name": "CHARLOTTE, NC FTA EV2"
+    },
+    {
+      "slug": "charlotte-nc-fta-ev3-261260",
+      "name": "CHARLOTTE, NC FTA EV3"
+    },
+    {
+      "slug": "charlotte-nc-fta-ev4-261259",
+      "name": "CHARLOTTE, NC FTA EV4"
+    },
+    {
+      "slug": "charlotte-nc-fta-ev5-261257",
+      "name": "CHARLOTTE, NC FTA EV5"
+    },
+    {
+      "slug": "charlotte-nc-huntersville-01-73502",
+      "name": "CHARLOTTE, NC HUNTERSVILLE 01"
+    },
+    {
+      "slug": "charlotte-nc-mallard-ck-01-171959",
+      "name": "CHARLOTTE, NC MALLARD CK 01"
+    },
+    {
+      "slug": "charlotte-nc-mallard-ck-02-45858",
+      "name": "CHARLOTTE, NC MALLARD CK 02"
+    },
+    {
+      "slug": "charlotte-nc-northcrest-shopping-center-391156",
+      "name": "Charlotte, NC - Northcrest Shopping Center"
+    },
+    {
+      "slug": "charlotte-nc-southend-01-73527",
+      "name": "CHARLOTTE, NC SOUTHEND 01"
+    },
+    {
+      "slug": "charlotte-nc-spratt-1-185365",
+      "name": "CHARLOTTE, NC SPRATT 1"
+    },
+    {
+      "slug": "charlotte-nc-spratt-2-185366",
+      "name": "CHARLOTTE, NC SPRATT 2"
+    },
+    {
+      "slug": "charlotte-nc-spratt-3-185367",
+      "name": "CHARLOTTE, NC SPRATT 3"
+    },
+    {
+      "slug": "charlotte-nc-spratt-4-261254",
+      "name": "CHARLOTTE, NC SPRATT 4"
+    },
+    {
+      "slug": "charlotte-nc-spratt-5-261253",
+      "name": "CHARLOTTE, NC SPRATT 5"
+    },
+    {
+      "slug": "charlotte-nc-sws-otts-st-1-261243",
+      "name": "CHARLOTTE, NC SWS OTTS ST 1"
+    },
+    {
+      "slug": "chestnut-arbor-260875",
+      "name": "Chestnut Arbor"
+    },
+    {
+      "slug": "christenbury-station-3-422663",
+      "name": "CHRISTENBURY STATION 3"
+    },
+    {
+      "slug": "circle-k-southeast-office-252538",
+      "name": "Circle K Southeast Office"
+    },
+    {
+      "slug": "city-of-kannapolis-city-hall-335650",
+      "name": "City of Kannapolis-City Hall"
+    },
+    {
+      "slug": "city-of-kannapolis-train-station-335620",
+      "name": "City of Kannapolis-Train Station"
+    },
+    {
+      "slug": "claremont-huntersville-llc-375969",
+      "name": "Claremont Huntersville LLC"
+    },
+    {
+      "slug": "clt-airport-bus-valet-01-173008",
+      "name": "CLT AIRPORT BUS VALET 01"
+    },
+    {
+      "slug": "clt-airport-bus-valet-02-173009",
+      "name": "CLT AIRPORT BUS VALET 02"
+    },
+    {
+      "slug": "clt-airport-bus-valet-04-221898",
+      "name": "CLT AIRPORT BUS VALET 04"
+    },
+    {
+      "slug": "clt-airport-bus-valet-3-428528",
+      "name": "CLT AIRPORT BUS VALET 3"
+    },
+    {
+      "slug": "clt-airport-level4-st1-65505",
+      "name": "CLT AIRPORT LEVEL4_ST1"
+    },
+    {
+      "slug": "clt-airport-level4-st2-171920",
+      "name": "CLT AIRPORT LEVEL4_ST2"
+    },
+    {
+      "slug": "clt-airport-level4-st3-171921",
+      "name": "CLT AIRPORT LEVEL4_ST3"
+    },
+    {
+      "slug": "clt-airport-level5-st1-171922",
+      "name": "CLT AIRPORT LEVEL5_ST1"
+    },
+    {
+      "slug": "clt-airport-level5-st2-171919",
+      "name": "CLT AIRPORT LEVEL5_ST2"
+    },
+    {
+      "slug": "clt-airport-level5-st3-171917",
+      "name": "CLT AIRPORT LEVEL5_ST3"
+    },
+    {
+      "slug": "clt-airport-level6-st1-171915",
+      "name": "CLT AIRPORT LEVEL6_ST1"
+    },
+    {
+      "slug": "clt-airport-level6-st2-171918",
+      "name": "CLT AIRPORT LEVEL6_ST2"
+    },
+    {
+      "slug": "clt-airport-level6-st3-171916",
+      "name": "CLT AIRPORT LEVEL6_ST3"
+    },
+    {
+      "slug": "cltw-esf-1-206131",
+      "name": "CLTW ESF-1"
+    },
+    {
+      "slug": "cltw-hwy16-1-206139",
+      "name": "CLTW HWY16-1"
+    },
+    {
+      "slug": "cltw-hwy16-2-206138",
+      "name": "CLTW HWY16-2"
+    },
+    {
+      "slug": "cltw-hwy16-3-261187",
+      "name": "CLTW HWY16-3"
+    },
+    {
+      "slug": "cltw-vest-1-299489",
+      "name": "CLTW VEST-1"
+    },
+    {
+      "slug": "cltw-vest-2-299490",
+      "name": "CLTW VEST-2"
+    },
+    {
+      "slug": "cltw-zone-2-1-261191",
+      "name": "CLTW ZONE(2)-1"
+    },
+    {
+      "slug": "cltw-zone-2-2-261190",
+      "name": "CLTW ZONE(2)-2"
+    },
+    {
+      "slug": "cltw-zone-2-3-261188",
+      "name": "CLTW ZONE(2)-3"
+    },
+    {
+      "slug": "cltw-zone-2-4-261189",
+      "name": "CLTW ZONE(2)-4"
+    },
+    {
+      "slug": "cltw-zone-4-1-314141",
+      "name": "CLTW ZONE(4)-1"
+    },
+    {
+      "slug": "cltw-zone-4-10-314137",
+      "name": "CLTW ZONE(4)-10"
+    },
+    {
+      "slug": "cltw-zone-4-11-314138",
+      "name": "CLTW ZONE(4)-11"
+    },
+    {
+      "slug": "cltw-zone-4-12-314140",
+      "name": "CLTW ZONE(4)-12"
+    },
+    {
+      "slug": "cltw-zone-4-13-319750",
+      "name": "CLTW ZONE(4)-13"
+    },
+    {
+      "slug": "cltw-zone-4-15-319753",
+      "name": "CLTW ZONE(4)-15"
+    },
+    {
+      "slug": "cltw-zone-4-2-314142",
+      "name": "CLTW ZONE(4)-2"
+    },
+    {
+      "slug": "cltw-zone-4-3-314143",
+      "name": "CLTW ZONE(4)-3"
+    },
+    {
+      "slug": "cltw-zone-4-4-314144",
+      "name": "CLTW ZONE(4)-4"
+    },
+    {
+      "slug": "cltw-zone-4-5-314145",
+      "name": "CLTW ZONE(4)-5"
+    },
+    {
+      "slug": "cltw-zone-4-6-314146",
+      "name": "CLTW ZONE(4)-6"
+    },
+    {
+      "slug": "cltw-zone-4-7-314148",
+      "name": "CLTW ZONE(4)-7"
+    },
+    {
+      "slug": "cltw-zone-4-8-314147",
+      "name": "CLTW ZONE(4)-8"
+    },
+    {
+      "slug": "cltw-zone-4-9-314139",
+      "name": "CLTW ZONE(4)-9"
+    },
+    {
+      "slug": "cne-deck-ev-razades-1-235735",
+      "name": "CNE DECK EV RAZADES 1"
+    },
+    {
+      "slug": "cne-deck-ev-razaedes-way-5-235736",
+      "name": "CNE DECK EV RAZAEDES WAY 5"
+    },
+    {
+      "slug": "coc-corning-opt-1-174541",
+      "name": "COC CORNING OPT 1"
+    },
+    {
+      "slug": "coc-corning-opt-2-174540",
+      "name": "COC CORNING OPT 2"
+    },
+    {
+      "slug": "coc-corning-opt-3-174539",
+      "name": "COC CORNING OPT 3"
+    },
+    {
+      "slug": "coc-corning-opt-4-146881",
+      "name": "COC CORNING OPT 4"
+    },
+    {
+      "slug": "cochran-commons-tesla-supercharger-102270",
+      "name": "Cochran Commons - Tesla Supercharger"
+    },
+    {
+      "slug": "cocparking-boc-ev1-453365",
+      "name": "COCPARKING BOC EV1"
+    },
+    {
+      "slug": "cocparking-boc-ev2-453366",
+      "name": "COCPARKING BOC EV2"
+    },
+    {
+      "slug": "cocparking-coc-city-p-deck-429821",
+      "name": "COCPARKING COC CITY P DECK"
+    },
+    {
+      "slug": "cocparking-coc-fleet-457607",
+      "name": "COCPARKING COC FLEET"
+    },
+    {
+      "slug": "cocparking-coc-housing-1-453354",
+      "name": "COCPARKING COC HOUSING 1"
+    },
+    {
+      "slug": "cocparking-coc-housing-2-453355",
+      "name": "COCPARKING COC HOUSING 2"
+    },
+    {
+      "slug": "colliers-five-coliseum-centre-251390",
+      "name": "Colliers - Five Coliseum Centre"
+    },
+    {
+      "slug": "concord-nc-rechargery-relay-branchview-dr-ne-446637",
+      "name": "Concord, NC Rechargery Relay - Branchview Dr NE"
+    },
+    {
+      "slug": "concord-regional-airport-hourly-parking-lot-67127",
+      "name": "Concord Regional Airport - Hourly Parking Lot"
+    },
+    {
+      "slug": "connery-on-providence-389826",
+      "name": "Connery on Providence"
+    },
+    {
+      "slug": "conrad-flats-311017",
+      "name": "Conrad Flats"
+    },
+    {
+      "slug": "courtyard-by-marriott-200624",
+      "name": "Courtyard by Marriott"
+    },
+    {
+      "slug": "cracker-barrel-tesla-supercharger-449190",
+      "name": "Cracker Barrel - Tesla Supercharger"
+    },
+    {
+      "slug": "crossroads-ford-of-indian-trail-416851",
+      "name": "Crossroads Ford of Indian Trail"
+    },
+    {
+      "slug": "crowne-plaza-charlotte-executive-park-tesla-destination-114675",
+      "name": "Crowne Plaza Charlotte Executive Park - Tesla Destination"
+    },
+    {
+      "slug": "davidson-town-hall-396971",
+      "name": "Davidson Town Hall"
+    },
+    {
+      "slug": "doubletree-by-hilton-hotel-charlotte-tesla-destination-114676",
+      "name": "DoubleTree by Hilton Hotel Charlotte - Tesla Destination"
+    },
+    {
+      "slug": "east-charlotte-nissan-47118",
+      "name": "East Charlotte Nissan"
+    },
+    {
+      "slug": "edge-at-bryant-park-2020-morton-st-399648",
+      "name": "Edge At Bryant Park - 2020 Morton St"
+    },
+    {
+      "slug": "edge-at-bryant-park-2031-morton-st-399649",
+      "name": "Edge At Bryant Park - 2031 Morton St"
+    },
+    {
+      "slug": "edge-at-bryant-park-2060-morton-st-399650",
+      "name": "Edge At Bryant Park - 2060 Morton St"
+    },
+    {
+      "slug": "embassy-suites-416363",
+      "name": "Embassy Suites"
+    },
+    {
+      "slug": "embassy-suites-charlotte-ayrsley-tesla-destination-114669",
+      "name": "Embassy Suites Charlotte Ayrsley - Tesla Destination"
+    },
+    {
+      "slug": "eproperty-first-floor-gw-95012",
+      "name": "EPROPERTY FIRST FLOOR GW"
+    },
+    {
+      "slug": "eproperty-first-floor-gw2-95013",
+      "name": "EPROPERTY FIRST FLOOR GW2"
+    },
+    {
+      "slug": "esp-station-resident-1-313750",
+      "name": "ESP STATION RESIDENT #1"
+    },
+    {
+      "slug": "esp-station-resident-2-313751",
+      "name": "ESP STATION RESIDENT #2"
+    },
+    {
+      "slug": "esp-station-resident-3-196051",
+      "name": "ESP STATION RESIDENT #3"
+    },
+    {
+      "slug": "esp-station-resident-4-313752",
+      "name": "ESP STATION RESIDENT #4"
+    },
+    {
+      "slug": "exchange-at-indian-trail-apartments-371630",
+      "name": "Exchange at Indian Trail Apartments"
+    },
+    {
+      "slug": "fascharge-17385-market-express-shell-charlotte-396970",
+      "name": "FasCharge 17385 Market Express Shell Charlotte"
+    },
+    {
+      "slug": "food-lion-tuckaseegee-229217",
+      "name": "Food Lion - Tuckaseegee"
+    },
+    {
+      "slug": "fountains-matthews-333871",
+      "name": "Fountains Matthews"
+    },
+    {
+      "slug": "gardner-skelton-pllc-415824",
+      "name": "Gardner Skelton PLLC"
+    },
+    {
+      "slug": "gaston-county-visitor-center-61737",
+      "name": "GASTON COUNTY VISITOR CENTER"
+    },
+    {
+      "slug": "genesis-lkn-customer-1-420996",
+      "name": "GENESIS LKN CUSTOMER 1"
+    },
+    {
+      "slug": "genesis-lkn-customer-2-420995",
+      "name": "GENESIS LKN CUSTOMER 2"
+    },
+    {
+      "slug": "harmony-apartments-building-1-447228",
+      "name": "Harmony Apartments - Building 1"
+    },
+    {
+      "slug": "harmony-apartments-building-2-447227",
+      "name": "Harmony Apartments - Building 2"
+    },
+    {
+      "slug": "harmony-apartments-building-3-447229",
+      "name": "Harmony Apartments - Building 3"
+    },
+    {
+      "slug": "harris-teeter-ht-003-80109",
+      "name": "HARRIS TEETER HT 003"
+    },
+    {
+      "slug": "harris-teeter-morcroft-88081",
+      "name": "HARRIS TEETER MORCROFT"
+    },
+    {
+      "slug": "harrisburg-nc-harrisburg-park-194271",
+      "name": "HARRISBURG NC HARRISBURG PARK"
+    },
+    {
+      "slug": "hendrickconcord-station01-119034",
+      "name": "HENDRICKCONCORD STATION01"
+    },
+    {
+      "slug": "hertz-local-edition-6859-01-tesla-destination-358975",
+      "name": "Hertz Local Edition #6859-01 - Tesla Destination"
+    },
+    {
+      "slug": "hilbish-motor-co-421248",
+      "name": "Hilbish Motor Co"
+    },
+    {
+      "slug": "hilton-charlotte-university-place-tesla-destination-168836",
+      "name": "Hilton Charlotte University Place - Tesla Destination"
+    },
+    {
+      "slug": "holiday-inn-express-suites-concord-tesla-destination-114691",
+      "name": "Holiday Inn Express & Suites Concord - Tesla Destination"
+    },
+    {
+      "slug": "homewood-suites-416362",
+      "name": "Homewood Suites"
+    },
+    {
+      "slug": "homewood-suites-charlotte-ayresly-tesla-destination-114670",
+      "name": "Homewood Suites Charlotte Ayresly - Tesla Destination"
+    },
+    {
+      "slug": "huntersville-huntersvile-bp-347504",
+      "name": "HUNTERSVILLE HUNTERSVILE BP"
+    },
+    {
+      "slug": "huntersvillefrd-level-2-charger-429959",
+      "name": "HUNTERSVILLEFRD LEVEL 2 CHARGER"
+    },
+    {
+      "slug": "huntersvillefrd-level-3-1-pl-417263",
+      "name": "HUNTERSVILLEFRD LEVEL 3-1 PL"
+    },
+    {
+      "slug": "huntersvillefrd-level3-charger1-416621",
+      "name": "HUNTERSVILLEFRD LEVEL3 CHARGER1"
+    },
+    {
+      "slug": "hyatt-house-charlotte-rea-farms-200623",
+      "name": "Hyatt House Charlotte / Rea Farms"
+    },
+    {
+      "slug": "hyatt-place-charlotte-downtown-tesla-destination-114671",
+      "name": "Hyatt Place Charlotte Downtown - Tesla Destination"
+    },
+    {
+      "slug": "ikea-usa-charlotte-1-252807",
+      "name": "IKEA USA CHARLOTTE 1"
+    },
+    {
+      "slug": "indian-trail-chrysler-dodge-jeep-ram-121312",
+      "name": "Indian Trail Chrysler Dodge Jeep Ram"
+    },
+    {
+      "slug": "indian-trail-sheriff-office-319970",
+      "name": "Indian Trail Sheriff Office"
+    },
+    {
+      "slug": "indian-trail-town-hall-347682",
+      "name": "Indian Trail Town Hall"
+    },
+    {
+      "slug": "indigo-at-berewick-449114",
+      "name": "Indigo at Berewick"
+    },
+    {
+      "slug": "innovation-barn-forth-353421",
+      "name": "Innovation Barn - Forth"
+    },
+    {
+      "slug": "intown-suites-concord-82104",
+      "name": "INTOWN SUITES CONCORD"
+    },
+    {
+      "slug": "keffer-chrysler-jeep-dodge-ram-121308",
+      "name": "Keffer Chrysler Jeep Dodge Ram"
+    },
+    {
+      "slug": "kia-of-concord-dual-port-kia-1-213050",
+      "name": "KIA OF CONCORD DUAL PORT KIA 1"
+    },
+    {
+      "slug": "kia-of-concord-dual-port-kia-2-207512",
+      "name": "KIA OF CONCORD DUAL PORT KIA 2"
+    },
+    {
+      "slug": "kia-of-concord-service-station-213051",
+      "name": "KIA OF CONCORD SERVICE STATION"
+    },
+    {
+      "slug": "koulomb-nations-ford-road-225648",
+      "name": "Koulomb - Nations Ford Road"
+    },
+    {
+      "slug": "lake-norman-dentistry-326186",
+      "name": "Lake Norman Dentistry"
+    },
+    {
+      "slug": "lantower-waverl-sw-ev1-197885",
+      "name": "LANTOWER WAVERL SW EV1"
+    },
+    {
+      "slug": "lantower-waverl-sw-ev2-80325",
+      "name": "LANTOWER WAVERL SW EV2"
+    },
+    {
+      "slug": "le-meridien-charlotte-hotel-tesla-destination-114674",
+      "name": "Le Meridien Charlotte Hotel - Tesla Destination"
+    },
+    {
+      "slug": "lincoln-at-dilworth-apts-421069",
+      "name": "Lincoln At Dilworth Apts"
+    },
+    {
+      "slug": "line-at-hawkins-438320",
+      "name": "Line at Hawkins"
+    },
+    {
+      "slug": "lintmen-s-252132",
+      "name": "Lintmen's"
+    },
+    {
+      "slug": "lowe-s-home-improvement-tesla-supercharger-360757",
+      "name": "Lowe's Home Improvement - Tesla Supercharger"
+    },
+    {
+      "slug": "lowe-s-tech-hub-level-3-1-220436",
+      "name": "LOWE'S TECH HUB LEVEL 3 #1"
+    },
+    {
+      "slug": "lowe-s-tech-hub-level-3-2-220435",
+      "name": "LOWE'S TECH HUB LEVEL 3 #2"
+    },
+    {
+      "slug": "lowe-s-tech-hub-level-4-10-220437",
+      "name": "LOWE'S TECH HUB LEVEL 4 - #10"
+    },
+    {
+      "slug": "lowe-s-tech-hub-level-4-3-220439",
+      "name": "LOWE'S TECH HUB LEVEL 4 #3"
+    },
+    {
+      "slug": "lowe-s-tech-hub-level-4-4-220434",
+      "name": "LOWE'S TECH HUB LEVEL 4 - #4"
+    },
+    {
+      "slug": "lowe-s-tech-hub-level-4-5-220432",
+      "name": "LOWE'S TECH HUB LEVEL 4 - #5"
+    },
+    {
+      "slug": "lowe-s-tech-hub-level-4-6-220433",
+      "name": "LOWE'S TECH HUB LEVEL 4 - #6"
+    },
+    {
+      "slug": "lowe-s-tech-hub-level-4-7-220440",
+      "name": "LOWE'S TECH HUB LEVEL 4 - #7"
+    },
+    {
+      "slug": "lowe-s-tech-hub-level-4-8-220441",
+      "name": "LOWE'S TECH HUB LEVEL 4 - #8"
+    },
+    {
+      "slug": "madison-southpark-apartment-homes-399651",
+      "name": "Madison Southpark Apartment Homes"
+    },
+    {
+      "slug": "mark-ficken-ford-396969",
+      "name": "Mark Ficken Ford"
+    },
+    {
+      "slug": "marsh-brinkley-439499",
+      "name": "Marsh Brinkley"
+    },
+    {
+      "slug": "matthews-station-310043",
+      "name": "Matthews Station"
+    },
+    {
+      "slug": "mecklenburg-county-251746",
+      "name": "Mecklenburg County"
+    },
+    {
+      "slug": "mecklenburg-county-vcw-415804",
+      "name": "Mecklenburg County  @ VCW"
+    },
+    {
+      "slug": "metropolitan-tesla-supercharger-307820",
+      "name": "Metropolitan - Tesla Supercharger"
+    },
+    {
+      "slug": "midtown-deck-p1-right-192674",
+      "name": "MIDTOWN DECK P1 RIGHT"
+    },
+    {
+      "slug": "midtown-deck-stn-2-p1-left-192675",
+      "name": "MIDTOWN DECK STN 2 P1 LEFT"
+    },
+    {
+      "slug": "midtown-deck-stn-3-p2-right-192670",
+      "name": "MIDTOWN DECK STN 3 P2 RIGHT"
+    },
+    {
+      "slug": "midtown-deck-stn-4-p2-left-192673",
+      "name": "MIDTOWN DECK STN 4 P2 LEFT"
+    },
+    {
+      "slug": "midtown-deck-stn-5-p4-right-192671",
+      "name": "MIDTOWN DECK STN 5 P4 RIGHT"
+    },
+    {
+      "slug": "midtown-deck-stn-6-p4-left-192805",
+      "name": "MIDTOWN DECK STN 6 P4 LEFT"
+    },
+    {
+      "slug": "midtown-deck-stn-7-p5-right-192672",
+      "name": "MIDTOWN DECK STN 7 P5 RIGHT"
+    },
+    {
+      "slug": "midtown-deck-stn-8-p5-left-192806",
+      "name": "MIDTOWN DECK STN 8 P5 LEFT"
+    },
+    {
+      "slug": "mjm-group-station-1-117778",
+      "name": "MJM GROUP STATION 1"
+    },
+    {
+      "slug": "modern-hyundai-100000112-260105",
+      "name": "MODERN HYUNDAI 100000112"
+    },
+    {
+      "slug": "modern-nissan-concord-40066",
+      "name": "Modern Nissan - Concord"
+    },
+    {
+      "slug": "modern-nissan-concord-47122",
+      "name": "Modern Nissan - Concord"
+    },
+    {
+      "slug": "modern-nissan-lake-norman-47124",
+      "name": "Modern Nissan - Lake Norman"
+    },
+    {
+      "slug": "monroe-nissan-85968",
+      "name": "Monroe Nissan"
+    },
+    {
+      "slug": "montford-park-ev-charger-01-143533",
+      "name": "MONTFORD PARK EV CHARGER 01"
+    },
+    {
+      "slug": "mosby-steele-creek-330115",
+      "name": "Mosby Steele Creek"
+    },
+    {
+      "slug": "n-graham-422097",
+      "name": "N. Graham"
+    },
+    {
+      "slug": "nhpmc-travis-avenue-200875",
+      "name": "NHPMC Travis Avenue"
+    },
+    {
+      "slug": "noda-flats-station-1-417056",
+      "name": "NODA FLATS STATION 1"
+    },
+    {
+      "slug": "noda-flats-station-2-417073",
+      "name": "NODA FLATS STATION 2"
+    },
+    {
+      "slug": "noda-flats-station-3-417057",
+      "name": "NODA FLATS STATION 3"
+    },
+    {
+      "slug": "noda-flats-station-4-417058",
+      "name": "NODA FLATS STATION 4"
+    },
+    {
+      "slug": "northcrest-shopping-center-tesla-supercharger-191693",
+      "name": "Northcrest Shopping Center - Tesla Supercharger"
+    },
+    {
+      "slug": "northlake-apartments-building-1-388720",
+      "name": "Northlake Apartments - Building 1"
+    },
+    {
+      "slug": "northlake-apartments-building-2-388726",
+      "name": "Northlake Apartments - Building 2"
+    },
+    {
+      "slug": "northlake-apartments-building-3-388722",
+      "name": "Northlake Apartments - Building 3"
+    },
+    {
+      "slug": "northwood-ravin-310199",
+      "name": "Northwood Ravin"
+    },
+    {
+      "slug": "novel-mallard-creek-welcome-center-421516",
+      "name": "Novel Mallard Creek Welcome Center"
+    },
+    {
+      "slug": "novel-noda-ev-charger-01-92421",
+      "name": "NOVEL NODA EV CHARGER 01"
+    },
+    {
+      "slug": "npdp-property-llc-the-henry-361140",
+      "name": "NPDP Property LLC - The Henry"
+    },
+    {
+      "slug": "npdp-property-llc-the-henry-series-397701",
+      "name": "NPDP Property LLC - The Henry - Series"
+    },
+    {
+      "slug": "obe-embassy-conco-l-452709",
+      "name": "OBE EMBASSY CONCO L"
+    },
+    {
+      "slug": "obe-embassy-conco-r-452710",
+      "name": "OBE EMBASSY CONCO R"
+    },
+    {
+      "slug": "obe-hilton-chrlot-l-357867",
+      "name": "OBE HILTON CHRLOT L"
+    },
+    {
+      "slug": "obe-hilton-chrlot-r-357868",
+      "name": "OBE HILTON CHRLOT R"
+    },
+    {
+      "slug": "old-stone-steakhouse-tesla-destination-114647",
+      "name": "Old Stone Steakhouse - Tesla Destination"
+    },
+    {
+      "slug": "oneblood-charlotte-335559",
+      "name": "OneBlood Charlotte"
+    },
+    {
+      "slug": "paces-pointe-399652",
+      "name": "Paces Pointe"
+    },
+    {
+      "slug": "pamaka-ames-station-395223",
+      "name": "PAMAKA AMES STATION"
+    },
+    {
+      "slug": "pamaka-gold-district-213062",
+      "name": "PAMAKA GOLD DISTRICT"
+    },
+    {
+      "slug": "pedcorliving1-garage-d-416083",
+      "name": "PEDCORLIVING1 GARAGE D"
+    },
+    {
+      "slug": "peppertree-forth-public-377514",
+      "name": "Peppertree - Forth - Public"
+    },
+    {
+      "slug": "pilot-travel-center-56-389042",
+      "name": "Pilot Travel Center 56"
+    },
+    {
+      "slug": "polk-state-historic-site-350441",
+      "name": "Polk State Historic Site"
+    },
+    {
+      "slug": "pps-truist-center-1-206033",
+      "name": "PPS TRUIST CENTER 1"
+    },
+    {
+      "slug": "pps-truist-center-2-206035",
+      "name": "PPS TRUIST CENTER 2"
+    },
+    {
+      "slug": "pps-truist-center-3-206036",
+      "name": "PPS TRUIST CENTER 3"
+    },
+    {
+      "slug": "pps-truist-center-4-206034",
+      "name": "PPS TRUIST CENTER 4"
+    },
+    {
+      "slug": "promenade-on-providence-tesla-supercharger-233039",
+      "name": "Promenade on Providence - Tesla Supercharger"
+    },
+    {
+      "slug": "providence-row-tesla-destination-358740",
+      "name": "Providence Row - Tesla Destination"
+    },
+    {
+      "slug": "publix-1442-68383",
+      "name": "Publix #1442"
+    },
+    {
+      "slug": "publix-1453-68384",
+      "name": "Publix #1453"
+    },
+    {
+      "slug": "publix-1518-121309",
+      "name": "Publix #1518"
+    },
+    {
+      "slug": "pure-power-contractors-190265",
+      "name": "Pure Power Contractors"
+    },
+    {
+      "slug": "rcc-college-south-2000-lot-92435",
+      "name": "RCC COLLEGE SOUTH 2000 LOT"
+    },
+    {
+      "slug": "renaissance-charlotte-suites-hotel-tesla-destination-114672",
+      "name": "Renaissance Charlotte Suites Hotel - Tesla Destination"
+    },
+    {
+      "slug": "residence-inn-courtyard-by-marriott-charlotte-nort-tesla-destination-114677",
+      "name": "Residence Inn & Courtyard by Marriott Charlotte Nort - Tesla Destination"
+    },
+    {
+      "slug": "residence-inn-courtyard-charlotte-north-121301",
+      "name": "Residence Inn & Courtyard - Charlotte North"
+    },
+    {
+      "slug": "retail-451807",
+      "name": "Retail"
+    },
+    {
+      "slug": "rider-transit-system-75480",
+      "name": "Rider Transit System"
+    },
+    {
+      "slug": "savona-mill-439028",
+      "name": "Savona Mill"
+    },
+    {
+      "slug": "sc-hyundai-cpe250-front-302559",
+      "name": "SC HYUNDAI CPE250 FRONT"
+    },
+    {
+      "slug": "schindler-elevator-415825",
+      "name": "Schindler Elevator"
+    },
+    {
+      "slug": "scott-clark-nissan-47119",
+      "name": "Scott Clark Nissan"
+    },
+    {
+      "slug": "scott-clark-nissan-47120",
+      "name": "Scott Clark Nissan"
+    },
+    {
+      "slug": "sd3-1-pd2-station-1-155547",
+      "name": "SD3#1 PD2 STATION 1"
+    },
+    {
+      "slug": "secure-parking-bac-parking-deck-104202",
+      "name": "Secure Parking - BAC Parking Deck"
+    },
+    {
+      "slug": "sentryone-lab-182989",
+      "name": "SENTRYONE LAB"
+    },
+    {
+      "slug": "siemens-unknown-333889",
+      "name": "Siemens Unknown"
+    },
+    {
+      "slug": "simon-concord-mills-concord-nc-316273",
+      "name": "Simon Concord Mills (Concord, NC)"
+    },
+    {
+      "slug": "simon-southpark-mall-charlotte-nc-321061",
+      "name": "Simon Southpark Mall (Charlotte, NC)"
+    },
+    {
+      "slug": "solis-birkdale-400555",
+      "name": "Solis Birkdale"
+    },
+    {
+      "slug": "solis-loso-376617",
+      "name": "Solis LoSo"
+    },
+    {
+      "slug": "solis-millennium-310056",
+      "name": "Solis Millennium"
+    },
+    {
+      "slug": "sonesta-charlotte-lower-south-end-449107",
+      "name": "Sonesta Charlotte Lower South End"
+    },
+    {
+      "slug": "southpark-commons-399654",
+      "name": "Southpark Commons"
+    },
+    {
+      "slug": "springhill-suites-charlotte-ballantyne-area-tesla-destination-114667",
+      "name": "SpringHill Suites Charlotte Ballantyne Area - Tesla Destination"
+    },
+    {
+      "slug": "springhill-suites-charlotte-southwest-tesla-destination-169124",
+      "name": "SpringHill Suites Charlotte Southwest - Tesla Destination"
+    },
+    {
+      "slug": "starbucks-tesla-supercharger-360752",
+      "name": "Starbucks - Tesla Supercharger"
+    },
+    {
+      "slug": "stay-n-charge-ev-charging-station-hampton-inn-charlotte-belmont-montcross-421690",
+      "name": "Stay-N-Charge EV Charging Station - Hampton Inn Charlotte-Belmont @ Montcross"
+    },
+    {
+      "slug": "stay-n-charge-ev-charging-station-home2-suites-by-hilton-charlotte-belmont-421692",
+      "name": "Stay-N-Charge EV Charging Station - Home2 Suites by Hilton Charlotte Belmont"
+    },
+    {
+      "slug": "sterling-services-121310",
+      "name": "Sterling Services"
+    },
+    {
+      "slug": "story-u-north-234041227464-449417",
+      "name": "STORY U NORTH 234041227464"
+    },
+    {
+      "slug": "subaru-concord-subaru-concord-308438",
+      "name": "SUBARU CONCORD SUBARU CONCORD"
+    },
+    {
+      "slug": "sun-valley-332648",
+      "name": "Sun Valley"
+    },
+    {
+      "slug": "swtch-energy-419897",
+      "name": "SWTCH Energy"
+    },
+    {
+      "slug": "swtch-energy-inc-341737",
+      "name": "SWTCH Energy Inc."
+    },
+    {
+      "slug": "sycamore-commons-tesla-supercharger-257672",
+      "name": "Sycamore Commons - Tesla Supercharger"
+    },
+    {
+      "slug": "tapestry-tyvola-455729",
+      "name": "Tapestry Tyvola"
+    },
+    {
+      "slug": "the-banks-apartments-322158",
+      "name": "The Banks Apartments"
+    },
+    {
+      "slug": "the-elliott-322863",
+      "name": "The Elliott"
+    },
+    {
+      "slug": "the-grayson-apartment-homes-399658",
+      "name": "The Grayson Apartment Homes"
+    },
+    {
+      "slug": "the-green-parking-garage-42927",
+      "name": "The Green Parking Garage"
+    },
+    {
+      "slug": "the-mcneel-forth-public-456541",
+      "name": "The McNeel - Forth - Public"
+    },
+    {
+      "slug": "the-mills-bp-458501",
+      "name": "The Mills BP"
+    },
+    {
+      "slug": "the-parkwood-at-optimist-park-261185",
+      "name": "The Parkwood at Optimist Park"
+    },
+    {
+      "slug": "the-prospect-325368",
+      "name": "The Prospect"
+    },
+    {
+      "slug": "the-vandy-309946",
+      "name": "The Vandy"
+    },
+    {
+      "slug": "tmsa-charlotte-1-322781",
+      "name": "TMSA CHARLOTTE 1"
+    },
+    {
+      "slug": "tonc-service-dual-421873",
+      "name": "TONC SERVICE DUAL"
+    },
+    {
+      "slug": "tonc-service-single-421872",
+      "name": "TONC SERVICE SINGLE"
+    },
+    {
+      "slug": "toringdon-market-tesla-supercharger-150209",
+      "name": "Toringdon Market - Tesla Supercharger"
+    },
+    {
+      "slug": "town-and-country-ford-400616",
+      "name": "Town and Country Ford"
+    },
+    {
+      "slug": "town-of-huntersville-415793",
+      "name": "Town of Huntersville"
+    },
+    {
+      "slug": "tranetechnologi-bldg-b-far-righ-355565",
+      "name": "TRANETECHNOLOGI BLDG B FAR RIGH"
+    },
+    {
+      "slug": "tranetechnologi-bldg-b-middle-355566",
+      "name": "TRANETECHNOLOGI BLDG B MIDDLE"
+    },
+    {
+      "slug": "tranetechnologi-bldg-b-south-355567",
+      "name": "TRANETECHNOLOGI BLDG B SOUTH"
+    },
+    {
+      "slug": "tspf-charger-spf-1-226081",
+      "name": "TSPF CHARGER SPF 1"
+    },
+    {
+      "slug": "tspf-charger-spf-2-226080",
+      "name": "TSPF CHARGER SPF 2"
+    },
+    {
+      "slug": "unioncounty-kia-uck-charger-1-202149",
+      "name": "UNIONCOUNTY KIA UCK CHARGER 1"
+    },
+    {
+      "slug": "unioncounty-kia-uck-charger-2-202148",
+      "name": "UNIONCOUNTY KIA UCK CHARGER 2"
+    },
+    {
+      "slug": "unioncounty-kia-uck-charger-3-202147",
+      "name": "UNIONCOUNTY KIA UCK CHARGER 3"
+    },
+    {
+      "slug": "university-of-north-carolina-charlotte-cri-deck-1-121304",
+      "name": "University of North Carolina Charlotte - CRI Deck 1"
+    },
+    {
+      "slug": "university-of-north-carolina-charlotte-east-deck-3-121306",
+      "name": "University of North Carolina Charlotte - East Deck 3"
+    },
+    {
+      "slug": "university-of-north-carolina-charlotte-north-deck-236548",
+      "name": "University of North Carolina Charlotte - North Deck"
+    },
+    {
+      "slug": "university-of-north-carolina-charlotte-south-village-parking-deck-121305",
+      "name": "University of North Carolina Charlotte - South Village Parking Deck"
+    },
+    {
+      "slug": "university-of-north-carolina-charlotte-union-deck-236547",
+      "name": "University of North Carolina Charlotte - Union Deck"
+    },
+    {
+      "slug": "upc-emp-parking-175508",
+      "name": "UPC EMP. PARKING"
+    },
+    {
+      "slug": "upc-visitor-parking-155291",
+      "name": "UPC VISITOR PARKING"
+    },
+    {
+      "slug": "verizon-charlotte-123325",
+      "name": "Verizon - Charlotte"
+    },
+    {
+      "slug": "verizon-charlotte-187080",
+      "name": "Verizon - Charlotte"
+    },
+    {
+      "slug": "vrf-robinson-farm-70594",
+      "name": "VRF ROBINSON FARM"
+    },
+    {
+      "slug": "vrg-components-inc-335269",
+      "name": "VRG Components Inc."
+    },
+    {
+      "slug": "vse-vantage-vantage-1-192588",
+      "name": "VSE-VANTAGE VANTAGE 1"
+    },
+    {
+      "slug": "vse-vantage-vantage-2-192603",
+      "name": "VSE-VANTAGE VANTAGE 2"
+    },
+    {
+      "slug": "vse-vantage-vantage-3-192599",
+      "name": "VSE-VANTAGE VANTAGE 3"
+    },
+    {
+      "slug": "walmart-2134-charlotte-nc-168271",
+      "name": "Walmart 2134 (Charlotte, NC)"
+    },
+    {
+      "slug": "weinstein-concord1-100044",
+      "name": "WEINSTEIN CONCORD1"
+    },
+    {
+      "slug": "wells-fargo-550-south-tryon-319520",
+      "name": "Wells Fargo 550 South Tryon"
+    },
+    {
+      "slug": "wingate-by-wyndham-charlotte-airport-i-85-i-485-tesla-destination-114673",
+      "name": "Wingate By Wyndham Charlotte Airport I-85/I-485 - Tesla Destination"
+    },
+    {
+      "slug": "wncc-conf-ctr-left-charger-256970",
+      "name": "WNCC CONF CTR LEFT CHARGER"
+    },
+    {
+      "slug": "wncc-conf-ctr-right-charger-256969",
+      "name": "WNCC CONF CTR RIGHT CHARGER"
+    },
+    {
+      "slug": "woodlawn-funeral-home-52376",
+      "name": "Woodlawn Funeral Home"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "slug": "southpark-commons-399654",
+  "name": "Southpark Commons",
+  "description": "",
+  "center": {
+    "lat": 35.12887,
+    "lng": -80.83573
+  },
+  "address": "4401 Hampton Ridge Dr, Charlotte, NC, 28210",
+  "numLevel2Ports": 6,
+  "networks": [
+    "LOOP"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

@@ -1,0 +1,21 @@
+{
+  "slug": "cordelia-park",
+  "name": "Cordelia Park",
+  "description": "",
+  "center": {
+    "lat": 35.23707554716032,
+    "lng": -80.81559817330123
+  },
+  "numParking": 86,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": true
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

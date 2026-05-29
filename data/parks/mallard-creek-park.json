@@ -1,0 +1,21 @@
+{
+  "slug": "mallard-creek-park",
+  "name": "Mallard Creek Park",
+  "description": "",
+  "center": {
+    "lat": 35.362190251898745,
+    "lng": -80.76094595801858
+  },
+  "numParking": 739,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": true,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

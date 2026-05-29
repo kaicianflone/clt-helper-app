@@ -1,0 +1,21 @@
+{
+  "slug": "university-meadows-park",
+  "name": "University Meadows Park",
+  "description": "",
+  "center": {
+    "lat": 35.31377176788206,
+    "lng": -80.71285078232842
+  },
+  "numParking": 0,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

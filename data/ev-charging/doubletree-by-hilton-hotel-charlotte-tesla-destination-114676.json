@@ -1,0 +1,16 @@
+{
+  "slug": "doubletree-by-hilton-hotel-charlotte-tesla-destination-114676",
+  "name": "DoubleTree by Hilton Hotel Charlotte - Tesla Destination",
+  "description": "",
+  "center": {
+    "lat": 35.233065,
+    "lng": -80.851861
+  },
+  "address": "895 W Trade St, Charlotte, NC, 28202",
+  "numLevel2Ports": 3,
+  "networks": [
+    "Tesla Destination"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

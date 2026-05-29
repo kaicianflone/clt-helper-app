@@ -1,0 +1,17 @@
+{
+  "slug": "conference-dr-us-74",
+  "name": "Conference Dr & US-74",
+  "description": "",
+  "center": {
+    "lat": 35.1828868834455,
+    "lng": -80.75417008598
+  },
+  "address": "To Be Determined, Charlotte, NC",
+  "totalSpaces": 0,
+  "freeParking": false,
+  "transitLines": [
+    "Bus"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

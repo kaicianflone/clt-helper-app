@@ -1,0 +1,16 @@
+{
+  "slug": "cocparking-coc-housing-1-453354",
+  "name": "COCPARKING COC HOUSING 1",
+  "description": "",
+  "center": {
+    "lat": 35.394753,
+    "lng": -80.5805
+  },
+  "address": "283 Harold Goodman Circle Southwest, Concord, NC, 28025",
+  "numLevel2Ports": 1,
+  "networks": [
+    "ChargePoint Network"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

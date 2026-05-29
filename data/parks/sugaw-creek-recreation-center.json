@@ -1,0 +1,21 @@
+{
+  "slug": "sugaw-creek-recreation-center",
+  "name": "Sugaw Creek Recreation Center",
+  "description": "",
+  "center": {
+    "lat": 35.27240152583797,
+    "lng": -80.79635973864197
+  },
+  "numParking": 104,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

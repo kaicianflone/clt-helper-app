@@ -1,0 +1,16 @@
+{
+  "slug": "vrg-components-inc-335269",
+  "name": "VRG Components Inc.",
+  "description": "",
+  "center": {
+    "lat": 35.0954403,
+    "lng": -80.6474241
+  },
+  "address": "3056 Eaton Ave, Indian Trail, NC, 28079",
+  "numLevel2Ports": 2,
+  "networks": [
+    "AMPUP"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

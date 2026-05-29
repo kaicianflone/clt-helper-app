@@ -1,0 +1,21 @@
+{
+  "slug": "forest-park-playground",
+  "name": "Forest Park Playground",
+  "description": "",
+  "center": {
+    "lat": 35.49477832549602,
+    "lng": -80.82918872132872
+  },
+  "numParking": 0,
+  "parkUrl": "https://www.townofdavidson.org/130/Parks-Recreation",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

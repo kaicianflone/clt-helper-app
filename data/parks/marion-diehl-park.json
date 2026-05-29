@@ -1,0 +1,21 @@
+{
+  "slug": "marion-diehl-park",
+  "name": "Marion Diehl Park",
+  "description": "",
+  "center": {
+    "lat": 35.159099650797074,
+    "lng": -80.85779015713122
+  },
+  "numParking": 322,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": true,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

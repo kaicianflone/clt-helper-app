@@ -1,0 +1,21 @@
+{
+  "slug": "abbott-park",
+  "name": "Abbott Park",
+  "description": "",
+  "center": {
+    "lat": 35.21551296795933,
+    "lng": -80.87134740979643
+  },
+  "numParking": 0,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": true,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": true
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

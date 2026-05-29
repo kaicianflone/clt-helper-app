@@ -1,0 +1,17 @@
+{
+  "slug": "strawberry-hill",
+  "name": "Strawberry Hill",
+  "description": "",
+  "center": {
+    "lat": 35.1555384687633,
+    "lng": -80.7947410570572
+  },
+  "address": "Providence Road @ Old Sardis Road, Charlotte, NC",
+  "totalSpaces": 58,
+  "freeParking": true,
+  "transitLines": [
+    "Bus"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

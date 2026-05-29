@@ -1,0 +1,21 @@
+{
+  "slug": "eastway-park",
+  "name": "Eastway Park",
+  "description": "",
+  "center": {
+    "lat": 35.253352737568186,
+    "lng": -80.77984352712906
+  },
+  "numParking": 380,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": true
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

@@ -1,0 +1,16 @@
+{
+  "slug": "charlotte-nc-mallard-ck-01-171959",
+  "name": "CHARLOTTE, NC MALLARD CK 01",
+  "description": "",
+  "center": {
+    "lat": 35.32367,
+    "lng": -80.773012
+  },
+  "address": "1712 J N Pease Pl, Charlotte, NC, 28262",
+  "numLevel2Ports": 2,
+  "networks": [
+    "ChargePoint Network"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

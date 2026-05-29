@@ -1,0 +1,16 @@
+{
+  "slug": "lowe-s-home-improvement-tesla-supercharger-360757",
+  "name": "Lowe's Home Improvement - Tesla Supercharger",
+  "description": "",
+  "center": {
+    "lat": 35.144608,
+    "lng": -80.931665
+  },
+  "address": "8192 S Tryon Street, Charlotte, NC, 28273",
+  "numDcFastPorts": 16,
+  "networks": [
+    "Tesla"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

@@ -2,7 +2,8 @@ import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
 import { afterEach, beforeEach, describe, expect, it } from "vitest";
-import { buildBundle } from "./build-data-bundles";
+import { ENTITY_REGISTRY } from "@clt/data-schema";
+import { buildBundle, getBundleCategories } from "./build-data-bundles";
 
 let workDir: string;
 
@@ -32,5 +33,20 @@ describe("buildBundle", () => {
   it("throws an error when the input directory does not exist", () => {
     const missingDir = path.join(workDir, "does-not-exist");
     expect(() => buildBundle(missingDir, 1)).toThrow(/does not exist/i);
+  });
+});
+
+describe("getBundleCategories", () => {
+  it("returns the same category set as ENTITY_REGISTRY-derived dirs", () => {
+    const expected = Object.values(ENTITY_REGISTRY).map((entity) => {
+      const dataDir = entity.dataPath("x").replace(/\/x\.json$/, "");
+      return path.basename(dataDir);
+    });
+    expect(getBundleCategories()).toEqual(expected);
+  });
+
+  it("includes all ENTITY_REGISTRY kinds", () => {
+    const categories = getBundleCategories();
+    expect(categories.length).toBe(Object.keys(ENTITY_REGISTRY).length);
   });
 });

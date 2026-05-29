@@ -1,0 +1,16 @@
+{
+  "slug": "subaru-concord-subaru-concord-308438",
+  "name": "SUBARU CONCORD SUBARU CONCORD",
+  "description": "",
+  "center": {
+    "lat": 35.394871,
+    "lng": -80.614313
+  },
+  "address": "833 Concord Pkwy S, Concord, NC, 28027",
+  "numLevel2Ports": 2,
+  "networks": [
+    "ChargePoint Network"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

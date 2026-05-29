@@ -1,0 +1,16 @@
+{
+  "slug": "kia-of-concord-service-station-213051",
+  "name": "KIA OF CONCORD SERVICE STATION",
+  "description": "",
+  "center": {
+    "lat": 35.361802,
+    "lng": -80.701846
+  },
+  "address": "7550 Hendrick Auto Plaza NW, Concord, NC, 28027",
+  "numLevel2Ports": 1,
+  "networks": [
+    "ChargePoint Network"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

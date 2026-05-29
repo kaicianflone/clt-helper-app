@@ -1,0 +1,17 @@
+{
+  "slug": "hambright-i-77",
+  "name": "Hambright & I-77",
+  "description": "",
+  "center": {
+    "lat": 35.3760524644868,
+    "lng": -80.8514666717873
+  },
+  "address": "To Be Determined, Huntersville, NC",
+  "totalSpaces": 0,
+  "freeParking": false,
+  "transitLines": [
+    "Bus"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

@@ -1,0 +1,16 @@
+{
+  "slug": "charlotte-nc-cmgc-station-2-266644",
+  "name": "CHARLOTTE, NC CMGC STATION 2",
+  "description": "",
+  "center": {
+    "lat": 35.222099,
+    "lng": -80.83987
+  },
+  "address": "232 S Davidson St, Charlotte, NC, 28202",
+  "numLevel2Ports": 2,
+  "networks": [
+    "ChargePoint Network"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

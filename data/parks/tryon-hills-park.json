@@ -1,0 +1,21 @@
+{
+  "slug": "tryon-hills-park",
+  "name": "Tryon Hills Park",
+  "description": "",
+  "center": {
+    "lat": 35.25030668881751,
+    "lng": -80.81764514757378
+  },
+  "numParking": 0,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": true
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

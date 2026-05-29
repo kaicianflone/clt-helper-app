@@ -1,0 +1,16 @@
+{
+  "slug": "embassy-suites-charlotte-ayrsley-tesla-destination-114669",
+  "name": "Embassy Suites Charlotte Ayrsley - Tesla Destination",
+  "description": "",
+  "center": {
+    "lat": 35.136731,
+    "lng": -80.92999
+  },
+  "address": "1917 Ayrsley Town Blvd, Charlotte, NC, 28273",
+  "numLevel2Ports": 2,
+  "networks": [
+    "Tesla Destination"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

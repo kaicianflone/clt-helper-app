@@ -1,0 +1,21 @@
+{
+  "slug": "hawthorne-recreation-center",
+  "name": "Hawthorne Recreation Center",
+  "description": "",
+  "center": {
+    "lat": 35.21538327999902,
+    "lng": -80.82293327154093
+  },
+  "numParking": 50,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

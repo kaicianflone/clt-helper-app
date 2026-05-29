@@ -1,0 +1,16 @@
+{
+  "slug": "the-green-parking-garage-42927",
+  "name": "The Green Parking Garage",
+  "description": "",
+  "center": {
+    "lat": 35.223874,
+    "lng": -80.846273
+  },
+  "address": "435 S Tryon St, Charlotte, NC, 28202",
+  "numLevel2Ports": 6,
+  "networks": [
+    "Non-Networked"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

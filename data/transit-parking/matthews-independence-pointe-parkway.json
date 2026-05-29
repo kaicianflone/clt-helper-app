@@ -1,0 +1,17 @@
+{
+  "slug": "matthews-independence-pointe-parkway",
+  "name": "Matthews Independence Pointe Parkway",
+  "description": "",
+  "center": {
+    "lat": 35.1342765373236,
+    "lng": -80.7155550800598
+  },
+  "address": "9614 Independence Pointe Parkway, Matthews, NC",
+  "totalSpaces": 304,
+  "freeParking": false,
+  "transitLines": [
+    "Bus"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

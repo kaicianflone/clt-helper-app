@@ -1,0 +1,16 @@
+{
+  "slug": "lincoln-at-dilworth-apts-421069",
+  "name": "Lincoln At Dilworth Apts",
+  "description": "",
+  "center": {
+    "lat": 35.2084202,
+    "lng": -80.8388601
+  },
+  "address": "905 Kenilworth Ave, Charlotte, NC, 28204",
+  "numLevel2Ports": 3,
+  "networks": [
+    "EVOKE"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

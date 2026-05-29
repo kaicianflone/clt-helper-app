@@ -1,0 +1,16 @@
+{
+  "slug": "cltw-esf-1-206131",
+  "name": "CLTW ESF-1",
+  "description": "",
+  "center": {
+    "lat": 35.190496,
+    "lng": -80.904544
+  },
+  "address": "4222 Westmont Dr, Charlotte, NC, 28217",
+  "numLevel2Ports": 2,
+  "networks": [
+    "ChargePoint Network"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

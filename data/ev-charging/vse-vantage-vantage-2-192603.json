@@ -1,0 +1,16 @@
+{
+  "slug": "vse-vantage-vantage-2-192603",
+  "name": "VSE-VANTAGE VANTAGE 2",
+  "description": "",
+  "center": {
+    "lat": 35.218884,
+    "lng": -80.85359
+  },
+  "address": "1220 State Hwy 49, Charlotte, NC, 28203",
+  "numLevel2Ports": 2,
+  "networks": [
+    "ChargePoint Network"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

@@ -1,0 +1,17 @@
+{
+  "slug": "arrowood-station-park-and-ride",
+  "name": "Arrowood Station Park and Ride",
+  "description": "",
+  "center": {
+    "lat": 35.1356458607615,
+    "lng": -80.8763922474009
+  },
+  "address": "7717 England St, Charlotte, NC",
+  "totalSpaces": 298,
+  "freeParking": false,
+  "transitLines": [
+    "Rail"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

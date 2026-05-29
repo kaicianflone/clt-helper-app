@@ -1,0 +1,21 @@
+{
+  "slug": "crews-recreation-center",
+  "name": "Crews Recreation Center",
+  "description": "",
+  "center": {
+    "lat": 35.125021344152564,
+    "lng": -80.72064969728103
+  },
+  "numParking": 157,
+  "parkUrl": "https://www.matthewsnc.gov/pview.aspx?id=20727&catid=0",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": true
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

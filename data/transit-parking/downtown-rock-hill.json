@@ -1,0 +1,17 @@
+{
+  "slug": "downtown-rock-hill",
+  "name": "Downtown Rock Hill",
+  "description": "",
+  "center": {
+    "lat": 34.9270488107138,
+    "lng": -81.0269362813682
+  },
+  "address": "138 E White St, Rock Hill, SC",
+  "totalSpaces": 40,
+  "freeParking": true,
+  "transitLines": [
+    "Bus"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

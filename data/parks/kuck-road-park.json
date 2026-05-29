@@ -1,0 +1,21 @@
+{
+  "slug": "kuck-road-park",
+  "name": "Kuck Road Park",
+  "description": "",
+  "center": {
+    "lat": 35.191107990493066,
+    "lng": -80.68101406759469
+  },
+  "numParking": 0,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

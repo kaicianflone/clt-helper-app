@@ -1,0 +1,16 @@
+{
+  "slug": "providence-row-tesla-destination-358740",
+  "name": "Providence Row - Tesla Destination",
+  "description": "",
+  "center": {
+    "lat": 35.156508,
+    "lng": -80.798824
+  },
+  "address": "5355 Pinehurst Park Dr, Charlotte, NC, 28211",
+  "numLevel2Ports": 6,
+  "networks": [
+    "Tesla Destination"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

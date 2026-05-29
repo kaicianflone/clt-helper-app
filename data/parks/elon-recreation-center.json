@@ -1,0 +1,21 @@
+{
+  "slug": "elon-recreation-center",
+  "name": "Elon Recreation Center",
+  "description": "",
+  "center": {
+    "lat": 35.019787250472035,
+    "lng": -80.83822569123544
+  },
+  "numParking": 30,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

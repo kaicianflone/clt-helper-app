@@ -1,0 +1,17 @@
+{
+  "slug": "i-485-station-park-and-ride",
+  "name": "I-485 Station Park and Ride",
+  "description": "",
+  "center": {
+    "lat": 35.1071398545703,
+    "lng": -80.8829092482132
+  },
+  "address": "9508 South Bv, Charlotte, NC",
+  "totalSpaces": 1120,
+  "freeParking": false,
+  "transitLines": [
+    "Rail"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

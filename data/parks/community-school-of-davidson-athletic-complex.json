@@ -1,0 +1,21 @@
+{
+  "slug": "community-school-of-davidson-athletic-complex",
+  "name": "Community School of Davidson Athletic Complex",
+  "description": "",
+  "center": {
+    "lat": 35.40346188260083,
+    "lng": -80.92477502919441
+  },
+  "numParking": 309,
+  "parkUrl": "https://www.huntersville.org/3073/Parks-Recreation-Department",
+  "amenities": {
+    "tennis": true,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

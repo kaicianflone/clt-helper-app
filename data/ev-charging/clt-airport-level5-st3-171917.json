@@ -1,0 +1,16 @@
+{
+  "slug": "clt-airport-level5-st3-171917",
+  "name": "CLT AIRPORT LEVEL5_ST3",
+  "description": "",
+  "center": {
+    "lat": 35.221817,
+    "lng": -80.945334
+  },
+  "address": "5501 R C Josh Birmingham Pkwy, Charlotte, NC, 28208",
+  "numLevel2Ports": 2,
+  "networks": [
+    "ChargePoint Network"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

@@ -1,0 +1,16 @@
+{
+  "slug": "city-of-kannapolis-city-hall-335650",
+  "name": "City of Kannapolis-City Hall",
+  "description": "",
+  "center": {
+    "lat": 35.502104,
+    "lng": -80.627874
+  },
+  "address": "401 Laureate Way, Kannapolis, NC, 28081",
+  "numLevel2Ports": 4,
+  "networks": [
+    "CHARGEUP"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

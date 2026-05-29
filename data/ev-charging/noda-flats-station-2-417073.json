@@ -1,0 +1,16 @@
+{
+  "slug": "noda-flats-station-2-417073",
+  "name": "NODA FLATS STATION 2",
+  "description": "",
+  "center": {
+    "lat": 35.242402,
+    "lng": -80.813196
+  },
+  "address": "2509 North Davidson Street, Charlotte, NC, 28205",
+  "numLevel2Ports": 1,
+  "networks": [
+    "ChargePoint Network"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

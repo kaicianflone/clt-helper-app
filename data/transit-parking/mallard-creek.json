@@ -1,0 +1,17 @@
+{
+  "slug": "mallard-creek",
+  "name": "Mallard Creek",
+  "description": "",
+  "center": {
+    "lat": 35.3238479045076,
+    "lng": -80.7727602263
+  },
+  "address": "1712 J N Pease Place, Charlotte, NC",
+  "totalSpaces": 210,
+  "freeParking": false,
+  "transitLines": [
+    "Bus"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

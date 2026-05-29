@@ -1,0 +1,21 @@
+{
+  "slug": "grier-heights-park",
+  "name": "Grier Heights Park",
+  "description": "",
+  "center": {
+    "lat": 35.19579841839571,
+    "lng": -80.80802715612589
+  },
+  "numParking": 62,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": true
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

@@ -1,0 +1,21 @@
+{
+  "slug": "ferrelltown-park-preserve",
+  "name": "Ferrelltown Park & Preserve",
+  "description": "",
+  "center": {
+    "lat": 35.38280249927451,
+    "lng": -80.80801866382694
+  },
+  "numParking": 0,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

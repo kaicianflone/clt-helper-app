@@ -1,0 +1,21 @@
+{
+  "slug": "caldwell-park",
+  "name": "Caldwell Park",
+  "description": "",
+  "center": {
+    "lat": 35.31216866489108,
+    "lng": -80.68656267960255
+  },
+  "numParking": 0,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

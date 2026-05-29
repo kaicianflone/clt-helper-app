@@ -1,0 +1,21 @@
+{
+  "slug": "mecklenburg-county-regional-sportsplex",
+  "name": "Mecklenburg County Regional Sportsplex",
+  "description": "",
+  "center": {
+    "lat": 35.10774066667946,
+    "lng": -80.70277425786468
+  },
+  "numParking": 1232,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

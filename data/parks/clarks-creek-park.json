@@ -1,0 +1,21 @@
+{
+  "slug": "clarks-creek-park",
+  "name": "Clarks Creek Park",
+  "description": "",
+  "center": {
+    "lat": 35.351636845583926,
+    "lng": -80.81121413963002
+  },
+  "numParking": 20,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": true,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": true,
+    "basketball": true
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

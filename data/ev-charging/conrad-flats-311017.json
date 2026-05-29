@@ -1,0 +1,16 @@
+{
+  "slug": "conrad-flats-311017",
+  "name": "Conrad Flats",
+  "description": "",
+  "center": {
+    "lat": 35.2370815,
+    "lng": -80.732325
+  },
+  "address": "8108 Grace Farms Dr., Charlotte, NC, 28213",
+  "numLevel2Ports": 2,
+  "networks": [
+    "Blink Network"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

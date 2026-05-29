@@ -1,0 +1,21 @@
+{
+  "slug": "david-b-waymer-aeromodeller-park",
+  "name": "David B. Waymer Aeromodeller Park",
+  "description": "",
+  "center": {
+    "lat": 35.401767975008276,
+    "lng": -80.81699398111289
+  },
+  "numParking": 50,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

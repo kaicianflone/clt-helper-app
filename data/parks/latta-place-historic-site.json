@@ -1,0 +1,21 @@
+{
+  "slug": "latta-place-historic-site",
+  "name": "Latta Place Historic Site",
+  "description": "",
+  "center": {
+    "lat": 35.3530431484557,
+    "lng": -80.92969944521522
+  },
+  "numParking": 20,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

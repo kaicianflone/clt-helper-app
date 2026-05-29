@@ -1,0 +1,16 @@
+{
+  "slug": "carmel-commons-416894",
+  "name": "Carmel Commons",
+  "description": "",
+  "center": {
+    "lat": 35.0871206,
+    "lng": -80.8492098
+  },
+  "address": "7601 Pineville Matthews Rd, Charlotte, NC, 28226",
+  "numDcFastPorts": 4,
+  "networks": [
+    "eVgo Network"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

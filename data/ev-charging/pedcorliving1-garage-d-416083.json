@@ -1,0 +1,16 @@
+{
+  "slug": "pedcorliving1-garage-d-416083",
+  "name": "PEDCORLIVING1 GARAGE D",
+  "description": "",
+  "center": {
+    "lat": 35.448156,
+    "lng": -80.991529
+  },
+  "address": "1332 Holly Rush Lane, Denver, NC, 28037",
+  "numLevel2Ports": 1,
+  "networks": [
+    "ChargePoint Network"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

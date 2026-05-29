@@ -1,0 +1,16 @@
+{
+  "slug": "davidson-recycling",
+  "name": "Davidson Recycling",
+  "description": "",
+  "center": {
+    "lat": 35.49984761060844,
+    "lng": -80.84912489006756
+  },
+  "address": "156 Jackson St.",
+  "acceptedMaterials": [
+    "Recycling",
+    "Self Service"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

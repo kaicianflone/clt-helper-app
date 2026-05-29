@@ -1,0 +1,21 @@
+{
+  "slug": "allen-hills-park",
+  "name": "Allen Hills Park",
+  "description": "",
+  "center": {
+    "lat": 35.28518837644577,
+    "lng": -80.81873690791716
+  },
+  "numParking": 5,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": true
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

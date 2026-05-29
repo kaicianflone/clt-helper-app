@@ -1,0 +1,16 @@
+{
+  "slug": "mecklenburg-county-251746",
+  "name": "Mecklenburg County",
+  "description": "",
+  "center": {
+    "lat": 35.2426308,
+    "lng": -80.8943285
+  },
+  "address": "3205 Freedom Dr, Charlotte, NC, 28208",
+  "numLevel2Ports": 52,
+  "networks": [
+    "AMPUP"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

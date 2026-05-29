@@ -1,0 +1,21 @@
+{
+  "slug": "robert-heywood-morrison-garden",
+  "name": "Robert Heywood Morrison Garden",
+  "description": "",
+  "center": {
+    "lat": 35.20621057557876,
+    "lng": -80.83734803490907
+  },
+  "numParking": 0,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

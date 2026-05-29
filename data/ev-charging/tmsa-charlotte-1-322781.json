@@ -1,0 +1,16 @@
+{
+  "slug": "tmsa-charlotte-1-322781",
+  "name": "TMSA CHARLOTTE 1",
+  "description": "",
+  "center": {
+    "lat": 35.323173,
+    "lng": -80.775476
+  },
+  "address": "8701 Mallard Creek Road, Charlotte, NC, 28262",
+  "numLevel2Ports": 2,
+  "networks": [
+    "ChargePoint Network"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

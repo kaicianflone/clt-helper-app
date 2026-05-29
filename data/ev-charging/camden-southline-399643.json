@@ -1,0 +1,16 @@
+{
+  "slug": "camden-southline-399643",
+  "name": "Camden Southline",
+  "description": "",
+  "center": {
+    "lat": 35.205742,
+    "lng": -80.86293
+  },
+  "address": "2300 South Blvd, Charlotte, NC, 28203",
+  "numLevel2Ports": 8,
+  "networks": [
+    "LOOP"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

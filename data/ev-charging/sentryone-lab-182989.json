@@ -1,0 +1,16 @@
+{
+  "slug": "sentryone-lab-182989",
+  "name": "SENTRYONE LAB",
+  "description": "",
+  "center": {
+    "lat": 35.186248,
+    "lng": -80.878874
+  },
+  "address": "4001 Yancey Rd, Charlotte, NC, 28217",
+  "numLevel2Ports": 2,
+  "networks": [
+    "ChargePoint Network"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

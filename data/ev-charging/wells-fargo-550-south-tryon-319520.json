@@ -1,0 +1,16 @@
+{
+  "slug": "wells-fargo-550-south-tryon-319520",
+  "name": "Wells Fargo 550 South Tryon",
+  "description": "",
+  "center": {
+    "lat": 35.22404,
+    "lng": -80.84868
+  },
+  "address": "550 S Tryon St, Charlotte, NC, 28202",
+  "numLevel2Ports": 12,
+  "networks": [
+    "AMPUP"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

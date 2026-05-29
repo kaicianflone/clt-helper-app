@@ -1,0 +1,21 @@
+{
+  "slug": "town-green-park",
+  "name": "Town Green Park",
+  "description": "",
+  "center": {
+    "lat": 35.11625099478682,
+    "lng": -80.71876004645775
+  },
+  "numParking": 0,
+  "parkUrl": "https://www.matthewsnc.gov/pview.aspx?id=20727&catid=0",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

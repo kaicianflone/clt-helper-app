@@ -1,0 +1,21 @@
+{
+  "slug": "edgehill-park",
+  "name": "Edgehill Park",
+  "description": "",
+  "center": {
+    "lat": 35.202308656777596,
+    "lng": -80.83134344431342
+  },
+  "numParking": 0,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": true,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

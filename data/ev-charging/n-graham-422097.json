@@ -1,0 +1,16 @@
+{
+  "slug": "n-graham-422097",
+  "name": "N. Graham",
+  "description": "",
+  "center": {
+    "lat": 35.238842,
+    "lng": -80.836037
+  },
+  "address": "1100 N. Graham St., Charlotte, NC, 28206",
+  "numDcFastPorts": 8,
+  "networks": [
+    "EV Connect"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

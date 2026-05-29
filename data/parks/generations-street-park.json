@@ -1,0 +1,21 @@
+{
+  "slug": "generations-street-park",
+  "name": "Generations Street Park",
+  "description": "",
+  "center": {
+    "lat": 35.09427073953142,
+    "lng": -80.99795891509055
+  },
+  "numParking": 0,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

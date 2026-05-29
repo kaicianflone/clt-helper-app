@@ -1,0 +1,21 @@
+{
+  "slug": "sheffield-park",
+  "name": "Sheffield Park",
+  "description": "",
+  "center": {
+    "lat": 35.20613884363771,
+    "lng": -80.76690627220202
+  },
+  "numParking": 0,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": true,
+    "pickleball": true,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": true
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

@@ -1,0 +1,16 @@
+{
+  "slug": "genesis-lkn-customer-2-420995",
+  "name": "GENESIS LKN CUSTOMER 2",
+  "description": "",
+  "center": {
+    "lat": 35.46786,
+    "lng": -80.872932
+  },
+  "address": "18605 Statesville Road, Cornelius, NC, 28031",
+  "numDcFastPorts": 1,
+  "networks": [
+    "ChargePoint Network"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

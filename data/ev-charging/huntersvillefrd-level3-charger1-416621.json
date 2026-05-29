@@ -1,0 +1,16 @@
+{
+  "slug": "huntersvillefrd-level3-charger1-416621",
+  "name": "HUNTERSVILLEFRD LEVEL3 CHARGER1",
+  "description": "",
+  "center": {
+    "lat": 35.406131,
+    "lng": -80.854238
+  },
+  "address": "13825 Statesville Road, Huntersville, NC, 28078",
+  "numDcFastPorts": 2,
+  "networks": [
+    "ChargePoint Network"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

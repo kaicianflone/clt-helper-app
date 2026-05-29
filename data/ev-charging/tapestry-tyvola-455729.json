@@ -1,0 +1,16 @@
+{
+  "slug": "tapestry-tyvola-455729",
+  "name": "Tapestry Tyvola",
+  "description": "",
+  "center": {
+    "lat": 35.16614,
+    "lng": -80.87967
+  },
+  "address": "1017 Tyvola Road, Charlotte, NC, 28217",
+  "numLevel2Ports": 2,
+  "networks": [
+    "CHARGELAB"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

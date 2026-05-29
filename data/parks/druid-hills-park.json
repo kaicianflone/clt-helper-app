@@ -1,0 +1,21 @@
+{
+  "slug": "druid-hills-park",
+  "name": "Druid Hills Park",
+  "description": "",
+  "center": {
+    "lat": 35.258556870807915,
+    "lng": -80.83151050501195
+  },
+  "numParking": 5,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": true
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

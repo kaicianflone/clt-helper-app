@@ -1,0 +1,21 @@
+{
+  "slug": "solomans-park",
+  "name": "Solomans Park",
+  "description": "",
+  "center": {
+    "lat": 35.260898232553245,
+    "lng": -80.87066614021408
+  },
+  "numParking": 0,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": true
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

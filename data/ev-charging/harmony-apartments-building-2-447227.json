@@ -1,0 +1,16 @@
+{
+  "slug": "harmony-apartments-building-2-447227",
+  "name": "Harmony Apartments - Building 2",
+  "description": "",
+  "center": {
+    "lat": 35.36539777907856,
+    "lng": -80.7479238900117
+  },
+  "address": "3020 Ardisia Drive, Charlotte, NC, 28269",
+  "numLevel2Ports": 2,
+  "networks": [
+    "Blink Network"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

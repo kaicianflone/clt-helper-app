@@ -1,0 +1,16 @@
+{
+  "slug": "boa-center-city-nc2-181-charlotte-nc-279361",
+  "name": "BOA Center City NC2-181 (Charlotte, NC)",
+  "description": "",
+  "center": {
+    "lat": 35.21313,
+    "lng": -80.83336
+  },
+  "address": "301 South King Dr, Charlotte, NC, 28204",
+  "numDcFastPorts": 4,
+  "networks": [
+    "Electrify America"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

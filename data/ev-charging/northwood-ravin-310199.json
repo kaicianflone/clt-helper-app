@@ -1,0 +1,16 @@
+{
+  "slug": "northwood-ravin-310199",
+  "name": "Northwood Ravin",
+  "description": "",
+  "center": {
+    "lat": 35.15702223344947,
+    "lng": -80.79832627473549
+  },
+  "address": "5350 Pinehurst Park Drive, Charlotte, NC, 28211",
+  "numLevel2Ports": 5,
+  "networks": [
+    "Blink Network"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

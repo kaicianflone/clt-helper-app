@@ -1,0 +1,21 @@
+{
+  "slug": "charles-t-myers-golf-course",
+  "name": "Charles T. Myers Golf Course",
+  "description": "",
+  "center": {
+    "lat": 35.22154983481184,
+    "lng": -80.68595575740356
+  },
+  "numParking": 170,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

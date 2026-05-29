@@ -1,0 +1,16 @@
+{
+  "slug": "rcc-college-south-2000-lot-92435",
+  "name": "RCC COLLEGE SOUTH 2000 LOT",
+  "description": "",
+  "center": {
+    "lat": 35.437794,
+    "lng": -80.658871
+  },
+  "address": "1531 Trinity Church Rd, Concord, NC, 28027",
+  "numLevel2Ports": 2,
+  "networks": [
+    "ChargePoint Network"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

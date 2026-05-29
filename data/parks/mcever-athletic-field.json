@@ -1,0 +1,21 @@
+{
+  "slug": "mcever-athletic-field",
+  "name": "McEver Athletic Field",
+  "description": "",
+  "center": {
+    "lat": 35.4908117942686,
+    "lng": -80.84936278741613
+  },
+  "numParking": 50,
+  "parkUrl": "https://www.townofdavidson.org/130/Parks-Recreation",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

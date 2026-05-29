@@ -1,0 +1,16 @@
+{
+  "slug": "archdale-marketplace-306941",
+  "name": "Archdale Marketplace",
+  "description": "",
+  "center": {
+    "lat": 35.155039,
+    "lng": -80.875082
+  },
+  "address": "5925 South Blvd, Charlotte, NC, 28217",
+  "numDcFastPorts": 2,
+  "networks": [
+    "eVgo Network"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

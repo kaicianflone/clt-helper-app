@@ -1,0 +1,21 @@
+{
+  "slug": "pressley-road-park",
+  "name": "Pressley Road Park",
+  "description": "",
+  "center": {
+    "lat": 35.196790544699944,
+    "lng": -80.89197252437768
+  },
+  "numParking": 0,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

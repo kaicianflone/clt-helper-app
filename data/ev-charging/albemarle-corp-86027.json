@@ -1,0 +1,16 @@
+{
+  "slug": "albemarle-corp-86027",
+  "name": "Albemarle Corp",
+  "description": "",
+  "center": {
+    "lat": 35.154231,
+    "lng": -80.837508
+  },
+  "address": "4350 Congress St, Charlotte, NC, 28209",
+  "numLevel2Ports": 10,
+  "networks": [
+    "Non-Networked"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

@@ -1,0 +1,17 @@
+{
+  "slug": "steele-creek",
+  "name": "Steele Creek",
+  "description": "",
+  "center": {
+    "lat": 35.1328481887512,
+    "lng": -81.0086949050215
+  },
+  "address": "To Be Determined, Charlotte, NC",
+  "totalSpaces": 0,
+  "freeParking": false,
+  "transitLines": [
+    "Bus"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

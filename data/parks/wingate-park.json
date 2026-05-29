@@ -1,0 +1,21 @@
+{
+  "slug": "wingate-park",
+  "name": "Wingate Park",
+  "description": "",
+  "center": {
+    "lat": 35.21444689407144,
+    "lng": -80.90820375558329
+  },
+  "numParking": 0,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": true
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

@@ -1,0 +1,17 @@
+{
+  "slug": "sharon-road-west-station-park-and-ride",
+  "name": "Sharon Road West Station Park and Ride",
+  "description": "",
+  "center": {
+    "lat": 35.1194588569538,
+    "lng": -80.8820752470642
+  },
+  "address": "8815 Crump Rd, Charlotte, NC",
+  "totalSpaces": 188,
+  "freeParking": false,
+  "transitLines": [
+    "Rail"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

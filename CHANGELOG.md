@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.2.0.0] - 2026-05-28
+
+### Added
+- New map layers: parks, recycling/solid-waste facilities, landfills, EV charging stations, light-rail park-and-ride lots, and park-derived amenities (tennis, pickleball, disc golf, skatepark, dog park, basketball) — each toggleable from the map legend on web and mobile
+- `import-gis` data pipeline with source adapters for Mecklenburg County ArcGIS (ParkLocations, SolidWasteFacility, Landfills), Charlotte Open Data (CATS Park-and-Ride), and NREL EV charging stations
+- Six new content types (park, recycling, transit-parking, ev-charging, landfill, amenity) wired into the community submission flow via the entity registry
+- Map marker color tokens for the new layer kinds in the design system
+- Operations runbook for the new GIS data sources (`docs/operations/gis-sources.md`)
+
+### Changed
+- Map data bundles are now derived automatically from the entity registry — adding a new content type no longer requires editing the bundle script
+
 ## [0.1.0.0] - 2026-05-23
 
 ### Added

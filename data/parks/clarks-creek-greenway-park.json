@@ -1,0 +1,21 @@
+{
+  "slug": "clarks-creek-greenway-park",
+  "name": "Clarks Creek Greenway Park",
+  "description": "",
+  "center": {
+    "lat": 35.32905937488816,
+    "lng": -80.77815336893745
+  },
+  "numParking": 0,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

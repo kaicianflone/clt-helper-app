@@ -1,0 +1,21 @@
+{
+  "slug": "the-effortless-golf-center",
+  "name": "The Effortless Golf Center",
+  "description": "",
+  "center": {
+    "lat": 35.09716728162065,
+    "lng": -80.88039570607698
+  },
+  "numParking": 110,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

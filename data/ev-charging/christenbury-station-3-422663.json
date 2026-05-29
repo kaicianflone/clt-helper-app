@@ -1,0 +1,16 @@
+{
+  "slug": "christenbury-station-3-422663",
+  "name": "CHRISTENBURY STATION 3",
+  "description": "",
+  "center": {
+    "lat": 35.380466,
+    "lng": -80.737032
+  },
+  "address": "2410 Herrons Nest Pl NW, Concord, NC, 28027",
+  "numLevel2Ports": 1,
+  "networks": [
+    "ChargePoint Network"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

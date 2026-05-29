@@ -1,0 +1,21 @@
+{
+  "slug": "archdale-park",
+  "name": "Archdale Park",
+  "description": "",
+  "center": {
+    "lat": 35.15299413947488,
+    "lng": -80.88354918031648
+  },
+  "numParking": 0,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": true
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

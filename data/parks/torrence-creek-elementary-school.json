@@ -1,0 +1,21 @@
+{
+  "slug": "torrence-creek-elementary-school",
+  "name": "Torrence Creek Elementary School",
+  "description": "",
+  "center": {
+    "lat": 35.41299771420727,
+    "lng": -80.873205392957
+  },
+  "numParking": 180,
+  "parkUrl": "https://www.huntersville.org/3073/Parks-Recreation-Department",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": true
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

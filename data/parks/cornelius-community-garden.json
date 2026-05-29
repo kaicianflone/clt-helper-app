@@ -1,0 +1,21 @@
+{
+  "slug": "cornelius-community-garden",
+  "name": "Cornelius Community Garden",
+  "description": "",
+  "center": {
+    "lat": 35.483785346501506,
+    "lng": -80.87090766428351
+  },
+  "numParking": 8,
+  "parkUrl": "https://cornelius.org/park/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

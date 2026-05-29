@@ -1,0 +1,13 @@
+{
+  "slug": "john-crosland",
+  "name": "JOHN CROSLAND",
+  "description": "",
+  "center": {
+    "lat": 35.25714045315781,
+    "lng": -80.83834123637924
+  },
+  "address": "1337 SAMUEL ST",
+  "status": "closed",
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

@@ -1,0 +1,21 @@
+{
+  "slug": "james-hoyt-wilhelm-park",
+  "name": "James Hoyt Wilhelm Park",
+  "description": "",
+  "center": {
+    "lat": 35.480212843188966,
+    "lng": -80.8645103450604
+  },
+  "numParking": 60,
+  "parkUrl": "https://cornelius.org/park/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": true
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

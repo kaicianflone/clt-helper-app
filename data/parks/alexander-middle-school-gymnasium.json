@@ -1,0 +1,21 @@
+{
+  "slug": "alexander-middle-school-gymnasium",
+  "name": "Alexander Middle School Gymnasium",
+  "description": "",
+  "center": {
+    "lat": 35.376354928233376,
+    "lng": -80.83831608695438
+  },
+  "numParking": 116,
+  "parkUrl": "https://www.huntersville.org/3073/Parks-Recreation-Department",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": true
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

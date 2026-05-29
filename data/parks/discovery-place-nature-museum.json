@@ -1,0 +1,21 @@
+{
+  "slug": "discovery-place-nature-museum",
+  "name": "Discovery Place Nature Museum",
+  "description": "",
+  "center": {
+    "lat": 35.18819324253662,
+    "lng": -80.8427042696952
+  },
+  "numParking": 75,
+  "parkUrl": "https://naturecampaign.org/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

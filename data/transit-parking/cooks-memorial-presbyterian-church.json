@@ -1,0 +1,17 @@
+{
+  "slug": "cooks-memorial-presbyterian-church",
+  "name": "Cooks Memorial Presbyterian Church",
+  "description": "",
+  "center": {
+    "lat": 35.3244762267187,
+    "lng": -80.9475256361679
+  },
+  "address": "3413 Mt Holly-Huntersville Rd, Charlotte, NC",
+  "totalSpaces": 25,
+  "freeParking": true,
+  "transitLines": [
+    "Bus"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

@@ -3,7 +3,15 @@ import os from "node:os";
 import path from "node:path";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
-import { fetchBundle } from "./data-client";
+import {
+  fetchAmenity,
+  fetchBundle,
+  fetchEvCharging,
+  fetchLandfill,
+  fetchParks,
+  fetchRecycling,
+  fetchTransitParking,
+} from "./data-client";
 
 describe("fetchBundle", () => {
   it("returns parsed bundle on 200", async () => {
@@ -157,5 +165,97 @@ describe("fetchBundle — local-disk fallback (empty baseUrl)", () => {
     } finally {
       vi.unstubAllEnvs();
     }
+  });
+});
+
+describe("fetchBundle — new kinds (parks, recycling, transit-parking, ev-charging, landfill, amenity)", () => {
+  let tmpDir: string;
+
+  beforeEach(() => {
+    tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), "clt-data-new-kinds-"));
+  });
+  afterEach(() => {
+    fs.rmSync(tmpDir, { recursive: true, force: true });
+  });
+
+  it.each([
+    ["parks", fetchParks],
+    ["recycling", fetchRecycling],
+    ["transit-parking", fetchTransitParking],
+    ["ev-charging", fetchEvCharging],
+    ["landfills", fetchLandfill],
+    ["amenities", fetchAmenity],
+  ] as const)(
+    "fetchBundle %s reads from CDN when baseUrl is set",
+    async (kind, fetchFn) => {
+      const fetchMock = vi.fn().mockResolvedValue(
+        new Response(
+          JSON.stringify({
+            schemaVersion: 1,
+            builtAt: "",
+            entries: [{ slug: kind }],
+          }),
+        ),
+      );
+      const bundle = await fetchFn({
+        baseUrl: "https://cdn.example.com",
+        fetchImpl: fetchMock,
+      });
+      expect(fetchMock).toHaveBeenCalledWith(
+        `https://cdn.example.com/data/v1/${kind}.json`,
+        expect.any(Object),
+      );
+      expect(bundle.entries).toEqual([{ slug: kind }]);
+    },
+  );
+
+  it("fetchParks reads from localDir when baseUrl is absent", async () => {
+    fs.writeFileSync(
+      path.join(tmpDir, "parks.json"),
+      JSON.stringify({
+        schemaVersion: 1,
+        builtAt: "",
+        entries: [{ slug: "romare-bearden" }],
+      }),
+    );
+    const bundle = await fetchParks({ localDir: tmpDir });
+    expect(bundle.entries).toEqual([{ slug: "romare-bearden" }]);
+  });
+
+  it("fetchEvCharging reads from localDir when baseUrl is absent", async () => {
+    fs.writeFileSync(
+      path.join(tmpDir, "ev-charging.json"),
+      JSON.stringify({
+        schemaVersion: 1,
+        builtAt: "",
+        entries: [{ slug: "station-1" }],
+      }),
+    );
+    const bundle = await fetchEvCharging({ localDir: tmpDir });
+    expect(bundle.entries).toEqual([{ slug: "station-1" }]);
+  });
+
+  it("falls back to offlineBundle for transit-parking when localDir lacks the file", async () => {
+    const offline = {
+      schemaVersion: 1,
+      builtAt: "",
+      entries: [
+        {
+          slug: "offline-tp",
+          name: "Offline P&R",
+          description: "",
+          center: { lat: 35.2, lng: -80.8 },
+          address: "100 Test St",
+          freeParking: true,
+          photos: [],
+          lastVerified: "2026-05-28",
+        },
+      ],
+    };
+    const bundle = await fetchTransitParking({
+      localDir: tmpDir,
+      offlineBundle: offline,
+    });
+    expect(bundle.entries[0]?.slug).toBe("offline-tp");
   });
 });

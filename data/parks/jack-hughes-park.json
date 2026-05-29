@@ -1,0 +1,21 @@
+{
+  "slug": "jack-hughes-park",
+  "name": "Jack Hughes Park",
+  "description": "",
+  "center": {
+    "lat": 35.085661986979936,
+    "lng": -80.89456654601311
+  },
+  "numParking": 234,
+  "parkUrl": "https://www.pinevillenc.gov/government/departments/parks-recreation/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

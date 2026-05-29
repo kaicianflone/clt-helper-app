@@ -1,0 +1,16 @@
+{
+  "slug": "cabarrus-co-afton-alc-388110",
+  "name": "CABARRUS CO AFTON ALC",
+  "description": "",
+  "center": {
+    "lat": 35.419674,
+    "lng": -80.678813
+  },
+  "address": "6095 Glen Afton Boulevard, Concord, NC, 28027",
+  "numLevel2Ports": 2,
+  "networks": [
+    "ChargePoint Network"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

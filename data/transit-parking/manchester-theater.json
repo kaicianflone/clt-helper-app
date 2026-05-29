@@ -1,0 +1,17 @@
+{
+  "slug": "manchester-theater",
+  "name": "Manchester Theater",
+  "description": "",
+  "center": {
+    "lat": 34.9443956995083,
+    "lng": -80.9782857987233
+  },
+  "address": "1935 Cinema Drive, Rock Hill, SC",
+  "totalSpaces": 50,
+  "freeParking": true,
+  "transitLines": [
+    "Bus"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

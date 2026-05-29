@@ -1,0 +1,21 @@
+{
+  "slug": "merry-oaks-community-garden",
+  "name": "Merry Oaks Community Garden",
+  "description": "",
+  "center": {
+    "lat": 35.22311580857794,
+    "lng": -80.79250401647374
+  },
+  "numParking": 0,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

@@ -2,8 +2,18 @@ import { describe, expect, it } from "vitest";
 import { ENTITY_REGISTRY } from "./registry";
 
 describe("ENTITY_REGISTRY", () => {
-  it("contains all three entities", () => {
-    expect(Object.keys(ENTITY_REGISTRY)).toEqual(["greenway", "deal", "parking"]);
+  it("contains all registered entities", () => {
+    expect(Object.keys(ENTITY_REGISTRY)).toEqual([
+      "greenway",
+      "deal",
+      "parking",
+      "park",
+      "recycling",
+      "transit-parking",
+      "ev-charging",
+      "landfill",
+      "amenity",
+    ]);
   });
   it("greenway dataPath formats correctly", () => {
     expect(ENTITY_REGISTRY.greenway.dataPath("little-sugar-creek")).toBe("data/greenways/little-sugar-creek.json");

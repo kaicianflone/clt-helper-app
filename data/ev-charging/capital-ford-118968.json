@@ -1,0 +1,16 @@
+{
+  "slug": "capital-ford-118968",
+  "name": "Capital Ford",
+  "description": "",
+  "center": {
+    "lat": 35.261309,
+    "lng": -80.776713
+  },
+  "address": "5411 N Tryon St, Charlotte, NC, 28213",
+  "numLevel2Ports": 2,
+  "networks": [
+    "Non-Networked"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

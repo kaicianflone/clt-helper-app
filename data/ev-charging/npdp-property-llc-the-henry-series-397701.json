@@ -1,0 +1,16 @@
+{
+  "slug": "npdp-property-llc-the-henry-series-397701",
+  "name": "NPDP Property LLC - The Henry - Series",
+  "description": "",
+  "center": {
+    "lat": 35.24840542772779,
+    "lng": -80.8223228325099
+  },
+  "address": "2322 North Pine Street, Charlotte, NC, 28206",
+  "numLevel2Ports": 1,
+  "networks": [
+    "Blink Network"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

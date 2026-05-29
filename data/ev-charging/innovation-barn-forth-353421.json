@@ -1,0 +1,16 @@
+{
+  "slug": "innovation-barn-forth-353421",
+  "name": "Innovation Barn - Forth",
+  "description": "",
+  "center": {
+    "lat": 35.2262983,
+    "lng": -80.8235215
+  },
+  "address": "932 Siegle Ave, Charlotte, NC, 28205",
+  "numLevel2Ports": 2,
+  "networks": [
+    "OpConnect"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

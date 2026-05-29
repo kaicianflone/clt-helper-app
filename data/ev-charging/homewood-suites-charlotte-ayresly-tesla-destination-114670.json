@@ -1,0 +1,16 @@
+{
+  "slug": "homewood-suites-charlotte-ayresly-tesla-destination-114670",
+  "name": "Homewood Suites Charlotte Ayresly - Tesla Destination",
+  "description": "",
+  "center": {
+    "lat": 35.137302,
+    "lng": -80.931188
+  },
+  "address": "1921 Ayrsley Town Blvd, Charlotte, NC, 28273",
+  "numLevel2Ports": 2,
+  "networks": [
+    "Tesla Destination"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

@@ -1,0 +1,16 @@
+{
+  "slug": "oneblood-charlotte-335559",
+  "name": "OneBlood Charlotte",
+  "description": "",
+  "center": {
+    "lat": 35.13199,
+    "lng": -80.903444
+  },
+  "address": "700 Forest Point Circle, Charlotte, NC, 28273",
+  "numLevel2Ports": 2,
+  "networks": [
+    "CHARGEUP"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

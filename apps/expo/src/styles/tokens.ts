@@ -7,6 +7,18 @@ export const colors = {
   amber: "#B07810",
   rose: "#A8332E",
   border: { soft: "#D9CFC0", strong: "#1B1614" },
+  /** Map marker / layer colors — mirrors the --map-* CSS tokens in DESIGN.md */
+  map: {
+    trail: "#2F6E3A",
+    parking: "#B23A1F",
+    deal: "#B8902D",
+    park: "#3A7A4F",
+    recycling: "#2E7D80",
+    evCharging: "#2F5FA0",
+    transitParking: "#5B4B9C",
+    amenity: "#9C6B3F",
+    landfill: "#6B6259",
+  },
 } as const;
 
 export const space = {

@@ -96,6 +96,14 @@ Display tokens (`display-*`) use Barlow Condensed. Everything else uses Source S
 --map-trail: #2f6e3a; /* greenway line color */
 --map-parking: #b23a1f; /* parking marker */
 --map-deal: #b8902d; /* deal-offering restaurant marker */
+/* Map markers — new GIS entity kinds (added 2026-05-28, map-expansion).
+   Distinct hues from each other and from --map-park (basemap fill).
+   Markers pair with white glyphs at >=18px; all meet >=3:1 large-graphic contrast. */
+--map-park-marker: #3a7a4f;     /* park pin — deeper than --map-park fill */
+--map-recycling: #2e7d80;       /* teal — recycling / solid-waste facility */
+--map-ev-charging: #2f5fa0;     /* electric blue — EV charging (NREL) */
+--map-transit-parking: #5b4b9c; /* transit violet — light-rail park & ride */
+--map-amenity: #9c6b3f;         /* clay-brown — generic POI (courts, disc golf, markets) */
 ```
 
 **Contrast verification:**

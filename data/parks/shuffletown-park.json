@@ -1,0 +1,21 @@
+{
+  "slug": "shuffletown-park",
+  "name": "Shuffletown Park",
+  "description": "",
+  "center": {
+    "lat": 35.3159818705468,
+    "lng": -80.94415360523541
+  },
+  "numParking": 78,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": true,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

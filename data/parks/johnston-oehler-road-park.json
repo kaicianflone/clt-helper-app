@@ -1,0 +1,21 @@
+{
+  "slug": "johnston-oehler-road-park",
+  "name": "Johnston Oehler Road Park",
+  "description": "",
+  "center": {
+    "lat": 35.36615227742054,
+    "lng": -80.78212312406345
+  },
+  "numParking": 0,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

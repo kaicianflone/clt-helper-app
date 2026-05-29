@@ -1,0 +1,16 @@
+{
+  "slug": "mecklenburg-county-vcw-415804",
+  "name": "Mecklenburg County  @ VCW",
+  "description": "",
+  "center": {
+    "lat": 35.243383862,
+    "lng": -80.894422654
+  },
+  "address": "3205 Freedom Dr, Charlotte, NC, 28208",
+  "numLevel2Ports": 28,
+  "networks": [
+    "AMPUP"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

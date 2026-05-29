@@ -1,0 +1,21 @@
+{
+  "slug": "harry-l-jones-sr-golf-course",
+  "name": "Harry L. Jones Sr. Golf Course",
+  "description": "",
+  "center": {
+    "lat": 35.17563998166261,
+    "lng": -80.91017313955966
+  },
+  "numParking": 190,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

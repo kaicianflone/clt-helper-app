@@ -1,0 +1,16 @@
+{
+  "slug": "720-garage-station-04-174435",
+  "name": "720 GARAGE STATION 04",
+  "description": "",
+  "center": {
+    "lat": 35.223935,
+    "lng": -80.850547
+  },
+  "address": "720 S Church St, Charlotte, NC, 28202",
+  "numLevel2Ports": 1,
+  "networks": [
+    "ChargePoint Network"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

@@ -1,0 +1,16 @@
+{
+  "slug": "sterling-services-121310",
+  "name": "Sterling Services",
+  "description": "",
+  "center": {
+    "lat": 35.086503,
+    "lng": -80.678455
+  },
+  "address": "3372 Smith Farm Rd, Matthews, NC, 28104",
+  "numLevel2Ports": 1,
+  "networks": [
+    "Non-Networked"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

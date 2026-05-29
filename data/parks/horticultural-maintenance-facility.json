@@ -1,0 +1,21 @@
+{
+  "slug": "horticultural-maintenance-facility",
+  "name": "Horticultural Maintenance Facility",
+  "description": "",
+  "center": {
+    "lat": 35.35584348937231,
+    "lng": -80.7563859042888
+  },
+  "numParking": 0,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

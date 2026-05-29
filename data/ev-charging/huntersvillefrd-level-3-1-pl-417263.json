@@ -1,0 +1,16 @@
+{
+  "slug": "huntersvillefrd-level-3-1-pl-417263",
+  "name": "HUNTERSVILLEFRD LEVEL 3-1 PL",
+  "description": "",
+  "center": {
+    "lat": 35.406287,
+    "lng": -80.854277
+  },
+  "address": "13825 Statesville Rd, Huntersville, NC, 28078",
+  "numDcFastPorts": 2,
+  "networks": [
+    "ChargePoint Network"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

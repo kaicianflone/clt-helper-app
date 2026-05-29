@@ -1,0 +1,21 @@
+{
+  "slug": "eastway-regional-recreation-center",
+  "name": "Eastway Regional Recreation Center",
+  "description": "",
+  "center": {
+    "lat": 35.25517093137456,
+    "lng": -80.77583139116263
+  },
+  "numParking": 380,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": true,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": true
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

@@ -1,0 +1,21 @@
+{
+  "slug": "reid-park",
+  "name": "Reid Park",
+  "description": "",
+  "center": {
+    "lat": 35.204124696749126,
+    "lng": -80.90034713059245
+  },
+  "numParking": 0,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": true
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

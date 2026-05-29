@@ -1,0 +1,21 @@
+{
+  "slug": "smithville-park",
+  "name": "Smithville Park",
+  "description": "",
+  "center": {
+    "lat": 35.482344965923474,
+    "lng": -80.86790888199779
+  },
+  "numParking": 74,
+  "parkUrl": "https://cornelius.org/park/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

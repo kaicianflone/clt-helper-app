@@ -1,0 +1,16 @@
+{
+  "slug": "university-of-north-carolina-charlotte-union-deck-236547",
+  "name": "University of North Carolina Charlotte - Union Deck",
+  "description": "",
+  "center": {
+    "lat": 35.30918,
+    "lng": -80.73521
+  },
+  "address": "8755 Student Union Ln, Charlotte, NC, 28223",
+  "numLevel2Ports": 4,
+  "networks": [
+    "Non-Networked"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

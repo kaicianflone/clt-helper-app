@@ -1,0 +1,16 @@
+{
+  "slug": "sonesta-charlotte-lower-south-end-449107",
+  "name": "Sonesta Charlotte Lower South End",
+  "description": "",
+  "center": {
+    "lat": 35.1590719,
+    "lng": -80.8896348
+  },
+  "address": "5700 Westpark Dr, Charlotte, NC, 28217",
+  "numLevel2Ports": 4,
+  "networks": [
+    "US_SUPERCHARGE"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

@@ -1,0 +1,21 @@
+{
+  "slug": "newell-park",
+  "name": "Newell Park",
+  "description": "",
+  "center": {
+    "lat": 35.28623734002628,
+    "lng": -80.73488852022946
+  },
+  "numParking": 21,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

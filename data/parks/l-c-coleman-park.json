@@ -1,0 +1,21 @@
+{
+  "slug": "l-c-coleman-park",
+  "name": "L.C. Coleman Park",
+  "description": "",
+  "center": {
+    "lat": 35.25837805279146,
+    "lng": -80.86161446595591
+  },
+  "numParking": 23,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": true,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": true
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

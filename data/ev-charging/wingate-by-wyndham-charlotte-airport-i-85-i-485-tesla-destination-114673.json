@@ -1,0 +1,16 @@
+{
+  "slug": "wingate-by-wyndham-charlotte-airport-i-85-i-485-tesla-destination-114673",
+  "name": "Wingate By Wyndham Charlotte Airport I-85/I-485 - Tesla Destination",
+  "description": "",
+  "center": {
+    "lat": 35.242709,
+    "lng": -80.939556
+  },
+  "address": "4238 Business Center Dr, Charlotte, NC, 28214",
+  "numLevel2Ports": 3,
+  "networks": [
+    "Tesla Destination"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

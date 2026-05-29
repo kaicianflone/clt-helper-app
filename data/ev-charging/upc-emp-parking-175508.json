@@ -1,0 +1,16 @@
+{
+  "slug": "upc-emp-parking-175508",
+  "name": "UPC EMP. PARKING",
+  "description": "",
+  "center": {
+    "lat": 35.015476,
+    "lng": -80.60731
+  },
+  "address": "1525 N Rocky River Rd, Monroe, NC, 28110",
+  "numLevel2Ports": 2,
+  "networks": [
+    "ChargePoint Network"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

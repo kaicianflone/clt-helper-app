@@ -1,0 +1,21 @@
+{
+  "slug": "cedarwood-pointe-park",
+  "name": "Cedarwood Pointe Park",
+  "description": "",
+  "center": {
+    "lat": 35.21948689040289,
+    "lng": -80.68544467535534
+  },
+  "numParking": 0,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

@@ -1,0 +1,21 @@
+{
+  "slug": "marmac-road-park",
+  "name": "Marmac Road Park",
+  "description": "",
+  "center": {
+    "lat": 35.244695334010146,
+    "lng": -80.92575914580247
+  },
+  "numParking": 0,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

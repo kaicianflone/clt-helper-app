@@ -1,0 +1,17 @@
+{
+  "slug": "carmel-road-park",
+  "name": "Carmel Road Park",
+  "description": "",
+  "center": {
+    "lat": 35.1334992246334,
+    "lng": -80.808272358678
+  },
+  "address": "2350 Carmel Road, Charlotte, NC",
+  "totalSpaces": 20,
+  "freeParking": true,
+  "transitLines": [
+    "Bus"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

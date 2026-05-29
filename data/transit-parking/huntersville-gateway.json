@@ -1,0 +1,17 @@
+{
+  "slug": "huntersville-gateway",
+  "name": "Huntersville Gateway",
+  "description": "",
+  "center": {
+    "lat": 35.4135809211132,
+    "lng": -80.8570592563317
+  },
+  "address": "14500 Statesville Road, Huntersville, NC",
+  "totalSpaces": 209,
+  "freeParking": false,
+  "transitLines": [
+    "Bus"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

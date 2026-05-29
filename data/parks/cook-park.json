@@ -1,0 +1,21 @@
+{
+  "slug": "cook-park",
+  "name": "Cook Park",
+  "description": "",
+  "center": {
+    "lat": 35.42078619459258,
+    "lng": -80.89571628225781
+  },
+  "numParking": 0,
+  "parkUrl": "https://www.huntersville.org/3073/Parks-Recreation-Department",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

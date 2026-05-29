@@ -1,0 +1,21 @@
+{
+  "slug": "firestone-park",
+  "name": "Firestone Park",
+  "description": "",
+  "center": {
+    "lat": 35.28783163790383,
+    "lng": -80.87246507250885
+  },
+  "numParking": 0,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": true
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

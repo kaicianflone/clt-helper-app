@@ -1,0 +1,16 @@
+{
+  "slug": "walmart-2134-charlotte-nc-168271",
+  "name": "Walmart 2134 (Charlotte, NC)",
+  "description": "",
+  "center": {
+    "lat": 35.29555,
+    "lng": -80.75655
+  },
+  "address": "7735 North Tryon Street, Charlotte, NC, 28262",
+  "numDcFastPorts": 10,
+  "networks": [
+    "Electrify America"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

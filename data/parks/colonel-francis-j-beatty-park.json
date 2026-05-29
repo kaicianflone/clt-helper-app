@@ -1,0 +1,21 @@
+{
+  "slug": "colonel-francis-j-beatty-park",
+  "name": "Colonel Francis J. Beatty Park",
+  "description": "",
+  "center": {
+    "lat": 35.06737010615641,
+    "lng": -80.72865181676272
+  },
+  "numParking": 450,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": true,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": true
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

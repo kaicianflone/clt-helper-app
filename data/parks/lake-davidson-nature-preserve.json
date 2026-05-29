@@ -1,0 +1,21 @@
+{
+  "slug": "lake-davidson-nature-preserve",
+  "name": "Lake Davidson Nature Preserve",
+  "description": "",
+  "center": {
+    "lat": 35.50370997506074,
+    "lng": -80.86126548746135
+  },
+  "numParking": 0,
+  "parkUrl": "https://www.townofdavidson.org/130/Parks-Recreation",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

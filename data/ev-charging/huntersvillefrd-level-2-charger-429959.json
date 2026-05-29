@@ -1,0 +1,16 @@
+{
+  "slug": "huntersvillefrd-level-2-charger-429959",
+  "name": "HUNTERSVILLEFRD LEVEL 2 CHARGER",
+  "description": "",
+  "center": {
+    "lat": 35.406359,
+    "lng": -80.854302
+  },
+  "address": "13825 Statesville Road, Huntersville, NC, 28078",
+  "numLevel2Ports": 2,
+  "networks": [
+    "ChargePoint Network"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

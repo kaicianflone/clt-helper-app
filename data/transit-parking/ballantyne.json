@@ -1,0 +1,17 @@
+{
+  "slug": "ballantyne",
+  "name": "Ballantyne",
+  "description": "",
+  "center": {
+    "lat": 35.0446487952688,
+    "lng": -80.8432431334596
+  },
+  "address": "To Be Determined, Charlotte, NC",
+  "totalSpaces": 0,
+  "freeParking": false,
+  "transitLines": [
+    "Bus"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

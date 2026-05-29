@@ -1,0 +1,16 @@
+{
+  "slug": "cltw-hwy16-3-261187",
+  "name": "CLTW HWY16-3",
+  "description": "",
+  "center": {
+    "lat": 35.276481,
+    "lng": -80.888899
+  },
+  "address": "5048 Brookshire Blvd, Charlotte, NC, 28216",
+  "numLevel2Ports": 2,
+  "networks": [
+    "ChargePoint Network"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

@@ -1,0 +1,16 @@
+{
+  "slug": "montford-park-ev-charger-01-143533",
+  "name": "MONTFORD PARK EV CHARGER 01",
+  "description": "",
+  "center": {
+    "lat": 35.1668,
+    "lng": -80.849396
+  },
+  "address": "4701 Park Rd, Charlotte, NC, 28209",
+  "numLevel2Ports": 2,
+  "networks": [
+    "ChargePoint Network"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

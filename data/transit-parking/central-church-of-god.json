@@ -1,0 +1,17 @@
+{
+  "slug": "central-church-of-god",
+  "name": "Central Church of God",
+  "description": "",
+  "center": {
+    "lat": 35.1605042015991,
+    "lng": -80.7879155924632
+  },
+  "address": "5301 Sardis Road, Charlotte, NC",
+  "totalSpaces": 20,
+  "freeParking": true,
+  "transitLines": [
+    "Bus"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

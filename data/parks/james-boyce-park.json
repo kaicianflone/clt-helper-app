@@ -1,0 +1,21 @@
+{
+  "slug": "james-boyce-park",
+  "name": "James Boyce Park",
+  "description": "",
+  "center": {
+    "lat": 35.14743924855434,
+    "lng": -80.76928957638602
+  },
+  "numParking": 45,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

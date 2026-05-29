@@ -1,0 +1,21 @@
+{
+  "slug": "flat-branch-park",
+  "name": "Flat Branch Park",
+  "description": "",
+  "center": {
+    "lat": 35.04580878179778,
+    "lng": -80.79409760831055
+  },
+  "numParking": 128,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

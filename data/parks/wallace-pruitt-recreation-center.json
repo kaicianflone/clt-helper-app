@@ -1,0 +1,21 @@
+{
+  "slug": "wallace-pruitt-recreation-center",
+  "name": "Wallace Pruitt Recreation Center",
+  "description": "",
+  "center": {
+    "lat": 35.238931734520364,
+    "lng": -80.8663018582913
+  },
+  "numParking": 65,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

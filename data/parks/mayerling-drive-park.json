@@ -1,0 +1,21 @@
+{
+  "slug": "mayerling-drive-park",
+  "name": "Mayerling Drive Park",
+  "description": "",
+  "center": {
+    "lat": 35.18758395756722,
+    "lng": -80.70302488633062
+  },
+  "numParking": 0,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": true
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

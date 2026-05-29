@@ -1,0 +1,21 @@
+{
+  "slug": "james-dennis-rash-park",
+  "name": "James Dennis Rash Park",
+  "description": "",
+  "center": {
+    "lat": 35.23294263446893,
+    "lng": -80.855037483478
+  },
+  "numParking": 0,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

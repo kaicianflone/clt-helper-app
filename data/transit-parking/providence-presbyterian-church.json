@@ -1,0 +1,17 @@
+{
+  "slug": "providence-presbyterian-church",
+  "name": "Providence Presbyterian Church",
+  "description": "",
+  "center": {
+    "lat": 35.0711291759107,
+    "lng": -80.7723071552932
+  },
+  "address": "10140 Providence Rd, Charlotte, NC",
+  "totalSpaces": 60,
+  "freeParking": true,
+  "transitLines": [
+    "Bus"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

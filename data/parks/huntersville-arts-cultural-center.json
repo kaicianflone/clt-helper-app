@@ -1,0 +1,21 @@
+{
+  "slug": "huntersville-arts-cultural-center",
+  "name": "Huntersville Arts & Cultural Center",
+  "description": "",
+  "center": {
+    "lat": 35.410108310885995,
+    "lng": -80.84266238170605
+  },
+  "numParking": 20,
+  "parkUrl": "https://www.huntersville.org/3073/Parks-Recreation-Department",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

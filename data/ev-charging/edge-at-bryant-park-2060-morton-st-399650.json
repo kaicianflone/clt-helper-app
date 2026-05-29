@@ -1,0 +1,16 @@
+{
+  "slug": "edge-at-bryant-park-2060-morton-st-399650",
+  "name": "Edge At Bryant Park - 2060 Morton St",
+  "description": "",
+  "center": {
+    "lat": 35.22429,
+    "lng": -80.873
+  },
+  "address": "2060 Morton St, Charlotte, NC, 28208",
+  "numLevel2Ports": 2,
+  "networks": [
+    "LOOP"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

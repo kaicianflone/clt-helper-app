@@ -1,0 +1,21 @@
+{
+  "slug": "kilborne-park",
+  "name": "Kilborne Park",
+  "description": "",
+  "center": {
+    "lat": 35.22053621956322,
+    "lng": -80.77099000241574
+  },
+  "numParking": 102,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": true,
+    "pickleball": false,
+    "discGolf": true,
+    "skatepark": true,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

@@ -1,0 +1,17 @@
+{
+  "slug": "sugar-creek-station-park-and-ride",
+  "name": "Sugar Creek Station Park and Ride",
+  "description": "",
+  "center": {
+    "lat": 35.2514268881717,
+    "lng": -80.792853227446
+  },
+  "address": "700 E Sugar Creek Rd, Charlotte, NC",
+  "totalSpaces": 630,
+  "freeParking": false,
+  "transitLines": [
+    "Rail"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

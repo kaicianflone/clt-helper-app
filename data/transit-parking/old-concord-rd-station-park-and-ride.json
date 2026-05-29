@@ -1,0 +1,17 @@
+{
+  "slug": "old-concord-rd-station-park-and-ride",
+  "name": "Old Concord Rd Station Park and Ride",
+  "description": "",
+  "center": {
+    "lat": 35.2599418905425,
+    "lng": -80.772789223179
+  },
+  "address": "5600 Old Concord Rd, Charlotte, NC",
+  "totalSpaces": 330,
+  "freeParking": false,
+  "transitLines": [
+    "Rail"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

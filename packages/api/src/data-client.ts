@@ -1,6 +1,16 @@
 import fs from "node:fs";
 import path from "node:path";
-import type { Deal, Greenway, ParkingLot } from "@clt/data-schema";
+import type {
+  Amenity,
+  Deal,
+  EvCharging,
+  Greenway,
+  Landfill,
+  Park,
+  ParkingLot,
+  Recycling,
+  TransitParking,
+} from "@clt/data-schema";
 
 export interface Bundle<T> {
   schemaVersion: number;
@@ -8,7 +18,16 @@ export interface Bundle<T> {
   entries: T[];
 }
 
-export type EntityKind = "greenways" | "deals" | "parking";
+export type EntityKind =
+  | "greenways"
+  | "deals"
+  | "parking"
+  | "parks"
+  | "recycling"
+  | "transit-parking"
+  | "ev-charging"
+  | "landfills"
+  | "amenities";
 
 export interface DataClientOptions<T> {
   /**
@@ -151,10 +170,24 @@ export async function fetchBundle<T>(
   throw lastErr;
 }
 
-// Convenience typed wrappers
+// Convenience typed wrappers — existing kinds
 export const fetchGreenways = (opts: DataClientOptions<Greenway>) =>
   fetchBundle<Greenway>("greenways", opts);
 export const fetchDeals = (opts: DataClientOptions<Deal>) =>
   fetchBundle<Deal>("deals", opts);
 export const fetchParking = (opts: DataClientOptions<ParkingLot>) =>
   fetchBundle<ParkingLot>("parking", opts);
+
+// Convenience typed wrappers — new GIS kinds
+export const fetchParks = (opts: DataClientOptions<Park>) =>
+  fetchBundle<Park>("parks", opts);
+export const fetchRecycling = (opts: DataClientOptions<Recycling>) =>
+  fetchBundle<Recycling>("recycling", opts);
+export const fetchTransitParking = (opts: DataClientOptions<TransitParking>) =>
+  fetchBundle<TransitParking>("transit-parking", opts);
+export const fetchEvCharging = (opts: DataClientOptions<EvCharging>) =>
+  fetchBundle<EvCharging>("ev-charging", opts);
+export const fetchLandfill = (opts: DataClientOptions<Landfill>) =>
+  fetchBundle<Landfill>("landfills", opts);
+export const fetchAmenity = (opts: DataClientOptions<Amenity>) =>
+  fetchBundle<Amenity>("amenities", opts);

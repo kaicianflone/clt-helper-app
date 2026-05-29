@@ -1,0 +1,16 @@
+{
+  "slug": "simon-southpark-mall-charlotte-nc-321061",
+  "name": "Simon Southpark Mall (Charlotte, NC)",
+  "description": "",
+  "center": {
+    "lat": 35.15119,
+    "lng": -80.83473
+  },
+  "address": "4400 Sharon Rd, Charlotte, NC, 28211",
+  "numDcFastPorts": 6,
+  "networks": [
+    "Electrify America"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

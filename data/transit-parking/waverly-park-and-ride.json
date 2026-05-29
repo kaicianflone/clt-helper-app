@@ -1,0 +1,17 @@
+{
+  "slug": "waverly-park-and-ride",
+  "name": "Waverly Park and Ride",
+  "description": "",
+  "center": {
+    "lat": 35.051066846046,
+    "lng": -80.7678232092103
+  },
+  "address": "11535 Waverly Center Dr, Charlotte, NC",
+  "totalSpaces": 0,
+  "freeParking": true,
+  "transitLines": [
+    "Bus"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

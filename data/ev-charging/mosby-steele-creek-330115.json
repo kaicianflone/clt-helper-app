@@ -1,0 +1,16 @@
+{
+  "slug": "mosby-steele-creek-330115",
+  "name": "Mosby Steele Creek",
+  "description": "",
+  "center": {
+    "lat": 35.19466879,
+    "lng": -80.78788543
+  },
+  "address": "13511 Montoy Way, Charlotte, NC, 28273",
+  "numLevel2Ports": 6,
+  "networks": [
+    "Blink Network"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

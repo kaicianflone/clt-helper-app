@@ -1,0 +1,16 @@
+{
+  "slug": "mcalpine-creek-park-recycling",
+  "name": "Mcalpine Creek Park Recycling",
+  "description": "",
+  "center": {
+    "lat": 35.152261923842936,
+    "lng": -80.74303609427885
+  },
+  "address": "8711 Monroe Rd.",
+  "acceptedMaterials": [
+    "Recycling",
+    "Self Service"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

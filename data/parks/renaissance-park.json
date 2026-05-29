@@ -1,0 +1,21 @@
+{
+  "slug": "renaissance-park",
+  "name": "Renaissance Park",
+  "description": "",
+  "center": {
+    "lat": 35.175967267005106,
+    "lng": -80.90982300145684
+  },
+  "numParking": 566,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": true,
+    "skatepark": true,
+    "dogPark": true,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

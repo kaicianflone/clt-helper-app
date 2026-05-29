@@ -1,0 +1,21 @@
+{
+  "slug": "hickory-view-park",
+  "name": "Hickory View Park",
+  "description": "",
+  "center": {
+    "lat": 35.085365376153305,
+    "lng": -81.01661504641564
+  },
+  "numParking": 0,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

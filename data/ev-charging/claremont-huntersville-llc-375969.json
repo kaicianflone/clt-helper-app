@@ -1,0 +1,16 @@
+{
+  "slug": "claremont-huntersville-llc-375969",
+  "name": "Claremont Huntersville LLC",
+  "description": "",
+  "center": {
+    "lat": 35.38028900672841,
+    "lng": -80.83051221736834
+  },
+  "address": "13035 Ardmore Forest Lane, Huntersville, NC, 28078",
+  "numLevel2Ports": 2,
+  "networks": [
+    "Blink Network"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

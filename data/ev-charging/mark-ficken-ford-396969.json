@@ -1,0 +1,17 @@
+{
+  "slug": "mark-ficken-ford-396969",
+  "name": "Mark Ficken Ford",
+  "description": "",
+  "center": {
+    "lat": 35.13027,
+    "lng": -80.87457
+  },
+  "address": "7601 South Blvd, Charlotte, NC, 28273",
+  "numLevel2Ports": 6,
+  "numDcFastPorts": 4,
+  "networks": [
+    "RED_E"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

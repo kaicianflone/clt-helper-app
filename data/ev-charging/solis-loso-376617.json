@@ -1,0 +1,16 @@
+{
+  "slug": "solis-loso-376617",
+  "name": "Solis LoSo",
+  "description": "",
+  "center": {
+    "lat": 35.18599692207824,
+    "lng": -80.88409576134832
+  },
+  "address": "4312 Yancey Road, Charlotte, NC, 28217",
+  "numLevel2Ports": 2,
+  "networks": [
+    "Blink Network"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

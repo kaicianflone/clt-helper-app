@@ -1,0 +1,16 @@
+{
+  "slug": "concord-nc-rechargery-relay-branchview-dr-ne-446637",
+  "name": "Concord, NC Rechargery Relay - Branchview Dr NE",
+  "description": "",
+  "center": {
+    "lat": 35.443488,
+    "lng": -80.594956
+  },
+  "address": "960 Branchview Dr NE, Concord, NC, 28025",
+  "numDcFastPorts": 16,
+  "networks": [
+    "IONNA"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

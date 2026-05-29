@@ -1,0 +1,21 @@
+{
+  "slug": "north-south-lawn-park",
+  "name": "North & South Lawn Park",
+  "description": "",
+  "center": {
+    "lat": 35.496045699359215,
+    "lng": -80.83024382799177
+  },
+  "numParking": 18,
+  "parkUrl": "https://www.townofdavidson.org/130/Parks-Recreation",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

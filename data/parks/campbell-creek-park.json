@@ -1,0 +1,21 @@
+{
+  "slug": "campbell-creek-park",
+  "name": "Campbell Creek Park",
+  "description": "",
+  "center": {
+    "lat": 35.215584383607684,
+    "lng": -80.73514662291691
+  },
+  "numParking": 0,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

@@ -1,0 +1,17 @@
+{
+  "slug": "sharon-baptist-church",
+  "name": "Sharon Baptist Church",
+  "description": "",
+  "center": {
+    "lat": 35.1274358030777,
+    "lng": -80.8460884312356
+  },
+  "address": "6411 Sharon Road, Charlotte, NC",
+  "totalSpaces": 20,
+  "freeParking": true,
+  "transitLines": [
+    "Bus"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

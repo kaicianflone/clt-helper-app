@@ -1,0 +1,21 @@
+{
+  "slug": "grayson-park",
+  "name": "Grayson Park",
+  "description": "",
+  "center": {
+    "lat": 35.19038161307686,
+    "lng": -80.79635881168065
+  },
+  "numParking": 78,
+  "parkUrl": "https://parkandrec.mecknc.gov/",
+  "amenities": {
+    "tennis": true,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": true,
+    "dogPark": false,
+    "basketball": true
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

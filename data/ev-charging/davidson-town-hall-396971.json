@@ -1,0 +1,16 @@
+{
+  "slug": "davidson-town-hall-396971",
+  "name": "Davidson Town Hall",
+  "description": "",
+  "center": {
+    "lat": 35.496,
+    "lng": -80.8485
+  },
+  "address": "251 South St, Davidson, NC, 28036",
+  "numLevel2Ports": 2,
+  "networks": [
+    "RED_E"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

@@ -1,0 +1,21 @@
+{
+  "slug": "bradley-middle-school",
+  "name": "Bradley Middle School",
+  "description": "",
+  "center": {
+    "lat": 35.396643093936646,
+    "lng": -80.92350341368817
+  },
+  "numParking": 80,
+  "parkUrl": "https://www.huntersville.org/3073/Parks-Recreation-Department",
+  "amenities": {
+    "tennis": false,
+    "pickleball": false,
+    "discGolf": false,
+    "skatepark": false,
+    "dogPark": false,
+    "basketball": false
+  },
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

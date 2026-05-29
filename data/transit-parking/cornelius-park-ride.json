@@ -1,0 +1,17 @@
+{
+  "slug": "cornelius-park-ride",
+  "name": "Cornelius Park & Ride",
+  "description": "",
+  "center": {
+    "lat": 35.4801729330488,
+    "lng": -80.8826582684587
+  },
+  "address": "20208 Sefton Park Rd, Cornelius, NC",
+  "totalSpaces": 355,
+  "freeParking": false,
+  "transitLines": [
+    "Bus"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

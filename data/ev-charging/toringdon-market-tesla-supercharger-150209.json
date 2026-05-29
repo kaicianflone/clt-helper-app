@@ -1,0 +1,16 @@
+{
+  "slug": "toringdon-market-tesla-supercharger-150209",
+  "name": "Toringdon Market - Tesla Supercharger",
+  "description": "",
+  "center": {
+    "lat": 35.069256,
+    "lng": -80.842023
+  },
+  "address": "3429 Toringdon Way, Charlotte, NC, 28277",
+  "numDcFastPorts": 12,
+  "networks": [
+    "Tesla"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}

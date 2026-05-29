@@ -1,0 +1,16 @@
+{
+  "slug": "ally-financial-3b-189736",
+  "name": "ALLY FINANCIAL 3B",
+  "description": "",
+  "center": {
+    "lat": 35.222102,
+    "lng": -80.847853
+  },
+  "address": "601 S Tryon St, Charlotte, NC, 28202",
+  "numLevel2Ports": 2,
+  "networks": [
+    "ChargePoint Network"
+  ],
+  "photos": [],
+  "lastVerified": "2026-05-29"
+}
