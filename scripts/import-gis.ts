@@ -408,7 +408,22 @@ export async function fetchTransitParking(
 // nrel adapter (NREL Alternative Fuel Stations — EV charging)
 // ---------------------------------------------------------------------------
 
-const NREL_BASE_URL = "https://developer.nrel.gov/api/alt-fuel-stations/v1.geojson";
+// NREL migrated developer.nrel.gov → developer.nlr.gov (old domain shut down
+// 2026-05-29; it now returns 410 SCHEDULED_BROWNOUT). Use the new domain.
+const NREL_BASE_URL = "https://developer.nlr.gov/api/alt-fuel-stations/v1.geojson";
+
+/**
+ * Mecklenburg County bounding box (approx). NREL returns all ~2,000 NC stations;
+ * this is a Charlotte app, so we clip to the county to avoid flooding the map
+ * with statewide pins. Widen these bounds if coverage should extend regionally.
+ */
+const MECK_BBOX = { minLat: 35.0, maxLat: 35.52, minLng: -81.06, maxLng: -80.55 };
+
+const inMecklenburg = (lat: number, lng: number): boolean =>
+  lat >= MECK_BBOX.minLat &&
+  lat <= MECK_BBOX.maxLat &&
+  lng >= MECK_BBOX.minLng &&
+  lng <= MECK_BBOX.maxLng;
 
 interface NrelStation {
   type: "Feature";
@@ -462,7 +477,7 @@ export async function fetchEvCharging(
   if (res.status === 403) {
     throw new Error(
       `NREL API: HTTP 403 Forbidden. Set a valid NREL_API_KEY environment variable. ` +
-        `Get a free key at https://developer.nrel.gov/signup/`,
+        `Get a free key at https://developer.nlr.gov/signup/`,
     );
   }
   if (!res.ok) {
@@ -492,6 +507,9 @@ export async function fetchEvCharging(
 
     // Prefer geometry coordinates (GeoJSON order: [lng, lat]) for position
     const [lng, lat] = feat.geometry.coordinates;
+
+    // Clip to Mecklenburg County — NREL returns the whole state.
+    if (!inMecklenburg(lat, lng)) continue;
 
     const name = String(p.station_name ?? "Unnamed Station");
     const address = [p.street_address, p.city, p.state, p.zip]

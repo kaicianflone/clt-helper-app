@@ -18,7 +18,7 @@ All secrets are stored in GitHub repository secrets (`Settings > Secrets and var
 | `UPSTASH_REDIS_REST_TOKEN` | API (future) | Upstash Redis auth token | Upstash console > Database > REST API |
 | `SENTRY_DSN` | Web + mobile (future) | Sentry error reporting DSN | Sentry project > Settings > Client Keys |
 | `EXPO_PUBLIC_API_URL` | Expo app | Public base URL for the tRPC API | Set to production API URL, e.g. `https://clt-app.com/api/trpc` |
-| `NREL_API_KEY` | `import-gis` (EV charging source) | NREL Alt-Fuel Stations API key | Sign up at https://developer.nrel.gov/signup (free). Leave unset to use `DEMO_KEY` in dev (rate-limited). See `docs/operations/gis-sources.md`. |
+| `NREL_API_KEY` | `import-gis` (EV charging source) | NREL Alt-Fuel Stations API key | Sign up at https://developer.nlr.gov/signup (free). Leave unset to use `DEMO_KEY` in dev (rate-limited). See `docs/operations/gis-sources.md`. |
 
 ## Universal Links / App Association
 

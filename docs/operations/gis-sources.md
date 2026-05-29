@@ -104,9 +104,9 @@ Park-and-ride lots operated by CATS for transit access. These are transit-orient
 
 | Field | Value |
 |---|---|
-| Endpoint | `https://developer.nrel.gov/api/alt-fuel-stations/v1.geojson` |
+| Endpoint | `https://developer.nlr.gov/api/alt-fuel-stations/v1.geojson` |
 | Publisher | National Renewable Energy Laboratory (NREL), U.S. Department of Energy |
-| License | Government open data; see https://developer.nrel.gov/docs/transportation/alt-fuel-stations-v1/ |
+| License | Government open data; see https://developer.nlr.gov/docs/transportation/alt-fuel-stations-v1/ |
 | Geometry | GeoJSON Point (WGS84, no CRS conversion needed) |
 | Filter used | `fuel_type=ELEC&state=NC` |
 
@@ -115,14 +115,14 @@ Park-and-ride lots operated by CATS for transit access. These are transit-orient
 NREL requires an API key passed as the `api_key` query parameter.
 
 - **Development:** `DEMO_KEY` works without signup and is sufficient for local development and ad-hoc imports. It is rate-limited to 30 requests/hour and 50 requests/day per IP.
-- **Production / CI:** A personal key with higher rate limits (1,000 requests/hour) is required. Sign up at https://developer.nrel.gov/signup — registration is free, approval is instant, and the key is emailed within minutes.
+- **Production / CI:** A personal key with higher rate limits (1,000 requests/hour) is required. Sign up at https://developer.nlr.gov/signup — registration is free, approval is instant, and the key is emailed within minutes.
 
 Store the production key as `NREL_API_KEY` in the environment (see `docs/operations/secrets.md`). When `NREL_API_KEY` is unset the importer falls back to `DEMO_KEY` automatically, logging a warning.
 
 Example request (DEMO_KEY):
 
 ```bash
-curl "https://developer.nrel.gov/api/alt-fuel-stations/v1.geojson?api_key=DEMO_KEY&fuel_type=ELEC&state=NC"
+curl "https://developer.nlr.gov/api/alt-fuel-stations/v1.geojson?api_key=DEMO_KEY&fuel_type=ELEC&state=NC"
 ```
 
 ## Importer Usage

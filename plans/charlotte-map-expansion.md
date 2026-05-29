@@ -22,12 +22,13 @@ All three cleared during the continuation run. Confirmed against live endpoints:
      disc golf (`DiscGolfCourse{Baskets,Fairways,Tees}`), `GolfCourses`, and light-rail stations
      (`CATSLynx{Blue,Gold,Red,Silver}LineStations`). Several "OSM-only" candidate layers can be
      derived from official Meck data instead.
-2. ✅ **NREL endpoint verified live** (DEMO_KEY, 2026-05-28): 2,063 NC EV stations.
-   Canonical domain is **`developer.nrel.gov`** (HTTP 200, no redirect) — the earlier
-   `developer.nlr.gov` "migration" note was WRONG; corrected throughout this plan.
-   Endpoint: `https://developer.nrel.gov/api/alt-fuel-stations/v1.geojson?api_key=KEY&fuel_type=ELEC&state=NC`
-   `DEMO_KEY` unblocks all development now (rate-limited). A personal production key still
-   requires user signup at `developer.nrel.gov/signup` → add to `.env.example` + `docs/operations/secrets.md`. (T6)
+2. ✅ **NREL endpoint — domain migration is REAL** (verified 2026-05-28): use **`developer.nlr.gov`**.
+   `developer.nrel.gov` had a brief pre-brownout window returning 200, but it now returns
+   `410 SCHEDULED_BROWNOUT` and shuts down **2026-05-29**; the canonical domain is
+   `developer.nlr.gov` (2,063 NC stations live). The mid-session "correction" to nrel.gov was wrong.
+   Endpoint: `https://developer.nlr.gov/api/alt-fuel-stations/v1.geojson?api_key=KEY&fuel_type=ELEC&state=NC`
+   Importer clips to the Mecklenburg bbox (404 stations). `DEMO_KEY` works for dev (rate-limited);
+   personal prod key via signup at `developer.nlr.gov/signup`. (T6)
 3. ✅ **Map marker tokens signed off + added to DESIGN.md** `/* Map */` block:
    `--map-park-marker #3a7a4f`, `--map-recycling #2e7d80`, `--map-ev-charging #2f5fa0`,
    `--map-transit-parking #5b4b9c`, `--map-amenity #9c6b3f`. (D1 partially done — token defs landed;
@@ -82,7 +83,7 @@ source-of-truth per kind:
 | park | `ParkLocations/0` (+ optional `ParkBoundaries/0`) | meck-arcgis adapter |
 | recycling | `SolidWasteFacility/0` filtered on `faclty_typ` | meck-arcgis |
 | landfill | `Landfills/0` (official — was OSM) | meck-arcgis; surface `status_1` (many Closed) |
-| ev-charging | NREL `developer.nrel.gov` (DEMO_KEY → prod key) | nrel |
+| ev-charging | NREL `developer.nlr.gov` (DEMO_KEY → prod key) | nrel |
 | transit-parking | Charlotte OD CATS Park-and-Ride lots | charlotte-od |
 | amenity: tennis / pickleball / disc-golf / skatepark / dog-park / basketball | **DERIVED from `ParkLocations` boolean flags** (was Overpass) | one ParkLocations fetch → fan out a point per truthy flag |
 | amenity: farmers-market | OSM/Overpass (no Meck feed found) | overpass — stays Phase 2 |

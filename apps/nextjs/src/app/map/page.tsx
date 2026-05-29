@@ -37,10 +37,26 @@ export interface GisPin {
 
 export default async function MapPage() {
   const caller = await createServerCaller();
-  const [greenways, deals, parkingLots] = await Promise.all([
+  const [
+    greenways,
+    deals,
+    parkingLots,
+    parks,
+    recyclingFacilities,
+    transitParkingLots,
+    evStations,
+    landfills,
+    amenities,
+  ] = await Promise.all([
     caller.greenway.listWithGeometry(),
     caller.deal.list(),
     caller.parking.list(),
+    caller.park.list(),
+    caller.recycling.list(),
+    caller.transitParking.list(),
+    caller.evCharging.list(),
+    caller.landfill.list(),
+    caller.amenity.list(),
   ]);
 
   const toLocationSlug = (name: string) =>
@@ -76,17 +92,21 @@ export default async function MapPage() {
     hourlyRate: p.hourlyRate,
   }));
 
-  // New GIS kind data. Data fetchers for these kinds will be added as the
-  // importers and packages/api routers are completed (parallel tasks T01–T05).
-  // Until then, each kind defaults to an empty array so the map layers still
-  // register (with correct color + legend entries) and degrade gracefully.
+  // New GIS kind pins. Each entity has `center: {lat, lng}` and `name`; the map
+  // component converts [lat, lng] → [lng, lat] for MapLibre. Empty arrays still
+  // register the layer + legend entry and degrade gracefully.
+  const toPins = (
+    rows: { name: string; center: { lat: number; lng: number } }[],
+  ): GisPin[] =>
+    rows.map((r) => ({ name: r.name, latLng: [r.center.lat, r.center.lng] }));
+
   const gisPins: Record<string, GisPin[]> = {
-    park: [],
-    recycling: [],
-    "ev-charging": [],
-    "transit-parking": [],
-    landfill: [],
-    amenity: [],
+    park: toPins(parks),
+    recycling: toPins(recyclingFacilities),
+    "ev-charging": toPins(evStations),
+    "transit-parking": toPins(transitParkingLots),
+    landfill: toPins(landfills),
+    amenity: toPins(amenities),
   };
 
   return (

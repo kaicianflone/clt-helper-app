@@ -491,7 +491,7 @@ describe("buildNrelUrl", () => {
     expect(url).toContain("fuel_type=ELEC");
     expect(url).toContain("state=NC");
     expect(url).toContain("api_key=TEST_KEY");
-    expect(url).toContain("developer.nrel.gov");
+    expect(url).toContain("developer.nlr.gov");
   });
 
   it("falls back to DEMO_KEY when no key provided and env var not set", () => {
@@ -584,7 +584,48 @@ describe("fetchEvCharging", () => {
     expect(result[0]!.center.lng).toBeLessThan(-79);
   });
 
-  it("builds correct developer.nrel.gov URL", async () => {
+  it("filters out stations outside the Mecklenburg County bbox", async () => {
+    const stations: NrelMockStation[] = [
+      {
+        id: 4001,
+        station_name: "Charlotte Uptown (in bbox)",
+        street_address: "1 Tryon",
+        city: "Charlotte",
+        state: "NC",
+        zip: "28202",
+        latitude: 35.227,
+        longitude: -80.843,
+        ev_level2_evse_num: 2,
+        ev_dc_fast_num: null,
+        ev_network: null,
+      },
+      {
+        id: 4002,
+        station_name: "Raleigh Municipal (out of bbox)",
+        street_address: "285 W Hargett St",
+        city: "Raleigh",
+        state: "NC",
+        zip: "27601",
+        latitude: 35.7784,
+        longitude: -78.6435,
+        ev_level2_evse_num: 2,
+        ev_dc_fast_num: null,
+        ev_network: null,
+      },
+    ];
+
+    const fetchImpl = vi.fn(async () => {
+      return new Response(JSON.stringify(makeNrelResponse(stations)), {
+        status: 200,
+      });
+    }) as unknown as typeof fetch;
+
+    const result = await fetchEvCharging(fetchImpl);
+    expect(result).toHaveLength(1);
+    expect(result[0]!.name).toBe("Charlotte Uptown (in bbox)");
+  });
+
+  it("builds correct developer.nlr.gov URL", async () => {
     let capturedUrl = "";
     const fetchImpl = vi.fn(async (url: string) => {
       capturedUrl = url as string;
@@ -609,7 +650,7 @@ describe("fetchEvCharging", () => {
     }) as unknown as typeof fetch;
 
     await fetchEvCharging(fetchImpl);
-    expect(capturedUrl).toContain("developer.nrel.gov");
+    expect(capturedUrl).toContain("developer.nlr.gov");
     expect(capturedUrl).toContain("fuel_type=ELEC");
     expect(capturedUrl).toContain("state=NC");
   });
