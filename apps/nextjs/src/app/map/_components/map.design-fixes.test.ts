@@ -27,11 +27,12 @@ describe("map popup keyboard accessibility", () => {
 });
 
 describe("map container mobile height", () => {
-  it("uses calc height on mobile to clear the BottomTabBar", () => {
-    expect(src).toMatch(/calc\(100dvh\s*-\s*4rem\)/);
+  it("fills the full dynamic viewport height", () => {
+    expect(src).toMatch(/h-\[100dvh\]/);
   });
 
-  it("uses full h-screen on desktop", () => {
-    expect(src).toContain("md:h-screen");
+  it("does not subtract a 4rem tab-bar offset (chrome-less /map route)", () => {
+    expect(src).not.toMatch(/calc\(100dvh\s*-\s*4rem\)/);
+    expect(src).not.toContain("md:h-screen");
   });
 });
