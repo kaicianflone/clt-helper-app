@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.2.0.3] - 2026-05-29
+
+### Fixed
+- Greenway trail lines no longer look jagged when the map is zoomed out. MapLibre was simplifying the trail geometry per map tile (its default behavior), which dropped points and flattened curves at low zoom — they only looked smooth once you zoomed in. Trails now keep their full shape at every zoom level, with rounded line joins and ends for a cleaner look. Applies to both the main `/map` and the individual trail detail maps.
+
 ## [0.2.0.2] - 2026-05-29
 
 ### Fixed
