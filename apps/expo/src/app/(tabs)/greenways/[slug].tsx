@@ -129,7 +129,7 @@ export default function GreenwayDetailScreen() {
           </View>
         ) : null}
 
-        {/* Trailheads */}
+        {/* Points of Interest — trailheads/access points plus any mapped POIs */}
         {greenway.trailheads.length > 0 ? (
           <View style={{ marginBottom: space[6] }}>
             <Text
@@ -139,7 +139,7 @@ export default function GreenwayDetailScreen() {
                 marginBottom: space[2],
               }}
             >
-              Trailheads
+              Points of Interest
             </Text>
             {greenway.trailheads.map((th, i) => (
               <Pressable
@@ -187,21 +187,6 @@ export default function GreenwayDetailScreen() {
                 </Text>
               </Pressable>
             ))}
-          </View>
-        ) : null}
-
-        {/* Points of Interest */}
-        {greenway.pointsOfInterest.length > 0 ? (
-          <View style={{ marginBottom: space[6] }}>
-            <Text
-              style={{
-                ...type.headingMd,
-                color: colors.fg.ink,
-                marginBottom: space[2],
-              }}
-            >
-              Points of Interest
-            </Text>
             {greenway.pointsOfInterest.map((poi, i) => (
               <View
                 key={i}

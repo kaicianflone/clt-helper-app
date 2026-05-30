@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.2.1.0] - 2026-05-29
+
+### Added
+- Greenways list now has sort and filter controls. Sort by Nearest (uses your location when granted), Name (A–Z or Z–A), or trail length (Longest or Shortest first). Filter by surface (paved, natural, mixed) and by length (under 1 mi, 1–3 mi, over 3 mi). A live count shows how many trails match, with a clear empty state when none do.
+- The crown logo now shows next to a "CLT" wordmark in the top-left of the full-screen `/map` page, matching the site header instead of a plain "clt" pill.
+
+### Changed
+- "Trailheads" is now "Points of Interest" on greenway detail pages (web and mobile) and in the map trail popups. A trailhead can be an entrance, a bench, or any access point, so the broader label fits. The detail page's separate trailhead and points-of-interest lists are now one combined section.
+
 ## [0.2.0.3] - 2026-05-29
 
 ### Fixed

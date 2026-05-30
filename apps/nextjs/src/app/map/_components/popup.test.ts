@@ -35,19 +35,19 @@ describe("buildPopupHtml", () => {
     expect(html).toContain("Antiquity Greenway");
     expect(html).toContain("0.7 mi");
     expect(html).toContain("paved");
-    expect(html).toContain("2 trailheads");
+    expect(html).toContain("2 points of interest");
     expect(html).toContain('href="/greenways/antiquity-greenway"');
     expect(html).toContain("View details");
   });
 
-  it("uses singular trailhead when count is 1", () => {
+  it("uses singular point of interest when count is 1", () => {
     const html = buildPopupHtml({
       slug: "x",
       name: "X",
       trailheadCount: 1,
     });
-    expect(html).toContain("1 trailhead");
-    expect(html).not.toContain("1 trailheads");
+    expect(html).toContain("1 point of interest");
+    expect(html).not.toContain("1 points of interest");
   });
 
   it("omits length·surface line when both are missing", () => {
@@ -56,14 +56,14 @@ describe("buildPopupHtml", () => {
     expect(html).not.toContain('class="text-sm mt-1"');
   });
 
-  it("omits trailhead line when count is missing", () => {
+  it("omits the points-of-interest line when count is missing", () => {
     const html = buildPopupHtml({
       slug: "x",
       name: "X",
       lengthMiles: 1,
       surface: "paved",
     });
-    expect(html).not.toContain("trailhead");
+    expect(html).not.toContain("of interest");
   });
 
   it("escapes XSS in name field", () => {

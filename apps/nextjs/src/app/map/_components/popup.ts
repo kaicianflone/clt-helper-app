@@ -30,16 +30,16 @@ export function buildPopupHtml(props: PopupProps): string {
   if (props.surface) detailLines.push(escapeHtml(props.surface));
   const meta1 = detailLines.join(" · ");
 
-  const trailheadLine =
+  const poiLine =
     props.trailheadCount != null
-      ? `${props.trailheadCount} trailhead${props.trailheadCount === 1 ? "" : "s"}`
+      ? `${props.trailheadCount} point${props.trailheadCount === 1 ? "" : "s"} of interest`
       : "";
 
   return `
     <div class="font-sans">
       <p class="font-semibold text-base leading-tight" style="color:#2a2a2a">${escapeHtml(props.name ?? "Greenway")}</p>
       ${meta1 ? `<p class="text-sm mt-1" style="color:#5a5a5a">${meta1}</p>` : ""}
-      ${trailheadLine ? `<p class="text-xs mt-1" style="color:#7a7a7a">${trailheadLine}</p>` : ""}
+      ${poiLine ? `<p class="text-xs mt-1" style="color:#7a7a7a">${poiLine}</p>` : ""}
       <a href="/greenways/${escapeHtml(props.slug)}" class="inline-block mt-3 text-sm font-medium underline" style="color:#B23A1F">View details →</a>
     </div>
   `;
