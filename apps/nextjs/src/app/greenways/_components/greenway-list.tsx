@@ -14,14 +14,91 @@ interface Greenway {
   lng: number | null;
 }
 
+type GreenwayWithDistance = Greenway & { distanceMi: number | null };
+
 type LocationState =
   | { status: "loading" }
   | { status: "granted"; coords: { lat: number; lng: number } }
   | { status: "denied" }
   | { status: "unsupported" };
 
+type SortKey =
+  | "nearest"
+  | "name-asc"
+  | "name-desc"
+  | "length-desc"
+  | "length-asc";
+type SurfaceFilter = "all" | "paved" | "natural" | "mixed";
+type LengthFilter = "all" | "under-1" | "1-3" | "over-3";
+
+const SORT_OPTIONS: { value: SortKey; label: string }[] = [
+  { value: "nearest", label: "Nearest" },
+  { value: "name-asc", label: "Name (A–Z)" },
+  { value: "name-desc", label: "Name (Z–A)" },
+  { value: "length-desc", label: "Longest first" },
+  { value: "length-asc", label: "Shortest first" },
+];
+
+const SURFACE_OPTIONS: { value: SurfaceFilter; label: string }[] = [
+  { value: "all", label: "All surfaces" },
+  { value: "paved", label: "Paved" },
+  { value: "natural", label: "Natural" },
+  { value: "mixed", label: "Mixed" },
+];
+
+const LENGTH_OPTIONS: { value: LengthFilter; label: string }[] = [
+  { value: "all", label: "Any length" },
+  { value: "under-1", label: "Under 1 mi" },
+  { value: "1-3", label: "1–3 mi" },
+  { value: "over-3", label: "Over 3 mi" },
+];
+
+const selectClass =
+  "rounded-md border border-[color:var(--border-soft)] bg-[color:var(--bg-cream-soft)] px-3 py-2 text-sm text-[color:var(--fg-ink)] focus:border-[color:var(--brick)] focus:ring-2 focus:ring-[color:var(--brick)]/20 focus:outline-none";
+
+function matchesLength(miles: number, filter: LengthFilter): boolean {
+  switch (filter) {
+    case "under-1":
+      return miles < 1;
+    case "1-3":
+      return miles >= 1 && miles <= 3;
+    case "over-3":
+      return miles > 3;
+    default:
+      return true;
+  }
+}
+
+function compareGreenways(
+  a: GreenwayWithDistance,
+  b: GreenwayWithDistance,
+  sort: SortKey,
+): number {
+  switch (sort) {
+    case "name-asc":
+      return a.name.localeCompare(b.name);
+    case "name-desc":
+      return b.name.localeCompare(a.name);
+    case "length-desc":
+      return b.lengthMiles - a.lengthMiles;
+    case "length-asc":
+      return a.lengthMiles - b.lengthMiles;
+    case "nearest":
+      // Greenways without coords (or before location resolves) sort last,
+      // tie-broken alphabetically so the order is stable.
+      if (a.distanceMi == null && b.distanceMi == null)
+        return a.name.localeCompare(b.name);
+      if (a.distanceMi == null) return 1;
+      if (b.distanceMi == null) return -1;
+      return a.distanceMi - b.distanceMi;
+  }
+}
+
 export function GreenwayList({ greenways }: { greenways: Greenway[] }) {
   const [query, setQuery] = useState("");
+  const [sort, setSort] = useState<SortKey>("nearest");
+  const [surface, setSurface] = useState<SurfaceFilter>("all");
+  const [length, setLength] = useState<LengthFilter>("all");
   const [location, setLocation] = useState<LocationState>({
     status: "unsupported",
   });
@@ -88,7 +165,8 @@ export function GreenwayList({ greenways }: { greenways: Greenway[] }) {
     };
   }, []);
 
-  const items = useMemo(
+  // Attach distance to each greenway when we have the user's coordinates.
+  const withDistance: GreenwayWithDistance[] = useMemo(
     () =>
       location.status === "granted"
         ? sortByDistance(greenways, location.coords)
@@ -96,82 +174,158 @@ export function GreenwayList({ greenways }: { greenways: Greenway[] }) {
     [greenways, location],
   );
 
-  const filtered = useMemo(() => {
-    if (!query.trim()) return items;
-    const q = query.toLowerCase();
-    return items.filter((g) => g.name.toLowerCase().includes(q));
-  }, [items, query]);
+  const visible = useMemo(() => {
+    const q = query.trim().toLowerCase();
+    return withDistance
+      .filter((g) => surface === "all" || g.surface === surface)
+      .filter((g) => matchesLength(g.lengthMiles, length))
+      .filter((g) => !q || g.name.toLowerCase().includes(q))
+      .sort((a, b) => compareGreenways(a, b, sort));
+  }, [withDistance, surface, length, query, sort]);
 
-  const statusLabel =
-    location.status === "loading"
-      ? "Finding nearest…"
-      : location.status === "granted"
-        ? "Sorted by distance"
-        : location.status === "denied"
-          ? "Sorted A–Z · location denied"
-          : "Sorted A–Z";
+  const locationNote =
+    sort !== "nearest"
+      ? ""
+      : location.status === "loading"
+        ? " · finding you…"
+        : location.status === "granted"
+          ? ""
+          : " · location off";
+
+  const countLabel =
+    visible.length === greenways.length
+      ? `${greenways.length} trail${greenways.length !== 1 ? "s" : ""}`
+      : `${visible.length} of ${greenways.length} trails`;
 
   return (
     <>
-      <div className="mb-4">
-        <label htmlFor="greenway-search" className="sr-only">
-          Filter greenways
-        </label>
-        <input
-          id="greenway-search"
-          type="search"
-          placeholder="Filter trails…"
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-          className="w-full rounded-md border border-[color:var(--border-soft)] bg-[color:var(--bg-cream-soft)] px-3.5 py-2.5 text-base text-[color:var(--fg-ink)] placeholder:text-[color:var(--fg-ink-muted)] focus:border-[color:var(--brick)] focus:ring-2 focus:ring-[color:var(--brick)]/20 focus:outline-none"
-        />
-      </div>
-      <p className="mb-3 text-xs text-[color:var(--fg-ink-muted)]">
-        {statusLabel}
-        {query.trim() &&
-          ` · ${filtered.length} result${filtered.length !== 1 ? "s" : ""}`}
-      </p>
-      <ul className="divide-y divide-[color:var(--border-soft)]">
-        {filtered.map((g) => (
-          <li key={g.slug}>
-            <Link
-              href={`/greenways/${g.slug}`}
-              className="flex items-center justify-between gap-4 py-4 hover:bg-[color:var(--bg-cream-soft)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[color:var(--brick)]"
+      <div className="mb-4 space-y-3">
+        <div>
+          <label htmlFor="greenway-search" className="sr-only">
+            Filter greenways by name
+          </label>
+          <input
+            id="greenway-search"
+            type="search"
+            placeholder="Filter trails…"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            className="w-full rounded-md border border-[color:var(--border-soft)] bg-[color:var(--bg-cream-soft)] px-3.5 py-2.5 text-base text-[color:var(--fg-ink)] placeholder:text-[color:var(--fg-ink-muted)] focus:border-[color:var(--brick)] focus:ring-2 focus:ring-[color:var(--brick)]/20 focus:outline-none"
+          />
+        </div>
+
+        <div className="flex flex-wrap gap-2">
+          <div>
+            <label htmlFor="greenway-sort" className="sr-only">
+              Sort trails
+            </label>
+            <select
+              id="greenway-sort"
+              value={sort}
+              onChange={(e) => setSort(e.target.value as SortKey)}
+              aria-label="Sort trails"
+              className={selectClass}
             >
-              <div className="min-w-0 flex-1">
-                <p className="truncate text-lg leading-snug font-semibold text-[color:var(--fg-ink)]">
-                  {g.name}
-                </p>
-                <p className="mt-0.5 flex flex-wrap items-center gap-2 text-sm text-[color:var(--fg-ink-muted)]">
-                  <span>
-                    {g.lengthMiles} mi
-                    {g.distanceMi != null &&
-                      ` · ${g.distanceMi.toFixed(1)} mi away`}
-                  </span>
-                  <span className="inline-flex items-center rounded-full bg-[color:var(--gold-soft)] px-2 py-0.5 text-xs font-medium text-[color:var(--gold)]">
-                    {g.surface}
-                  </span>
-                </p>
-              </div>
-              <svg
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="shrink-0 text-[color:var(--fg-ink-muted)]"
+              {SORT_OPTIONS.map((o) => (
+                <option key={o.value} value={o.value}>
+                  Sort: {o.label}
+                </option>
+              ))}
+            </select>
+          </div>
+
+          <div>
+            <label htmlFor="greenway-surface" className="sr-only">
+              Filter by surface
+            </label>
+            <select
+              id="greenway-surface"
+              value={surface}
+              onChange={(e) => setSurface(e.target.value as SurfaceFilter)}
+              aria-label="Filter by surface"
+              className={selectClass}
+            >
+              {SURFACE_OPTIONS.map((o) => (
+                <option key={o.value} value={o.value}>
+                  {o.label}
+                </option>
+              ))}
+            </select>
+          </div>
+
+          <div>
+            <label htmlFor="greenway-length" className="sr-only">
+              Filter by length
+            </label>
+            <select
+              id="greenway-length"
+              value={length}
+              onChange={(e) => setLength(e.target.value as LengthFilter)}
+              aria-label="Filter by length"
+              className={selectClass}
+            >
+              {LENGTH_OPTIONS.map((o) => (
+                <option key={o.value} value={o.value}>
+                  {o.label}
+                </option>
+              ))}
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <p className="mb-3 text-xs text-[color:var(--fg-ink-muted)]">
+        {countLabel}
+        {locationNote}
+      </p>
+
+      {visible.length === 0 ? (
+        <p className="py-8 text-center text-sm text-[color:var(--fg-ink-muted)]">
+          No trails match your filters.
+        </p>
+      ) : (
+        <ul className="divide-y divide-[color:var(--border-soft)]">
+          {visible.map((g) => (
+            <li key={g.slug}>
+              <Link
+                href={`/greenways/${g.slug}`}
+                className="flex items-center justify-between gap-4 py-4 hover:bg-[color:var(--bg-cream-soft)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[color:var(--brick)]"
               >
-                <path d="M9 18l6-6-6-6" />
-              </svg>
-            </Link>
-          </li>
-        ))}
-      </ul>
+                <div className="min-w-0 flex-1">
+                  <p className="truncate text-lg leading-snug font-semibold text-[color:var(--fg-ink)]">
+                    {g.name}
+                  </p>
+                  <p className="mt-0.5 flex flex-wrap items-center gap-2 text-sm text-[color:var(--fg-ink-muted)]">
+                    <span>
+                      {g.lengthMiles} mi
+                      {g.distanceMi != null &&
+                        ` · ${g.distanceMi.toFixed(1)} mi away`}
+                    </span>
+                    <span className="inline-flex items-center rounded-full bg-[color:var(--gold-soft)] px-2 py-0.5 text-xs font-medium text-[color:var(--gold)] capitalize">
+                      {g.surface}
+                    </span>
+                  </p>
+                </div>
+                <svg
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="shrink-0 text-[color:var(--fg-ink-muted)]"
+                >
+                  <path d="M9 18l6-6-6-6" />
+                </svg>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      )}
     </>
   );
 }
