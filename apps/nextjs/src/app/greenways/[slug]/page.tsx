@@ -119,10 +119,10 @@ export default async function GreenwayDetailPage({ params }: Props) {
           />
         </div>
 
-        {/* Trailheads */}
+        {/* Points of Interest — trailheads/access points plus any mapped POIs */}
         <section className="mt-12">
           <h2 className="text-xl font-semibold text-[color:var(--fg-ink)]">
-            Trailheads
+            Points of Interest
           </h2>
           <ul className="mt-4 space-y-3">
             {greenway.trailheads.map(
@@ -159,14 +159,7 @@ export default async function GreenwayDetailPage({ params }: Props) {
               ),
             )}
           </ul>
-        </section>
-
-        {/* Points of Interest */}
-        {greenway.pointsOfInterest.length > 0 && (
-          <section className="mt-12">
-            <h2 className="text-xl font-semibold text-[color:var(--fg-ink)]">
-              Points of Interest
-            </h2>
+          {greenway.pointsOfInterest.length > 0 && (
             <ul className="mt-4 divide-y divide-[color:var(--border-soft)]">
               {greenway.pointsOfInterest.map(
                 (
@@ -189,8 +182,8 @@ export default async function GreenwayDetailPage({ params }: Props) {
                 ),
               )}
             </ul>
-          </section>
-        )}
+          )}
+        </section>
 
         {/* Stale data prompt */}
         <div className="mt-12">
@@ -210,7 +203,7 @@ export default async function GreenwayDetailPage({ params }: Props) {
             rel="noopener noreferrer"
             className="flex min-h-[44px] w-full items-center justify-center rounded-md bg-[color:var(--brick)] px-6 py-2.5 text-sm font-medium text-white hover:bg-[color:var(--brick-deep)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[color:var(--brick)] sm:w-auto"
           >
-            Get directions to nearest trailhead
+            Get directions to nearest access point
           </a>
           <ShareButton url={pageUrl} title={greenway.name} />
           <a
