@@ -27,12 +27,17 @@ describe("map popup keyboard accessibility", () => {
 });
 
 describe("map container mobile height", () => {
-  it("fills the full dynamic viewport height", () => {
-    expect(src).toMatch(/h-\[100dvh\]/);
+  it("fills the full dynamic viewport height on desktop", () => {
+    expect(src).toMatch(/md:h-\[100dvh\]/);
   });
 
-  it("does not subtract a 4rem tab-bar offset (chrome-less /map route)", () => {
-    expect(src).not.toMatch(/calc\(100dvh\s*-\s*4rem\)/);
+  it("reserves room for the mobile tab bar so map controls aren't hidden", () => {
+    // The BottomTabBar (fixed, md:hidden, 4rem tall) overlays the map on
+    // mobile; offsetting the map keeps MapLibre's bottom attribution visible.
+    expect(src).toMatch(/h-\[calc\(100dvh\s*-\s*4rem\)\]/);
+  });
+
+  it("does not use the legacy md:h-screen height", () => {
     expect(src).not.toContain("md:h-screen");
   });
 });

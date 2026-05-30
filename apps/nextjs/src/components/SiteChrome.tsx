@@ -11,10 +11,16 @@ export function SiteChrome(props: { children: React.ReactNode }) {
   const pathname = usePathname();
 
   // The /map route renders a full-viewport map and provides its own <main>.
-  // Suppress all site chrome so the map fills the viewport with no page
-  // scrollbar on desktop and mobile.
+  // Suppress the desktop header and footer so the map fills the viewport with
+  // no page scrollbar, but keep the mobile tab bar — it's the only navigation
+  // on mobile, and being `fixed`/`md:hidden` it never affects desktop layout.
   if (pathname === "/map") {
-    return <>{props.children}</>;
+    return (
+      <>
+        {props.children}
+        <BottomTabBar />
+      </>
+    );
   }
 
   return (
