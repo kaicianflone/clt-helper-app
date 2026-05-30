@@ -26,6 +26,21 @@ describe("map popup keyboard accessibility", () => {
   });
 });
 
+describe("greenway line smoothing", () => {
+  it("disables GeoJSON simplification on the greenways source", () => {
+    // MapLibre's default tolerance (0.375) runs per-tile Douglas-Peucker
+    // simplification that drops vertices at low zoom, making trails look
+    // jagged when zoomed out. tolerance:0 keeps full fidelity.
+    expect(src).toMatch(/addSource\(\s*"greenways"[\s\S]*?tolerance:\s*0\b/);
+  });
+
+  it("uses round line joins and caps for the greenway line layer", () => {
+    expect(src).toMatch(
+      /id:\s*"greenway-lines"[\s\S]*?"line-join":\s*"round"[\s\S]*?"line-cap":\s*"round"/,
+    );
+  });
+});
+
 describe("map container mobile height", () => {
   it("fills the full dynamic viewport height on desktop", () => {
     expect(src).toMatch(/md:h-\[100dvh\]/);

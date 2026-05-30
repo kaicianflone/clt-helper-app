@@ -62,12 +62,20 @@ export function GreenwayMapSnippet({ geometry, mapTilerKey }: Props) {
     map.on("load", () => {
       map.addSource("greenway", {
         type: "geojson",
+        // Keep full geometry fidelity — see map.tsx: MapLibre's default
+        // tolerance (0.375) flattens trail curves into jagged segments when
+        // the trail is fit at a low zoom.
+        tolerance: 0,
         data: { type: "Feature", properties: {}, geometry },
       });
       map.addLayer({
         id: "greenway-line",
         type: "line",
         source: "greenway",
+        layout: {
+          "line-join": "round",
+          "line-cap": "round",
+        },
         paint: {
           "line-color": "#2F6E3A",
           "line-width": 3,

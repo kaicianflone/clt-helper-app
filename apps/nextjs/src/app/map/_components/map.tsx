@@ -230,6 +230,11 @@ export function GreenwayMap({
 
       map.addSource("greenways", {
         type: "geojson",
+        // Disable MapLibre's per-tile Douglas-Peucker simplification (default
+        // tolerance 0.375). At low zoom that tolerance maps to a large ground
+        // distance and drops vertices, flattening trail curves into jagged
+        // segments. Only 63 trails, so keeping full fidelity is cheap.
+        tolerance: 0,
         data: {
           type: "FeatureCollection",
           features: greenways.map((g) => ({
@@ -260,6 +265,11 @@ export function GreenwayMap({
         id: "greenway-lines",
         type: "line",
         source: "greenways",
+        layout: {
+          // Round joins/caps smooth the rendered line at vertices and ends.
+          "line-join": "round",
+          "line-cap": "round",
+        },
         paint: {
           "line-color": "#2F6E3A",
           "line-width": 3,
