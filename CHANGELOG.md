@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.2.0.2] - 2026-05-29
+
+### Fixed
+- The bottom tab bar is back on the `/map` page for mobile. v0.2.0.1 made `/map` full-screen by hiding all site chrome, which also removed the only navigation available on mobile — leaving no way to leave the map. Mobile now keeps the tab bar (with the map sized to sit above it); desktop stays full-screen as before.
+
 ## [0.2.0.1] - 2026-05-29
 
 ### Fixed

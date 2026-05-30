@@ -593,7 +593,7 @@ export function GreenwayMap({
 
   return (
     <div
-      className="relative h-[100dvh] w-full"
+      className="relative h-[calc(100dvh-4rem)] w-full md:h-[100dvh]"
       role="application"
       aria-label="Charlotte greenways map"
     >
