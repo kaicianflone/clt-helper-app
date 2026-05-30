@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
+import { CrownIcon } from "~/components/CrownIcon";
 import { env } from "~/env";
 import { createServerCaller } from "~/trpc/server";
 import { MapLoader } from "./_components/map-loader";
@@ -113,8 +114,10 @@ export default async function MapPage() {
     <main>
       <Link
         href="/"
-        className="font-display fixed top-4 left-4 z-50 rounded-full bg-[color:var(--bg-cream)] px-3 py-1.5 text-sm font-bold text-[color:var(--brick)] shadow-md hover:bg-[color:var(--bg-cream-deep)]"
+        aria-label="CLT — home"
+        className="font-display fixed top-4 left-4 z-50 flex items-center gap-1.5 rounded-full bg-[color:var(--bg-cream)] px-3 py-1.5 text-sm font-bold tracking-wider text-[color:var(--brick)] uppercase shadow-md hover:bg-[color:var(--bg-cream-deep)]"
       >
+        <CrownIcon size={18} />
         clt
       </Link>
       <MapLoader
