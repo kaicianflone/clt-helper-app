@@ -8,6 +8,7 @@ import { GlyphDivider } from "~/components/marketing/GlyphDivider";
 import { Hero } from "~/components/marketing/Hero";
 import { MarketingHeader } from "~/components/marketing/MarketingHeader";
 import { Reveal } from "~/components/marketing/Reveal";
+import { SkipToContent } from "~/components/SkipToContent";
 
 import "~/styles/marketing.css";
 
@@ -20,6 +21,7 @@ export const metadata: Metadata = {
 export default function MarketingPage() {
   return (
     <>
+      <SkipToContent />
       <MarketingHeader />
       <main id="main-content">
         <Hero />

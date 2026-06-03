@@ -15,7 +15,7 @@ const BADGES = {
   "google-play": {
     src: "/badges/google-play.png",
     alt: "Get it on Google Play",
-    width: 156,
+    width: 121,
     height: 47,
   },
 } as const;

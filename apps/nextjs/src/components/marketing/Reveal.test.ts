@@ -1,4 +1,3 @@
-// apps/nextjs/src/components/marketing/Reveal.test.ts
 import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
 
@@ -11,8 +10,12 @@ describe("Reveal", () => {
     expect(src).toContain("IntersectionObserver");
   });
 
-  it("respects prefers-reduced-motion by showing immediately", () => {
+  it("respects prefers-reduced-motion", () => {
     expect(src).toContain("prefers-reduced-motion: reduce");
-    expect(src).toContain("setShown(true)");
+  });
+
+  it("is visible by default (progressive enhancement): only animates when IO is supported", () => {
+    expect(src).toContain('typeof IntersectionObserver === "undefined"');
+    expect(src).toContain("setAnimate(true)");
   });
 });
