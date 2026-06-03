@@ -20,7 +20,7 @@ export function SiteHeader() {
       role="banner"
     >
       <Link
-        href="/"
+        href="/today"
         className="font-display flex items-center gap-1.5 text-2xl font-bold tracking-wider text-[color:var(--brick)] uppercase hover:opacity-80"
         aria-label="clt — home"
       >

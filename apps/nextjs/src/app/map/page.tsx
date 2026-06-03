@@ -113,7 +113,7 @@ export default async function MapPage() {
   return (
     <main>
       <Link
-        href="/"
+        href="/today"
         aria-label="CLT — home"
         className="font-display fixed top-4 left-4 z-50 flex items-center gap-1.5 rounded-full bg-[color:var(--bg-cream)] px-3 py-1.5 text-sm font-bold tracking-wider text-[color:var(--brick)] uppercase shadow-md hover:bg-[color:var(--bg-cream-deep)]"
       >
