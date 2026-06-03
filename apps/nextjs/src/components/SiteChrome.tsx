@@ -23,6 +23,11 @@ export function SiteChrome(props: { children: React.ReactNode }) {
     );
   }
 
+  // The marketing landing at "/" renders its own chrome (nav + main + signoff section).
+  if (pathname === "/") {
+    return <>{props.children}</>;
+  }
+
   return (
     <>
       <SkipToContent />
