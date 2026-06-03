@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.3.0.0] - 2026-06-03
+
+### Added
+- New marketing landing page at `/` — a single-page front door for the app covering the three domains (greenways, deals, parking), the community-maintained-data story, and "coming soon" iOS and Android store badges. Built in the Queen City craft design system with a restrained, reduced-motion-aware animation pass (scroll reveals degrade to visible content when JavaScript is unavailable).
+
+### Changed
+- The "Today in Charlotte" app home moved from `/` to `/today`. All in-app home links (site header, mobile tab bar, map, and onboarding redirects) now point to `/today`; the marketing page owns `/`. The sitemap lists both routes.
+
 ## [0.2.1.0] - 2026-05-29
 
 ### Added

@@ -23,7 +23,7 @@ describe("BottomTabBar", () => {
   });
 
   it("crown home link exists with href='/'", () => {
-    expect(src).toContain('href="/"');
+    expect(src).toContain('href="/today"');
   });
 
   it("crown link has aria-label='Home'", () => {

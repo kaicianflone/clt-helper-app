@@ -84,7 +84,7 @@ export function BottomTabBar() {
       aria-label="Mobile navigation"
     >
       <Link
-        href="/"
+        href="/today"
         aria-label="Home"
         className="flex w-12 items-center justify-center text-[color:var(--fg-ink-muted)]"
       >

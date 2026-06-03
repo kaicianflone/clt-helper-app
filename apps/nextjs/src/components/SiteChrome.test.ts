@@ -28,3 +28,17 @@ describe("SiteChrome /map route", () => {
     expect(mapBranch).not.toContain("footer");
   });
 });
+
+describe("SiteChrome / marketing route", () => {
+  const homeStart = src.indexOf('pathname === "/"');
+  const homeBranch = src.slice(homeStart, src.indexOf("}", homeStart));
+
+  it("special-cases the marketing landing at /", () => {
+    expect(homeStart).toBeGreaterThan(-1);
+  });
+
+  it("renders no app chrome on / (marketing provides its own)", () => {
+    expect(homeBranch).not.toContain("SiteHeader");
+    expect(homeBranch).not.toContain("BottomTabBar");
+  });
+});
