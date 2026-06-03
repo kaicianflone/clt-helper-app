@@ -30,7 +30,7 @@ export default function OnboardingPage() {
     if (typeof localStorage !== "undefined") {
       localStorage.setItem(ONBOARDING_KEY, "1");
     }
-    router.replace("/");
+    router.replace("/today");
   };
 
   const skip = () => finish();
@@ -49,7 +49,7 @@ export default function OnboardingPage() {
       typeof localStorage !== "undefined" &&
       localStorage.getItem(ONBOARDING_KEY)
     ) {
-      router.replace("/");
+      router.replace("/today");
     }
   }, [router]);
 
