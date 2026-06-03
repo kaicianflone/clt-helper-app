@@ -2,7 +2,6 @@
 import Link from "next/link";
 
 import { CrownIcon } from "~/components/CrownIcon";
-
 import { MARKETING_COPY } from "./marketing-content";
 
 export function Hero() {

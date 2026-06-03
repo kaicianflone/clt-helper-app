@@ -4,7 +4,7 @@ export function GlyphDivider(props: { glyph?: string }) {
   return (
     <p
       aria-hidden="true"
-      className="py-9 text-center text-[color:var(--gold)] tracking-[0.5em]"
+      className="py-9 text-center tracking-[0.5em] text-[color:var(--gold)]"
     >
       {`${g}  ${g}  ${g}`}
     </p>

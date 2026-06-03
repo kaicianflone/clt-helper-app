@@ -33,7 +33,7 @@ export function StoreBadge(props: StoreBadgeProps) {
       aria-disabled="true"
       title="Coming soon"
     >
-      <span className="absolute -top-2 -right-2 z-10 flex items-center gap-0.5 rounded-full bg-[color:var(--gold)] px-1.5 py-0.5 font-display text-[10px] font-bold tracking-wide text-[color:var(--fg-ink)] uppercase">
+      <span className="font-display absolute -top-2 -right-2 z-10 flex items-center gap-0.5 rounded-full bg-[color:var(--gold)] px-1.5 py-0.5 text-[10px] font-bold tracking-wide text-[color:var(--fg-ink)] uppercase">
         <CrownIcon size={9} color="var(--fg-ink)" />
         Soon
       </span>

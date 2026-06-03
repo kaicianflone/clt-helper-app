@@ -1,7 +1,6 @@
 // apps/nextjs/src/components/marketing/StoreBadge.test.ts
 import { existsSync } from "node:fs";
 import { resolve } from "node:path";
-
 import { describe, expect, it } from "vitest";
 
 const root = resolve(__dirname, "../../../public/badges");
