@@ -1,0 +1,15 @@
+{
+  "slug": "suffolk-punch-birkdale-beers-trivia",
+  "restaurantName": "Suffolk Punch Birkdale",
+  "restaurantAddress": "16912 Birkdale Commons Pkwy, Huntersville, NC 28078",
+  "restaurantLatLng": [
+    35.4459,
+    -80.8791
+  ],
+  "daysOfWeek": [
+    "thu"
+  ],
+  "timeWindow": "all-day",
+  "dealDescription": "$5 beers + trivia",
+  "lastVerified": "2026-06-08"
+}

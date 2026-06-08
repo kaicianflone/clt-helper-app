@@ -1,0 +1,15 @@
+{
+  "slug": "triple-c-brunch-sunday",
+  "restaurantName": "Triple C Brewing",
+  "restaurantAddress": "2900 Griffith St, Charlotte, NC 28203",
+  "restaurantLatLng": [
+    35.2005,
+    -80.8691
+  ],
+  "daysOfWeek": [
+    "sun"
+  ],
+  "timeWindow": "all-day",
+  "dealDescription": "$6 mimosas & $8 bloody marys at the outdoor bar",
+  "lastVerified": "2026-06-08"
+}

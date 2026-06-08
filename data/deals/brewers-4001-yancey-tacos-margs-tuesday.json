@@ -1,0 +1,15 @@
+{
+  "slug": "brewers-4001-yancey-tacos-margs-tuesday",
+  "restaurantName": "Brewers at 4001 Yancey",
+  "restaurantAddress": "4001-A Yancey Rd, Charlotte, NC 28217",
+  "restaurantLatLng": [
+    35.1869,
+    -80.8775
+  ],
+  "daysOfWeek": [
+    "tue"
+  ],
+  "timeWindow": "all-day",
+  "dealDescription": "$4 tacos & $7 margaritas",
+  "lastVerified": "2026-06-08"
+}
