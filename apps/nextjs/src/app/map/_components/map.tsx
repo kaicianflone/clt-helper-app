@@ -311,6 +311,11 @@ export function GreenwayMap({
               "icon-allow-overlap": true,
             },
           });
+          // Deal pins must sit above the greenway lines. This layer is added in
+          // an async image-load callback, so its position relative to the
+          // greenway layers isn't guaranteed by add order — move it to the top
+          // explicitly so a future change to load timing can't bury the pins.
+          map.moveLayer("deal-points");
         };
         img.src = `data:image/svg+xml;charset=utf-8,${tagSvg}`;
       }
