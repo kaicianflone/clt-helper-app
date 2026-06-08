@@ -1,0 +1,15 @@
+{
+  "slug": "catalu-half-off-cocktails-tuesday",
+  "restaurantName": "Catalu",
+  "restaurantAddress": "135 New Bern St, Charlotte, NC 28209",
+  "restaurantLatLng": [
+    35.2005,
+    -80.8691
+  ],
+  "daysOfWeek": [
+    "tue"
+  ],
+  "timeWindow": "all-day",
+  "dealDescription": "Half off cocktails",
+  "lastVerified": "2026-06-08"
+}

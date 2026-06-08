@@ -1,0 +1,15 @@
+{
+  "slug": "triple-c-crowlers-wine-wednesday",
+  "restaurantName": "Triple C Brewing",
+  "restaurantAddress": "2900 Griffith St, Charlotte, NC 28203",
+  "restaurantLatLng": [
+    35.2005,
+    -80.8691
+  ],
+  "daysOfWeek": [
+    "wed"
+  ],
+  "timeWindow": "all-day",
+  "dealDescription": "1/2 off crowlers + 1/2 off wine",
+  "lastVerified": "2026-06-08"
+}

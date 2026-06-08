@@ -1,0 +1,15 @@
+{
+  "slug": "calle-sol-cafeteria-tuesday",
+  "restaurantName": "Calle Sol Plaza Midwood",
+  "restaurantAddress": "1205 Thomas Ave, Charlotte, NC 28205",
+  "restaurantLatLng": [
+    35.2189,
+    -80.8123
+  ],
+  "daysOfWeek": [
+    "tue"
+  ],
+  "timeWindow": "all-day",
+  "dealDescription": "$11 cafeteria special: Imperial Rice + 2 sides",
+  "lastVerified": "2026-06-08"
+}
