@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.3.0.1] - 2026-06-08
+
+### Added
+- Deals for five Charlotte-area spots: Suffolk Punch Birkdale (Mon–Thu), Calle Sol Plaza Midwood (Mon–Fri cafeteria specials, one entree per day), Triple C Brewing (Mon/Tue/Wed/Sun), Catalu (Tue/Wed/Thu/Sun), and Brewers at 4001 Yancey (Mon–Fri + Sun). 24 deals total, geocoded from their street addresses.
+
+### Fixed
+- Deal pins on the map now explicitly render above greenway lines. The deal layer is added in an async image-load callback, so its stacking order was only correct by accident of load timing; it is now pinned to the top so a future change to load order can't bury the pins.
+
 ## [0.3.0.0] - 2026-06-03
 
 ### Added
