@@ -29,6 +29,17 @@ describe("SiteChrome /map route", () => {
   });
 });
 
+describe("SiteChrome default app chrome", () => {
+  // The fixed BottomTabBar is `min-h-16` + `pb-[env(safe-area-inset-bottom)]`,
+  // so its real height on notched devices is 4rem + the safe-area inset. The
+  // main content's bottom padding must match, or the last content (e.g. the
+  // /today nav tiles) sits under the bar on iOS. A flat `pb-16` is the bug.
+  it("clears the tab bar including the safe-area inset on mobile", () => {
+    expect(src).toContain("pb-[calc(4rem_+_env(safe-area-inset-bottom))]");
+    expect(src).not.toMatch(/id="main-content"[^>]*pb-16(?!\d)/);
+  });
+});
+
 describe("SiteChrome / marketing route", () => {
   const homeStart = src.indexOf('pathname === "/"');
   const homeBranch = src.slice(homeStart, src.indexOf("}", homeStart));

@@ -32,7 +32,10 @@ export function SiteChrome(props: { children: React.ReactNode }) {
     <>
       <SkipToContent />
       <SiteHeader />
-      <main id="main-content" className="pb-16 md:pb-0">
+      <main
+        id="main-content"
+        className="pb-[calc(4rem_+_env(safe-area-inset-bottom))] md:pb-0"
+      >
         {props.children}
       </main>
       <footer className="py-6 text-center text-xs text-[color:var(--fg-ink-muted)]">
