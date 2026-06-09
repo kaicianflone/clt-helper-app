@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.3.0.2] - 2026-06-08
+
+### Changed
+- The `/today` app home now matches the marketing landing's "Queen City craft" idiom. Display headings ("Today in Charlotte", "Recently updated") are uppercase with tight tracking; a gold glyph eyebrow and a brick crown open the page; the "Recently updated" section gains an uppercase eyebrow label; and the bottom Greenways/Deals/Map tiles are color-coded to their domain hues (greenway green, deal gold, brick) instead of identical grey boxes. Header and nav fade in with the same reduced-motion-aware entrance the landing page uses. No new design tokens — all values come from the existing DESIGN.md system.
+
 ## [0.3.0.1] - 2026-06-08
 
 ### Added
