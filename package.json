@@ -40,5 +40,5 @@
     "vitest": "3.2.4"
   },
   "prettier": "@clt/prettier-config",
-  "version": "0.3.0.1"
+  "version": "0.3.0.2"
 }
