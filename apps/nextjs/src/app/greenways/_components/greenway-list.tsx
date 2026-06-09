@@ -87,7 +87,7 @@ function compareGreenways(
       // Greenways without coords (or before location resolves) sort last,
       // tie-broken alphabetically so the order is stable.
       if (a.distanceMi == null && b.distanceMi == null)
-        return a.name.localeCompare(b.name);
+        return b.name.localeCompare(a.name);
       if (a.distanceMi == null) return 1;
       if (b.distanceMi == null) return -1;
       return a.distanceMi - b.distanceMi;
