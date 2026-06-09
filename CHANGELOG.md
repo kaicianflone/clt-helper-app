@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.3.0.3] - 2026-06-08
+
+### Fixed
+- Mobile content no longer hides behind the bottom tab bar. The app content area cleared the bar with a flat `pb-16` (64px), but the bar itself grows by `env(safe-area-inset-bottom)` on notched devices — so on iPhones the last content (e.g. the `/today` Greenways/Deals/Map tiles) sat partly under the bar. The clearance now matches the bar's true height (`calc(4rem + env(safe-area-inset-bottom))`).
+
+### Changed
+- The Greenways icon in the mobile tab bar is now a clean pine tree, replacing the previous tangled leaf/branch glyph that didn't read clearly at 22px.
+
 ## [0.3.0.2] - 2026-06-08
 
 ### Changed
