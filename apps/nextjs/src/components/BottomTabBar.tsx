@@ -21,13 +21,12 @@ const tabs = [
         strokeLinecap="round"
         strokeLinejoin="round"
       >
-        {/* Tree / leaf icon */}
-        <path d="M12 22V12" />
-        <path d="M5 12h14" />
-        <path d="M12 12C12 7 7 4 7 4s5 1 5 8z" />
-        <path d="M12 12C12 7 17 4 17 4s-5 1-5 8z" />
-        <path d="M12 12C12 17 7 20 7 20s5-1 5-8z" />
-        <path d="M12 12C12 17 17 20 17 20s-5-1-5-8z" />
+        {/* Pine tree — reads as trail / park / greenway */}
+        <path d="M12 3 9 8h6z" />
+        <path d="M12 7 7.5 13h9z" />
+        <path d="M12 12 6 19h12z" />
+        <path d="M12 19v3" />
+        <path d="M9.5 22h5" />
       </svg>
     ),
   },
