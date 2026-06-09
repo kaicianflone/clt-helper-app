@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 import { CrownIcon } from "~/components/CrownIcon";
+import { Reveal } from "~/components/marketing/Reveal";
 import { createServerCaller } from "~/trpc/server";
 import { OnboardingRedirect } from "../_components/onboarding-redirect";
-import { Reveal } from "~/components/marketing/Reveal";
 
 import "~/styles/marketing.css";
 
