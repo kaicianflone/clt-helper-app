@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
+import { CrownIcon } from "~/components/CrownIcon";
 import { createServerCaller } from "~/trpc/server";
 import { OnboardingRedirect } from "../_components/onboarding-redirect";
+import { Reveal } from "~/components/marketing/Reveal";
+
+import "~/styles/marketing.css";
 
 export const revalidate = 60;
 
@@ -23,6 +27,14 @@ const kindHref = (kind: string, slug: string): string => {
   if (kind === "deal") return `/deals/${slug}`;
   return `/parking/${slug}`;
 };
+
+// Color-coded to match the marketing landing's DomainColumns: each destination
+// carries its domain's map-marker hue (greenway green, deal gold, brick brand).
+const NAV_TILES: { label: string; href: string; colorVar: string }[] = [
+  { label: "Greenways", href: "/greenways", colorVar: "--map-trail" },
+  { label: "Deals", href: "/deals", colorVar: "--gold" },
+  { label: "Map", href: "/map", colorVar: "--brick" },
+];
 
 function timeAgo(dateStr: string, now: number): string {
   const days = Math.floor((now - new Date(dateStr).getTime()) / 86_400_000);
@@ -53,15 +65,29 @@ export default async function TodayPage() {
   return (
     <main className="mx-auto max-w-3xl p-6">
       <OnboardingRedirect />
-      <h1 className="font-display text-5xl leading-none font-bold tracking-tight text-[color:var(--fg-ink)]">
+      <p
+        aria-hidden="true"
+        className="mkt-rise mkt-rise-d1 font-display tracking-[0.5em] text-[color:var(--gold)]"
+      >
+        ✦&#8194;&#8194;✦&#8194;&#8194;✦
+      </p>
+      <h1 className="mkt-rise mkt-rise-d2 font-display mt-3 flex items-center gap-2.5 text-5xl leading-none font-bold tracking-tight text-[color:var(--fg-ink)] uppercase">
         Today in Charlotte
+        <CrownIcon
+          size={34}
+          color="var(--brick)"
+          className="inline-block shrink-0"
+        />
       </h1>
-      <p className="mt-1 text-sm text-[color:var(--fg-ink-muted)]">
+      <p className="mkt-rise mkt-rise-d3 mt-2 text-sm text-[color:var(--fg-ink-muted)]">
         {dayShort}
       </p>
 
-      <section className="mt-10">
-        <h2 className="font-display text-2xl font-bold text-[color:var(--fg-ink)]">
+      <section className="mkt-rise mkt-rise-d4 mt-12">
+        <p className="font-display text-sm font-semibold tracking-widest text-[color:var(--fg-ink-muted)] uppercase">
+          Live from the city
+        </p>
+        <h2 className="font-display mt-1 text-2xl font-bold tracking-tight text-[color:var(--fg-ink)] uppercase">
           Recently updated
         </h2>
 
@@ -95,26 +121,24 @@ export default async function TodayPage() {
         )}
       </section>
 
-      <nav className="mt-12 grid grid-cols-3 gap-3">
-        <Link
-          href="/greenways"
-          className="rounded-md border border-[color:var(--border-soft)] p-4 text-center text-sm font-medium text-[color:var(--fg-ink)] hover:bg-[color:var(--bg-cream-soft)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[color:var(--brick)]"
-        >
-          Greenways
-        </Link>
-        <Link
-          href="/deals"
-          className="rounded-md border border-[color:var(--border-soft)] p-4 text-center text-sm font-medium text-[color:var(--fg-ink)] hover:bg-[color:var(--bg-cream-soft)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[color:var(--brick)]"
-        >
-          Deals
-        </Link>
-        <Link
-          href="/map"
-          className="rounded-md border border-[color:var(--border-soft)] p-4 text-center text-sm font-medium text-[color:var(--fg-ink)] hover:bg-[color:var(--bg-cream-soft)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[color:var(--brick)]"
-        >
-          Map
-        </Link>
-      </nav>
+      <Reveal>
+        <nav className="mt-12 grid grid-cols-3 gap-3">
+          {NAV_TILES.map((tile) => (
+            <Link
+              key={tile.href}
+              href={tile.href}
+              className="rounded-md border border-[color:var(--border-soft)] p-4 text-center hover:bg-[color:var(--bg-cream-soft)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[color:var(--brick)]"
+            >
+              <span
+                className="font-display text-lg font-bold tracking-tight uppercase"
+                style={{ color: `var(${tile.colorVar})` }}
+              >
+                {tile.label}
+              </span>
+            </Link>
+          ))}
+        </nav>
+      </Reveal>
     </main>
   );
 }
