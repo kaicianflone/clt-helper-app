@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "tsx ../../scripts/build-data-bundles.ts && pnpm with-env next build",
+    "build": "pnpm with-env next build",
     "clean": "git clean -xdf .cache .next .turbo node_modules",
     "dev": "pnpm with-env next dev",
     "format": "prettier --check . --ignore-path ../../.gitignore",
@@ -13,19 +13,11 @@
     "with-env": "dotenv -e ../../.env --"
   },
   "dependencies": {
-    "@clt/api": "workspace:*",
     "@clt/ui": "workspace:*",
     "@t3-oss/env-nextjs": "^0.13.8",
-    "@tanstack/react-form": "catalog:",
-    "@tanstack/react-query": "catalog:",
-    "@trpc/client": "catalog:",
-    "@trpc/server": "catalog:",
-    "@trpc/tanstack-react-query": "catalog:",
-    "maplibre-gl": "4.7.1",
     "next": "^16.0.9",
     "react": "catalog:react19",
     "react-dom": "catalog:react19",
-    "superjson": "2.2.3",
     "zod": "catalog:"
   },
   "devDependencies": {

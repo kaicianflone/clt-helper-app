@@ -50,8 +50,6 @@
   },
   "globalEnv": [
     "PORT",
-    "MAPTILER_KEY",
-    "NEXT_PUBLIC_MAPTILER_KEY",
     "EXPO_PUBLIC_MAPTILER_KEY",
     "DATA_BASE_URL",
     "R2_PUBLIC_BASE_URL",
@@ -61,10 +59,7 @@
     "GH_APP_PRIVATE_KEY",
     "GH_REPO_OWNER",
     "GH_REPO_NAME",
-    "REVALIDATION_SECRET",
-    "CORS_ALLOWED_ORIGINS",
-    "UPSTASH_REDIS_REST_URL",
-    "UPSTASH_REDIS_REST_TOKEN"
+    "CORS_ALLOWED_ORIGINS"
   ],
   "globalPassThroughEnv": [
     "NODE_ENV",

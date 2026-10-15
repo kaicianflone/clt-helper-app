@@ -13,9 +13,11 @@ import { SkipToContent } from "~/components/SkipToContent";
 import "~/styles/marketing.css";
 
 export const metadata: Metadata = {
-  title: { absolute: "clt-app — Charlotte's open guide" },
+  title: {
+    absolute: "CLT Greenways — greenways and restaurant deals for Charlotte",
+  },
   description:
-    "Greenways, daily restaurant deals, and parking for Charlotte — free, community-maintained, no sign-up.",
+    "CLT Greenways is a free iPhone app for Charlotte greenways and daily restaurant deals. Independent; not affiliated with the City of Charlotte or Mecklenburg County.",
 };
 
 export default function MarketingPage() {

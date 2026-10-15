@@ -1,8 +1,7 @@
 // apps/nextjs/src/components/marketing/Hero.tsx
-import Link from "next/link";
-
 import { CrownIcon } from "~/components/CrownIcon";
 import { MARKETING_COPY } from "./marketing-content";
+import { StoreBadge } from "./StoreBadge";
 
 export function Hero() {
   const [line1, line2, line3] = MARKETING_COPY.heroTitle;
@@ -28,15 +27,7 @@ export function Hero() {
           {MARKETING_COPY.heroSubhead}
         </p>
         <div className="mkt-rise mkt-rise-d4 mt-6">
-          <Link
-            href="/today"
-            className="font-display inline-block rounded-md bg-[color:var(--brick)] px-6 py-3 text-lg font-semibold tracking-wide text-white transition-transform duration-[var(--duration-default)] hover:-translate-y-0.5 hover:bg-[color:var(--brick-deep)]"
-          >
-            Open the web app
-          </Link>
-          <p className="mt-4 text-xs tracking-widest text-[color:var(--fg-ink-muted)] uppercase">
-            ⟡&#8194; {MARKETING_COPY.comingSoon}
-          </p>
+          <StoreBadge />
         </div>
       </div>
       <svg

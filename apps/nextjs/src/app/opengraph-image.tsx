@@ -21,9 +21,9 @@ export default function Image() {
           fontFamily: "system-ui",
         }}
       >
-        <div style={{ fontWeight: 700, letterSpacing: -2 }}>clt-app</div>
+        <div style={{ fontWeight: 700, letterSpacing: -2 }}>CLT Greenways</div>
         <div style={{ fontSize: 32, marginTop: 16, opacity: 0.85 }}>
-          Charlotte&apos;s open guide
+          Greenways and deals for Charlotte
         </div>
       </div>
     ),

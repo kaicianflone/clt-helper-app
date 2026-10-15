@@ -1,20 +1,8 @@
 // apps/nextjs/src/components/marketing/marketing-content.ts
 
-export interface MarketingNavLink {
-  label: string;
-  href: string;
-}
-
-export const MARKETING_NAV: MarketingNavLink[] = [
-  { label: "Greenways", href: "/greenways" },
-  { label: "Deals", href: "/deals" },
-  { label: "Parking", href: "/parking" },
-  { label: "Map", href: "/map" },
-];
-
 export interface MarketingDomain {
   name: string;
-  /** CSS custom property tying the domain to its map-marker color. */
+  /** CSS custom property used to color the domain heading. */
   colorVar: string;
   blurb: string;
   items: [string, string, string];
@@ -41,29 +29,19 @@ export const MARKETING_DOMAINS: MarketingDomain[] = [
       "Checked often so it isn't stale",
     ],
   },
-  {
-    name: "Parking",
-    colorVar: "--brick",
-    blurb: "Where to park, and what it runs.",
-    items: [
-      "Hourly rates and daily max",
-      "Hours, covered or not, how to pay",
-      "Lots across the city",
-    ],
-  },
 ];
 
 export const MARKETING_COPY = {
   heroTitle: ["Your city,", "worth", "walking."],
   heroSubhead:
-    "Find a greenway, grab today's restaurant deals, or track down parking. It's free, there's no sign-up, and the people who use it keep the details honest.",
-  comingSoon: "Coming soon on iOS and Android",
+    "CLT Greenways is a free iPhone app for exploring Charlotte's greenways and finding today's restaurant deals. English only, no sign-up.",
+  comingSoon: "Coming soon to the App Store",
   domainsLabel: "What's inside",
-  domainsHeading: ["Everything local,", "on one map"],
-  communityLabel: "Why it stays accurate",
-  communityHeading: ["Charlotte keeps", "it honest"],
+  domainsHeading: ["Trails and deals,", "in your pocket"],
+  communityLabel: "Independent and local",
+  communityHeading: ["Made in", "Charlotte"],
   communityBody:
-    "Notice a rate that's gone up or a trail that's closed? Suggest a fix right from the app. Your edit goes into our open data, so the next person sees the correction too.",
+    "CLT Greenways is an independent project. It is not affiliated with, endorsed by, or sponsored by the City of Charlotte or Mecklenburg County.",
   footerHeading: ["Take Charlotte", "with you"],
-  signoff: "clt-app · open source · made in the Queen City",
+  signoff: "CLT Greenways · made in the Queen City",
 } as const;

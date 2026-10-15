@@ -1,6 +1,7 @@
 import path from "node:path";
 import { defineConfig } from "vitest/config";
 export default defineConfig({
+  esbuild: { jsx: "automatic" },
   resolve: {
     alias: {
       "@clt/data-schema": path.resolve("packages/data-schema/src/index.ts"),

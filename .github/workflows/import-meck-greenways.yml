@@ -1,7 +1,6 @@
 name: Re-import Meck greenways
+# Manual-only: no longer scheduled now that the web app is marketing-only.
 on:
-  schedule:
-    - cron: "0 12 1 */3 *"
   workflow_dispatch:
 
 jobs:

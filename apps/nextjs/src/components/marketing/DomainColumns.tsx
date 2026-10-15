@@ -15,7 +15,7 @@ export function DomainColumns() {
           {h2}
         </h2>
       </div>
-      <div className="mx-auto mt-8 grid max-w-4xl gap-8 sm:grid-cols-3">
+      <div className="mx-auto mt-8 grid max-w-2xl gap-8 sm:grid-cols-2">
         {MARKETING_DOMAINS.map((d) => (
           <div key={d.name} className="text-center">
             <h3

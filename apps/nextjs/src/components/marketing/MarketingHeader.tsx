@@ -2,7 +2,6 @@
 import Link from "next/link";
 
 import { CrownIcon } from "~/components/CrownIcon";
-import { MARKETING_NAV } from "./marketing-content";
 
 export function MarketingHeader() {
   return (
@@ -13,31 +12,11 @@ export function MarketingHeader() {
       <Link
         href="/"
         className="font-display flex items-center gap-1.5 text-2xl font-bold tracking-wider text-[color:var(--brick)] uppercase hover:opacity-80"
-        aria-label="clt-app — home"
+        aria-label="CLT Greenways — home"
       >
         <CrownIcon size={22} color="var(--brick)" />
-        clt-app
+        CLT Greenways
       </Link>
-      <nav
-        className="hidden items-center gap-5 sm:flex"
-        aria-label="Marketing navigation"
-      >
-        {MARKETING_NAV.map(({ label, href }) => (
-          <Link
-            key={href}
-            href={href}
-            className="text-sm text-[color:var(--fg-ink-muted)] hover:text-[color:var(--fg-ink)]"
-          >
-            {label}
-          </Link>
-        ))}
-        <Link
-          href="/today"
-          className="text-sm font-medium text-[color:var(--brick)] hover:text-[color:var(--brick-deep)]"
-        >
-          Open app ▸
-        </Link>
-      </nav>
     </header>
   );
 }

@@ -1,6 +1,4 @@
 // apps/nextjs/src/components/marketing/DownloadFooter.tsx
-import Link from "next/link";
-
 import { CrownIcon } from "~/components/CrownIcon";
 import { MARKETING_COPY } from "./marketing-content";
 import { StoreBadge } from "./StoreBadge";
@@ -14,17 +12,8 @@ export function DownloadFooter() {
         <br />
         {h2}
       </h2>
-      <div className="mt-5 flex flex-wrap items-center justify-center gap-4">
-        <StoreBadge store="app-store" />
-        <StoreBadge store="google-play" />
-      </div>
-      <div className="mt-4">
-        <Link
-          href="/today"
-          className="font-display inline-block rounded-md bg-[color:var(--brick)] px-5 py-2.5 text-base font-semibold tracking-wide text-white hover:bg-[color:var(--brick-deep)]"
-        >
-          Or open the web app ▸
-        </Link>
+      <div className="mt-5 flex justify-center">
+        <StoreBadge />
       </div>
       <p className="mt-6 flex items-center justify-center gap-1.5 text-xs tracking-widest text-[color:var(--fg-ink-muted)] uppercase">
         {MARKETING_COPY.signoff}

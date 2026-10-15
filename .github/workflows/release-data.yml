@@ -1,11 +1,7 @@
 name: Release data bundles
+# Manual-only: the web app that consumed these bundles was removed (APP-461).
 on:
-  push:
-    branches: [main]
-    paths:
-      - "data/**"
-      - "scripts/build-data-bundles.ts"
-      - "packages/data-schema/**"
+  workflow_dispatch:
 
 jobs:
   release:
@@ -32,11 +28,3 @@ jobs:
           if [ -f dist/data/manifest.json ]; then
             npx --yes wrangler r2 object put "$R2_BUCKET/data/manifest.json" --file=dist/data/manifest.json --content-type=application/json
           fi
-      - name: Revalidate Next.js pages
-        env:
-          REVALIDATION_SECRET: ${{ secrets.REVALIDATION_SECRET }}
-        run: |
-          curl -fsS -X POST "https://clt-app.com/api/revalidate" \
-            -H "Authorization: Bearer $REVALIDATION_SECRET" \
-            -H "Content-Type: application/json" \
-            -d '{"paths":["/greenways","/deals","/parking","/map"]}' || echo "Revalidate endpoint not yet deployed"

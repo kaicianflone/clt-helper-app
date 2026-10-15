@@ -2,20 +2,18 @@ import type { Metadata, Viewport } from "next";
 
 import { cn } from "@clt/ui";
 
-import { SiteChrome } from "~/components/SiteChrome";
 import { fontDisplay, fontSans } from "~/styles/fonts";
-import { TRPCReactProvider } from "~/trpc/react";
 
 import "~/styles/tokens.css";
 import "~/app/styles.css";
 
 export const metadata: Metadata = {
   title: {
-    default: "Today in Charlotte | clt",
+    default: "CLT Greenways — greenways and restaurant deals for Charlotte",
     template: "%s | clt",
   },
   description:
-    "Charlotte's greenways, local deals, and parking — community-maintained.",
+    "CLT Greenways is a free iPhone app for Charlotte greenways and daily restaurant deals. Independent; not affiliated with the City of Charlotte or Mecklenburg County.",
 };
 
 export const viewport: Viewport = {
@@ -37,9 +35,7 @@ export default function RootLayout(props: { children: React.ReactNode }) {
           "bg-[color:var(--bg-cream)] text-[color:var(--fg-ink)]",
         )}
       >
-        <TRPCReactProvider>
-          <SiteChrome>{props.children}</SiteChrome>
-        </TRPCReactProvider>
+        {props.children}
       </body>
     </html>
   );
